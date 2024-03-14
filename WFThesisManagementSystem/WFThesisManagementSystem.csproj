@@ -142,6 +142,12 @@
     <Compile Include="TeacherViews\TeacherUserControl\UcMinimized.Designer.cs">
       <DependentUpon>UcMinimized.cs</DependentUpon>
     </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcSingletopic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcSingletopic.Designer.cs">
+      <DependentUpon>UcSingletopic.cs</DependentUpon>
+    </Compile>
     <Compile Include="TeacherViews\TeacherUserControl\UcTask.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -196,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcMinimized.resx">
       <DependentUpon>UcMinimized.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcSingletopic.resx">
+      <DependentUpon>UcSingletopic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTask.resx">
       <DependentUpon>UcTask.cs</DependentUpon>
@@ -307,6 +316,8 @@
   <ItemGroup>
     <None Include="Resources\user.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Create.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
