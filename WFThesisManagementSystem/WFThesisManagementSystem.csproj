@@ -33,11 +33,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ComponentFactory.Krypton.Toolkit">
-      <HintPath>..\..\Krypton\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
-    </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net48\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Krypton.Docking, Version=80.24.3.64, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Krypton.Docking.80.24.3.64\lib\net48\Krypton.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="Krypton.Navigator, Version=80.24.3.64, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Krypton.Navigator.80.24.3.64\lib\net48\Krypton.Navigator.dll</HintPath>
+    </Reference>
+    <Reference Include="Krypton.Ribbon, Version=80.24.3.64, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Krypton.Ribbon.80.24.3.64\lib\net48\Krypton.Ribbon.dll</HintPath>
+    </Reference>
+    <Reference Include="Krypton.Toolkit, Version=80.24.3.64, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Krypton.Toolkit.80.24.3.64\lib\net48\Krypton.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Krypton.Workspace, Version=80.24.3.64, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Krypton.Workspace.80.24.3.64\lib\net48\Krypton.Workspace.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -99,6 +111,12 @@
     </Compile>
     <Compile Include="StudentViews\StudentUserControl\UCStudentWorkLogs.Designer.cs">
       <DependentUpon>UCStudentWorkLogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentViews\Views\FStudentTaskPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentViews\Views\FStudentTaskPopUp.Designer.cs">
+      <DependentUpon>FStudentTaskPopUp.cs</DependentUpon>
     </Compile>
     <Compile Include="TeacherViews\TeacherUserControl\UcClose.cs">
       <SubType>UserControl</SubType>
@@ -175,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StudentViews\StudentUserControl\UCStudentProject.resx">
       <DependentUpon>UCStudentProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentViews\Views\FStudentTaskPopUp.resx">
+      <DependentUpon>FStudentTaskPopUp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcClose.resx">
       <DependentUpon>UcClose.cs</DependentUpon>
