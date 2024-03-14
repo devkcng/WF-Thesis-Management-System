@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
 {
-    public partial class UcAllTopics : UserControl
+    public partial class UcTeacherAllTopics : UserControl
     {
-        public UcAllTopics()
+        public UcTeacherAllTopics()
         {
             InitializeComponent();
-            UcTeacheCreateTopicr uc = new UcTeacheCreateTopicr();
+            UcTeacheCreateTopic uc = new UcTeacheCreateTopic();
             uc.Hide();
         }
 
@@ -26,7 +26,7 @@ namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            UserControl uc = new UcTeacheCreateTopicr();
+            UserControl uc = new UcTeacheCreateTopic();
             uc.Show();
         }
     }

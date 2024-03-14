@@ -1,6 +1,6 @@
 ﻿namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
 {
-    partial class UcAllTopics
+    partial class UcTeacherAllTopics
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.lblTopics = new System.Windows.Forms.Label();
-            this.ucSingletopic1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcSingletopic();
-            this.ucSingletopic2 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcSingletopic();
-            this.ucSingletopic3 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcSingletopic();
-            this.ucSingletopic4 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcSingletopic();
+            this.ucSingletopic1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherSingleTopic();
+            this.ucSingletopic2 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherSingleTopic();
+            this.ucSingletopic3 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherSingleTopic();
+            this.ucSingletopic4 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherSingleTopic();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
@@ -111,10 +111,10 @@
 
         #endregion
         private System.Windows.Forms.Label lblTopics;
-        private UcSingletopic ucSingletopic1;
-        private UcSingletopic ucSingletopic2;
-        private UcSingletopic ucSingletopic3;
-        private UcSingletopic ucSingletopic4;
+        private UcTeacherSingleTopic ucSingletopic1;
+        private UcTeacherSingleTopic ucSingletopic2;
+        private UcTeacherSingleTopic ucSingletopic3;
+        private UcTeacherSingleTopic ucSingletopic4;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

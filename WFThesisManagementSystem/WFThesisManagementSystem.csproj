@@ -100,11 +100,11 @@
     <Compile Include="StudentViews\StudentUserControl\UCStudentWorkLogs.Designer.cs">
       <DependentUpon>UCStudentWorkLogs.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcAllTopics.cs">
+    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherAllTopics.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcAllTopics.Designer.cs">
-      <DependentUpon>UcAllTopics.cs</DependentUpon>
+    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherAllTopics.Designer.cs">
+      <DependentUpon>UcTeacherAllTopics.cs</DependentUpon>
     </Compile>
     <Compile Include="TeacherViews\TeacherUserControl\UcClose.cs">
       <SubType>UserControl</SubType>
@@ -148,17 +148,35 @@
     <Compile Include="TeacherViews\TeacherUserControl\UcMinimized.Designer.cs">
       <DependentUpon>UcMinimized.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcSingletopic.cs">
+    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherSingleTask.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcSingletopic.Designer.cs">
-      <DependentUpon>UcSingletopic.cs</DependentUpon>
+    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherSingleTask.Designer.cs">
+      <DependentUpon>UcTeacherSingleTask.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcTeacheCreateTopicr.cs">
+    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherSingleTopic.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcTeacheCreateTopicr.Designer.cs">
-      <DependentUpon>UcTeacheCreateTopicr.cs</DependentUpon>
+    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherSingleTopic.Designer.cs">
+      <DependentUpon>UcTeacherSingleTopic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcTeacheCreateTopic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcTeacheCreateTopic.Designer.cs">
+      <DependentUpon>UcTeacheCreateTopic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherAllTask.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherAllTask.Designer.cs">
+      <DependentUpon>UcTeacherAllTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherCreateTask.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherCreateTask.Designer.cs">
+      <DependentUpon>UcTeacherCreateTask.cs</DependentUpon>
     </Compile>
     <Compile Include="TeacherViews\TeacherUserControl\UcTeacherEditTopic.cs">
       <SubType>UserControl</SubType>
@@ -194,8 +212,8 @@
     <EmbeddedResource Include="StudentViews\StudentUserControl\UCStudentProject.resx">
       <DependentUpon>UCStudentProject.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcAllTopics.resx">
-      <DependentUpon>UcAllTopics.cs</DependentUpon>
+    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherAllTopics.resx">
+      <DependentUpon>UcTeacherAllTopics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcClose.resx">
       <DependentUpon>UcClose.cs</DependentUpon>
@@ -218,11 +236,20 @@
     <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcMinimized.resx">
       <DependentUpon>UcMinimized.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcSingletopic.resx">
-      <DependentUpon>UcSingletopic.cs</DependentUpon>
+    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherSingleTask.resx">
+      <DependentUpon>UcTeacherSingleTask.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacheCreateTopicr.resx">
-      <DependentUpon>UcTeacheCreateTopicr.cs</DependentUpon>
+    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherSingleTopic.resx">
+      <DependentUpon>UcTeacherSingleTopic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacheCreateTopic.resx">
+      <DependentUpon>UcTeacheCreateTopic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherAllTask.resx">
+      <DependentUpon>UcTeacherAllTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherCreateTask.resx">
+      <DependentUpon>UcTeacherCreateTask.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherEditTopic.resx">
       <DependentUpon>UcTeacherEditTopic.cs</DependentUpon>
@@ -336,6 +363,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Create.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Idea.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chat.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

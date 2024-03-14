@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
 {
-    public partial class UcSingletopic : UserControl
+    public partial class UcTeacherSingleTask : UserControl
     {
-        public UcSingletopic()
+        public UcTeacherSingleTask()
         {
             InitializeComponent();
         }
