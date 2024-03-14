@@ -15,6 +15,19 @@ namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
         public UcAllTopics()
         {
             InitializeComponent();
+            UcTeacheCreateTopicr uc = new UcTeacheCreateTopicr();
+            uc.Hide();
+        }
+
+        private void ucSingletopic1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            UserControl uc = new UcTeacheCreateTopicr();
+            uc.Show();
         }
     }
 }
