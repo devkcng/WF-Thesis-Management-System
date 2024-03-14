@@ -29,11 +29,10 @@
         private void InitializeComponent()
         {
             this.lblTopics = new System.Windows.Forms.Label();
-            this.ucSingletopic1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherSingleTopic();
-            this.ucSingletopic2 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherSingleTopic();
-            this.ucSingletopic3 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherSingleTopic();
-            this.ucSingletopic4 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherSingleTopic();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.flpTopicView = new System.Windows.Forms.FlowLayoutPanel();
+            this.ucTeacherSingleTopic1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherSingleTopic();
+            this.flpTopicView.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTopics
@@ -44,38 +43,6 @@
             this.lblTopics.Size = new System.Drawing.Size(55, 20);
             this.lblTopics.TabIndex = 2;
             this.lblTopics.Text = "Topics";
-            // 
-            // ucSingletopic1
-            // 
-            this.ucSingletopic1.BackColor = System.Drawing.Color.White;
-            this.ucSingletopic1.Location = new System.Drawing.Point(3, 94);
-            this.ucSingletopic1.Name = "ucSingletopic1";
-            this.ucSingletopic1.Size = new System.Drawing.Size(488, 317);
-            this.ucSingletopic1.TabIndex = 5;
-            // 
-            // ucSingletopic2
-            // 
-            this.ucSingletopic2.BackColor = System.Drawing.Color.White;
-            this.ucSingletopic2.Location = new System.Drawing.Point(552, 94);
-            this.ucSingletopic2.Name = "ucSingletopic2";
-            this.ucSingletopic2.Size = new System.Drawing.Size(488, 317);
-            this.ucSingletopic2.TabIndex = 6;
-            // 
-            // ucSingletopic3
-            // 
-            this.ucSingletopic3.BackColor = System.Drawing.Color.White;
-            this.ucSingletopic3.Location = new System.Drawing.Point(17, 439);
-            this.ucSingletopic3.Name = "ucSingletopic3";
-            this.ucSingletopic3.Size = new System.Drawing.Size(488, 317);
-            this.ucSingletopic3.TabIndex = 7;
-            // 
-            // ucSingletopic4
-            // 
-            this.ucSingletopic4.BackColor = System.Drawing.Color.White;
-            this.ucSingletopic4.Location = new System.Drawing.Point(552, 439);
-            this.ucSingletopic4.Name = "ucSingletopic4";
-            this.ucSingletopic4.Size = new System.Drawing.Size(488, 317);
-            this.ucSingletopic4.TabIndex = 8;
             // 
             // guna2Button1
             // 
@@ -92,18 +59,37 @@
             this.guna2Button1.Text = "Create";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
-            // UcAllTopics
+            // flpTopicView
+            // 
+            this.flpTopicView.AutoScroll = true;
+            this.flpTopicView.Controls.Add(this.ucTeacherSingleTopic1);
+            this.flpTopicView.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flpTopicView.Location = new System.Drawing.Point(78, 108);
+            this.flpTopicView.Name = "flpTopicView";
+            this.flpTopicView.Size = new System.Drawing.Size(919, 494);
+            this.flpTopicView.TabIndex = 10;
+            this.flpTopicView.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
+            // 
+            // ucTeacherSingleTopic1
+            // 
+            this.ucTeacherSingleTopic1.BackColor = System.Drawing.Color.White;
+            this.ucTeacherSingleTopic1.Location = new System.Drawing.Point(3, 3);
+            this.ucTeacherSingleTopic1.Name = "ucTeacherSingleTopic1";
+            this.ucTeacherSingleTopic1.Size = new System.Drawing.Size(883, 267);
+            this.ucTeacherSingleTopic1.TabIndex = 0;
+            this.ucTeacherSingleTopic1.Load += new System.EventHandler(this.ucTeacherSingleTopic1_Load);
+            // 
+            // UcTeacherAllTopics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.flpTopicView);
             this.Controls.Add(this.guna2Button1);
-            this.Controls.Add(this.ucSingletopic4);
-            this.Controls.Add(this.ucSingletopic3);
-            this.Controls.Add(this.ucSingletopic2);
-            this.Controls.Add(this.ucSingletopic1);
             this.Controls.Add(this.lblTopics);
-            this.Name = "UcAllTopics";
+            this.Name = "UcTeacherAllTopics";
             this.Size = new System.Drawing.Size(1082, 809);
+            this.Load += new System.EventHandler(this.UcTeacherAllTopics_Load);
+            this.flpTopicView.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,10 +97,8 @@
 
         #endregion
         private System.Windows.Forms.Label lblTopics;
-        private UcTeacherSingleTopic ucSingletopic1;
-        private UcTeacherSingleTopic ucSingletopic2;
-        private UcTeacherSingleTopic ucSingletopic3;
-        private UcTeacherSingleTopic ucSingletopic4;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private System.Windows.Forms.FlowLayoutPanel flpTopicView;
+        private UcTeacherSingleTopic ucTeacherSingleTopic1;
     }
 }
