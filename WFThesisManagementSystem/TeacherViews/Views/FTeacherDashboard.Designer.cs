@@ -47,6 +47,8 @@
             this.menuStrip3 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.ucAllTopics1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcAllTopics();
+            this.ucTask1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacheCreateTopicr();
             this.menuStrip2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menuStrip3.SuspendLayout();
@@ -206,7 +208,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 3);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1531, 72);
+            this.panel1.Size = new System.Drawing.Size(1645, 72);
             this.panel1.TabIndex = 2;
             // 
             // kryptonLabel1
@@ -230,7 +232,7 @@
             this.menuStrip3.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1});
-            this.menuStrip3.Location = new System.Drawing.Point(1325, 6);
+            this.menuStrip3.Location = new System.Drawing.Point(1584, 6);
             this.menuStrip3.Name = "menuStrip3";
             this.menuStrip3.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
             this.menuStrip3.Size = new System.Drawing.Size(144, 40);
@@ -258,13 +260,31 @@
             this.panel2.Size = new System.Drawing.Size(234, 771);
             this.panel2.TabIndex = 3;
             // 
+            // ucAllTopics1
+            // 
+            this.ucAllTopics1.Location = new System.Drawing.Point(243, 75);
+            this.ucAllTopics1.Name = "ucAllTopics1";
+            this.ucAllTopics1.Size = new System.Drawing.Size(1143, 771);
+            this.ucAllTopics1.TabIndex = 4;
+            this.ucAllTopics1.Load += new System.EventHandler(this.ucAllTopics1_Load);
+            // 
+            // ucTask1
+            // 
+            this.ucTask1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ucTask1.Location = new System.Drawing.Point(71, 61);
+            this.ucTask1.Name = "ucTask1";
+            this.ucTask1.Size = new System.Drawing.Size(1494, 771);
+            this.ucTask1.TabIndex = 5;
+            // 
             // FTeacherDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1466, 846);
+            this.ClientSize = new System.Drawing.Size(1689, 844);
+            this.Controls.Add(this.ucAllTopics1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.ucTask1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FTeacherDashboard";
             this.Palette = this.kryptonPalette1;
@@ -303,5 +323,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
         private System.Windows.Forms.MenuStrip menuStrip3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private TeacherUserControl.UcAllTopics ucAllTopics1;
+        private TeacherUserControl.UcTeacheCreateTopicr ucTask1;
     }
 }
