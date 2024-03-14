@@ -148,6 +148,12 @@
     <Compile Include="TeacherViews\TeacherUserControl\UcTask.Designer.cs">
       <DependentUpon>UcTask.cs</DependentUpon>
     </Compile>
+    <Compile Include="TeacherViews\Views\FTeacherDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeacherViews\Views\FTeacherDashboard.Designer.cs">
+      <DependentUpon>FTeacherDashboard.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -193,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTask.resx">
       <DependentUpon>UcTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherViews\Views\FTeacherDashboard.resx">
+      <DependentUpon>FTeacherDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -298,8 +307,6 @@
   <ItemGroup>
     <None Include="Resources\user.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="TeacherViews\Views\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
