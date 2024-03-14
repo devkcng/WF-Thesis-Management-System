@@ -1,6 +1,6 @@
 ﻿namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
 {
-    partial class UcTask
+    partial class UcTeacheCreateTopicr
     {
         /// <summary> 
         /// Required designer variable.
@@ -33,7 +33,7 @@
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.cbxTopicrequire = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.lblTopicrequire = new System.Windows.Forms.Label();
+            this.lblTopicTechnology = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblEnddate = new System.Windows.Forms.Label();
             this.lblStartdate = new System.Windows.Forms.Label();
@@ -45,11 +45,23 @@
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2ComboBox2 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
+            this.guna2Panel6.SuspendLayout();
+            this.guna2Panel7.SuspendLayout();
+            this.guna2Panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNametopic
@@ -98,8 +110,8 @@
             // guna2Panel2
             // 
             this.guna2Panel2.Controls.Add(this.cbxTopicrequire);
-            this.guna2Panel2.Controls.Add(this.lblTopicrequire);
-            this.guna2Panel2.Location = new System.Drawing.Point(629, 55);
+            this.guna2Panel2.Controls.Add(this.lblTopicTechnology);
+            this.guna2Panel2.Location = new System.Drawing.Point(589, 55);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(492, 102);
             this.guna2Panel2.TabIndex = 3;
@@ -114,23 +126,29 @@
             this.cbxTopicrequire.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTopicrequire.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.cbxTopicrequire.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbxTopicrequire.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxTopicrequire.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cbxTopicrequire.ForeColor = System.Drawing.Color.White;
             this.cbxTopicrequire.ItemHeight = 30;
+            this.cbxTopicrequire.Items.AddRange(new object[] {
+            "Web",
+            "Desktop App",
+            "Mobile App",
+            "",
+            ""});
             this.cbxTopicrequire.Location = new System.Drawing.Point(0, 67);
             this.cbxTopicrequire.Name = "cbxTopicrequire";
             this.cbxTopicrequire.Size = new System.Drawing.Size(492, 36);
             this.cbxTopicrequire.TabIndex = 5;
             // 
-            // lblTopicrequire
+            // lblTopicTechnology
             // 
-            this.lblTopicrequire.AutoSize = true;
-            this.lblTopicrequire.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTopicrequire.Location = new System.Drawing.Point(13, 10);
-            this.lblTopicrequire.Name = "lblTopicrequire";
-            this.lblTopicrequire.Size = new System.Drawing.Size(228, 28);
-            this.lblTopicrequire.TabIndex = 5;
-            this.lblTopicrequire.Text = "Topic Requirement";
+            this.lblTopicTechnology.AutoSize = true;
+            this.lblTopicTechnology.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTopicTechnology.Location = new System.Drawing.Point(13, 10);
+            this.lblTopicTechnology.Name = "lblTopicTechnology";
+            this.lblTopicTechnology.Size = new System.Drawing.Size(215, 28);
+            this.lblTopicTechnology.TabIndex = 5;
+            this.lblTopicTechnology.Text = "Topic Technology";
             // 
             // guna2Panel3
             // 
@@ -138,9 +156,9 @@
             this.guna2Panel3.Controls.Add(this.lblStartdate);
             this.guna2Panel3.Controls.Add(this.dtpDateend);
             this.guna2Panel3.Controls.Add(this.dtpStartdate);
-            this.guna2Panel3.Location = new System.Drawing.Point(33, 192);
+            this.guna2Panel3.Location = new System.Drawing.Point(21, 246);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(603, 93);
+            this.guna2Panel3.Size = new System.Drawing.Size(608, 93);
             this.guna2Panel3.TabIndex = 4;
             // 
             // lblEnddate
@@ -173,7 +191,7 @@
             this.dtpDateend.FillColor = System.Drawing.Color.White;
             this.dtpDateend.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpDateend.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpDateend.Location = new System.Drawing.Point(317, 40);
+            this.dtpDateend.Location = new System.Drawing.Point(320, 38);
             this.dtpDateend.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpDateend.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpDateend.Name = "dtpDateend";
@@ -195,7 +213,7 @@
             this.dtpStartdate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpStartdate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpStartdate.Name = "dtpStartdate";
-            this.dtpStartdate.Size = new System.Drawing.Size(285, 52);
+            this.dtpStartdate.Size = new System.Drawing.Size(283, 52);
             this.dtpStartdate.TabIndex = 5;
             this.dtpStartdate.Value = new System.DateTime(2024, 3, 13, 10, 6, 52, 315);
             // 
@@ -203,9 +221,9 @@
             // 
             this.guna2Panel4.Controls.Add(this.txtTopicdescription);
             this.guna2Panel4.Controls.Add(this.lblTopicdescription);
-            this.guna2Panel4.Location = new System.Drawing.Point(33, 335);
+            this.guna2Panel4.Location = new System.Drawing.Point(21, 435);
             this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(1434, 147);
+            this.guna2Panel4.Size = new System.Drawing.Size(608, 147);
             this.guna2Panel4.TabIndex = 5;
             // 
             // txtTopicdescription
@@ -228,7 +246,7 @@
             this.txtTopicdescription.PasswordChar = '\0';
             this.txtTopicdescription.PlaceholderText = "";
             this.txtTopicdescription.SelectedText = "";
-            this.txtTopicdescription.Size = new System.Drawing.Size(1434, 106);
+            this.txtTopicdescription.Size = new System.Drawing.Size(608, 106);
             this.txtTopicdescription.TabIndex = 7;
             // 
             // lblTopicdescription
@@ -263,7 +281,7 @@
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.Size = new System.Drawing.Size(104, 56);
             this.guna2Button2.TabIndex = 8;
-            this.guna2Button2.Text = "Create";
+            this.guna2Button2.Text = "Save";
             // 
             // guna2Button1
             // 
@@ -279,13 +297,139 @@
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(122, 56);
             this.guna2Button1.TabIndex = 7;
-            this.guna2Button1.Text = "Delete";
+            this.guna2Button1.Text = "Clear";
+            // 
+            // guna2Panel6
+            // 
+            this.guna2Panel6.Controls.Add(this.guna2ComboBox1);
+            this.guna2Panel6.Controls.Add(this.label1);
+            this.guna2Panel6.Location = new System.Drawing.Point(1184, 55);
+            this.guna2Panel6.Name = "guna2Panel6";
+            this.guna2Panel6.Size = new System.Drawing.Size(188, 102);
+            this.guna2Panel6.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(106, 28);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Number";
+            // 
+            // guna2Panel7
+            // 
+            this.guna2Panel7.Controls.Add(this.guna2TextBox2);
+            this.guna2Panel7.Controls.Add(this.label2);
+            this.guna2Panel7.Location = new System.Drawing.Point(819, 435);
+            this.guna2Panel7.Name = "guna2Panel7";
+            this.guna2Panel7.Size = new System.Drawing.Size(587, 147);
+            this.guna2Panel7.TabIndex = 8;
+            // 
+            // guna2TextBox2
+            // 
+            this.guna2TextBox2.BorderColor = System.Drawing.Color.Gainsboro;
+            this.guna2TextBox2.BorderRadius = 8;
+            this.guna2TextBox2.BorderThickness = 3;
+            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.guna2TextBox2.DefaultText = "";
+            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2TextBox2.Location = new System.Drawing.Point(0, 41);
+            this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.guna2TextBox2.Name = "guna2TextBox2";
+            this.guna2TextBox2.PasswordChar = '\0';
+            this.guna2TextBox2.PlaceholderText = "";
+            this.guna2TextBox2.SelectedText = "";
+            this.guna2TextBox2.Size = new System.Drawing.Size(587, 106);
+            this.guna2TextBox2.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(228, 28);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Topic Requirement";
+            // 
+            // guna2ComboBox1
+            // 
+            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ComboBox1.BorderColor = System.Drawing.Color.Gainsboro;
+            this.guna2ComboBox1.BorderRadius = 8;
+            this.guna2ComboBox1.BorderThickness = 2;
+            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.guna2ComboBox1.ForeColor = System.Drawing.Color.White;
+            this.guna2ComboBox1.ItemHeight = 30;
+            this.guna2ComboBox1.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"});
+            this.guna2ComboBox1.Location = new System.Drawing.Point(0, 66);
+            this.guna2ComboBox1.Name = "guna2ComboBox1";
+            this.guna2ComboBox1.Size = new System.Drawing.Size(188, 36);
+            this.guna2ComboBox1.TabIndex = 6;
+            // 
+            // guna2Panel8
+            // 
+            this.guna2Panel8.Controls.Add(this.guna2ComboBox2);
+            this.guna2Panel8.Controls.Add(this.label3);
+            this.guna2Panel8.Location = new System.Drawing.Point(827, 246);
+            this.guna2Panel8.Name = "guna2Panel8";
+            this.guna2Panel8.Size = new System.Drawing.Size(489, 100);
+            this.guna2Panel8.TabIndex = 6;
+            // 
+            // guna2ComboBox2
+            // 
+            this.guna2ComboBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ComboBox2.BorderColor = System.Drawing.Color.Gainsboro;
+            this.guna2ComboBox2.BorderRadius = 8;
+            this.guna2ComboBox2.BorderThickness = 2;
+            this.guna2ComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.guna2ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.guna2ComboBox2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.guna2ComboBox2.ForeColor = System.Drawing.Color.White;
+            this.guna2ComboBox2.ItemHeight = 30;
+            this.guna2ComboBox2.Location = new System.Drawing.Point(-3, 64);
+            this.guna2ComboBox2.Name = "guna2ComboBox2";
+            this.guna2ComboBox2.Size = new System.Drawing.Size(492, 36);
+            this.guna2ComboBox2.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(13, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(191, 28);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Topic Category";
             // 
             // UcTask
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Controls.Add(this.guna2Panel8);
+            this.Controls.Add(this.guna2Panel7);
+            this.Controls.Add(this.guna2Panel6);
             this.Controls.Add(this.guna2Panel5);
             this.Controls.Add(this.guna2Panel4);
             this.Controls.Add(this.guna2Panel3);
@@ -302,6 +446,12 @@
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel4.PerformLayout();
             this.guna2Panel5.ResumeLayout(false);
+            this.guna2Panel6.ResumeLayout(false);
+            this.guna2Panel6.PerformLayout();
+            this.guna2Panel7.ResumeLayout(false);
+            this.guna2Panel7.PerformLayout();
+            this.guna2Panel8.ResumeLayout(false);
+            this.guna2Panel8.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -312,7 +462,7 @@
         private Guna.UI2.WinForms.Guna2TextBox txtTopicname;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        private System.Windows.Forms.Label lblTopicrequire;
+        private System.Windows.Forms.Label lblTopicTechnology;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private System.Windows.Forms.Label lblEnddate;
         private System.Windows.Forms.Label lblStartdate;
@@ -325,5 +475,14 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel6;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
+        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
+        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
+        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox2;
+        private System.Windows.Forms.Label label3;
     }
 }

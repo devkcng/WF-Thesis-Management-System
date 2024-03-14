@@ -23,7 +23,7 @@ namespace WFThesisManagementSystem
 
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
-            KryptonForm kform = new FStudentDashboard();
+            KryptonForm kform = new FTeacherDashboard();
            kform.ShowDialog();
         }
     }
