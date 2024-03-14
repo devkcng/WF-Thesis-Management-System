@@ -100,6 +100,12 @@
     <Compile Include="StudentViews\StudentUserControl\UCStudentWorkLogs.Designer.cs">
       <DependentUpon>UCStudentWorkLogs.cs</DependentUpon>
     </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcAllTopics.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcAllTopics.Designer.cs">
+      <DependentUpon>UcAllTopics.cs</DependentUpon>
+    </Compile>
     <Compile Include="TeacherViews\TeacherUserControl\UcClose.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StudentViews\StudentUserControl\UCStudentProject.resx">
       <DependentUpon>UCStudentProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcAllTopics.resx">
+      <DependentUpon>UcAllTopics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcClose.resx">
       <DependentUpon>UcClose.cs</DependentUpon>
