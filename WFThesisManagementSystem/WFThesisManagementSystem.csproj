@@ -36,9 +36,14 @@
     <Reference Include="ComponentFactory.Krypton.Toolkit">
       <HintPath>..\..\Krypton\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
     </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net48\Guna.UI2.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -95,6 +100,54 @@
     <Compile Include="StudentViews\StudentUserControl\UCStudentWorkLogs.Designer.cs">
       <DependentUpon>UCStudentWorkLogs.cs</DependentUpon>
     </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcClose.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcClose.Designer.cs">
+      <DependentUpon>UcClose.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcEditInfor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcEditInfor.Designer.cs">
+      <DependentUpon>UcEditInfor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcInfor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcInfor.Designer.cs">
+      <DependentUpon>UcInfor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcMaximize.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcMaximize.Designer.cs">
+      <DependentUpon>UcMaximize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcMenuleft.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcMenuleft.Designer.cs">
+      <DependentUpon>UcMenuleft.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcMenutop.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcMenutop.Designer.cs">
+      <DependentUpon>UcMenutop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcMinimized.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcMinimized.Designer.cs">
+      <DependentUpon>UcMinimized.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcTask.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcTask.Designer.cs">
+      <DependentUpon>UcTask.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -117,6 +170,31 @@
     <EmbeddedResource Include="StudentViews\StudentUserControl\UCStudentProject.resx">
       <DependentUpon>UCStudentProject.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcClose.resx">
+      <DependentUpon>UcClose.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcEditInfor.resx">
+      <DependentUpon>UcEditInfor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcInfor.resx">
+      <DependentUpon>UcInfor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcMaximize.resx">
+      <DependentUpon>UcMaximize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcMenuleft.resx">
+      <DependentUpon>UcMenuleft.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcMenutop.resx">
+      <DependentUpon>UcMenutop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcMinimized.resx">
+      <DependentUpon>UcMinimized.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTask.resx">
+      <DependentUpon>UcTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -157,6 +235,71 @@
   <ItemGroup>
     <None Include="Resources\Female User.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\apply.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coronavirus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\education.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\email.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help-web-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kien.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize-sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pin %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\telephone-call.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\to-do-list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="TeacherViews\Views\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
