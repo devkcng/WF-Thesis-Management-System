@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 using WFThesisManagementSystem.StudentViews.Views;
-using WFThesisManagementSystem.Views.StudentViews;
+using WFThesisManagementSystem.TeacherViews.Views;
+
 
 namespace WFThesisManagementSystem
 {
@@ -23,7 +24,7 @@ namespace WFThesisManagementSystem
         private void kryptonButton1_Click(object sender, EventArgs e)
         {
             KryptonForm kform = new FStudentDashboard();
-            kform.Show();
+           kform.ShowDialog();
         }
     }
 }
