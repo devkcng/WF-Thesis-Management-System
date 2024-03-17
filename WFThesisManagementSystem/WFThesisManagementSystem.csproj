@@ -100,7 +100,9 @@
     <Compile Include="StudentViews\StudentUserControl\UCStudentWorkLogs.Designer.cs">
       <DependentUpon>UCStudentWorkLogs.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentViews\Views\FStudentTaskPopUp.cs" />
+    <Compile Include="StudentViews\Views\FStudentTaskPopUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="StudentViews\Views\FStudentTaskPopUp.Designer.cs">
       <DependentUpon>FStudentTaskPopUp.cs</DependentUpon>
     </Compile>
