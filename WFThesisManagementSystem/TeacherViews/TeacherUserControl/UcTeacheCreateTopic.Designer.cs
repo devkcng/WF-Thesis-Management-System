@@ -1,6 +1,6 @@
 ﻿namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
 {
-    partial class UcTeacheCreateTopicr
+    partial class UcTeacheCreateTopic
     {
         /// <summary> 
         /// Required designer variable.
@@ -34,11 +34,6 @@
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.cbxTopicrequire = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblTopicTechnology = new System.Windows.Forms.Label();
-            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblEnddate = new System.Windows.Forms.Label();
-            this.lblStartdate = new System.Windows.Forms.Label();
-            this.dtpDateend = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.dtpStartdate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.txtTopicdescription = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblTopicdescription = new System.Windows.Forms.Label();
@@ -46,17 +41,16 @@
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ComboBox2 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
-            this.guna2Panel3.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
@@ -150,80 +144,13 @@
             this.lblTopicTechnology.TabIndex = 5;
             this.lblTopicTechnology.Text = "Topic Technology";
             // 
-            // guna2Panel3
-            // 
-            this.guna2Panel3.Controls.Add(this.lblEnddate);
-            this.guna2Panel3.Controls.Add(this.lblStartdate);
-            this.guna2Panel3.Controls.Add(this.dtpDateend);
-            this.guna2Panel3.Controls.Add(this.dtpStartdate);
-            this.guna2Panel3.Location = new System.Drawing.Point(21, 246);
-            this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(608, 93);
-            this.guna2Panel3.TabIndex = 4;
-            // 
-            // lblEnddate
-            // 
-            this.lblEnddate.AutoSize = true;
-            this.lblEnddate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEnddate.Location = new System.Drawing.Point(312, 10);
-            this.lblEnddate.Name = "lblEnddate";
-            this.lblEnddate.Size = new System.Drawing.Size(116, 28);
-            this.lblEnddate.TabIndex = 8;
-            this.lblEnddate.Text = "End Date";
-            // 
-            // lblStartdate
-            // 
-            this.lblStartdate.AutoSize = true;
-            this.lblStartdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStartdate.Location = new System.Drawing.Point(3, 10);
-            this.lblStartdate.Name = "lblStartdate";
-            this.lblStartdate.Size = new System.Drawing.Size(124, 28);
-            this.lblStartdate.TabIndex = 7;
-            this.lblStartdate.Text = "Start Date";
-            // 
-            // dtpDateend
-            // 
-            this.dtpDateend.BackColor = System.Drawing.SystemColors.Control;
-            this.dtpDateend.BorderColor = System.Drawing.Color.Gainsboro;
-            this.dtpDateend.BorderRadius = 8;
-            this.dtpDateend.BorderThickness = 2;
-            this.dtpDateend.Checked = true;
-            this.dtpDateend.FillColor = System.Drawing.Color.White;
-            this.dtpDateend.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpDateend.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpDateend.Location = new System.Drawing.Point(320, 38);
-            this.dtpDateend.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpDateend.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpDateend.Name = "dtpDateend";
-            this.dtpDateend.Size = new System.Drawing.Size(283, 52);
-            this.dtpDateend.TabIndex = 6;
-            this.dtpDateend.Value = new System.DateTime(2024, 3, 13, 10, 7, 4, 277);
-            // 
-            // dtpStartdate
-            // 
-            this.dtpStartdate.BackColor = System.Drawing.SystemColors.Control;
-            this.dtpStartdate.BorderColor = System.Drawing.Color.Gainsboro;
-            this.dtpStartdate.BorderRadius = 8;
-            this.dtpStartdate.BorderThickness = 2;
-            this.dtpStartdate.Checked = true;
-            this.dtpStartdate.FillColor = System.Drawing.Color.White;
-            this.dtpStartdate.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpStartdate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpStartdate.Location = new System.Drawing.Point(0, 38);
-            this.dtpStartdate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpStartdate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpStartdate.Name = "dtpStartdate";
-            this.dtpStartdate.Size = new System.Drawing.Size(283, 52);
-            this.dtpStartdate.TabIndex = 5;
-            this.dtpStartdate.Value = new System.DateTime(2024, 3, 13, 10, 6, 52, 315);
-            // 
             // guna2Panel4
             // 
             this.guna2Panel4.Controls.Add(this.txtTopicdescription);
             this.guna2Panel4.Controls.Add(this.lblTopicdescription);
             this.guna2Panel4.Location = new System.Drawing.Point(21, 435);
             this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(608, 147);
+            this.guna2Panel4.Size = new System.Drawing.Size(1155, 147);
             this.guna2Panel4.TabIndex = 5;
             // 
             // txtTopicdescription
@@ -246,7 +173,7 @@
             this.txtTopicdescription.PasswordChar = '\0';
             this.txtTopicdescription.PlaceholderText = "";
             this.txtTopicdescription.SelectedText = "";
-            this.txtTopicdescription.Size = new System.Drawing.Size(608, 106);
+            this.txtTopicdescription.Size = new System.Drawing.Size(1155, 106);
             this.txtTopicdescription.TabIndex = 7;
             // 
             // lblTopicdescription
@@ -308,6 +235,31 @@
             this.guna2Panel6.Size = new System.Drawing.Size(188, 102);
             this.guna2Panel6.TabIndex = 7;
             // 
+            // guna2ComboBox1
+            // 
+            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ComboBox1.BorderColor = System.Drawing.Color.Gainsboro;
+            this.guna2ComboBox1.BorderRadius = 8;
+            this.guna2ComboBox1.BorderThickness = 2;
+            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.guna2ComboBox1.ForeColor = System.Drawing.Color.White;
+            this.guna2ComboBox1.ItemHeight = 30;
+            this.guna2ComboBox1.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"});
+            this.guna2ComboBox1.Location = new System.Drawing.Point(0, 66);
+            this.guna2ComboBox1.Name = "guna2ComboBox1";
+            this.guna2ComboBox1.Size = new System.Drawing.Size(188, 36);
+            this.guna2ComboBox1.TabIndex = 6;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -322,7 +274,7 @@
             // 
             this.guna2Panel7.Controls.Add(this.guna2TextBox2);
             this.guna2Panel7.Controls.Add(this.label2);
-            this.guna2Panel7.Location = new System.Drawing.Point(819, 435);
+            this.guna2Panel7.Location = new System.Drawing.Point(589, 235);
             this.guna2Panel7.Name = "guna2Panel7";
             this.guna2Panel7.Size = new System.Drawing.Size(587, 147);
             this.guna2Panel7.TabIndex = 8;
@@ -360,36 +312,11 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Topic Requirement";
             // 
-            // guna2ComboBox1
-            // 
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.BorderColor = System.Drawing.Color.Gainsboro;
-            this.guna2ComboBox1.BorderRadius = 8;
-            this.guna2ComboBox1.BorderThickness = 2;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.White;
-            this.guna2ComboBox1.ItemHeight = 30;
-            this.guna2ComboBox1.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6"});
-            this.guna2ComboBox1.Location = new System.Drawing.Point(0, 66);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.Size = new System.Drawing.Size(188, 36);
-            this.guna2ComboBox1.TabIndex = 6;
-            // 
             // guna2Panel8
             // 
             this.guna2Panel8.Controls.Add(this.guna2ComboBox2);
             this.guna2Panel8.Controls.Add(this.label3);
-            this.guna2Panel8.Location = new System.Drawing.Point(827, 246);
+            this.guna2Panel8.Location = new System.Drawing.Point(29, 259);
             this.guna2Panel8.Name = "guna2Panel8";
             this.guna2Panel8.Size = new System.Drawing.Size(489, 100);
             this.guna2Panel8.TabIndex = 6;
@@ -422,7 +349,7 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Topic Category";
             // 
-            // UcTask
+            // UcTeacheCreateTopic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -432,17 +359,14 @@
             this.Controls.Add(this.guna2Panel6);
             this.Controls.Add(this.guna2Panel5);
             this.Controls.Add(this.guna2Panel4);
-            this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
-            this.Name = "UcTask";
+            this.Name = "UcTeacheCreateTopic";
             this.Size = new System.Drawing.Size(1494, 726);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
-            this.guna2Panel3.ResumeLayout(false);
-            this.guna2Panel3.PerformLayout();
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel4.PerformLayout();
             this.guna2Panel5.ResumeLayout(false);
@@ -463,11 +387,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private System.Windows.Forms.Label lblTopicTechnology;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
-        private System.Windows.Forms.Label lblEnddate;
-        private System.Windows.Forms.Label lblStartdate;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpDateend;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpStartdate;
         private Guna.UI2.WinForms.Guna2ComboBox cbxTopicrequire;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         private Guna.UI2.WinForms.Guna2TextBox txtTopicdescription;

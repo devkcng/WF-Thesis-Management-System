@@ -103,6 +103,16 @@ namespace WFThesisManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Chat {
+            get {
+                object obj = ResourceManager.GetObject("Chat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap coronavirus {
             get {
                 object obj = ResourceManager.GetObject("coronavirus", resourceCulture);
@@ -186,6 +196,16 @@ namespace WFThesisManagementSystem.Properties {
         internal static System.Drawing.Bitmap Hexagon_Synchronize {
             get {
                 object obj = ResourceManager.GetObject("Hexagon Synchronize", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Idea {
+            get {
+                object obj = ResourceManager.GetObject("Idea", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

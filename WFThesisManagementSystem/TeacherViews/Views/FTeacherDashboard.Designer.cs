@@ -47,8 +47,8 @@
             this.menuStrip3 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.ucAllTopics1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcAllTopics();
-            this.ucTask1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacheCreateTopicr();
+            this.ucAllTopics1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherAllTopics();
+            this.ucTask1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacheCreateTopic();
             this.menuStrip2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menuStrip3.SuspendLayout();
@@ -323,7 +323,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
         private System.Windows.Forms.MenuStrip menuStrip3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private TeacherUserControl.UcAllTopics ucAllTopics1;
-        private TeacherUserControl.UcTeacheCreateTopicr ucTask1;
+        private TeacherUserControl.UcTeacherAllTopics ucAllTopics1;
+        private TeacherUserControl.UcTeacheCreateTopic ucTask1;
     }
 }
