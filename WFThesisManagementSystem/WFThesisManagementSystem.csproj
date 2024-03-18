@@ -14,7 +14,7 @@
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -64,6 +64,18 @@
     <Compile Include="Models\IPerson.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentViews\StudentUserControl\UCTask.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StudentViews\StudentUserControl\UCTask.Designer.cs">
+      <DependentUpon>UCTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentViews\StudentUserControl\UCWorkLog.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StudentViews\StudentUserControl\UCWorkLog.Designer.cs">
+      <DependentUpon>UCWorkLog.cs</DependentUpon>
+    </Compile>
     <Compile Include="StudentViews\Views\FStudentDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +221,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="StudentViews\StudentUserControl\UCStudentTask.resx">
+      <DependentUpon>UCStudentTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentViews\StudentUserControl\UCStudentWorkLogs.resx">
+      <DependentUpon>UCStudentWorkLogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentViews\StudentUserControl\UCTask.resx">
+      <DependentUpon>UCTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentViews\StudentUserControl\UCWorkLog.resx">
+      <DependentUpon>UCWorkLog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StudentViews\Views\FStudentDashboard.resx">
       <DependentUpon>FStudentDashboard.cs</DependentUpon>
     </EmbeddedResource>

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace WFThesisManagementSystem.Views.StudentViews
 {
     public partial class UCStudentProject : UserControl
@@ -15,6 +16,15 @@ namespace WFThesisManagementSystem.Views.StudentViews
         public UCStudentProject()
         {
             InitializeComponent();
+            addUserControl();
+        }
+        private void addUserControl()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                UCProject uc = new UCProject();
+                flowLayoutPanelContainer.Controls.Add(uc);
+            }
         }
     }
 }
