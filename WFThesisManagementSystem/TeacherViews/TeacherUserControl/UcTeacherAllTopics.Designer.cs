@@ -29,62 +29,65 @@
         private void InitializeComponent()
         {
             this.lblTopics = new System.Windows.Forms.Label();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.flpTopicView = new System.Windows.Forms.FlowLayoutPanel();
             this.ucTeacherSingleTopic1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherSingleTopic();
+            this.btnCreate = new Guna.UI2.WinForms.Guna2Button();
             this.flpTopicView.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTopics
             // 
             this.lblTopics.AutoSize = true;
-            this.lblTopics.Location = new System.Drawing.Point(74, 46);
+            this.lblTopics.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTopics.Location = new System.Drawing.Point(74, 37);
             this.lblTopics.Name = "lblTopics";
-            this.lblTopics.Size = new System.Drawing.Size(55, 20);
+            this.lblTopics.Size = new System.Drawing.Size(113, 38);
             this.lblTopics.TabIndex = 2;
             this.lblTopics.Text = "Topics";
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(761, 30);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(180, 45);
-            this.guna2Button1.TabIndex = 9;
-            this.guna2Button1.Text = "Create";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // flpTopicView
             // 
             this.flpTopicView.AutoScroll = true;
             this.flpTopicView.Controls.Add(this.ucTeacherSingleTopic1);
             this.flpTopicView.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flpTopicView.Location = new System.Drawing.Point(78, 108);
+            this.flpTopicView.Location = new System.Drawing.Point(73, 112);
             this.flpTopicView.Name = "flpTopicView";
-            this.flpTopicView.Size = new System.Drawing.Size(919, 494);
+            this.flpTopicView.Size = new System.Drawing.Size(924, 494);
             this.flpTopicView.TabIndex = 10;
             this.flpTopicView.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // ucTeacherSingleTopic1
             // 
             this.ucTeacherSingleTopic1.BackColor = System.Drawing.Color.White;
+            this.ucTeacherSingleTopic1.Button = null;
+            this.ucTeacherSingleTopic1.Description = null;
             this.ucTeacherSingleTopic1.Location = new System.Drawing.Point(3, 3);
             this.ucTeacherSingleTopic1.Name = "ucTeacherSingleTopic1";
-            this.ucTeacherSingleTopic1.Size = new System.Drawing.Size(883, 267);
+            this.ucTeacherSingleTopic1.Size = new System.Drawing.Size(907, 230);
             this.ucTeacherSingleTopic1.TabIndex = 0;
-            this.ucTeacherSingleTopic1.Load += new System.EventHandler(this.ucTeacherSingleTopic1_Load);
+            // 
+            // btnCreate
+            // 
+            this.btnCreate.BorderRadius = 5;
+            this.btnCreate.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCreate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCreate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCreate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCreate.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreate.ForeColor = System.Drawing.Color.White;
+            this.btnCreate.Location = new System.Drawing.Point(849, 30);
+            this.btnCreate.Name = "btnCreate";
+            this.btnCreate.Size = new System.Drawing.Size(116, 45);
+            this.btnCreate.TabIndex = 11;
+            this.btnCreate.Text = "Create";
             // 
             // UcTeacherAllTopics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.flpTopicView);
-            this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.lblTopics);
             this.Name = "UcTeacherAllTopics";
             this.Size = new System.Drawing.Size(1082, 809);
@@ -96,9 +99,9 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label lblTopics;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private System.Windows.Forms.FlowLayoutPanel flpTopicView;
-        private UcTeacherSingleTopic ucTeacherSingleTopic1;
+        public System.Windows.Forms.Label lblTopics;
+        public System.Windows.Forms.FlowLayoutPanel flpTopicView;
+        public UcTeacherSingleTopic ucTeacherSingleTopic1;
+        public Guna.UI2.WinForms.Guna2Button btnCreate;
     }
 }

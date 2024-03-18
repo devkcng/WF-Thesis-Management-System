@@ -31,16 +31,16 @@
             this.lblDescription = new System.Windows.Forms.Label();
             this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
             this.lblLine = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.plName = new System.Windows.Forms.Panel();
+            this.lblName = new System.Windows.Forms.Label();
+            this.plName.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(62, 167);
+            this.lblDescription.Location = new System.Drawing.Point(45, 149);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(147, 30);
             this.lblDescription.TabIndex = 3;
@@ -56,40 +56,41 @@
             this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnEdit.ForeColor = System.Drawing.Color.White;
             this.btnEdit.Image = global::WFThesisManagementSystem.Properties.Resources.Create;
-            this.btnEdit.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnEdit.Location = new System.Drawing.Point(680, 28);
+            this.btnEdit.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnEdit.Location = new System.Drawing.Point(830, 39);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(85, 66);
+            this.btnEdit.Size = new System.Drawing.Size(53, 48);
             this.btnEdit.TabIndex = 1;
             // 
             // lblLine
             // 
             this.lblLine.AutoSize = true;
-            this.lblLine.Location = new System.Drawing.Point(46, 87);
+            this.lblLine.Location = new System.Drawing.Point(46, 104);
             this.lblLine.Name = "lblLine";
-            this.lblLine.Size = new System.Drawing.Size(719, 20);
+            this.lblLine.Size = new System.Drawing.Size(849, 20);
             this.lblLine.TabIndex = 5;
             this.lblLine.Text = "---------------------------------------------------------------------------------" +
-    "-------------------------------------------------------------";
+    "--------------------------------------------------------------------------------" +
+    "-------";
             // 
-            // panel1
+            // plName
             // 
-            this.panel1.BackColor = System.Drawing.Color.LightBlue;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(50, 28);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(609, 73);
-            this.panel1.TabIndex = 6;
+            this.plName.BackColor = System.Drawing.Color.LightBlue;
+            this.plName.Controls.Add(this.lblName);
+            this.plName.Location = new System.Drawing.Point(50, 21);
+            this.plName.Name = "plName";
+            this.plName.Size = new System.Drawing.Size(741, 73);
+            this.plName.TabIndex = 6;
             // 
-            // label1
+            // lblName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 30);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Name";
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(12, 18);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(87, 30);
+            this.lblName.TabIndex = 7;
+            this.lblName.Text = "Name";
             // 
             // UcTeacherSingleTopic
             // 
@@ -97,13 +98,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.lblDescription);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.plName);
             this.Controls.Add(this.lblLine);
             this.Controls.Add(this.btnEdit);
             this.Name = "UcTeacherSingleTopic";
-            this.Size = new System.Drawing.Size(834, 267);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Size = new System.Drawing.Size(907, 230);
+            this.Load += new System.EventHandler(this.UcTeacherSingleTopic_Load);
+            this.plName.ResumeLayout(false);
+            this.plName.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,7 +115,7 @@
         private Guna.UI2.WinForms.Guna2Button btnEdit;
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.Label lblLine;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel plName;
+        private System.Windows.Forms.Label lblName;
     }
 }

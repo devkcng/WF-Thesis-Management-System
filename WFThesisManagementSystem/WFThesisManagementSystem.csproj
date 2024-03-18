@@ -178,11 +178,11 @@
     <Compile Include="TeacherViews\TeacherUserControl\UcTeacherSingleTopic.Designer.cs">
       <DependentUpon>UcTeacherSingleTopic.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcTeacheCreateTopic.cs">
+    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherCreateTopic.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcTeacheCreateTopic.Designer.cs">
-      <DependentUpon>UcTeacheCreateTopic.cs</DependentUpon>
+    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherCreateTopic.Designer.cs">
+      <DependentUpon>UcTeacherCreateTopic.cs</DependentUpon>
     </Compile>
     <Compile Include="TeacherViews\TeacherUserControl\UcTeacherAllTask.cs">
       <SubType>UserControl</SubType>
@@ -201,6 +201,12 @@
     </Compile>
     <Compile Include="TeacherViews\TeacherUserControl\UcTeacherEditTopic.Designer.cs">
       <DependentUpon>UcTeacherEditTopic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherViews\Views\FTeacherCreateTopic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeacherViews\Views\FTeacherCreateTopic.Designer.cs">
+      <DependentUpon>FTeacherCreateTopic.cs</DependentUpon>
     </Compile>
     <Compile Include="TeacherViews\Views\FTeacherDashboard.cs">
       <SubType>Form</SubType>
@@ -275,8 +281,8 @@
     <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherSingleTopic.resx">
       <DependentUpon>UcTeacherSingleTopic.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacheCreateTopic.resx">
-      <DependentUpon>UcTeacheCreateTopic.cs</DependentUpon>
+    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherCreateTopic.resx">
+      <DependentUpon>UcTeacherCreateTopic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherAllTask.resx">
       <DependentUpon>UcTeacherAllTask.cs</DependentUpon>
@@ -286,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherEditTopic.resx">
       <DependentUpon>UcTeacherEditTopic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherViews\Views\FTeacherCreateTopic.resx">
+      <DependentUpon>FTeacherCreateTopic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherViews\Views\FTeacherDashboard.resx">
       <DependentUpon>FTeacherDashboard.cs</DependentUpon>

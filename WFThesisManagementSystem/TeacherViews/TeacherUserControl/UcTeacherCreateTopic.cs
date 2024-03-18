@@ -2,9 +2,9 @@
 
 namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
 {
-    public partial class UcTeacheCreateTopic : UserControl
+    public partial class UcTeacherCreateTopic : UserControl
     {
-        public UcTeacheCreateTopic()
+        public UcTeacherCreateTopic()
         {
             InitializeComponent();
         }

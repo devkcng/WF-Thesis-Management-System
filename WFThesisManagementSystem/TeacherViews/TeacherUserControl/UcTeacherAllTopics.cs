@@ -16,20 +16,28 @@ namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
         public UcTeacherAllTopics()
         {
             InitializeComponent();
-            UcTeacheCreateTopic uc = new UcTeacheCreateTopic();
-            uc.Hide();
+           
+        }
+        public void ListTopic()
+        {
+            UcTeacherSingleTopic[] topics = new UcTeacherSingleTopic[20];
+            flpTopicView.Controls.Clear();
+            for (int i = 0; i < topics.Length; i++)
+            {
+                topics[i] = new UcTeacherSingleTopic();
+                topics[i].Name = "Kiến thức chuyên ngành";
+                topics[i].Description = "Khó";
+                flpTopicView.Controls.Add(topics[i]);
+            }    
+
         }
 
         private void ucSingletopic1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-            UserControl uc = new UcTeacheCreateTopic();
-            uc.Show();
-        }
+       
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -43,11 +51,12 @@ namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
 
         private void UcTeacherAllTopics_Load(object sender, EventArgs e)
         {
-            TopicCreated();
+            ListTopic();
         }
 
-        private void TopicCreated()
+        private void btnCreate_Click(object sender, EventArgs e)
         {
+           
         }
     }
 }
