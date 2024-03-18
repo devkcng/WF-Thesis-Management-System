@@ -7,11 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-namespace WFThesisManagementSystem.StudentViews.Views
+
+namespace WFThesisManagementSystem.StudentViews.StudentUserControl
 {
-    public partial class FStudentTaskPopUp : Form
+    public partial class UCWorkLog : UserControl
     {
-        public FStudentTaskPopUp()
+        public UCWorkLog()
         {
             InitializeComponent();
         }

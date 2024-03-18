@@ -52,12 +52,13 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.label17 = new System.Windows.Forms.Label();
             this.guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -90,7 +91,6 @@
             this.label2.Size = new System.Drawing.Size(244, 33);
             this.label2.TabIndex = 2;
             this.label2.Text = "Make a suitable form";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -322,6 +322,17 @@
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(157, 57);
             this.guna2ShadowPanel1.TabIndex = 37;
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font(".VnBahamasB", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(50, 18);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(51, 27);
+            this.label17.TabIndex = 41;
+            this.label17.Text = "High";
+            // 
             // guna2ShadowPanel2
             // 
             this.guna2ShadowPanel2.BackColor = System.Drawing.Color.Transparent;
@@ -344,17 +355,6 @@
             this.label16.Size = new System.Drawing.Size(108, 27);
             this.label16.TabIndex = 40;
             this.label16.Text = "Completed";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font(".VnBahamasB", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(50, 18);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(51, 27);
-            this.label17.TabIndex = 41;
-            this.label17.Text = "High";
             // 
             // guna2TextBox3
             // 
@@ -444,7 +444,6 @@
             this.Controls.Add(this.label3);
             this.Name = "FStudentTaskPopUp";
             this.Text = "FStudentTaskPopUp";
-            this.Load += new System.EventHandler(this.FStudentTaskPopUp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -491,5 +490,6 @@
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
         private System.Windows.Forms.Label label14;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
