@@ -36,8 +36,8 @@
             this.kryptonContextMenuItem1 = new ComponentFactory.Krypton.Toolkit.KryptonContextMenuItem();
             this.kryptonContextMenuRadioButton1 = new ComponentFactory.Krypton.Toolkit.KryptonContextMenuRadioButton();
             this.kryptonContextMenuCheckButton1 = new ComponentFactory.Krypton.Toolkit.KryptonContextMenuCheckButton();
-            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this.projectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MSListFolder = new System.Windows.Forms.MenuStrip();
+            this.Project = new System.Windows.Forms.ToolStripMenuItem();
             this.task = new System.Windows.Forms.ToolStripMenuItem();
             this.worklogs = new System.Windows.Forms.ToolStripMenuItem();
             this.performance = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,9 +47,8 @@
             this.menuStrip3 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.ucAllTopics1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherAllTopics();
-            this.ucTask1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacheCreateTopic();
-            this.menuStrip2.SuspendLayout();
+            this.ucTeacherAllTopics1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherAllTopics();
+            this.MSListFolder.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menuStrip3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -132,36 +131,36 @@
             // 
             this.kryptonContextMenuCheckButton1.Text = "CheckButton";
             // 
-            // menuStrip2
+            // MSListFolder
             // 
-            this.menuStrip2.BackColor = System.Drawing.Color.White;
-            this.menuStrip2.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.menuStrip2.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
-            this.menuStrip2.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.projectToolStripMenuItem,
+            this.MSListFolder.BackColor = System.Drawing.Color.White;
+            this.MSListFolder.Dock = System.Windows.Forms.DockStyle.None;
+            this.MSListFolder.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.MSListFolder.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.MSListFolder.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.MSListFolder.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Project,
             this.task,
             this.worklogs,
             this.performance,
             this.logout});
-            this.menuStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
-            this.menuStrip2.Location = new System.Drawing.Point(0, 5);
-            this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip2.Size = new System.Drawing.Size(213, 184);
-            this.menuStrip2.TabIndex = 1;
-            this.menuStrip2.Text = "menuStrip2";
+            this.MSListFolder.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
+            this.MSListFolder.Location = new System.Drawing.Point(0, 5);
+            this.MSListFolder.Name = "MSListFolder";
+            this.MSListFolder.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.MSListFolder.Size = new System.Drawing.Size(213, 212);
+            this.MSListFolder.TabIndex = 1;
+            this.MSListFolder.Text = "menuStrip2";
             // 
-            // projectToolStripMenuItem
+            // Project
             // 
-            this.projectToolStripMenuItem.BackColor = System.Drawing.Color.Wheat;
-            this.projectToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.projectToolStripMenuItem.Image = global::WFThesisManagementSystem.Properties.Resources.Edit;
-            this.projectToolStripMenuItem.Name = "projectToolStripMenuItem";
-            this.projectToolStripMenuItem.Size = new System.Drawing.Size(143, 36);
-            this.projectToolStripMenuItem.Text = "Project";
-            this.projectToolStripMenuItem.Click += new System.EventHandler(this.bookToolStripMenuItem_Click);
+            this.Project.BackColor = System.Drawing.Color.Wheat;
+            this.Project.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Project.Image = global::WFThesisManagementSystem.Properties.Resources.Edit;
+            this.Project.Name = "Project";
+            this.Project.Size = new System.Drawing.Size(143, 36);
+            this.Project.Text = "Project";
+            this.Project.Click += new System.EventHandler(this.Project_Click);
             // 
             // task
             // 
@@ -171,6 +170,7 @@
             this.task.Name = "task";
             this.task.Size = new System.Drawing.Size(111, 36);
             this.task.Text = "Task";
+            this.task.Click += new System.EventHandler(this.task_Click);
             // 
             // worklogs
             // 
@@ -198,6 +198,7 @@
             this.logout.Name = "logout";
             this.logout.Size = new System.Drawing.Size(150, 36);
             this.logout.Text = "Log out";
+            this.logout.Click += new System.EventHandler(this.logout_Click);
             // 
             // panel1
             // 
@@ -208,7 +209,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 3);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1645, 72);
+            this.panel1.Size = new System.Drawing.Size(1325, 72);
             this.panel1.TabIndex = 2;
             // 
             // kryptonLabel1
@@ -232,7 +233,7 @@
             this.menuStrip3.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1});
-            this.menuStrip3.Location = new System.Drawing.Point(1584, 6);
+            this.menuStrip3.Location = new System.Drawing.Point(1872, 15);
             this.menuStrip3.Name = "menuStrip3";
             this.menuStrip3.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
             this.menuStrip3.Size = new System.Drawing.Size(144, 40);
@@ -253,46 +254,37 @@
             // 
             this.panel2.AutoSize = true;
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.menuStrip2);
+            this.panel2.Controls.Add(this.MSListFolder);
             this.panel2.Location = new System.Drawing.Point(2, 75);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(234, 771);
             this.panel2.TabIndex = 3;
             // 
-            // ucAllTopics1
+            // ucTeacherAllTopics1
             // 
-            this.ucAllTopics1.Location = new System.Drawing.Point(243, 75);
-            this.ucAllTopics1.Name = "ucAllTopics1";
-            this.ucAllTopics1.Size = new System.Drawing.Size(1143, 771);
-            this.ucAllTopics1.TabIndex = 4;
-            this.ucAllTopics1.Load += new System.EventHandler(this.ucAllTopics1_Load);
-            // 
-            // ucTask1
-            // 
-            this.ucTask1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ucTask1.Location = new System.Drawing.Point(71, 61);
-            this.ucTask1.Name = "ucTask1";
-            this.ucTask1.Size = new System.Drawing.Size(1494, 771);
-            this.ucTask1.TabIndex = 5;
+            this.ucTeacherAllTopics1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ucTeacherAllTopics1.Location = new System.Drawing.Point(243, 75);
+            this.ucTeacherAllTopics1.Name = "ucTeacherAllTopics1";
+            this.ucTeacherAllTopics1.Size = new System.Drawing.Size(1082, 809);
+            this.ucTeacherAllTopics1.TabIndex = 6;
             // 
             // FTeacherDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1689, 844);
-            this.Controls.Add(this.ucAllTopics1);
+            this.Controls.Add(this.ucTeacherAllTopics1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.ucTask1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FTeacherDashboard";
             this.Palette = this.kryptonPalette1;
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FTeacherDashboard";
-            this.menuStrip2.ResumeLayout(false);
-            this.menuStrip2.PerformLayout();
+            this.MSListFolder.ResumeLayout(false);
+            this.MSListFolder.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.menuStrip3.ResumeLayout(false);
@@ -312,8 +304,8 @@
         private ComponentFactory.Krypton.Toolkit.KryptonContextMenuItem kryptonContextMenuItem1;
         private ComponentFactory.Krypton.Toolkit.KryptonContextMenuRadioButton kryptonContextMenuRadioButton1;
         private ComponentFactory.Krypton.Toolkit.KryptonContextMenuCheckButton kryptonContextMenuCheckButton1;
-        private System.Windows.Forms.MenuStrip menuStrip2;
-        private System.Windows.Forms.ToolStripMenuItem projectToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip MSListFolder;
+        private System.Windows.Forms.ToolStripMenuItem Project;
         private System.Windows.Forms.ToolStripMenuItem task;
         private System.Windows.Forms.ToolStripMenuItem worklogs;
         private System.Windows.Forms.ToolStripMenuItem performance;
@@ -323,7 +315,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
         private System.Windows.Forms.MenuStrip menuStrip3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private TeacherUserControl.UcTeacherAllTopics ucAllTopics1;
-        private TeacherUserControl.UcTeacheCreateTopic ucTask1;
+        private TeacherUserControl.UcTeacherAllTopics ucTeacherAllTopics1;
     }
 }
