@@ -15,7 +15,7 @@ namespace WFThesisManagementSystem.Views.StudentViews
         public UCProject()
         {
             InitializeComponent();
-            this.Anchor = AnchorStyles.Top | AnchorStyles.Left /*| AnchorStyles.Bottom*/ /*| AnchorStyles.Right*/; // Gắn UserControl ở cả bốn góc
+            this.Anchor = AnchorStyles.Top | AnchorStyles.Left;
             this.SizeChanged += UCProject_SizeChanged;
 
         }
