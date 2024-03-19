@@ -297,7 +297,7 @@
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-            this.Load += new System.EventHandler(this.FStudentDashboard_Resize);
+            //this.Load += new System.EventHandler(this.FStudentDashboard_Resize);
 
 
         }
