@@ -61,6 +61,7 @@
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(53, 48);
             this.btnEdit.TabIndex = 1;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // lblLine
             // 
@@ -112,10 +113,10 @@
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2Button btnEdit;
-        private System.Windows.Forms.Label lblDescription;
-        private System.Windows.Forms.Label lblLine;
+        public Guna.UI2.WinForms.Guna2Button btnEdit;
+        public System.Windows.Forms.Label lblDescription;
+        public System.Windows.Forms.Label lblLine;
         private System.Windows.Forms.Panel plName;
-        private System.Windows.Forms.Label lblName;
+        public System.Windows.Forms.Label lblName;
     }
 }

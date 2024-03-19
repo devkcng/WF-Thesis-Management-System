@@ -1,6 +1,6 @@
 ﻿namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
 {
-    partial class UcInfor
+    partial class UcTeacherInfor
     {
         /// <summary> 
         /// Required designer variable.
@@ -30,12 +30,12 @@
         {
             this.ptbInfor = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblName = new System.Windows.Forms.Label();
-            this.lblAddress = new System.Windows.Forms.Label();
             this.lblCountry = new System.Windows.Forms.Label();
+            this.lblAddress = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblPhone = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
+            this.lblPhone = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ptbInfor)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -45,7 +45,7 @@
             // 
             this.ptbInfor.BackColor = System.Drawing.SystemColors.Control;
             this.ptbInfor.ImageRotate = 0F;
-            this.ptbInfor.Location = new System.Drawing.Point(71, 3);
+            this.ptbInfor.Location = new System.Drawing.Point(71, 20);
             this.ptbInfor.Name = "ptbInfor";
             this.ptbInfor.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.ptbInfor.Size = new System.Drawing.Size(184, 184);
@@ -62,17 +62,17 @@
             this.panel1.Size = new System.Drawing.Size(200, 178);
             this.panel1.TabIndex = 1;
             // 
-            // lblName
+            // lblCountry
             // 
-            this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Image = global::WFThesisManagementSystem.Properties.Resources.user;
-            this.lblName.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblName.Location = new System.Drawing.Point(34, 26);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(119, 28);
-            this.lblName.TabIndex = 0;
-            this.lblName.Text = "     Name";
+            this.lblCountry.AutoSize = true;
+            this.lblCountry.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCountry.Image = global::WFThesisManagementSystem.Properties.Resources.coronavirus;
+            this.lblCountry.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblCountry.Location = new System.Drawing.Point(32, 132);
+            this.lblCountry.Name = "lblCountry";
+            this.lblCountry.Size = new System.Drawing.Size(142, 30);
+            this.lblCountry.TabIndex = 2;
+            this.lblCountry.Text = "     Country";
             // 
             // lblAddress
             // 
@@ -86,17 +86,17 @@
             this.lblAddress.TabIndex = 1;
             this.lblAddress.Text = "     Address";
             // 
-            // lblCountry
+            // lblName
             // 
-            this.lblCountry.AutoSize = true;
-            this.lblCountry.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCountry.Image = global::WFThesisManagementSystem.Properties.Resources.coronavirus;
-            this.lblCountry.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblCountry.Location = new System.Drawing.Point(32, 132);
-            this.lblCountry.Name = "lblCountry";
-            this.lblCountry.Size = new System.Drawing.Size(142, 30);
-            this.lblCountry.TabIndex = 2;
-            this.lblCountry.Text = "     Country";
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Image = global::WFThesisManagementSystem.Properties.Resources.user;
+            this.lblName.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblName.Location = new System.Drawing.Point(34, 26);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(119, 28);
+            this.lblName.TabIndex = 0;
+            this.lblName.Text = "     Name";
             // 
             // panel2
             // 
@@ -106,18 +106,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 125);
             this.panel2.TabIndex = 2;
-            // 
-            // lblPhone
-            // 
-            this.lblPhone.AutoSize = true;
-            this.lblPhone.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhone.Image = global::WFThesisManagementSystem.Properties.Resources.telephone_call;
-            this.lblPhone.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblPhone.Location = new System.Drawing.Point(38, 19);
-            this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(124, 30);
-            this.lblPhone.TabIndex = 0;
-            this.lblPhone.Text = "     Phone";
             // 
             // lblEmail
             // 
@@ -130,6 +118,18 @@
             this.lblEmail.Size = new System.Drawing.Size(113, 30);
             this.lblEmail.TabIndex = 1;
             this.lblEmail.Text = "     Email";
+            // 
+            // lblPhone
+            // 
+            this.lblPhone.AutoSize = true;
+            this.lblPhone.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhone.Image = global::WFThesisManagementSystem.Properties.Resources.telephone_call;
+            this.lblPhone.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblPhone.Location = new System.Drawing.Point(38, 19);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(124, 30);
+            this.lblPhone.TabIndex = 0;
+            this.lblPhone.Text = "     Phone";
             // 
             // UcInfor
             // 

@@ -130,17 +130,17 @@
     <Compile Include="TeacherViews\TeacherUserControl\UcClose.Designer.cs">
       <DependentUpon>UcClose.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcEditInfor.cs">
+    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherEditInfor.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcEditInfor.Designer.cs">
-      <DependentUpon>UcEditInfor.cs</DependentUpon>
+    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherEditInfor.Designer.cs">
+      <DependentUpon>UcTeacherEditInfor.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcInfor.cs">
+    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherInfor.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcInfor.Designer.cs">
-      <DependentUpon>UcInfor.cs</DependentUpon>
+    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherInfor.Designer.cs">
+      <DependentUpon>UcTeacherInfor.cs</DependentUpon>
     </Compile>
     <Compile Include="TeacherViews\TeacherUserControl\UcMaximize.cs">
       <SubType>UserControl</SubType>
@@ -214,6 +214,12 @@
     <Compile Include="TeacherViews\Views\FTeacherDashboard.Designer.cs">
       <DependentUpon>FTeacherDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="TeacherViews\Views\FTeacherEditTopic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeacherViews\Views\FTeacherEditTopic.Designer.cs">
+      <DependentUpon>FTeacherEditTopic.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -257,11 +263,11 @@
     <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcClose.resx">
       <DependentUpon>UcClose.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcEditInfor.resx">
-      <DependentUpon>UcEditInfor.cs</DependentUpon>
+    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherEditInfor.resx">
+      <DependentUpon>UcTeacherEditInfor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcInfor.resx">
-      <DependentUpon>UcInfor.cs</DependentUpon>
+    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherInfor.resx">
+      <DependentUpon>UcTeacherInfor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcMaximize.resx">
       <DependentUpon>UcMaximize.cs</DependentUpon>
@@ -298,6 +304,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherViews\Views\FTeacherDashboard.resx">
       <DependentUpon>FTeacherDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherViews\Views\FTeacherEditTopic.resx">
+      <DependentUpon>FTeacherEditTopic.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

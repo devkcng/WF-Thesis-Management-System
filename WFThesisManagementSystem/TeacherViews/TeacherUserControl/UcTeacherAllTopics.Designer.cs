@@ -49,7 +49,6 @@
             // 
             this.flpTopicView.AutoScroll = true;
             this.flpTopicView.Controls.Add(this.ucTeacherSingleTopic1);
-            this.flpTopicView.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flpTopicView.Location = new System.Drawing.Point(73, 112);
             this.flpTopicView.Name = "flpTopicView";
             this.flpTopicView.Size = new System.Drawing.Size(924, 494);
@@ -63,7 +62,7 @@
             this.ucTeacherSingleTopic1.Description = null;
             this.ucTeacherSingleTopic1.Location = new System.Drawing.Point(3, 3);
             this.ucTeacherSingleTopic1.Name = "ucTeacherSingleTopic1";
-            this.ucTeacherSingleTopic1.Size = new System.Drawing.Size(907, 230);
+            this.ucTeacherSingleTopic1.Size = new System.Drawing.Size(911, 230);
             this.ucTeacherSingleTopic1.TabIndex = 0;
             // 
             // btnCreate
@@ -90,7 +89,7 @@
             this.Controls.Add(this.flpTopicView);
             this.Controls.Add(this.lblTopics);
             this.Name = "UcTeacherAllTopics";
-            this.Size = new System.Drawing.Size(1082, 809);
+            this.Size = new System.Drawing.Size(1082, 642);
             this.Load += new System.EventHandler(this.UcTeacherAllTopics_Load);
             this.flpTopicView.ResumeLayout(false);
             this.ResumeLayout(false);

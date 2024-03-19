@@ -8,6 +8,7 @@ using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WFThesisManagementSystem.TeacherViews.Views;
 
 namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
 {
@@ -18,7 +19,7 @@ namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
             InitializeComponent();
            
         }
-        public void ListTopic()
+        private void ListTopic()
         {
             UcTeacherSingleTopic[] topics = new UcTeacherSingleTopic[20];
             flpTopicView.Controls.Clear();
@@ -27,10 +28,12 @@ namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
                 topics[i] = new UcTeacherSingleTopic();
                 topics[i].Name = "Kiến thức chuyên ngành";
                 topics[i].Description = "Khó";
+                //topics[i].Button.Click += editTopic;
                 flpTopicView.Controls.Add(topics[i]);
             }    
 
         }
+       
 
         private void ucSingletopic1_Load(object sender, EventArgs e)
         {

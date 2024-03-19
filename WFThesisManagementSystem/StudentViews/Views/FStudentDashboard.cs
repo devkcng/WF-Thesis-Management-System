@@ -39,7 +39,7 @@ namespace WFThesisManagementSystem.StudentViews.Views
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            UcInfor uc= new UcInfor();
+            UcTeacherInfor uc= new UcTeacherInfor();
             addUserControl(uc);
         }
 

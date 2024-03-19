@@ -25,8 +25,8 @@ namespace WFThesisManagementSystem.TeacherViews.Views
         private void Clear(object sender, EventArgs e)
         {
             ucTeacherCreateTopic1.txtTopicRequirement.Clear();
-            ucTeacherCreateTopic1.txtTopicdescription.Clear();
-            ucTeacherCreateTopic1.txtTopicname.Clear();
+            ucTeacherCreateTopic1.txtTopicDescription.Clear();
+            ucTeacherCreateTopic1.txtTopicName.Clear();
 
         }
     }
