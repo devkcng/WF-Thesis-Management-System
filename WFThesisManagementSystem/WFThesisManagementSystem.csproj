@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccess\DBConnect.cs" />
     <Compile Include="FLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -421,5 +422,6 @@
   <ItemGroup>
     <None Include="Resources\Chat.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
