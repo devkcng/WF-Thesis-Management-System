@@ -15,6 +15,24 @@ VALUES
 (4, 'Sophia Brown', 17, '12th'),
 (5, 'Emma Jones', 16, '11th');
 
+-- Creating the StudentAccount table
+CREATE TABLE StudentAccount (
+    student_account_id INT PRIMARY KEY,
+    student_id INT,
+    student_username VARCHAR(50) UNIQUE,
+    student_password VARCHAR(50),
+    FOREIGN KEY (student_id) REFERENCES Student(student_id)
+);
+
+-- Inserting data into StudentAccount table
+INSERT INTO StudentAccount (student_account_id, student_id, student_username, student_password) 
+VALUES 
+(1, 1, 'johnsmith123', 'password1'),
+(2, 2, 'emilyj22', 'password2'),
+(3, 3, 'michaelw98', 'password3'),
+(4, 4, 'sophiabrown123', 'password4'),
+(5, 5, 'emmaj', 'password5');
+
 -- Creating the Teacher table
 CREATE TABLE Teacher (
     teacher_id INT PRIMARY KEY,
@@ -28,6 +46,22 @@ VALUES
 (1, 'Mr. Anderson', 'Mathematics'),
 (2, 'Ms. Davis', 'Science'),
 (3, 'Mrs. Wilson', 'English');
+
+-- Creating the TeacherAccount table
+CREATE TABLE TeacherAccount (
+    teacher_account_id INT PRIMARY KEY,
+    teacher_id INT,
+    teacher_username VARCHAR(50) UNIQUE,
+    teacher_password VARCHAR(50),
+    FOREIGN KEY (teacher_id) REFERENCES Teacher(teacher_id)
+);
+
+-- Inserting data into TeacherAccount table
+INSERT INTO TeacherAccount (teacher_account_id, teacher_id, teacher_username, teacher_password) 
+VALUES 
+(1, 1, 'mr_anderson', 'teacherpass1'),
+(2, 2, 'ms_davis', 'teacherpass2'),
+(3, 3, 'mrs_wilson', 'teacherpass3');
 
 -- Creating the Topics table
 CREATE TABLE Topics (
