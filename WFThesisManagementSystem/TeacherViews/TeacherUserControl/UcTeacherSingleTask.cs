@@ -23,7 +23,12 @@ namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
         private string time;
         private Guna2Button chat;
         private PictureBox image;
-
+        
+        public string Time
+        {
+            get { return time; }
+            set { time = value; lblTimeAndOrdinalNumber.Text = value; }
+        }
         public string Name
         {
             get { return name; }

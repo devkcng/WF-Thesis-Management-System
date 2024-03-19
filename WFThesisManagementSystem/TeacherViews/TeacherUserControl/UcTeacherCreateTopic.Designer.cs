@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblNametopic = new System.Windows.Forms.Label();
-            this.txtTopicname = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblTopicName = new System.Windows.Forms.Label();
+            this.txtTopicName = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.cbxTopicrequire = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbxTopicTechnology = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblTopicTechnology = new System.Windows.Forms.Label();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.txtTopicdescription = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblTopicdescription = new System.Windows.Forms.Label();
+            this.txtTopicDescription = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblTopicDescription = new System.Windows.Forms.Label();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.btnClear = new Guna.UI2.WinForms.Guna2Button();
@@ -58,44 +58,44 @@
             this.guna2Panel8.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblNametopic
+            // lblTopicName
             // 
-            this.lblNametopic.AutoSize = true;
-            this.lblNametopic.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNametopic.Location = new System.Drawing.Point(14, 10);
-            this.lblNametopic.Name = "lblNametopic";
-            this.lblNametopic.Size = new System.Drawing.Size(153, 28);
-            this.lblNametopic.TabIndex = 0;
-            this.lblNametopic.Text = "Topic Name";
+            this.lblTopicName.AutoSize = true;
+            this.lblTopicName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTopicName.Location = new System.Drawing.Point(14, 10);
+            this.lblTopicName.Name = "lblTopicName";
+            this.lblTopicName.Size = new System.Drawing.Size(153, 28);
+            this.lblTopicName.TabIndex = 0;
+            this.lblTopicName.Text = "Topic Name";
             // 
-            // txtTopicname
+            // txtTopicName
             // 
-            this.txtTopicname.BorderColor = System.Drawing.Color.Gainsboro;
-            this.txtTopicname.BorderRadius = 8;
-            this.txtTopicname.BorderThickness = 2;
-            this.txtTopicname.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTopicname.DefaultText = "";
-            this.txtTopicname.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtTopicname.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTopicname.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTopicname.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTopicname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTopicname.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTopicname.ForeColor = System.Drawing.Color.Black;
-            this.txtTopicname.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTopicname.Location = new System.Drawing.Point(0, 47);
-            this.txtTopicname.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.txtTopicname.Name = "txtTopicname";
-            this.txtTopicname.PasswordChar = '\0';
-            this.txtTopicname.PlaceholderText = "";
-            this.txtTopicname.SelectedText = "";
-            this.txtTopicname.Size = new System.Drawing.Size(492, 52);
-            this.txtTopicname.TabIndex = 1;
+            this.txtTopicName.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtTopicName.BorderRadius = 8;
+            this.txtTopicName.BorderThickness = 2;
+            this.txtTopicName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTopicName.DefaultText = "";
+            this.txtTopicName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTopicName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTopicName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTopicName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTopicName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTopicName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTopicName.ForeColor = System.Drawing.Color.Black;
+            this.txtTopicName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTopicName.Location = new System.Drawing.Point(0, 47);
+            this.txtTopicName.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtTopicName.Name = "txtTopicName";
+            this.txtTopicName.PasswordChar = '\0';
+            this.txtTopicName.PlaceholderText = "";
+            this.txtTopicName.SelectedText = "";
+            this.txtTopicName.Size = new System.Drawing.Size(492, 52);
+            this.txtTopicName.TabIndex = 1;
             // 
             // guna2Panel1
             // 
-            this.guna2Panel1.Controls.Add(this.txtTopicname);
-            this.guna2Panel1.Controls.Add(this.lblNametopic);
+            this.guna2Panel1.Controls.Add(this.txtTopicName);
+            this.guna2Panel1.Controls.Add(this.lblTopicName);
             this.guna2Panel1.Location = new System.Drawing.Point(33, 55);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(492, 102);
@@ -103,36 +103,36 @@
             // 
             // guna2Panel2
             // 
-            this.guna2Panel2.Controls.Add(this.cbxTopicrequire);
+            this.guna2Panel2.Controls.Add(this.cbxTopicTechnology);
             this.guna2Panel2.Controls.Add(this.lblTopicTechnology);
             this.guna2Panel2.Location = new System.Drawing.Point(567, 55);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(492, 102);
             this.guna2Panel2.TabIndex = 3;
             // 
-            // cbxTopicrequire
+            // cbxTopicTechnology
             // 
-            this.cbxTopicrequire.BackColor = System.Drawing.Color.Transparent;
-            this.cbxTopicrequire.BorderColor = System.Drawing.Color.Gainsboro;
-            this.cbxTopicrequire.BorderRadius = 8;
-            this.cbxTopicrequire.BorderThickness = 2;
-            this.cbxTopicrequire.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbxTopicrequire.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxTopicrequire.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbxTopicrequire.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbxTopicrequire.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cbxTopicrequire.ForeColor = System.Drawing.Color.Black;
-            this.cbxTopicrequire.ItemHeight = 30;
-            this.cbxTopicrequire.Items.AddRange(new object[] {
+            this.cbxTopicTechnology.BackColor = System.Drawing.Color.Transparent;
+            this.cbxTopicTechnology.BorderColor = System.Drawing.Color.Gainsboro;
+            this.cbxTopicTechnology.BorderRadius = 8;
+            this.cbxTopicTechnology.BorderThickness = 2;
+            this.cbxTopicTechnology.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxTopicTechnology.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxTopicTechnology.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbxTopicTechnology.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbxTopicTechnology.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cbxTopicTechnology.ForeColor = System.Drawing.Color.Black;
+            this.cbxTopicTechnology.ItemHeight = 30;
+            this.cbxTopicTechnology.Items.AddRange(new object[] {
             "Web",
             "Desktop App",
             "Mobile App",
             "",
             ""});
-            this.cbxTopicrequire.Location = new System.Drawing.Point(0, 63);
-            this.cbxTopicrequire.Name = "cbxTopicrequire";
-            this.cbxTopicrequire.Size = new System.Drawing.Size(492, 36);
-            this.cbxTopicrequire.TabIndex = 5;
+            this.cbxTopicTechnology.Location = new System.Drawing.Point(0, 63);
+            this.cbxTopicTechnology.Name = "cbxTopicTechnology";
+            this.cbxTopicTechnology.Size = new System.Drawing.Size(492, 36);
+            this.cbxTopicTechnology.TabIndex = 5;
             // 
             // lblTopicTechnology
             // 
@@ -146,46 +146,46 @@
             // 
             // guna2Panel4
             // 
-            this.guna2Panel4.Controls.Add(this.txtTopicdescription);
-            this.guna2Panel4.Controls.Add(this.lblTopicdescription);
+            this.guna2Panel4.Controls.Add(this.txtTopicDescription);
+            this.guna2Panel4.Controls.Add(this.lblTopicDescription);
             this.guna2Panel4.Location = new System.Drawing.Point(30, 435);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(1146, 147);
             this.guna2Panel4.TabIndex = 5;
             // 
-            // txtTopicdescription
+            // txtTopicDescription
             // 
-            this.txtTopicdescription.BorderColor = System.Drawing.Color.Gainsboro;
-            this.txtTopicdescription.BorderRadius = 8;
-            this.txtTopicdescription.BorderThickness = 3;
-            this.txtTopicdescription.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTopicdescription.DefaultText = "";
-            this.txtTopicdescription.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtTopicdescription.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTopicdescription.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTopicdescription.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTopicdescription.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTopicdescription.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtTopicdescription.ForeColor = System.Drawing.Color.Black;
-            this.txtTopicdescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTopicdescription.Location = new System.Drawing.Point(0, 33);
-            this.txtTopicdescription.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtTopicdescription.Name = "txtTopicdescription";
-            this.txtTopicdescription.PasswordChar = '\0';
-            this.txtTopicdescription.PlaceholderText = "";
-            this.txtTopicdescription.SelectedText = "";
-            this.txtTopicdescription.Size = new System.Drawing.Size(1142, 106);
-            this.txtTopicdescription.TabIndex = 7;
+            this.txtTopicDescription.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtTopicDescription.BorderRadius = 8;
+            this.txtTopicDescription.BorderThickness = 3;
+            this.txtTopicDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTopicDescription.DefaultText = "";
+            this.txtTopicDescription.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTopicDescription.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTopicDescription.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTopicDescription.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTopicDescription.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTopicDescription.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtTopicDescription.ForeColor = System.Drawing.Color.Black;
+            this.txtTopicDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTopicDescription.Location = new System.Drawing.Point(0, 33);
+            this.txtTopicDescription.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTopicDescription.Name = "txtTopicDescription";
+            this.txtTopicDescription.PasswordChar = '\0';
+            this.txtTopicDescription.PlaceholderText = "";
+            this.txtTopicDescription.SelectedText = "";
+            this.txtTopicDescription.Size = new System.Drawing.Size(1142, 106);
+            this.txtTopicDescription.TabIndex = 7;
             // 
-            // lblTopicdescription
+            // lblTopicDescription
             // 
-            this.lblTopicdescription.AutoSize = true;
-            this.lblTopicdescription.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTopicdescription.Location = new System.Drawing.Point(3, 0);
-            this.lblTopicdescription.Name = "lblTopicdescription";
-            this.lblTopicdescription.Size = new System.Drawing.Size(211, 28);
-            this.lblTopicdescription.TabIndex = 6;
-            this.lblTopicdescription.Text = "Topic Description";
+            this.lblTopicDescription.AutoSize = true;
+            this.lblTopicDescription.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTopicDescription.Location = new System.Drawing.Point(3, 0);
+            this.lblTopicDescription.Name = "lblTopicDescription";
+            this.lblTopicDescription.Size = new System.Drawing.Size(211, 28);
+            this.lblTopicDescription.TabIndex = 6;
+            this.lblTopicDescription.Text = "Topic Description";
             // 
             // guna2Panel5
             // 
@@ -384,15 +384,15 @@
 
         #endregion
 
-        public System.Windows.Forms.Label lblNametopic;
-        public Guna.UI2.WinForms.Guna2TextBox txtTopicname;
+        public System.Windows.Forms.Label lblTopicName;
+        public Guna.UI2.WinForms.Guna2TextBox txtTopicName;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         public System.Windows.Forms.Label lblTopicTechnology;
-        public Guna.UI2.WinForms.Guna2ComboBox cbxTopicrequire;
+        public Guna.UI2.WinForms.Guna2ComboBox cbxTopicTechnology;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
-        public Guna.UI2.WinForms.Guna2TextBox txtTopicdescription;
-        public System.Windows.Forms.Label lblTopicdescription;
+        public Guna.UI2.WinForms.Guna2TextBox txtTopicDescription;
+        public System.Windows.Forms.Label lblTopicDescription;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         public Guna.UI2.WinForms.Guna2Button btnSave;
         public Guna.UI2.WinForms.Guna2Button btnClear;

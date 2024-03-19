@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WFThesisManagementSystem.TeacherViews.Views;
 
 namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
 {
@@ -46,6 +47,15 @@ namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
             set { button = value; btnEdit = value; }
         }
         #endregion
+        //private void editTopic(object sender, EventArgs e)
+        //{
+            
+        //}
 
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            FTeacherEditTopic fTeacherEditTopic = new FTeacherEditTopic();
+            fTeacherEditTopic.Show();
+        }
     }
 }
