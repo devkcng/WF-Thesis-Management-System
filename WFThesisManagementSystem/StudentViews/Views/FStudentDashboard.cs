@@ -15,8 +15,9 @@ namespace WFThesisManagementSystem.StudentViews.Views
         public FStudentDashboard()
         {
             InitializeComponent();
-            originalFormSize = new Rectangle(this.Location.X, this.Location.Y, this.Size.Width, this.Size.Height);
-            panelOriginalRectangle = new Rectangle(panelContainer.Location.X, panelContainer.Location.Y, panelContainer.Size.Width, panelContainer.Size.Height);
+            //    originalFormSize = new Rectangle(this.Location.X, this.Location.Y, this.Size.Width, this.Size.Height);
+            //    panelOriginalRectangle = new Rectangle(panelContainer.Location.X, panelContainer.Location.Y, panelContainer.Size.Width, panelContainer.Size.Height);
+            //}
         }
         private void addUserControl(UserControl userControl)
         {
