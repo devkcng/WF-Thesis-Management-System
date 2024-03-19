@@ -30,7 +30,7 @@ namespace WFThesisManagementSystem.Views.StudentViews
             for (int i = 0; i < 10; i++)
             {
                 UCProject uc = new UCProject();
-                uc.Width = flowLayoutPanelContainer.Width; // Đặt Width của UserControl bằng Width của FlowLayoutPanel
+                uc.Width = flowLayoutPanelContainer.Width; 
                 flowLayoutPanelContainer.Controls.Add(uc);
             }
         }
