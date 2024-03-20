@@ -141,6 +141,12 @@
     <Compile Include="TeacherViews\TeacherUserControl\UcTeacherEditInfor.Designer.cs">
       <DependentUpon>UcTeacherEditInfor.cs</DependentUpon>
     </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherHeadingSingleMark.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherHeadingSingleMark.Designer.cs">
+      <DependentUpon>UcTeacherHeadingSingleMark.cs</DependentUpon>
+    </Compile>
     <Compile Include="TeacherViews\TeacherUserControl\UcTeacherInfor.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -170,6 +176,12 @@
     </Compile>
     <Compile Include="TeacherViews\TeacherUserControl\UcMinimized.Designer.cs">
       <DependentUpon>UcMinimized.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherSingleMark.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherSingleMark.Designer.cs">
+      <DependentUpon>UcTeacherSingleMark.cs</DependentUpon>
     </Compile>
     <Compile Include="TeacherViews\TeacherUserControl\UcTeacherSingleTask.cs">
       <SubType>UserControl</SubType>
@@ -271,6 +283,9 @@
     <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherEditInfor.resx">
       <DependentUpon>UcTeacherEditInfor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherHeadingSingleMark.resx">
+      <DependentUpon>UcTeacherHeadingSingleMark.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherInfor.resx">
       <DependentUpon>UcTeacherInfor.cs</DependentUpon>
     </EmbeddedResource>
@@ -285,6 +300,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcMinimized.resx">
       <DependentUpon>UcMinimized.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherSingleMark.resx">
+      <DependentUpon>UcTeacherSingleMark.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherSingleTask.resx">
       <DependentUpon>UcTeacherSingleTask.cs</DependentUpon>
@@ -426,6 +444,20 @@
   <ItemGroup>
     <None Include="Resources\Chat.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\user1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chat1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Student Male.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Down Arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Down Arrow1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

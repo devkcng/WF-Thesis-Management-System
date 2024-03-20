@@ -51,7 +51,7 @@
             this.flpTopicView.Controls.Add(this.ucTeacherSingleTopic1);
             this.flpTopicView.Location = new System.Drawing.Point(73, 112);
             this.flpTopicView.Name = "flpTopicView";
-            this.flpTopicView.Size = new System.Drawing.Size(924, 494);
+            this.flpTopicView.Size = new System.Drawing.Size(1181, 617);
             this.flpTopicView.TabIndex = 10;
             this.flpTopicView.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
@@ -74,7 +74,7 @@
             this.btnCreate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnCreate.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreate.ForeColor = System.Drawing.Color.White;
-            this.btnCreate.Location = new System.Drawing.Point(849, 30);
+            this.btnCreate.Location = new System.Drawing.Point(1110, 37);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(116, 45);
             this.btnCreate.TabIndex = 11;
@@ -89,7 +89,7 @@
             this.Controls.Add(this.flpTopicView);
             this.Controls.Add(this.lblTopics);
             this.Name = "UcTeacherAllTopics";
-            this.Size = new System.Drawing.Size(1082, 642);
+            this.Size = new System.Drawing.Size(1311, 764);
             this.Load += new System.EventHandler(this.UcTeacherAllTopics_Load);
             this.flpTopicView.ResumeLayout(false);
             this.ResumeLayout(false);

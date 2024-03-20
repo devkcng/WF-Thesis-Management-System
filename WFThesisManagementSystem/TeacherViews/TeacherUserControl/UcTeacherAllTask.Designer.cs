@@ -38,9 +38,9 @@
             // 
             this.flpAllTasks.AutoScroll = true;
             this.flpAllTasks.Controls.Add(this.ucTeacherSingleTask1);
-            this.flpAllTasks.Location = new System.Drawing.Point(75, 110);
+            this.flpAllTasks.Location = new System.Drawing.Point(198, 113);
             this.flpAllTasks.Name = "flpAllTasks";
-            this.flpAllTasks.Size = new System.Drawing.Size(843, 512);
+            this.flpAllTasks.Size = new System.Drawing.Size(1023, 567);
             this.flpAllTasks.TabIndex = 6;
             // 
             // ucTeacherSingleTask1
@@ -50,14 +50,15 @@
             this.ucTeacherSingleTask1.Location = new System.Drawing.Point(3, 3);
             this.ucTeacherSingleTask1.Name = "ucTeacherSingleTask1";
             this.ucTeacherSingleTask1.NameTeacher = null;
-            this.ucTeacherSingleTask1.Size = new System.Drawing.Size(840, 134);
+            this.ucTeacherSingleTask1.Size = new System.Drawing.Size(840, 133);
             this.ucTeacherSingleTask1.TabIndex = 0;
+            this.ucTeacherSingleTask1.Time = null;
             // 
             // lblTasks
             // 
             this.lblTasks.AutoSize = true;
             this.lblTasks.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTasks.Location = new System.Drawing.Point(71, 39);
+            this.lblTasks.Location = new System.Drawing.Point(194, 41);
             this.lblTasks.Name = "lblTasks";
             this.lblTasks.Size = new System.Drawing.Size(98, 38);
             this.lblTasks.TabIndex = 12;
@@ -71,7 +72,7 @@
             this.Controls.Add(this.lblTasks);
             this.Controls.Add(this.flpAllTasks);
             this.Name = "UcTeacherAllTask";
-            this.Size = new System.Drawing.Size(985, 669);
+            this.Size = new System.Drawing.Size(1305, 787);
             this.Load += new System.EventHandler(this.UcTeacherAllTask_Load);
             this.flpAllTasks.ResumeLayout(false);
             this.ResumeLayout(false);
