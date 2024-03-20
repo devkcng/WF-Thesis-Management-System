@@ -9,7 +9,7 @@ using System.IO;
 
 namespace WFThesisManagementSystem.DataAccess
 {
-    internal class DBConnect
+    public class DBConnect
     {
         private const string DatabaseRelativePath = @"..\..\..\DATABASE\ThesisManagement.mdf";
 
@@ -18,7 +18,7 @@ namespace WFThesisManagementSystem.DataAccess
         private static readonly string DatabaseFilePath = Path.GetFullPath(Path.Combine(ExecutablePath, DatabaseRelativePath));
 
         private static readonly string ConnectionString = $"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename={DatabaseFilePath};Integrated Security=True";
-        private readonly SqlConnection _conn = new SqlConnection(ConnectionString);
+        public readonly SqlConnection _conn = new SqlConnection(ConnectionString);
 
         public bool ExecuteSqlQuery(string sqlStr)
         {
