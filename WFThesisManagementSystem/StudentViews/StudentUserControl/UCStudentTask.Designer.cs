@@ -28,47 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.ucTask1 = new WFThesisManagementSystem.StudentViews.StudentUserControl.UCTask();
-            this.ucTask2 = new WFThesisManagementSystem.StudentViews.StudentUserControl.UCTask();
-            this.ucTask3 = new WFThesisManagementSystem.StudentViews.StudentUserControl.UCTask();
+            this.flowLayoutPanelContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // flowLayoutPanel1
+            // flowLayoutPanelContainer
             // 
-            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel1.Controls.Add(this.ucTask1);
-            this.flowLayoutPanel1.Controls.Add(this.ucTask2);
-            this.flowLayoutPanel1.Controls.Add(this.ucTask3);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 61);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1226, 626);
-            this.flowLayoutPanel1.TabIndex = 0;
-            // 
-            // ucTask1
-            // 
-            this.ucTask1.Location = new System.Drawing.Point(3, 3);
-            this.ucTask1.Name = "ucTask1";
-            this.ucTask1.Size = new System.Drawing.Size(897, 119);
-            this.ucTask1.TabIndex = 0;
-            // 
-            // ucTask2
-            // 
-            this.ucTask2.Location = new System.Drawing.Point(3, 128);
-            this.ucTask2.Name = "ucTask2";
-            this.ucTask2.Size = new System.Drawing.Size(897, 119);
-            this.ucTask2.TabIndex = 1;
-            // 
-            // ucTask3
-            // 
-            this.ucTask3.Location = new System.Drawing.Point(3, 253);
-            this.ucTask3.Name = "ucTask3";
-            this.ucTask3.Size = new System.Drawing.Size(897, 119);
-            this.ucTask3.TabIndex = 2;
+            this.flowLayoutPanelContainer.AutoScroll = true;
+            this.flowLayoutPanelContainer.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.flowLayoutPanelContainer.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanelContainer.Location = new System.Drawing.Point(0, 61);
+            this.flowLayoutPanelContainer.Name = "flowLayoutPanelContainer";
+            this.flowLayoutPanelContainer.Size = new System.Drawing.Size(1226, 626);
+            this.flowLayoutPanelContainer.TabIndex = 0;
             // 
             // label1
             // 
@@ -85,10 +57,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.flowLayoutPanelContainer);
             this.Name = "UCStudentTask";
             this.Size = new System.Drawing.Size(1226, 687);
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -96,10 +67,7 @@
 
         #endregion
 
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private WFThesisManagementSystem.StudentViews.StudentUserControl.UCTask ucTask1;
-        private WFThesisManagementSystem.StudentViews.StudentUserControl.UCTask ucTask2;
-        private WFThesisManagementSystem.StudentViews.StudentUserControl.UCTask ucTask3;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelContainer;
         private System.Windows.Forms.Label label1;
     }
 }
