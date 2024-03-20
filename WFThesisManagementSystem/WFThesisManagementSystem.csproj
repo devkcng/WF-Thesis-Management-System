@@ -221,11 +221,6 @@
     <Compile Include="TeacherViews\Views\FTeacherEditTopic.Designer.cs">
       <DependentUpon>FTeacherEditTopic.cs</DependentUpon>
     </Compile>
-    <Compile Include="ThesisManagementDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ThesisManagementDataSet.xsd</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -324,17 +319,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="ThesisManagementDataSet.xsc">
-      <DependentUpon>ThesisManagementDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="ThesisManagementDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ThesisManagementDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="ThesisManagementDataSet.xss">
-      <DependentUpon>ThesisManagementDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
