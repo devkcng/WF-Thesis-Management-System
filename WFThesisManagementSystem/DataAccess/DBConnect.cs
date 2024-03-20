@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
+using System.Windows.Forms;
 
 namespace WFThesisManagementSystem.DataAccess
 {
@@ -38,21 +39,21 @@ namespace WFThesisManagementSystem.DataAccess
                 _conn.Close();
             }
         }
-        public DataTable LoadData(string tablename)
+        public DataTable LoadData(string tableName)
         {
             DataTable dt = new DataTable();
             try
             {
                 _conn.Open();
-                string sqlStr = string.Format("SELECT *FROM {0}", tablename);
+                string sqlStr = string.Format("SELECT *FROM {0}", tableName);
                 SqlDataAdapter adapter = new SqlDataAdapter(sqlStr, _conn);
-                DataTable dtTopics = new DataTable();
-                adapter.Fill(dtTopics);
-                dt = dtTopics; /// gvHsinh = name cua data gridview
+                DataTable dtTable = new DataTable();
+                adapter.Fill(dtTable);
+                dt = dtTable; 
             }
             catch (Exception exc)
             {
-                //MessageBox.Show(exc.Message);
+                MessageBox.Show(exc.Message);
             }
             finally
             {
