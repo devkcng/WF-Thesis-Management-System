@@ -8,15 +8,21 @@ namespace WFThesisManagementSystem.Models
 {
     public class Topic
     {
-        private string id;
-        private string name;
-        private string description;
-        private string category;
-        private string technology;
-        private string requirement;
-        private string number;
+        
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        
+        public string Category { get; set; }
+
+        public string Technology { get; set; }
+
+        public string Requirement { get; set; }
+
+        public int MaxMember { get; set; }
+
         public Topic() { }
-        public Topic(string id, string name,string description,string category,string technology,string requirement,string number)
+        public Topic(int id, string name,string description,string category,string technology,string requirement,int maxMember)
         {
             Id = id;
             Name = name;
@@ -24,58 +30,10 @@ namespace WFThesisManagementSystem.Models
             Category = category;
             Technology = technology;
             Requirement = requirement;
-            Number = number;
+            MaxMember = maxMember;
         }
 
-        public string Id
-        {
-            get { return id; }
-            set
-            {
-                id = value;
-            }
-        }
-
-        public string Name
-        {
-            get { return name; }
-            set { name = value; }
-        }
-        public string Description
-        {
-            get { return description; }
-            set { description = value; }
-        }
-        public string Category
-        {
-            get { return category; }
-            set
-            {
-                category = value;
-            }
-
-        }
-        public string Technology
-        {
-            get { return technology; }
-            set { technology = value; }
-        }
-        public string Requirement
-        {
-            get { return requirement; }
-            set
-            {
-                requirement = value;
-            }
-        }
-        public string Number
-        {
-            get { return number; }
-            set
-            {
-                number = value;
-            }
-        }
+        
 
     }
 }
