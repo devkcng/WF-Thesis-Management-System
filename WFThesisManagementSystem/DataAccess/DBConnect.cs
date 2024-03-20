@@ -38,5 +38,27 @@ namespace WFThesisManagementSystem.DataAccess
                 _conn.Close();
             }
         }
+        public DataTable LoadData(string tablename)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                _conn.Open();
+                string sqlStr = string.Format("SELECT *FROM {0}", tablename);
+                SqlDataAdapter adapter = new SqlDataAdapter(sqlStr, _conn);
+                DataTable dtTopics = new DataTable();
+                adapter.Fill(dtTopics);
+                dt = dtTopics; /// gvHsinh = name cua data gridview
+            }
+            catch (Exception exc)
+            {
+                //MessageBox.Show(exc.Message);
+            }
+            finally
+            {
+                _conn.Close();
+            }
+            return dt;
+        }
     }
 }

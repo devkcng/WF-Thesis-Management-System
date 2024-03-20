@@ -125,9 +125,8 @@
             this.cbxTopicTechnology.ItemHeight = 30;
             this.cbxTopicTechnology.Items.AddRange(new object[] {
             "Web",
-            "Desktop App",
-            "Mobile App",
-            "",
+            "App",
+            "Mobile",
             ""});
             this.cbxTopicTechnology.Location = new System.Drawing.Point(0, 63);
             this.cbxTopicTechnology.Name = "cbxTopicTechnology";
@@ -210,6 +209,7 @@
             this.btnSave.Size = new System.Drawing.Size(104, 56);
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "Save";
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClear
             // 
@@ -336,6 +336,10 @@
             this.cbxTopicCategory.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cbxTopicCategory.ForeColor = System.Drawing.Color.Black;
             this.cbxTopicCategory.ItemHeight = 30;
+            this.cbxTopicCategory.Items.AddRange(new object[] {
+            "Math",
+            "Chemical",
+            "History"});
             this.cbxTopicCategory.Location = new System.Drawing.Point(3, 61);
             this.cbxTopicCategory.Name = "cbxTopicCategory";
             this.cbxTopicCategory.Size = new System.Drawing.Size(479, 36);
