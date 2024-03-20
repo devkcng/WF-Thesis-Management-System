@@ -8,5 +8,10 @@ namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
         {
             InitializeComponent();
         }
+
+        private void btnSave_Click(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

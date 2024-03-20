@@ -80,6 +80,10 @@
             this.txtTopicCategory.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtTopicCategory.ForeColor = System.Drawing.Color.Black;
             this.txtTopicCategory.ItemHeight = 30;
+            this.txtTopicCategory.Items.AddRange(new object[] {
+            "Math",
+            "Chemical",
+            "History"});
             this.txtTopicCategory.Location = new System.Drawing.Point(8, 61);
             this.txtTopicCategory.Name = "txtTopicCategory";
             this.txtTopicCategory.Size = new System.Drawing.Size(478, 36);
@@ -288,11 +292,9 @@
             this.cbxTopicTechnology.ForeColor = System.Drawing.Color.Black;
             this.cbxTopicTechnology.ItemHeight = 30;
             this.cbxTopicTechnology.Items.AddRange(new object[] {
+            "App",
             "Web",
-            "Desktop App",
-            "Mobile App",
-            "",
-            ""});
+            "Mobile"});
             this.cbxTopicTechnology.Location = new System.Drawing.Point(4, 60);
             this.cbxTopicTechnology.Name = "cbxTopicTechnology";
             this.cbxTopicTechnology.Size = new System.Drawing.Size(485, 36);

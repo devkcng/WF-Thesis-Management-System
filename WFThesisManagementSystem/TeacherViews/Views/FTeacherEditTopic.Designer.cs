@@ -52,6 +52,6 @@
 
         #endregion
 
-        private TeacherUserControl.UcTeacherEditTopic ucTeacherEditTopic1;
+        public TeacherUserControl.UcTeacherEditTopic ucTeacherEditTopic1;
     }
 }
