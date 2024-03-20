@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcTeacherSingleTopic));
             this.lblDescription = new System.Windows.Forms.Label();
             this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
             this.lblLine = new System.Windows.Forms.Label();
@@ -57,7 +58,7 @@
             this.btnEdit.ForeColor = System.Drawing.Color.White;
             this.btnEdit.Image = global::WFThesisManagementSystem.Properties.Resources.Create;
             this.btnEdit.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnEdit.Location = new System.Drawing.Point(830, 39);
+            this.btnEdit.Location = new System.Drawing.Point(1087, 39);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(53, 48);
             this.btnEdit.TabIndex = 1;
@@ -68,11 +69,9 @@
             this.lblLine.AutoSize = true;
             this.lblLine.Location = new System.Drawing.Point(46, 104);
             this.lblLine.Name = "lblLine";
-            this.lblLine.Size = new System.Drawing.Size(849, 20);
+            this.lblLine.Size = new System.Drawing.Size(1094, 20);
             this.lblLine.TabIndex = 5;
-            this.lblLine.Text = "---------------------------------------------------------------------------------" +
-    "--------------------------------------------------------------------------------" +
-    "-------";
+            this.lblLine.Text = resources.GetString("lblLine.Text");
             // 
             // plName
             // 
@@ -80,7 +79,7 @@
             this.plName.Controls.Add(this.lblName);
             this.plName.Location = new System.Drawing.Point(50, 21);
             this.plName.Name = "plName";
-            this.plName.Size = new System.Drawing.Size(741, 73);
+            this.plName.Size = new System.Drawing.Size(982, 73);
             this.plName.TabIndex = 6;
             // 
             // lblName
@@ -103,7 +102,7 @@
             this.Controls.Add(this.lblLine);
             this.Controls.Add(this.btnEdit);
             this.Name = "UcTeacherSingleTopic";
-            this.Size = new System.Drawing.Size(907, 230);
+            this.Size = new System.Drawing.Size(1178, 229);
             this.Load += new System.EventHandler(this.UcTeacherSingleTopic_Load);
             this.plName.ResumeLayout(false);
             this.plName.PerformLayout();

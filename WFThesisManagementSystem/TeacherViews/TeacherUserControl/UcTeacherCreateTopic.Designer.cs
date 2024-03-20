@@ -49,6 +49,9 @@
             this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
             this.cbxTopicCategory = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblTopicCategory = new System.Windows.Forms.Label();
+            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.txtTopicId = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblTopicId = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
@@ -56,6 +59,7 @@
             this.guna2Panel6.SuspendLayout();
             this.guna2Panel7.SuspendLayout();
             this.guna2Panel8.SuspendLayout();
+            this.guna2Panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTopicName
@@ -267,9 +271,9 @@
             this.lblNumber.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumber.Location = new System.Drawing.Point(3, 10);
             this.lblNumber.Name = "lblNumber";
-            this.lblNumber.Size = new System.Drawing.Size(106, 28);
+            this.lblNumber.Size = new System.Drawing.Size(180, 28);
             this.lblNumber.TabIndex = 0;
-            this.lblNumber.Text = "Number";
+            this.lblNumber.Text = "Max Members";
             // 
             // guna2Panel7
             // 
@@ -355,11 +359,55 @@
             this.lblTopicCategory.TabIndex = 5;
             this.lblTopicCategory.Text = "Topic Category";
             // 
+            // guna2Panel3
+            // 
+            this.guna2Panel3.Controls.Add(this.txtTopicId);
+            this.guna2Panel3.Controls.Add(this.lblTopicId);
+            this.guna2Panel3.Location = new System.Drawing.Point(1190, 230);
+            this.guna2Panel3.Name = "guna2Panel3";
+            this.guna2Panel3.Size = new System.Drawing.Size(178, 102);
+            this.guna2Panel3.TabIndex = 3;
+            // 
+            // txtTopicId
+            // 
+            this.txtTopicId.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtTopicId.BorderRadius = 8;
+            this.txtTopicId.BorderThickness = 2;
+            this.txtTopicId.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTopicId.DefaultText = "";
+            this.txtTopicId.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTopicId.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTopicId.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTopicId.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTopicId.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTopicId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTopicId.ForeColor = System.Drawing.Color.Black;
+            this.txtTopicId.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTopicId.Location = new System.Drawing.Point(5, 50);
+            this.txtTopicId.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtTopicId.Name = "txtTopicId";
+            this.txtTopicId.PasswordChar = '\0';
+            this.txtTopicId.PlaceholderText = "";
+            this.txtTopicId.SelectedText = "";
+            this.txtTopicId.Size = new System.Drawing.Size(167, 52);
+            this.txtTopicId.TabIndex = 1;
+            // 
+            // lblTopicId
+            // 
+            this.lblTopicId.AutoSize = true;
+            this.lblTopicId.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTopicId.Location = new System.Drawing.Point(14, 10);
+            this.lblTopicId.Name = "lblTopicId";
+            this.lblTopicId.Size = new System.Drawing.Size(104, 28);
+            this.lblTopicId.TabIndex = 0;
+            this.lblTopicId.Text = "Topic Id";
+            // 
             // UcTeacherCreateTopic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel8);
             this.Controls.Add(this.guna2Panel7);
             this.Controls.Add(this.guna2Panel6);
@@ -368,7 +416,7 @@
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
             this.Name = "UcTeacherCreateTopic";
-            this.Size = new System.Drawing.Size(1300, 726);
+            this.Size = new System.Drawing.Size(1416, 726);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
@@ -382,6 +430,8 @@
             this.guna2Panel7.PerformLayout();
             this.guna2Panel8.ResumeLayout(false);
             this.guna2Panel8.PerformLayout();
+            this.guna2Panel3.ResumeLayout(false);
+            this.guna2Panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -409,5 +459,8 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
         public Guna.UI2.WinForms.Guna2ComboBox cbxTopicCategory;
         public System.Windows.Forms.Label lblTopicCategory;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
+        public Guna.UI2.WinForms.Guna2TextBox txtTopicId;
+        public System.Windows.Forms.Label lblTopicId;
     }
 }

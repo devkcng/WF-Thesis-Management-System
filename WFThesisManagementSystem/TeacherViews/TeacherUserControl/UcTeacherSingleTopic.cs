@@ -75,10 +75,12 @@ namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
                 {
                     fTeacherEditTopic.ucTeacherEditTopic1.txtTopicName.Text = row["topic_name"].ToString();
                     fTeacherEditTopic.ucTeacherEditTopic1.txtTopicDescription.Text= row["topic_description"].ToString();
-                    fTeacherEditTopic.ucTeacherEditTopic1.txtTopicRequirement.Text= row["requirement"].ToString();
-                    fTeacherEditTopic.ucTeacherEditTopic1.txtTopicCategory.SelectedItem= row["category"].ToString();
-                    fTeacherEditTopic.ucTeacherEditTopic1.cbxTopicTechnology.SelectedItem = row["technology"].ToString();
-                    fTeacherEditTopic.ucTeacherEditTopic1.cbxNumber.SelectedItem = "4";
+                    fTeacherEditTopic.ucTeacherEditTopic1.txtTopicRequirement.Text= row["topic_requirement"].ToString();
+                    fTeacherEditTopic.ucTeacherEditTopic1.cbxTopicCategory.SelectedItem= row["topic_category"].ToString();
+                    fTeacherEditTopic.ucTeacherEditTopic1.cbxTopicTechnology.SelectedItem = row["topic_technology"].ToString();
+                    fTeacherEditTopic.ucTeacherEditTopic1.cbxNumber.SelectedItem = row["max_members"].ToString();
+                    fTeacherEditTopic.ucTeacherEditTopic1.txtTopicId.Text = row["topic_id"].ToString();
+                    //fTeacherEditTopic.ucTeacherEditTopic1.txtTeacherId.Text = row["teacher_id"].ToString();
                 }
 
             }    
