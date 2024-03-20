@@ -190,6 +190,7 @@
             this.performance.Name = "performance";
             this.performance.Size = new System.Drawing.Size(209, 36);
             this.performance.Text = "Performance";
+            this.performance.Click += new System.EventHandler(this.performance_Click);
             // 
             // logout
             // 
@@ -235,7 +236,7 @@
             this.menuStrip3.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1});
-            this.menuStrip3.Location = new System.Drawing.Point(1321, 6);
+            this.menuStrip3.Location = new System.Drawing.Point(1301, 6);
             this.menuStrip3.Name = "menuStrip3";
             this.menuStrip3.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
             this.menuStrip3.Size = new System.Drawing.Size(144, 38);
@@ -297,8 +298,6 @@
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-            //this.Load += new System.EventHandler(this.FStudentDashboard_Resize);
-
 
         }
 
