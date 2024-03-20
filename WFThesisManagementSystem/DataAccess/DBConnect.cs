@@ -9,7 +9,7 @@ using System.IO;
 
 namespace WFThesisManagementSystem.DataAccess
 {
-    public class DBConnect
+    internal class DBConnect
     {
         private const string DatabaseRelativePath = @"..\..\..\DATABASE\ThesisManagement.mdf";
 
