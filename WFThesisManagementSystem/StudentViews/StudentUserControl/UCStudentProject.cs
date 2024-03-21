@@ -17,7 +17,7 @@ namespace WFThesisManagementSystem.Views.StudentViews
 {
     public partial class UCStudentProject : UserControl
     {
-        Student student;
+        private Student student;
         public UCStudentProject(int student_id)
         {
             InitializeComponent();
