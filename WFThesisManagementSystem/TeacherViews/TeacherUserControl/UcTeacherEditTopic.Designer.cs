@@ -76,7 +76,7 @@
             this.cbxTopicCategory.BackColor = System.Drawing.Color.Transparent;
             this.cbxTopicCategory.BorderColor = System.Drawing.Color.Gainsboro;
             this.cbxTopicCategory.BorderRadius = 8;
-            this.cbxTopicCategory.BorderThickness = 2;
+            this.cbxTopicCategory.BorderThickness = 3;
             this.cbxTopicCategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbxTopicCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTopicCategory.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -85,9 +85,9 @@
             this.cbxTopicCategory.ForeColor = System.Drawing.Color.Black;
             this.cbxTopicCategory.ItemHeight = 30;
             this.cbxTopicCategory.Items.AddRange(new object[] {
-            "Math",
-            "Chemical",
-            "History"});
+            "Mobile App Development",
+            "Web Development",
+            "Database Management"});
             this.cbxTopicCategory.Location = new System.Drawing.Point(8, 61);
             this.cbxTopicCategory.Name = "cbxTopicCategory";
             this.cbxTopicCategory.Size = new System.Drawing.Size(478, 36);
@@ -160,7 +160,7 @@
             this.cbxNumber.BackColor = System.Drawing.Color.Transparent;
             this.cbxNumber.BorderColor = System.Drawing.Color.Gainsboro;
             this.cbxNumber.BorderRadius = 8;
-            this.cbxNumber.BorderThickness = 2;
+            this.cbxNumber.BorderThickness = 3;
             this.cbxNumber.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbxNumber.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxNumber.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -194,9 +194,9 @@
             // 
             this.guna2Panel5.Controls.Add(this.btnUpdate);
             this.guna2Panel5.Controls.Add(this.btnClose);
-            this.guna2Panel5.Location = new System.Drawing.Point(962, 609);
+            this.guna2Panel5.Location = new System.Drawing.Point(963, 609);
             this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(254, 56);
+            this.guna2Panel5.Size = new System.Drawing.Size(253, 56);
             this.guna2Panel5.TabIndex = 14;
             // 
             // btnUpdate
@@ -210,7 +210,7 @@
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.Location = new System.Drawing.Point(0, 0);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(104, 56);
+            this.btnUpdate.Size = new System.Drawing.Size(126, 56);
             this.btnUpdate.TabIndex = 8;
             this.btnUpdate.Text = "Update";
             // 
@@ -287,7 +287,7 @@
             this.cbxTopicTechnology.BackColor = System.Drawing.Color.Transparent;
             this.cbxTopicTechnology.BorderColor = System.Drawing.Color.Gainsboro;
             this.cbxTopicTechnology.BorderRadius = 8;
-            this.cbxTopicTechnology.BorderThickness = 2;
+            this.cbxTopicTechnology.BorderThickness = 3;
             this.cbxTopicTechnology.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbxTopicTechnology.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTopicTechnology.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -296,9 +296,9 @@
             this.cbxTopicTechnology.ForeColor = System.Drawing.Color.Black;
             this.cbxTopicTechnology.ItemHeight = 30;
             this.cbxTopicTechnology.Items.AddRange(new object[] {
-            "App",
-            "Web",
-            "Mobile"});
+            "HTML, CSS, JavaScript",
+            "React Native, Flutter",
+            "SQL, Database Management Systems"});
             this.cbxTopicTechnology.Location = new System.Drawing.Point(4, 60);
             this.cbxTopicTechnology.Name = "cbxTopicTechnology";
             this.cbxTopicTechnology.Size = new System.Drawing.Size(485, 36);

@@ -25,27 +25,29 @@ namespace WFThesisManagementSystem.TeacherViews.Views
         }
         private void Save(object sender, EventArgs e)
         {
-            
-            for(int i=0;i<= ucTeacherCreateTopic1.txtTopicId.Text.Length - 1;i++)
+            if (ucTeacherCreateTopic1.txtTopicId.Text!="" && ucTeacherCreateTopic1.txtTopicId.Text!=""&& ucTeacherCreateTopic1.txtTopicName.Text!=""&& ucTeacherCreateTopic1.txtTopicDescription.Text!=""&& ucTeacherCreateTopic1.cbxTopicCategory.SelectedItem.ToString()!=""&& ucTeacherCreateTopic1.cbxTopicTechnology.SelectedItem.ToString()!=""&&ucTeacherCreateTopic1.txtTopicRequirement.Text!=""&& ucTeacherCreateTopic1.cbxNumber.SelectedItem.ToString()!="")
             {
-                if (ucTeacherCreateTopic1.txtTopicId.Text[i] >'9' || ucTeacherCreateTopic1.txtTopicId.Text[i] <'0')
+                for (int i = 0; i <= ucTeacherCreateTopic1.txtTopicId.Text.Length - 1; i++)
                 {
-                    MessageBox.Show("Error!!!");
-                    return;
-                }    
-            }    
-            Topic topic = new Topic(int.Parse(ucTeacherCreateTopic1.txtTopicId.Text), ucTeacherCreateTopic1.txtTopicName.Text, ucTeacherCreateTopic1.txtTopicDescription.Text, ucTeacherCreateTopic1.cbxTopicCategory.SelectedItem.ToString(), ucTeacherCreateTopic1.cbxTopicTechnology.SelectedItem.ToString(), ucTeacherCreateTopic1.txtTopicRequirement.Text, int.Parse(ucTeacherCreateTopic1.cbxNumber.SelectedItem.ToString()));
-            //TopicDAO topicDAO = new TopicDAO();
-            if (topicDAO.CheckData(topic))
-            {
-                if (dbConnect.ExecuteSqlQuery(topicDAO.AddTopic(topic)))
+                    if (ucTeacherCreateTopic1.txtTopicId.Text[i] > '9' || ucTeacherCreateTopic1.txtTopicId.Text[i] < '0')
+                    {
+                        MessageBox.Show("Error!!!");
+                        return;
+                    }
+                }
+                Topic topic = new Topic(int.Parse(ucTeacherCreateTopic1.txtTopicId.Text), ucTeacherCreateTopic1.txtTopicName.Text, ucTeacherCreateTopic1.txtTopicDescription.Text, ucTeacherCreateTopic1.cbxTopicCategory.SelectedItem.ToString(), ucTeacherCreateTopic1.cbxTopicTechnology.SelectedItem.ToString(), ucTeacherCreateTopic1.txtTopicRequirement.Text, int.Parse(ucTeacherCreateTopic1.cbxNumber.SelectedItem.ToString()));
+                //TopicDAO topicDAO = new TopicDAO();
+                if (topicDAO.CheckData(topic))
                 {
-                    //UcTeacherAllTopics ucTeacherAllTopics = new UcTeacherAllTopics();
-                    //ucTeacherAllTopics.UcTeacherAllTopics_Load(sender, e);
-                    MessageBox.Show("Add Success");
-                    this.Hide();
-                    
-                    
+                    if (dbConnect.ExecuteSqlQuery(topicDAO.AddTopic(topic)))
+                    {
+                        //UcTeacherAllTopics ucTeacherAllTopics = new UcTeacherAllTopics();
+                        //ucTeacherAllTopics.UcTeacherAllTopics_Load(sender, e);
+                        MessageBox.Show("Add Success");
+                        this.Hide();
+
+
+                    }
                 }
             }
             else
