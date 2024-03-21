@@ -128,10 +128,9 @@
             this.cbxTopicTechnology.ForeColor = System.Drawing.Color.Black;
             this.cbxTopicTechnology.ItemHeight = 30;
             this.cbxTopicTechnology.Items.AddRange(new object[] {
-            "Web",
-            "App",
-            "Mobile",
-            ""});
+            "HTML, CSS, JavaScript",
+            "React Native, Flutter",
+            "SQL, Database Management Systems"});
             this.cbxTopicTechnology.Location = new System.Drawing.Point(0, 63);
             this.cbxTopicTechnology.Name = "cbxTopicTechnology";
             this.cbxTopicTechnology.Size = new System.Drawing.Size(492, 36);
@@ -235,7 +234,7 @@
             // 
             this.guna2Panel6.Controls.Add(this.cbxNumber);
             this.guna2Panel6.Controls.Add(this.lblNumber);
-            this.guna2Panel6.Location = new System.Drawing.Point(1102, 52);
+            this.guna2Panel6.Location = new System.Drawing.Point(1180, 55);
             this.guna2Panel6.Name = "guna2Panel6";
             this.guna2Panel6.Size = new System.Drawing.Size(188, 102);
             this.guna2Panel6.TabIndex = 7;
@@ -341,9 +340,9 @@
             this.cbxTopicCategory.ForeColor = System.Drawing.Color.Black;
             this.cbxTopicCategory.ItemHeight = 30;
             this.cbxTopicCategory.Items.AddRange(new object[] {
-            "Math",
-            "Chemical",
-            "History"});
+            "Mobile App Development",
+            "Web Development",
+            "Database Management"});
             this.cbxTopicCategory.Location = new System.Drawing.Point(3, 61);
             this.cbxTopicCategory.Name = "cbxTopicCategory";
             this.cbxTopicCategory.Size = new System.Drawing.Size(479, 36);
@@ -383,7 +382,7 @@
             this.txtTopicId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTopicId.ForeColor = System.Drawing.Color.Black;
             this.txtTopicId.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTopicId.Location = new System.Drawing.Point(5, 50);
+            this.txtTopicId.Location = new System.Drawing.Point(5, 41);
             this.txtTopicId.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtTopicId.Name = "txtTopicId";
             this.txtTopicId.PasswordChar = '\0';
@@ -416,7 +415,7 @@
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
             this.Name = "UcTeacherCreateTopic";
-            this.Size = new System.Drawing.Size(1416, 726);
+            this.Size = new System.Drawing.Size(1444, 722);
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
             this.guna2Panel2.ResumeLayout(false);
