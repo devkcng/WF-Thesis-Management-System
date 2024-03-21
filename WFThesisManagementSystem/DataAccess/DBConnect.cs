@@ -91,5 +91,10 @@ namespace WFThesisManagementSystem.DataAccess
                 adapter.Fill(dataTable);
                 return dataTable;
         }
+
+        public DataTable GetColumnData(string columnName, string tableName)
+        {
+            return GetData(string.Format("SELECT {0} FROM {1}", columnName, tableName));
+        }
     }
 }
