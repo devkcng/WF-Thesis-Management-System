@@ -41,8 +41,11 @@
             this.max_members = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.teacher_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.teacher_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2ComboBox2 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbTopicTechnologyList = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbTeacherList = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTopics)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,13 +83,12 @@
             this.dgvTopics.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTopics.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvTopics.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvTopics.Location = new System.Drawing.Point(0, 39);
-            this.dgvTopics.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvTopics.Location = new System.Drawing.Point(0, 156);
             this.dgvTopics.Name = "dgvTopics";
             this.dgvTopics.RowHeadersVisible = false;
             this.dgvTopics.RowHeadersWidth = 62;
             this.dgvTopics.RowTemplate.Height = 28;
-            this.dgvTopics.Size = new System.Drawing.Size(718, 392);
+            this.dgvTopics.Size = new System.Drawing.Size(1077, 441);
             this.dgvTopics.TabIndex = 0;
             this.dgvTopics.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvTopics.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -166,61 +168,91 @@
             this.teacher_name.MinimumWidth = 8;
             this.teacher_name.Name = "teacher_name";
             // 
-            // guna2ComboBox1
+            // cbTopicTechnologyList
             // 
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox1.ItemHeight = 30;
-            this.guna2ComboBox1.Location = new System.Drawing.Point(465, 9);
-            this.guna2ComboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.Size = new System.Drawing.Size(119, 36);
-            this.guna2ComboBox1.TabIndex = 2;
+            this.cbTopicTechnologyList.BackColor = System.Drawing.Color.Transparent;
+            this.cbTopicTechnologyList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbTopicTechnologyList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTopicTechnologyList.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbTopicTechnologyList.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbTopicTechnologyList.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbTopicTechnologyList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbTopicTechnologyList.ItemHeight = 30;
+            this.cbTopicTechnologyList.Location = new System.Drawing.Point(719, 114);
+            this.cbTopicTechnologyList.Name = "cbTopicTechnologyList";
+            this.cbTopicTechnologyList.Size = new System.Drawing.Size(176, 36);
+            this.cbTopicTechnologyList.TabIndex = 2;
             // 
-            // guna2ComboBox2
+            // cbTeacherList
             // 
-            this.guna2ComboBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox2.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox2.ItemHeight = 30;
-            this.guna2ComboBox2.Location = new System.Drawing.Point(587, 9);
-            this.guna2ComboBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.guna2ComboBox2.Name = "guna2ComboBox2";
-            this.guna2ComboBox2.Size = new System.Drawing.Size(119, 36);
-            this.guna2ComboBox2.TabIndex = 3;
+            this.cbTeacherList.BackColor = System.Drawing.Color.Transparent;
+            this.cbTeacherList.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbTeacherList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTeacherList.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbTeacherList.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbTeacherList.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbTeacherList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbTeacherList.ItemHeight = 30;
+            this.cbTeacherList.Location = new System.Drawing.Point(901, 114);
+            this.cbTeacherList.Name = "cbTeacherList";
+            this.cbTeacherList.Size = new System.Drawing.Size(176, 36);
+            this.cbTeacherList.TabIndex = 3;
+            this.cbTeacherList.SelectedIndexChanged += new System.EventHandler(this.cbTeacherList_SelectedIndexChanged);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(202, 85);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(486, 65);
+            this.textBox1.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(-7, 98);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(203, 38);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Describe topic";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(459, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(177, 48);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Topic List";
             // 
             // FStudentRegisterTopic
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(718, 431);
-            this.Controls.Add(this.guna2ComboBox2);
-            this.Controls.Add(this.guna2ComboBox1);
+            this.ClientSize = new System.Drawing.Size(1077, 597);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.cbTeacherList);
+            this.Controls.Add(this.cbTopicTechnologyList);
             this.Controls.Add(this.dgvTopics);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FStudentRegisterTopic";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FStudentRegisterTopic";
             this.Load += new System.EventHandler(this.FStudentRegisterTopic_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTopics)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private Guna.UI2.WinForms.Guna2DataGridView dgvTopics;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox2;
+        private Guna.UI2.WinForms.Guna2ComboBox cbTopicTechnologyList;
+        private Guna.UI2.WinForms.Guna2ComboBox cbTeacherList;
         private System.Windows.Forms.DataGridViewTextBoxColumn topic_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn topic_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn topic_description;
@@ -230,5 +262,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn max_members;
         private System.Windows.Forms.DataGridViewTextBoxColumn teacher_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn teacher_name;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

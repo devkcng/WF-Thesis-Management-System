@@ -25,37 +25,18 @@ namespace WFThesisManagementSystem.StudentViews.Views
 
         private void FStudentRegisterTopic_Load_1(object sender, EventArgs e)
         {
+
+            TopicDAO topicDAO = new TopicDAO();
+            topicDAO.LoadTopic("SELECT *FROM Topics", dgvTopics);
+
             DBConnect dBConnect = new DBConnect();
-            DataTable dt = new DataTable();
-            TeacherDAO teacherDao = new TeacherDAO();
+            cbTeacherList.DataSource = dBConnect.GetColumnData("teacher_name", "Teacher");
+            cbTeacherList.DisplayMember = "teacher_name";
+            cbTeacherList.ValueMember = "teacher_name";
 
-            dt = dBConnect.LoadData("Topics");
-
-            foreach (DataRow row in dt.Rows)
-            {
-                // Tạo một mảng các đối tượng để lưu trữ giá trị của mỗi cột trong dòng
-                object[] rowData = new object[dt.Columns.Count];
-
-                // Lặp qua từng cột trong DataTable
-                for (int i = 0; i < dt.Columns.Count; i++)
-                {
-                    // Thêm giá trị của mỗi cột vào mảng
-                    rowData[i] = row[i];
-                }
-
-                // Thêm dòng mới vào DataGridView với dữ liệu từ mảng rowData
-                // dataGridView là tên của DataGridView của bạn
-                dgvTopics.Rows.Add(rowData);
-            }
-
-
-            foreach (DataGridViewRow row in dgvTopics.Rows)
-            {
-                if (!row.IsNewRow)
-                {
-                    row.Cells["teacher_name"].Value = teacherDao.GetTeacherNameFromTeacherID(row.Cells["teacher_id"].Value.ToString());
-                }
-            }
+            cbTopicTechnologyList.DataSource = dBConnect.GetColumnData("topic_technology", "Topics");
+            cbTopicTechnologyList.DisplayMember = "topic_technology";
+            cbTopicTechnologyList.ValueMember = "topic_technology";
         }
 
         private void dgvTopics_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
@@ -76,5 +57,15 @@ namespace WFThesisManagementSystem.StudentViews.Views
                 registerForm.ShowDialog();
             }
         }
+
+        private void cbTeacherList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            TopicDAO topicDAO = new TopicDAO();
+            //MessageBox.Show(cbTeacherList.SelectedValue.ToString());
+            //topicDAO.LoadTopic(string.Format("SELECT *FROM Teacher WHERE teacher_name = {0}", cbTeacherList.SelectedValue.ToString()), dgvTopics);
+        }
+
+
     }
 }
