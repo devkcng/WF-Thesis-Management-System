@@ -18,13 +18,37 @@ namespace WFThesisManagementSystem.StudentViews.Views
         {
             InitializeComponent();
         }
+        private void dgvTopics_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
 
-        private void FStudentRegisterTopic_Load(object sender, EventArgs e)
+        private void FStudentRegisterTopic_Load_1(object sender, EventArgs e)
         {
             DBConnect dBConnect = new DBConnect();
             DataTable dt = new DataTable();
             TeacherDAO teacherDao = new TeacherDAO();
-            dgvTopics.DataSource = dBConnect.LoadData("Topics");
+
+            dt = dBConnect.LoadData("Topics");
+
+            foreach (DataRow row in dt.Rows)
+            {
+                // Tạo một mảng các đối tượng để lưu trữ giá trị của mỗi cột trong dòng
+                object[] rowData = new object[dt.Columns.Count];
+
+                // Lặp qua từng cột trong DataTable
+                for (int i = 0; i < dt.Columns.Count; i++)
+                {
+                    // Thêm giá trị của mỗi cột vào mảng
+                    rowData[i] = row[i];
+                }
+
+                // Thêm dòng mới vào DataGridView với dữ liệu từ mảng rowData
+                // dataGridView là tên của DataGridView của bạn
+                dgvTopics.Rows.Add(rowData);
+            }
+
+
             foreach (DataGridViewRow row in dgvTopics.Rows)
             {
                 if (!row.IsNewRow)
@@ -34,7 +58,7 @@ namespace WFThesisManagementSystem.StudentViews.Views
             }
         }
 
-        private void dgvTopics_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvTopics_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
