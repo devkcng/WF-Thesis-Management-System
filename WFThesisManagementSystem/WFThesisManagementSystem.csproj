@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess\DBConnect.cs" />
+    <Compile Include="DataAccess\StudentGroupDAO.cs" />
     <Compile Include="DataAccess\UserLogin.cs" />
     <Compile Include="DataAccess\StudentDAO.cs" />
     <Compile Include="DataAccess\TeacherDAO.cs" />
@@ -68,6 +69,7 @@
     </Compile>
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\StudentGroup.cs" />
     <Compile Include="Models\Teacher.cs" />
     <Compile Include="Models\Topic.cs" />
     <Compile Include="Program.cs" />
@@ -83,6 +85,12 @@
     </Compile>
     <Compile Include="StudentViews\StudentUserControl\UCWorkLog.Designer.cs">
       <DependentUpon>UCWorkLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentViews\Views\FRegisterTopic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentViews\Views\FRegisterTopic.Designer.cs">
+      <DependentUpon>FRegisterTopic.cs</DependentUpon>
     </Compile>
     <Compile Include="StudentViews\Views\FStudentDashboard.cs">
       <SubType>Form</SubType>
@@ -119,6 +127,12 @@
     </Compile>
     <Compile Include="StudentViews\StudentUserControl\UCStudentWorkLogs.Designer.cs">
       <DependentUpon>UCStudentWorkLogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentViews\Views\FStudentRegisterTopic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentViews\Views\FStudentRegisterTopic.Designer.cs">
+      <DependentUpon>FStudentRegisterTopic.cs</DependentUpon>
     </Compile>
     <Compile Include="StudentViews\Views\FStudentTaskPopUp.cs">
       <SubType>Form</SubType>
@@ -265,6 +279,9 @@
     <EmbeddedResource Include="StudentViews\StudentUserControl\UCWorkLog.resx">
       <DependentUpon>UCWorkLog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="StudentViews\Views\FRegisterTopic.resx">
+      <DependentUpon>FRegisterTopic.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StudentViews\Views\FStudentDashboard.resx">
       <DependentUpon>FStudentDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -273,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StudentViews\StudentUserControl\UCStudentProject.resx">
       <DependentUpon>UCStudentProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentViews\Views\FStudentRegisterTopic.resx">
+      <DependentUpon>FStudentRegisterTopic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentViews\Views\FStudentTaskPopUp.resx">
       <DependentUpon>FStudentTaskPopUp.cs</DependentUpon>

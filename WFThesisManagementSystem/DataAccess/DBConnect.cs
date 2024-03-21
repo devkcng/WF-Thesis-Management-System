@@ -61,5 +61,35 @@ namespace WFThesisManagementSystem.DataAccess
             }
             return dt;
         }
+
+        public DataTable GetData(string sqlStr)
+        {
+            try
+            {
+                _conn.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter(sqlStr, _conn);
+                DataTable dtSinhVien = new DataTable();
+                adapter.Fill(dtSinhVien);
+                return dtSinhVien;
+            }
+            catch (Exception exc)
+            {
+                throw new Exception("Load unsuccessfully", exc);
+            }
+            finally
+            {
+                _conn.Close();
+            }
+        }
+
+        public DataTable GetData(SqlCommand command)
+        {
+                command.Connection = _conn;
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable dataTable = new DataTable();
+                _conn.Open();
+                adapter.Fill(dataTable);
+                return dataTable;
+        }
     }
 }

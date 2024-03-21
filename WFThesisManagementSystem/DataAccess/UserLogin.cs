@@ -41,13 +41,17 @@ namespace WFThesisManagementSystem.DataAccess
                 adapter.SelectCommand = teacherCommand;
                 adapter.Fill(teacherTable);
 
-                
-                if (studentTable.Rows.Count > 0)
+            // đang xử lý phần check nếu student chưa có nhóm thì đẩy qua form register else đẩy qa dashboard
+            if (studentTable.Rows.Count > 0)
                 {
-                    FStudentDashboard studentDashboard = new FStudentDashboard();
-                    studentDashboard.Show();
-                    return true;
-                }
+                FStudentRegisterTopic studentRegisterTopic = new FStudentRegisterTopic();
+                studentRegisterTopic.Show();
+                return true;
+                //StudentDAO studentDAO = new StudentDAO();
+                //FStudentDashboard studentDashboard = new FStudentDashboard(studentDAO.GetStudentIDFromUsername(username));
+                //studentDashboard.Show();
+                //return true;
+            }
                 else if (teacherTable.Rows.Count > 0)
                 {
                     FTeacherDashboard teacherDashboard = new FTeacherDashboard();

@@ -131,6 +131,7 @@
             this.lblComplete.Size = new System.Drawing.Size(86, 22);
             this.lblComplete.TabIndex = 40;
             this.lblComplete.Text = "Completed";
+            this.lblComplete.Visible = false;
             // 
             // ptbLine
             // 

@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Web.UI;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
+using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.TeacherViews.TeacherUserControl;
 using WFThesisManagementSystem.Views.StudentViews;
 using UserControl = System.Windows.Forms.UserControl;
@@ -11,9 +12,12 @@ namespace WFThesisManagementSystem.StudentViews.Views
 {
     public partial class FStudentDashboard : KryptonForm
     {
-        public FStudentDashboard()
+        private Student student;
+        public FStudentDashboard(string student_id)
         {
             InitializeComponent();
+            student = new Student();
+            student.Id = int.Parse(student_id);
         }
         
 
@@ -26,7 +30,7 @@ namespace WFThesisManagementSystem.StudentViews.Views
         }
         private void bookToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UCStudentProject uc = new UCStudentProject();
+            UCStudentProject uc = new UCStudentProject(student.Id);
             addUserControl(uc);
         }
 
