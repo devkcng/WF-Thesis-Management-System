@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using WFThesisManagementSystem.StudentViews.Views;
 using WFThesisManagementSystem.TeacherViews.Views;
 using WFThesisManagementSystem.DataAccess;
+using WFThesisManagementSystem.Utilities;
 
 namespace WFThesisManagementSystem
 {
@@ -19,7 +20,9 @@ namespace WFThesisManagementSystem
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
-        {   
+        { 
+            FileGenerator fileGenerator = new FileGenerator(); 
+            fileGenerator.Generator();
            UserLogin userLogin = new UserLogin();
            if (userLogin.Login(txtUsername.Text,txtPassword.Text)) this.Hide();
         }
