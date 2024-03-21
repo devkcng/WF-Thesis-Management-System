@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-
+using System.Windows.Forms;
 namespace WFThesisManagementSystem.Utilities.SearchEngine
 {
     public class TFIDF
@@ -35,8 +35,8 @@ namespace WFThesisManagementSystem.Utilities.SearchEngine
                 }
             }
             else
-            {
-                Console.WriteLine("Folder not found. Please provide a valid folder path.");
+            { 
+                MessageBox.Show("Folder not found. Please provide a valid folder path.");
             }
 
             return documents;
