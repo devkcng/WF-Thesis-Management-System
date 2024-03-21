@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WFThesisManagementSystem.StudentViews.Views;
 using WFThesisManagementSystem.TeacherViews.Views;
+using WFThesisManagementSystem.Models;
 
 namespace WFThesisManagementSystem.DataAccess
 {
@@ -42,16 +43,27 @@ namespace WFThesisManagementSystem.DataAccess
                 adapter.Fill(teacherTable);
 
             // đang xử lý phần check nếu student chưa có nhóm thì đẩy qua form register else đẩy qa dashboard
-            if (studentTable.Rows.Count > 0)
+                if (studentTable.Rows.Count > 0)
                 {
-                FStudentRegisterTopic studentRegisterTopic = new FStudentRegisterTopic();
-                studentRegisterTopic.Show();
-                return true;
-                //StudentDAO studentDAO = new StudentDAO();
-                //FStudentDashboard studentDashboard = new FStudentDashboard(studentDAO.GetStudentIDFromUsername(username));
-                //studentDashboard.Show();
-                //return true;
-            }
+                StudentDAO studentDAO = new StudentDAO();
+                Student student = new Student();
+                student.Id = int.Parse(studentDAO.GetStudentIDFromUsername(username));
+                //student.groupID = int.Parse(studentDAO.GetGroupIDOfStudent(student.Id));
+
+                if (studentDAO.GetGroupIDOfStudent(student.Id).Length!=0)
+                {
+                    MessageBox.Show(studentDAO.GetGroupIDOfStudent(student.Id));
+                    FStudentDashboard studentDashboard = new FStudentDashboard(studentDAO.GetStudentIDFromUsername(username));
+                    studentDashboard.Show();
+                    return true;
+                }
+                else
+                {
+                    FStudentRegisterTopic studentRegisterTopic = new FStudentRegisterTopic();
+                    studentRegisterTopic.Show();
+                    return true;
+                }
+                }
                 else if (teacherTable.Rows.Count > 0)
                 {
                     FTeacherDashboard teacherDashboard = new FTeacherDashboard();
