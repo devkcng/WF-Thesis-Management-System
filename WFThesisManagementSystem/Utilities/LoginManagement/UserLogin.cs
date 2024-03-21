@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using WFThesisManagementSystem.DataAccess;
+using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.StudentViews.Views;
 using WFThesisManagementSystem.TeacherViews.Views;
-using WFThesisManagementSystem.Models;
 
-namespace WFThesisManagementSystem.DataAccess
+namespace WFThesisManagementSystem.Utilities.LoginManagement
 {
     public class UserLogin
     {
