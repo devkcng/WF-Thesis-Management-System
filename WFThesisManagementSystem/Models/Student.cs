@@ -9,7 +9,7 @@ namespace WFThesisManagementSystem.Models
     public class Student : Person
     {
         public Student() { }
-
+        public int groupID;
         public Student(int id, string name, string email)
         {
             Id = id;
