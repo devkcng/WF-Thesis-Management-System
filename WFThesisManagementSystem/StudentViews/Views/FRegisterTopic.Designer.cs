@@ -69,12 +69,13 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvrRegisterMember.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvrRegisterMember.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvrRegisterMember.Location = new System.Drawing.Point(-1, 148);
+            this.dgvrRegisterMember.Location = new System.Drawing.Point(-1, 107);
+            this.dgvrRegisterMember.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgvrRegisterMember.Name = "dgvrRegisterMember";
             this.dgvrRegisterMember.RowHeadersVisible = false;
             this.dgvrRegisterMember.RowHeadersWidth = 62;
             this.dgvrRegisterMember.RowTemplate.Height = 28;
-            this.dgvrRegisterMember.Size = new System.Drawing.Size(977, 409);
+            this.dgvrRegisterMember.Size = new System.Drawing.Size(651, 295);
             this.dgvrRegisterMember.TabIndex = 0;
             this.dgvrRegisterMember.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvrRegisterMember.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -112,9 +113,10 @@
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(866, 563);
+            this.btnRegister.Location = new System.Drawing.Point(577, 407);
+            this.btnRegister.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(110, 33);
+            this.btnRegister.Size = new System.Drawing.Size(73, 24);
             this.btnRegister.TabIndex = 2;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
@@ -124,29 +126,32 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F);
-            this.label1.Location = new System.Drawing.Point(3, 102);
+            this.label1.Location = new System.Drawing.Point(2, 74);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 27);
+            this.label1.Size = new System.Drawing.Size(101, 18);
             this.label1.TabIndex = 3;
             this.label1.Text = "Group Name:";
             // 
             // txtGroupName
             // 
-            this.txtGroupName.Location = new System.Drawing.Point(157, 105);
+            this.txtGroupName.Location = new System.Drawing.Point(105, 76);
+            this.txtGroupName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtGroupName.Name = "txtGroupName";
-            this.txtGroupName.Size = new System.Drawing.Size(453, 26);
+            this.txtGroupName.Size = new System.Drawing.Size(303, 20);
             this.txtGroupName.TabIndex = 4;
             // 
             // numericUpDownSize
             // 
-            this.numericUpDownSize.Location = new System.Drawing.Point(856, 103);
+            this.numericUpDownSize.Location = new System.Drawing.Point(571, 74);
+            this.numericUpDownSize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.numericUpDownSize.Maximum = new decimal(new int[] {
             5,
             0,
             0,
             0});
             this.numericUpDownSize.Name = "numericUpDownSize";
-            this.numericUpDownSize.Size = new System.Drawing.Size(120, 26);
+            this.numericUpDownSize.Size = new System.Drawing.Size(80, 20);
             this.numericUpDownSize.TabIndex = 6;
             this.numericUpDownSize.Value = new decimal(new int[] {
             1,
@@ -159,24 +164,27 @@
             // 
             this.lblProject.AutoSize = true;
             this.lblProject.Font = new System.Drawing.Font("Arial", 12F);
-            this.lblProject.Location = new System.Drawing.Point(470, 33);
+            this.lblProject.Location = new System.Drawing.Point(313, 24);
+            this.lblProject.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProject.Name = "lblProject";
-            this.lblProject.Size = new System.Drawing.Size(77, 27);
+            this.lblProject.Size = new System.Drawing.Size(50, 18);
             this.lblProject.TabIndex = 7;
             this.lblProject.Text = "label2";
             // 
             // FRegisterTopic
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(988, 608);
+            this.ClientSize = new System.Drawing.Size(659, 439);
             this.Controls.Add(this.lblProject);
             this.Controls.Add(this.numericUpDownSize);
             this.Controls.Add(this.txtGroupName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.dgvrRegisterMember);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FRegisterTopic";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FRegisterTopic";
             ((System.ComponentModel.ISupportInitialize)(this.dgvrRegisterMember)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSize)).EndInit();
