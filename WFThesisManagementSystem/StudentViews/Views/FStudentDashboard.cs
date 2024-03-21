@@ -12,7 +12,7 @@ namespace WFThesisManagementSystem.StudentViews.Views
 {
     public partial class FStudentDashboard : KryptonForm
     {
-        Student student;
+        private Student student;
         public FStudentDashboard(string student_id)
         {
             InitializeComponent();
