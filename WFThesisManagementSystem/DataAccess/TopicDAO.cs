@@ -4,6 +4,11 @@ namespace WFThesisManagementSystem.DataAccess
 {
     internal class TopicDAO
     {
+        public bool CheckData(Topic topic)
+        {
+            if (topic.Category == ""  || topic.Name == "" || topic.Requirement == "" || topic.Technology == "" || topic.Description == "" || (topic.MaxMember <=0 || topic.MaxMember > 6)) return false;
+            return true;
+        }
         public string AddTopic(Topic topic)
         {
             return string.Format("INSERT INTO Topics (topic_id , topic_name, topic_description, topic_technology, topic_requirement, topic_category, max_members) " +

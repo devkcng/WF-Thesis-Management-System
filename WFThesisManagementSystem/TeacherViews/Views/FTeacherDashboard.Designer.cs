@@ -50,10 +50,10 @@
             this.menuStrip3 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.ucTeacherInfor1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherInfor();
-            this.ucTeacherEditInfor1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherEditInfor();
-            this.ucTeacherAllTopics1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherAllTopics();
             this.ucTeacherAllTask1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherAllTask();
+            this.ucTeacherAllTopics1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherAllTopics();
+            this.ucTeacherEditInfor1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherEditInfor();
+            this.ucTeacherInfor1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherInfor();
             this.MSListFolder.SuspendLayout();
             this.panel1.SuspendLayout();
             this.mspProfile.SuspendLayout();
@@ -143,7 +143,6 @@
             this.MSListFolder.BackColor = System.Drawing.Color.White;
             this.MSListFolder.Dock = System.Windows.Forms.DockStyle.None;
             this.MSListFolder.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.MSListFolder.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.MSListFolder.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.MSListFolder.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Project,
@@ -227,7 +226,6 @@
             this.mspProfile.BackColor = System.Drawing.Color.White;
             this.mspProfile.Dock = System.Windows.Forms.DockStyle.None;
             this.mspProfile.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.mspProfile.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.mspProfile.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.mspProfile.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem2});
@@ -275,7 +273,6 @@
             this.menuStrip3.BackColor = System.Drawing.Color.White;
             this.menuStrip3.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.menuStrip3.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip3.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1});
@@ -308,13 +305,23 @@
             this.panel2.Size = new System.Drawing.Size(213, 789);
             this.panel2.TabIndex = 3;
             // 
-            // ucTeacherInfor1
+            // ucTeacherAllTask1
             // 
-            this.ucTeacherInfor1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ucTeacherInfor1.Location = new System.Drawing.Point(243, 75);
-            this.ucTeacherInfor1.Name = "ucTeacherInfor1";
-            this.ucTeacherInfor1.Size = new System.Drawing.Size(322, 627);
-            this.ucTeacherInfor1.TabIndex = 8;
+            this.ucTeacherAllTask1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ucTeacherAllTask1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucTeacherAllTask1.Location = new System.Drawing.Point(213, 55);
+            this.ucTeacherAllTask1.Name = "ucTeacherAllTask1";
+            this.ucTeacherAllTask1.Size = new System.Drawing.Size(1476, 789);
+            this.ucTeacherAllTask1.TabIndex = 11;
+            // 
+            // ucTeacherAllTopics1
+            // 
+            this.ucTeacherAllTopics1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ucTeacherAllTopics1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucTeacherAllTopics1.Location = new System.Drawing.Point(213, 55);
+            this.ucTeacherAllTopics1.Name = "ucTeacherAllTopics1";
+            this.ucTeacherAllTopics1.Size = new System.Drawing.Size(1476, 789);
+            this.ucTeacherAllTopics1.TabIndex = 10;
             // 
             // ucTeacherEditInfor1
             // 
@@ -324,22 +331,13 @@
             this.ucTeacherEditInfor1.Size = new System.Drawing.Size(722, 724);
             this.ucTeacherEditInfor1.TabIndex = 9;
             // 
-            // ucTeacherAllTopics1
+            // ucTeacherInfor1
             // 
-            this.ucTeacherAllTopics1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ucTeacherAllTopics1.Location = new System.Drawing.Point(243, 75);
-            this.ucTeacherAllTopics1.Name = "ucTeacherAllTopics1";
-            this.ucTeacherAllTopics1.Size = new System.Drawing.Size(1460, 764);
-            this.ucTeacherAllTopics1.TabIndex = 10;
-            // 
-            // ucTeacherAllTask1
-            // 
-            this.ucTeacherAllTask1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ucTeacherAllTask1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucTeacherAllTask1.Location = new System.Drawing.Point(213, 55);
-            this.ucTeacherAllTask1.Name = "ucTeacherAllTask1";
-            this.ucTeacherAllTask1.Size = new System.Drawing.Size(1476, 789);
-            this.ucTeacherAllTask1.TabIndex = 11;
+            this.ucTeacherInfor1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ucTeacherInfor1.Location = new System.Drawing.Point(243, 75);
+            this.ucTeacherInfor1.Name = "ucTeacherInfor1";
+            this.ucTeacherInfor1.Size = new System.Drawing.Size(322, 627);
+            this.ucTeacherInfor1.TabIndex = 8;
             // 
             // FTeacherDashboard
             // 

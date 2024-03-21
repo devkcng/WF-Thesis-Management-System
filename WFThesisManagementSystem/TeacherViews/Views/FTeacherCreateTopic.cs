@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WFThesisManagementSystem.DataAccess;
 using WFThesisManagementSystem.Models;
+using WFThesisManagementSystem.TeacherViews.TeacherUserControl;
 
 namespace WFThesisManagementSystem.TeacherViews.Views
 {
@@ -24,17 +25,32 @@ namespace WFThesisManagementSystem.TeacherViews.Views
         }
         private void Save(object sender, EventArgs e)
         {
-            this.Hide();
-            Topic topic = new Topic(1, ucTeacherCreateTopic1.txtTopicName.Text, ucTeacherCreateTopic1.txtTopicDescription.Text, ucTeacherCreateTopic1.cbxTopicCategory.Items.ToString(), ucTeacherCreateTopic1.cbxTopicTechnology.Items.ToString(), ucTeacherCreateTopic1.txtTopicRequirement.Text, int.Parse(ucTeacherCreateTopic1.cbxNumber.Items.ToString()));
             
-            if(dbConnect.ExecuteSqlQuery(topicDAO.AddTopic(topic)))
+            for(int i=0;i<= ucTeacherCreateTopic1.txtTopicId.Text.Length - 1;i++)
             {
-                MessageBox.Show("Thêm thành công");
-                //FTeacherCreateTopic_Load(sender, e);
+                if (ucTeacherCreateTopic1.txtTopicId.Text[i] >'9' || ucTeacherCreateTopic1.txtTopicId.Text[i] <'0')
+                {
+                    MessageBox.Show("Error!!!");
+                    return;
+                }    
+            }    
+            Topic topic = new Topic(int.Parse(ucTeacherCreateTopic1.txtTopicId.Text), ucTeacherCreateTopic1.txtTopicName.Text, ucTeacherCreateTopic1.txtTopicDescription.Text, ucTeacherCreateTopic1.cbxTopicCategory.SelectedItem.ToString(), ucTeacherCreateTopic1.cbxTopicTechnology.SelectedItem.ToString(), ucTeacherCreateTopic1.txtTopicRequirement.Text, int.Parse(ucTeacherCreateTopic1.cbxNumber.SelectedItem.ToString()));
+            //TopicDAO topicDAO = new TopicDAO();
+            if (topicDAO.CheckData(topic))
+            {
+                if (dbConnect.ExecuteSqlQuery(topicDAO.AddTopic(topic)))
+                {
+                    //UcTeacherAllTopics ucTeacherAllTopics = new UcTeacherAllTopics();
+                    //ucTeacherAllTopics.UcTeacherAllTopics_Load(sender, e);
+                    MessageBox.Show("Add Success");
+                    this.Hide();
+                    
+                    
+                }
             }
             else
             {
-                MessageBox.Show("Lỗi");
+                MessageBox.Show("Error!!!");
             } 
                 
             
@@ -44,6 +60,7 @@ namespace WFThesisManagementSystem.TeacherViews.Views
             ucTeacherCreateTopic1.txtTopicRequirement.Clear();
             ucTeacherCreateTopic1.txtTopicDescription.Clear();
             ucTeacherCreateTopic1.txtTopicName.Clear();
+            //ucTeacherCreateTopic1.cbxNumber.
 
         }
     }

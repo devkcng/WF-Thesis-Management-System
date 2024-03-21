@@ -19,8 +19,13 @@ namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
         public UcTeacherAllTopics()
         {
             InitializeComponent();
+            
            
         }
+        //public UcTeacherAllTopics(object sender,EventArgs e)
+        //{
+        //    UcTeacherAllTopics_Load(sender,e);
+        //}
         private void ListTopic()
         {
             DBConnect dBConnect = new DBConnect();
@@ -77,7 +82,7 @@ namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
 
         }
 
-        private void UcTeacherAllTopics_Load(object sender, EventArgs e)
+        public void UcTeacherAllTopics_Load(object sender, EventArgs e)
         {
             ListTopic();
         }

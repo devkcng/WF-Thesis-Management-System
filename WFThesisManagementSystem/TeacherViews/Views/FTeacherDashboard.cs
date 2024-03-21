@@ -61,6 +61,7 @@ namespace WFThesisManagementSystem.TeacherViews.Views
 
         private void Project_Click(object sender, EventArgs e)
         {
+            ucTeacherAllTopics1.UcTeacherAllTopics_Load(sender,e);
             ucTeacherAllTopics1.Show();
             ucTeacherAllTask1.Hide();
             ucTeacherEditInfor1.Hide();
