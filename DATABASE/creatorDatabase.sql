@@ -73,13 +73,13 @@ INSERT INTO Topics (topic_id, topic_name, topic_description, topic_technology, t
 
 -- Inserting data into Student_Group table
 INSERT INTO Student_Group (group_id, group_name, topic_id, number_of_students, group_points) VALUES
-(1, 'Web Development Team', 123, 5, 0),
+(1, 'Web Development Team', 123, 4, 0),
 (2, 'Mobile App Development Team', 222, 4, 0),
 (3, 'Database Management Team', 333, 3, 0);
 
 -- Inserting data into Student table
 INSERT INTO Student (student_id, student_name, student_age, student_email, student_grade, group_id) VALUES
-(2211001, 'Alice Green', 20, 'alice.green@example.com', 'Senior', 1),
+(2211001, 'Alice Green', 20, 'alice.green@example.com', 'Senior', NULL),
 (2211002, 'Bob White', 22, 'bob.white@example.com', 'Junior', 1),
 (2211003, 'Charlie Black', 21, 'charlie.black@example.com', 'Senior', 1),
 (2211004, 'David Brown', 19, 'david.brown@example.com', 'Sophomore', 1),
@@ -95,7 +95,7 @@ INSERT INTO Student (student_id, student_name, student_age, student_email, stude
 -- Inserting data into StudentAccount table
 INSERT INTO StudentAccount (student_id, student_username, student_password) VALUES
 (2211001, 'student', '123'),
-(2211002, 'bobwhite', 'password456'),
+(2211002, 'student2', '456'),
 (2211003, 'charlieblack', 'password789'),
 (2211004, 'davidbrown', 'password123'),
 (2211005, 'emmagrey', 'password456'),
