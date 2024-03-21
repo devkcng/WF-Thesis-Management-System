@@ -364,3 +364,5 @@ FodyWeavers.xsd
 
 DATABASE/ThesisManagement.mdf
 DATABASE/ThesisManagement_log.ldf
+/DATABASE/ThesisManagement.mdf
+/DATABASE/ThesisManagement_log.ldf
