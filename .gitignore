@@ -362,5 +362,4 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
-/DATABASE/ThesisManagement.mdf
-/DATABASE/ThesisManagement_log.ldf
+
