@@ -262,7 +262,8 @@ ServiceFabricBackup/
 *.rptproj.bak
 
 # SQL Server files
-
+*.mdf
+*.ldf
 *.ndf
 
 # Business Intelligence projects
@@ -361,4 +362,5 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
-
+/DATABASE/ThesisManagement.mdf
+/DATABASE/ThesisManagement_log.ldf
