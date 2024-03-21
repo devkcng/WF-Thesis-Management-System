@@ -1,98 +1,114 @@
-﻿-- Creating the Student table
-CREATE TABLE Student (
-    student_id INT PRIMARY KEY,
-    student_name VARCHAR(50),
-    student_age INT,
-    student_grade VARCHAR(10)
-);
-
--- Inserting data into Student table
-INSERT INTO Student (student_id, student_name, student_age, student_grade) 
-VALUES 
-(1, 'John Smith', 17, '12th'),
-(2, 'Emily Johnson', 16, '11th'),
-(3, 'Michael Williams', 18, '12th'),
-(4, 'Sophia Brown', 17, '12th'),
-(5, 'Emma Jones', 16, '11th');
-
--- Creating the StudentAccount table
-CREATE TABLE StudentAccount (
-    student_account_id INT PRIMARY KEY,
-    student_id INT,
-    student_username VARCHAR(50) UNIQUE,
-    student_password VARCHAR(50),
-    FOREIGN KEY (student_id) REFERENCES Student(student_id)
-);
-
--- Inserting data into StudentAccount table
-INSERT INTO StudentAccount (student_account_id, student_id, student_username, student_password) 
-VALUES 
-(1, 1, 'johnsmith123', 'password1'),
-(2, 2, 'emilyj22', 'password2'),
-(3, 3, 'michaelw98', 'password3'),
-(4, 4, 'sophiabrown123', 'password4'),
-(5, 5, 'emmaj', 'password5');
-
--- Creating the Teacher table
+﻿-- Creating the Teacher table
 CREATE TABLE Teacher (
     teacher_id INT PRIMARY KEY,
-    teacher_name VARCHAR(50),
+    teacher_name VARCHAR(50) NOT NULL,
+    teacher_age INT,
+    teacher_email VARCHAR(255),
     subject_taught VARCHAR(50)
 );
-
--- Inserting data into Teacher table
-INSERT INTO Teacher (teacher_id, teacher_name, subject_taught) 
-VALUES 
-(1, 'Mr. Anderson', 'Mathematics'),
-(2, 'Ms. Davis', 'Science'),
-(3, 'Mrs. Wilson', 'English');
-
--- Creating the TeacherAccount table
-CREATE TABLE TeacherAccount (
-    teacher_account_id INT PRIMARY KEY,
-    teacher_id INT,
-    teacher_username VARCHAR(50) UNIQUE,
-    teacher_password VARCHAR(50),
-    FOREIGN KEY (teacher_id) REFERENCES Teacher(teacher_id)
-);
-
--- Inserting data into TeacherAccount table
-INSERT INTO TeacherAccount (teacher_account_id, teacher_id, teacher_username, teacher_password) 
-VALUES 
-(1, 1, 'mr_anderson', 'teacherpass1'),
-(2, 2, 'ms_davis', 'teacherpass2'),
-(3, 3, 'mrs_wilson', 'teacherpass3');
 
 -- Creating the Topics table
 CREATE TABLE Topics (
     topic_id INT PRIMARY KEY,
     topic_name VARCHAR(100),
-    topic_description TEXT
+    topic_description TEXT,
+    topic_technology VARCHAR(100),
+    topic_requirement TEXT,
+    topic_category VARCHAR(100),
+    max_members INT,
+    teacher_id INT,
+    FOREIGN KEY (teacher_id) REFERENCES Teacher(teacher_id)
 );
-
--- Inserting data into Topics table
-INSERT INTO Topics (topic_id, topic_name, topic_description) 
-VALUES 
-(1, 'Algebra', 'Basic algebraic operations and equations'),
-(2, 'Chemical Reactions', 'Chemical reactions and stoichiometry'),
-(3, 'Shakespearean Literature', 'Works of William Shakespeare');
 
 -- Creating the Student_Group table
 CREATE TABLE Student_Group (
     group_id INT PRIMARY KEY,
     group_name VARCHAR(50),
     topic_id INT,
-    student_id INT,
+    number_of_students INT,
+    group_points FLOAT DEFAULT 0,
     FOREIGN KEY (topic_id) REFERENCES Topics(topic_id),
-    FOREIGN KEY (student_id) REFERENCES Student(student_id),
-    UNIQUE(group_name, topic_id, student_id)
+    UNIQUE(group_name, topic_id)
 );
 
+-- Creating the Student table
+CREATE TABLE Student (
+    student_id INT PRIMARY KEY,
+    student_name VARCHAR(50) NOT NULL,
+    student_age INT,
+    student_email VARCHAR(255),
+    student_grade VARCHAR(10),
+    group_id INT,
+    FOREIGN KEY (group_id) REFERENCES Student_Group(group_id)
+);
+
+-- Creating the StudentAccount table
+CREATE TABLE StudentAccount (
+    student_id INT PRIMARY KEY,
+    student_username VARCHAR(50) UNIQUE,
+    student_password VARCHAR(50),
+    FOREIGN KEY (student_id) REFERENCES Student(student_id)
+);
+
+-- Creating the TeacherAccount table
+CREATE TABLE TeacherAccount (
+    teacher_id INT PRIMARY KEY,
+    teacher_username VARCHAR(50) UNIQUE,
+    teacher_password VARCHAR(50),
+    FOREIGN KEY (teacher_id) REFERENCES Teacher(teacher_id)
+);
+
+
+-- Inserting data into Teacher table
+INSERT INTO Teacher (teacher_id, teacher_name, teacher_age, teacher_email, subject_taught) VALUES
+(1811001, 'John Smith', 35, 'john.smith@example.com', 'Web Development'),
+(1811002, 'Emily Johnson', 40, 'emily.johnson@example.com', 'Mobile App Development'),
+(1811003, 'Michael Brown', 45, 'michael.brown@example.com', 'Database Management');
+
+-- Inserting data into Topics table
+INSERT INTO Topics (topic_id, topic_name, topic_description, topic_technology, topic_requirement, topic_category, max_members, teacher_id) VALUES
+(123, 'Building a Responsive Website', 'Learn how to design and develop responsive websites using HTML, CSS, and JavaScript.', 'HTML, CSS, JavaScript', 'Basic understanding of web development concepts', 'Web Development', 5, 1811001),
+(222, 'Creating a Cross-Platform Mobile App', 'Explore cross-platform mobile app development using frameworks like React Native or Flutter.', 'React Native, Flutter', 'Familiarity with JavaScript or Dart', 'Mobile App Development', 4, 1811002),
+(333, 'Database Design and Management', 'Learn about database design principles and SQL for creating and managing databases.', 'SQL, Database Management Systems', 'Understanding of relational databases', 'Database Management', 3, 1811003);
+
 -- Inserting data into Student_Group table
-INSERT INTO Student_Group (group_id, group_name, topic_id, student_id) 
-VALUES 
-(1, 'Math Club', 1, 1),
-(2, 'Chemistry Society', 2, 2),
-(3, 'Literature Circle', 3, 4),
-(4, 'Math Club', 1, 3),
-(5, 'Chemistry Society', 2, 5);
+INSERT INTO Student_Group (group_id, group_name, topic_id, number_of_students, group_points) VALUES
+(1, 'Web Development Team', 123, 4, 0),
+(2, 'Mobile App Development Team', 222, 4, 0),
+(3, 'Database Management Team', 333, 3, 0);
+
+-- Inserting data into Student table
+INSERT INTO Student (student_id, student_name, student_age, student_email, student_grade, group_id) VALUES
+(2211001, 'Alice Green', 20, 'alice.green@example.com', 'Senior', NULL),
+(2211002, 'Bob White', 22, 'bob.white@example.com', 'Junior', 1),
+(2211003, 'Charlie Black', 21, 'charlie.black@example.com', 'Senior', 1),
+(2211004, 'David Brown', 19, 'david.brown@example.com', 'Sophomore', 1),
+(2211005, 'Emma Grey', 23, 'emma.grey@example.com', 'Senior', 1),
+(2211006, 'Frank Blue', 24, 'frank.blue@example.com', 'Graduate', 2),
+(2211007, 'Grace Red', 20, 'grace.red@example.com', 'Junior', 2),
+(2211008, 'Hannah Orange', 21, 'hannah.orange@example.com', 'Senior', 2),
+(2211009, 'Isaac Yellow', 22, 'isaac.yellow@example.com', 'Junior', 2),
+(2211010, 'Jessica Violet', 20, 'jessica.violet@example.com', 'Senior', 3),
+(2211011, 'Kevin Indigo', 24, 'kevin.indigo@example.com', 'Graduate', 3),
+(2211012, 'Lily Cyan', 23, 'lily.cyan@example.com', 'Senior', 3);
+
+-- Inserting data into StudentAccount table
+INSERT INTO StudentAccount (student_id, student_username, student_password) VALUES
+(2211001, 'student', '123'),
+(2211002, 'student2', '456'),
+(2211003, 'charlieblack', 'password789'),
+(2211004, 'davidbrown', 'password123'),
+(2211005, 'emmagrey', 'password456'),
+(2211006, 'frankblue', 'password789'),
+(2211007, 'gracered', 'password123'),
+(2211008, 'hannahorange', 'password456'),
+(2211009, 'isaacyellow', 'password789'),
+(2211010, 'jessicaviolet', 'password123'),
+(2211011, 'kevinindigo', 'password456'),
+(2211012, 'lilycyan', 'password789');
+
+-- Inserting data into TeacherAccount table
+INSERT INTO TeacherAccount (teacher_id, teacher_username, teacher_password) VALUES
+(1811001, 'teacher', '123'),
+(1811002, 'emilyjohnson', 'password456'),
+(1811003, 'michaelbrown', 'password789');

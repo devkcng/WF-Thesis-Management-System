@@ -33,9 +33,11 @@
             // 
             // ucTeacherEditTopic1
             // 
-            this.ucTeacherEditTopic1.Location = new System.Drawing.Point(-2, -3);
+            this.ucTeacherEditTopic1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ucTeacherEditTopic1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucTeacherEditTopic1.Location = new System.Drawing.Point(0, 0);
             this.ucTeacherEditTopic1.Name = "ucTeacherEditTopic1";
-            this.ucTeacherEditTopic1.Size = new System.Drawing.Size(1494, 726);
+            this.ucTeacherEditTopic1.Size = new System.Drawing.Size(1500, 724);
             this.ucTeacherEditTopic1.TabIndex = 0;
             // 
             // FTeacherEditTopic
@@ -52,6 +54,6 @@
 
         #endregion
 
-        private TeacherUserControl.UcTeacherEditTopic ucTeacherEditTopic1;
+        public TeacherUserControl.UcTeacherEditTopic ucTeacherEditTopic1;
     }
 }

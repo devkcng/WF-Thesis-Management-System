@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WFThesisManagementSystem.Models;
 
 namespace WFThesisManagementSystem.Views.StudentViews
 {
@@ -26,7 +27,11 @@ namespace WFThesisManagementSystem.Views.StudentViews
             panelContainerlblComplete.Location = new Point((this.Width - 2*panelContainerlblComplete.Width), panelContainerlblComplete.Location.Y);
             ptbIssue.Location = new Point((panelContainerlblComplete.Location.X), ptbIssue.Location.Y);
             lblIssue.Location = new Point((ptbIssue.Location.X + ptbIssue.Width), lblIssue.Location.Y);
+        }
 
+        public void SetTopic(Topic topic) {
+            lblProjectName.Text = topic.Name;
+            txtProjectDetail.Text= topic.Description;
         }
     }
 }

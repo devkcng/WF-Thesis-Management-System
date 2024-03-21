@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
-            this.txtTopicCategory = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbxTopicCategory = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblTopicCategory = new System.Windows.Forms.Label();
             this.guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
             this.txtTopicRequirement = new Guna.UI2.WinForms.Guna2TextBox();
@@ -49,6 +49,9 @@
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.txtTopicName = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblTopicName = new System.Windows.Forms.Label();
+            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.txtTopicId = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblTopicId = new System.Windows.Forms.Label();
             this.guna2Panel8.SuspendLayout();
             this.guna2Panel7.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
@@ -56,34 +59,39 @@
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
+            this.guna2Panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel8
             // 
-            this.guna2Panel8.Controls.Add(this.txtTopicCategory);
+            this.guna2Panel8.Controls.Add(this.cbxTopicCategory);
             this.guna2Panel8.Controls.Add(this.lblTopicCategory);
             this.guna2Panel8.Location = new System.Drawing.Point(61, 220);
             this.guna2Panel8.Name = "guna2Panel8";
             this.guna2Panel8.Size = new System.Drawing.Size(489, 100);
             this.guna2Panel8.TabIndex = 13;
             // 
-            // txtTopicCategory
+            // cbxTopicCategory
             // 
-            this.txtTopicCategory.BackColor = System.Drawing.Color.Transparent;
-            this.txtTopicCategory.BorderColor = System.Drawing.Color.Gainsboro;
-            this.txtTopicCategory.BorderRadius = 8;
-            this.txtTopicCategory.BorderThickness = 2;
-            this.txtTopicCategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.txtTopicCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txtTopicCategory.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTopicCategory.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTopicCategory.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtTopicCategory.ForeColor = System.Drawing.Color.Black;
-            this.txtTopicCategory.ItemHeight = 30;
-            this.txtTopicCategory.Location = new System.Drawing.Point(8, 61);
-            this.txtTopicCategory.Name = "txtTopicCategory";
-            this.txtTopicCategory.Size = new System.Drawing.Size(478, 36);
-            this.txtTopicCategory.TabIndex = 5;
+            this.cbxTopicCategory.BackColor = System.Drawing.Color.Transparent;
+            this.cbxTopicCategory.BorderColor = System.Drawing.Color.Gainsboro;
+            this.cbxTopicCategory.BorderRadius = 8;
+            this.cbxTopicCategory.BorderThickness = 3;
+            this.cbxTopicCategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxTopicCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxTopicCategory.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbxTopicCategory.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbxTopicCategory.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cbxTopicCategory.ForeColor = System.Drawing.Color.Black;
+            this.cbxTopicCategory.ItemHeight = 30;
+            this.cbxTopicCategory.Items.AddRange(new object[] {
+            "Mobile App Development",
+            "Web Development",
+            "Database Management"});
+            this.cbxTopicCategory.Location = new System.Drawing.Point(8, 61);
+            this.cbxTopicCategory.Name = "cbxTopicCategory";
+            this.cbxTopicCategory.Size = new System.Drawing.Size(478, 36);
+            this.cbxTopicCategory.TabIndex = 5;
             // 
             // lblTopicCategory
             // 
@@ -152,7 +160,7 @@
             this.cbxNumber.BackColor = System.Drawing.Color.Transparent;
             this.cbxNumber.BorderColor = System.Drawing.Color.Gainsboro;
             this.cbxNumber.BorderRadius = 8;
-            this.cbxNumber.BorderThickness = 2;
+            this.cbxNumber.BorderThickness = 3;
             this.cbxNumber.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbxNumber.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxNumber.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -186,9 +194,9 @@
             // 
             this.guna2Panel5.Controls.Add(this.btnUpdate);
             this.guna2Panel5.Controls.Add(this.btnClose);
-            this.guna2Panel5.Location = new System.Drawing.Point(962, 609);
+            this.guna2Panel5.Location = new System.Drawing.Point(963, 609);
             this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(254, 56);
+            this.guna2Panel5.Size = new System.Drawing.Size(253, 56);
             this.guna2Panel5.TabIndex = 14;
             // 
             // btnUpdate
@@ -202,7 +210,7 @@
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.Location = new System.Drawing.Point(0, 0);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(104, 56);
+            this.btnUpdate.Size = new System.Drawing.Size(126, 56);
             this.btnUpdate.TabIndex = 8;
             this.btnUpdate.Text = "Update";
             // 
@@ -279,7 +287,7 @@
             this.cbxTopicTechnology.BackColor = System.Drawing.Color.Transparent;
             this.cbxTopicTechnology.BorderColor = System.Drawing.Color.Gainsboro;
             this.cbxTopicTechnology.BorderRadius = 8;
-            this.cbxTopicTechnology.BorderThickness = 2;
+            this.cbxTopicTechnology.BorderThickness = 3;
             this.cbxTopicTechnology.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbxTopicTechnology.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTopicTechnology.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -288,11 +296,9 @@
             this.cbxTopicTechnology.ForeColor = System.Drawing.Color.Black;
             this.cbxTopicTechnology.ItemHeight = 30;
             this.cbxTopicTechnology.Items.AddRange(new object[] {
-            "Web",
-            "Desktop App",
-            "Mobile App",
-            "",
-            ""});
+            "HTML, CSS, JavaScript",
+            "React Native, Flutter",
+            "SQL, Database Management Systems"});
             this.cbxTopicTechnology.Location = new System.Drawing.Point(4, 60);
             this.cbxTopicTechnology.Name = "cbxTopicTechnology";
             this.cbxTopicTechnology.Size = new System.Drawing.Size(485, 36);
@@ -351,11 +357,55 @@
             this.lblTopicName.TabIndex = 0;
             this.lblTopicName.Text = "Topic Name";
             // 
+            // guna2Panel3
+            // 
+            this.guna2Panel3.Controls.Add(this.txtTopicId);
+            this.guna2Panel3.Controls.Add(this.lblTopicId);
+            this.guna2Panel3.Location = new System.Drawing.Point(1250, 198);
+            this.guna2Panel3.Name = "guna2Panel3";
+            this.guna2Panel3.Size = new System.Drawing.Size(178, 102);
+            this.guna2Panel3.TabIndex = 17;
+            // 
+            // txtTopicId
+            // 
+            this.txtTopicId.BorderColor = System.Drawing.Color.Gainsboro;
+            this.txtTopicId.BorderRadius = 8;
+            this.txtTopicId.BorderThickness = 2;
+            this.txtTopicId.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTopicId.DefaultText = "";
+            this.txtTopicId.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTopicId.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTopicId.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTopicId.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTopicId.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTopicId.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTopicId.ForeColor = System.Drawing.Color.Black;
+            this.txtTopicId.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTopicId.Location = new System.Drawing.Point(5, 50);
+            this.txtTopicId.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtTopicId.Name = "txtTopicId";
+            this.txtTopicId.PasswordChar = '\0';
+            this.txtTopicId.PlaceholderText = "";
+            this.txtTopicId.SelectedText = "";
+            this.txtTopicId.Size = new System.Drawing.Size(167, 52);
+            this.txtTopicId.TabIndex = 1;
+            // 
+            // lblTopicId
+            // 
+            this.lblTopicId.AutoSize = true;
+            this.lblTopicId.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTopicId.Location = new System.Drawing.Point(14, 10);
+            this.lblTopicId.Name = "lblTopicId";
+            this.lblTopicId.Size = new System.Drawing.Size(104, 28);
+            this.lblTopicId.TabIndex = 0;
+            this.lblTopicId.Text = "Topic Id";
+            // 
             // UcTeacherEditTopic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel8);
             this.Controls.Add(this.guna2Panel7);
             this.Controls.Add(this.guna2Panel6);
@@ -364,7 +414,7 @@
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
             this.Name = "UcTeacherEditTopic";
-            this.Size = new System.Drawing.Size(1376, 726);
+            this.Size = new System.Drawing.Size(1456, 726);
             this.guna2Panel8.ResumeLayout(false);
             this.guna2Panel8.PerformLayout();
             this.guna2Panel7.ResumeLayout(false);
@@ -378,6 +428,8 @@
             this.guna2Panel2.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
+            this.guna2Panel3.ResumeLayout(false);
+            this.guna2Panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -385,7 +437,7 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
-        public Guna.UI2.WinForms.Guna2ComboBox txtTopicCategory;
+        public Guna.UI2.WinForms.Guna2ComboBox cbxTopicCategory;
         public System.Windows.Forms.Label lblTopicCategory;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
         public Guna.UI2.WinForms.Guna2TextBox txtTopicRequirement;
@@ -405,5 +457,8 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         public Guna.UI2.WinForms.Guna2TextBox txtTopicName;
         public System.Windows.Forms.Label lblTopicName;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
+        public Guna.UI2.WinForms.Guna2TextBox txtTopicId;
+        public System.Windows.Forms.Label lblTopicId;
     }
 }

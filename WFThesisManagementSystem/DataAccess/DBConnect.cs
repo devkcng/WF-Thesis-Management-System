@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
+using System.Windows.Forms;
 
 namespace WFThesisManagementSystem.DataAccess
 {
-    internal class DBConnect
+    public class DBConnect
     {
         private const string DatabaseRelativePath = @"..\..\..\DATABASE\ThesisManagement.mdf";
 
@@ -18,7 +19,7 @@ namespace WFThesisManagementSystem.DataAccess
         private static readonly string DatabaseFilePath = Path.GetFullPath(Path.Combine(ExecutablePath, DatabaseRelativePath));
 
         private static readonly string ConnectionString = $"Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename={DatabaseFilePath};Integrated Security=True";
-        private readonly SqlConnection _conn = new SqlConnection(ConnectionString);
+        public readonly SqlConnection _conn = new SqlConnection(ConnectionString);
 
         public bool ExecuteSqlQuery(string sqlStr)
         {
@@ -37,6 +38,63 @@ namespace WFThesisManagementSystem.DataAccess
             {
                 _conn.Close();
             }
+        }
+        public DataTable LoadData(string tableName)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                _conn.Open();
+                string sqlStr = string.Format("SELECT *FROM {0}", tableName);
+                SqlDataAdapter adapter = new SqlDataAdapter(sqlStr, _conn);
+                DataTable dtTable = new DataTable();
+                adapter.Fill(dtTable);
+                dt = dtTable; 
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+            }
+            finally
+            {
+                _conn.Close();
+            }
+            return dt;
+        }
+
+        public DataTable GetData(string sqlStr)
+        {
+            try
+            {
+                _conn.Open();
+                SqlDataAdapter adapter = new SqlDataAdapter(sqlStr, _conn);
+                DataTable dtSinhVien = new DataTable();
+                adapter.Fill(dtSinhVien);
+                return dtSinhVien;
+            }
+            catch (Exception exc)
+            {
+                throw new Exception("Load unsuccessfully", exc);
+            }
+            finally
+            {
+                _conn.Close();
+            }
+        }
+
+        public DataTable GetData(SqlCommand command)
+        {
+                command.Connection = _conn;
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable dataTable = new DataTable();
+                _conn.Open();
+                adapter.Fill(dataTable);
+                return dataTable;
+        }
+
+        public DataTable GetColumnData(string columnName, string tableName)
+        {
+            return GetData(string.Format("SELECT {0} FROM {1}", columnName, tableName));
         }
     }
 }

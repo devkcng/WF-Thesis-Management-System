@@ -56,8 +56,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess\DBConnect.cs" />
+    <Compile Include="DataAccess\StudentGroupDAO.cs" />
+    <Compile Include="DataAccess\UserLogin.cs" />
     <Compile Include="DataAccess\StudentDAO.cs" />
     <Compile Include="DataAccess\TeacherDAO.cs" />
+    <Compile Include="DataAccess\TopicDAO.cs" />
     <Compile Include="FLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,7 +69,9 @@
     </Compile>
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\StudentGroup.cs" />
     <Compile Include="Models\Teacher.cs" />
+    <Compile Include="Models\Topic.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudentViews\StudentUserControl\UCTask.cs">
@@ -80,6 +85,12 @@
     </Compile>
     <Compile Include="StudentViews\StudentUserControl\UCWorkLog.Designer.cs">
       <DependentUpon>UCWorkLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StudentViews\Views\FRegisterTopic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentViews\Views\FRegisterTopic.Designer.cs">
+      <DependentUpon>FRegisterTopic.cs</DependentUpon>
     </Compile>
     <Compile Include="StudentViews\Views\FStudentDashboard.cs">
       <SubType>Form</SubType>
@@ -117,6 +128,12 @@
     <Compile Include="StudentViews\StudentUserControl\UCStudentWorkLogs.Designer.cs">
       <DependentUpon>UCStudentWorkLogs.cs</DependentUpon>
     </Compile>
+    <Compile Include="StudentViews\Views\FStudentRegisterTopic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentViews\Views\FStudentRegisterTopic.Designer.cs">
+      <DependentUpon>FStudentRegisterTopic.cs</DependentUpon>
+    </Compile>
     <Compile Include="StudentViews\Views\FStudentTaskPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +157,12 @@
     </Compile>
     <Compile Include="TeacherViews\TeacherUserControl\UcTeacherEditInfor.Designer.cs">
       <DependentUpon>UcTeacherEditInfor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherHeadingSingleMark.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherHeadingSingleMark.Designer.cs">
+      <DependentUpon>UcTeacherHeadingSingleMark.cs</DependentUpon>
     </Compile>
     <Compile Include="TeacherViews\TeacherUserControl\UcTeacherInfor.cs">
       <SubType>UserControl</SubType>
@@ -170,6 +193,12 @@
     </Compile>
     <Compile Include="TeacherViews\TeacherUserControl\UcMinimized.Designer.cs">
       <DependentUpon>UcMinimized.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherSingleMark.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherSingleMark.Designer.cs">
+      <DependentUpon>UcTeacherSingleMark.cs</DependentUpon>
     </Compile>
     <Compile Include="TeacherViews\TeacherUserControl\UcTeacherSingleTask.cs">
       <SubType>UserControl</SubType>
@@ -225,6 +254,8 @@
     <Compile Include="TeacherViews\Views\FTeacherEditTopic.Designer.cs">
       <DependentUpon>FTeacherEditTopic.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\FileGenerator.cs" />
+    <Compile Include="Utilities\TFIDF.cs" />
     <EmbeddedResource Include="FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -250,6 +281,9 @@
     <EmbeddedResource Include="StudentViews\StudentUserControl\UCWorkLog.resx">
       <DependentUpon>UCWorkLog.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="StudentViews\Views\FRegisterTopic.resx">
+      <DependentUpon>FRegisterTopic.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StudentViews\Views\FStudentDashboard.resx">
       <DependentUpon>FStudentDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -258,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StudentViews\StudentUserControl\UCStudentProject.resx">
       <DependentUpon>UCStudentProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentViews\Views\FStudentRegisterTopic.resx">
+      <DependentUpon>FStudentRegisterTopic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentViews\Views\FStudentTaskPopUp.resx">
       <DependentUpon>FStudentTaskPopUp.cs</DependentUpon>
@@ -270,6 +307,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherEditInfor.resx">
       <DependentUpon>UcTeacherEditInfor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherHeadingSingleMark.resx">
+      <DependentUpon>UcTeacherHeadingSingleMark.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherInfor.resx">
       <DependentUpon>UcTeacherInfor.cs</DependentUpon>
@@ -285,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcMinimized.resx">
       <DependentUpon>UcMinimized.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherSingleMark.resx">
+      <DependentUpon>UcTeacherSingleMark.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherSingleTask.resx">
       <DependentUpon>UcTeacherSingleTask.cs</DependentUpon>
@@ -425,6 +468,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Chat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chat1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Student Male.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Down Arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Down Arrow1.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -43,98 +43,76 @@
             this.performance = new System.Windows.Forms.ToolStripMenuItem();
             this.logout = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.mspProfile = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.menuStrip3 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.ucTeacherAllTopics1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherAllTopics();
             this.ucTeacherAllTask1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherAllTask();
-            this.mspProfile = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ucTeacherInfor1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherInfor();
+            this.ucTeacherAllTopics1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherAllTopics();
             this.ucTeacherEditInfor1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherEditInfor();
+            this.ucTeacherInfor1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherInfor();
             this.MSListFolder.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.mspProfile.SuspendLayout();
             this.menuStrip3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.mspProfile.SuspendLayout();
             this.SuspendLayout();
             // 
             // kryptonPalette1
             // 
-            this.kryptonPalette1.BasePaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue;
             this.kryptonPalette1.ButtonSpecs.FormClose.Image = ((System.Drawing.Image)(resources.GetObject("kryptonPalette1.ButtonSpecs.FormClose.Image")));
             this.kryptonPalette1.ButtonSpecs.FormClose.ImageStates.ImagePressed = ((System.Drawing.Image)(resources.GetObject("kryptonPalette1.ButtonSpecs.FormClose.ImageStates.ImagePressed")));
             this.kryptonPalette1.ButtonSpecs.FormClose.ImageStates.ImageTracking = ((System.Drawing.Image)(resources.GetObject("kryptonPalette1.ButtonSpecs.FormClose.ImageStates.ImageTracking")));
-            this.kryptonPalette1.ButtonSpecs.FormClose.Orientation = ComponentFactory.Krypton.Toolkit.PaletteButtonOrientation.Inherit;
-            this.kryptonPalette1.ButtonSpecs.FormClose.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Inherit;
             this.kryptonPalette1.ButtonSpecs.FormMax.Image = ((System.Drawing.Image)(resources.GetObject("kryptonPalette1.ButtonSpecs.FormMax.Image")));
             this.kryptonPalette1.ButtonSpecs.FormMax.ImageStates.ImagePressed = ((System.Drawing.Image)(resources.GetObject("kryptonPalette1.ButtonSpecs.FormMax.ImageStates.ImagePressed")));
             this.kryptonPalette1.ButtonSpecs.FormMax.ImageStates.ImageTracking = ((System.Drawing.Image)(resources.GetObject("kryptonPalette1.ButtonSpecs.FormMax.ImageStates.ImageTracking")));
-            this.kryptonPalette1.ButtonSpecs.FormMax.Orientation = ComponentFactory.Krypton.Toolkit.PaletteButtonOrientation.Inherit;
-            this.kryptonPalette1.ButtonSpecs.FormMax.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Inherit;
             this.kryptonPalette1.ButtonSpecs.FormMin.Image = ((System.Drawing.Image)(resources.GetObject("kryptonPalette1.ButtonSpecs.FormMin.Image")));
             this.kryptonPalette1.ButtonSpecs.FormMin.ImageStates.ImagePressed = ((System.Drawing.Image)(resources.GetObject("kryptonPalette1.ButtonSpecs.FormMin.ImageStates.ImagePressed")));
             this.kryptonPalette1.ButtonSpecs.FormMin.ImageStates.ImageTracking = ((System.Drawing.Image)(resources.GetObject("kryptonPalette1.ButtonSpecs.FormMin.ImageStates.ImageTracking")));
-            this.kryptonPalette1.ButtonSpecs.FormMin.Orientation = ComponentFactory.Krypton.Toolkit.PaletteButtonOrientation.Inherit;
-            this.kryptonPalette1.ButtonSpecs.FormMin.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Inherit;
             this.kryptonPalette1.ButtonSpecs.FormRestore.Image = ((System.Drawing.Image)(resources.GetObject("kryptonPalette1.ButtonSpecs.FormRestore.Image")));
-            this.kryptonPalette1.ButtonSpecs.FormRestore.Orientation = ComponentFactory.Krypton.Toolkit.PaletteButtonOrientation.Inherit;
-            this.kryptonPalette1.ButtonSpecs.FormRestore.Style = ComponentFactory.Krypton.Toolkit.PaletteButtonStyle.Inherit;
             this.kryptonPalette1.ButtonStyles.ButtonForm.StateNormal.Back.Color1 = System.Drawing.Color.White;
             this.kryptonPalette1.ButtonStyles.ButtonForm.StateNormal.Back.Color2 = System.Drawing.Color.White;
-            this.kryptonPalette1.ButtonStyles.ButtonForm.StateNormal.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.ButtonStyles.ButtonForm.StateNormal.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonPalette1.ButtonStyles.ButtonForm.StateNormal.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.ButtonStyles.ButtonForm.StateNormal.Border.Width = 0;
             this.kryptonPalette1.ButtonStyles.ButtonForm.StatePressed.Back.Color1 = System.Drawing.Color.White;
             this.kryptonPalette1.ButtonStyles.ButtonForm.StatePressed.Back.Color2 = System.Drawing.Color.White;
-            this.kryptonPalette1.ButtonStyles.ButtonForm.StatePressed.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.ButtonStyles.ButtonForm.StatePressed.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonPalette1.ButtonStyles.ButtonForm.StatePressed.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.ButtonStyles.ButtonForm.StatePressed.Border.Width = 0;
             this.kryptonPalette1.ButtonStyles.ButtonForm.StateTracking.Back.Color1 = System.Drawing.Color.White;
             this.kryptonPalette1.ButtonStyles.ButtonForm.StateTracking.Back.Color2 = System.Drawing.Color.White;
-            this.kryptonPalette1.ButtonStyles.ButtonForm.StateTracking.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.ButtonStyles.ButtonForm.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonPalette1.ButtonStyles.ButtonForm.StateTracking.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.ButtonStyles.ButtonForm.StateTracking.Border.Width = 0;
             this.kryptonPalette1.ButtonStyles.ButtonFormClose.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.kryptonPalette1.ButtonStyles.ButtonFormClose.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.kryptonPalette1.ButtonStyles.ButtonFormClose.StatePressed.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.ButtonStyles.ButtonFormClose.StatePressed.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonPalette1.ButtonStyles.ButtonFormClose.StatePressed.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.ButtonStyles.ButtonFormClose.StatePressed.Border.Width = 0;
             this.kryptonPalette1.ButtonStyles.ButtonFormClose.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.kryptonPalette1.ButtonStyles.ButtonFormClose.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.kryptonPalette1.ButtonStyles.ButtonFormClose.StateTracking.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.ButtonStyles.ButtonFormClose.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kryptonPalette1.ButtonStyles.ButtonFormClose.StateTracking.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.ButtonStyles.ButtonFormClose.StateTracking.Border.Width = 0;
             this.kryptonPalette1.FormStyles.FormMain.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.kryptonPalette1.FormStyles.FormMain.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
             this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.None;
-            this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.FormStyles.FormMain.StateCommon.Border.Rounding = 16;
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
-            this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Inherit;
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, -1, -1, -1);
             // 
             // projectToolStripMenuItem1
@@ -155,11 +133,9 @@
             // kryptonContextMenuRadioButton1
             // 
             this.kryptonContextMenuRadioButton1.ExtraText = "";
-            this.kryptonContextMenuRadioButton1.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.NormalControl;
             // 
             // kryptonContextMenuCheckButton1
             // 
-            this.kryptonContextMenuCheckButton1.ButtonStyle = ComponentFactory.Krypton.Toolkit.ButtonStyle.Standalone;
             this.kryptonContextMenuCheckButton1.Text = "CheckButton";
             // 
             // MSListFolder
@@ -167,7 +143,6 @@
             this.MSListFolder.BackColor = System.Drawing.Color.White;
             this.MSListFolder.Dock = System.Windows.Forms.DockStyle.None;
             this.MSListFolder.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.MSListFolder.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.MSListFolder.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.MSListFolder.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Project,
@@ -238,11 +213,48 @@
             this.panel1.Controls.Add(this.mspProfile);
             this.panel1.Controls.Add(this.kryptonLabel1);
             this.panel1.Controls.Add(this.menuStrip3);
-            this.panel1.Location = new System.Drawing.Point(0, 3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(12342, 72);
+            this.panel1.Size = new System.Drawing.Size(1689, 55);
             this.panel1.TabIndex = 2;
+            // 
+            // mspProfile
+            // 
+            this.mspProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.mspProfile.BackColor = System.Drawing.Color.White;
+            this.mspProfile.Dock = System.Windows.Forms.DockStyle.None;
+            this.mspProfile.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.mspProfile.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.mspProfile.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem2});
+            this.mspProfile.Location = new System.Drawing.Point(-9472, 6);
+            this.mspProfile.Name = "mspProfile";
+            this.mspProfile.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.mspProfile.Size = new System.Drawing.Size(144, 38);
+            this.mspProfile.TabIndex = 5;
+            this.mspProfile.Text = "menuStrip1";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.BackColor = System.Drawing.Color.Wheat;
+            this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editToolStripMenuItem});
+            this.toolStripMenuItem2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem2.Image = global::WFThesisManagementSystem.Properties.Resources.Female_User;
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(138, 36);
+            this.toolStripMenuItem2.Text = "Profile";
+            this.toolStripMenuItem2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(162, 40);
+            this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // kryptonLabel1
             // 
@@ -251,7 +263,7 @@
             this.kryptonLabel1.Location = new System.Drawing.Point(0, 0);
             this.kryptonLabel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.kryptonLabel1.Name = "kryptonLabel1";
-            this.kryptonLabel1.Size = new System.Drawing.Size(277, 72);
+            this.kryptonLabel1.Size = new System.Drawing.Size(277, 55);
             this.kryptonLabel1.TabIndex = 4;
             this.kryptonLabel1.Values.Text = "Thesis Management";
             // 
@@ -261,11 +273,10 @@
             this.menuStrip3.BackColor = System.Drawing.Color.White;
             this.menuStrip3.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.menuStrip3.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip3.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1});
-            this.menuStrip3.Location = new System.Drawing.Point(1872, 15);
+            this.menuStrip3.Location = new System.Drawing.Point(-8781, 15);
             this.menuStrip3.Name = "menuStrip3";
             this.menuStrip3.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
             this.menuStrip3.Size = new System.Drawing.Size(144, 40);
@@ -287,64 +298,38 @@
             this.panel2.AutoSize = true;
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.MSListFolder);
-            this.panel2.Location = new System.Drawing.Point(2, 75);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 55);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(234, 771);
+            this.panel2.Size = new System.Drawing.Size(213, 789);
             this.panel2.TabIndex = 3;
-            // 
-            // ucTeacherAllTopics1
-            // 
-            this.ucTeacherAllTopics1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ucTeacherAllTopics1.Location = new System.Drawing.Point(243, 83);
-            this.ucTeacherAllTopics1.Name = "ucTeacherAllTopics1";
-            this.ucTeacherAllTopics1.Size = new System.Drawing.Size(1082, 763);
-            this.ucTeacherAllTopics1.TabIndex = 6;
             // 
             // ucTeacherAllTask1
             // 
             this.ucTeacherAllTask1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ucTeacherAllTask1.Location = new System.Drawing.Point(243, 75);
+            this.ucTeacherAllTask1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucTeacherAllTask1.Location = new System.Drawing.Point(213, 55);
             this.ucTeacherAllTask1.Name = "ucTeacherAllTask1";
-            this.ucTeacherAllTask1.Size = new System.Drawing.Size(985, 669);
-            this.ucTeacherAllTask1.TabIndex = 7;
+            this.ucTeacherAllTask1.Size = new System.Drawing.Size(1476, 789);
+            this.ucTeacherAllTask1.TabIndex = 11;
             // 
-            // mspProfile
+            // ucTeacherAllTopics1
             // 
-            this.mspProfile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.mspProfile.BackColor = System.Drawing.Color.White;
-            this.mspProfile.Dock = System.Windows.Forms.DockStyle.None;
-            this.mspProfile.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.mspProfile.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
-            this.mspProfile.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.mspProfile.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem2});
-            this.mspProfile.Location = new System.Drawing.Point(1001, 6);
-            this.mspProfile.Name = "mspProfile";
-            this.mspProfile.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.mspProfile.Size = new System.Drawing.Size(324, 38);
-            this.mspProfile.TabIndex = 5;
-            this.mspProfile.Text = "menuStrip1";
+            this.ucTeacherAllTopics1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ucTeacherAllTopics1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucTeacherAllTopics1.Location = new System.Drawing.Point(213, 55);
+            this.ucTeacherAllTopics1.Name = "ucTeacherAllTopics1";
+            this.ucTeacherAllTopics1.Size = new System.Drawing.Size(1476, 789);
+            this.ucTeacherAllTopics1.TabIndex = 10;
             // 
-            // toolStripMenuItem2
+            // ucTeacherEditInfor1
             // 
-            this.toolStripMenuItem2.BackColor = System.Drawing.Color.Wheat;
-            this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editToolStripMenuItem});
-            this.toolStripMenuItem2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripMenuItem2.Image = global::WFThesisManagementSystem.Properties.Resources.Female_User;
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(138, 36);
-            this.toolStripMenuItem2.Text = "Profile";
-            this.toolStripMenuItem2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
-            // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.editToolStripMenuItem.Text = "Edit";
-            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
+            this.ucTeacherEditInfor1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ucTeacherEditInfor1.Location = new System.Drawing.Point(571, 75);
+            this.ucTeacherEditInfor1.Name = "ucTeacherEditInfor1";
+            this.ucTeacherEditInfor1.Size = new System.Drawing.Size(722, 724);
+            this.ucTeacherEditInfor1.TabIndex = 9;
             // 
             // ucTeacherInfor1
             // 
@@ -354,23 +339,15 @@
             this.ucTeacherInfor1.Size = new System.Drawing.Size(322, 627);
             this.ucTeacherInfor1.TabIndex = 8;
             // 
-            // ucTeacherEditInfor1
-            // 
-            this.ucTeacherEditInfor1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ucTeacherEditInfor1.Location = new System.Drawing.Point(561, 80);
-            this.ucTeacherEditInfor1.Name = "ucTeacherEditInfor1";
-            this.ucTeacherEditInfor1.Size = new System.Drawing.Size(694, 724);
-            this.ucTeacherEditInfor1.TabIndex = 9;
-            // 
             // FTeacherDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1689, 844);
-            this.Controls.Add(this.ucTeacherEditInfor1);
-            this.Controls.Add(this.ucTeacherInfor1);
             this.Controls.Add(this.ucTeacherAllTask1);
             this.Controls.Add(this.ucTeacherAllTopics1);
+            this.Controls.Add(this.ucTeacherEditInfor1);
+            this.Controls.Add(this.ucTeacherInfor1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -383,12 +360,12 @@
             this.MSListFolder.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.mspProfile.ResumeLayout(false);
+            this.mspProfile.PerformLayout();
             this.menuStrip3.ResumeLayout(false);
             this.menuStrip3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.mspProfile.ResumeLayout(false);
-            this.mspProfile.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -413,12 +390,12 @@
         private ComponentFactory.Krypton.Toolkit.KryptonLabel kryptonLabel1;
         private System.Windows.Forms.MenuStrip menuStrip3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private TeacherUserControl.UcTeacherAllTopics ucTeacherAllTopics1;
-        private TeacherUserControl.UcTeacherAllTask ucTeacherAllTask1;
         private System.Windows.Forms.MenuStrip mspProfile;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private TeacherUserControl.UcTeacherInfor ucTeacherInfor1;
         private TeacherUserControl.UcTeacherEditInfor ucTeacherEditInfor1;
+        private TeacherUserControl.UcTeacherAllTopics ucTeacherAllTopics1;
+        private TeacherUserControl.UcTeacherAllTask ucTeacherAllTask1;
     }
 }

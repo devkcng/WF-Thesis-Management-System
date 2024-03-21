@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using ComponentFactory.Krypton.Toolkit;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
-using ComponentFactory.Krypton.Toolkit;
 using WFThesisManagementSystem.StudentViews.Views;
 using WFThesisManagementSystem.TeacherViews.Views;
-
+using WFThesisManagementSystem.DataAccess;
+using WFThesisManagementSystem.Utilities;
 
 namespace WFThesisManagementSystem
 {
@@ -19,12 +15,16 @@ namespace WFThesisManagementSystem
         public FLogin()
         {
             InitializeComponent();
+            txtPassword.Text = "";
+            txtPassword.Text = "";
         }
 
-        private void kryptonButton1_Click(object sender, EventArgs e)
-        {
-            KryptonForm kform = new FTeacherDashboard();
-           kform.ShowDialog();
+        private void btnLogin_Click(object sender, EventArgs e)
+        { 
+            FileGenerator fileGenerator = new FileGenerator(); 
+            fileGenerator.Generator();
+           UserLogin userLogin = new UserLogin();
+           if (userLogin.Login(txtUsername.Text,txtPassword.Text)) this.Hide();
         }
     }
 }
