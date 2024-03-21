@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TheArtOfDevHtmlRenderer.Adapters;
 using WFThesisManagementSystem.Models;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace WFThesisManagementSystem.DataAccess
 {
@@ -42,6 +43,18 @@ namespace WFThesisManagementSystem.DataAccess
             return null;
         }
 
+        public string GetGroupIDOfStudent(int student_id)
+        {
+            DBConnect dBConnect = new DBConnect();
+            DataTable dataTable = new DataTable();
+            string query = string.Format("SELECT group_id FROM Student WHERE student_id = {0}",student_id);
+            dataTable = dBConnect.GetData(query);
+            if (dataTable.Rows.Count > 0)
+            {
+                return dataTable.Rows[0]["group_id"].ToString();
+            }
+            return null;
+        }
         //public bool IsStudent(string username)
         //{
         //    DBConnect dBConnect = new DBConnect();
