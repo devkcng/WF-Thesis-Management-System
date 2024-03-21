@@ -254,6 +254,8 @@
     <Compile Include="TeacherViews\Views\FTeacherEditTopic.Designer.cs">
       <DependentUpon>FTeacherEditTopic.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\FileGenerator.cs" />
+    <Compile Include="Utilities\TFIDF.cs" />
     <EmbeddedResource Include="FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -482,5 +484,6 @@
   <ItemGroup>
     <None Include="Resources\Down Arrow1.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
