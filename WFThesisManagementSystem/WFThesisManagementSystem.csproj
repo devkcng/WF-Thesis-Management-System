@@ -57,7 +57,7 @@
   <ItemGroup>
     <Compile Include="DataAccess\DBConnect.cs" />
     <Compile Include="DataAccess\StudentGroupDAO.cs" />
-    <Compile Include="DataAccess\UserLogin.cs" />
+    <Compile Include="Utilities\LoginManagement\UserLogin.cs" />
     <Compile Include="DataAccess\StudentDAO.cs" />
     <Compile Include="DataAccess\TeacherDAO.cs" />
     <Compile Include="DataAccess\TopicDAO.cs" />
@@ -254,8 +254,9 @@
     <Compile Include="TeacherViews\Views\FTeacherEditTopic.Designer.cs">
       <DependentUpon>FTeacherEditTopic.cs</DependentUpon>
     </Compile>
-    <Compile Include="Utilities\FileGenerator.cs" />
-    <Compile Include="Utilities\TFIDF.cs" />
+    <Compile Include="Utilities\SearchEngine\Document.cs" />
+    <Compile Include="Utilities\SearchEngine\FileGenerator.cs" />
+    <Compile Include="Utilities\SearchEngine\TFIDF.cs" />
     <EmbeddedResource Include="FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -484,6 +485,11 @@
   <ItemGroup>
     <None Include="Resources\Down Arrow1.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
