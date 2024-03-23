@@ -33,18 +33,18 @@
             // 
             // ucTeacherCreateTopic1
             // 
-            this.ucTeacherCreateTopic1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ucTeacherCreateTopic1.BackColor = System.Drawing.Color.LightBlue;
             this.ucTeacherCreateTopic1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucTeacherCreateTopic1.Location = new System.Drawing.Point(0, 0);
             this.ucTeacherCreateTopic1.Name = "ucTeacherCreateTopic1";
-            this.ucTeacherCreateTopic1.Size = new System.Drawing.Size(1422, 666);
+            this.ucTeacherCreateTopic1.Size = new System.Drawing.Size(909, 986);
             this.ucTeacherCreateTopic1.TabIndex = 0;
             // 
             // FTeacherCreateTopic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1422, 666);
+            this.ClientSize = new System.Drawing.Size(909, 986);
             this.Controls.Add(this.ucTeacherCreateTopic1);
             this.Name = "FTeacherCreateTopic";
             this.Text = "FTeacherCreateTopic";
