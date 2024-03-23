@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="DataAccess\DBConnect.cs" />
     <Compile Include="DataAccess\StudentGroupDAO.cs" />
+    <Compile Include="DataAccess\TaskDAO.cs" />
     <Compile Include="DataAccess\UserLogin.cs" />
     <Compile Include="DataAccess\StudentDAO.cs" />
     <Compile Include="DataAccess\TeacherDAO.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\StudentGroup.cs" />
+    <Compile Include="Models\Task.cs" />
     <Compile Include="Models\Teacher.cs" />
     <Compile Include="Models\Topic.cs" />
     <Compile Include="Program.cs" />

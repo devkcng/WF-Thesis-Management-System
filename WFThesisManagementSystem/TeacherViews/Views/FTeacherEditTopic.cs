@@ -30,7 +30,7 @@ namespace WFThesisManagementSystem.TeacherViews.Views
         }
         private void update(object sender, EventArgs e)
         {
-            if (ucTeacherEditTopic1.txtTopicId.Text != "" && ucTeacherEditTopic1.txtTopicId.Text != "" && ucTeacherEditTopic1.txtTopicName.Text != "" && ucTeacherEditTopic1.txtTopicDescription.Text != "" && ucTeacherEditTopic1.cbxTopicCategory.SelectedItem.ToString() != "" && ucTeacherEditTopic1.cbxTopicTechnology.SelectedItem.ToString() != "" && ucTeacherEditTopic1.txtTopicRequirement.Text != "" && ucTeacherEditTopic1.cbxNumber.SelectedItem.ToString() != "")
+            if (ucTeacherEditTopic1.txtTopicId.Text != "" && ucTeacherEditTopic1.txtTopicId.Text != "" && ucTeacherEditTopic1.txtTopicName.Text != "" && ucTeacherEditTopic1.txtTopicDescription.Text != "" && ucTeacherEditTopic1.cbxTopicCategory.SelectedItem.ToString() != "" && ucTeacherEditTopic1.cbxNumber.SelectedItem.ToString() != "" && ucTeacherEditTopic1.txtTopicRequirement.Text != "" && ucTeacherEditTopic1.cbxTopicTechnology.SelectedItem.ToString() != "")
             {
                 for (int i = 0; i <= ucTeacherEditTopic1.txtTopicId.Text.Length - 1; i++)
                 {
@@ -40,7 +40,7 @@ namespace WFThesisManagementSystem.TeacherViews.Views
                         return;
                     }
                 }
-                Topic topic = new Topic(int.Parse(ucTeacherEditTopic1.txtTopicId.Text), ucTeacherEditTopic1.txtTopicName.Text, ucTeacherEditTopic1.txtTopicDescription.Text, ucTeacherEditTopic1.cbxTopicCategory.SelectedItem.ToString(), ucTeacherEditTopic1.cbxTopicTechnology.SelectedItem.ToString(), ucTeacherEditTopic1.txtTopicRequirement.Text, int.Parse(ucTeacherEditTopic1.cbxNumber.SelectedItem.ToString()));
+                Topic topic = new Topic(int.Parse(ucTeacherEditTopic1.txtTopicId.Text), ucTeacherEditTopic1.txtTopicName.Text, ucTeacherEditTopic1.txtTopicDescription.Text, ucTeacherEditTopic1.cbxTopicCategory.SelectedItem.ToString(), ucTeacherEditTopic1.cbxNumber.SelectedItem.ToString(), ucTeacherEditTopic1.txtTopicRequirement.Text, int.Parse(ucTeacherEditTopic1.cbxTopicTechnology.SelectedItem.ToString()));
                 //TopicDAO topicDAO = new TopicDAO();
                 if (topicDAO.CheckData(topic))
                 {
