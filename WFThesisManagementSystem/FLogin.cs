@@ -26,7 +26,12 @@ namespace WFThesisManagementSystem
             FileGenerator fileGenerator = new FileGenerator(); 
             fileGenerator.Generator();
            UserLogin userLogin = new UserLogin();
-           if (userLogin.Login(txtUsername.Text,txtPassword.Text)) this.Hide();
+            if (userLogin.Login(txtUsername.Text, txtPassword.Text))
+            {
+                this.Hide();
+                UserLogin.UserName = txtUsername.Text;
+                UserLogin.Password = txtPassword.Text;
+            }
         }
     }
 }

@@ -13,9 +13,9 @@ namespace WFThesisManagementSystem.DataAccess
         }
         public string AddTopic(Topic topic)
         {
-            return string.Format("INSERT INTO Topics (topic_id , topic_name, topic_description, topic_technology, topic_requirement, topic_category, max_members) " +
-                                 "VALUES ('{0}', '{1}' ,'{2}','{3}','{4}','{5}','{6}')",
-                                            topic.Id, topic.Name, topic.Description, topic.Technology, topic.Requirement, topic.Category, topic.MaxMember);
+            return string.Format("INSERT INTO Topics (topic_id , topic_name, topic_description, topic_technology, topic_requirement, topic_category, max_members , teacher_id) " +
+                                 "VALUES ('{0}', '{1}' ,'{2}','{3}','{4}','{5}','{6}','{7}')",
+                                            topic.Id, topic.Name, topic.Description, topic.Technology, topic.Requirement, topic.Category, topic.MaxMember,topic.Teacher_id);
         }
         public string DeleteTopic(Topic topic)
         {

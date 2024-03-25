@@ -21,6 +21,8 @@ namespace WFThesisManagementSystem.Models
 
         public int MaxMember { get; set; }
 
+        public int Teacher_id { get; set; }
+
         public Topic() { }
         public Topic(int id, string name,string description,string category,string technology,string requirement,int maxMember)
         {
