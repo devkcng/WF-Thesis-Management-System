@@ -10,6 +10,8 @@ namespace WFThesisManagementSystem.Utilities.LoginManagement
 {
     public class UserLogin
     {
+        public static string UserName { get; set; }
+        public static string Password { get; set; }
         public bool Login(string username, string password)
         {
             DBConnect dBConnect = new DBConnect();
