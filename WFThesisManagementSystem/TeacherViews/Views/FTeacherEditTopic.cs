@@ -22,11 +22,28 @@ namespace WFThesisManagementSystem.TeacherViews.Views
             InitializeComponent();
             ucTeacherEditTopic1.btnClose.Click += close;
             ucTeacherEditTopic1.btnUpdate.Click += update;
+            ucTeacherEditTopic1.btnDelete.Click += delete;
 
         }
         private void close(object sender, EventArgs e)
         {
             this.Hide();
+        }
+        private void delete(object sender, EventArgs e)
+        {
+            Topic topic = new Topic(int.Parse(ucTeacherEditTopic1.txtTopicId.Text), ucTeacherEditTopic1.txtTopicName.Text, ucTeacherEditTopic1.txtTopicDescription.Text, ucTeacherEditTopic1.cbxTopicCategory.SelectedItem.ToString(), ucTeacherEditTopic1.cbxTopicTechnology.SelectedItem.ToString(), ucTeacherEditTopic1.txtTopicRequirement.Text, int.Parse(ucTeacherEditTopic1.cbxNumber.SelectedItem.ToString()));
+            //TopicDAO topicDAO = new TopicDAO();
+            
+            if (dbConnect.ExecuteSqlQuery(topicDAO.DeleteTopic(topic)))
+            {
+                    MessageBox.Show("Delete Success");
+                    this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Error!!!");
+            } 
+                
         }
         private void update(object sender, EventArgs e)
         {
