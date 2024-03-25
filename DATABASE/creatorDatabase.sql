@@ -20,6 +20,7 @@ CREATE TABLE Topics (
     FOREIGN KEY (teacher_id) REFERENCES Teacher(teacher_id)
 );
 
+
 -- Creating the Student_Group table
 CREATE TABLE Student_Group (
     group_id INT PRIMARY KEY,
@@ -40,6 +41,16 @@ CREATE TABLE Student (
     student_grade VARCHAR(10),
     group_id INT,
     FOREIGN KEY (group_id) REFERENCES Student_Group(group_id)
+);
+
+CREATE TABLE RegisterQueue (
+    student_id INT PRIMARY KEY,
+    group_id INT,
+    topic_id INT,
+    accepted BIT DEFAULT 0,
+    FOREIGN KEY (student_id) REFERENCES Student(student_id),
+    FOREIGN KEY (group_id) REFERENCES Student_Group(group_id),
+    FOREIGN KEY (topic_id) REFERENCES Topics(topic_id)
 );
 
 -- Creating the StudentAccount table
@@ -112,3 +123,9 @@ INSERT INTO TeacherAccount (teacher_id, teacher_username, teacher_password) VALU
 (1811001, 'teacher', '123'),
 (1811002, 'emilyjohnson', 'password456'),
 (1811003, 'michaelbrown', 'password789');
+
+-- Corrected example data for RegisterQueue table
+INSERT INTO RegisterQueue (student_id, group_id, topic_id, accepted) VALUES
+(2211006, 2, 222, 0), -- Frank Blue registered but not yet accepted into Mobile App Development Team
+(2211009, 2, 222, 1), -- Isaac Yellow registered and accepted into Mobile App Development Team
+(2211010, 3, 333, 1); -- Jessica Violet registered and accepted into Database Management Team
