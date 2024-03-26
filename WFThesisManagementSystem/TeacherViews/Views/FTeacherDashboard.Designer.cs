@@ -54,6 +54,7 @@
             this.ucTeacherAllTopics1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherAllTopics();
             this.ucTeacherEditInfor1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherEditInfor();
             this.ucTeacherInfor1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherInfor();
+            this.Regist = new System.Windows.Forms.ToolStripMenuItem();
             this.MSListFolder.SuspendLayout();
             this.panel1.SuspendLayout();
             this.mspProfile.SuspendLayout();
@@ -143,18 +144,20 @@
             this.MSListFolder.BackColor = System.Drawing.Color.White;
             this.MSListFolder.Dock = System.Windows.Forms.DockStyle.None;
             this.MSListFolder.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.MSListFolder.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.MSListFolder.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.MSListFolder.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Project,
             this.task,
             this.worklogs,
             this.performance,
-            this.logout});
+            this.logout,
+            this.Regist});
             this.MSListFolder.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
             this.MSListFolder.Location = new System.Drawing.Point(0, 5);
             this.MSListFolder.Name = "MSListFolder";
             this.MSListFolder.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.MSListFolder.Size = new System.Drawing.Size(213, 184);
+            this.MSListFolder.Size = new System.Drawing.Size(213, 248);
             this.MSListFolder.TabIndex = 1;
             this.MSListFolder.Text = "menuStrip2";
             // 
@@ -226,6 +229,7 @@
             this.mspProfile.BackColor = System.Drawing.Color.White;
             this.mspProfile.Dock = System.Windows.Forms.DockStyle.None;
             this.mspProfile.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.mspProfile.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.mspProfile.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.mspProfile.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem2});
@@ -273,6 +277,7 @@
             this.menuStrip3.BackColor = System.Drawing.Color.White;
             this.menuStrip3.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.menuStrip3.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip3.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1});
@@ -339,6 +344,15 @@
             this.ucTeacherInfor1.Size = new System.Drawing.Size(322, 627);
             this.ucTeacherInfor1.TabIndex = 8;
             // 
+            // Regist
+            // 
+            this.Regist.BackColor = System.Drawing.Color.OldLace;
+            this.Regist.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Regist.Image = global::WFThesisManagementSystem.Properties.Resources.Edit_Property;
+            this.Regist.Name = "Regist";
+            this.Regist.Size = new System.Drawing.Size(132, 36);
+            this.Regist.Text = "Regist";
+            // 
             // FTeacherDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -397,5 +411,6 @@
         private TeacherUserControl.UcTeacherEditInfor ucTeacherEditInfor1;
         private TeacherUserControl.UcTeacherAllTopics ucTeacherAllTopics1;
         private TeacherUserControl.UcTeacherAllTask ucTeacherAllTask1;
+        private System.Windows.Forms.ToolStripMenuItem Regist;
     }
 }
