@@ -86,5 +86,11 @@ namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
             }    
             
         }
+
+        private void lblName_Click(object sender, EventArgs e)
+        {
+            FTeacherRegist fTeacherRegist = new FTeacherRegist();
+            fTeacherRegist.Show();
+        }
     }
 }
