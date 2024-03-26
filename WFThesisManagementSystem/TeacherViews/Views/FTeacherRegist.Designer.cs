@@ -1,0 +1,60 @@
+﻿namespace WFThesisManagementSystem.TeacherViews.Views
+{
+    partial class FTeacherRegist
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.ucTeacherAcceptRegistAll1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherAcceptRegistAll();
+            this.SuspendLayout();
+            // 
+            // ucTeacherAcceptRegistAll1
+            // 
+            this.ucTeacherAcceptRegistAll1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ucTeacherAcceptRegistAll1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucTeacherAcceptRegistAll1.Location = new System.Drawing.Point(0, 0);
+            this.ucTeacherAcceptRegistAll1.Name = "ucTeacherAcceptRegistAll1";
+            this.ucTeacherAcceptRegistAll1.Size = new System.Drawing.Size(1562, 922);
+            this.ucTeacherAcceptRegistAll1.TabIndex = 0;
+            // 
+            // FTeacherRegist
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1562, 922);
+            this.Controls.Add(this.ucTeacherAcceptRegistAll1);
+            this.Name = "FTeacherRegist";
+            this.Text = "FTeacherRegist";
+            this.Load += new System.EventHandler(this.FTeacherRegist_Load);
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private TeacherUserControl.UcTeacherAcceptRegistAll ucTeacherAcceptRegistAll1;
+    }
+}
