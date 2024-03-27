@@ -57,6 +57,24 @@
   <ItemGroup>
     <Compile Include="DataAccess\DBConnect.cs" />
     <Compile Include="DataAccess\StudentGroupDAO.cs" />
+    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherAcceptRegistAll.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherAcceptRegistAll.Designer.cs">
+      <DependentUpon>UcTeacherAcceptRegistAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherAcceptRegisterSingle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherAcceptRegisterSingle.Designer.cs">
+      <DependentUpon>UcTeacherAcceptRegisterSingle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherViews\Views\FTeacherRegist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeacherViews\Views\FTeacherRegist.Designer.cs">
+      <DependentUpon>FTeacherRegist.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilities\LoginManagement\UserLogin.cs" />
     <Compile Include="DataAccess\StudentDAO.cs" />
     <Compile Include="DataAccess\TeacherDAO.cs" />
@@ -300,6 +318,12 @@
     <EmbeddedResource Include="StudentViews\Views\FStudentTaskPopUp.resx">
       <DependentUpon>FStudentTaskPopUp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherAcceptRegistAll.resx">
+      <DependentUpon>UcTeacherAcceptRegistAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherAcceptRegisterSingle.resx">
+      <DependentUpon>UcTeacherAcceptRegisterSingle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherAllTopics.resx">
       <DependentUpon>UcTeacherAllTopics.cs</DependentUpon>
     </EmbeddedResource>
@@ -356,6 +380,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherViews\Views\FTeacherEditTopic.resx">
       <DependentUpon>FTeacherEditTopic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherViews\Views\FTeacherRegist.resx">
+      <DependentUpon>FTeacherRegist.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -490,6 +517,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Search1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Badge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Student Male1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit Property.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
