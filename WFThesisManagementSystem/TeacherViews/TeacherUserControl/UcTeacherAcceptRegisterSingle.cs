@@ -21,6 +21,7 @@ namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
         private string namestudent;
         private string idstudent;
         private string regist;
+        private CheckBox checkregist;
         public string NameStudent
         {
             get { return namestudent; }
@@ -38,6 +39,11 @@ namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
         {
             get { return regist; }
             set { regist = value; lblRegist.Text = value; }
+        }
+        public CheckBox CheckRegist
+        {
+            get { return checkregist; }
+            set { checkregist = value;cbxRegist = value; }
         }
         #endregion
     }
