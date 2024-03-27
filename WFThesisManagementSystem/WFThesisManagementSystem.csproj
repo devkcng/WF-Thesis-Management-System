@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess\DBConnect.cs" />
+    <Compile Include="DataAccess\RegistDAO.cs" />
     <Compile Include="DataAccess\StudentGroupDAO.cs" />
     <Compile Include="TeacherViews\TeacherUserControl\UcTeacherAcceptRegistAll.cs">
       <SubType>UserControl</SubType>
@@ -529,6 +530,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Edit Property.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Name.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Topic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FAQ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FAQ1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

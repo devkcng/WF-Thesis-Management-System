@@ -29,17 +29,14 @@
         private void InitializeComponent()
         {
             this.flpRegistView = new System.Windows.Forms.FlowLayoutPanel();
-            this.ucTeacherAcceptRegisterSingle1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherAcceptRegisterSingle();
             this.btnAccept = new Guna.UI2.WinForms.Guna2Button();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.lblRegist = new System.Windows.Forms.Label();
-            this.flpRegisedView = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpRegistedView = new System.Windows.Forms.FlowLayoutPanel();
             this.ucTeacherAcceptRegisterSingle2 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherAcceptRegisterSingle();
-            this.fplTopicView = new System.Windows.Forms.FlowLayoutPanel();
-            this.ucTeacherSingleTopic1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherSingleTopic();
+            this.ucTeacherAcceptRegisterSingle1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherAcceptRegisterSingle();
             this.flpRegistView.SuspendLayout();
-            this.flpRegisedView.SuspendLayout();
-            this.fplTopicView.SuspendLayout();
+            this.flpRegistedView.SuspendLayout();
             this.SuspendLayout();
             // 
             // flpRegistView
@@ -47,21 +44,10 @@
             this.flpRegistView.AutoScroll = true;
             this.flpRegistView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.flpRegistView.Controls.Add(this.ucTeacherAcceptRegisterSingle1);
-            this.flpRegistView.Location = new System.Drawing.Point(898, 96);
+            this.flpRegistView.Location = new System.Drawing.Point(98, 100);
             this.flpRegistView.Name = "flpRegistView";
-            this.flpRegistView.Size = new System.Drawing.Size(626, 350);
+            this.flpRegistView.Size = new System.Drawing.Size(634, 730);
             this.flpRegistView.TabIndex = 0;
-            // 
-            // ucTeacherAcceptRegisterSingle1
-            // 
-            this.ucTeacherAcceptRegisterSingle1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ucTeacherAcceptRegisterSingle1.IdStudent = null;
-            this.ucTeacherAcceptRegisterSingle1.Location = new System.Drawing.Point(3, 3);
-            this.ucTeacherAcceptRegisterSingle1.Name = "ucTeacherAcceptRegisterSingle1";
-            this.ucTeacherAcceptRegisterSingle1.NameStudent = null;
-            this.ucTeacherAcceptRegisterSingle1.Regist = null;
-            this.ucTeacherAcceptRegisterSingle1.Size = new System.Drawing.Size(621, 150);
-            this.ucTeacherAcceptRegisterSingle1.TabIndex = 0;
             // 
             // btnAccept
             // 
@@ -104,15 +90,15 @@
             this.lblRegist.TabIndex = 11;
             this.lblRegist.Text = "Regist";
             // 
-            // flpRegisedView
+            // flpRegistedView
             // 
-            this.flpRegisedView.AutoScroll = true;
-            this.flpRegisedView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.flpRegisedView.Controls.Add(this.ucTeacherAcceptRegisterSingle2);
-            this.flpRegisedView.Location = new System.Drawing.Point(898, 480);
-            this.flpRegisedView.Name = "flpRegisedView";
-            this.flpRegisedView.Size = new System.Drawing.Size(626, 350);
-            this.flpRegisedView.TabIndex = 12;
+            this.flpRegistedView.AutoScroll = true;
+            this.flpRegistedView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.flpRegistedView.Controls.Add(this.ucTeacherAcceptRegisterSingle2);
+            this.flpRegistedView.Location = new System.Drawing.Point(898, 105);
+            this.flpRegistedView.Name = "flpRegistedView";
+            this.flpRegistedView.Size = new System.Drawing.Size(626, 725);
+            this.flpRegistedView.TabIndex = 12;
             // 
             // ucTeacherAcceptRegisterSingle2
             // 
@@ -125,31 +111,23 @@
             this.ucTeacherAcceptRegisterSingle2.Size = new System.Drawing.Size(618, 150);
             this.ucTeacherAcceptRegisterSingle2.TabIndex = 0;
             // 
-            // fplTopicView
+            // ucTeacherAcceptRegisterSingle1
             // 
-            this.fplTopicView.Controls.Add(this.ucTeacherSingleTopic1);
-            this.fplTopicView.Location = new System.Drawing.Point(22, 96);
-            this.fplTopicView.Name = "fplTopicView";
-            this.fplTopicView.Size = new System.Drawing.Size(833, 734);
-            this.fplTopicView.TabIndex = 13;
-            // 
-            // ucTeacherSingleTopic1
-            // 
-            this.ucTeacherSingleTopic1.BackColor = System.Drawing.Color.White;
-            this.ucTeacherSingleTopic1.Button = null;
-            this.ucTeacherSingleTopic1.Description = null;
-            this.ucTeacherSingleTopic1.Location = new System.Drawing.Point(3, 3);
-            this.ucTeacherSingleTopic1.Name = "ucTeacherSingleTopic1";
-            this.ucTeacherSingleTopic1.Size = new System.Drawing.Size(1178, 229);
-            this.ucTeacherSingleTopic1.TabIndex = 0;
+            this.ucTeacherAcceptRegisterSingle1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ucTeacherAcceptRegisterSingle1.IdStudent = null;
+            this.ucTeacherAcceptRegisterSingle1.Location = new System.Drawing.Point(3, 3);
+            this.ucTeacherAcceptRegisterSingle1.Name = "ucTeacherAcceptRegisterSingle1";
+            this.ucTeacherAcceptRegisterSingle1.NameStudent = null;
+            this.ucTeacherAcceptRegisterSingle1.Regist = null;
+            this.ucTeacherAcceptRegisterSingle1.Size = new System.Drawing.Size(621, 150);
+            this.ucTeacherAcceptRegisterSingle1.TabIndex = 0;
             // 
             // UcTeacherAcceptRegistAll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Controls.Add(this.fplTopicView);
-            this.Controls.Add(this.flpRegisedView);
+            this.Controls.Add(this.flpRegistedView);
             this.Controls.Add(this.lblRegist);
             this.Controls.Add(this.btnAccept);
             this.Controls.Add(this.btnClose);
@@ -157,8 +135,7 @@
             this.Name = "UcTeacherAcceptRegistAll";
             this.Size = new System.Drawing.Size(1584, 978);
             this.flpRegistView.ResumeLayout(false);
-            this.flpRegisedView.ResumeLayout(false);
-            this.fplTopicView.ResumeLayout(false);
+            this.flpRegistedView.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,10 +147,8 @@
         public Guna.UI2.WinForms.Guna2Button btnAccept;
         public Guna.UI2.WinForms.Guna2Button btnClose;
         public System.Windows.Forms.Label lblRegist;
-        public System.Windows.Forms.FlowLayoutPanel flpRegisedView;
+        public System.Windows.Forms.FlowLayoutPanel flpRegistedView;
         public  UcTeacherAcceptRegisterSingle ucTeacherAcceptRegisterSingle1;
         public UcTeacherAcceptRegisterSingle ucTeacherAcceptRegisterSingle2;
-        private System.Windows.Forms.FlowLayoutPanel fplTopicView;
-        private UcTeacherSingleTopic ucTeacherSingleTopic1;
     }
 }
