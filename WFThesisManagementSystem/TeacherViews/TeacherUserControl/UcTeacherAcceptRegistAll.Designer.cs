@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.flpRegistView = new System.Windows.Forms.FlowLayoutPanel();
+            this.ucTeacherAcceptRegisterSingle1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherAcceptRegisterSingle();
             this.btnAccept = new Guna.UI2.WinForms.Guna2Button();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.lblRegist = new System.Windows.Forms.Label();
             this.flpRegistedView = new System.Windows.Forms.FlowLayoutPanel();
             this.ucTeacherAcceptRegisterSingle2 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherAcceptRegisterSingle();
-            this.ucTeacherAcceptRegisterSingle1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherAcceptRegisterSingle();
+            this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.flpRegistView.SuspendLayout();
             this.flpRegistedView.SuspendLayout();
             this.SuspendLayout();
@@ -48,6 +49,17 @@
             this.flpRegistView.Name = "flpRegistView";
             this.flpRegistView.Size = new System.Drawing.Size(634, 730);
             this.flpRegistView.TabIndex = 0;
+            // 
+            // ucTeacherAcceptRegisterSingle1
+            // 
+            this.ucTeacherAcceptRegisterSingle1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ucTeacherAcceptRegisterSingle1.IdStudent = null;
+            this.ucTeacherAcceptRegisterSingle1.Location = new System.Drawing.Point(3, 3);
+            this.ucTeacherAcceptRegisterSingle1.Name = "ucTeacherAcceptRegisterSingle1";
+            this.ucTeacherAcceptRegisterSingle1.NameStudent = null;
+            this.ucTeacherAcceptRegisterSingle1.Regist = null;
+            this.ucTeacherAcceptRegisterSingle1.Size = new System.Drawing.Size(621, 150);
+            this.ucTeacherAcceptRegisterSingle1.TabIndex = 0;
             // 
             // btnAccept
             // 
@@ -111,22 +123,27 @@
             this.ucTeacherAcceptRegisterSingle2.Size = new System.Drawing.Size(618, 150);
             this.ucTeacherAcceptRegisterSingle2.TabIndex = 0;
             // 
-            // ucTeacherAcceptRegisterSingle1
+            // btnDelete
             // 
-            this.ucTeacherAcceptRegisterSingle1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ucTeacherAcceptRegisterSingle1.IdStudent = null;
-            this.ucTeacherAcceptRegisterSingle1.Location = new System.Drawing.Point(3, 3);
-            this.ucTeacherAcceptRegisterSingle1.Name = "ucTeacherAcceptRegisterSingle1";
-            this.ucTeacherAcceptRegisterSingle1.NameStudent = null;
-            this.ucTeacherAcceptRegisterSingle1.Regist = null;
-            this.ucTeacherAcceptRegisterSingle1.Size = new System.Drawing.Size(621, 150);
-            this.ucTeacherAcceptRegisterSingle1.TabIndex = 0;
+            this.btnDelete.BorderRadius = 5;
+            this.btnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(969, 890);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(126, 56);
+            this.btnDelete.TabIndex = 13;
+            this.btnDelete.Text = "Delete";
             // 
             // UcTeacherAcceptRegistAll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.flpRegistedView);
             this.Controls.Add(this.lblRegist);
             this.Controls.Add(this.btnAccept);
@@ -150,5 +167,6 @@
         public System.Windows.Forms.FlowLayoutPanel flpRegistedView;
         public  UcTeacherAcceptRegisterSingle ucTeacherAcceptRegisterSingle1;
         public UcTeacherAcceptRegisterSingle ucTeacherAcceptRegisterSingle2;
+        public Guna.UI2.WinForms.Guna2Button btnDelete;
     }
 }
