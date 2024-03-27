@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WFThesisManagementSystem.Models;
 
 namespace WFThesisManagementSystem.DataAccess
 {
@@ -12,6 +13,11 @@ namespace WFThesisManagementSystem.DataAccess
         public static string UpdateGroupid(string id,string group_id)
         {
             return string.Format($"UPDATE Student SET group_id = {group_id} WHERE student_id ={id} ");
+        }
+        public static string DeleteStudentQueue(string id)
+        {
+            return string.Format($"DELETE FROM RegisterQueue WHERE student_id = '{id}'");
+           
         }
     }
 

@@ -20,6 +20,7 @@ namespace WFThesisManagementSystem.TeacherViews.Views
     {
         
         List<KeyValuePair<string,string>> students = new List<KeyValuePair<string, string>>();
+        
         public string GroupId { get; set; }
         private readonly DBConnect dbConnect = new DBConnect();
         public FTeacherRegist(string groupid)
@@ -27,6 +28,7 @@ namespace WFThesisManagementSystem.TeacherViews.Views
             InitializeComponent();
             ucTeacherAcceptRegistAll1.btnClose.Click += Close;
             ucTeacherAcceptRegistAll1.btnAccept.Click += Accept;
+            ucTeacherAcceptRegistAll1.btnDelete.Click += Delete;
             GroupId = groupid  ;
         }
         private void Close(object sender, EventArgs e)
@@ -46,7 +48,10 @@ namespace WFThesisManagementSystem.TeacherViews.Views
                 {
                     ucTeacherAcceptRegisterSingle.NameStudent = row["student_name"].ToString();
                     ucTeacherAcceptRegisterSingle.IdStudent = row["student_id"].ToString();
-                    ucTeacherAcceptRegisterSingle.Regist = "Đã đăng ký";
+                    ucTeacherAcceptRegisterSingle.Regist = "Registered";
+                    CheckBox cb = new CheckBox();
+                    cb.Visible = false;
+                    ucTeacherAcceptRegisterSingle.CheckRegist = cb;
                     ucTeacherAcceptRegistAll1.flpRegistedView.Controls.Add(ucTeacherAcceptRegisterSingle);
                 }  
             }
@@ -70,7 +75,7 @@ namespace WFThesisManagementSystem.TeacherViews.Views
                         {
                             ucTeacherAcceptRegisterSingle.NameStudent = rowStudent["student_name"].ToString();
                             ucTeacherAcceptRegisterSingle.IdStudent = rowStudent["student_id"].ToString();
-                            ucTeacherAcceptRegisterSingle.Regist = "Đang chờ đăng ký";
+                            ucTeacherAcceptRegisterSingle.Regist = "Awaiting Registration";
                             ucTeacherAcceptRegistAll1.flpRegistView.Controls.Add(ucTeacherAcceptRegisterSingle);
                         }
                     }    
@@ -126,11 +131,43 @@ namespace WFThesisManagementSystem.TeacherViews.Views
                 UcTeacherAcceptRegisterSingle ucTeacherAcceptRegisterSingle = new UcTeacherAcceptRegisterSingle();
                 ucTeacherAcceptRegisterSingle.NameStudent = students[i].Value;
                 ucTeacherAcceptRegisterSingle.IdStudent =  students[i].Key;
-                ucTeacherAcceptRegisterSingle.Regist = "Đã đăng ký";
+                CheckBox cb = new CheckBox();
+                cb.Visible = false;
+                ucTeacherAcceptRegisterSingle.CheckRegist=cb;
+                ucTeacherAcceptRegisterSingle.Regist = "Registered";
                 dbConnect.ExecuteSqlQuery(RegistDAO.UpdateGroupid(students[i].Key, GroupId));
                 ucTeacherAcceptRegistAll1.flpRegistedView.Controls.Add(ucTeacherAcceptRegisterSingle); 
             }
 
+        }
+        private void Delete(object sender, EventArgs e)
+        {
+            DataTable dataTable = dbConnect.LoadData("RegisterQueue");
+            for (int i = 0; i < ucTeacherAcceptRegistAll1.flpRegistView.Controls.Count; i++)
+            {
+                bool check = false;
+                string id = "";
+                foreach (Control c in ucTeacherAcceptRegistAll1.flpRegistView.Controls[i].Controls)
+                {
+
+                    if (c is CheckBox)
+                    {
+                        CheckBox select = (CheckBox)c;
+                        if (select.Checked)
+                        {
+                            check = true;
+                        }
+                    }
+                    if (c is Label && c.Name == "lblIdStudent" && check == true) id = c.Text;
+                }
+                if (check == true)
+                {
+                    if (dbConnect.ExecuteSqlQuery(RegistDAO.DeleteStudentQueue(id)))
+                    {
+                        ucTeacherAcceptRegistAll1.flpRegistView.Controls[i].Visible = false;
+                    }
+                }
+            }
         }
 
         private void FTeacherRegist_Load(object sender, EventArgs e)

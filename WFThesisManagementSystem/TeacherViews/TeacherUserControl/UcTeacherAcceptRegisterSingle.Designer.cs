@@ -32,7 +32,6 @@
             this.lblIdStudent = new System.Windows.Forms.Label();
             this.cbxRegist = new System.Windows.Forms.CheckBox();
             this.lblRegist = new System.Windows.Forms.Label();
-            this.btnEditRegist = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
@@ -78,22 +77,6 @@
             this.lblRegist.TabIndex = 5;
             this.lblRegist.Text = "Đã đăng ký";
             // 
-            // btnEditRegist
-            // 
-            this.btnEditRegist.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnEditRegist.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnEditRegist.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnEditRegist.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEditRegist.FillColor = System.Drawing.Color.Transparent;
-            this.btnEditRegist.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnEditRegist.ForeColor = System.Drawing.Color.Transparent;
-            this.btnEditRegist.Image = global::WFThesisManagementSystem.Properties.Resources.edit1;
-            this.btnEditRegist.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnEditRegist.Location = new System.Drawing.Point(533, 46);
-            this.btnEditRegist.Name = "btnEditRegist";
-            this.btnEditRegist.Size = new System.Drawing.Size(63, 61);
-            this.btnEditRegist.TabIndex = 6;
-            // 
             // guna2CirclePictureBox2
             // 
             this.guna2CirclePictureBox2.Image = global::WFThesisManagementSystem.Properties.Resources.Badge;
@@ -121,7 +104,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Controls.Add(this.btnEditRegist);
             this.Controls.Add(this.lblRegist);
             this.Controls.Add(this.guna2CirclePictureBox2);
             this.Controls.Add(this.guna2CirclePictureBox1);
@@ -145,6 +127,5 @@
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
         private System.Windows.Forms.Label lblRegist;
-        private Guna.UI2.WinForms.Guna2Button btnEditRegist;
     }
 }
