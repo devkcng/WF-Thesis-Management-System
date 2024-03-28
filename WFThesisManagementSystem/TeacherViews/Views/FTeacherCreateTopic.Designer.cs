@@ -33,24 +33,26 @@
             // 
             // ucTeacherCreateTopic1
             // 
+            this.ucTeacherCreateTopic1.AutoScroll = true;
             this.ucTeacherCreateTopic1.BackColor = System.Drawing.Color.LightBlue;
             this.ucTeacherCreateTopic1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucTeacherCreateTopic1.Location = new System.Drawing.Point(0, 0);
-            this.ucTeacherCreateTopic1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.ucTeacherCreateTopic1.Margin = new System.Windows.Forms.Padding(2);
             this.ucTeacherCreateTopic1.Name = "ucTeacherCreateTopic1";
-            this.ucTeacherCreateTopic1.Size = new System.Drawing.Size(604, 645);
+            this.ucTeacherCreateTopic1.Size = new System.Drawing.Size(906, 992);
             this.ucTeacherCreateTopic1.TabIndex = 0;
             // 
             // FTeacherCreateTopic
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(604, 645);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(906, 992);
             this.Controls.Add(this.ucTeacherCreateTopic1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FTeacherCreateTopic";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FTeacherCreateTopic";
+            this.Load += new System.EventHandler(this.FTeacherCreateTopic_Load);
             this.ResumeLayout(false);
 
         }
