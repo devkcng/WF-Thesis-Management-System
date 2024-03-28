@@ -35,12 +35,23 @@
             this.student_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.student_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnRegister = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtGroupName = new System.Windows.Forms.TextBox();
-            this.numericUpDownSize = new System.Windows.Forms.NumericUpDown();
-            this.lblProject = new System.Windows.Forms.Label();
+            this.lblTopicName = new System.Windows.Forms.Label();
+            this.lblLoadTeacherName = new System.Windows.Forms.Label();
+            this.lblTeacherName = new System.Windows.Forms.Label();
+            this.lblRequirement = new System.Windows.Forms.Label();
+            this.lblLoadRequirement = new System.Windows.Forms.Label();
+            this.lblTechnology = new System.Windows.Forms.Label();
+            this.lblLoadTechnology = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblCategory = new System.Windows.Forms.Label();
+            this.lblLoadCategory = new System.Windows.Forms.Label();
+            this.lblMaxMember = new System.Windows.Forms.Label();
+            this.lblLoadMaxMember = new System.Windows.Forms.Label();
+            this.txtGroupName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtDescription = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvrRegisterMember)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSize)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvrRegisterMember
@@ -69,13 +80,13 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvrRegisterMember.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvrRegisterMember.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvrRegisterMember.Location = new System.Drawing.Point(-1, 107);
-            this.dgvrRegisterMember.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvrRegisterMember.Location = new System.Drawing.Point(1205, 190);
+            this.dgvrRegisterMember.Margin = new System.Windows.Forms.Padding(5);
             this.dgvrRegisterMember.Name = "dgvrRegisterMember";
             this.dgvrRegisterMember.RowHeadersVisible = false;
             this.dgvrRegisterMember.RowHeadersWidth = 62;
             this.dgvrRegisterMember.RowTemplate.Height = 28;
-            this.dgvrRegisterMember.Size = new System.Drawing.Size(651, 295);
+            this.dgvrRegisterMember.Size = new System.Drawing.Size(988, 228);
             this.dgvrRegisterMember.TabIndex = 0;
             this.dgvrRegisterMember.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvrRegisterMember.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -113,81 +124,210 @@
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(577, 407);
-            this.btnRegister.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRegister.Location = new System.Drawing.Point(1973, 680);
+            this.btnRegister.Margin = new System.Windows.Forms.Padding(5);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(73, 24);
+            this.btnRegister.Size = new System.Drawing.Size(195, 57);
             this.btnRegister.TabIndex = 2;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // label1
+            // lblTopicName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F);
-            this.label1.Location = new System.Drawing.Point(2, 74);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 18);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Group Name:";
+            this.lblTopicName.AutoSize = true;
+            this.lblTopicName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTopicName.Location = new System.Drawing.Point(12, 23);
+            this.lblTopicName.Name = "lblTopicName";
+            this.lblTopicName.Size = new System.Drawing.Size(464, 76);
+            this.lblTopicName.TabIndex = 3;
+            this.lblTopicName.Text = "TOPIC LABEL";
+            // 
+            // lblLoadTeacherName
+            // 
+            this.lblLoadTeacherName.AutoSize = true;
+            this.lblLoadTeacherName.Location = new System.Drawing.Point(253, 143);
+            this.lblLoadTeacherName.Name = "lblLoadTeacherName";
+            this.lblLoadTeacherName.Size = new System.Drawing.Size(92, 32);
+            this.lblLoadTeacherName.TabIndex = 4;
+            this.lblLoadTeacherName.Text = "label1";
+            // 
+            // lblTeacherName
+            // 
+            this.lblTeacherName.AutoSize = true;
+            this.lblTeacherName.Location = new System.Drawing.Point(19, 143);
+            this.lblTeacherName.Name = "lblTeacherName";
+            this.lblTeacherName.Size = new System.Drawing.Size(208, 32);
+            this.lblTeacherName.TabIndex = 5;
+            this.lblTeacherName.Text = "Teacher Name:";
+            // 
+            // lblRequirement
+            // 
+            this.lblRequirement.AutoSize = true;
+            this.lblRequirement.Location = new System.Drawing.Point(19, 398);
+            this.lblRequirement.Name = "lblRequirement";
+            this.lblRequirement.Size = new System.Drawing.Size(185, 32);
+            this.lblRequirement.TabIndex = 7;
+            this.lblRequirement.Text = "Requirement:";
+            // 
+            // lblLoadRequirement
+            // 
+            this.lblLoadRequirement.AutoSize = true;
+            this.lblLoadRequirement.Location = new System.Drawing.Point(253, 398);
+            this.lblLoadRequirement.Name = "lblLoadRequirement";
+            this.lblLoadRequirement.Size = new System.Drawing.Size(92, 32);
+            this.lblLoadRequirement.TabIndex = 6;
+            this.lblLoadRequirement.Text = "label1";
+            // 
+            // lblTechnology
+            // 
+            this.lblTechnology.AutoSize = true;
+            this.lblTechnology.Location = new System.Drawing.Point(19, 305);
+            this.lblTechnology.Name = "lblTechnology";
+            this.lblTechnology.Size = new System.Drawing.Size(170, 32);
+            this.lblTechnology.TabIndex = 9;
+            this.lblTechnology.Text = "Technology:";
+            // 
+            // lblLoadTechnology
+            // 
+            this.lblLoadTechnology.AutoSize = true;
+            this.lblLoadTechnology.Location = new System.Drawing.Point(253, 305);
+            this.lblLoadTechnology.Name = "lblLoadTechnology";
+            this.lblLoadTechnology.Size = new System.Drawing.Size(92, 32);
+            this.lblLoadTechnology.TabIndex = 8;
+            this.lblLoadTechnology.Text = "label1";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(19, 219);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(165, 32);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Description:";
+            // 
+            // lblCategory
+            // 
+            this.lblCategory.AutoSize = true;
+            this.lblCategory.Location = new System.Drawing.Point(19, 477);
+            this.lblCategory.Name = "lblCategory";
+            this.lblCategory.Size = new System.Drawing.Size(137, 32);
+            this.lblCategory.TabIndex = 17;
+            this.lblCategory.Text = "Category:";
+            // 
+            // lblLoadCategory
+            // 
+            this.lblLoadCategory.AutoSize = true;
+            this.lblLoadCategory.Location = new System.Drawing.Point(253, 477);
+            this.lblLoadCategory.Name = "lblLoadCategory";
+            this.lblLoadCategory.Size = new System.Drawing.Size(92, 32);
+            this.lblLoadCategory.TabIndex = 16;
+            this.lblLoadCategory.Text = "label1";
+            // 
+            // lblMaxMember
+            // 
+            this.lblMaxMember.AutoSize = true;
+            this.lblMaxMember.Location = new System.Drawing.Point(19, 563);
+            this.lblMaxMember.Name = "lblMaxMember";
+            this.lblMaxMember.Size = new System.Drawing.Size(185, 32);
+            this.lblMaxMember.TabIndex = 15;
+            this.lblMaxMember.Text = "Max Member:";
+            // 
+            // lblLoadMaxMember
+            // 
+            this.lblLoadMaxMember.AutoSize = true;
+            this.lblLoadMaxMember.Location = new System.Drawing.Point(253, 563);
+            this.lblLoadMaxMember.Name = "lblLoadMaxMember";
+            this.lblLoadMaxMember.Size = new System.Drawing.Size(92, 32);
+            this.lblLoadMaxMember.TabIndex = 14;
+            this.lblLoadMaxMember.Text = "label1";
             // 
             // txtGroupName
             // 
-            this.txtGroupName.Location = new System.Drawing.Point(105, 76);
-            this.txtGroupName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtGroupName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtGroupName.DefaultText = "";
+            this.txtGroupName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtGroupName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtGroupName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtGroupName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtGroupName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtGroupName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtGroupName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtGroupName.Location = new System.Drawing.Point(1419, 55);
+            this.txtGroupName.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.txtGroupName.Name = "txtGroupName";
-            this.txtGroupName.Size = new System.Drawing.Size(303, 20);
-            this.txtGroupName.TabIndex = 4;
+            this.txtGroupName.PasswordChar = '\0';
+            this.txtGroupName.PlaceholderText = "";
+            this.txtGroupName.SelectedText = "";
+            this.txtGroupName.Size = new System.Drawing.Size(774, 98);
+            this.txtGroupName.TabIndex = 18;
             // 
-            // numericUpDownSize
+            // label13
             // 
-            this.numericUpDownSize.Location = new System.Drawing.Point(571, 74);
-            this.numericUpDownSize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.numericUpDownSize.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.numericUpDownSize.Name = "numericUpDownSize";
-            this.numericUpDownSize.Size = new System.Drawing.Size(80, 20);
-            this.numericUpDownSize.TabIndex = 6;
-            this.numericUpDownSize.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDownSize.ValueChanged += new System.EventHandler(this.numericUpDownSize_ValueChanged);
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(1210, 91);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(183, 32);
+            this.label13.TabIndex = 19;
+            this.label13.Text = "Group Name:";
             // 
-            // lblProject
+            // button1
             // 
-            this.lblProject.AutoSize = true;
-            this.lblProject.Font = new System.Drawing.Font("Arial", 12F);
-            this.lblProject.Location = new System.Drawing.Point(313, 24);
-            this.lblProject.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblProject.Name = "lblProject";
-            this.lblProject.Size = new System.Drawing.Size(50, 18);
-            this.lblProject.TabIndex = 7;
-            this.lblProject.Text = "label2";
+            this.button1.Location = new System.Drawing.Point(1693, 680);
+            this.button1.Margin = new System.Windows.Forms.Padding(5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(195, 57);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Register";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDescription.DefaultText = "";
+            this.txtDescription.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDescription.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDescription.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDescription.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDescription.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDescription.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtDescription.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDescription.Location = new System.Drawing.Point(246, 199);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.PasswordChar = '\0';
+            this.txtDescription.PlaceholderText = "";
+            this.txtDescription.SelectedText = "";
+            this.txtDescription.Size = new System.Drawing.Size(486, 98);
+            this.txtDescription.TabIndex = 21;
             // 
             // FRegisterTopic
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(659, 439);
-            this.Controls.Add(this.lblProject);
-            this.Controls.Add(this.numericUpDownSize);
+            this.ClientSize = new System.Drawing.Size(2207, 1010);
+            this.Controls.Add(this.txtDescription);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.txtGroupName);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblCategory);
+            this.Controls.Add(this.lblLoadCategory);
+            this.Controls.Add(this.lblMaxMember);
+            this.Controls.Add(this.lblLoadMaxMember);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblTechnology);
+            this.Controls.Add(this.lblLoadTechnology);
+            this.Controls.Add(this.lblRequirement);
+            this.Controls.Add(this.lblLoadRequirement);
+            this.Controls.Add(this.lblTeacherName);
+            this.Controls.Add(this.lblLoadTeacherName);
+            this.Controls.Add(this.lblTopicName);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.dgvrRegisterMember);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FRegisterTopic";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FRegisterTopic";
             ((System.ComponentModel.ISupportInitialize)(this.dgvrRegisterMember)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSize)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,9 +339,21 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn student_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn student_id;
         private System.Windows.Forms.Button btnRegister;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtGroupName;
-        private System.Windows.Forms.NumericUpDown numericUpDownSize;
-        private System.Windows.Forms.Label lblProject;
+        private System.Windows.Forms.Label lblTopicName;
+        private System.Windows.Forms.Label lblLoadTeacherName;
+        private System.Windows.Forms.Label lblTeacherName;
+        private System.Windows.Forms.Label lblRequirement;
+        private System.Windows.Forms.Label lblLoadRequirement;
+        private System.Windows.Forms.Label lblTechnology;
+        private System.Windows.Forms.Label lblLoadTechnology;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblCategory;
+        private System.Windows.Forms.Label lblLoadCategory;
+        private System.Windows.Forms.Label lblMaxMember;
+        private System.Windows.Forms.Label lblLoadMaxMember;
+        private Guna.UI2.WinForms.Guna2TextBox txtGroupName;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button button1;
+        private Guna.UI2.WinForms.Guna2TextBox txtDescription;
     }
 }

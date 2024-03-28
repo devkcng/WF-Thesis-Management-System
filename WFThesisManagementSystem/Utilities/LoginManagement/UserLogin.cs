@@ -49,15 +49,15 @@ namespace WFThesisManagementSystem.Utilities.LoginManagement
 
                 if (studentDAO.GetGroupIDOfStudent(student.Id).Length != 0)
                 {
-                    MessageBox.Show(studentDAO.GetGroupIDOfStudent(student.Id));
                     FStudentDashboard studentDashboard = new FStudentDashboard(studentDAO.GetStudentIDFromUsername(username));
                     connection.Close();
                     studentDashboard.Show();
+
                     return true;
                 }
                 else
                 {
-                    FStudentRegisterTopic studentRegisterTopic = new FStudentRegisterTopic();
+                    FStudentRegisterTopic studentRegisterTopic = new FStudentRegisterTopic(student.Id);
                     connection.Close();
                     studentRegisterTopic.Show();
                     return true;

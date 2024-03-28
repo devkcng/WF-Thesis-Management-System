@@ -12,14 +12,12 @@ namespace WFThesisManagementSystem.DataAccess
     public class TeacherDAO
     {
         // (nhả dữ liệu để dán dữ liệu lên cột teacher name bên FStudentRegisterTopic)
-        public string GetTeacherNameFromTeacherID(string teacherID)
+        public string GetTeacherNameFromTeacherID(string teacherID, DataTable dtbTeacherName)
         {
-            DBConnect dBConnect = new DBConnect();
-            DataTable dataTable = new DataTable();
-            dataTable = dBConnect.GetData(string.Format("SELECT teacher_name FROM Teacher WHERE teacher_id = {0}", teacherID));
-            if (dataTable.Rows.Count > 0)
+
+            if (dtbTeacherName.Rows.Count > 0)
             {
-                return dataTable.Rows[0]["teacher_name"].ToString();
+                return dtbTeacherName.Rows[0]["teacher_name"].ToString();
             }
             return null;
         }
