@@ -96,5 +96,10 @@ namespace WFThesisManagementSystem.DataAccess
         {
             return string.Format("SELECT sg.group_name FROM RegisterQueue rq INNER JOIN Student_Group sg ON rq.group_id = sg.group_id WHERE rq.topic_id = {0}", topic_id);
         }
+
+        public string GenerateGroupID()
+        {
+            return dbconnect.GetData("SELECT MAX(group_id) AS max_group_id FROM (SELECT group_id FROM Student_Group UNION ALL SELECT group_id FROM RegisterQueue) AS combined_group_ids").Rows[0]["group_id"].ToString(); 
+        }
     }
 }
