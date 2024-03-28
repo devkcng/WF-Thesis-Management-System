@@ -48,7 +48,7 @@ namespace WFThesisManagementSystem.StudentViews.Views
 
                 //MessageBox.Show(registerQueue.student_id.ToString() + " " + registerQueue.group_id.ToString() + " " + registerQueue.topic_id.ToString());
                 DBConnect dBConnect = new DBConnect();
-                if (dgvrRegisterMember.Visible = true)
+                if (dgvrRegisterMember.Visible == true)
                 {
                     string group_id;
                     group_id = dBConnect.GetData(registerQueueDAO.GetGroupIDFromTopicID(topic.Id)).Rows[0]["group_id"].ToString();
@@ -56,6 +56,7 @@ namespace WFThesisManagementSystem.StudentViews.Views
                 }
                 else
                 {
+
                     dBConnect.ExecuteSqlQuery(studentGroupDAO.AddGroup(studentGroup));
                 }
                 //string str = RegisterQueueDAO.AddRegisterQueueData(registerQueue.student_id, registerQueue.group_id, registerQueue.topic_id);
@@ -68,7 +69,7 @@ namespace WFThesisManagementSystem.StudentViews.Views
                 }
                 else
                 {
-                    MessageBox.Show("eror");
+                    MessageBox.Show("error");
                 }
             }
             else
