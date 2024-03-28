@@ -86,5 +86,36 @@ namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
             }    
             
         }
+
+        private void lblName_Click(object sender, EventArgs e)
+        {
+            DBConnect dBConnect = new DBConnect();
+            DataTable dataTableStudentGroup = dBConnect.LoadData("Student_Group");
+            DataTable dataTableTopics = dBConnect.LoadData("Topics");
+            string topicidtmp = "";
+            string groupid = "";
+            for (int i = 0; i < dataTableStudentGroup.Rows.Count; i++)
+            {
+                DataRow rowStudentGroup = dataTableStudentGroup.Rows[i];
+                for (int j = 0; j < dataTableTopics.Rows.Count; j++)
+                {
+                    DataRow rowTopics = dataTableTopics.Rows[j];
+                    if (Name == rowTopics["topic_name"].ToString())
+                    {
+                        topicidtmp = rowTopics["topic_id"].ToString();
+                    }
+
+                }
+                if (topicidtmp == rowStudentGroup["topic_id"].ToString())
+                {
+                    groupid = rowStudentGroup["group_id"].ToString();
+                    break;
+                }
+            }
+            FTeacherRegist fTeacherRegist = new FTeacherRegist(groupid);
+            fTeacherRegist.Show();
+            //FTeacherRegist fTeacherRegist = new FTeacherRegist();
+            //fTeacherRegist.Show();
+        }
     }
 }

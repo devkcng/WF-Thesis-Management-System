@@ -9,6 +9,7 @@ namespace WFThesisManagementSystem.DataAccess
 {
     internal class StudentGroupDAO
     {
+        DBConnect dBConnect = new DBConnect();
         public string AddGroup(StudentGroup studentGroup)
         {
             return string.Format("INSERT INTO Student_Group (group_id , group_name, topic_id, number_of_students) " +

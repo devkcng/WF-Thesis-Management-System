@@ -91,6 +91,7 @@
             this.lblName.Size = new System.Drawing.Size(87, 30);
             this.lblName.TabIndex = 7;
             this.lblName.Text = "Name";
+            this.lblName.Click += new System.EventHandler(this.lblName_Click);
             // 
             // UcTeacherSingleTopic
             // 

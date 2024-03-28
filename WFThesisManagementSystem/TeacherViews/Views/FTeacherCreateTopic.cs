@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using WFThesisManagementSystem.DataAccess;
 using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.TeacherViews.TeacherUserControl;
+using WFThesisManagementSystem.Utilities.LoginManagement;
 
 namespace WFThesisManagementSystem.TeacherViews.Views
 {
@@ -36,6 +37,17 @@ namespace WFThesisManagementSystem.TeacherViews.Views
                     }
                 }
                 Topic topic = new Topic(int.Parse(ucTeacherCreateTopic1.txtTopicId.Text), ucTeacherCreateTopic1.txtTopicName.Text, ucTeacherCreateTopic1.txtTopicDescription.Text, ucTeacherCreateTopic1.cbxTopicCategory.SelectedItem.ToString(), ucTeacherCreateTopic1.cbxTopicTechnology.SelectedItem.ToString(), ucTeacherCreateTopic1.txtTopicRequirement.Text, int.Parse(ucTeacherCreateTopic1.cbxNumber.SelectedItem.ToString()));
+                DBConnect dBConnect = new DBConnect();
+                DataTable dataTable = dBConnect.LoadData("TeacherAccount");
+                for(int i = 0; i < dataTable.Rows.Count; i++)
+                {
+                    DataRow row = dataTable.Rows[i];
+                    if(UserLogin.UserName == row["teacher_username"].ToString() && UserLogin.Password == row["teacher_password"].ToString())
+                    {
+                        topic.Teacher_id = int.Parse(row["teacher_id"].ToString());
+                        break;
+                    }    
+                }    
                 //TopicDAO topicDAO = new TopicDAO();
                 if (topicDAO.CheckData(topic))
                 {
@@ -62,8 +74,13 @@ namespace WFThesisManagementSystem.TeacherViews.Views
             ucTeacherCreateTopic1.txtTopicRequirement.Clear();
             ucTeacherCreateTopic1.txtTopicDescription.Clear();
             ucTeacherCreateTopic1.txtTopicName.Clear();
+            ucTeacherCreateTopic1.txtTopicId.Clear();
             //ucTeacherCreateTopic1.cbxNumber.
 
         }
+        private void FTeacherCreateTopic_Load(object sender, EventArgs e)
+        {
+
+        }    
     }
 }

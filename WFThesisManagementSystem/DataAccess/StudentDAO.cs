@@ -14,7 +14,7 @@ namespace WFThesisManagementSystem.DataAccess
 {
     public class StudentDAO
     {
-        
+
         // Update student group khi đăng kí nhóm thành công
         public string UpdateStudentGroup(int group_id, int student_id)
         {
@@ -35,10 +35,10 @@ namespace WFThesisManagementSystem.DataAccess
             string query = "SELECT student_id FROM StudentAccount WHERE student_username = @Username";
             SqlCommand command = new SqlCommand(query);
             command.Parameters.AddWithValue("@Username", username);
-            dataTable = dBConnect.GetData(command); 
+            dataTable = dBConnect.GetData(command);
             if (dataTable.Rows.Count > 0)
             {
-                return dataTable.Rows[0]["student_id"].ToString(); 
+                return dataTable.Rows[0]["student_id"].ToString();
             }
             return null;
         }
@@ -47,7 +47,7 @@ namespace WFThesisManagementSystem.DataAccess
         {
             DBConnect dBConnect = new DBConnect();
             DataTable dataTable = new DataTable();
-            string query = string.Format("SELECT group_id FROM Student WHERE student_id = {0}",student_id);
+            string query = string.Format("SELECT group_id FROM Student WHERE student_id = {0}", student_id);
             dataTable = dBConnect.GetData(query);
             if (dataTable.Rows.Count > 0)
             {
@@ -55,12 +55,19 @@ namespace WFThesisManagementSystem.DataAccess
             }
             return null;
         }
-        //public bool IsStudent(string username)
-        //{
-        //    DBConnect dBConnect = new DBConnect();
-        //    DataTable dataTable = new DataTable();
-        //    dataTable = dBConnect.GetData(string.Format("SELECT student_id FROM StudentAccount WHERE student_username = {0}", username));
-        //    return dataTable.Rows[0].ToString();
-        //}
+
+        public string GetStudentNameFromID(string student_id)
+        {
+            DBConnect dBConnect = new DBConnect();
+            DataTable dataTable = new DataTable();
+            string query = string.Format("SELECT student_name FROM Student WHERE student_id = {0}", student_id);
+            dataTable = dBConnect.GetData(query);
+            if (dataTable.Rows.Count > 0)
+            {
+                return dataTable.Rows[0]["student_name"].ToString();
+            }
+            return null;
+        }
+
     }
 }

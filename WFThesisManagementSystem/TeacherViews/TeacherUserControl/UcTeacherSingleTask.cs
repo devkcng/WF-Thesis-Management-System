@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WFThesisManagementSystem.DataAccess;
+using WFThesisManagementSystem.TeacherViews.Views;
 
 namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
 {
@@ -51,5 +53,13 @@ namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
             set { image = value; ptbImage = value; }
         }
         #endregion
+
+        private void btnChat_Click(object sender, EventArgs e)
+        {
+            //DBConnect dBConnect = new DBConnect();
+            //DataTable dataTable = dBConnect.LoadData("Tasks");
+            FTeacherEditTask fTeacherEditTask = new FTeacherEditTask();
+            fTeacherEditTask.Show();
+        }
     }
 }

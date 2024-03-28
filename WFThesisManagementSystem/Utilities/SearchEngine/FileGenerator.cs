@@ -14,6 +14,11 @@ namespace WFThesisManagementSystem.Utilities.SearchEngine
             {
                 Directory.CreateDirectory(directoryPath);
             }
+            else
+            {
+                Directory.Delete(directoryPath, true);
+                Directory.CreateDirectory(directoryPath);
+            }
 
             using (SqlConnection connection = _db._conn)
             {

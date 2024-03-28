@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,66 +11,117 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WFThesisManagementSystem.DataAccess;
 using WFThesisManagementSystem.Models;
+using WFThesisManagementSystem.Utilities;
 
 namespace WFThesisManagementSystem.StudentViews.Views
 {
     public partial class FRegisterTopic : Form
     {
-        Topic topic;
-        public FRegisterTopic(Topic topic)
+        private Topic topic;
+        private int studentID;
+        private string teacherName;
+        private RegisterQueue registerQueue = new RegisterQueue();
+        private StudentGroupDAO studentGroupDAO = new StudentGroupDAO();
+        StudentGroup studentGroup = new StudentGroup();
+        StudentDAO studentDAO = new StudentDAO();   
+
+        public FRegisterTopic(Topic topic,int student_id, string teacher_name)
         {
             InitializeComponent();
             this.topic = topic;
-            this.lblProject.Text = topic.Name;
-            numericUpDownSize.Maximum = topic.MaxMember;
+            studentID = student_id;
+            teacherName = teacher_name;
+            FRegisterTopic_Load();
+            LoadGroupInfo();
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            StudentGroup studentGroup = new StudentGroup();
-            studentGroup.Id = topic.Id+1;
-            studentGroup.Name = txtGroupName.ToString();
-            studentGroup.Size = (int)numericUpDownSize.Value;
-            studentGroup.TopicID = topic.Id;
-
-            StudentGroupDAO studentGroupDAO = new StudentGroupDAO();
-            DBConnect dBConnect = new DBConnect();
-            dBConnect.ExecuteSqlQuery(studentGroupDAO.AddGroup(studentGroup));
-
-            foreach (DataGridViewRow row in dgvrRegisterMember.Rows)
+            RegisterQueueDAO registerQueueDAO = new RegisterQueueDAO();
+            if (/*studentDAO.GetGroupIDOfStudent(studentID).Length != 0*/  !registerQueueDAO.IsStudentAvailable(studentID))
             {
-                if (!row.IsNewRow) // Kiểm tra nếu dòng không phải là dòng mới
-                {
-                    // Lấy giá trị của cột "student_id" từ từng dòng
-                    int studentId = Convert.ToInt32(row.Cells["student_id"].Value); // Sử dụng Convert thay vì ép kiểu trực tiếp
+                registerQueue.topic_id = topic.Id;
+                registerQueue.student_id = studentID;
+                studentGroup.Name = txtGroupName.Text;
+                studentGroup.Size = topic.MaxMember;
+                studentGroup.TopicID = topic.Id;
 
-                    StudentDAO studentDAO = new StudentDAO();
-                    dBConnect.ExecuteSqlQuery(studentDAO.UpdateStudentGroup(studentGroup.Id, studentId));
+                //MessageBox.Show(registerQueue.student_id.ToString() + " " + registerQueue.group_id.ToString() + " " + registerQueue.topic_id.ToString());
+                DBConnect dBConnect = new DBConnect();
+                if (dgvrRegisterMember.Visible == true)
+                {
+                    string group_id;
+                    group_id = dBConnect.GetData(registerQueueDAO.GetGroupIDFromTopicID(topic.Id)).Rows[0]["group_id"].ToString();
+                    studentGroup.Id = registerQueue.group_id = int.Parse(group_id);
+                    studentGroup.Id = registerQueue.group_id = dBConnect.GetData(string.Format("SELECT group_id FROM RegisterQueue WHERE topic_id = {0}", topic.Id)).Rows[0].Field<int>(0);
+
+                }
+                else
+                {
+                    GroupIdGenerator groupIdGenerator = new GroupIdGenerator(dBConnect.GetData(string.Format("SELECT group_id FROM Student_Group WHERE topic_id = {0}", topic.Id)));
+                    studentGroup.Id = registerQueue.group_id = groupIdGenerator.GenerateGroupID();
+                    dBConnect.ExecuteSqlQuery(studentGroupDAO.AddGroup(studentGroup));
+                }
+                //string str = RegisterQueueDAO.AddRegisterQueueData(registerQueue.student_id, registerQueue.group_id, registerQueue.topic_id);
+                if (dBConnect.ExecuteSqlQuery(string.Format("INSERT INTO RegisterQueue (student_id, group_id, topic_id) " +
+                                                "VALUES ('{0}', '{1}' ,'{2}')",
+                                                            registerQueue.student_id, registerQueue.group_id, registerQueue.topic_id)))
+                {
+                    btnRegister.Enabled = false;
+                    LoadGroupInfo();
+                }
+                else
+                {
+                    MessageBox.Show("error");
                 }
             }
-            MessageBox.Show("Register Successfully");
-            FStudentRegisterTopic.ActiveForm.Close();
-            this.Close();
-        }
-
-        private void numericUpDownSize_ValueChanged(object sender, EventArgs e)
-        {
-            // Xóa tất cả các dòng hiện có trong DataGridView
-            dgvrRegisterMember.Rows.Clear();
-
-            // Lấy số lượng thành viên được chọn từ ComboBox
-            int numberOfMembers = (int)(numericUpDownSize.Value);
-
-            // Thêm số lượng dòng tương ứng vào DataGridView
-            for (int i = 1; i < numberOfMembers; i++)
+            else
             {
-                dgvrRegisterMember.Rows.Add(); // Thêm một dòng mới vào DataGridView
+                MessageBox.Show("Cannot register because you have already registered");
             }
         }
 
-        private void lblProject_Click(object sender, EventArgs e)
+        private void LoadGroupInfo()
         {
+            RegisterQueueDAO registerQueueDAO = new RegisterQueueDAO();
+            DBConnect dBConnect = new DBConnect();
+            DataTable dt = new DataTable();
+            if (registerQueueDAO.LoadGroupData(topic.Id, dgvrRegisterMember))
+            {
+                //datagridview visible;
+                dgvrRegisterMember.Visible = true;
+                // ô txtGroupName ko cho phép chỉnh sửa;
+                studentDAO = new StudentDAO();
+                txtGroupName.Enabled = false;
+                txtGroupName.Text = studentGroup.Name;
+                txtGroupName.Text = dBConnect.GetData(registerQueueDAO.GetGroupName(topic.Id)).Rows[0]["group_name"].ToString();
+            }
+            else
+            {
+                //datagridview visible;
+                dgvrRegisterMember.Visible = false;
+                // ô txtGroupName ko cho phép chỉnh sửa;
+                txtGroupName.Enabled = true;
+            }
+        }
+        private void FRegisterTopic_Load()
+        {
+            lblTopicName.Text = topic.Name;
+            txtDescription.Text = topic.Description;
+            lblLoadTechnology.Text = topic.Technology;
+            lblLoadRequirement.Text = topic.Requirement;
+            lblLoadCategory.Text = topic.Category;
+            lblLoadMaxMember.Text = topic.MaxMember.ToString();
+            lblLoadTeacherName.Text = teacherName;
 
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FStudentRegisterTopic fStudentRegisterTopic = new FStudentRegisterTopic(studentID);
+            fStudentRegisterTopic.Show();   
         }
     }
 }

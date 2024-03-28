@@ -20,6 +20,7 @@ CREATE TABLE Topics (
     FOREIGN KEY (teacher_id) REFERENCES Teacher(teacher_id)
 );
 
+
 -- Creating the Student_Group table
 CREATE TABLE Student_Group (
     group_id INT PRIMARY KEY,
@@ -40,6 +41,16 @@ CREATE TABLE Student (
     student_grade VARCHAR(10),
     group_id INT,
     FOREIGN KEY (group_id) REFERENCES Student_Group(group_id)
+);
+
+CREATE TABLE RegisterQueue (
+    student_id INT PRIMARY KEY,
+    group_id INT,
+    topic_id INT,
+    accepted BIT DEFAULT 0,
+    FOREIGN KEY (student_id) REFERENCES Student(student_id),
+    FOREIGN KEY (group_id) REFERENCES Student_Group(group_id),
+    FOREIGN KEY (topic_id) REFERENCES Topics(topic_id)
 );
 
 -- Creating the StudentAccount table
@@ -72,33 +83,33 @@ INSERT INTO Topics (topic_id, topic_name, topic_description, topic_technology, t
 (333, 'Database Design and Management', 'Learn about database design principles and SQL for creating and managing databases.', 'SQL, Database Management Systems', 'Understanding of relational databases', 'Database Management', 3, 1811003);
 
 -- Inserting data into Student_Group table
-INSERT INTO Student_Group (group_id, group_name, topic_id, number_of_students, group_points) VALUES
-(1, 'Web Development Team', 123, 4, 0),
-(2, 'Mobile App Development Team', 222, 4, 0),
-(3, 'Database Management Team', 333, 3, 0);
+-- INSERT INTO Student_Group (group_id, group_name, topic_id, number_of_students, group_points) VALUES
+-- (1, 'Web Development Team', 123, 4, 0),
+-- (2, 'Mobile App Development Team', 222, 4, 0),
+-- (3, 'Database Management Team', 333, 3, 0);
 
 -- Inserting data into Student table
 INSERT INTO Student (student_id, student_name, student_age, student_email, student_grade, group_id) VALUES
 (2211001, 'Alice Green', 20, 'alice.green@example.com', 'Senior', NULL),
-(2211002, 'Bob White', 22, 'bob.white@example.com', 'Junior', 1),
-(2211003, 'Charlie Black', 21, 'charlie.black@example.com', 'Senior', 1),
-(2211004, 'David Brown', 19, 'david.brown@example.com', 'Sophomore', 1),
-(2211005, 'Emma Grey', 23, 'emma.grey@example.com', 'Senior', 1),
-(2211006, 'Frank Blue', 24, 'frank.blue@example.com', 'Graduate', 2),
-(2211007, 'Grace Red', 20, 'grace.red@example.com', 'Junior', 2),
-(2211008, 'Hannah Orange', 21, 'hannah.orange@example.com', 'Senior', 2),
-(2211009, 'Isaac Yellow', 22, 'isaac.yellow@example.com', 'Junior', 2),
-(2211010, 'Jessica Violet', 20, 'jessica.violet@example.com', 'Senior', 3),
-(2211011, 'Kevin Indigo', 24, 'kevin.indigo@example.com', 'Graduate', 3),
-(2211012, 'Lily Cyan', 23, 'lily.cyan@example.com', 'Senior', 3);
+(2211002, 'Bob White', 22, 'bob.white@example.com', 'Junior', NULL),
+(2211003, 'Charlie Black', 21, 'charlie.black@example.com', 'Senior', NULL),
+(2211004, 'David Brown', 19, 'david.brown@example.com', 'Sophomore', NULL),
+(2211005, 'Emma Grey', 23, 'emma.grey@example.com', 'Senior', NULL),
+(2211006, 'Frank Blue', 24, 'frank.blue@example.com', 'Graduate', NULL),
+(2211007, 'Grace Red', 20, 'grace.red@example.com', 'Junior', NULL),
+(2211008, 'Hannah Orange', 21, 'hannah.orange@example.com', 'Senior', NULL),
+(2211009, 'Isaac Yellow', 22, 'isaac.yellow@example.com', 'Junior', NULL),
+(2211010, 'Jessica Violet', 20, 'jessica.violet@example.com', 'Senior', NULL),
+(2211011, 'Kevin Indigo', 24, 'kevin.indigo@example.com', 'Graduate', NULL),
+(2211012, 'Lily Cyan', 23, 'lily.cyan@example.com', 'Senior', NULL);
 
 -- Inserting data into StudentAccount table
 INSERT INTO StudentAccount (student_id, student_username, student_password) VALUES
 (2211001, 'student', '123'),
 (2211002, 'student2', '456'),
-(2211003, 'charlieblack', 'password789'),
-(2211004, 'davidbrown', 'password123'),
-(2211005, 'emmagrey', 'password456'),
+(2211003, 'student3', '123'),
+(2211004, 'student4', '123'),
+(2211005, 'student5', '123'),
 (2211006, 'frankblue', 'password789'),
 (2211007, 'gracered', 'password123'),
 (2211008, 'hannahorange', 'password456'),
@@ -112,3 +123,9 @@ INSERT INTO TeacherAccount (teacher_id, teacher_username, teacher_password) VALU
 (1811001, 'teacher', '123'),
 (1811002, 'emilyjohnson', 'password456'),
 (1811003, 'michaelbrown', 'password789');
+
+-- Corrected example data for RegisterQueue table
+-- INSERT INTO RegisterQueue (student_id, group_id, topic_id, accepted) VALUES
+-- (2211006, 2, 222, 0), -- Frank Blue registered but not yet accepted into Mobile App Development Team
+-- (2211009, 2, 222, 1), -- Isaac Yellow registered and accepted into Mobile App Development Team
+-- (2211010, 3, 333, 1); -- Jessica Violet registered and accepted into Database Management Team

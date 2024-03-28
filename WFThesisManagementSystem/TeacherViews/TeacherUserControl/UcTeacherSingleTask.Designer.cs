@@ -31,11 +31,11 @@
             this.lblName = new System.Windows.Forms.Label();
             this.lblTimeAndOrdinalNumber = new System.Windows.Forms.Label();
             this.lblNameTeacher = new System.Windows.Forms.Label();
-            this.btnChat = new Guna.UI2.WinForms.Guna2Button();
-            this.ptbImage = new System.Windows.Forms.PictureBox();
             this.sdpsingletask = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbImage)).BeginInit();
+            this.ptbImage = new System.Windows.Forms.PictureBox();
+            this.btnChat = new Guna.UI2.WinForms.Guna2Button();
             this.sdpsingletask.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbImage)).BeginInit();
             this.SuspendLayout();
             // 
             // lblName
@@ -68,32 +68,6 @@
             this.lblNameTeacher.TabIndex = 4;
             this.lblNameTeacher.Text = "Mai Duc Kien";
             // 
-            // btnChat
-            // 
-            this.btnChat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnChat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnChat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnChat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnChat.FillColor = System.Drawing.Color.Transparent;
-            this.btnChat.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnChat.ForeColor = System.Drawing.Color.White;
-            this.btnChat.Image = global::WFThesisManagementSystem.Properties.Resources.Chat;
-            this.btnChat.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnChat.Location = new System.Drawing.Point(1016, 66);
-            this.btnChat.Name = "btnChat";
-            this.btnChat.Size = new System.Drawing.Size(72, 77);
-            this.btnChat.TabIndex = 6;
-            // 
-            // ptbImage
-            // 
-            this.ptbImage.Image = global::WFThesisManagementSystem.Properties.Resources.Idea;
-            this.ptbImage.Location = new System.Drawing.Point(67, 66);
-            this.ptbImage.Name = "ptbImage";
-            this.ptbImage.Size = new System.Drawing.Size(99, 106);
-            this.ptbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbImage.TabIndex = 2;
-            this.ptbImage.TabStop = false;
-            // 
             // sdpsingletask
             // 
             this.sdpsingletask.BackColor = System.Drawing.Color.Transparent;
@@ -109,6 +83,33 @@
             this.sdpsingletask.Size = new System.Drawing.Size(1175, 229);
             this.sdpsingletask.TabIndex = 7;
             // 
+            // ptbImage
+            // 
+            this.ptbImage.Image = global::WFThesisManagementSystem.Properties.Resources.Idea;
+            this.ptbImage.Location = new System.Drawing.Point(67, 66);
+            this.ptbImage.Name = "ptbImage";
+            this.ptbImage.Size = new System.Drawing.Size(99, 106);
+            this.ptbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbImage.TabIndex = 2;
+            this.ptbImage.TabStop = false;
+            // 
+            // btnChat
+            // 
+            this.btnChat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnChat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnChat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnChat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnChat.FillColor = System.Drawing.Color.Transparent;
+            this.btnChat.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnChat.ForeColor = System.Drawing.Color.White;
+            this.btnChat.Image = global::WFThesisManagementSystem.Properties.Resources.Chat;
+            this.btnChat.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnChat.Location = new System.Drawing.Point(1016, 66);
+            this.btnChat.Name = "btnChat";
+            this.btnChat.Size = new System.Drawing.Size(72, 77);
+            this.btnChat.TabIndex = 6;
+            this.btnChat.Click += new System.EventHandler(this.btnChat_Click);
+            // 
             // UcTeacherSingleTask
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -116,9 +117,9 @@
             this.Controls.Add(this.sdpsingletask);
             this.Name = "UcTeacherSingleTask";
             this.Size = new System.Drawing.Size(1178, 229);
-            ((System.ComponentModel.ISupportInitialize)(this.ptbImage)).EndInit();
             this.sdpsingletask.ResumeLayout(false);
             this.sdpsingletask.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbImage)).EndInit();
             this.ResumeLayout(false);
 
         }
