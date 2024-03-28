@@ -59,7 +59,9 @@
     <Compile Include="DataAccess\RegistDAO.cs" />
     <Compile Include="DataAccess\RegisterQueueDAO.cs" />
     <Compile Include="DataAccess\StudentGroupDAO.cs" />
+    <Compile Include="DataAccess\TaskDAO.cs" />
     <Compile Include="Models\RegisterQueue.cs" />
+    <Compile Include="Models\Task.cs" />
     <Compile Include="TeacherViews\TeacherUserControl\UcTeacherAcceptRegistAll.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -71,6 +73,24 @@
     </Compile>
     <Compile Include="TeacherViews\TeacherUserControl\UcTeacherAcceptRegisterSingle.Designer.cs">
       <DependentUpon>UcTeacherAcceptRegisterSingle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherEditTask.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherEditTask.Designer.cs">
+      <DependentUpon>UcTeacherEditTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherViews\Views\FTeacherCreateTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeacherViews\Views\FTeacherCreateTask.Designer.cs">
+      <DependentUpon>FTeacherCreateTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherViews\Views\FTeacherEditTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeacherViews\Views\FTeacherEditTask.Designer.cs">
+      <DependentUpon>FTeacherEditTask.cs</DependentUpon>
     </Compile>
     <Compile Include="TeacherViews\Views\FTeacherRegist.cs">
       <SubType>Form</SubType>
@@ -337,6 +357,9 @@
     <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherEditInfor.resx">
       <DependentUpon>UcTeacherEditInfor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherEditTask.resx">
+      <DependentUpon>UcTeacherEditTask.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherHeadingSingleMark.resx">
       <DependentUpon>UcTeacherHeadingSingleMark.cs</DependentUpon>
     </EmbeddedResource>
@@ -376,11 +399,17 @@
     <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherEditTopic.resx">
       <DependentUpon>UcTeacherEditTopic.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TeacherViews\Views\FTeacherCreateTask.resx">
+      <DependentUpon>FTeacherCreateTask.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TeacherViews\Views\FTeacherCreateTopic.resx">
       <DependentUpon>FTeacherCreateTopic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherViews\Views\FTeacherDashboard.resx">
       <DependentUpon>FTeacherDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherViews\Views\FTeacherEditTask.resx">
+      <DependentUpon>FTeacherEditTask.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherViews\Views\FTeacherEditTopic.resx">
       <DependentUpon>FTeacherEditTopic.cs</DependentUpon>
