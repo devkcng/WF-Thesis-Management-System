@@ -46,22 +46,10 @@ namespace WFThesisManagementSystem.Utilities.LoginManagement
                 Student student = new Student();
                 student.Id = int.Parse(studentDAO.GetStudentIDFromUsername(username));
                 //student.groupID = int.Parse(studentDAO.GetGroupIDOfStudent(student.Id));
-
-                if (studentDAO.GetGroupIDOfStudent(student.Id).Length != 0)
-                {
-                    FStudentDashboard studentDashboard = new FStudentDashboard(studentDAO.GetStudentIDFromUsername(username));
-                    connection.Close();
-                    studentDashboard.Show();
-
-                    return true;
-                }
-                else
-                {
-                    FStudentRegisterTopic studentRegisterTopic = new FStudentRegisterTopic(student.Id);
-                    connection.Close();
-                    studentRegisterTopic.Show();
-                    return true;
-                }
+                FStudentRegisterTopic studentRegisterTopic = new FStudentRegisterTopic(student.Id);
+                connection.Close();
+                studentRegisterTopic.Show();
+                return true;
             }
             else if (teacherTable.Rows.Count > 0)
             {
