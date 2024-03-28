@@ -56,7 +56,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess\DBConnect.cs" />
+    <Compile Include="DataAccess\RegisterQueueDAO.cs" />
     <Compile Include="DataAccess\StudentGroupDAO.cs" />
+    <Compile Include="Models\RegisterQueue.cs" />
     <Compile Include="TeacherViews\TeacherUserControl\UcTeacherAcceptRegistAll.cs">
       <SubType>UserControl</SubType>
     </Compile>
