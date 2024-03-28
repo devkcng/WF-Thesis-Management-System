@@ -22,15 +22,15 @@ namespace WFThesisManagementSystem.StudentViews.Views
         {
             InitializeComponent();
             this.studentID = studentID;
-
-           
+            FStudentRegisterTopic_Load();
         }
         private void dgvTopics_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
         }
 
-        private void FStudentRegisterTopic_Load_1(object sender, EventArgs e)
+       
+        private void FStudentRegisterTopic_Load()
         {
             try
             {
@@ -97,6 +97,8 @@ namespace WFThesisManagementSystem.StudentViews.Views
             {
                 MessageBox.Show(ex.ToString());
             }
+
+
         }
 
         private void cbTeacherList_SelectedIndexChanged(object sender, EventArgs e)
@@ -134,9 +136,14 @@ namespace WFThesisManagementSystem.StudentViews.Views
             else
             {
                 dgvTopics.Rows.Clear();
-                FStudentRegisterTopic_Load_1(sender, e);
+                FStudentRegisterTopic_Load();
             }
 
+        }
+
+        private void ptbReload_Click(object sender, EventArgs e)
+        {
+            FStudentRegisterTopic_Load();
         }
     }
 }
