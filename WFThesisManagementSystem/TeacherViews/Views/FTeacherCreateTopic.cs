@@ -78,5 +78,9 @@ namespace WFThesisManagementSystem.TeacherViews.Views
             //ucTeacherCreateTopic1.cbxNumber.
 
         }
+        private void FTeacherCreateTopic_Load(object sender, EventArgs e)
+        {
+
+        }    
     }
 }
