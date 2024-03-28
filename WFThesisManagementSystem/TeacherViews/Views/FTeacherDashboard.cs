@@ -16,16 +16,7 @@ namespace WFThesisManagementSystem.TeacherViews.Views
             ucTeacherEditInfor1.Hide();
             
             ucTeacherAllTopics1.btnCreate.Click += createTopic;
-            //foreach(Control control in ucTeacherAllTopics1.flpTopicView.Controls)
-            //{
-            //    if(control is Button && control.)
-            //    {
-            //        Button btn = (Button)control;
-            //        btn.PerformClick += editTopic;
-            //    }    
-            //}    
-            
-
+            ucTeacherAllTask1.btnCreate.Click+=createTask;  
         }
         private void createTopic(object sender, EventArgs e)
         {
@@ -34,6 +25,13 @@ namespace WFThesisManagementSystem.TeacherViews.Views
             fTeacherCreateTopic.Show();
             
         }
+        private void createTask(object sender, EventArgs e)
+        {
+            ucTeacherAllTask1.Hide();
+            FTeacherCreateTask fTeacherCreateTask = new FTeacherCreateTask();
+            fTeacherCreateTask.Show();
+        }
+
        
 
 
