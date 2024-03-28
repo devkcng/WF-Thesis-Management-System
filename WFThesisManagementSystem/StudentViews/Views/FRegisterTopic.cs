@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WFThesisManagementSystem.DataAccess;
 using WFThesisManagementSystem.Models;
+using WFThesisManagementSystem.Utilities;
 
 namespace WFThesisManagementSystem.StudentViews.Views
 {
@@ -41,7 +42,6 @@ namespace WFThesisManagementSystem.StudentViews.Views
             {
                 registerQueue.topic_id = topic.Id;
                 registerQueue.student_id = studentID;
-                studentGroup.Id = registerQueue.group_id = 10;
                 studentGroup.Name = txtGroupName.Text;
                 studentGroup.Size = topic.MaxMember;
                 studentGroup.TopicID = topic.Id;
@@ -53,10 +53,13 @@ namespace WFThesisManagementSystem.StudentViews.Views
                     string group_id;
                     group_id = dBConnect.GetData(registerQueueDAO.GetGroupIDFromTopicID(topic.Id)).Rows[0]["group_id"].ToString();
                     studentGroup.Id = registerQueue.group_id = int.Parse(group_id);
+                    studentGroup.Id = registerQueue.group_id = dBConnect.GetData(string.Format("SELECT group_id FROM RegisterQueue WHERE topic_id = {0}", topic.Id)).Rows[0].Field<int>(0);
+
                 }
                 else
                 {
-
+                    GroupIdGenerator groupIdGenerator = new GroupIdGenerator(dBConnect.GetData(string.Format("SELECT group_id FROM Student_Group WHERE topic_id = {0}", topic.Id)));
+                    studentGroup.Id = registerQueue.group_id = groupIdGenerator.GenerateGroupID();
                     dBConnect.ExecuteSqlQuery(studentGroupDAO.AddGroup(studentGroup));
                 }
                 //string str = RegisterQueueDAO.AddRegisterQueueData(registerQueue.student_id, registerQueue.group_id, registerQueue.topic_id);
@@ -112,6 +115,13 @@ namespace WFThesisManagementSystem.StudentViews.Views
             lblLoadTeacherName.Text = teacherName;
 
 
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FStudentRegisterTopic fStudentRegisterTopic = new FStudentRegisterTopic(studentID);
+            fStudentRegisterTopic.Show();   
         }
     }
 }

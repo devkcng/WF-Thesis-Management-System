@@ -78,6 +78,7 @@
     <Compile Include="TeacherViews\Views\FTeacherRegist.Designer.cs">
       <DependentUpon>FTeacherRegist.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\GroupIdGenerator.cs" />
     <Compile Include="Utilities\LoginManagement\UserLogin.cs" />
     <Compile Include="DataAccess\StudentDAO.cs" />
     <Compile Include="DataAccess\TeacherDAO.cs" />
