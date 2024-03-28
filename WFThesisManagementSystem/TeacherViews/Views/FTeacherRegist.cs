@@ -44,7 +44,7 @@ namespace WFThesisManagementSystem.TeacherViews.Views
             {
                 DataRow row = dataTable.Rows[i];
                 UcTeacherAcceptRegisterSingle ucTeacherAcceptRegisterSingle = new UcTeacherAcceptRegisterSingle();
-                if(GroupId == row["group_id"].ToString())
+                if(GroupId == row["group_id"].ToString() && GroupId != "")
                 {
                     ucTeacherAcceptRegisterSingle.NameStudent = row["student_name"].ToString();
                     ucTeacherAcceptRegisterSingle.IdStudent = row["student_id"].ToString();
