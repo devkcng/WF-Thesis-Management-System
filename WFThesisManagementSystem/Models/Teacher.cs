@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace WFThesisManagementSystem.Models
 {
-    public class Teacher : Person
-    {
+    public class Teacher
+    {   
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
         public Teacher(int id, string name, string email)
         {
             Id = id;

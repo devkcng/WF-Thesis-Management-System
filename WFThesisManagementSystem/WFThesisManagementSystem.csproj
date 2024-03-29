@@ -109,7 +109,6 @@
     <Compile Include="FLogin.Designer.cs">
       <DependentUpon>FLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Models\StudentGroup.cs" />
     <Compile Include="Models\Teacher.cs" />
