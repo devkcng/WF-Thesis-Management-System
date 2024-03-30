@@ -7,7 +7,7 @@ using WFThesisManagementSystem.StudentViews.Views;
 using WFThesisManagementSystem.TeacherViews.Views;
 using WFThesisManagementSystem.DataAccess;
 using WFThesisManagementSystem.Helper;
-using WFThesisManagementSystem.Helper.SearchEngine;
+using WFThesisManagementSystem.Helper.SearchEngineHelper;
 
 namespace WFThesisManagementSystem
 {
@@ -24,12 +24,10 @@ namespace WFThesisManagementSystem
         { 
             FileGenerator fileGenerator = new FileGenerator(); 
             fileGenerator.Generator();
-           UserLogin userLogin = new UserLogin();
+            UserLoginHelper userLogin = new UserLoginHelper();
             if (userLogin.Login(txtUsername.Text, txtPassword.Text))
             {
                 this.Hide();
-                UserLogin.UserName = txtUsername.Text;
-                UserLogin.Password = txtPassword.Text;
             }
         }
     }

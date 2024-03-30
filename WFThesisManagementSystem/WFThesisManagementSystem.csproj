@@ -163,8 +163,8 @@
     <Compile Include="TeacherViews\Views\FTeacherRegist.Designer.cs">
       <DependentUpon>FTeacherRegist.cs</DependentUpon>
     </Compile>
-    <Compile Include="Helper\GroupIdGenerator.cs" />
-    <Compile Include="Helper\UserLogin.cs" />
+    <Compile Include="Helper\IdGeneratorHelper.cs" />
+    <Compile Include="Helper\UserLoginHelper.cs" />
     <Compile Include="DataAccess\StudentDAO.cs" />
     <Compile Include="DataAccess\TeacherDAO.cs" />
     <Compile Include="DataAccess\TopicDAO.cs" />
@@ -356,9 +356,9 @@
     <Compile Include="TeacherViews\Views\FTeacherEditTopic.Designer.cs">
       <DependentUpon>FTeacherEditTopic.cs</DependentUpon>
     </Compile>
-    <Compile Include="Helper\SearchEngine\Document.cs" />
-    <Compile Include="Helper\SearchEngine\FileGenerator.cs" />
-    <Compile Include="Helper\SearchEngine\TFIDF.cs" />
+    <Compile Include="Helper\SearchEngineHelper\Document.cs" />
+    <Compile Include="Helper\SearchEngineHelper\FileGenerator.cs" />
+    <Compile Include="Helper\SearchEngineHelper\TFIDF.cs" />
     <EmbeddedResource Include="FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>
     </EmbeddedResource>

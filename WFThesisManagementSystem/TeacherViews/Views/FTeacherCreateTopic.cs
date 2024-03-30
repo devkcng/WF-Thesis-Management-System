@@ -42,7 +42,7 @@ namespace WFThesisManagementSystem.TeacherViews.Views
                 for(int i = 0; i < dataTable.Rows.Count; i++)
                 {
                     DataRow row = dataTable.Rows[i];
-                    if(UserLogin.UserName == row["teacher_username"].ToString() && UserLogin.Password == row["teacher_password"].ToString())
+                    if(UserLoginHelper.UserName == row["teacher_username"].ToString() && UserLoginHelper.Password == row["teacher_password"].ToString())
                     {
                         topic.teacher_id = int.Parse(row["teacher_id"].ToString());
                         break;

@@ -58,7 +58,7 @@ namespace WFThesisManagementSystem.StudentViews.Views
                 }
                 else
                 {
-                    GroupIdGenerator groupIdGenerator = new GroupIdGenerator(dBConnect.GetData(string.Format("SELECT group_id FROM Student_Group WHERE topic_id = {0}", topic.topic_id)));
+                    IdGeneratorHelper groupIdGenerator = new IdGeneratorHelper(dBConnect.GetData(string.Format("SELECT group_id FROM Student_Group WHERE topic_id = {0}", topic.topic_id)));
                     //studentGroup.group_id = registerQueue.group_id = groupIdGenerator.GenerateGroupID();
                     //dBConnect.ExecuteSqlQuery(studentGroupDAO.AddGroup(studentGroup));
                 }
