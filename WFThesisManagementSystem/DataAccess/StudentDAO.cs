@@ -24,7 +24,7 @@ namespace WFThesisManagementSystem.DataAccess
         // load những topic của từng student vào form studentProject
         public string Student_LoadTopics(Student student)
         {
-            return string.Format("SELECT t.* FROM Student s JOIN Student_Group g ON s.group_id = g.group_id  JOIN Topics t ON g.topic_id = t.topic_id WHERE s.student_id = {0}", student.Id);
+            return string.Format("SELECT t.* FROM Student s JOIN Student_Group g ON s.group_id = g.group_id  JOIN Topics t ON g.topic_id = t.topic_id WHERE s.student_id = {0}", student.student_id);
         }
 
         //Get student id từ username để truyền student id vào class FstudentDashboard

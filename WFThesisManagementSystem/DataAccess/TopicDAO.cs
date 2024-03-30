@@ -13,23 +13,23 @@ namespace WFThesisManagementSystem.DataAccess
 
         public bool CheckData(Topic topic)
         {
-            if (topic.Category == "" || topic.Name == "" || topic.Requirement == "" || topic.Technology == "" || topic.Description == "" || (topic.MaxMember <= 0 || topic.MaxMember > 6)) return false;
+            if (topic.topic_category == "" || topic.topic_name == "" || topic.topic_requirement == "" || topic.topic_technology == "" || topic.topic_description == "" || (topic.max_members <= 0 || topic.max_members > 6)) return false;
             return true;
         }
         public string AddTopic(Topic topic)
         {
             return string.Format("INSERT INTO Topics (topic_id , topic_name, topic_description, topic_technology, topic_requirement, topic_category, max_members , teacher_id) " +
                                  "VALUES ('{0}', '{1}' ,'{2}','{3}','{4}','{5}','{6}','{7}')",
-                                            topic.Id, topic.Name, topic.Description, topic.Technology, topic.Requirement, topic.Category, topic.MaxMember, topic.Teacher_id);
+                                            topic.topic_id, topic.topic_name, topic.topic_description, topic.topic_technology, topic.topic_requirement, topic.topic_category, topic.max_members, topic.teacher_id);
         }
         public string DeleteTopic(Topic topic)
         {
-            return string.Format("DELETE FROM Topics WHERE topic_id = '{0}'", topic.Id);
+            return string.Format("DELETE FROM Topics WHERE topic_id = '{0}'", topic.topic_id);
         }
         public string UpdateTopic(Topic topic)
         {
             return string.Format("UPDATE Topics SET topic_name = '{0}', topic_description ='{1}', topic_technology = '{2}', topic_requirement= '{3}', topic_category = '{4}', max_members = '{5}' WHERE topic_id = '{6}' ",
-                                    topic.Name, topic.Description, topic.Technology, topic.Requirement, topic.Category, topic.MaxMember, topic.Id);
+                                    topic.topic_name, topic.topic_description, topic.topic_technology, topic.topic_requirement, topic.topic_category, topic.max_members, topic.topic_id);
         }
         public void LoadTopic(string sql, DataGridView dgvTopics)
         {

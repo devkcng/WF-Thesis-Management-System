@@ -30,8 +30,8 @@ namespace WFThesisManagementSystem.Views.StudentViews
         }
 
         public void SetTopic(Topic topic) {
-            lblProjectName.Text = topic.Name;
-            txtProjectDetail.Text= topic.Description;
+            lblProjectName.Text = topic.topic_name;
+            txtProjectDetail.Text= topic.topic_description;
         }
     }
 }

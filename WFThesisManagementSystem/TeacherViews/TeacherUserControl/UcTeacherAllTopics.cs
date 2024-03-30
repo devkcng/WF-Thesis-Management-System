@@ -36,8 +36,8 @@ namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
                 DataRow row = dataTable.Rows[i];
                 UcTeacherSingleTopic singletopic = new UcTeacherSingleTopic();
                 Topic topic = new Topic();
-                topic.Name = row["topic_name"].ToString();
-                topic.Description = row["topic_description"].ToString();
+                topic.topic_name = row["topic_name"].ToString();
+                topic.topic_description = row["topic_description"].ToString();
                 //topic.Requirement = row["requirement"].ToString();
                 //topic.Category = row["category"].ToString();
                 //topic.Technology = row["technology"].ToString();

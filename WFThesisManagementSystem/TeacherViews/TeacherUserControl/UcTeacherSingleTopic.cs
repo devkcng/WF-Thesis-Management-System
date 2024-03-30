@@ -31,10 +31,10 @@ namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
         private Guna2Button button;
         public void SetTopic(Topic topic)
         {
-            lblName.Text = topic.Name;
-            lblDescription.Text = topic.Description;
-            Name = topic.Name;
-            Description = topic.Description;
+            lblName.Text = topic.topic_name;
+            lblDescription.Text = topic.topic_description;
+            Name = topic.topic_name;
+            Description = topic.topic_description;
 
         }
         [Category("custom props")]

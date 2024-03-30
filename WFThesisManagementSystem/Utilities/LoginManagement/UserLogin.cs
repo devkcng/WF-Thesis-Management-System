@@ -44,9 +44,9 @@ namespace WFThesisManagementSystem.Utilities.LoginManagement
             {
                 StudentDAO studentDAO = new StudentDAO();
                 Student student = new Student();
-                student.Id = int.Parse(studentDAO.GetStudentIDFromUsername(username));
+                student.student_id = int.Parse(studentDAO.GetStudentIDFromUsername(username));
                 //student.groupID = int.Parse(studentDAO.GetGroupIDOfStudent(student.Id));
-                FStudentRegisterTopic studentRegisterTopic = new FStudentRegisterTopic(student.Id);
+                FStudentRegisterTopic studentRegisterTopic = new FStudentRegisterTopic(student.student_id);
                 connection.Close();
                 studentRegisterTopic.Show();
                 return true;

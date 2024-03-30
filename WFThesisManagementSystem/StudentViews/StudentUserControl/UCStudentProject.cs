@@ -22,7 +22,7 @@ namespace WFThesisManagementSystem.Views.StudentViews
         {
             InitializeComponent();
             student = new Student();
-            student.Id = student_id;
+            student.student_id = student_id;
             addUserControl(); 
             this.SizeChanged += UCStudentProject_SizeChanged;
         }
@@ -39,8 +39,8 @@ namespace WFThesisManagementSystem.Views.StudentViews
                 DataRow row = dataTable.Rows[i];
                 UCProject uCProject = new UCProject();
                 Topic topic = new Topic();
-                topic.Name = row["topic_name"].ToString();
-                topic.Description = row["topic_description"].ToString();
+                topic.topic_name = row["topic_name"].ToString();
+                topic.topic_description = row["topic_description"].ToString();
                 //topic.Requirement = row["requirement"].ToString();
                 //topic.Category = row["category"].ToString();
                 //topic.Technology = row["technology"].ToString();

@@ -12,15 +12,12 @@ namespace WFThesisManagementSystem.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class RegisterQueue
+    public partial class TeacherAccount
     {
-        public int student_id { get; set; }
-        public Nullable<int> group_id { get; set; }
-        public Nullable<int> topic_id { get; set; }
-        public Nullable<bool> accepted { get; set; }
+        public string teacher_username { get; set; }
+        public string teacher_password { get; set; }
+        public Nullable<int> teacher_id { get; set; }
     
-        public virtual StudentGroup StudentGroup { get; set; }
-        public virtual Student Student { get; set; }
-        public virtual Topic Topic { get; set; }
+        public virtual Teacher Teacher { get; set; }
     }
 }

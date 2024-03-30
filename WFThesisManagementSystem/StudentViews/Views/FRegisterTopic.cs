@@ -40,27 +40,27 @@ namespace WFThesisManagementSystem.StudentViews.Views
             RegisterQueueDAO registerQueueDAO = new RegisterQueueDAO();
             if (/*studentDAO.GetGroupIDOfStudent(studentID).Length != 0*/  !registerQueueDAO.IsStudentAvailable(studentID))
             {
-                registerQueue.topic_id = topic.Id;
+                registerQueue.topic_id = topic.topic_id;
                 registerQueue.student_id = studentID;
-                studentGroup.Name = txtGroupName.Text;
-                studentGroup.Size = topic.MaxMember;
-                studentGroup.TopicID = topic.Id;
+                studentGroup.group_name = txtGroupName.Text;
+                studentGroup.number_of_students = topic.max_members;
+                studentGroup.topic_id = topic.topic_id;
 
                 //MessageBox.Show(registerQueue.student_id.ToString() + " " + registerQueue.group_id.ToString() + " " + registerQueue.topic_id.ToString());
                 DBConnect dBConnect = new DBConnect();
                 if (dgvrRegisterMember.Visible == true)
                 {
                     string group_id;
-                    group_id = dBConnect.GetData(registerQueueDAO.GetGroupIDFromTopicID(topic.Id)).Rows[0]["group_id"].ToString();
-                    studentGroup.Id = registerQueue.group_id = int.Parse(group_id);
-                    studentGroup.Id = registerQueue.group_id = dBConnect.GetData(string.Format("SELECT group_id FROM RegisterQueue WHERE topic_id = {0}", topic.Id)).Rows[0].Field<int>(0);
+                    group_id = dBConnect.GetData(registerQueueDAO.GetGroupIDFromTopicID(topic.topic_id)).Rows[0]["group_id"].ToString();
+                    //studentGroup.group_id = registerQueue.group_id = int.Parse(group_id);
+                    //studentGroup.group_id = registerQueue.group_id = dBConnect.GetData(string.Format("SELECT group_id FROM RegisterQueue WHERE topic_id = {0}", topic.topic_id)).Rows[0].Field<int>(0);
 
                 }
                 else
                 {
-                    GroupIdGenerator groupIdGenerator = new GroupIdGenerator(dBConnect.GetData(string.Format("SELECT group_id FROM Student_Group WHERE topic_id = {0}", topic.Id)));
-                    studentGroup.Id = registerQueue.group_id = groupIdGenerator.GenerateGroupID();
-                    dBConnect.ExecuteSqlQuery(studentGroupDAO.AddGroup(studentGroup));
+                    GroupIdGenerator groupIdGenerator = new GroupIdGenerator(dBConnect.GetData(string.Format("SELECT group_id FROM Student_Group WHERE topic_id = {0}", topic.topic_id)));
+                    //studentGroup.group_id = registerQueue.group_id = groupIdGenerator.GenerateGroupID();
+                    //dBConnect.ExecuteSqlQuery(studentGroupDAO.AddGroup(studentGroup));
                 }
                 //string str = RegisterQueueDAO.AddRegisterQueueData(registerQueue.student_id, registerQueue.group_id, registerQueue.topic_id);
                 if (dBConnect.ExecuteSqlQuery(string.Format("INSERT INTO RegisterQueue (student_id, group_id, topic_id) " +
@@ -86,15 +86,15 @@ namespace WFThesisManagementSystem.StudentViews.Views
             RegisterQueueDAO registerQueueDAO = new RegisterQueueDAO();
             DBConnect dBConnect = new DBConnect();
             DataTable dt = new DataTable();
-            if (registerQueueDAO.LoadGroupData(topic.Id, dgvrRegisterMember))
+            if (registerQueueDAO.LoadGroupData(topic.topic_id, dgvrRegisterMember))
             {
                 //datagridview visible;
                 dgvrRegisterMember.Visible = true;
                 // ô txtGroupName ko cho phép chỉnh sửa;
                 studentDAO = new StudentDAO();
                 txtGroupName.Enabled = false;
-                txtGroupName.Text = studentGroup.Name;
-                txtGroupName.Text = dBConnect.GetData(registerQueueDAO.GetGroupName(topic.Id)).Rows[0]["group_name"].ToString();
+                txtGroupName.Text = studentGroup.group_name;
+                txtGroupName.Text = dBConnect.GetData(registerQueueDAO.GetGroupName(topic.topic_id)).Rows[0]["group_name"].ToString();
             }
             else
             {
@@ -106,12 +106,12 @@ namespace WFThesisManagementSystem.StudentViews.Views
         }
         private void FRegisterTopic_Load()
         {
-            lblTopicName.Text = topic.Name;
-            txtDescription.Text = topic.Description;
-            lblLoadTechnology.Text = topic.Technology;
-            lblLoadRequirement.Text = topic.Requirement;
-            lblLoadCategory.Text = topic.Category;
-            lblLoadMaxMember.Text = topic.MaxMember.ToString();
+            lblTopicName.Text = topic.topic_name;
+            txtDescription.Text = topic.topic_description;
+            lblLoadTechnology.Text = topic.topic_technology;
+            lblLoadRequirement.Text = topic.topic_requirement;
+            lblLoadCategory.Text = topic.topic_category;
+            lblLoadMaxMember.Text = topic.max_members.ToString();
             lblLoadTeacherName.Text = teacherName;
 
 

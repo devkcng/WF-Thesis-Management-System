@@ -103,13 +103,13 @@ namespace WFThesisManagementSystem.StudentViews.Views
                 {
                     Topic topic = new Topic();
                     DataGridViewRow row = dgvTopics.Rows[e.RowIndex];
-                    topic.Id = int.Parse(row.Cells["topic_id"].Value.ToString());
-                    topic.Name = row.Cells["topic_name"].Value.ToString();
-                    topic.Description = row.Cells["topic_description"].Value.ToString();
-                    topic.Category = row.Cells["topic_category"].Value.ToString();
-                    topic.Technology = row.Cells["topic_technology"].Value.ToString();
-                    topic.Requirement = row.Cells["topic_requirement"].Value.ToString();
-                    topic.MaxMember = int.Parse(row.Cells["max_members"].Value.ToString());
+                    topic.topic_id = int.Parse(row.Cells["topic_id"].Value.ToString());
+                    topic.topic_name = row.Cells["topic_name"].Value.ToString();
+                    topic.topic_description = row.Cells["topic_description"].Value.ToString();
+                    topic.topic_category = row.Cells["topic_category"].Value.ToString();
+                    topic.topic_technology = row.Cells["topic_technology"].Value.ToString();
+                    topic.topic_requirement = row.Cells["topic_requirement"].Value.ToString();
+                    topic.max_members = int.Parse(row.Cells["max_members"].Value.ToString());
 
                     FRegisterTopic registerForm = new FRegisterTopic(topic, studentID, row.Cells["teacher_name"].Value.ToString());
                     registerForm.Show();

@@ -1,0 +1,546 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ThesisManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="RegisterQueue">
+          <Key>
+            <PropertyRef Name="student_id" />
+          </Key>
+          <Property Name="student_id" Type="int" Nullable="false" />
+          <Property Name="group_id" Type="int" />
+          <Property Name="topic_id" Type="int" />
+          <Property Name="accepted" Type="bit" />
+        </EntityType>
+        <EntityType Name="StudentAccount">
+          <Key>
+            <PropertyRef Name="student_username" />
+          </Key>
+          <Property Name="student_username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="student_password" Type="varchar" MaxLength="50" />
+          <Property Name="student_id" Type="int" />
+        </EntityType>
+        <EntityType Name="StudentGroup">
+          <Key>
+            <PropertyRef Name="group_id" />
+          </Key>
+          <Property Name="group_id" Type="int" Nullable="false" />
+          <Property Name="group_name" Type="varchar" MaxLength="50" />
+          <Property Name="topic_id" Type="int" />
+          <Property Name="number_of_students" Type="int" />
+          <Property Name="group_points" Type="float" />
+        </EntityType>
+        <EntityType Name="Students">
+          <Key>
+            <PropertyRef Name="student_id" />
+          </Key>
+          <Property Name="student_id" Type="int" Nullable="false" />
+          <Property Name="student_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="student_age" Type="int" />
+          <Property Name="student_email" Type="varchar" MaxLength="255" />
+          <Property Name="student_grade" Type="varchar" MaxLength="10" />
+          <Property Name="group_id" Type="int" />
+        </EntityType>
+        <EntityType Name="TeacherAccount">
+          <Key>
+            <PropertyRef Name="teacher_username" />
+          </Key>
+          <Property Name="teacher_username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="teacher_password" Type="varchar" MaxLength="50" />
+          <Property Name="teacher_id" Type="int" />
+        </EntityType>
+        <EntityType Name="Teachers">
+          <Key>
+            <PropertyRef Name="teacher_id" />
+          </Key>
+          <Property Name="teacher_id" Type="int" Nullable="false" />
+          <Property Name="teacher_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="teacher_age" Type="int" />
+          <Property Name="teacher_email" Type="varchar" MaxLength="255" />
+          <Property Name="subject_taught" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Topics">
+          <Key>
+            <PropertyRef Name="topic_id" />
+          </Key>
+          <Property Name="topic_id" Type="int" Nullable="false" />
+          <Property Name="topic_name" Type="varchar" MaxLength="100" />
+          <Property Name="topic_description" Type="text" />
+          <Property Name="topic_technology" Type="varchar" MaxLength="100" />
+          <Property Name="topic_requirement" Type="text" />
+          <Property Name="topic_category" Type="varchar" MaxLength="100" />
+          <Property Name="max_members" Type="int" />
+          <Property Name="teacher_id" Type="int" />
+        </EntityType>
+        <Association Name="FK__RegisterQ__group__32E0915F">
+          <End Role="StudentGroup" Type="Self.StudentGroup" Multiplicity="0..1" />
+          <End Role="RegisterQueue" Type="Self.RegisterQueue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudentGroup">
+              <PropertyRef Name="group_id" />
+            </Principal>
+            <Dependent Role="RegisterQueue">
+              <PropertyRef Name="group_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RegisterQ__stude__31EC6D26">
+          <End Role="Students" Type="Self.Students" Multiplicity="1" />
+          <End Role="RegisterQueue" Type="Self.RegisterQueue" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="student_id" />
+            </Principal>
+            <Dependent Role="RegisterQueue">
+              <PropertyRef Name="student_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RegisterQ__topic__33D4B598">
+          <End Role="Topics" Type="Self.Topics" Multiplicity="0..1" />
+          <End Role="RegisterQueue" Type="Self.RegisterQueue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Topics">
+              <PropertyRef Name="topic_id" />
+            </Principal>
+            <Dependent Role="RegisterQueue">
+              <PropertyRef Name="topic_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__StudentAc__stude__36B12243">
+          <End Role="Students" Type="Self.Students" Multiplicity="0..1" />
+          <End Role="StudentAccount" Type="Self.StudentAccount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="student_id" />
+            </Principal>
+            <Dependent Role="StudentAccount">
+              <PropertyRef Name="student_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__StudentGr__topic__2B3F6F97">
+          <End Role="Topics" Type="Self.Topics" Multiplicity="0..1" />
+          <End Role="StudentGroup" Type="Self.StudentGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Topics">
+              <PropertyRef Name="topic_id" />
+            </Principal>
+            <Dependent Role="StudentGroup">
+              <PropertyRef Name="topic_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Students__group___2E1BDC42">
+          <End Role="StudentGroup" Type="Self.StudentGroup" Multiplicity="0..1" />
+          <End Role="Students" Type="Self.Students" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudentGroup">
+              <PropertyRef Name="group_id" />
+            </Principal>
+            <Dependent Role="Students">
+              <PropertyRef Name="group_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TeacherAc__teach__398D8EEE">
+          <End Role="Teachers" Type="Self.Teachers" Multiplicity="0..1" />
+          <End Role="TeacherAccount" Type="Self.TeacherAccount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teachers">
+              <PropertyRef Name="teacher_id" />
+            </Principal>
+            <Dependent Role="TeacherAccount">
+              <PropertyRef Name="teacher_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Topics__teacher___267ABA7A">
+          <End Role="Teachers" Type="Self.Teachers" Multiplicity="0..1" />
+          <End Role="Topics" Type="Self.Topics" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teachers">
+              <PropertyRef Name="teacher_id" />
+            </Principal>
+            <Dependent Role="Topics">
+              <PropertyRef Name="teacher_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ThesisManagementModelStoreContainer">
+          <EntitySet Name="RegisterQueue" EntityType="Self.RegisterQueue" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StudentAccount" EntityType="Self.StudentAccount" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StudentGroup" EntityType="Self.StudentGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TeacherAccount" EntityType="Self.TeacherAccount" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Teachers" EntityType="Self.Teachers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Topics" EntityType="Self.Topics" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__RegisterQ__group__32E0915F" Association="Self.FK__RegisterQ__group__32E0915F">
+            <End Role="StudentGroup" EntitySet="StudentGroup" />
+            <End Role="RegisterQueue" EntitySet="RegisterQueue" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RegisterQ__stude__31EC6D26" Association="Self.FK__RegisterQ__stude__31EC6D26">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="RegisterQueue" EntitySet="RegisterQueue" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RegisterQ__topic__33D4B598" Association="Self.FK__RegisterQ__topic__33D4B598">
+            <End Role="Topics" EntitySet="Topics" />
+            <End Role="RegisterQueue" EntitySet="RegisterQueue" />
+          </AssociationSet>
+          <AssociationSet Name="FK__StudentAc__stude__36B12243" Association="Self.FK__StudentAc__stude__36B12243">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="StudentAccount" EntitySet="StudentAccount" />
+          </AssociationSet>
+          <AssociationSet Name="FK__StudentGr__topic__2B3F6F97" Association="Self.FK__StudentGr__topic__2B3F6F97">
+            <End Role="Topics" EntitySet="Topics" />
+            <End Role="StudentGroup" EntitySet="StudentGroup" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Students__group___2E1BDC42" Association="Self.FK__Students__group___2E1BDC42">
+            <End Role="StudentGroup" EntitySet="StudentGroup" />
+            <End Role="Students" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TeacherAc__teach__398D8EEE" Association="Self.FK__TeacherAc__teach__398D8EEE">
+            <End Role="Teachers" EntitySet="Teachers" />
+            <End Role="TeacherAccount" EntitySet="TeacherAccount" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Topics__teacher___267ABA7A" Association="Self.FK__Topics__teacher___267ABA7A">
+            <End Role="Teachers" EntitySet="Teachers" />
+            <End Role="Topics" EntitySet="Topics" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ThesisManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="RegisterQueue">
+          <Key>
+            <PropertyRef Name="student_id" />
+          </Key>
+          <Property Name="student_id" Type="Int32" Nullable="false" />
+          <Property Name="group_id" Type="Int32" />
+          <Property Name="topic_id" Type="Int32" />
+          <Property Name="accepted" Type="Boolean" />
+          <NavigationProperty Name="StudentGroup" Relationship="Self.FK__RegisterQ__group__32E0915F" FromRole="RegisterQueue" ToRole="StudentGroup" />
+          <NavigationProperty Name="Student" Relationship="Self.FK__RegisterQ__stude__31EC6D26" FromRole="RegisterQueue" ToRole="Students" />
+          <NavigationProperty Name="Topic" Relationship="Self.FK__RegisterQ__topic__33D4B598" FromRole="RegisterQueue" ToRole="Topics" />
+        </EntityType>
+        <EntityType Name="StudentAccount">
+          <Key>
+            <PropertyRef Name="student_username" />
+          </Key>
+          <Property Name="student_username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="student_password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="student_id" Type="Int32" />
+          <NavigationProperty Name="Student" Relationship="Self.FK__StudentAc__stude__36B12243" FromRole="StudentAccount" ToRole="Students" />
+        </EntityType>
+        <EntityType Name="StudentGroup">
+          <Key>
+            <PropertyRef Name="group_id" />
+          </Key>
+          <Property Name="group_id" Type="Int32" Nullable="false" />
+          <Property Name="group_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="topic_id" Type="Int32" />
+          <Property Name="number_of_students" Type="Int32" />
+          <Property Name="group_points" Type="Double" />
+          <NavigationProperty Name="RegisterQueues" Relationship="Self.FK__RegisterQ__group__32E0915F" FromRole="StudentGroup" ToRole="RegisterQueue" />
+          <NavigationProperty Name="Topic" Relationship="Self.FK__StudentGr__topic__2B3F6F97" FromRole="StudentGroup" ToRole="Topics" />
+          <NavigationProperty Name="Students" Relationship="Self.FK__Students__group___2E1BDC42" FromRole="StudentGroup" ToRole="Students" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="student_id" />
+          </Key>
+          <Property Name="student_id" Type="Int32" Nullable="false" />
+          <Property Name="student_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="student_age" Type="Int32" />
+          <Property Name="student_email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="student_grade" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="group_id" Type="Int32" />
+          <NavigationProperty Name="RegisterQueue" Relationship="Self.FK__RegisterQ__stude__31EC6D26" FromRole="Students" ToRole="RegisterQueue" />
+          <NavigationProperty Name="StudentAccounts" Relationship="Self.FK__StudentAc__stude__36B12243" FromRole="Students" ToRole="StudentAccount" />
+          <NavigationProperty Name="StudentGroup" Relationship="Self.FK__Students__group___2E1BDC42" FromRole="Students" ToRole="StudentGroup" />
+        </EntityType>
+        <EntityType Name="TeacherAccount">
+          <Key>
+            <PropertyRef Name="teacher_username" />
+          </Key>
+          <Property Name="teacher_username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="teacher_password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="teacher_id" Type="Int32" />
+          <NavigationProperty Name="Teacher" Relationship="Self.FK__TeacherAc__teach__398D8EEE" FromRole="TeacherAccount" ToRole="Teachers" />
+        </EntityType>
+        <EntityType Name="Teacher">
+          <Key>
+            <PropertyRef Name="teacher_id" />
+          </Key>
+          <Property Name="teacher_id" Type="Int32" Nullable="false" />
+          <Property Name="teacher_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="teacher_age" Type="Int32" />
+          <Property Name="teacher_email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="subject_taught" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TeacherAccounts" Relationship="Self.FK__TeacherAc__teach__398D8EEE" FromRole="Teachers" ToRole="TeacherAccount" />
+          <NavigationProperty Name="Topics" Relationship="Self.FK__Topics__teacher___267ABA7A" FromRole="Teachers" ToRole="Topics" />
+        </EntityType>
+        <EntityType Name="Topic">
+          <Key>
+            <PropertyRef Name="topic_id" />
+          </Key>
+          <Property Name="topic_id" Type="Int32" Nullable="false" />
+          <Property Name="topic_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="topic_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="topic_technology" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="topic_requirement" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="topic_category" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="max_members" Type="Int32" />
+          <Property Name="teacher_id" Type="Int32" />
+          <NavigationProperty Name="RegisterQueues" Relationship="Self.FK__RegisterQ__topic__33D4B598" FromRole="Topics" ToRole="RegisterQueue" />
+          <NavigationProperty Name="StudentGroups" Relationship="Self.FK__StudentGr__topic__2B3F6F97" FromRole="Topics" ToRole="StudentGroup" />
+          <NavigationProperty Name="Teacher" Relationship="Self.FK__Topics__teacher___267ABA7A" FromRole="Topics" ToRole="Teachers" />
+        </EntityType>
+        <Association Name="FK__RegisterQ__group__32E0915F">
+          <End Role="StudentGroup" Type="Self.StudentGroup" Multiplicity="0..1" />
+          <End Role="RegisterQueue" Type="Self.RegisterQueue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudentGroup">
+              <PropertyRef Name="group_id" />
+            </Principal>
+            <Dependent Role="RegisterQueue">
+              <PropertyRef Name="group_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RegisterQ__stude__31EC6D26">
+          <End Role="Students" Type="Self.Student" Multiplicity="1" />
+          <End Role="RegisterQueue" Type="Self.RegisterQueue" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="student_id" />
+            </Principal>
+            <Dependent Role="RegisterQueue">
+              <PropertyRef Name="student_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RegisterQ__topic__33D4B598">
+          <End Role="Topics" Type="Self.Topic" Multiplicity="0..1" />
+          <End Role="RegisterQueue" Type="Self.RegisterQueue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Topics">
+              <PropertyRef Name="topic_id" />
+            </Principal>
+            <Dependent Role="RegisterQueue">
+              <PropertyRef Name="topic_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__StudentAc__stude__36B12243">
+          <End Role="Students" Type="Self.Student" Multiplicity="0..1" />
+          <End Role="StudentAccount" Type="Self.StudentAccount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="student_id" />
+            </Principal>
+            <Dependent Role="StudentAccount">
+              <PropertyRef Name="student_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__StudentGr__topic__2B3F6F97">
+          <End Role="Topics" Type="Self.Topic" Multiplicity="0..1" />
+          <End Role="StudentGroup" Type="Self.StudentGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Topics">
+              <PropertyRef Name="topic_id" />
+            </Principal>
+            <Dependent Role="StudentGroup">
+              <PropertyRef Name="topic_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Students__group___2E1BDC42">
+          <End Role="StudentGroup" Type="Self.StudentGroup" Multiplicity="0..1" />
+          <End Role="Students" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudentGroup">
+              <PropertyRef Name="group_id" />
+            </Principal>
+            <Dependent Role="Students">
+              <PropertyRef Name="group_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TeacherAc__teach__398D8EEE">
+          <End Role="Teachers" Type="Self.Teacher" Multiplicity="0..1" />
+          <End Role="TeacherAccount" Type="Self.TeacherAccount" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teachers">
+              <PropertyRef Name="teacher_id" />
+            </Principal>
+            <Dependent Role="TeacherAccount">
+              <PropertyRef Name="teacher_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Topics__teacher___267ABA7A">
+          <End Role="Teachers" Type="Self.Teacher" Multiplicity="0..1" />
+          <End Role="Topics" Type="Self.Topic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teachers">
+              <PropertyRef Name="teacher_id" />
+            </Principal>
+            <Dependent Role="Topics">
+              <PropertyRef Name="teacher_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ThesisManagementContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="RegisterQueues" EntityType="Self.RegisterQueue" />
+          <EntitySet Name="StudentAccounts" EntityType="Self.StudentAccount" />
+          <EntitySet Name="StudentGroups" EntityType="Self.StudentGroup" />
+          <EntitySet Name="Students" EntityType="Self.Student" />
+          <EntitySet Name="TeacherAccounts" EntityType="Self.TeacherAccount" />
+          <EntitySet Name="Teachers" EntityType="Self.Teacher" />
+          <EntitySet Name="Topics" EntityType="Self.Topic" />
+          <AssociationSet Name="FK__RegisterQ__group__32E0915F" Association="Self.FK__RegisterQ__group__32E0915F">
+            <End Role="StudentGroup" EntitySet="StudentGroups" />
+            <End Role="RegisterQueue" EntitySet="RegisterQueues" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RegisterQ__stude__31EC6D26" Association="Self.FK__RegisterQ__stude__31EC6D26">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="RegisterQueue" EntitySet="RegisterQueues" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RegisterQ__topic__33D4B598" Association="Self.FK__RegisterQ__topic__33D4B598">
+            <End Role="Topics" EntitySet="Topics" />
+            <End Role="RegisterQueue" EntitySet="RegisterQueues" />
+          </AssociationSet>
+          <AssociationSet Name="FK__StudentAc__stude__36B12243" Association="Self.FK__StudentAc__stude__36B12243">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="StudentAccount" EntitySet="StudentAccounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__StudentGr__topic__2B3F6F97" Association="Self.FK__StudentGr__topic__2B3F6F97">
+            <End Role="Topics" EntitySet="Topics" />
+            <End Role="StudentGroup" EntitySet="StudentGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Students__group___2E1BDC42" Association="Self.FK__Students__group___2E1BDC42">
+            <End Role="StudentGroup" EntitySet="StudentGroups" />
+            <End Role="Students" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TeacherAc__teach__398D8EEE" Association="Self.FK__TeacherAc__teach__398D8EEE">
+            <End Role="Teachers" EntitySet="Teachers" />
+            <End Role="TeacherAccount" EntitySet="TeacherAccounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Topics__teacher___267ABA7A" Association="Self.FK__Topics__teacher___267ABA7A">
+            <End Role="Teachers" EntitySet="Teachers" />
+            <End Role="Topics" EntitySet="Topics" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ThesisManagementModelStoreContainer" CdmEntityContainer="ThesisManagementContext">
+          <EntitySetMapping Name="RegisterQueues">
+            <EntityTypeMapping TypeName="ThesisManagementModel.RegisterQueue">
+              <MappingFragment StoreEntitySet="RegisterQueue">
+                <ScalarProperty Name="student_id" ColumnName="student_id" />
+                <ScalarProperty Name="group_id" ColumnName="group_id" />
+                <ScalarProperty Name="topic_id" ColumnName="topic_id" />
+                <ScalarProperty Name="accepted" ColumnName="accepted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudentAccounts">
+            <EntityTypeMapping TypeName="ThesisManagementModel.StudentAccount">
+              <MappingFragment StoreEntitySet="StudentAccount">
+                <ScalarProperty Name="student_username" ColumnName="student_username" />
+                <ScalarProperty Name="student_password" ColumnName="student_password" />
+                <ScalarProperty Name="student_id" ColumnName="student_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudentGroups">
+            <EntityTypeMapping TypeName="ThesisManagementModel.StudentGroup">
+              <MappingFragment StoreEntitySet="StudentGroup">
+                <ScalarProperty Name="group_id" ColumnName="group_id" />
+                <ScalarProperty Name="group_name" ColumnName="group_name" />
+                <ScalarProperty Name="topic_id" ColumnName="topic_id" />
+                <ScalarProperty Name="number_of_students" ColumnName="number_of_students" />
+                <ScalarProperty Name="group_points" ColumnName="group_points" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Students">
+            <EntityTypeMapping TypeName="ThesisManagementModel.Student">
+              <MappingFragment StoreEntitySet="Students">
+                <ScalarProperty Name="student_id" ColumnName="student_id" />
+                <ScalarProperty Name="student_name" ColumnName="student_name" />
+                <ScalarProperty Name="student_age" ColumnName="student_age" />
+                <ScalarProperty Name="student_email" ColumnName="student_email" />
+                <ScalarProperty Name="student_grade" ColumnName="student_grade" />
+                <ScalarProperty Name="group_id" ColumnName="group_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TeacherAccounts">
+            <EntityTypeMapping TypeName="ThesisManagementModel.TeacherAccount">
+              <MappingFragment StoreEntitySet="TeacherAccount">
+                <ScalarProperty Name="teacher_username" ColumnName="teacher_username" />
+                <ScalarProperty Name="teacher_password" ColumnName="teacher_password" />
+                <ScalarProperty Name="teacher_id" ColumnName="teacher_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Teachers">
+            <EntityTypeMapping TypeName="ThesisManagementModel.Teacher">
+              <MappingFragment StoreEntitySet="Teachers">
+                <ScalarProperty Name="teacher_id" ColumnName="teacher_id" />
+                <ScalarProperty Name="teacher_name" ColumnName="teacher_name" />
+                <ScalarProperty Name="teacher_age" ColumnName="teacher_age" />
+                <ScalarProperty Name="teacher_email" ColumnName="teacher_email" />
+                <ScalarProperty Name="subject_taught" ColumnName="subject_taught" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Topics">
+            <EntityTypeMapping TypeName="ThesisManagementModel.Topic">
+              <MappingFragment StoreEntitySet="Topics">
+                <ScalarProperty Name="topic_id" ColumnName="topic_id" />
+                <ScalarProperty Name="topic_name" ColumnName="topic_name" />
+                <ScalarProperty Name="topic_description" ColumnName="topic_description" />
+                <ScalarProperty Name="topic_technology" ColumnName="topic_technology" />
+                <ScalarProperty Name="topic_requirement" ColumnName="topic_requirement" />
+                <ScalarProperty Name="topic_category" ColumnName="topic_category" />
+                <ScalarProperty Name="max_members" ColumnName="max_members" />
+                <ScalarProperty Name="teacher_id" ColumnName="teacher_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

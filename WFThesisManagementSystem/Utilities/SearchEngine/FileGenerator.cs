@@ -25,7 +25,7 @@ namespace WFThesisManagementSystem.Utilities.SearchEngine
                 string query =
                     "SELECT T.topic_id, T.topic_name, T.topic_description, T.topic_requirement, T.topic_category, T.topic_technology, T.max_members ,S.teacher_name, T.teacher_id " +
                     "FROM Topics T " +
-                    "JOIN Teacher S ON T.teacher_id = S.teacher_id";
+                    "JOIN Teachers S ON T.teacher_id = S.teacher_id";
 
                 SqlCommand command = new SqlCommand(query, connection);
 

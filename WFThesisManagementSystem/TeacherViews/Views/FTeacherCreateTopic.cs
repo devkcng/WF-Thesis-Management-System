@@ -44,7 +44,7 @@ namespace WFThesisManagementSystem.TeacherViews.Views
                     DataRow row = dataTable.Rows[i];
                     if(UserLogin.UserName == row["teacher_username"].ToString() && UserLogin.Password == row["teacher_password"].ToString())
                     {
-                        topic.Teacher_id = int.Parse(row["teacher_id"].ToString());
+                        topic.teacher_id = int.Parse(row["teacher_id"].ToString());
                         break;
                     }    
                 }    

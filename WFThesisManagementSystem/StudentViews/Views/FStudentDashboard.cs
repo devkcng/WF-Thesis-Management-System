@@ -17,7 +17,7 @@ namespace WFThesisManagementSystem.StudentViews.Views
         {
             InitializeComponent();
             student = new Student();
-            student.Id = int.Parse(student_id);
+            student.student_id = int.Parse(student_id);
         }
         
 
@@ -30,7 +30,7 @@ namespace WFThesisManagementSystem.StudentViews.Views
         }
         private void bookToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UCStudentProject uc = new UCStudentProject(student.Id);
+            UCStudentProject uc = new UCStudentProject(student.student_id);
             addUserControl(uc);
         }
 
