@@ -121,7 +121,6 @@
     <Compile Include="Models\Topic.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="RegistrationService.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\RegisterQueueRepository.cs" />
     <Compile Include="Repositories\StudentAccountRepository.cs" />
@@ -332,6 +331,8 @@
     <Compile Include="Helper\SearchEngineHelper\Document.cs" />
     <Compile Include="Helper\SearchEngineHelper\FileGenerator.cs" />
     <Compile Include="Helper\SearchEngineHelper\TFIDF.cs" />
+    <Compile Include="Services\RegistrationService.cs" />
+    <Compile Include="Services\TopicAcceptService.cs" />
     <EmbeddedResource Include="Forms\FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -622,13 +623,6 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
-    </Content>
-    <Content Include="ThesisManagement.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="ThesisManagement_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>ThesisManagement.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup>
