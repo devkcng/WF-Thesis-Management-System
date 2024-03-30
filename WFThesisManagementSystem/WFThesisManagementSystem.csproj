@@ -119,6 +119,14 @@
     <Compile Include="Models\Topic.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\RegisterQueueRepository.cs" />
+    <Compile Include="Repositories\StudentAccountRepository.cs" />
+    <Compile Include="Repositories\StudentGroupRepository.cs" />
+    <Compile Include="Repositories\StudentRepository.cs" />
+    <Compile Include="Repositories\TeacherAccountRepository.cs" />
+    <Compile Include="Repositories\TeacherRepository.cs" />
+    <Compile Include="Repositories\TopicRepository.cs" />
     <Compile Include="TeacherViews\TeacherUserControl\UcTeacherAcceptRegistAll.cs">
       <SubType>UserControl</SubType>
     </Compile>
