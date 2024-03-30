@@ -1,4 +1,6 @@
-﻿namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
+﻿using WFThesisManagementSystem.Forms.StudentViews.StudentUserControl;
+
+namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
 {
     partial class UcTeacherAllTopics
     {
@@ -33,7 +35,7 @@
             this.btnCreate = new Guna.UI2.WinForms.Guna2Button();
             this.ucTeacherSingleTopic1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherSingleTopic();
             this.ucTeacherSingleTopic2 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherSingleTopic();
-            this.ucTask1 = new WFThesisManagementSystem.StudentViews.StudentUserControl.UCTask();
+            this.ucTask1 = new UCTask();
             this.flpTopicView.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -124,6 +126,6 @@
         public UcTeacherSingleTopic ucTeacherSingleTopic1;
         public Guna.UI2.WinForms.Guna2Button btnCreate;
         private UcTeacherSingleTopic ucTeacherSingleTopic2;
-        private StudentViews.StudentUserControl.UCTask ucTask1;
+        private UCTask ucTask1;
     }
 }

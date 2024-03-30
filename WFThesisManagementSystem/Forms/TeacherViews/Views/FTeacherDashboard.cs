@@ -2,6 +2,7 @@
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using ComponentFactory.Krypton.Toolkit;
+using WFThesisManagementSystem.Forms;
 
 namespace WFThesisManagementSystem.TeacherViews.Views
 {
