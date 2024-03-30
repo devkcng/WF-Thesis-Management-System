@@ -37,14 +37,29 @@ namespace WFThesisManagementSystem.Services
             }
             if (Unregistered())
             {   
+                if (!GroupExists())
+                {
                 StudentGroup studentGroup = CreateGroup();
                 _studentGroupRepository.Add(studentGroup);
                 RegisterQueue registerQueue = new RegisterQueue();
                 registerQueue.student_id = _student.student_id;
                 registerQueue.topic_id = _topic.topic_id;
                 registerQueue.group_id = studentGroup.group_id;
+                registerQueue.accepted = false;
                 _registerQueueRepository.Add(registerQueue);
                 return true;
+                }
+                else
+                {
+                    var studentGroup = _studentGroupRepository.GetByTopicId(_topic.topic_id);
+                 RegisterQueue registerQueue = new RegisterQueue();
+                registerQueue.student_id = _student.student_id;
+                registerQueue.topic_id = _topic.topic_id;
+                registerQueue.group_id = studentGroup.group_id;
+                registerQueue.accepted = false;
+                _registerQueueRepository.Add(registerQueue);
+                return true;
+                }
             }
 
             if (InQueue())
@@ -82,6 +97,19 @@ namespace WFThesisManagementSystem.Services
             if (_student.group_id == null && registerQueue != null)
             {
                 return true;
+            }
+            return false;
+        }
+
+        public bool GroupExists()
+        {
+            var studentGroupList = _studentGroupRepository.GetAll();
+            foreach (var studentGroup in studentGroupList)
+            {
+                if (studentGroup.topic_id == _topic.topic_id)
+                {
+                    return true;
+                }
             }
             return false;
         }
