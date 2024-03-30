@@ -14,7 +14,7 @@ namespace WFThesisManagementSystem.DataAccess
         {
             return string.Format("INSERT INTO Student_Group (group_id , group_name, topic_id, number_of_students) " +
                                  "VALUES ('{0}', '{1}' ,'{2}','{3}')",
-                                            studentGroup.Id, studentGroup.Name, studentGroup.TopicID, studentGroup.Size);
+                                            studentGroup.group_id, studentGroup.group_name, studentGroup.topic_id, studentGroup.number_of_students);
         }
 
 
