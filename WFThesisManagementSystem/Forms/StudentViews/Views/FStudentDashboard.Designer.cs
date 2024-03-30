@@ -1,4 +1,4 @@
-﻿namespace WFThesisManagementSystem.StudentViews.Views
+﻿namespace WFThesisManagementSystem.Forms.StudentViews.Views
 {
     partial class FStudentDashboard
     {

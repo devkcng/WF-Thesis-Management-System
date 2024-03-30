@@ -1,4 +1,4 @@
-﻿namespace WFThesisManagementSystem.Views.StudentViews
+﻿namespace WFThesisManagementSystem.Forms.StudentViews.StudentUserControl
 {
     partial class UCStudentProject
     {

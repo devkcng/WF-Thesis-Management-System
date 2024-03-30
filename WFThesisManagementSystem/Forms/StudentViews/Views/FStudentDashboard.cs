@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Drawing;
-using System.Web.UI;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
+using WFThesisManagementSystem.Forms.StudentViews.StudentUserControl;
 using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.TeacherViews.TeacherUserControl;
-using WFThesisManagementSystem.Views.StudentViews;
 using UserControl = System.Windows.Forms.UserControl;
 
-namespace WFThesisManagementSystem.StudentViews.Views
+namespace WFThesisManagementSystem.Forms.StudentViews.Views
 {
     public partial class FStudentDashboard : KryptonForm
     {

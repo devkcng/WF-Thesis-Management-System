@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using WFThesisManagementSystem.StudentViews.StudentUserControl;
 
-namespace WFThesisManagementSystem.Views.StudentViews
+namespace WFThesisManagementSystem.Forms.StudentViews.StudentUserControl
 {
     public partial class UCStudentTask : UserControl
     {

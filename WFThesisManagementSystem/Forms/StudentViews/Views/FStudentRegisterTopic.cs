@@ -1,18 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using WFThesisManagementSystem.DataAccess;
 using WFThesisManagementSystem.Helper.SearchEngineHelper;
 using WFThesisManagementSystem.Models;
 
-namespace WFThesisManagementSystem.StudentViews.Views
+namespace WFThesisManagementSystem.Forms.StudentViews.Views
 {
     public partial class FStudentRegisterTopic : Form
     {
