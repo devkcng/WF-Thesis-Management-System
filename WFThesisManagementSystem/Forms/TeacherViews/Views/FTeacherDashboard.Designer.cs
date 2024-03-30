@@ -1,4 +1,6 @@
-﻿namespace WFThesisManagementSystem.TeacherViews.Views
+﻿using WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl;
+
+namespace WFThesisManagementSystem.Forms.TeacherViews.Views
 {
     partial class FTeacherDashboard
     {
@@ -50,10 +52,10 @@
             this.menuStrip3 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.ucTeacherAllTask1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherAllTask();
-            this.ucTeacherAllTopics1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherAllTopics();
-            this.ucTeacherEditInfor1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherEditInfor();
-            this.ucTeacherInfor1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherInfor();
+            this.ucTeacherAllTask1 = new UcTeacherAllTask();
+            this.ucTeacherAllTopics1 = new UcTeacherAllTopics();
+            this.ucTeacherEditInfor1 = new UcTeacherEditInfor();
+            this.ucTeacherInfor1 = new UcTeacherInfor();
             this.Regist = new System.Windows.Forms.ToolStripMenuItem();
             this.MSListFolder.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -407,10 +409,10 @@
         private System.Windows.Forms.MenuStrip mspProfile;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private TeacherUserControl.UcTeacherInfor ucTeacherInfor1;
-        private TeacherUserControl.UcTeacherEditInfor ucTeacherEditInfor1;
-        private TeacherUserControl.UcTeacherAllTopics ucTeacherAllTopics1;
-        private TeacherUserControl.UcTeacherAllTask ucTeacherAllTask1;
+        private UcTeacherInfor ucTeacherInfor1;
+        private UcTeacherEditInfor ucTeacherEditInfor1;
+        private UcTeacherAllTopics ucTeacherAllTopics1;
+        private UcTeacherAllTask ucTeacherAllTask1;
         private System.Windows.Forms.ToolStripMenuItem Regist;
     }
 }

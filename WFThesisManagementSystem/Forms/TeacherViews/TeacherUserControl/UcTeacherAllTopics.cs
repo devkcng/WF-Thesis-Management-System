@@ -1,18 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.Remoting.Channels;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WFThesisManagementSystem.DataAccess;
 using WFThesisManagementSystem.Models;
-using WFThesisManagementSystem.TeacherViews.Views;
 
-namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
+namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
 {
     public partial class UcTeacherAllTopics : UserControl
     {

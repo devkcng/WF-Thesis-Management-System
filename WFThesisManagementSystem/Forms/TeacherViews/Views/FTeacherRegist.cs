@@ -1,20 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.ConstrainedExecution;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.UI;
 using System.Windows.Forms;
 using WFThesisManagementSystem.DataAccess;
-using WFThesisManagementSystem.Models;
-using WFThesisManagementSystem.TeacherViews.TeacherUserControl;
+using WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl;
 using Control = System.Windows.Forms.Control;
 
-namespace WFThesisManagementSystem.TeacherViews.Views
+namespace WFThesisManagementSystem.Forms.TeacherViews.Views
 {
     public partial class FTeacherRegist : Form
     {

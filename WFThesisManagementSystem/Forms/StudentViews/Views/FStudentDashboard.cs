@@ -2,8 +2,8 @@
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 using WFThesisManagementSystem.Forms.StudentViews.StudentUserControl;
+using WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl;
 using WFThesisManagementSystem.Models;
-using WFThesisManagementSystem.TeacherViews.TeacherUserControl;
 using UserControl = System.Windows.Forms.UserControl;
 
 namespace WFThesisManagementSystem.Forms.StudentViews.Views

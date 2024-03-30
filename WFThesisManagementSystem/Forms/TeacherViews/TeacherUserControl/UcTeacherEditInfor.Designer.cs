@@ -1,4 +1,4 @@
-﻿namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
+﻿namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
 {
     partial class UcTeacherEditInfor
     {

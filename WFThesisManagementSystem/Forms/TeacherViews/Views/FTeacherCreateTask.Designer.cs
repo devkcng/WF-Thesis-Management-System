@@ -1,4 +1,6 @@
-﻿namespace WFThesisManagementSystem.TeacherViews.Views
+﻿using WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl;
+
+namespace WFThesisManagementSystem.Forms.TeacherViews.Views
 {
     partial class FTeacherCreateTask
     {
@@ -28,7 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucTeacherCreateTask1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherCreateTask();
+            this.ucTeacherCreateTask1 = new UcTeacherCreateTask();
             this.SuspendLayout();
             // 
             // ucTeacherCreateTask1
@@ -56,6 +58,6 @@
 
         #endregion
 
-        private TeacherUserControl.UcTeacherCreateTask ucTeacherCreateTask1;
+        private UcTeacherCreateTask ucTeacherCreateTask1;
     }
 }

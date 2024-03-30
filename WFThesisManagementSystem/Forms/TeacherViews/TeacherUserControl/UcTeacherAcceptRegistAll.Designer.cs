@@ -1,4 +1,4 @@
-﻿namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
+﻿namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
 {
     partial class UcTeacherAcceptRegistAll
     {
@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.flpRegistView = new System.Windows.Forms.FlowLayoutPanel();
-            this.ucTeacherAcceptRegisterSingle1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherAcceptRegisterSingle();
+            this.ucTeacherAcceptRegisterSingle1 = new UcTeacherAcceptRegisterSingle();
             this.btnAccept = new Guna.UI2.WinForms.Guna2Button();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.lblRegist = new System.Windows.Forms.Label();
             this.flpRegistedView = new System.Windows.Forms.FlowLayoutPanel();
-            this.ucTeacherAcceptRegisterSingle2 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherAcceptRegisterSingle();
+            this.ucTeacherAcceptRegisterSingle2 = new UcTeacherAcceptRegisterSingle();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.flpRegistView.SuspendLayout();
             this.flpRegistedView.SuspendLayout();

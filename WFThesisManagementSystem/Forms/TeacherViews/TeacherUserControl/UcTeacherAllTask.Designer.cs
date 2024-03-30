@@ -1,4 +1,4 @@
-﻿namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
+﻿namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
 {
     partial class UcTeacherAllTask
     {
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.flpAllTasks = new System.Windows.Forms.FlowLayoutPanel();
-            this.ucTeacherSingleTask1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherSingleTask();
+            this.ucTeacherSingleTask1 = new UcTeacherSingleTask();
             this.lblTasks = new System.Windows.Forms.Label();
             this.btnCreate = new Guna.UI2.WinForms.Guna2Button();
             this.flpAllTasks.SuspendLayout();

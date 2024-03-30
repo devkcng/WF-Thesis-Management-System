@@ -1,4 +1,6 @@
-﻿namespace WFThesisManagementSystem.TeacherViews.Views
+﻿using WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl;
+
+namespace WFThesisManagementSystem.Forms.TeacherViews.Views
 {
     partial class FTeacherEditTopic
     {
@@ -28,7 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucTeacherEditTopic1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherEditTopic();
+            this.ucTeacherEditTopic1 = new UcTeacherEditTopic();
             this.SuspendLayout();
             // 
             // ucTeacherEditTopic1
@@ -58,6 +60,6 @@
 
         #endregion
 
-        public TeacherUserControl.UcTeacherEditTopic ucTeacherEditTopic1;
+        public UcTeacherEditTopic ucTeacherEditTopic1;
     }
 }

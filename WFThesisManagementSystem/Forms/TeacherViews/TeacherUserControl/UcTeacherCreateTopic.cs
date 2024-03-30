@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
+namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
 {
     public partial class UcTeacherCreateTopic : UserControl
     {

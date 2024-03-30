@@ -1,6 +1,6 @@
 ﻿using WFThesisManagementSystem.Forms.StudentViews.StudentUserControl;
 
-namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
+namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
 {
     partial class UcTeacherAllTopics
     {
@@ -33,8 +33,8 @@ namespace WFThesisManagementSystem.TeacherViews.TeacherUserControl
             this.lblTopics = new System.Windows.Forms.Label();
             this.flpTopicView = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCreate = new Guna.UI2.WinForms.Guna2Button();
-            this.ucTeacherSingleTopic1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherSingleTopic();
-            this.ucTeacherSingleTopic2 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherSingleTopic();
+            this.ucTeacherSingleTopic1 = new UcTeacherSingleTopic();
+            this.ucTeacherSingleTopic2 = new UcTeacherSingleTopic();
             this.ucTask1 = new UCTask();
             this.flpTopicView.SuspendLayout();
             this.SuspendLayout();

@@ -1,4 +1,6 @@
-﻿namespace WFThesisManagementSystem.TeacherViews.Views
+﻿using WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl;
+
+namespace WFThesisManagementSystem.Forms.TeacherViews.Views
 {
     partial class FTeacherRegist
     {
@@ -28,7 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucTeacherAcceptRegistAll1 = new WFThesisManagementSystem.TeacherViews.TeacherUserControl.UcTeacherAcceptRegistAll();
+            this.ucTeacherAcceptRegistAll1 = new UcTeacherAcceptRegistAll();
             this.SuspendLayout();
             // 
             // ucTeacherAcceptRegistAll1
@@ -58,6 +60,6 @@
 
         #endregion
 
-        private TeacherUserControl.UcTeacherAcceptRegistAll ucTeacherAcceptRegistAll1;
+        private UcTeacherAcceptRegistAll ucTeacherAcceptRegistAll1;
     }
 }

@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using ComponentFactory.Krypton.Toolkit;
-using WFThesisManagementSystem.Forms;
 
-namespace WFThesisManagementSystem.TeacherViews.Views
+namespace WFThesisManagementSystem.Forms.TeacherViews.Views
 {
     public partial class FTeacherDashboard : KryptonForm
     {

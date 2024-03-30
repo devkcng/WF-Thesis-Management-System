@@ -1,17 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WFThesisManagementSystem.DataAccess;
 using WFThesisManagementSystem.Models;
-using WFThesisManagementSystem.TeacherViews.TeacherUserControl;
 
-namespace WFThesisManagementSystem.TeacherViews.Views
+namespace WFThesisManagementSystem.Forms.TeacherViews.Views
 {
     public partial class FTeacherEditTopic : Form
     {

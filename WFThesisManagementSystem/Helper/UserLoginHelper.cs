@@ -3,8 +3,8 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using WFThesisManagementSystem.DataAccess;
 using WFThesisManagementSystem.Forms.StudentViews.Views;
+using WFThesisManagementSystem.Forms.TeacherViews.Views;
 using WFThesisManagementSystem.Models;
-using WFThesisManagementSystem.TeacherViews.Views;
 
 namespace WFThesisManagementSystem.Helper
 {
