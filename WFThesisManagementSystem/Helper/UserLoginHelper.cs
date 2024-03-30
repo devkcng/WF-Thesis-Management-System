@@ -2,8 +2,8 @@
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using WFThesisManagementSystem.DataAccess;
+using WFThesisManagementSystem.Forms.StudentViews.Views;
 using WFThesisManagementSystem.Models;
-using WFThesisManagementSystem.StudentViews.Views;
 using WFThesisManagementSystem.TeacherViews.Views;
 
 namespace WFThesisManagementSystem.Helper

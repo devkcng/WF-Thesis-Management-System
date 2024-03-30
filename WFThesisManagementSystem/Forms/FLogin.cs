@@ -1,15 +1,9 @@
-﻿using ComponentFactory.Krypton.Toolkit;
-using System;
-using System.Data;
-using System.Data.SqlClient;
-using System.Windows.Forms;
-using WFThesisManagementSystem.StudentViews.Views;
-using WFThesisManagementSystem.TeacherViews.Views;
-using WFThesisManagementSystem.DataAccess;
+﻿using System;
+using ComponentFactory.Krypton.Toolkit;
 using WFThesisManagementSystem.Helper;
 using WFThesisManagementSystem.Helper.SearchEngineHelper;
 
-namespace WFThesisManagementSystem
+namespace WFThesisManagementSystem.Forms
 {
     public partial class FLogin : KryptonForm
     {

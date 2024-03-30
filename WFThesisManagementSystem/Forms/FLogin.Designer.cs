@@ -1,4 +1,4 @@
-﻿namespace WFThesisManagementSystem
+﻿namespace WFThesisManagementSystem.Forms
 {
     partial class FLogin
     {

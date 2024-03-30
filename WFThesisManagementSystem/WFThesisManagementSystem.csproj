@@ -248,12 +248,6 @@
     <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherAllTopics.Designer.cs">
       <DependentUpon>UcTeacherAllTopics.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcClose.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcClose.Designer.cs">
-      <DependentUpon>UcClose.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherEditInfor.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -271,30 +265,6 @@
     </Compile>
     <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherInfor.Designer.cs">
       <DependentUpon>UcTeacherInfor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcMaximize.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcMaximize.Designer.cs">
-      <DependentUpon>UcMaximize.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcMenuleft.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcMenuleft.Designer.cs">
-      <DependentUpon>UcMenuleft.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcMenutop.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcMenutop.Designer.cs">
-      <DependentUpon>UcMenutop.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcMinimized.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcMinimized.Designer.cs">
-      <DependentUpon>UcMinimized.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSingleMark.cs">
       <SubType>UserControl</SubType>
@@ -411,9 +381,6 @@
     <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcTeacherAllTopics.resx">
       <DependentUpon>UcTeacherAllTopics.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcClose.resx">
-      <DependentUpon>UcClose.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcTeacherEditInfor.resx">
       <DependentUpon>UcTeacherEditInfor.cs</DependentUpon>
     </EmbeddedResource>
@@ -425,18 +392,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcTeacherInfor.resx">
       <DependentUpon>UcTeacherInfor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcMaximize.resx">
-      <DependentUpon>UcMaximize.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcMenuleft.resx">
-      <DependentUpon>UcMenuleft.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcMenutop.resx">
-      <DependentUpon>UcMenutop.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcMinimized.resx">
-      <DependentUpon>UcMinimized.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSingleMark.resx">
       <DependentUpon>UcTeacherSingleMark.cs</DependentUpon>
