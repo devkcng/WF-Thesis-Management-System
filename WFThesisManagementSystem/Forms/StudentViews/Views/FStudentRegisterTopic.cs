@@ -30,22 +30,13 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         {
             try
             {
-                if (e.RowIndex != -1 && e.RowIndex != dgvTopics.Rows.Count - 1)
+                if (e.RowIndex >= 0)
                 {
-
-                    //Topic topic = new Topic();
-                    //DataGridViewRow row = dgvTopics.Rows[e.RowIndex];
-                    //topic.topic_id = int.Parse(row.Cells["topic_id"].Value.ToString());
-                    //topic.topic_name = row.Cells["topic_name"].Value.ToString();
-                    //topic.topic_description = row.Cells["topic_description"].Value.ToString();
-                    //topic.topic_category = row.Cells["topic_category"].Value.ToString();
-                    //topic.topic_technology = row.Cells["topic_technology"].Value.ToString();
-                    //topic.topic_requirement = row.Cells["topic_requirement"].Value.ToString();
-                    //topic.max_members = int.Parse(row.Cells["max_members"].Value.ToString());
-                    DataGridViewRow row = dgvTopics.Rows[e.RowIndex];
-                    var topic = _topicRepository.GetById(int.Parse(row.Cells["topic_id"].Value.ToString()));
-                    FRegisterTopic registerForm = new FRegisterTopic(topic);
-                    registerForm.Show();
+                    DataGridViewRow row = this.dgvTopics.Rows[e.RowIndex];
+                    var topicId = Convert.ToInt32(row.Cells["topic_id"].Value);
+                    var topic = _topicRepository.GetById(topicId);
+                    FRegisterTopic fRegisterTopic = new FRegisterTopic(topic);
+                    fRegisterTopic.Show();
                     this.Close();
                 }
             }
@@ -75,7 +66,6 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                         document.TopicRequirement,
                         document.TopicCategory,
                         document.TopicMaxMembers,
-                        document.TeacherId,
                         document.TeacherName
                     );
                 }
@@ -115,7 +105,6 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                     topic.topic_requirement,
                     topic.topic_category,
                     topic.max_members,
-                    topic.teacher_id,
                     topic.Teacher.teacher_name
                 );
             }

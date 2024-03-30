@@ -138,17 +138,17 @@
   <metadata name="max_members.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="teacher_id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="teacher_name.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="teacher_name.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="status_check.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="ptbReload.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DgAACw4BQL7hQQAABA1JREFUaEPtmUtoE1EUhuP7/cBXrYZmJtYq1ZXvlS5E0K0r3fioirgQhSpKFepC
+        DQAACw0B7QfALAAABA1JREFUaEPtmUtoE1EUhuP7/cBXrYZmJtYq1ZXvlS5E0K0r3fioirgQhSpKFepC
         qFgfxGYmhgq6qljoqhvXgrhzZSuKIMVHLa1t505SbYWO/5meSSaThrwm0wbywaGTOfdx7r3nnHvv1Feh
         QgUXaDbmBlTtgKyKJknVuyRVfJBVfVhSxISsiD/4+0tW9B48vwqq4mbwaXyPzzDmcO2ZozYU90uK3gLD
         vsNgIx/BoPow2Ltyu17FzXnHpjZtLYyIwIhxp2F5C1YIEgpGh1dx8ylg5e7wozsEVP0EOh5KM6RoEf1B
