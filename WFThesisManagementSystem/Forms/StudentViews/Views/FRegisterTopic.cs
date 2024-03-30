@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 using WFThesisManagementSystem.DataAccess;
 using WFThesisManagementSystem.Helper;
@@ -75,13 +76,13 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                 dgvrRegisterMember.Visible = true;
                 txtGroupName.Enabled = false;
                 txtGroupName.Text = studentGroup.group_name;
-                DataTable dt = new DataTable();
-                dt.Columns.Add("Student ID");
-                dt.Columns.Add("Student Name");
-                var studentInGroupList = studentGroup.Students;
+                var studentInGroupList = _studentRepository.GetAll();
                 foreach (var student in studentInGroupList)
                 {
-                    dt.Rows.Add(student.student_id, student.student_name);
+                    if(student.group_id == studentGroup.group_id)
+                    {
+                        dgvrRegisterMember.Rows.Add(student.student_name, student.student_id);
+                    }
                 }
             }
             else
