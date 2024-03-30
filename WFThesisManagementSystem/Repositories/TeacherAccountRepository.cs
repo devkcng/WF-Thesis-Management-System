@@ -43,5 +43,10 @@ namespace WFThesisManagementSystem.Repositories
             _context.TeacherAccounts.Remove(entity);
             _context.SaveChanges();
         }
+
+        public TeacherAccount GetByUsername(string username)
+        {
+            return _context.TeacherAccounts.FirstOrDefault(x => x.teacher_username == username);
+        }
     }
 }

@@ -1,41 +1,91 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Windows.Forms;
+using WFThesisManagementSystem.Models;
+using WFThesisManagementSystem.Repositories;
 
 namespace WFThesisManagementSystem.Helper
 {
     public class IdGeneratorHelper
-    {   
-        private List<int> ints = new List<int>();
+    {
+        //private List<int> _ids = new List<int>();
 
-        public IdGeneratorHelper(DataTable tableMemberNumber) {
+        //int _numberOfDigits;
 
-            for (int i = 1; i < 101; i++)
-            {
-                ints.Add(i);
-            }
-            UpdateList(tableMemberNumber, ints);
-        }
-        
+        //public IdGeneratorHelper(int numberOfDigits)
+        //{   
+        //    _numberOfDigits = numberOfDigits;
+        //    if (_numberOfDigits < 1)
+        //    {
+        //        MessageBox.Show("Number of digits must be greater than 0");
+        //        return;
+        //    }
 
-        private void UpdateList (DataTable tableMemberNumber, List<int> intList)
+        //    for (int i = 1 * (int)Math.Pow(10, _numberOfDigits - 1); i < _numberOfDigits; i++)
+        //    {
+        //        _ids.Add(i);
+        //    }
+        //}
+
+        //public int GenerateId()
+        //{
+        //    Random random = new Random();
+        //    int index = random.Next(_ids.Count);
+        //    int id = _ids[index];
+        //    _ids.RemoveAt(index);
+        //    return id;
+        //}
+        readonly ThesisManagementContext _context;
+
+        public IdGeneratorHelper()
         {
-            foreach(DataRow row in tableMemberNumber.Rows)
+            _context = new ThesisManagementContext();
+        }
+
+        public int GenerateStudentId()
+        {
+            var studentRepository = new StudentRepository(_context);
+            var students = studentRepository.GetAll();
+            int id = 0;
+            foreach (var student in students)
             {
-                if (intList.Contains(Convert.ToInt32(row["group_id"])))
+                if (student.student_id > id)
                 {
-                    intList.Remove(Convert.ToInt32(row["group_id"]));
+                    id = student.student_id;
                 }
-
             }
+            return id + 1;
         }
 
-        public int GenerateGroupID()
+        public int GenerateGroupId()
         {
-            Random random = new Random();
-            int randomIndex = random.Next(0, ints.Count); // Sinh số ngẫu nhiên từ 0 đến số phần tử trong danh sách
-            return ints[randomIndex];
+            var studentGroupRepository = new StudentGroupRepository(_context);
+            var studentGroups = studentGroupRepository.GetAll();
+            int id = 0;
+            foreach (var studentGroup in studentGroups)
+            {
+                if (studentGroup.group_id > id)
+                {
+                    id = studentGroup.group_id;
+                }
+            }
+            return id + 1;
         }
-        
+
+        public int GenerateTopicId()
+        {
+            var topicRepository = new TopicRepository(_context);
+            var topics = topicRepository.GetAll();
+            int id = 0;
+            foreach (var topic in topics)
+            {
+                if (topic.topic_id > id)
+                {
+                    id = topic.topic_id;
+                }
+            }
+            return id + 1;
+        }
     }
 }

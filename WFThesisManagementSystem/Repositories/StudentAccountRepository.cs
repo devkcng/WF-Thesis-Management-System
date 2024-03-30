@@ -44,5 +44,9 @@ namespace WFThesisManagementSystem.Repositories
             _context.SaveChanges();
         }
 
+        public StudentAccount GetByUsername(string username)
+        {
+            return _context.StudentAccounts.FirstOrDefault(x => x.student_username == username);
+        }
     }
 }

@@ -50,8 +50,8 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
 
         private void logout_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FLogin fLogin = new FLogin();
+            this.Close();
             fLogin.Show();
         }
 

@@ -43,5 +43,10 @@ namespace WFThesisManagementSystem.Repositories
             _context.StudentGroups.Remove(studentGroup);
             _context.SaveChanges();
         }
+
+        public StudentGroup GetByTopicId(int topicId)
+        {
+            return _context.StudentGroups.FirstOrDefault(sg => sg.topic_id == topicId);
+        }
     }
 }

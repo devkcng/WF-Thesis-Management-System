@@ -86,13 +86,12 @@
             this.dgvTopics.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTopics.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvTopics.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvTopics.Location = new System.Drawing.Point(0, 270);
-            this.dgvTopics.Margin = new System.Windows.Forms.Padding(5);
+            this.dgvTopics.Location = new System.Drawing.Point(0, 174);
             this.dgvTopics.Name = "dgvTopics";
             this.dgvTopics.RowHeadersVisible = false;
             this.dgvTopics.RowHeadersWidth = 62;
             this.dgvTopics.RowTemplate.Height = 28;
-            this.dgvTopics.Size = new System.Drawing.Size(1915, 758);
+            this.dgvTopics.Size = new System.Drawing.Size(1077, 489);
             this.dgvTopics.TabIndex = 0;
             this.dgvTopics.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvTopics.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -175,21 +174,19 @@
             // 
             // txtDescribe
             // 
-            this.txtDescribe.Location = new System.Drawing.Point(371, 151);
-            this.txtDescribe.Margin = new System.Windows.Forms.Padding(5);
+            this.txtDescribe.Location = new System.Drawing.Point(209, 97);
             this.txtDescribe.Multiline = true;
             this.txtDescribe.Name = "txtDescribe";
-            this.txtDescribe.Size = new System.Drawing.Size(804, 109);
+            this.txtDescribe.Size = new System.Drawing.Size(454, 72);
             this.txtDescribe.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(-2, 175);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Location = new System.Drawing.Point(-1, 113);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(342, 62);
+            this.label1.Size = new System.Drawing.Size(203, 38);
             this.label1.TabIndex = 5;
             this.label1.Text = "Describe topic";
             // 
@@ -197,10 +194,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(816, 14);
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label2.Location = new System.Drawing.Point(459, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(299, 81);
+            this.label2.Size = new System.Drawing.Size(177, 48);
             this.label2.TabIndex = 6;
             this.label2.Text = "Topic List";
             // 
@@ -208,10 +204,10 @@
             // 
             this.btnSearch.BackgroundImage = global::WFThesisManagementSystem.Properties.Resources.Search1;
             this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearch.Location = new System.Drawing.Point(1176, 154);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
+            this.btnSearch.Location = new System.Drawing.Point(662, 99);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(125, 112);
+            this.btnSearch.Size = new System.Drawing.Size(70, 72);
             this.btnSearch.TabIndex = 7;
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -220,10 +216,11 @@
             // 
             this.ptbReload.Image = ((System.Drawing.Image)(resources.GetObject("ptbReload.Image")));
             this.ptbReload.ImageRotate = 0F;
-            this.ptbReload.Location = new System.Drawing.Point(1312, 151);
+            this.ptbReload.Location = new System.Drawing.Point(738, 97);
+            this.ptbReload.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ptbReload.Name = "ptbReload";
             this.ptbReload.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.ptbReload.Size = new System.Drawing.Size(112, 109);
+            this.ptbReload.Size = new System.Drawing.Size(63, 70);
             this.ptbReload.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbReload.TabIndex = 8;
             this.ptbReload.TabStop = false;
@@ -237,18 +234,19 @@
             this.btnDashBoard.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnDashBoard.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.btnDashBoard.ForeColor = System.Drawing.Color.White;
-            this.btnDashBoard.Location = new System.Drawing.Point(1520, 151);
+            this.btnDashBoard.Location = new System.Drawing.Point(855, 97);
+            this.btnDashBoard.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDashBoard.Name = "btnDashBoard";
-            this.btnDashBoard.Size = new System.Drawing.Size(383, 115);
+            this.btnDashBoard.Size = new System.Drawing.Size(215, 74);
             this.btnDashBoard.TabIndex = 9;
             this.btnDashBoard.Text = "Back to DashBoard";
             this.btnDashBoard.Click += new System.EventHandler(this.btnDashBoard_Click);
             // 
             // FStudentRegisterTopic
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1915, 1028);
+            this.ClientSize = new System.Drawing.Size(1077, 663);
             this.Controls.Add(this.btnDashBoard);
             this.Controls.Add(this.ptbReload);
             this.Controls.Add(this.btnSearch);
@@ -256,11 +254,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDescribe);
             this.Controls.Add(this.dgvTopics);
-            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FStudentRegisterTopic";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FStudentRegisterTopic";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FStudentRegisterTopic_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTopics)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbReload)).EndInit();
             this.ResumeLayout(false);

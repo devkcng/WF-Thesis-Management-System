@@ -83,6 +83,8 @@
     <Compile Include="DataAccess\RegistDAO.cs" />
     <Compile Include="DataAccess\RegisterQueueDAO.cs" />
     <Compile Include="DataAccess\StudentGroupDAO.cs" />
+    <Compile Include="Helper\CountNumberOfGroupHelper.cs" />
+    <Compile Include="Helper\UserSessionHelper.cs" />
     <Compile Include="Models\Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -119,6 +121,7 @@
     <Compile Include="Models\Topic.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="RegistrationService.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\RegisterQueueRepository.cs" />
     <Compile Include="Repositories\StudentAccountRepository.cs" />

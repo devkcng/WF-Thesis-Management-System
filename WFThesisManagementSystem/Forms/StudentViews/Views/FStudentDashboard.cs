@@ -10,12 +10,11 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
 {
     public partial class FStudentDashboard : KryptonForm
     {
-        private Student student;
-        public FStudentDashboard(string student_id)
+        
+        public FStudentDashboard()
         {
             InitializeComponent();
-            student = new Student();
-            student.student_id = int.Parse(student_id);
+            
         }
         
 
@@ -28,8 +27,8 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         }
         private void bookToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UCStudentProject uc = new UCStudentProject(student.student_id);
-            addUserControl(uc);
+            //UCStudentProject uc = new UCStudentProject(student.student_id);
+            //addUserControl(uc);
         }
 
         private void task_Click(object sender, EventArgs e)
@@ -52,6 +51,8 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
 
         private void logout_Click(object sender, EventArgs e)
         {
+            FLogin fLogin = new FLogin();
+            fLogin.Show();
             this.Close();
         }
 

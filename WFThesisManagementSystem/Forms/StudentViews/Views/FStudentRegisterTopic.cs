@@ -1,112 +1,50 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Drawing;
 using System.Windows.Forms;
 using WFThesisManagementSystem.DataAccess;
+using WFThesisManagementSystem.Helper;
 using WFThesisManagementSystem.Helper.SearchEngineHelper;
 using WFThesisManagementSystem.Models;
+using WFThesisManagementSystem.Repositories;
 
 namespace WFThesisManagementSystem.Forms.StudentViews.Views
 {
     public partial class FStudentRegisterTopic : Form
     {
-        DBConnect dBConnect = new DBConnect();
-        private int studentID;
-        public FStudentRegisterTopic(int studentID)
+        private StudentRepository _studentRepository;
+        private StudentGroupRepository _studentGroupRepository;
+        private readonly TopicRepository _topicRepository;
+        public FStudentRegisterTopic()
         {
             InitializeComponent();
-            this.studentID = studentID;
-            FStudentRegisterTopic_Load();
-        }
-        private void dgvTopics_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
+            var context = new ThesisManagementContext();
+            _studentRepository = new StudentRepository(context);
+            _studentGroupRepository = new StudentGroupRepository(context);
+            _topicRepository = new TopicRepository(context);
         }
 
-       
-        private void FStudentRegisterTopic_Load()
-        {
-            try
-            {
-                btnDashBoard.Enabled = false;
-                TopicDAO topicDAO = new TopicDAO();
-                topicDAO.LoadTopic("SELECT *FROM Topics", dgvTopics);
-
-                DBConnect dBConnect = new DBConnect();
-
-                //hiện màu cho row topic student đã đăng kí 
-                DataTable dt = new DataTable();
-                DataTable dtStudentInGroup = new DataTable();
-                dt = dBConnect.GetData(string.Format("SELECT topic_id FROM RegisterQueue WHERE student_id = '{0}'", studentID));
-                dtStudentInGroup = dBConnect.GetData(string.Format("SELECT group_id FROM Student WHERE student_id = '{0}'", studentID));
-                if (dt.Rows.Count > 0 )
-                {
-                    string topicId = dt.Rows[0]["topic_id"].ToString();
-                    if (topicId != null)
-                    {
-                        dgvTopics.ReadOnly = true;
-                        foreach (DataGridViewRow row in dgvTopics.Rows)
-                        {
-                            if (row.Cells["topic_id"].Value != null)
-                            {
-                                if (row.Cells["topic_id"].Value.ToString() == topicId)
-                                {
-                                    row.DefaultCellStyle.BackColor = Color.Green;
-                                }
-                            }
-                        }
-                    }
-                    
-
-                }
-                else if (dtStudentInGroup.Rows[0]["group_id"].ToString() != "") 
-                {
-                    btnDashBoard.Enabled = true;
-                    dtStudentInGroup = dBConnect.GetData(string.Format("SELECT topic_id FROM Student_Group WHERE group_id = '{0}'", dtStudentInGroup.Rows[0]["group_id"]));
-                    string topicId = dtStudentInGroup.Rows[0]["topic_id"].ToString();
-                    if (topicId != null)
-                    {
-                        dgvTopics.ReadOnly = true;
-                        foreach (DataGridViewRow row in dgvTopics.Rows)
-                        {
-                            if (row.Cells["topic_id"].Value != null)
-                            {
-                                if (row.Cells["topic_id"].Value.ToString() == topicId)
-                                {
-                                    row.DefaultCellStyle.BackColor = Color.Green;
-                                }
-                            }
-                        }
-                    }
-
-                   
-                }
-
-
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show(exc.Message);
-            }
-        }
         private void dgvTopics_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                 if (e.RowIndex != -1 && e.RowIndex != dgvTopics.Rows.Count - 1)
                 {
-                    Topic topic = new Topic();
-                    DataGridViewRow row = dgvTopics.Rows[e.RowIndex];
-                    topic.topic_id = int.Parse(row.Cells["topic_id"].Value.ToString());
-                    topic.topic_name = row.Cells["topic_name"].Value.ToString();
-                    topic.topic_description = row.Cells["topic_description"].Value.ToString();
-                    topic.topic_category = row.Cells["topic_category"].Value.ToString();
-                    topic.topic_technology = row.Cells["topic_technology"].Value.ToString();
-                    topic.topic_requirement = row.Cells["topic_requirement"].Value.ToString();
-                    topic.max_members = int.Parse(row.Cells["max_members"].Value.ToString());
 
-                    FRegisterTopic registerForm = new FRegisterTopic(topic, studentID, row.Cells["teacher_name"].Value.ToString());
+                    //Topic topic = new Topic();
+                    //DataGridViewRow row = dgvTopics.Rows[e.RowIndex];
+                    //topic.topic_id = int.Parse(row.Cells["topic_id"].Value.ToString());
+                    //topic.topic_name = row.Cells["topic_name"].Value.ToString();
+                    //topic.topic_description = row.Cells["topic_description"].Value.ToString();
+                    //topic.topic_category = row.Cells["topic_category"].Value.ToString();
+                    //topic.topic_technology = row.Cells["topic_technology"].Value.ToString();
+                    //topic.topic_requirement = row.Cells["topic_requirement"].Value.ToString();
+                    //topic.max_members = int.Parse(row.Cells["max_members"].Value.ToString());
+                    DataGridViewRow row = dgvTopics.Rows[e.RowIndex];
+                    var topic = _topicRepository.GetById(int.Parse(row.Cells["topic_id"].Value.ToString()));
+                    FRegisterTopic registerForm = new FRegisterTopic(topic);
                     registerForm.Show();
                     this.Close();
                 }
@@ -115,17 +53,8 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             {
                 MessageBox.Show(ex.ToString());
             }
-
-
         }
 
-        private void cbTeacherList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            TopicDAO topicDAO = new TopicDAO();
-            //MessageBox.Show(cbTeacherList.SelectedValue.ToString());
-            //topicDAO.LoadTopic(string.Format("SELECT *FROM Teacher WHERE teacher_name = {0}", cbTeacherList.SelectedValue.ToString()), dgvTopics);
-        }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
@@ -154,7 +83,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             else
             {
                 dgvTopics.Rows.Clear();
-                FStudentRegisterTopic_Load();
+                FStudentRegisterTopic_Load(sender,e);
             }
 
         }
@@ -162,14 +91,34 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         private void ptbReload_Click(object sender, EventArgs e)
         {
             dgvTopics.Rows.Clear();
-            FStudentRegisterTopic_Load();
+            FStudentRegisterTopic_Load(sender,e);
         }
 
         private void btnDashBoard_Click(object sender, EventArgs e)
         {
-            FStudentDashboard fStudentDashboard = new FStudentDashboard(studentID.ToString());
+            FStudentDashboard fStudentDashboard = new FStudentDashboard();
             fStudentDashboard.Show();
             this.Close();
+        }
+
+        private void FStudentRegisterTopic_Load(object sender, EventArgs e)
+        {   
+            dgvTopics.Rows.Clear();
+            var topics = _topicRepository.GetAll();
+            foreach (var topic in topics)
+            {
+                dgvTopics.Rows.Add(
+                    topic.topic_id,
+                    topic.topic_name,
+                    topic.topic_description,
+                    topic.topic_technology,
+                    topic.topic_requirement,
+                    topic.topic_category,
+                    topic.max_members,
+                    topic.teacher_id,
+                    topic.Teacher.teacher_name
+                );
+            }
         }
     }
 }

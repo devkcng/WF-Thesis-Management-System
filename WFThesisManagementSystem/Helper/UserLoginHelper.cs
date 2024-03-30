@@ -5,13 +5,13 @@ using WFThesisManagementSystem.DataAccess;
 using WFThesisManagementSystem.Forms.StudentViews.Views;
 using WFThesisManagementSystem.Forms.TeacherViews.Views;
 using WFThesisManagementSystem.Models;
+using WFThesisManagementSystem.Repositories;
 
 namespace WFThesisManagementSystem.Helper
 {
     public class UserLoginHelper
     {
-        public static string UserName { get; set; }
-        public static string Password { get; set; }
+        UserSessionHelper _userSessionHelper = UserSessionHelper.Instance;
         public bool Login(string username, string password)
         {
             //DBConnect dBConnect = new DBConnect();
@@ -65,19 +65,18 @@ namespace WFThesisManagementSystem.Helper
             //    return false;
             //}
             ThesisManagementContext context = new ThesisManagementContext();
-            var student = context.StudentAccounts.Find(username);
-            var teacher = context.TeacherAccounts.Find(username);
+            StudentAccountRepository studentAccountRepository = new StudentAccountRepository(context);
+            TeacherAccountRepository teacherAccountRepository = new TeacherAccountRepository(context);
+            var student = studentAccountRepository.GetByUsername(username);
+            var teacher = teacherAccountRepository.GetByUsername(username);
             if (student != null)
             {
                 if (student.student_password == password)
                 {
-                    UserName = student.student_username;
-                    Password = student.student_password;
-                    StudentDAO studentDAO = new StudentDAO();
-                    Student student1 = new Student();
-                    student1.student_id = int.Parse(studentDAO.GetStudentIDFromUsername(username));
-                    //student.groupID = int.Parse(studentDAO.GetGroupIDOfStudent(student.Id));
-                    FStudentRegisterTopic studentRegisterTopic = new FStudentRegisterTopic(student1.student_id);
+                    _userSessionHelper.UserName = student.student_username;
+                    _userSessionHelper.Password = student.student_password;
+                    if (student.student_id != null) _userSessionHelper.UserID = (int)student.student_id;
+                    FStudentRegisterTopic studentRegisterTopic = new FStudentRegisterTopic();
                     studentRegisterTopic.Show();
                     return true;
                 }
@@ -91,8 +90,9 @@ namespace WFThesisManagementSystem.Helper
             {
                 if (teacher.teacher_password == password)
                 {
-                    UserName = teacher.teacher_username;
-                    Password = teacher.teacher_password;
+                    _userSessionHelper.UserName = teacher.teacher_username;
+                    _userSessionHelper.Password = teacher.teacher_password;
+                    if (teacher.teacher_id != null) _userSessionHelper.UserID = (int)teacher.teacher_id;
                     FTeacherDashboard teacherDashboard = new FTeacherDashboard();
                     teacherDashboard.Show();
                     return true;
