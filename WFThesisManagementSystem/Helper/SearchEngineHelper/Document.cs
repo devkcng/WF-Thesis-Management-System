@@ -1,4 +1,4 @@
-﻿namespace WFThesisManagementSystem.Helper.SearchEngine
+﻿namespace WFThesisManagementSystem.Helper.SearchEngineHelper
 {
     public class Document
     {   

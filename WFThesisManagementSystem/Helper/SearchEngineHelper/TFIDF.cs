@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace WFThesisManagementSystem.Helper.SearchEngine
+namespace WFThesisManagementSystem.Helper.SearchEngineHelper
 {
     public class TFIDF
     {

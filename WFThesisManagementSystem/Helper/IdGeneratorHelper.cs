@@ -4,11 +4,11 @@ using System.Data;
 
 namespace WFThesisManagementSystem.Helper
 {
-    public class GroupIdGenerator
+    public class IdGeneratorHelper
     {   
         private List<int> ints = new List<int>();
 
-        public GroupIdGenerator(DataTable tableMemberNumber) {
+        public IdGeneratorHelper(DataTable tableMemberNumber) {
 
             for (int i = 1; i < 101; i++)
             {
