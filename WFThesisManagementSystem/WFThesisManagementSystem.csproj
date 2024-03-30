@@ -127,40 +127,40 @@
     <Compile Include="Repositories\TeacherAccountRepository.cs" />
     <Compile Include="Repositories\TeacherRepository.cs" />
     <Compile Include="Repositories\TopicRepository.cs" />
-    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherAcceptRegistAll.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherAcceptRegistAll.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherAcceptRegistAll.Designer.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherAcceptRegistAll.Designer.cs">
       <DependentUpon>UcTeacherAcceptRegistAll.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherAcceptRegisterSingle.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherAcceptRegisterSingle.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherAcceptRegisterSingle.Designer.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherAcceptRegisterSingle.Designer.cs">
       <DependentUpon>UcTeacherAcceptRegisterSingle.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherEditTask.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherEditTask.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherEditTask.Designer.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherEditTask.Designer.cs">
       <DependentUpon>UcTeacherEditTask.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeacherViews\Views\FTeacherCreateTask.cs">
+    <Compile Include="Forms\TeacherViews\Views\FTeacherCreateTask.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TeacherViews\Views\FTeacherCreateTask.Designer.cs">
+    <Compile Include="Forms\TeacherViews\Views\FTeacherCreateTask.Designer.cs">
       <DependentUpon>FTeacherCreateTask.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeacherViews\Views\FTeacherEditTask.cs">
+    <Compile Include="Forms\TeacherViews\Views\FTeacherEditTask.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TeacherViews\Views\FTeacherEditTask.Designer.cs">
+    <Compile Include="Forms\TeacherViews\Views\FTeacherEditTask.Designer.cs">
       <DependentUpon>FTeacherEditTask.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeacherViews\Views\FTeacherRegist.cs">
+    <Compile Include="Forms\TeacherViews\Views\FTeacherRegist.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TeacherViews\Views\FTeacherRegist.Designer.cs">
+    <Compile Include="Forms\TeacherViews\Views\FTeacherRegist.Designer.cs">
       <DependentUpon>FTeacherRegist.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\IdGeneratorHelper.cs" />
@@ -168,198 +168,198 @@
     <Compile Include="DataAccess\StudentDAO.cs" />
     <Compile Include="DataAccess\TeacherDAO.cs" />
     <Compile Include="DataAccess\TopicDAO.cs" />
-    <Compile Include="FLogin.cs">
+    <Compile Include="Forms\FLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FLogin.Designer.cs">
+    <Compile Include="Forms\FLogin.Designer.cs">
       <DependentUpon>FLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StudentViews\StudentUserControl\UCTask.cs">
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCTask.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="StudentViews\StudentUserControl\UCTask.Designer.cs">
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCTask.Designer.cs">
       <DependentUpon>UCTask.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentViews\StudentUserControl\UCWorkLog.cs">
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCWorkLog.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="StudentViews\StudentUserControl\UCWorkLog.Designer.cs">
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCWorkLog.Designer.cs">
       <DependentUpon>UCWorkLog.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentViews\Views\FRegisterTopic.cs">
+    <Compile Include="Forms\StudentViews\Views\FRegisterTopic.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StudentViews\Views\FRegisterTopic.Designer.cs">
+    <Compile Include="Forms\StudentViews\Views\FRegisterTopic.Designer.cs">
       <DependentUpon>FRegisterTopic.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentViews\Views\FStudentDashboard.cs">
+    <Compile Include="Forms\StudentViews\Views\FStudentDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StudentViews\Views\FStudentDashboard.Designer.cs">
+    <Compile Include="Forms\StudentViews\Views\FStudentDashboard.Designer.cs">
       <DependentUpon>FStudentDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentViews\StudentUserControl\UCProject.cs">
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCProject.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="StudentViews\StudentUserControl\UCProject.Designer.cs">
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCProject.Designer.cs">
       <DependentUpon>UCProject.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentViews\StudentUserControl\UCStudentPerformance.cs">
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentPerformance.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="StudentViews\StudentUserControl\UCStudentPerformance.Designer.cs">
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentPerformance.Designer.cs">
       <DependentUpon>UCStudentPerformance.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentViews\StudentUserControl\UCStudentProject.cs">
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentProject.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="StudentViews\StudentUserControl\UCStudentProject.Designer.cs">
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentProject.Designer.cs">
       <DependentUpon>UCStudentProject.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentViews\StudentUserControl\UCStudentTask.cs">
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentTask.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="StudentViews\StudentUserControl\UCStudentTask.Designer.cs">
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentTask.Designer.cs">
       <DependentUpon>UCStudentTask.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentViews\StudentUserControl\UCStudentWorkLogs.cs">
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentWorkLogs.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="StudentViews\StudentUserControl\UCStudentWorkLogs.Designer.cs">
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentWorkLogs.Designer.cs">
       <DependentUpon>UCStudentWorkLogs.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentViews\Views\FStudentRegisterTopic.cs">
+    <Compile Include="Forms\StudentViews\Views\FStudentRegisterTopic.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StudentViews\Views\FStudentRegisterTopic.Designer.cs">
+    <Compile Include="Forms\StudentViews\Views\FStudentRegisterTopic.Designer.cs">
       <DependentUpon>FStudentRegisterTopic.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentViews\Views\FStudentTaskPopUp.cs">
+    <Compile Include="Forms\StudentViews\Views\FStudentTaskPopUp.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StudentViews\Views\FStudentTaskPopUp.Designer.cs">
+    <Compile Include="Forms\StudentViews\Views\FStudentTaskPopUp.Designer.cs">
       <DependentUpon>FStudentTaskPopUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherAllTopics.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherAllTopics.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherAllTopics.Designer.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherAllTopics.Designer.cs">
       <DependentUpon>UcTeacherAllTopics.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcClose.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcClose.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcClose.Designer.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcClose.Designer.cs">
       <DependentUpon>UcClose.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherEditInfor.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherEditInfor.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherEditInfor.Designer.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherEditInfor.Designer.cs">
       <DependentUpon>UcTeacherEditInfor.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherHeadingSingleMark.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherHeadingSingleMark.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherHeadingSingleMark.Designer.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherHeadingSingleMark.Designer.cs">
       <DependentUpon>UcTeacherHeadingSingleMark.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherInfor.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherInfor.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherInfor.Designer.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherInfor.Designer.cs">
       <DependentUpon>UcTeacherInfor.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcMaximize.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcMaximize.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcMaximize.Designer.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcMaximize.Designer.cs">
       <DependentUpon>UcMaximize.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcMenuleft.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcMenuleft.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcMenuleft.Designer.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcMenuleft.Designer.cs">
       <DependentUpon>UcMenuleft.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcMenutop.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcMenutop.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcMenutop.Designer.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcMenutop.Designer.cs">
       <DependentUpon>UcMenutop.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcMinimized.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcMinimized.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcMinimized.Designer.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcMinimized.Designer.cs">
       <DependentUpon>UcMinimized.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherSingleMark.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSingleMark.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherSingleMark.Designer.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSingleMark.Designer.cs">
       <DependentUpon>UcTeacherSingleMark.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherSingleTask.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSingleTask.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherSingleTask.Designer.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSingleTask.Designer.cs">
       <DependentUpon>UcTeacherSingleTask.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherSingleTopic.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSingleTopic.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherSingleTopic.Designer.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSingleTopic.Designer.cs">
       <DependentUpon>UcTeacherSingleTopic.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherCreateTopic.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherCreateTopic.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherCreateTopic.Designer.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherCreateTopic.Designer.cs">
       <DependentUpon>UcTeacherCreateTopic.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherAllTask.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherAllTask.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherAllTask.Designer.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherAllTask.Designer.cs">
       <DependentUpon>UcTeacherAllTask.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherCreateTask.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherCreateTask.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherCreateTask.Designer.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherCreateTask.Designer.cs">
       <DependentUpon>UcTeacherCreateTask.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherEditTopic.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherEditTopic.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TeacherViews\TeacherUserControl\UcTeacherEditTopic.Designer.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherEditTopic.Designer.cs">
       <DependentUpon>UcTeacherEditTopic.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeacherViews\Views\FTeacherCreateTopic.cs">
+    <Compile Include="Forms\TeacherViews\Views\FTeacherCreateTopic.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TeacherViews\Views\FTeacherCreateTopic.Designer.cs">
+    <Compile Include="Forms\TeacherViews\Views\FTeacherCreateTopic.Designer.cs">
       <DependentUpon>FTeacherCreateTopic.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeacherViews\Views\FTeacherDashboard.cs">
+    <Compile Include="Forms\TeacherViews\Views\FTeacherDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TeacherViews\Views\FTeacherDashboard.Designer.cs">
+    <Compile Include="Forms\TeacherViews\Views\FTeacherDashboard.Designer.cs">
       <DependentUpon>FTeacherDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="TeacherViews\Views\FTeacherEditTopic.cs">
+    <Compile Include="Forms\TeacherViews\Views\FTeacherEditTopic.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TeacherViews\Views\FTeacherEditTopic.Designer.cs">
+    <Compile Include="Forms\TeacherViews\Views\FTeacherEditTopic.Designer.cs">
       <DependentUpon>FTeacherEditTopic.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\SearchEngineHelper\Document.cs" />
     <Compile Include="Helper\SearchEngineHelper\FileGenerator.cs" />
     <Compile Include="Helper\SearchEngineHelper\TFIDF.cs" />
-    <EmbeddedResource Include="FLogin.resx">
+    <EmbeddedResource Include="Forms\FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -372,109 +372,109 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="StudentViews\StudentUserControl\UCStudentTask.resx">
+    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCStudentTask.resx">
       <DependentUpon>UCStudentTask.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StudentViews\StudentUserControl\UCStudentWorkLogs.resx">
+    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCStudentWorkLogs.resx">
       <DependentUpon>UCStudentWorkLogs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StudentViews\StudentUserControl\UCTask.resx">
+    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCTask.resx">
       <DependentUpon>UCTask.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StudentViews\StudentUserControl\UCWorkLog.resx">
+    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCWorkLog.resx">
       <DependentUpon>UCWorkLog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StudentViews\Views\FRegisterTopic.resx">
+    <EmbeddedResource Include="Forms\StudentViews\Views\FRegisterTopic.resx">
       <DependentUpon>FRegisterTopic.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StudentViews\Views\FStudentDashboard.resx">
+    <EmbeddedResource Include="Forms\StudentViews\Views\FStudentDashboard.resx">
       <DependentUpon>FStudentDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StudentViews\StudentUserControl\UCProject.resx">
+    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCProject.resx">
       <DependentUpon>UCProject.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StudentViews\StudentUserControl\UCStudentProject.resx">
+    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCStudentProject.resx">
       <DependentUpon>UCStudentProject.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StudentViews\Views\FStudentRegisterTopic.resx">
+    <EmbeddedResource Include="Forms\StudentViews\Views\FStudentRegisterTopic.resx">
       <DependentUpon>FStudentRegisterTopic.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StudentViews\Views\FStudentTaskPopUp.resx">
+    <EmbeddedResource Include="Forms\StudentViews\Views\FStudentTaskPopUp.resx">
       <DependentUpon>FStudentTaskPopUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherAcceptRegistAll.resx">
+    <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcTeacherAcceptRegistAll.resx">
       <DependentUpon>UcTeacherAcceptRegistAll.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherAcceptRegisterSingle.resx">
+    <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcTeacherAcceptRegisterSingle.resx">
       <DependentUpon>UcTeacherAcceptRegisterSingle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherAllTopics.resx">
+    <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcTeacherAllTopics.resx">
       <DependentUpon>UcTeacherAllTopics.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcClose.resx">
+    <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcClose.resx">
       <DependentUpon>UcClose.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherEditInfor.resx">
+    <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcTeacherEditInfor.resx">
       <DependentUpon>UcTeacherEditInfor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherEditTask.resx">
+    <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcTeacherEditTask.resx">
       <DependentUpon>UcTeacherEditTask.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherHeadingSingleMark.resx">
+    <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcTeacherHeadingSingleMark.resx">
       <DependentUpon>UcTeacherHeadingSingleMark.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherInfor.resx">
+    <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcTeacherInfor.resx">
       <DependentUpon>UcTeacherInfor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcMaximize.resx">
+    <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcMaximize.resx">
       <DependentUpon>UcMaximize.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcMenuleft.resx">
+    <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcMenuleft.resx">
       <DependentUpon>UcMenuleft.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcMenutop.resx">
+    <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcMenutop.resx">
       <DependentUpon>UcMenutop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcMinimized.resx">
+    <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcMinimized.resx">
       <DependentUpon>UcMinimized.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherSingleMark.resx">
+    <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSingleMark.resx">
       <DependentUpon>UcTeacherSingleMark.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherSingleTask.resx">
+    <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSingleTask.resx">
       <DependentUpon>UcTeacherSingleTask.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherSingleTopic.resx">
+    <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSingleTopic.resx">
       <DependentUpon>UcTeacherSingleTopic.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherCreateTopic.resx">
+    <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcTeacherCreateTopic.resx">
       <DependentUpon>UcTeacherCreateTopic.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherAllTask.resx">
+    <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcTeacherAllTask.resx">
       <DependentUpon>UcTeacherAllTask.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherCreateTask.resx">
+    <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcTeacherCreateTask.resx">
       <DependentUpon>UcTeacherCreateTask.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeacherViews\TeacherUserControl\UcTeacherEditTopic.resx">
+    <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcTeacherEditTopic.resx">
       <DependentUpon>UcTeacherEditTopic.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeacherViews\Views\FTeacherCreateTask.resx">
+    <EmbeddedResource Include="Forms\TeacherViews\Views\FTeacherCreateTask.resx">
       <DependentUpon>FTeacherCreateTask.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeacherViews\Views\FTeacherCreateTopic.resx">
+    <EmbeddedResource Include="Forms\TeacherViews\Views\FTeacherCreateTopic.resx">
       <DependentUpon>FTeacherCreateTopic.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeacherViews\Views\FTeacherDashboard.resx">
+    <EmbeddedResource Include="Forms\TeacherViews\Views\FTeacherDashboard.resx">
       <DependentUpon>FTeacherDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeacherViews\Views\FTeacherEditTask.resx">
+    <EmbeddedResource Include="Forms\TeacherViews\Views\FTeacherEditTask.resx">
       <DependentUpon>FTeacherEditTask.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeacherViews\Views\FTeacherEditTopic.resx">
+    <EmbeddedResource Include="Forms\TeacherViews\Views\FTeacherEditTopic.resx">
       <DependentUpon>FTeacherEditTopic.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TeacherViews\Views\FTeacherRegist.resx">
+    <EmbeddedResource Include="Forms\TeacherViews\Views\FTeacherRegist.resx">
       <DependentUpon>FTeacherRegist.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Models\Model.edmx">
