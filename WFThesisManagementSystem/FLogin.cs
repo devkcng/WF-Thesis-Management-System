@@ -6,9 +6,8 @@ using System.Windows.Forms;
 using WFThesisManagementSystem.StudentViews.Views;
 using WFThesisManagementSystem.TeacherViews.Views;
 using WFThesisManagementSystem.DataAccess;
-using WFThesisManagementSystem.Utilities;
-using WFThesisManagementSystem.Utilities.LoginManagement;
-using WFThesisManagementSystem.Utilities.SearchEngine;
+using WFThesisManagementSystem.Helper;
+using WFThesisManagementSystem.Helper.SearchEngine;
 
 namespace WFThesisManagementSystem
 {

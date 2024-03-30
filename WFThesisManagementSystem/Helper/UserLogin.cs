@@ -6,7 +6,7 @@ using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.StudentViews.Views;
 using WFThesisManagementSystem.TeacherViews.Views;
 
-namespace WFThesisManagementSystem.Utilities.LoginManagement
+namespace WFThesisManagementSystem.Helper
 {
     public class UserLogin
     {

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-namespace WFThesisManagementSystem.Utilities.SearchEngine
+
+namespace WFThesisManagementSystem.Helper.SearchEngine
 {
     public class TFIDF
     {

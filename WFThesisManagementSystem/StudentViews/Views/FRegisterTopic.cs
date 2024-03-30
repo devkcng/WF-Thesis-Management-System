@@ -10,8 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WFThesisManagementSystem.DataAccess;
+using WFThesisManagementSystem.Helper;
 using WFThesisManagementSystem.Models;
-using WFThesisManagementSystem.Utilities;
 
 namespace WFThesisManagementSystem.StudentViews.Views
 {

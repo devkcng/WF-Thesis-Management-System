@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WFThesisManagementSystem.DataAccess;
+using WFThesisManagementSystem.Helper;
 using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.TeacherViews.TeacherUserControl;
-using WFThesisManagementSystem.Utilities.LoginManagement;
 
 namespace WFThesisManagementSystem.TeacherViews.Views
 {

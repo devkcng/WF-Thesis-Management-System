@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using WFThesisManagementSystem.DataAccess;
+using WFThesisManagementSystem.Helper.SearchEngine;
 using WFThesisManagementSystem.Models;
-using WFThesisManagementSystem.Utilities.SearchEngine;
 
 namespace WFThesisManagementSystem.StudentViews.Views
 {

@@ -1,7 +1,8 @@
 ﻿using System.Data.SqlClient;
 using System.IO;
 using WFThesisManagementSystem.DataAccess;
-namespace WFThesisManagementSystem.Utilities.SearchEngine
+
+namespace WFThesisManagementSystem.Helper.SearchEngine
 {
     public class FileGenerator
     {
