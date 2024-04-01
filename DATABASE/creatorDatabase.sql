@@ -1,5 +1,17 @@
-﻿-- Creating the Teacher table
-CREATE TABLE Teacher (
+﻿-- Creating Database
+IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = N'ThesisManagement')
+BEGIN
+    CREATE DATABASE ThesisManagement;
+END
+GO
+
+-- Using the newly created database
+USE ThesisManagement;
+GO
+
+
+-- Creating the Teachers table
+CREATE TABLE Teachers (
     teacher_id INT PRIMARY KEY,
     teacher_name VARCHAR(50) NOT NULL,
     teacher_age INT,
@@ -17,12 +29,12 @@ CREATE TABLE Topics (
     topic_category VARCHAR(100),
     max_members INT,
     teacher_id INT,
-    FOREIGN KEY (teacher_id) REFERENCES Teacher(teacher_id)
+    FOREIGN KEY (teacher_id) REFERENCES Teachers(teacher_id)
 );
 
 
 -- Creating the Student_Group table
-CREATE TABLE Student_Group (
+CREATE TABLE StudentGroup (
     group_id INT PRIMARY KEY,
     group_name VARCHAR(50),
     topic_id INT,
@@ -32,15 +44,15 @@ CREATE TABLE Student_Group (
     UNIQUE(group_name, topic_id)
 );
 
--- Creating the Student table
-CREATE TABLE Student (
+-- Creating the Students table
+CREATE TABLE Students (
     student_id INT PRIMARY KEY,
     student_name VARCHAR(50) NOT NULL,
     student_age INT,
     student_email VARCHAR(255),
     student_grade VARCHAR(10),
     group_id INT,
-    FOREIGN KEY (group_id) REFERENCES Student_Group(group_id)
+    FOREIGN KEY (group_id) REFERENCES StudentGroup(group_id)
 );
 
 CREATE TABLE RegisterQueue (
@@ -48,30 +60,30 @@ CREATE TABLE RegisterQueue (
     group_id INT,
     topic_id INT,
     accepted BIT DEFAULT 0,
-    FOREIGN KEY (student_id) REFERENCES Student(student_id),
-    FOREIGN KEY (group_id) REFERENCES Student_Group(group_id),
+    FOREIGN KEY (student_id) REFERENCES Students(student_id),
+    FOREIGN KEY (group_id) REFERENCES StudentGroup(group_id),
     FOREIGN KEY (topic_id) REFERENCES Topics(topic_id)
 );
 
 -- Creating the StudentAccount table
 CREATE TABLE StudentAccount (
-    student_id INT PRIMARY KEY,
-    student_username VARCHAR(50) UNIQUE,
+    student_username VARCHAR(50) PRIMARY KEY,
     student_password VARCHAR(50),
-    FOREIGN KEY (student_id) REFERENCES Student(student_id)
+    student_id INT ,
+    FOREIGN KEY (student_id) REFERENCES Students(student_id)
 );
 
 -- Creating the TeacherAccount table
 CREATE TABLE TeacherAccount (
-    teacher_id INT PRIMARY KEY,
-    teacher_username VARCHAR(50) UNIQUE,
+    teacher_username VARCHAR(50) PRIMARY KEY,
     teacher_password VARCHAR(50),
-    FOREIGN KEY (teacher_id) REFERENCES Teacher(teacher_id)
+    teacher_id INT,
+    FOREIGN KEY (teacher_id) REFERENCES Teachers(teacher_id)
 );
 
 
--- Inserting data into Teacher table
-INSERT INTO Teacher (teacher_id, teacher_name, teacher_age, teacher_email, subject_taught) VALUES
+-- Inserting data into Teachers table
+INSERT INTO Teachers (teacher_id, teacher_name, teacher_age, teacher_email, subject_taught) VALUES
 (1811001, 'John Smith', 35, 'john.smith@example.com', 'Web Development'),
 (1811002, 'Emily Johnson', 40, 'emily.johnson@example.com', 'Mobile App Development'),
 (1811003, 'Michael Brown', 45, 'michael.brown@example.com', 'Database Management');
@@ -82,14 +94,14 @@ INSERT INTO Topics (topic_id, topic_name, topic_description, topic_technology, t
 (222, 'Creating a Cross-Platform Mobile App', 'Explore cross-platform mobile app development using frameworks like React Native or Flutter.', 'React Native, Flutter', 'Familiarity with JavaScript or Dart', 'Mobile App Development', 4, 1811002),
 (333, 'Database Design and Management', 'Learn about database design principles and SQL for creating and managing databases.', 'SQL, Database Management Systems', 'Understanding of relational databases', 'Database Management', 3, 1811003);
 
--- Inserting data into Student_Group table
--- INSERT INTO Student_Group (group_id, group_name, topic_id, number_of_students, group_points) VALUES
+-- Inserting data into StudentGroup table
+-- INSERT INTO StudentGroup (group_id, group_name, topic_id, number_of_students, group_points) VALUES
 -- (1, 'Web Development Team', 123, 4, 0),
 -- (2, 'Mobile App Development Team', 222, 4, 0),
 -- (3, 'Database Management Team', 333, 3, 0);
 
--- Inserting data into Student table
-INSERT INTO Student (student_id, student_name, student_age, student_email, student_grade, group_id) VALUES
+-- Inserting data into Students table
+INSERT INTO Students (student_id, student_name, student_age, student_email, student_grade, group_id) VALUES
 (2211001, 'Alice Green', 20, 'alice.green@example.com', 'Senior', NULL),
 (2211002, 'Bob White', 22, 'bob.white@example.com', 'Junior', NULL),
 (2211003, 'Charlie Black', 21, 'charlie.black@example.com', 'Senior', NULL),
