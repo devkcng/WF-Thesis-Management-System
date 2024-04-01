@@ -111,7 +111,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
             var studentGroup = _studentGroupRepository.GetAll().FirstOrDefault(x=>x.topic_id == topic.topic_id);
             if(studentGroup != null)
             {
-                FTeacherRegist fTeacherRegist = new FTeacherRegist(studentGroup.group_id);
+                FTeacherRegist fTeacherRegist = new FTeacherRegist(studentGroup);
                 fTeacherRegist.Show();
             }
             
