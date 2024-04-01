@@ -54,23 +54,7 @@ namespace WFThesisManagementSystem.Repositories
         {
             return _context.RegisterQueues.FirstOrDefault(x => x.topic_id == id);
         }
-        public void UpdateAccept(int id)
-        {
-            var student_group = _context.RegisterQueues.FirstOrDefault(x => (x.student_id == id && x.accepted == false));
-            student_group.accepted = true;
-            RegisterQueueRepository _registerQueueRepository = new RegisterQueueRepository(_context);
-            _registerQueueRepository.Update(student_group);
-            //_context.Entry(student_group).State = System.Data.Entity.EntityState.Modified;
-            //_context.SaveChanges();
-        }
-        public void DeleteStudentQueue(int id)
-        {
-            var student = _context.RegisterQueues.FirstOrDefault(x => x.student_id ==id);
-            RegisterQueueRepository _registerQueueRepository = new RegisterQueueRepository(_context);
-            _registerQueueRepository.Delete(student);
-            //_context.RegisterQueues.Remove(student);
-            //_context.SaveChanges();
-        }
+       
     }
 
 }
