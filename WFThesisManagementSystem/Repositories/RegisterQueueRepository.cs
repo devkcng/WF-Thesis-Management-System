@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using WFThesisManagementSystem.Models;
 
 namespace WFThesisManagementSystem.Repositories
 {
     public class RegisterQueueRepository : IRepository<RegisterQueue>
-    {   
+    {
         private ThesisManagementContext _context;
 
         public RegisterQueueRepository(ThesisManagementContext context)
@@ -54,7 +50,7 @@ namespace WFThesisManagementSystem.Repositories
         {
             return _context.RegisterQueues.FirstOrDefault(x => x.topic_id == id);
         }
-       
+
     }
 
 }

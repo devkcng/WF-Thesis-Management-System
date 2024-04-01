@@ -1,7 +1,7 @@
 ﻿namespace WFThesisManagementSystem.Helper.SearchEngineHelper
 {
     public class Document
-    {   
+    {
         public string TopicId { get; set; }
         public string TeacherName { get; set; }
 
@@ -16,9 +16,9 @@
         public string TopicMaxMembers { get; set; }
 
         // Constructor to initialize properties
-        public Document () { }
+        public Document() { }
 
-        public Document (string topicId, string teacherName, string teacherId , string topicName, string topicDescription, string topicRequirement, string topicCategory, string topicTechnology, string topicMaxMembers)
+        public Document(string topicId, string teacherName, string teacherId, string topicName, string topicDescription, string topicRequirement, string topicCategory, string topicTechnology, string topicMaxMembers)
         {
             TopicId = topicId;
             TeacherName = teacherName;

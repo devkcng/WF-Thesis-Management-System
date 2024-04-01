@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 using System.Windows.Forms;
 using WFThesisManagementSystem.Models;
 
@@ -13,17 +12,17 @@ namespace WFThesisManagementSystem.Forms.StudentViews.StudentUserControl
             InitializeComponent();
             student = new Student();
             student.student_id = student_id;
-            addUserControl(); 
+            addUserControl();
             this.SizeChanged += UCStudentProject_SizeChanged;
         }
 
         private void addUserControl()
         {
-            
+
         }
         private void label2_Click(object sender, EventArgs e)
         {
-                   
+
         }
         private void UCStudentProject_SizeChanged(object sender, EventArgs e)
         {

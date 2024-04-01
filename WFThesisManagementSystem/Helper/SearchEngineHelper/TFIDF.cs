@@ -36,7 +36,7 @@ namespace WFThesisManagementSystem.Helper.SearchEngineHelper
                 }
             }
             else
-            { 
+            {
                 MessageBox.Show("Folder not found. Please provide a valid folder path.");
             }
 

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Data;
-using System.Linq;
 using System.Windows.Forms;
 
 using WFThesisManagementSystem.Helper;
@@ -54,7 +52,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         {
             this.Close();
             FStudentRegisterTopic fStudentRegisterTopic = new FStudentRegisterTopic();
-            fStudentRegisterTopic.Show();   
+            fStudentRegisterTopic.Show();
         }
 
         private void FRegisterTopic_Load(object sender, EventArgs e)
@@ -72,14 +70,14 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             var studentGroup = _studentGroupRepository.GetByTopicId(_topic.topic_id);
             var registerQueueOfStudent = _registerQueue.GetByGroupId(_topic.topic_id);
             if (studentGroup != null)
-            {   
+            {
                 dgvrRegisterMember.Visible = true;
                 txtGroupName.Enabled = false;
                 txtGroupName.Text = studentGroup.group_name;
                 var studentInGroupList = _studentRepository.GetAll();
                 foreach (var student in studentInGroupList)
                 {
-                    if(student.group_id == studentGroup.group_id)
+                    if (student.group_id == studentGroup.group_id)
                     {
                         dgvrRegisterMember.Rows.Add(student.student_name, student.student_id);
                     }

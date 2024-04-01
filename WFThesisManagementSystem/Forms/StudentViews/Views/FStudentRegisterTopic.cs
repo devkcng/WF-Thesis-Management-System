@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
-using System.Drawing;
 using System.Windows.Forms;
-
-using WFThesisManagementSystem.Helper;
 using WFThesisManagementSystem.Helper.SearchEngineHelper;
 using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.Repositories;
@@ -73,7 +68,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             else
             {
                 dgvTopics.Rows.Clear();
-                FStudentRegisterTopic_Load(sender,e);
+                FStudentRegisterTopic_Load(sender, e);
             }
 
         }
@@ -81,7 +76,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         private void ptbReload_Click(object sender, EventArgs e)
         {
             dgvTopics.Rows.Clear();
-            FStudentRegisterTopic_Load(sender,e);
+            FStudentRegisterTopic_Load(sender, e);
         }
 
         private void btnDashBoard_Click(object sender, EventArgs e)
@@ -92,7 +87,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         }
 
         private void FStudentRegisterTopic_Load(object sender, EventArgs e)
-        {   
+        {
             dgvTopics.Rows.Clear();
             var topics = _topicRepository.GetAll();
             foreach (var topic in topics)

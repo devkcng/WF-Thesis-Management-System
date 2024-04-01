@@ -7,7 +7,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.StudentUserControl
         public UCTask()
         {
             InitializeComponent();
-            
+
         }
 
     }

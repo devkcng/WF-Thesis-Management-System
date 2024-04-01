@@ -1,10 +1,8 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.ComponentModel;
-using System.Data;
 using System.Linq;
 using System.Windows.Forms;
-using Guna.UI2.WinForms;
-
 using WFThesisManagementSystem.Forms.TeacherViews.Views;
 using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.Repositories;
@@ -61,7 +59,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
         #endregion
         //private void editTopic(object sender, EventArgs e)
         //{
-            
+
         //}
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -107,14 +105,14 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
 
         private void lblName_Click(object sender, EventArgs e)
         {
-            var topic = _topicRepository.GetAll().FirstOrDefault(x=>x.topic_name == Name);
-            var studentGroup = _studentGroupRepository.GetAll().FirstOrDefault(x=>x.topic_id == topic.topic_id);
-            if(studentGroup != null)
+            var topic = _topicRepository.GetAll().FirstOrDefault(x => x.topic_name == Name);
+            var studentGroup = _studentGroupRepository.GetAll().FirstOrDefault(x => x.topic_id == topic.topic_id);
+            if (studentGroup != null)
             {
                 FTeacherRegist fTeacherRegist = new FTeacherRegist(studentGroup);
                 fTeacherRegist.Show();
             }
-            
+
             //DBConnect dBConnect = new DBConnect();
             //DataTable dataTableStudentGroup = dBConnect.LoadData("Student_Group");
             //DataTable dataTableTopics = dBConnect.LoadData("Topics");

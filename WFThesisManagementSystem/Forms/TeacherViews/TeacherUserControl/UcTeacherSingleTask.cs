@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Guna.UI2.WinForms;
+using System;
 using System.Windows.Forms;
-using Guna.UI2.WinForms;
 using WFThesisManagementSystem.Forms.TeacherViews.Views;
 
 namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
@@ -17,7 +17,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
         private string time;
         private Guna2Button chat;
         private PictureBox image;
-        
+
         public string Time
         {
             get { return time; }
@@ -36,8 +36,8 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
         public Guna2Button Chat
         {
             get { return chat; }
-            set { chat = value;btnChat = value; }
-            
+            set { chat = value; btnChat = value; }
+
         }
         public PictureBox Image
         {

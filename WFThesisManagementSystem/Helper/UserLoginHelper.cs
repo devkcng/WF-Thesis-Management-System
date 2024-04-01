@@ -1,6 +1,4 @@
-﻿using System.Data;
-using System.Data.SqlClient;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 using WFThesisManagementSystem.Forms.StudentViews.Views;
 using WFThesisManagementSystem.Forms.TeacherViews.Views;

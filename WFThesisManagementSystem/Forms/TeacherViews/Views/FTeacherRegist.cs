@@ -13,8 +13,8 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
 {
     public partial class FTeacherRegist : Form
     {
-        
-        List<KeyValuePair<int,string>> students = new List<KeyValuePair<int, string>>();
+
+        List<KeyValuePair<int, string>> students = new List<KeyValuePair<int, string>>();
 
         StudentRepository _studentRepository;
         RegisterQueueRepository _registerQueueRepository;
@@ -38,7 +38,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         {
             ucTeacherAcceptRegistAll1.flpRegistedView.Controls.Clear();
             var Table = _studentRepository.GetAll().Where(x => x.group_id == GroupId);
-            foreach (var student in Table) 
+            foreach (var student in Table)
             {
                 UcTeacherAcceptRegisterSingle ucTeacherAcceptRegisterSingle = new UcTeacherAcceptRegisterSingle();
                 ucTeacherAcceptRegisterSingle.NameStudent = student.student_name;
@@ -47,17 +47,17 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
 
                 ucTeacherAcceptRegistAll1.flpRegistedView.Controls.Add(ucTeacherAcceptRegisterSingle);
             }
-        
+
         }
         private void List_Load_Regist()
         {
             ucTeacherAcceptRegistAll1.flpRegistView.Controls.Clear();
-            var Table = _registerQueueRepository.GetAll().Where(x=>x.group_id == GroupId && x.accepted == false);
+            var Table = _registerQueueRepository.GetAll().Where(x => x.group_id == GroupId && x.accepted == false);
             foreach (var register in Table)
             {
                 UcTeacherAcceptRegisterSingle ucTeacherAcceptRegisterSingle = new UcTeacherAcceptRegisterSingle();
-                var students = _studentRepository.GetAll().Where(x=>x.student_id==register.student_id );
-                foreach(var student in students)
+                var students = _studentRepository.GetAll().Where(x => x.student_id == register.student_id);
+                foreach (var student in students)
                 {
                     ucTeacherAcceptRegisterSingle.NameStudent = student.student_name;
                     ucTeacherAcceptRegisterSingle.IdStudent = Convert.ToString(student.student_id);
@@ -65,7 +65,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
                     ucTeacherAcceptRegistAll1.flpRegistView.Controls.Add(ucTeacherAcceptRegisterSingle);
                 }
             }
-            
+
         }
 
         private void Accept(object sender, EventArgs e)
@@ -73,33 +73,33 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             for (int i = 0; i < ucTeacherAcceptRegistAll1.flpRegistView.Controls.Count; i++)
             {
                 bool check = false;
-                int id =0;
-                string name ="";
+                int id = 0;
+                string name = "";
                 foreach (Control c in ucTeacherAcceptRegistAll1.flpRegistView.Controls[i].Controls)
                 {
-                    if(c is CheckBox )
+                    if (c is CheckBox)
                     {
                         CheckBox select = (CheckBox)c;
-                        if(select.Checked)
+                        if (select.Checked)
                         {
                             check = true;
-                        }    
+                        }
                     }
-                    if(c is Label && c.Name == "lblIdStudent" && check == true) id = int.Parse(c.Text);
-                    if(c is Label && c.Name=="lblNameStudent" && check == true) name = c.Text;
+                    if (c is Label && c.Name == "lblIdStudent" && check == true) id = int.Parse(c.Text);
+                    if (c is Label && c.Name == "lblNameStudent" && check == true) name = c.Text;
 
                 }
 
 
-                if(check == true)
+                if (check == true)
                 {
-                    KeyValuePair<int, string> single_student = new KeyValuePair<int, string>(id,name);
+                    KeyValuePair<int, string> single_student = new KeyValuePair<int, string>(id, name);
 
-                  
+
 
                     ucTeacherAcceptRegistAll1.flpRegistView.Controls[i].Visible = false;
 
-                    
+
                     var register = _registerQueueRepository.GetById(id);
                     var student = _studentRepository.GetById(id);
 
@@ -110,11 +110,11 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
                     _studentRepository.Update(student);
 
                     students.Add(single_student);
-                }    
-                
+                }
+
             }
-          
-            FTeacherRegist_Load (sender,e);
+
+            FTeacherRegist_Load(sender, e);
         }
         private void Delete(object sender, EventArgs e)
         {
@@ -137,12 +137,12 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
                     if (c is Label && c.Name == "lblIdStudent" && check == true) id = int.Parse(c.Text);
                 }
                 if (check == true)
-                {   
+                {
 
                     // delete row in RegisterQueue
 
                     var register = _registerQueueRepository.GetById(id);
-                    
+
                     _registerQueueRepository.Delete(register);
 
                     ucTeacherAcceptRegistAll1.flpRegistView.Controls[i].Visible = false;
@@ -155,6 +155,6 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             List_Load_Regist();
             List_Load_Registed();
         }
-        
+
     }
 }

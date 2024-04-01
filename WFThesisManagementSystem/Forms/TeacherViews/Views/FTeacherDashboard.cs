@@ -1,5 +1,5 @@
-﻿using System;
-using ComponentFactory.Krypton.Toolkit;
+﻿using ComponentFactory.Krypton.Toolkit;
+using System;
 
 namespace WFThesisManagementSystem.Forms.TeacherViews.Views
 {
@@ -12,16 +12,16 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             ucTeacherAllTask1.Hide();
             ucTeacherInfor1.Hide();
             ucTeacherEditInfor1.Hide();
-            
+
             ucTeacherAllTopics1.btnCreate.Click += createTopic;
-            ucTeacherAllTask1.btnCreate.Click+=createTask;
+            ucTeacherAllTask1.btnCreate.Click += createTask;
         }
         private void createTopic(object sender, EventArgs e)
         {
             ucTeacherAllTopics1.Hide();
-            FTeacherCreateTopic fTeacherCreateTopic =  new FTeacherCreateTopic();
+            FTeacherCreateTopic fTeacherCreateTopic = new FTeacherCreateTopic();
             fTeacherCreateTopic.Show();
-            
+
         }
         private void createTask(object sender, EventArgs e)
         {
@@ -52,7 +52,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
 
         private void Project_Click(object sender, EventArgs e)
         {
-            ucTeacherAllTopics1.UcTeacherAllTopics_Load(sender,e);
+            ucTeacherAllTopics1.UcTeacherAllTopics_Load(sender, e);
             ucTeacherAllTopics1.Show();
             ucTeacherAllTask1.Hide();
             ucTeacherEditInfor1.Hide();

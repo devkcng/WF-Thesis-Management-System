@@ -1,22 +1,21 @@
-﻿using System;
+﻿using ComponentFactory.Krypton.Toolkit;
+using System;
 using System.Windows.Forms;
-using ComponentFactory.Krypton.Toolkit;
 using WFThesisManagementSystem.Forms.StudentViews.StudentUserControl;
 using WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl;
-using WFThesisManagementSystem.Models;
 using UserControl = System.Windows.Forms.UserControl;
 
 namespace WFThesisManagementSystem.Forms.StudentViews.Views
 {
     public partial class FStudentDashboard : KryptonForm
     {
-        
+
         public FStudentDashboard()
         {
             InitializeComponent();
-            
+
         }
-        
+
 
         private void addUserControl(UserControl userControl)
         {
@@ -45,7 +44,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            UcTeacherInfor uc= new UcTeacherInfor();
+            UcTeacherInfor uc = new UcTeacherInfor();
             addUserControl(uc);
         }
 
@@ -58,10 +57,10 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
 
         private void performance_Click(object sender, EventArgs e)
         {
-            
-        }
-
-
 
         }
+
+
+
+    }
 }

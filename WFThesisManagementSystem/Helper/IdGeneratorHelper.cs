@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Windows.Forms;
-using WFThesisManagementSystem.Models;
+﻿using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.Repositories;
 
 namespace WFThesisManagementSystem.Helper

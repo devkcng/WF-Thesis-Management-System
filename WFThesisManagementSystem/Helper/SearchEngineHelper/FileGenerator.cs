@@ -44,7 +44,7 @@ namespace WFThesisManagementSystem.Helper.SearchEngineHelper
         //            string topicMaxMembers = reader.GetInt32(6).ToString();
         //            string teacherName = reader.GetString(7);
         //            string teacherId = reader.GetInt32(8).ToString();
-                    
+
 
         //            string filePath = Path.Combine(directoryPath, $"{topicId}.txt");
 
@@ -62,7 +62,7 @@ namespace WFThesisManagementSystem.Helper.SearchEngineHelper
         //            }
         //        }
         //        connection.Close();
-            //}
+        //}
         //}
         private ThesisManagementContext _context = new ThesisManagementContext();
         string directoryPath = @"TopicFiles\";

@@ -16,16 +16,17 @@ namespace WFThesisManagementSystem.Forms.StudentViews.StudentUserControl
         }
         private void UCProject_SizeChanged(object sender, EventArgs e)
         {
-            txtProjectDetail.Width= this.Width;
+            txtProjectDetail.Width = this.Width;
             ptbLine.Width = this.Width;
-            panelContainerlblComplete.Location = new Point((this.Width - 2*panelContainerlblComplete.Width), panelContainerlblComplete.Location.Y);
+            panelContainerlblComplete.Location = new Point((this.Width - 2 * panelContainerlblComplete.Width), panelContainerlblComplete.Location.Y);
             ptbIssue.Location = new Point((panelContainerlblComplete.Location.X), ptbIssue.Location.Y);
             lblIssue.Location = new Point((ptbIssue.Location.X + ptbIssue.Width), lblIssue.Location.Y);
         }
 
-        public void SetTopic(Topic topic) {
+        public void SetTopic(Topic topic)
+        {
             lblProjectName.Text = topic.topic_name;
-            txtProjectDetail.Text= topic.topic_description;
+            txtProjectDetail.Text = topic.topic_description;
         }
     }
 }

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
-
-using WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl;
 using WFThesisManagementSystem.Helper;
 using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.Repositories;
@@ -21,7 +19,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         public FTeacherEditTopic()
         {
             InitializeComponent();
-            
+
             var _context = new ThesisManagementContext();
             _topicRepository = new TopicRepository(_context);
             _topicService = new TopicService();
@@ -36,7 +34,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         {
             this.Hide();
         }
-       
+
         private void delete(object sender, EventArgs e)
         {
             //_topic.topic_name = ucTeacherEditTopic1.txtTopicName.Text;
@@ -70,13 +68,13 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         }
         private void update(object sender, EventArgs e)
         {
-            
+
             if (_topicService.CheckTopicId(ucTeacherEditTopic1.txtTopicId.Text) && _topicService.CheckMaxMember(ucTeacherEditTopic1.cbxNumber.SelectedItem.ToString()))
             {
 
                 //var teacher = _teacherAccountRepository.GetAll().FirstOrDefault(x => x.teacher_username == UserSessionHelper.Instance.UserName && x.teacher_password == UserSessionHelper.Instance.Password);
                 //_topic.teacher_id = teacher.teacher_id;
-                
+
                 _topic.topic_name = ucTeacherEditTopic1.txtTopicName.Text;
                 _topic.topic_requirement = ucTeacherEditTopic1.txtTopicRequirement.Text;
                 _topic.topic_category = ucTeacherEditTopic1.cbxTopicCategory.SelectedItem.ToString();

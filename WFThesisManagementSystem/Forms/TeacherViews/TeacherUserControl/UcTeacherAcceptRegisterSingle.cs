@@ -35,7 +35,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
         public CheckBox CheckRegist
         {
             get { return checkregist; }
-            set { checkregist = value;cbxRegist = value; }
+            set { checkregist = value; cbxRegist = value; }
         }
         #endregion
     }

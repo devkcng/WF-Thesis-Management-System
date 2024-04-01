@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 
 namespace WFThesisManagementSystem.Repositories
-{   
+{
     //this is the interface for the repository classes
     public interface IRepository<T>
     {

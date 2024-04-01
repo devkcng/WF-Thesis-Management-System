@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl;
-using WFThesisManagementSystem.Models;
+﻿using WFThesisManagementSystem.Models;
 
 namespace WFThesisManagementSystem.Services
 {
@@ -13,16 +6,17 @@ namespace WFThesisManagementSystem.Services
     {
         Topic _topic;
         public TopicService() { }
-        public TopicService(Topic topic) {
+        public TopicService(Topic topic)
+        {
             _topic = topic;
         }
-        public bool CheckTopicId(string topicId) 
+        public bool CheckTopicId(string topicId)
         {
             for (int i = 0; i <= topicId.Length - 1; i++)
             {
                 if (topicId[i] > '9' || topicId[i] < '0')
                 {
-                    
+
                     return false;
                 }
             }
@@ -42,7 +36,7 @@ namespace WFThesisManagementSystem.Services
         }
         public bool AlreadyCreateTopic()
         {
-            if(_topic.topic_description!="" && _topic.topic_technology!=""&& _topic.topic_requirement!="" && _topic.topic_name!="" && _topic.topic_category!="")
+            if (_topic.topic_description != "" && _topic.topic_technology != "" && _topic.topic_requirement != "" && _topic.topic_name != "" && _topic.topic_category != "")
             {
                 return true;
             }

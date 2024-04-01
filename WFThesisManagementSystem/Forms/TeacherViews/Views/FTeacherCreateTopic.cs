@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -16,8 +15,8 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         TopicRepository _topicRepository;
         TeacherAccountRepository _teacherAccountRepository;
         TopicService _topicService;
-        
-        
+
+
 
         //private readonly TopicDAO topicDAO = new TopicDAO();
         //private readonly DBConnect dbConnect = new DBConnect();
@@ -34,7 +33,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         }
         private void Save(object sender, EventArgs e)
         {
-            if(_topicService.CheckTopicId(ucTeacherCreateTopic1.txtTopicId.Text) && _topicService.CheckMaxMember(ucTeacherCreateTopic1.cbxNumber.SelectedItem.ToString()))
+            if (_topicService.CheckTopicId(ucTeacherCreateTopic1.txtTopicId.Text) && _topicService.CheckMaxMember(ucTeacherCreateTopic1.cbxNumber.SelectedItem.ToString()))
             {
                 _topic.topic_id = int.Parse(ucTeacherCreateTopic1.txtTopicId.Text);
                 _topic.topic_name = ucTeacherCreateTopic1.txtTopicName.Text;
@@ -46,7 +45,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
                 var teacher = _teacherAccountRepository.GetAll().FirstOrDefault(x => x.teacher_username == UserSessionHelper.Instance.UserName && x.teacher_password == UserSessionHelper.Instance.Password);
                 _topic.teacher_id = teacher.teacher_id;
                 _topicService = new TopicService(_topic);
-                if(_topicService.AlreadyCreateTopic())
+                if (_topicService.AlreadyCreateTopic())
                 {
                     _topicRepository.Add(_topic);
                     MessageBox.Show("Add Success");
@@ -97,8 +96,8 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             //{
             //    MessageBox.Show("Error!!!");
             //} 
-                
-            
+
+
         }
         private void Clear(object sender, EventArgs e)
         {
@@ -112,6 +111,6 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         private void FTeacherCreateTopic_Load(object sender, EventArgs e)
         {
 
-        }    
+        }
     }
 }

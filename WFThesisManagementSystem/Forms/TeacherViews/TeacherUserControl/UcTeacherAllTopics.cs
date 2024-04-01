@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Data;
 using System.Windows.Forms;
-
-using WFThesisManagementSystem.Forms.TeacherViews.Views;
 using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.Repositories;
-using WFThesisManagementSystem.Services;
 
 namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
 {
@@ -47,21 +43,21 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
                 //};
                 flpTopicView.Controls.Add(singletopic);
             }
-            
+
         }
-      
-       
+
+
 
         private void ucSingletopic1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
-       
+
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-                
+
         }
 
         private void ucTeacherSingleTopic1_Load(object sender, EventArgs e)
@@ -76,7 +72,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-           
+
         }
     }
 }

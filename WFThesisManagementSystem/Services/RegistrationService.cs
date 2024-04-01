@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using WFThesisManagementSystem.Helper;
 using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.Repositories;
 
 namespace WFThesisManagementSystem.Services
-{   
+{
     //this is logic for registering a student to a topic
     public class RegistrationService
-    {   
+    {
         Student _student;
         Topic _topic;
         RegisterQueueRepository _registerQueueRepository;
@@ -36,29 +31,29 @@ namespace WFThesisManagementSystem.Services
                 return false;
             }
             if (Unregistered())
-            {   
+            {
                 if (!GroupExists())
                 {
-                StudentGroup studentGroup = CreateGroup();
-                _studentGroupRepository.Add(studentGroup);
-                RegisterQueue registerQueue = new RegisterQueue();
-                registerQueue.student_id = _student.student_id;
-                registerQueue.topic_id = _topic.topic_id;
-                registerQueue.group_id = studentGroup.group_id;
-                registerQueue.accepted = false;
-                _registerQueueRepository.Add(registerQueue);
-                return true;
+                    StudentGroup studentGroup = CreateGroup();
+                    _studentGroupRepository.Add(studentGroup);
+                    RegisterQueue registerQueue = new RegisterQueue();
+                    registerQueue.student_id = _student.student_id;
+                    registerQueue.topic_id = _topic.topic_id;
+                    registerQueue.group_id = studentGroup.group_id;
+                    registerQueue.accepted = false;
+                    _registerQueueRepository.Add(registerQueue);
+                    return true;
                 }
                 else
                 {
                     var studentGroup = _studentGroupRepository.GetByTopicId(_topic.topic_id);
-                 RegisterQueue registerQueue = new RegisterQueue();
-                registerQueue.student_id = _student.student_id;
-                registerQueue.topic_id = _topic.topic_id;
-                registerQueue.group_id = studentGroup.group_id;
-                registerQueue.accepted = false;
-                _registerQueueRepository.Add(registerQueue);
-                return true;
+                    RegisterQueue registerQueue = new RegisterQueue();
+                    registerQueue.student_id = _student.student_id;
+                    registerQueue.topic_id = _topic.topic_id;
+                    registerQueue.group_id = studentGroup.group_id;
+                    registerQueue.accepted = false;
+                    _registerQueueRepository.Add(registerQueue);
+                    return true;
                 }
             }
 
@@ -81,7 +76,7 @@ namespace WFThesisManagementSystem.Services
         }
 
         public bool Unregistered()
-        {   
+        {
             //check if student is unregistered from a topic
             var registerQueue = _registerQueueRepository.GetById(_student.student_id);
             if (_student.group_id == null && registerQueue == null)
@@ -92,7 +87,7 @@ namespace WFThesisManagementSystem.Services
         }
 
         public bool InQueue()
-        {   
+        {
             var registerQueue = _registerQueueRepository.GetById(_student.student_id);
             if (_student.group_id == null && registerQueue != null)
             {
