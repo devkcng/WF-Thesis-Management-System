@@ -2,6 +2,7 @@
 using System.Data;
 using System.Windows.Forms;
 using WFThesisManagementSystem.DataAccess;
+using WFThesisManagementSystem.Forms.TeacherViews.Views;
 using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.Repositories;
 using WFThesisManagementSystem.Services;
@@ -37,24 +38,16 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
                 _topic.topic_name = topic.topic_name;
                 _topic.topic_description = topic.topic_description;
                 singletopic.SetTopic(_topic);
+                //singletopic.Click += (sender, e) =>
+                //{
+                //    UcTeacherSingleTopic ucTeacherSingleTopic = (UcTeacherSingleTopic)sender;
+                //    //var topic = ucTeacherSingleTopic.GetTopic();
+                //    FTeacherEditTopic fTeacherEditTopic = new FTeacherEditTopic(topic);
+                //    fTeacherEditTopic.Show();
+                //};
                 flpTopicView.Controls.Add(singletopic);
             }
-            //for (int i = 0; i < dataTable.Rows.Count; i++)
-            //{
-            //    DataRow row = dataTable.Rows[i];
-            //    UcTeacherSingleTopic singletopic = new UcTeacherSingleTopic();
-               
-            //    _topic.topic_name = row["topic_name"].ToString();
-            //    _topic.topic_description = row["topic_description"].ToString();
-            //    //topic.Requirement = row["requirement"].ToString();
-            //    //topic.Category = row["category"].ToString();
-            //    //topic.Technology = row["technology"].ToString();
-            //   // singletopic.Button.Click += edit;
-            //    singletopic.SetTopic(topic);
-            //    flpTopicView.Controls.Add(singletopic);
-            //}    
-                
-
+            
         }
       
        
