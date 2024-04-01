@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
-using WFThesisManagementSystem.DataAccess;
 using WFThesisManagementSystem.Models;
 
 namespace WFThesisManagementSystem.Forms.StudentViews.StudentUserControl
@@ -20,25 +19,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.StudentUserControl
 
         private void addUserControl()
         {
-            DBConnect dBConnect = new DBConnect();
-            StudentDAO studentDAO = new StudentDAO();
-            DataTable dataTable = dBConnect.GetData(studentDAO.Student_LoadTopics(student));
-            flowLayoutPanelContainer.Controls.Clear();
-
-            for (int i = 0; i < dataTable.Rows.Count; i++)
-            {
-                DataRow row = dataTable.Rows[i];
-                UCProject uCProject = new UCProject();
-                Topic topic = new Topic();
-                topic.topic_name = row["topic_name"].ToString();
-                topic.topic_description = row["topic_description"].ToString();
-                //topic.Requirement = row["requirement"].ToString();
-                //topic.Category = row["category"].ToString();
-                //topic.Technology = row["technology"].ToString();
-                // singletopic.Button.Click += edit;
-                uCProject.SetTopic(topic);
-                flowLayoutPanelContainer.Controls.Add(uCProject);
-            }
+            
         }
         private void label2_Click(object sender, EventArgs e)
         {
