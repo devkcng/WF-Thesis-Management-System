@@ -2,17 +2,24 @@
 using System.Data;
 using System.Windows.Forms;
 using WFThesisManagementSystem.DataAccess;
+using WFThesisManagementSystem.Forms.TeacherViews.Views;
 using WFThesisManagementSystem.Models;
+using WFThesisManagementSystem.Repositories;
+using WFThesisManagementSystem.Services;
 
 namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
 {
     public partial class UcTeacherAllTopics : UserControl
     {
+        private Topic _topic;
+        TopicRepository _topicRepository;
         public UcTeacherAllTopics()
         {
             InitializeComponent();
-            
-           
+            var _context = new ThesisManagementContext();
+            _topicRepository = new TopicRepository(_context);
+
+
         }
         //public UcTeacherAllTopics(object sender,EventArgs e)
         //{
@@ -20,41 +27,29 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
         //}
         private void ListTopic()
         {
-            DBConnect dBConnect = new DBConnect();
-            DataTable dataTable = dBConnect.LoadData("Topics");
+            //DBConnect dBConnect = new DBConnect();
+            //DataTable dataTable = dBConnect.LoadData("Topics");
+            var Table = _topicRepository.GetAll();
             flpTopicView.Controls.Clear();
-            for (int i = 0; i < dataTable.Rows.Count; i++)
+            foreach (var topic in Table)
             {
-                DataRow row = dataTable.Rows[i];
+                _topic = new Topic();
                 UcTeacherSingleTopic singletopic = new UcTeacherSingleTopic();
-                Topic topic = new Topic();
-                topic.topic_name = row["topic_name"].ToString();
-                topic.topic_description = row["topic_description"].ToString();
-                //topic.Requirement = row["requirement"].ToString();
-                //topic.Category = row["category"].ToString();
-                //topic.Technology = row["technology"].ToString();
-               // singletopic.Button.Click += edit;
-                singletopic.SetTopic(topic);
+                _topic.topic_name = topic.topic_name;
+                _topic.topic_description = topic.topic_description;
+                singletopic.SetTopic(_topic);
+                //singletopic.Click += (sender, e) =>
+                //{
+                //    UcTeacherSingleTopic ucTeacherSingleTopic = (UcTeacherSingleTopic)sender;
+                //    //var topic = ucTeacherSingleTopic.GetTopic();
+                //    FTeacherEditTopic fTeacherEditTopic = new FTeacherEditTopic(topic);
+                //    fTeacherEditTopic.Show();
+                //};
                 flpTopicView.Controls.Add(singletopic);
-            }    
-            //UcTeacherSingleTopic[]topics = new UcTeacherSingleTopic[dataTable.Rows.Count];
+            }
             
-            //flpTopicView.Controls.Clear();
-            //for (int i = 0; i < topics.Length; i++)
-            //{
-            //    topics[i] = new UcTeacherSingleTopic();
-            //    topics[i].Name = "Kiến thức chuyên ngành";
-            //    topics[i].Description = "Khó";
-            //    //topics[i].Button.Click += editTopic;
-            //    flpTopicView.Controls.Add(topics[i]);
-            //}    
-
         }
-        //private void edit(object sender, EventArgs e )
-        //{
-        //    FTeacherEditTopic fTeacherEditTopic = new FTeacherEditTopic();
-        //    fTeacherEditTopic.Show();
-        //}
+      
        
 
         private void ucSingletopic1_Load(object sender, EventArgs e)

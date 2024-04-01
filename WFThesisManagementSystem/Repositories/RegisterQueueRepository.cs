@@ -54,6 +54,7 @@ namespace WFThesisManagementSystem.Repositories
         {
             return _context.RegisterQueues.FirstOrDefault(x => x.topic_id == id);
         }
+       
     }
 
 }

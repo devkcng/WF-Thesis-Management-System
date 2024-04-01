@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 using WFThesisManagementSystem.DataAccess;
 using WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl;
+using WFThesisManagementSystem.Models;
+using WFThesisManagementSystem.Repositories;
 using Control = System.Windows.Forms.Control;
 
 namespace WFThesisManagementSystem.Forms.TeacherViews.Views
@@ -11,17 +14,21 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
     public partial class FTeacherRegist : Form
     {
         
-        List<KeyValuePair<string,string>> students = new List<KeyValuePair<string, string>>();
-        
-        public string GroupId { get; set; }
-        private readonly DBConnect dbConnect = new DBConnect();
-        public FTeacherRegist(string groupid)
+        List<KeyValuePair<int,string>> students = new List<KeyValuePair<int, string>>();
+
+        StudentRepository _studentRepository;
+        RegisterQueueRepository _registerQueueRepository;
+        public int GroupId { get; set; }
+        public FTeacherRegist(StudentGroup studentGroup)
         {
             InitializeComponent();
             ucTeacherAcceptRegistAll1.btnClose.Click += Close;
             ucTeacherAcceptRegistAll1.btnAccept.Click += Accept;
             ucTeacherAcceptRegistAll1.btnDelete.Click += Delete;
-            GroupId = groupid  ;
+            GroupId = studentGroup.group_id;
+            var _context = new ThesisManagementContext();
+            _studentRepository = new StudentRepository(_context);
+            _registerQueueRepository = new RegisterQueueRepository(_context);
         }
         private void Close(object sender, EventArgs e)
         {
@@ -29,64 +36,47 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         }
         private void List_Load_Registed()
         {
-            //DBConnect dBConnect = new DBConnect();
-            DataTable dataTable = dbConnect.LoadData("Student");
-            ucTeacherAcceptRegistAll1.flpRegistedView.Controls.Clear(); //flpTopicView.Controls.Clear();
-            for (int i = 0; i < dataTable.Rows.Count; i++)
+            ucTeacherAcceptRegistAll1.flpRegistedView.Controls.Clear();
+            var Table = _studentRepository.GetAll().Where(x => x.group_id == GroupId);
+            foreach (var student in Table) 
             {
-                DataRow row = dataTable.Rows[i];
                 UcTeacherAcceptRegisterSingle ucTeacherAcceptRegisterSingle = new UcTeacherAcceptRegisterSingle();
-                if(GroupId == row["group_id"].ToString() && GroupId != "")
-                {
-                    ucTeacherAcceptRegisterSingle.NameStudent = row["student_name"].ToString();
-                    ucTeacherAcceptRegisterSingle.IdStudent = row["student_id"].ToString();
-                    ucTeacherAcceptRegisterSingle.Regist = "Registered";
-                    CheckBox cb = new CheckBox();
-                    cb.Visible = false;
-                    ucTeacherAcceptRegisterSingle.CheckRegist = cb;
-                    ucTeacherAcceptRegistAll1.flpRegistedView.Controls.Add(ucTeacherAcceptRegisterSingle);
-                }  
+                ucTeacherAcceptRegisterSingle.NameStudent = student.student_name;
+                ucTeacherAcceptRegisterSingle.IdStudent = Convert.ToString(student.student_id);
+                ucTeacherAcceptRegisterSingle.Regist = "Registered";
+
+                ucTeacherAcceptRegistAll1.flpRegistedView.Controls.Add(ucTeacherAcceptRegisterSingle);
             }
+        
         }
         private void List_Load_Regist()
         {
-           // DBConnect dBConnect = new DBConnect();
-            DataTable dataTableRegisterQueue = dbConnect.LoadData("RegisterQueue");
-            DataTable dataTableStudent = dbConnect.LoadData("Student");
             ucTeacherAcceptRegistAll1.flpRegistView.Controls.Clear();
-            for (int i = 0; i < dataTableRegisterQueue.Rows.Count; i++)
+            var Table = _registerQueueRepository.GetAll().Where(x=>x.group_id == GroupId && x.accepted == false);
+            foreach (var register in Table)
             {
-                DataRow rowRegisterQueue = dataTableRegisterQueue.Rows[i];
                 UcTeacherAcceptRegisterSingle ucTeacherAcceptRegisterSingle = new UcTeacherAcceptRegisterSingle();
-                if (GroupId == rowRegisterQueue["group_id"].ToString() && rowRegisterQueue["accepted"].ToString() == "False")
+                var students = _studentRepository.GetAll().Where(x=>x.student_id==register.student_id );
+                foreach(var student in students)
                 {
-                    for(int j = 0;j<dataTableStudent.Rows.Count;j++)
-                    {
-                        DataRow rowStudent = dataTableStudent.Rows[j];
-                        if (rowStudent["student_id"].ToString() == rowRegisterQueue["student_id"].ToString())
-                        {
-                            ucTeacherAcceptRegisterSingle.NameStudent = rowStudent["student_name"].ToString();
-                            ucTeacherAcceptRegisterSingle.IdStudent = rowStudent["student_id"].ToString();
-                            ucTeacherAcceptRegisterSingle.Regist = "Awaiting Registration";
-                            ucTeacherAcceptRegistAll1.flpRegistView.Controls.Add(ucTeacherAcceptRegisterSingle);
-                        }
-                    }    
-                   
+                    ucTeacherAcceptRegisterSingle.NameStudent = student.student_name;
+                    ucTeacherAcceptRegisterSingle.IdStudent = Convert.ToString(student.student_id);
+                    ucTeacherAcceptRegisterSingle.Regist = "Awaiting Registration";
+                    ucTeacherAcceptRegistAll1.flpRegistView.Controls.Add(ucTeacherAcceptRegisterSingle);
                 }
             }
+            
         }
+
         private void Accept(object sender, EventArgs e)
         {
-            //DBConnect dBConnect = new DBConnect();
-            DataTable dataTable = dbConnect.LoadData("RegisterQueue");
             for (int i = 0; i < ucTeacherAcceptRegistAll1.flpRegistView.Controls.Count; i++)
             {
                 bool check = false;
-                string id ="";
+                int id =0;
                 string name ="";
                 foreach (Control c in ucTeacherAcceptRegistAll1.flpRegistView.Controls[i].Controls)
                 {
-                    
                     if(c is CheckBox )
                     {
                         CheckBox select = (CheckBox)c;
@@ -95,50 +85,44 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
                             check = true;
                         }    
                     }
-                    if(c is Label && c.Name == "lblIdStudent" && check == true) id = c.Text;
+                    if(c is Label && c.Name == "lblIdStudent" && check == true) id = int.Parse(c.Text);
                     if(c is Label && c.Name=="lblNameStudent" && check == true) name = c.Text;
+
                 }
+
+
                 if(check == true)
                 {
-                    KeyValuePair<string, string> single_student = new KeyValuePair<string, string>(id,name);
-                    for (int j = 0; j < dataTable.Rows.Count; j++)
-                    {
-                        DataRow row = dataTable.Rows[j];
-                        if (row["student_id"].ToString() == id)
-                        {
-                            if (dbConnect.ExecuteSqlQuery(RegistDAO.UpdateAccept(id)))
-                            {
-                                ucTeacherAcceptRegistAll1.flpRegistView.Controls[i].Visible = false;
-                            }
-                            // dataTable.Rows[j]["accept"] = "0"; // đang fix
-                        }
-                    }
+                    KeyValuePair<int, string> single_student = new KeyValuePair<int, string>(id,name);
+
+                  
+
+                    ucTeacherAcceptRegistAll1.flpRegistView.Controls[i].Visible = false;
+
+                    
+                    var register = _registerQueueRepository.GetById(id);
+                    var student = _studentRepository.GetById(id);
+
+                    register.accepted = true;
+                    student.group_id = GroupId;
+
+                    _registerQueueRepository.Update(register);
+                    _studentRepository.Update(student);
+
                     students.Add(single_student);
                 }    
                 
             }
-            for (int i = 0; i < students.Count; i++)
-            {
-              
-                UcTeacherAcceptRegisterSingle ucTeacherAcceptRegisterSingle = new UcTeacherAcceptRegisterSingle();
-                ucTeacherAcceptRegisterSingle.NameStudent = students[i].Value;
-                ucTeacherAcceptRegisterSingle.IdStudent =  students[i].Key;
-                CheckBox cb = new CheckBox();
-                cb.Visible = false;
-                ucTeacherAcceptRegisterSingle.CheckRegist=cb;
-                ucTeacherAcceptRegisterSingle.Regist = "Registered";
-                dbConnect.ExecuteSqlQuery(RegistDAO.UpdateGroupid(students[i].Key, GroupId));
-                ucTeacherAcceptRegistAll1.flpRegistedView.Controls.Add(ucTeacherAcceptRegisterSingle); 
-            }
-
+          
+            FTeacherRegist_Load (sender,e);
         }
         private void Delete(object sender, EventArgs e)
         {
-            DataTable dataTable = dbConnect.LoadData("RegisterQueue");
+            //DataTable dataTable = dbConnect.LoadData("RegisterQueue");
             for (int i = 0; i < ucTeacherAcceptRegistAll1.flpRegistView.Controls.Count; i++)
             {
                 bool check = false;
-                string id = "";
+                int id = 0;
                 foreach (Control c in ucTeacherAcceptRegistAll1.flpRegistView.Controls[i].Controls)
                 {
 
@@ -150,14 +134,18 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
                             check = true;
                         }
                     }
-                    if (c is Label && c.Name == "lblIdStudent" && check == true) id = c.Text;
+                    if (c is Label && c.Name == "lblIdStudent" && check == true) id = int.Parse(c.Text);
                 }
                 if (check == true)
-                {
-                    if (dbConnect.ExecuteSqlQuery(RegistDAO.DeleteStudentQueue(id)))
-                    {
-                        ucTeacherAcceptRegistAll1.flpRegistView.Controls[i].Visible = false;
-                    }
+                {   
+
+                    // delete row in RegisterQueue
+
+                    var register = _registerQueueRepository.GetById(id);
+                    
+                    _registerQueueRepository.Delete(register);
+
+                    ucTeacherAcceptRegistAll1.flpRegistView.Controls[i].Visible = false;
                 }
             }
         }
@@ -167,5 +155,6 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             List_Load_Regist();
             List_Load_Registed();
         }
+        
     }
 }

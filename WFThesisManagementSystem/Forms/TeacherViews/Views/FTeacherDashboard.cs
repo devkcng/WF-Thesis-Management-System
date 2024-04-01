@@ -14,7 +14,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             ucTeacherEditInfor1.Hide();
             
             ucTeacherAllTopics1.btnCreate.Click += createTopic;
-            ucTeacherAllTask1.btnCreate.Click+=createTask;  
+            ucTeacherAllTask1.btnCreate.Click+=createTask;
         }
         private void createTopic(object sender, EventArgs e)
         {
@@ -29,11 +29,6 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             FTeacherCreateTask fTeacherCreateTask = new FTeacherCreateTask();
             fTeacherCreateTask.Show();
         }
-
-       
-
-
-
 
         private void ucAllTopics1_Load(object sender, EventArgs e)
         {
