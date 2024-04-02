@@ -91,6 +91,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcSingleGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcSingleGroup.Designer.cs">
+      <DependentUpon>UcSingleGroup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper\CountNumberOfGroupHelper.cs" />
     <Compile Include="Helper\UserSessionHelper.cs" />
     <Compile Include="Helper\ValidationInformation.cs" />
@@ -350,6 +356,9 @@
     <Compile Include="Services\TopicService.cs" />
     <EmbeddedResource Include="Forms\FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcSingleGroup.resx">
+      <DependentUpon>UcSingleGroup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -639,6 +648,9 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\photo_2024-04-02_16-52-38 %282%291.jpg" />
+    <None Include="Resources\photo_2024-04-02_16-52-38.jpg" />
+    <None Include="Resources\photo_2024-04-02_16-52-38 %282%29.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
