@@ -9,28 +9,35 @@ namespace WFThesisManagementSystem.Forms.StudentViews.StudentUserControl
         {
             InitializeComponent();
             addUserControl();
-            this.SizeChanged += UCStudentTask_SizeChanged;
+            //this.SizeChanged += UCStudentTask_SizeChanged;
 
         }
 
-        private void UCStudentTask_SizeChanged(object sender, EventArgs e)
-        {
-            int marginX = flowLayoutPanelContainer.Width / 5;
-            foreach (UserControl uc in flowLayoutPanelContainer.Controls)
-            {
-                // Gán giá trị Margin cho UserControl
-                uc.Margin = new Padding(marginX, 10, marginX, 10);
-            }
-        }
+
+
+        //private void UCStudentTask_SizeChanged(object sender, EventArgs e)
+        //{
+        //    int marginX = flowLayoutPanelContainer.Width / 5;
+        //    foreach (UserControl uc in flowLayoutPanelContainer.Controls)
+        //    {
+        //        // Gán giá trị Margin cho UserControl
+        //        uc.Margin = new Padding(marginX, 10, marginX, 10);
+        //    }
+        //}
 
         private void addUserControl()
         {
             for (int i = 0; i < 10; i++)
             {
                 UCTask uc = new UCTask();
-                flowLayoutPanelContainer.Controls.Add(uc);
+                flpGroupTaskView.Controls.Add(uc);
+
+                UCInvidualTask uCInvidualTask = new UCInvidualTask();
+                flpAllInvidualTasksView.Controls.Add(uCInvidualTask);
             }
         }
+
+
     }
 
 
