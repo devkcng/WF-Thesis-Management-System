@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 using Guna.UI2.WinForms;
 using WFThesisManagementSystem.DataAccess;
@@ -13,11 +14,13 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
     public partial class UcTeacherSingleTopic : UserControl
     {
         TopicRepository _topicRepository;
+        StudentGroupRepository _studentGroupRepository;
         public UcTeacherSingleTopic()
         {
             InitializeComponent();
             var _context = new ThesisManagementContext();
             _topicRepository = new TopicRepository(_context);
+            _studentGroupRepository = new StudentGroupRepository(_context);
         }
 
         private void UcTeacherSingleTopic_Load(object sender, EventArgs e)
@@ -104,31 +107,39 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
 
         private void lblName_Click(object sender, EventArgs e)
         {
-            DBConnect dBConnect = new DBConnect();
-            DataTable dataTableStudentGroup = dBConnect.LoadData("Student_Group");
-            DataTable dataTableTopics = dBConnect.LoadData("Topics");
-            string topicidtmp = "";
-            string groupid = "";
-            for (int i = 0; i < dataTableStudentGroup.Rows.Count; i++)
+            var topic = _topicRepository.GetAll().FirstOrDefault(x=>x.topic_name == Name);
+            var studentGroup = _studentGroupRepository.GetAll().FirstOrDefault(x=>x.topic_id == topic.topic_id);
+            if(studentGroup != null)
             {
-                DataRow rowStudentGroup = dataTableStudentGroup.Rows[i];
-                for (int j = 0; j < dataTableTopics.Rows.Count; j++)
-                {
-                    DataRow rowTopics = dataTableTopics.Rows[j];
-                    if (Name == rowTopics["topic_name"].ToString())
-                    {
-                        topicidtmp = rowTopics["topic_id"].ToString();
-                    }
-
-                }
-                if (topicidtmp == rowStudentGroup["topic_id"].ToString())
-                {
-                    groupid = rowStudentGroup["group_id"].ToString();
-                    break;
-                }
+                FTeacherRegist fTeacherRegist = new FTeacherRegist(studentGroup.group_id);
+                fTeacherRegist.Show();
             }
-            FTeacherRegist fTeacherRegist = new FTeacherRegist(groupid);
-            fTeacherRegist.Show();
+            
+            //DBConnect dBConnect = new DBConnect();
+            //DataTable dataTableStudentGroup = dBConnect.LoadData("Student_Group");
+            //DataTable dataTableTopics = dBConnect.LoadData("Topics");
+            //string topicidtmp = "";
+            //string groupid = "";
+            //for (int i = 0; i < dataTableStudentGroup.Rows.Count; i++)
+            //{
+            //    DataRow rowStudentGroup = dataTableStudentGroup.Rows[i];
+            //    for (int j = 0; j < dataTableTopics.Rows.Count; j++)
+            //    {
+            //        DataRow rowTopics = dataTableTopics.Rows[j];
+            //        if (Name == rowTopics["topic_name"].ToString())
+            //        {
+            //            topicidtmp = rowTopics["topic_id"].ToString();
+            //        }
+
+            //    }
+            //    if (topicidtmp == rowStudentGroup["topic_id"].ToString())
+            //    {
+            //        groupid = rowStudentGroup["group_id"].ToString();
+            //        break;
+            //    }
+            //}
+            //FTeacherRegist fTeacherRegist = new FTeacherRegist(groupid);
+            //fTeacherRegist.Show();
             //FTeacherRegist fTeacherRegist = new FTeacherRegist();
             //fTeacherRegist.Show();
         }
