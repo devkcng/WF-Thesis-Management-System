@@ -121,6 +121,12 @@
     <Compile Include="Models\StudentGroup.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SubTask.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Task.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Teacher.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -135,6 +141,8 @@
     <Compile Include="Repositories\StudentAccountRepository.cs" />
     <Compile Include="Repositories\StudentGroupRepository.cs" />
     <Compile Include="Repositories\StudentRepository.cs" />
+    <Compile Include="Repositories\SubTaskRepository.cs" />
+    <Compile Include="Repositories\TaskRepository.cs" />
     <Compile Include="Repositories\TeacherAccountRepository.cs" />
     <Compile Include="Repositories\TeacherRepository.cs" />
     <Compile Include="Repositories\TopicRepository.cs" />
