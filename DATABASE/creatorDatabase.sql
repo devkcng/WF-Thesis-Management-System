@@ -65,6 +65,32 @@ CREATE TABLE RegisterQueue (
     FOREIGN KEY (topic_id) REFERENCES Topics(topic_id)
 );
 
+-- Creating Task table
+CREATE TABLE Tasks (
+    task_id INT PRIMARY KEY,
+    task_name VARCHAR(100),
+    task_description TEXT,
+    open_day DATE,
+    due_date DATE,
+    submit_day DATE,
+    group_id INT,
+    FOREIGN KEY (group_id) REFERENCES StudentGroup(group_id)
+);
+
+-- Creating SubTask table
+CREATE TABLE SubTasks (
+    subtask_id INT PRIMARY KEY,
+    subtask_name VARCHAR(100),
+    subtask_description TEXT,
+    open_day DATE,
+    due_date DATE,
+    submit_day DATE,
+    student_id INT,
+    task_id INT,
+    FOREIGN KEY (student_id) REFERENCES Students(student_id),
+    FOREIGN KEY (task_id) REFERENCES Tasks(task_id)
+);
+
 -- Creating the StudentAccount table
 CREATE TABLE StudentAccount (
     student_username VARCHAR(50) PRIMARY KEY,
