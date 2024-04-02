@@ -43,5 +43,14 @@ namespace WFThesisManagementSystem.Repositories
             _context.Students.Remove(student);
             _context.SaveChanges();
         }
+        public void UpdateGroupid(int id, int group_id)
+        {
+            var student_group = _context.Students.FirstOrDefault(x => x.student_id == id);
+            student_group.group_id = group_id;
+            StudentRepository studentRepository = new StudentRepository(_context);
+            studentRepository.Update(student_group);
+            //_context.Entry(student_group).State = System.Data.Entity.EntityState.Modified;
+            //_context.SaveChanges();
+        }
     }
 }
