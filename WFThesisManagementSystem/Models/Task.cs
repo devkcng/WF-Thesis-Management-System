@@ -12,25 +12,22 @@ namespace WFThesisManagementSystem.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Student
+    public partial class Task
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Student()
+        public Task()
         {
-            this.StudentAccounts = new HashSet<StudentAccount>();
             this.SubTasks = new HashSet<SubTask>();
         }
     
-        public int student_id { get; set; }
-        public string student_name { get; set; }
-        public Nullable<int> student_age { get; set; }
-        public string student_email { get; set; }
-        public string student_grade { get; set; }
+        public int task_id { get; set; }
+        public string task_name { get; set; }
+        public string task_description { get; set; }
+        public Nullable<System.DateTime> open_day { get; set; }
+        public Nullable<System.DateTime> due_date { get; set; }
+        public Nullable<System.DateTime> submit_day { get; set; }
         public Nullable<int> group_id { get; set; }
     
-        public virtual RegisterQueue RegisterQueue { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<StudentAccount> StudentAccounts { get; set; }
         public virtual StudentGroup StudentGroup { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SubTask> SubTasks { get; set; }

@@ -43,6 +43,31 @@
           <Property Name="student_grade" Type="varchar" MaxLength="10" />
           <Property Name="group_id" Type="int" />
         </EntityType>
+        <EntityType Name="SubTasks">
+          <Key>
+            <PropertyRef Name="subtask_id" />
+          </Key>
+          <Property Name="subtask_id" Type="int" Nullable="false" />
+          <Property Name="subtask_name" Type="varchar" MaxLength="100" />
+          <Property Name="subtask_description" Type="text" />
+          <Property Name="open_day" Type="date" />
+          <Property Name="due_date" Type="date" />
+          <Property Name="submit_day" Type="date" />
+          <Property Name="student_id" Type="int" />
+          <Property Name="task_id" Type="int" />
+        </EntityType>
+        <EntityType Name="Tasks">
+          <Key>
+            <PropertyRef Name="task_id" />
+          </Key>
+          <Property Name="task_id" Type="int" Nullable="false" />
+          <Property Name="task_name" Type="varchar" MaxLength="100" />
+          <Property Name="task_description" Type="text" />
+          <Property Name="open_day" Type="date" />
+          <Property Name="due_date" Type="date" />
+          <Property Name="submit_day" Type="date" />
+          <Property Name="group_id" Type="int" />
+        </EntityType>
         <EntityType Name="TeacherAccount">
           <Key>
             <PropertyRef Name="teacher_username" />
@@ -146,6 +171,42 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__SubTasks__studen__628FA481">
+          <End Role="Students" Type="Self.Students" Multiplicity="0..1" />
+          <End Role="SubTasks" Type="Self.SubTasks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="student_id" />
+            </Principal>
+            <Dependent Role="SubTasks">
+              <PropertyRef Name="student_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SubTasks__task_i__6383C8BA">
+          <End Role="Tasks" Type="Self.Tasks" Multiplicity="0..1" />
+          <End Role="SubTasks" Type="Self.SubTasks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tasks">
+              <PropertyRef Name="task_id" />
+            </Principal>
+            <Dependent Role="SubTasks">
+              <PropertyRef Name="task_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tasks__group_id__5CD6CB2B">
+          <End Role="StudentGroup" Type="Self.StudentGroup" Multiplicity="0..1" />
+          <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudentGroup">
+              <PropertyRef Name="group_id" />
+            </Principal>
+            <Dependent Role="Tasks">
+              <PropertyRef Name="group_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__TeacherAc__teach__398D8EEE">
           <End Role="Teachers" Type="Self.Teachers" Multiplicity="0..1" />
           <End Role="TeacherAccount" Type="Self.TeacherAccount" Multiplicity="*" />
@@ -175,6 +236,8 @@
           <EntitySet Name="StudentAccount" EntityType="Self.StudentAccount" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StudentGroup" EntityType="Self.StudentGroup" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SubTasks" EntityType="Self.SubTasks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tasks" EntityType="Self.Tasks" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TeacherAccount" EntityType="Self.TeacherAccount" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Teachers" EntityType="Self.Teachers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Topics" EntityType="Self.Topics" Schema="dbo" store:Type="Tables" />
@@ -201,6 +264,18 @@
           <AssociationSet Name="FK__Students__group___2E1BDC42" Association="Self.FK__Students__group___2E1BDC42">
             <End Role="StudentGroup" EntitySet="StudentGroup" />
             <End Role="Students" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SubTasks__studen__628FA481" Association="Self.FK__SubTasks__studen__628FA481">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="SubTasks" EntitySet="SubTasks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SubTasks__task_i__6383C8BA" Association="Self.FK__SubTasks__task_i__6383C8BA">
+            <End Role="Tasks" EntitySet="Tasks" />
+            <End Role="SubTasks" EntitySet="SubTasks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tasks__group_id__5CD6CB2B" Association="Self.FK__Tasks__group_id__5CD6CB2B">
+            <End Role="StudentGroup" EntitySet="StudentGroup" />
+            <End Role="Tasks" EntitySet="Tasks" />
           </AssociationSet>
           <AssociationSet Name="FK__TeacherAc__teach__398D8EEE" Association="Self.FK__TeacherAc__teach__398D8EEE">
             <End Role="Teachers" EntitySet="Teachers" />
@@ -248,6 +323,7 @@
           <NavigationProperty Name="RegisterQueues" Relationship="Self.FK__RegisterQ__group__32E0915F" FromRole="StudentGroup" ToRole="RegisterQueue" />
           <NavigationProperty Name="Topic" Relationship="Self.FK__StudentGr__topic__2B3F6F97" FromRole="StudentGroup" ToRole="Topics" />
           <NavigationProperty Name="Students" Relationship="Self.FK__Students__group___2E1BDC42" FromRole="StudentGroup" ToRole="Students" />
+          <NavigationProperty Name="Tasks" Relationship="ThesisManagementModel.FK__Tasks__group_id__5CD6CB2B" FromRole="StudentGroup" ToRole="Task" />
         </EntityType>
         <EntityType Name="Student">
           <Key>
@@ -262,6 +338,7 @@
           <NavigationProperty Name="RegisterQueue" Relationship="Self.FK__RegisterQ__stude__31EC6D26" FromRole="Students" ToRole="RegisterQueue" />
           <NavigationProperty Name="StudentAccounts" Relationship="Self.FK__StudentAc__stude__36B12243" FromRole="Students" ToRole="StudentAccount" />
           <NavigationProperty Name="StudentGroup" Relationship="Self.FK__Students__group___2E1BDC42" FromRole="Students" ToRole="StudentGroup" />
+          <NavigationProperty Name="SubTasks" Relationship="ThesisManagementModel.FK__SubTasks__studen__628FA481" FromRole="Student" ToRole="SubTask" />
         </EntityType>
         <EntityType Name="TeacherAccount">
           <Key>
@@ -436,7 +513,86 @@
             <End Role="Teachers" EntitySet="Teachers" />
             <End Role="Topics" EntitySet="Topics" />
           </AssociationSet>
+          <EntitySet Name="Tasks" EntityType="ThesisManagementModel.Task" />
+          <AssociationSet Name="FK__Tasks__group_id__5CD6CB2B" Association="ThesisManagementModel.FK__Tasks__group_id__5CD6CB2B">
+            <End Role="StudentGroup" EntitySet="StudentGroups" />
+            <End Role="Task" EntitySet="Tasks" />
+          </AssociationSet>
+          <EntitySet Name="SubTasks" EntityType="ThesisManagementModel.SubTask" />
+          <AssociationSet Name="FK__SubTasks__studen__628FA481" Association="ThesisManagementModel.FK__SubTasks__studen__628FA481">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="SubTask" EntitySet="SubTasks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SubTasks__task_i__6383C8BA" Association="ThesisManagementModel.FK__SubTasks__task_i__6383C8BA">
+            <End Role="Task" EntitySet="Tasks" />
+            <End Role="SubTask" EntitySet="SubTasks" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Task">
+          <Key>
+            <PropertyRef Name="task_id" />
+          </Key>
+          <Property Name="task_id" Type="Int32" Nullable="false" />
+          <Property Name="task_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="task_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="open_day" Type="DateTime" Precision="0" />
+          <Property Name="due_date" Type="DateTime" Precision="0" />
+          <Property Name="submit_day" Type="DateTime" Precision="0" />
+          <Property Name="group_id" Type="Int32" />
+          <NavigationProperty Name="StudentGroup" Relationship="ThesisManagementModel.FK__Tasks__group_id__5CD6CB2B" FromRole="Task" ToRole="StudentGroup" />
+          <NavigationProperty Name="SubTasks" Relationship="ThesisManagementModel.FK__SubTasks__task_i__6383C8BA" FromRole="Task" ToRole="SubTask" />
+        </EntityType>
+        <Association Name="FK__Tasks__group_id__5CD6CB2B">
+          <End Type="ThesisManagementModel.StudentGroup" Role="StudentGroup" Multiplicity="0..1" />
+          <End Type="ThesisManagementModel.Task" Role="Task" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudentGroup">
+              <PropertyRef Name="group_id" />
+            </Principal>
+            <Dependent Role="Task">
+              <PropertyRef Name="group_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="SubTask">
+          <Key>
+            <PropertyRef Name="subtask_id" />
+          </Key>
+          <Property Name="subtask_id" Type="Int32" Nullable="false" />
+          <Property Name="subtask_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="subtask_description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="open_day" Type="DateTime" Precision="0" />
+          <Property Name="due_date" Type="DateTime" Precision="0" />
+          <Property Name="submit_day" Type="DateTime" Precision="0" />
+          <Property Name="student_id" Type="Int32" />
+          <Property Name="task_id" Type="Int32" />
+          <NavigationProperty Name="Student" Relationship="ThesisManagementModel.FK__SubTasks__studen__628FA481" FromRole="SubTask" ToRole="Student" />
+          <NavigationProperty Name="Task" Relationship="ThesisManagementModel.FK__SubTasks__task_i__6383C8BA" FromRole="SubTask" ToRole="Task" />
+        </EntityType>
+        <Association Name="FK__SubTasks__studen__628FA481">
+          <End Type="ThesisManagementModel.Student" Role="Student" Multiplicity="0..1" />
+          <End Type="ThesisManagementModel.SubTask" Role="SubTask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="student_id" />
+            </Principal>
+            <Dependent Role="SubTask">
+              <PropertyRef Name="student_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SubTasks__task_i__6383C8BA">
+          <End Type="ThesisManagementModel.Task" Role="Task" Multiplicity="0..1" />
+          <End Type="ThesisManagementModel.SubTask" Role="SubTask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Task">
+              <PropertyRef Name="task_id" />
+            </Principal>
+            <Dependent Role="SubTask">
+              <PropertyRef Name="task_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -516,6 +672,33 @@
                 <ScalarProperty Name="topic_category" ColumnName="topic_category" />
                 <ScalarProperty Name="max_members" ColumnName="max_members" />
                 <ScalarProperty Name="teacher_id" ColumnName="teacher_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tasks">
+            <EntityTypeMapping TypeName="ThesisManagementModel.Task">
+              <MappingFragment StoreEntitySet="Tasks">
+                <ScalarProperty Name="group_id" ColumnName="group_id" />
+                <ScalarProperty Name="submit_day" ColumnName="submit_day" />
+                <ScalarProperty Name="due_date" ColumnName="due_date" />
+                <ScalarProperty Name="open_day" ColumnName="open_day" />
+                <ScalarProperty Name="task_description" ColumnName="task_description" />
+                <ScalarProperty Name="task_name" ColumnName="task_name" />
+                <ScalarProperty Name="task_id" ColumnName="task_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubTasks">
+            <EntityTypeMapping TypeName="ThesisManagementModel.SubTask">
+              <MappingFragment StoreEntitySet="SubTasks">
+                <ScalarProperty Name="task_id" ColumnName="task_id" />
+                <ScalarProperty Name="student_id" ColumnName="student_id" />
+                <ScalarProperty Name="submit_day" ColumnName="submit_day" />
+                <ScalarProperty Name="due_date" ColumnName="due_date" />
+                <ScalarProperty Name="open_day" ColumnName="open_day" />
+                <ScalarProperty Name="subtask_description" ColumnName="subtask_description" />
+                <ScalarProperty Name="subtask_name" ColumnName="subtask_name" />
+                <ScalarProperty Name="subtask_id" ColumnName="subtask_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

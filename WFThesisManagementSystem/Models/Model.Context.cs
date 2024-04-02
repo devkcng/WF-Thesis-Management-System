@@ -32,5 +32,7 @@ namespace WFThesisManagementSystem.Models
         public virtual DbSet<TeacherAccount> TeacherAccounts { get; set; }
         public virtual DbSet<Teacher> Teachers { get; set; }
         public virtual DbSet<Topic> Topics { get; set; }
+        public virtual DbSet<Task> Tasks { get; set; }
+        public virtual DbSet<SubTask> SubTasks { get; set; }
     }
 }

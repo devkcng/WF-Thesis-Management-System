@@ -19,6 +19,7 @@ namespace WFThesisManagementSystem.Models
         {
             this.RegisterQueues = new HashSet<RegisterQueue>();
             this.Students = new HashSet<Student>();
+            this.Tasks = new HashSet<Task>();
         }
     
         public int group_id { get; set; }
@@ -32,5 +33,7 @@ namespace WFThesisManagementSystem.Models
         public virtual Topic Topic { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Student> Students { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Task> Tasks { get; set; }
     }
 }

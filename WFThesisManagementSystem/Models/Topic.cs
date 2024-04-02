@@ -20,12 +20,7 @@ namespace WFThesisManagementSystem.Models
             this.RegisterQueues = new HashSet<RegisterQueue>();
             this.StudentGroups = new HashSet<StudentGroup>();
         }
-
-        public Topic(int parse, string text, string s, string toString, string toString1, string text1, int i)
-        {
-            
-        }
-
+    
         public int topic_id { get; set; }
         public string topic_name { get; set; }
         public string topic_description { get; set; }
