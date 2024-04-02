@@ -135,7 +135,6 @@
     </Compile>
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\RegisterQueueRepository.cs" />
-    <Compile Include="Repositories\RegistRepository.cs" />
     <Compile Include="Repositories\StudentAccountRepository.cs" />
     <Compile Include="Repositories\StudentGroupRepository.cs" />
     <Compile Include="Repositories\StudentRepository.cs" />
