@@ -28,110 +28,148 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.sdpsingletask = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.lblDueDate = new System.Windows.Forms.Label();
+            this.btnChat = new Guna.UI2.WinForms.Guna2Button();
+            this.lblOpenDate = new System.Windows.Forms.Label();
+            this.txtProjectDetail = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.guna2ShadowPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.sdpsingletask.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // guna2ShadowPanel1
+            // lblName
             // 
-            this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel1.Controls.Add(this.guna2Button1);
-            this.guna2ShadowPanel1.Controls.Add(this.label4);
-            this.guna2ShadowPanel1.Controls.Add(this.pictureBox1);
-            this.guna2ShadowPanel1.Controls.Add(this.label2);
-            this.guna2ShadowPanel1.Controls.Add(this.label1);
-            this.guna2ShadowPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
-            this.guna2ShadowPanel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
-            this.guna2ShadowPanel1.Radius = 10;
-            this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(897, 119);
-            this.guna2ShadowPanel1.TabIndex = 0;
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(5, 25);
+            this.lblName.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(820, 62);
+            this.lblName.TabIndex = 0;
+            this.lblName.Text = "Make an automatic payment system";
             // 
-            // guna2Button1
+            // sdpsingletask
             // 
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Image = global::WFThesisManagementSystem.Properties.Resources.Chat;
-            this.guna2Button1.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2Button1.Location = new System.Drawing.Point(768, 22);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(70, 69);
-            this.guna2Button1.TabIndex = 16;
+            this.sdpsingletask.BackColor = System.Drawing.Color.Transparent;
+            this.sdpsingletask.Controls.Add(this.guna2CirclePictureBox2);
+            this.sdpsingletask.Controls.Add(this.label1);
+            this.sdpsingletask.Controls.Add(this.txtProjectDetail);
+            this.sdpsingletask.Controls.Add(this.lblDueDate);
+            this.sdpsingletask.Controls.Add(this.lblOpenDate);
+            this.sdpsingletask.Controls.Add(this.btnChat);
+            this.sdpsingletask.Controls.Add(this.lblName);
+            this.sdpsingletask.FillColor = System.Drawing.Color.White;
+            this.sdpsingletask.Location = new System.Drawing.Point(8, 8);
+            this.sdpsingletask.Margin = new System.Windows.Forms.Padding(5);
+            this.sdpsingletask.Name = "sdpsingletask";
+            this.sdpsingletask.ShadowColor = System.Drawing.Color.Black;
+            this.sdpsingletask.Size = new System.Drawing.Size(1283, 322);
+            this.sdpsingletask.TabIndex = 8;
             // 
-            // label4
+            // lblDueDate
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(460, 67);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(139, 28);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Mai Duc Kien";
+            this.lblDueDate.AutoSize = true;
+            this.lblDueDate.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDueDate.Location = new System.Drawing.Point(430, 238);
+            this.lblDueDate.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblDueDate.Name = "lblDueDate";
+            this.lblDueDate.Size = new System.Drawing.Size(163, 46);
+            this.lblDueDate.TabIndex = 20;
+            this.lblDueDate.Text = "Due Date";
             // 
-            // pictureBox1
+            // btnChat
             // 
-            this.pictureBox1.Image = global::WFThesisManagementSystem.Properties.Resources.Idea;
-            this.pictureBox1.Location = new System.Drawing.Point(56, 33);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(56, 45);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
+            this.btnChat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnChat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnChat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnChat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnChat.FillColor = System.Drawing.Color.Transparent;
+            this.btnChat.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnChat.ForeColor = System.Drawing.Color.White;
+            this.btnChat.Image = global::WFThesisManagementSystem.Properties.Resources.Chat;
+            this.btnChat.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnChat.Location = new System.Drawing.Point(1155, 5);
+            this.btnChat.Margin = new System.Windows.Forms.Padding(5);
+            this.btnChat.Name = "btnChat";
+            this.btnChat.Size = new System.Drawing.Size(88, 119);
+            this.btnChat.TabIndex = 6;
             // 
-            // label2
+            // lblOpenDate
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(168, 67);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(286, 28);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "#402235 Opens 10 day ago by ";
+            this.lblOpenDate.AutoSize = true;
+            this.lblOpenDate.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOpenDate.Location = new System.Drawing.Point(13, 238);
+            this.lblOpenDate.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblOpenDate.Name = "lblOpenDate";
+            this.lblOpenDate.Size = new System.Drawing.Size(172, 46);
+            this.lblOpenDate.TabIndex = 19;
+            this.lblOpenDate.Text = "Open Day";
+            // 
+            // txtProjectDetail
+            // 
+            this.txtProjectDetail.BackColor = System.Drawing.Color.White;
+            this.txtProjectDetail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtProjectDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.txtProjectDetail.ForeColor = System.Drawing.Color.Silver;
+            this.txtProjectDetail.Location = new System.Drawing.Point(0, 116);
+            this.txtProjectDetail.Margin = new System.Windows.Forms.Padding(5);
+            this.txtProjectDetail.Multiline = true;
+            this.txtProjectDetail.Name = "txtProjectDetail";
+            this.txtProjectDetail.ReadOnly = true;
+            this.txtProjectDetail.Size = new System.Drawing.Size(1262, 117);
+            this.txtProjectDetail.TabIndex = 58;
+            this.txtProjectDetail.Text = "Project Detail: cjavebvveve";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(167, 22);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(806, 238);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(426, 32);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Make an automatic payment system";
+            this.label1.Size = new System.Drawing.Size(115, 46);
+            this.label1.TabIndex = 59;
+            this.label1.Text = "Status";
+            // 
+            // guna2CirclePictureBox2
+            // 
+            this.guna2CirclePictureBox2.Image = global::WFThesisManagementSystem.Properties.Resources.photo_2024_04_02_16_52_38;
+            this.guna2CirclePictureBox2.ImageRotate = 0F;
+            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(944, 238);
+            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
+            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(56, 53);
+            this.guna2CirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2CirclePictureBox2.TabIndex = 60;
+            this.guna2CirclePictureBox2.TabStop = false;
             // 
             // UCTask
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.guna2ShadowPanel1);
+            this.Controls.Add(this.sdpsingletask);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "UCTask";
-            this.Size = new System.Drawing.Size(897, 119);
-            this.guna2ShadowPanel1.ResumeLayout(false);
-            this.guna2ShadowPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Size = new System.Drawing.Size(1295, 322);
+            this.sdpsingletask.ResumeLayout(false);
+            this.sdpsingletask.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2Button btnChat;
+        private System.Windows.Forms.Label lblName;
+        private Guna.UI2.WinForms.Guna2ShadowPanel sdpsingletask;
+        private System.Windows.Forms.Label lblDueDate;
+        private System.Windows.Forms.Label lblOpenDate;
+        private System.Windows.Forms.TextBox txtProjectDetail;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
     }
 }
