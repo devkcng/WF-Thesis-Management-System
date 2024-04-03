@@ -21,7 +21,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
         public string Time
         {
             get { return time; }
-            set { time = value; lblTimeAndOrdinalNumber.Text = value; }
+            set { time = value; /*lblTimeAndOrdinalNumber.Text = value;*/ }
         }
         public string Name
         {
@@ -31,7 +31,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
         public string NameTeacher
         {
             get { return nameTeacher; }
-            set { nameTeacher = value; lblNameTeacher.Text = value; }
+            set { nameTeacher = value; /*lblNameTeacher.Text = value;*/ }
         }
         public Guna2Button Chat
         {
