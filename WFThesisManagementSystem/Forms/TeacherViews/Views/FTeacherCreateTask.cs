@@ -11,11 +11,13 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
     {
         int GroupId;
         TaskService _taskService;
-        public FTeacherCreateTask(int Id)
+        private ThesisManagementContext _context;
+        public FTeacherCreateTask(int Id, ThesisManagementContext context)
         {
             InitializeComponent();
             GroupId = Id;
             //_taskService = new TaskService(task);
+            _context = context;
             ucTeacherCreateTask1.btnClose.Click += Close;
             ucTeacherCreateTask1.btnSave.Click += Save;
         }
@@ -30,7 +32,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             task.task_description = ucTeacherCreateTask1.txtTaskDescription.Text;
             task.due_date = ucTeacherCreateTask1.dtpEndDate.Value;
             task.group_id = GroupId;
-            _taskService = new TaskService(task);
+            _taskService = new TaskService(task, _context);
             _taskService.CreateTask();
             this.Hide();
         }

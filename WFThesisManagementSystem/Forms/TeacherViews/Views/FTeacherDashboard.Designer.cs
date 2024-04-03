@@ -53,7 +53,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.ucTeacherAllTask1 = new UcTeacherAllTask();
-            this.ucTeacherAllTopics1 = new UcTeacherAllTopics();
+            this.ucTeacherAllTopics1 = new UcTeacherAllTopics(_context);
             this.ucTeacherEditInfor1 = new UcTeacherEditInfor();
             this.ucTeacherInfor1 = new UcTeacherInfor();
             this.Regist = new System.Windows.Forms.ToolStripMenuItem();
