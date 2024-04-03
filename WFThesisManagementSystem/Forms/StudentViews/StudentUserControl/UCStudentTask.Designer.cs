@@ -28,59 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblTasks = new System.Windows.Forms.Label();
             this.flpAllTasks = new System.Windows.Forms.FlowLayoutPanel();
-            this.flpAllGroupView = new System.Windows.Forms.FlowLayoutPanel();
+            this.flpAllMemberView = new System.Windows.Forms.FlowLayoutPanel();
             this.lblTo = new System.Windows.Forms.Label();
             this.lblFrom = new System.Windows.Forms.Label();
             this.dtpFrom = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.dtpTo = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.ucInvidualTaskView1 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCInvidualTaskView();
-            this.ucTask1 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCTask();
-            this.ucTask2 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCTask();
-            this.ucInvidualTaskView2 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCInvidualTaskView();
-            this.ucInvidualTaskView3 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCInvidualTaskView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.flpAllTasks.SuspendLayout();
-            this.flpAllGroupView.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblTasks
-            // 
-            this.lblTasks.AutoSize = true;
-            this.lblTasks.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTasks.Location = new System.Drawing.Point(29, 39);
-            this.lblTasks.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblTasks.Name = "lblTasks";
-            this.lblTasks.Size = new System.Drawing.Size(176, 63);
-            this.lblTasks.TabIndex = 20;
-            this.lblTasks.Text = "Tasks";
             // 
             // flpAllTasks
             // 
             this.flpAllTasks.AutoScroll = true;
-            this.flpAllTasks.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flpAllTasks.Controls.Add(this.ucInvidualTaskView1);
-            this.flpAllTasks.Controls.Add(this.ucInvidualTaskView2);
-            this.flpAllTasks.Controls.Add(this.ucInvidualTaskView3);
-            this.flpAllTasks.Location = new System.Drawing.Point(1421, 209);
+            this.flpAllTasks.BackColor = System.Drawing.SystemColors.Control;
+            this.flpAllTasks.Location = new System.Drawing.Point(1073, 249);
             this.flpAllTasks.Margin = new System.Windows.Forms.Padding(5);
             this.flpAllTasks.Name = "flpAllTasks";
-            this.flpAllTasks.Size = new System.Drawing.Size(1366, 1217);
+            this.flpAllTasks.Size = new System.Drawing.Size(1701, 1217);
             this.flpAllTasks.TabIndex = 19;
             // 
-            // flpAllGroupView
+            // flpAllMemberView
             // 
-            this.flpAllGroupView.AutoScroll = true;
-            this.flpAllGroupView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flpAllGroupView.Controls.Add(this.ucTask1);
-            this.flpAllGroupView.Controls.Add(this.ucTask2);
-            this.flpAllGroupView.Location = new System.Drawing.Point(34, 209);
-            this.flpAllGroupView.Margin = new System.Windows.Forms.Padding(5);
-            this.flpAllGroupView.Name = "flpAllGroupView";
-            this.flpAllGroupView.Size = new System.Drawing.Size(1366, 1217);
-            this.flpAllGroupView.TabIndex = 22;
+            this.flpAllMemberView.AutoScroll = true;
+            this.flpAllMemberView.Location = new System.Drawing.Point(16, 249);
+            this.flpAllMemberView.Margin = new System.Windows.Forms.Padding(5);
+            this.flpAllMemberView.Name = "flpAllMemberView";
+            this.flpAllMemberView.Size = new System.Drawing.Size(938, 1217);
+            this.flpAllMemberView.TabIndex = 22;
             // 
             // lblTo
             // 
@@ -136,64 +111,27 @@
             this.dtpTo.TabIndex = 23;
             this.dtpTo.Value = new System.DateTime(2024, 4, 2, 16, 36, 24, 159);
             // 
-            // ucInvidualTaskView1
-            // 
-            this.ucInvidualTaskView1.Location = new System.Drawing.Point(3, 3);
-            this.ucInvidualTaskView1.Name = "ucInvidualTaskView1";
-            this.ucInvidualTaskView1.Size = new System.Drawing.Size(1357, 322);
-            this.ucInvidualTaskView1.TabIndex = 0;
-            // 
-            // ucTask1
-            // 
-            this.ucTask1.Location = new System.Drawing.Point(5, 5);
-            this.ucTask1.Margin = new System.Windows.Forms.Padding(5);
-            this.ucTask1.Name = "ucTask1";
-            this.ucTask1.Size = new System.Drawing.Size(1357, 322);
-            this.ucTask1.TabIndex = 0;
-            // 
-            // ucTask2
-            // 
-            this.ucTask2.Location = new System.Drawing.Point(5, 337);
-            this.ucTask2.Margin = new System.Windows.Forms.Padding(5);
-            this.ucTask2.Name = "ucTask2";
-            this.ucTask2.Size = new System.Drawing.Size(1357, 322);
-            this.ucTask2.TabIndex = 1;
-            // 
-            // ucInvidualTaskView2
-            // 
-            this.ucInvidualTaskView2.Location = new System.Drawing.Point(3, 331);
-            this.ucInvidualTaskView2.Name = "ucInvidualTaskView2";
-            this.ucInvidualTaskView2.Size = new System.Drawing.Size(1357, 322);
-            this.ucInvidualTaskView2.TabIndex = 1;
-            // 
-            // ucInvidualTaskView3
-            // 
-            this.ucInvidualTaskView3.Location = new System.Drawing.Point(3, 659);
-            this.ucInvidualTaskView3.Name = "ucInvidualTaskView3";
-            this.ucInvidualTaskView3.Size = new System.Drawing.Size(1357, 322);
-            this.ucInvidualTaskView3.TabIndex = 2;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(23, 141);
+            this.label1.Location = new System.Drawing.Point(5, 134);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(346, 63);
+            this.label1.Size = new System.Drawing.Size(259, 63);
             this.label1.TabIndex = 27;
-            this.label1.Text = "Group Tasks";
+            this.label1.Text = "Members";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(1414, 141);
+            this.label2.Location = new System.Drawing.Point(1062, 150);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(387, 63);
+            this.label2.Size = new System.Drawing.Size(176, 63);
             this.label2.TabIndex = 28;
-            this.label2.Text = "Invidual Tasks";
+            this.label2.Text = "Tasks";
             // 
             // UCStudentTask
             // 
@@ -201,38 +139,28 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblTasks);
             this.Controls.Add(this.flpAllTasks);
-            this.Controls.Add(this.flpAllGroupView);
+            this.Controls.Add(this.flpAllMemberView);
             this.Controls.Add(this.lblTo);
             this.Controls.Add(this.lblFrom);
             this.Controls.Add(this.dtpFrom);
             this.Controls.Add(this.dtpTo);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "UCStudentTask";
             this.Size = new System.Drawing.Size(2816, 1516);
-            this.flpAllTasks.ResumeLayout(false);
-            this.flpAllGroupView.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        public System.Windows.Forms.Label lblTasks;
-        private System.Windows.Forms.FlowLayoutPanel flpAllTasks;
-        private System.Windows.Forms.FlowLayoutPanel flpAllGroupView;
         private System.Windows.Forms.Label lblTo;
         private System.Windows.Forms.Label lblFrom;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpFrom;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpTo;
-        private UCInvidualTaskView ucInvidualTaskView1;
-        private UCInvidualTaskView ucInvidualTaskView2;
-        private UCInvidualTaskView ucInvidualTaskView3;
-        private UCTask ucTask1;
-        private UCTask ucTask2;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.FlowLayoutPanel flpAllMemberView;
+        public System.Windows.Forms.FlowLayoutPanel flpAllTasks;
     }
 }
