@@ -13,39 +13,33 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         public FStudentDashboard()
         {
             InitializeComponent();
+            ucsTudentSubTasks1.Hide();
+            ucStudentTask1.Hide();
+            ucStudentWorkLogs1.Hide();
 
-        }
-
-
-        private void addUserControl(UserControl userControl)
-        {
-            userControl.Dock = DockStyle.Fill;
-            panelContainer.Controls.Clear();
-            panelContainer.Controls.Add(userControl);
-            userControl.BringToFront();
         }
         private void bookToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //UCStudentProject uc = new UCStudentProject(student.student_id);
-            //addUserControl(uc);
+
         }
 
         private void task_Click(object sender, EventArgs e)
         {
-            UCStudentTask uc = new UCStudentTask();
-            addUserControl(uc);
+            ucsTudentSubTasks1.Hide();
+            ucStudentTask1.Show();
+            ucStudentWorkLogs1.Hide();
         }
 
         private void worklogs_Click(object sender, EventArgs e)
         {
-            UCStudentWorkLogs uc = new UCStudentWorkLogs();
-            addUserControl(uc);
+            ucsTudentSubTasks1.Hide();
+            ucStudentTask1.Hide();
+            ucStudentWorkLogs1.Show();
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            UcTeacherInfor uc = new UcTeacherInfor();
-            addUserControl(uc);
+
         }
 
         private void logout_Click(object sender, EventArgs e)
