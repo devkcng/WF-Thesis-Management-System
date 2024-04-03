@@ -38,9 +38,11 @@ namespace WFThesisManagementSystem.Repositories
         }
 
         public void Delete(Task entity)
-        {
-           _context.Tasks.Remove(entity);
-           _context.SaveChanges();
+        { 
+            //delete task by _context
+            _context.Tasks.Attach(entity);
+            _context.Tasks.Remove(entity);
+            _context.SaveChanges();
         }
         //get task by group id
 
