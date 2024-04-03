@@ -13,10 +13,11 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
     {
         TopicRepository _topicRepository;
         StudentGroupRepository _studentGroupRepository;
-        public UcTeacherSingleTopic()
+        ThesisManagementContext _context;
+        public UcTeacherSingleTopic(ThesisManagementContext context)
         {
             InitializeComponent();
-            var _context = new ThesisManagementContext();
+            _context = context;
             _topicRepository = new TopicRepository(_context);
             _studentGroupRepository = new StudentGroupRepository(_context);
         }
