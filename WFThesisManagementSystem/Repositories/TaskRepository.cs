@@ -42,5 +42,18 @@ namespace WFThesisManagementSystem.Repositories
            _context.Tasks.Remove(entity);
            _context.SaveChanges();
         }
+        //get task by group id
+
+        public IQueryable<Task> GetTaskByGroupId(int groupId)
+        {
+            return _context.Tasks.Where(x => x.group_id == groupId);
+        }
+
+        //get task by task name
+
+        public Task GetTaskByTaskName(string taskName)
+        {
+            return _context.Tasks.FirstOrDefault(x => x.task_name == taskName);
+        }
     }
 }
