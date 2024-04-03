@@ -33,21 +33,15 @@
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.txtTaskId = new Guna.UI2.WinForms.Guna2TextBox();
-            this.lblTaskId = new System.Windows.Forms.Label();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.txtTaskDescription = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblTaskDescription = new System.Windows.Forms.Label();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.lblEndDate = new System.Windows.Forms.Label();
-            this.lblStartdate = new System.Windows.Forms.Label();
             this.dtpEndDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.dtpStartdate = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.txtTaskName = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblTaskName = new System.Windows.Forms.Label();
-            this.guna2Panel2.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -85,7 +79,7 @@
             this.btnClose.FillColor = System.Drawing.Color.WhiteSmoke;
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnClose.Location = new System.Drawing.Point(750, 771);
+            this.btnClose.Location = new System.Drawing.Point(751, 634);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(122, 56);
             this.btnClose.TabIndex = 7;
@@ -100,7 +94,7 @@
             this.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(445, 771);
+            this.btnDelete.Location = new System.Drawing.Point(429, 634);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(126, 56);
             this.btnDelete.TabIndex = 54;
@@ -115,61 +109,17 @@
             this.btnUpdate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(598, 771);
+            this.btnUpdate.Location = new System.Drawing.Point(591, 634);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(126, 56);
             this.btnUpdate.TabIndex = 53;
             this.btnUpdate.Text = "Update";
             // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.Controls.Add(this.txtTaskId);
-            this.guna2Panel2.Controls.Add(this.lblTaskId);
-            this.guna2Panel2.Location = new System.Drawing.Point(136, 400);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(635, 84);
-            this.guna2Panel2.TabIndex = 66;
-            // 
-            // txtTaskId
-            // 
-            this.txtTaskId.BorderColor = System.Drawing.Color.Gainsboro;
-            this.txtTaskId.BorderRadius = 8;
-            this.txtTaskId.BorderThickness = 2;
-            this.txtTaskId.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTaskId.DefaultText = "";
-            this.txtTaskId.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtTaskId.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTaskId.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTaskId.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTaskId.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTaskId.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTaskId.ForeColor = System.Drawing.Color.Black;
-            this.txtTaskId.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTaskId.Location = new System.Drawing.Point(19, 39);
-            this.txtTaskId.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.txtTaskId.Name = "txtTaskId";
-            this.txtTaskId.PasswordChar = '\0';
-            this.txtTaskId.PlaceholderText = "";
-            this.txtTaskId.SelectedText = "";
-            this.txtTaskId.Size = new System.Drawing.Size(595, 39);
-            this.txtTaskId.TabIndex = 1;
-            // 
-            // lblTaskId
-            // 
-            this.lblTaskId.AutoSize = true;
-            this.lblTaskId.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTaskId.ForeColor = System.Drawing.Color.White;
-            this.lblTaskId.Location = new System.Drawing.Point(14, 10);
-            this.lblTaskId.Name = "lblTaskId";
-            this.lblTaskId.Size = new System.Drawing.Size(111, 28);
-            this.lblTaskId.TabIndex = 0;
-            this.lblTaskId.Text = "Task Id *";
-            // 
             // guna2Panel4
             // 
             this.guna2Panel4.Controls.Add(this.txtTaskDescription);
             this.guna2Panel4.Controls.Add(this.lblTaskDescription);
-            this.guna2Panel4.Location = new System.Drawing.Point(135, 549);
+            this.guna2Panel4.Location = new System.Drawing.Point(135, 414);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(635, 149);
             this.guna2Panel4.TabIndex = 65;
@@ -212,12 +162,10 @@
             // guna2Panel3
             // 
             this.guna2Panel3.Controls.Add(this.lblEndDate);
-            this.guna2Panel3.Controls.Add(this.lblStartdate);
             this.guna2Panel3.Controls.Add(this.dtpEndDate);
-            this.guna2Panel3.Controls.Add(this.dtpStartdate);
-            this.guna2Panel3.Location = new System.Drawing.Point(135, 256);
+            this.guna2Panel3.Location = new System.Drawing.Point(135, 272);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(636, 93);
+            this.guna2Panel3.Size = new System.Drawing.Size(636, 104);
             this.guna2Panel3.TabIndex = 64;
             // 
             // lblEndDate
@@ -225,22 +173,11 @@
             this.lblEndDate.AutoSize = true;
             this.lblEndDate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEndDate.ForeColor = System.Drawing.Color.White;
-            this.lblEndDate.Location = new System.Drawing.Point(328, 10);
+            this.lblEndDate.Location = new System.Drawing.Point(27, 13);
             this.lblEndDate.Name = "lblEndDate";
             this.lblEndDate.Size = new System.Drawing.Size(134, 28);
             this.lblEndDate.TabIndex = 56;
             this.lblEndDate.Text = "End Date *";
-            // 
-            // lblStartdate
-            // 
-            this.lblStartdate.AutoSize = true;
-            this.lblStartdate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStartdate.ForeColor = System.Drawing.Color.White;
-            this.lblStartdate.Location = new System.Drawing.Point(14, 10);
-            this.lblStartdate.Name = "lblStartdate";
-            this.lblStartdate.Size = new System.Drawing.Size(142, 28);
-            this.lblStartdate.TabIndex = 7;
-            this.lblStartdate.Text = "Start Date *";
             // 
             // dtpEndDate
             // 
@@ -251,32 +188,14 @@
             this.dtpEndDate.Checked = true;
             this.dtpEndDate.FillColor = System.Drawing.Color.White;
             this.dtpEndDate.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpEndDate.Location = new System.Drawing.Point(333, 41);
+            this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpEndDate.Location = new System.Drawing.Point(32, 44);
             this.dtpEndDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpEndDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpEndDate.Name = "dtpEndDate";
-            this.dtpEndDate.Size = new System.Drawing.Size(281, 52);
+            this.dtpEndDate.Size = new System.Drawing.Size(576, 52);
             this.dtpEndDate.TabIndex = 54;
             this.dtpEndDate.Value = new System.DateTime(2024, 3, 13, 10, 7, 4, 277);
-            // 
-            // dtpStartdate
-            // 
-            this.dtpStartdate.BackColor = System.Drawing.SystemColors.Control;
-            this.dtpStartdate.BorderColor = System.Drawing.Color.Gainsboro;
-            this.dtpStartdate.BorderRadius = 8;
-            this.dtpStartdate.BorderThickness = 2;
-            this.dtpStartdate.Checked = true;
-            this.dtpStartdate.FillColor = System.Drawing.Color.White;
-            this.dtpStartdate.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpStartdate.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpStartdate.Location = new System.Drawing.Point(19, 41);
-            this.dtpStartdate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpStartdate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpStartdate.Name = "dtpStartdate";
-            this.dtpStartdate.Size = new System.Drawing.Size(294, 52);
-            this.dtpStartdate.TabIndex = 5;
-            this.dtpStartdate.Value = new System.DateTime(2024, 3, 13, 10, 6, 52, 315);
             // 
             // guna2Panel1
             // 
@@ -300,7 +219,7 @@
             this.txtTaskName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.txtTaskName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTaskName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTaskName.ForeColor = System.Drawing.Color.White;
+            this.txtTaskName.ForeColor = System.Drawing.Color.Black;
             this.txtTaskName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTaskName.Location = new System.Drawing.Point(22, 48);
             this.txtTaskName.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
@@ -327,7 +246,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel4);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel1);
@@ -337,9 +255,7 @@
             this.Controls.Add(this.lblNote);
             this.Controls.Add(this.lblTitle);
             this.Name = "UcTeacherEditTask";
-            this.Size = new System.Drawing.Size(907, 871);
-            this.guna2Panel2.ResumeLayout(false);
-            this.guna2Panel2.PerformLayout();
+            this.Size = new System.Drawing.Size(907, 742);
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel4.PerformLayout();
             this.guna2Panel3.ResumeLayout(false);
@@ -357,17 +273,12 @@
         public Guna.UI2.WinForms.Guna2Button btnClose;
         public Guna.UI2.WinForms.Guna2Button btnDelete;
         public Guna.UI2.WinForms.Guna2Button btnUpdate;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
-        public Guna.UI2.WinForms.Guna2TextBox txtTaskId;
-        public System.Windows.Forms.Label lblTaskId;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
         public Guna.UI2.WinForms.Guna2TextBox txtTaskDescription;
         public System.Windows.Forms.Label lblTaskDescription;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private System.Windows.Forms.Label lblEndDate;
-        private System.Windows.Forms.Label lblStartdate;
         public Guna.UI2.WinForms.Guna2DateTimePicker dtpEndDate;
-        public Guna.UI2.WinForms.Guna2DateTimePicker dtpStartdate;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         public Guna.UI2.WinForms.Guna2TextBox txtTaskName;
         private System.Windows.Forms.Label lblTaskName;
