@@ -22,7 +22,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.StudentUserControl
         {
             for (int i = 0; i < 10; i++)
             {
-                UCSubTask uc = new UCSubTask();
+                UCSubTasks uc = new UCSubTasks();
                 flpAllSubTasksView.Controls.Add(uc);
 
                 UCStudentInfo ucstudentinfo = new UCStudentInfo();
