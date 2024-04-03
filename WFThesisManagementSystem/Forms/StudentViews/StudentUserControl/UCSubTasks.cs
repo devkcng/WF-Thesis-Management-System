@@ -14,7 +14,9 @@ namespace WFThesisManagementSystem.Forms.StudentViews.StudentUserControl
     {
         public UCSubTasks()
         {
+
             InitializeComponent();
+
         }
     }
 }
