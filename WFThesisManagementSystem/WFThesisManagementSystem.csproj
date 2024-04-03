@@ -98,6 +98,8 @@
       <DependentUpon>UcTeacherSingleGroup.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\CountNumberOfGroupHelper.cs" />
+    <Compile Include="Helper\DbContextHelper.cs" />
+    <Compile Include="Helper\FilterByDayHelper.cs" />
     <Compile Include="Helper\UserSessionHelper.cs" />
     <Compile Include="Helper\ValidationInformation.cs" />
     <Compile Include="Models\Model.Context.cs">
