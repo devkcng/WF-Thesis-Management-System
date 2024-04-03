@@ -38,10 +38,9 @@ namespace WFThesisManagementSystem.Forms.StudentViews.StudentUserControl
             Clicked?.Invoke(this, e);
         }
 
+        private void sdpsingletask_Paint(object sender, PaintEventArgs e)
+        {
 
-
-
-
-
+        }
     }
 }
