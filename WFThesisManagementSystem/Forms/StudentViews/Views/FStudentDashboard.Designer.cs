@@ -256,8 +256,7 @@
             this.toolStripMenuItem1.Size = new System.Drawing.Size(202, 58);
             this.toolStripMenuItem1.Text = "Profile";
             this.toolStripMenuItem1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
-            // 
+
             // panel2
             // 
             this.panel2.AutoSize = true;
@@ -269,7 +268,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(328, 1240);
             this.panel2.TabIndex = 3;
-            // 
+            this.ucStudentTask1.Load += new System.EventHandler(this.ucStudentTask1_Load);
             // panelContainer
             // 
             this.panelContainer.Controls.Add(this.ucsTudentSubTasks1);
