@@ -28,18 +28,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             try
             {
 
-                var task = new Task
-                {
-                    task_id = _task.task_id,
-                    task_name = ucTeacherEditTask1.txtTaskName.Text,
-                    task_description = ucTeacherEditTask1.txtTaskDescription.Text,
-                    open_day = _task.open_day,
-                    due_date = ucTeacherEditTask1.dtpDueDate.Value,
-                    submit_day = _task.submit_day,
-                    group_id = _task.group_id
-                };
-
-                var taskService = new TaskService(task, _context);
+                var taskService = new TaskService(_task, _context);
 
                 taskService.UpdateTask();
                 this.Close();

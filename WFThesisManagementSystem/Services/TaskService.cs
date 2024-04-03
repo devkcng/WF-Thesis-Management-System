@@ -21,9 +21,23 @@ namespace WFThesisManagementSystem.Services
         public void CreateTask()
         {
             var idGeneratorHelper = new IdGeneratorHelper();
-            _task.task_id = idGeneratorHelper.GenerateTaskId();
-            _task.open_day = System.DateTime.Now;
-            _taskRepository.Add(_task);
+            //_task.task_id = idGeneratorHelper.GenerateTaskId();
+            //_task.open_day = System.DateTime.Now;
+            //_taskRepository.Add(_task);
+
+            var task = new Task
+            {
+                task_id = idGeneratorHelper.GenerateTaskId(),
+                task_name = _task.task_name,
+                task_description = _task.task_description,
+                due_date = _task.due_date,
+                group_id = _task.group_id,
+                open_day = System.DateTime.Now
+            };
+
+            _taskRepository.Add(task);
+
+            MessageBox.Show("Created");
         }
         // handle logic of updating a task by teacher
         public void UpdateTask()
