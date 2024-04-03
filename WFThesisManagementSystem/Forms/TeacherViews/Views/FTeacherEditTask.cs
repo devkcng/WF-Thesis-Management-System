@@ -41,16 +41,8 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
 
                 var taskService = new TaskService(task, _context);
 
-                if (taskService.UpdateTask())
-                {
-                    MessageBox.Show("Task updated successfully");
-
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Task update failed");
-                }
+                taskService.UpdateTask();
+                this.Close();
 
             }
             catch (Exception ex)

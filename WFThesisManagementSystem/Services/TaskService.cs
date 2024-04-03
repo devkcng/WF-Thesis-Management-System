@@ -1,4 +1,6 @@
-﻿using WFThesisManagementSystem.Helper;
+﻿using System;
+using System.Windows.Forms;
+using WFThesisManagementSystem.Helper;
 using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.Repositories;
 
@@ -7,11 +9,11 @@ namespace WFThesisManagementSystem.Services
     internal class TaskService
     {
         TaskRepository _taskRepository;
-        Task _task;
-
-        public TaskService(Task task)
+        public Task _task;
+        ThesisManagementContext _context;
+        public TaskService(Task task, ThesisManagementContext context)
         {
-            var _context = new ThesisManagementContext();
+            _context = context;
             _taskRepository = new TaskRepository(_context);
             _task = task;
         }
@@ -25,14 +27,16 @@ namespace WFThesisManagementSystem.Services
         }
         // handle logic of updating a task by teacher
         public void UpdateTask()
-        {
+        {   
             _taskRepository.Update(_task);
+            MessageBox.Show("Updated");
         }
 
         // handle logic of deleting a task by teacher
         public void DeleteTask()
         {
             _taskRepository.Delete(_task);
+            MessageBox.Show("Deleted");
         }
 
         // handle logic of submiiing a task by student
