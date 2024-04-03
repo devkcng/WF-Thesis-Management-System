@@ -15,13 +15,14 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         StudentGroupRepository _studentGroupRepository;
         RegisterQueueRepository _registerQueue;
         UserSessionHelper _userSessionHelper = UserSessionHelper.Instance;
-        public FRegisterTopic(Topic topic)
+        private ThesisManagementContext _context;
+        public FRegisterTopic(Topic topic, ThesisManagementContext context)
         {
             InitializeComponent();
-            var context = new ThesisManagementContext();
-            _studentRepository = new StudentRepository(context);
-            _studentGroupRepository = new StudentGroupRepository(context);
-            _registerQueue = new RegisterQueueRepository(context);
+            _context = context;
+            _studentRepository = new StudentRepository(_context);
+            _studentGroupRepository = new StudentGroupRepository(_context);
+            _registerQueue = new RegisterQueueRepository(_context);
             this._topic = topic;
         }
 
@@ -39,7 +40,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             {
                 MessageBox.Show("Register successfully");
                 this.Close();
-                FStudentRegisterTopic fStudentRegisterTopic = new FStudentRegisterTopic();
+                FStudentRegisterTopic fStudentRegisterTopic = new FStudentRegisterTopic(_context);
                 fStudentRegisterTopic.Show();
             }
             else
@@ -51,7 +52,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
-            FStudentRegisterTopic fStudentRegisterTopic = new FStudentRegisterTopic();
+            FStudentRegisterTopic fStudentRegisterTopic = new FStudentRegisterTopic(_context);
             fStudentRegisterTopic.Show();
         }
 

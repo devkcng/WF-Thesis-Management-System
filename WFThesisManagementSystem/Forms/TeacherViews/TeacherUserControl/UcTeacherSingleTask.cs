@@ -7,51 +7,52 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
 {
     public partial class UcTeacherSingleTask : UserControl
     {
+        public event EventHandler EditButtonClicked; 
+        public event EventHandler SubmitButtonClicked;
         public UcTeacherSingleTask()
         {
             InitializeComponent();
+            //btnEdit.Click += btnEdit_Click;
         }
+        
         #region Properties
         private string name;
-        private string nameTeacher;
-        private string time;
-        private Guna2Button chat;
-        private PictureBox image;
+        private DateTime timeOpen;
+        private DateTime timeEnd;
 
-        public string Time
+        public DateTime TimeOpen
         {
-            get { return time; }
-            set { time = value; /*lblTimeAndOrdinalNumber.Text = value;*/ }
+            get { return timeOpen; }
+            set { timeOpen = value; dtpFrom.Value = value;/*lblTimeAndOrdinalNumber.Text = value;*/ }
+        }
+        public DateTime TimeEnd
+        {
+            get { return timeEnd; }
+            set { timeEnd = value; dtpTo.Value = value; }
         }
         public string Name
         {
             get { return name; }
             set { name = value; lblName.Text = value; }
         }
-        public string NameTeacher
-        {
-            get { return nameTeacher; }
-            set { nameTeacher = value; /*lblNameTeacher.Text = value;*/ }
-        }
-        public Guna2Button Chat
-        {
-            get { return chat; }
-            set { chat = value; btnChat = value; }
-
-        }
-        public PictureBox Image
-        {
-            get { return image; }
-            set { image = value; ptbImage = value; }
-        }
         #endregion
 
-        private void btnChat_Click(object sender, EventArgs e)
+        private void btnEdit_Click(object sender, EventArgs e)
         {
-            //DBConnect dBConnect = new DBConnect();
-            //DataTable dataTable = dBConnect.LoadData("Tasks");
-            FTeacherEditTask fTeacherEditTask = new FTeacherEditTask();
-            fTeacherEditTask.Show();
+            OnEditButtonClicked(EventArgs.Empty);
+        }
+        protected virtual void OnEditButtonClicked(EventArgs e)
+        {
+            EditButtonClicked?.Invoke(this, e);
+        }
+
+        private void cbSubmitTask_CheckedChanged(object sender, EventArgs e)
+        {
+            OnSubmitButtonClicked(EventArgs.Empty);
+        }
+        protected virtual void OnSubmitButtonClicked(EventArgs e)
+        {
+            SubmitButtonClicked?.Invoke(this, e);
         }
     }
 }

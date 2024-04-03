@@ -33,8 +33,8 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
             this.lblTopics = new System.Windows.Forms.Label();
             this.flpTopicView = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCreate = new Guna.UI2.WinForms.Guna2Button();
-            this.ucTeacherSingleTopic1 = new UcTeacherSingleTopic();
-            this.ucTeacherSingleTopic2 = new UcTeacherSingleTopic();
+            this.ucTeacherSingleTopic1 = new UcTeacherSingleTopic(_context);
+            this.ucTeacherSingleTopic2 = new UcTeacherSingleTopic(_context);
             this.ucTask1 = new UCTask();
             this.flpTopicView.SuspendLayout();
             this.SuspendLayout();

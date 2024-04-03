@@ -91,37 +91,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\StudentViews\StudentUserControl\UCInvidualTaskView.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSingleGroup.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\StudentViews\StudentUserControl\UCInvidualTaskView.Designer.cs">
-      <DependentUpon>UCInvidualTaskView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentInformation.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentInformation.Designer.cs">
-      <DependentUpon>UCStudentInformation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentSubTasks.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentSubTasks.Designer.cs">
-      <DependentUpon>UCStudentSubTasks.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\StudentViews\StudentUserControl\UCSubTasks.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\StudentViews\StudentUserControl\UCSubTasks.Designer.cs">
-      <DependentUpon>UCSubTasks.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcSingleGroup.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcSingleGroup.Designer.cs">
-      <DependentUpon>UcSingleGroup.cs</DependentUpon>
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSingleGroup.Designer.cs">
+      <DependentUpon>UcTeacherSingleGroup.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\CountNumberOfGroupHelper.cs" />
+    <Compile Include="Helper\FilterByDayHelper.cs" />
     <Compile Include="Helper\UserSessionHelper.cs" />
     <Compile Include="Helper\ValidationInformation.cs" />
     <Compile Include="Models\Model.Context.cs">
@@ -376,25 +353,14 @@
     <Compile Include="Helper\SearchEngineHelper\FileGenerator.cs" />
     <Compile Include="Helper\SearchEngineHelper\TFIDF.cs" />
     <Compile Include="Services\RegistrationService.cs" />
+    <Compile Include="Services\TaskService.cs" />
     <Compile Include="Services\TopicAcceptService.cs" />
     <Compile Include="Services\TopicService.cs" />
     <EmbeddedResource Include="Forms\FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCInvidualTaskView.resx">
-      <DependentUpon>UCInvidualTaskView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCStudentInformation.resx">
-      <DependentUpon>UCStudentInformation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCStudentSubTasks.resx">
-      <DependentUpon>UCStudentSubTasks.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCSubTasks.resx">
-      <DependentUpon>UCSubTasks.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcSingleGroup.resx">
-      <DependentUpon>UcSingleGroup.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSingleGroup.resx">
+      <DependentUpon>UcTeacherSingleGroup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

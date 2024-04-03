@@ -1,6 +1,6 @@
 ﻿namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
 {
-    partial class UcSingleGroup
+    partial class UcTeacherSingleGroup
     {
         /// <summary> 
         /// Required designer variable.

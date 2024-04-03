@@ -30,7 +30,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucTeacherCreateTask1 = new UcTeacherCreateTask();
+            this.ucTeacherCreateTask1 = new WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl.UcTeacherCreateTask();
             this.SuspendLayout();
             // 
             // ucTeacherCreateTask1
@@ -51,6 +51,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             this.ClientSize = new System.Drawing.Size(885, 823);
             this.Controls.Add(this.ucTeacherCreateTask1);
             this.Name = "FTeacherCreateTask";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FTeacherCreateTask";
             this.ResumeLayout(false);
 

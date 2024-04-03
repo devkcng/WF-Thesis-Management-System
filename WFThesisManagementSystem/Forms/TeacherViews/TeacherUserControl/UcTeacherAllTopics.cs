@@ -9,10 +9,11 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
     {
         private Topic _topic;
         TopicRepository _topicRepository;
-        public UcTeacherAllTopics()
+        private ThesisManagementContext _context;
+        public UcTeacherAllTopics(ThesisManagementContext context)
         {
             InitializeComponent();
-            var _context = new ThesisManagementContext();
+            _context = context;
             _topicRepository = new TopicRepository(_context);
 
 
@@ -30,7 +31,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
             foreach (var topic in Table)
             {
                 _topic = new Topic();
-                UcTeacherSingleTopic singletopic = new UcTeacherSingleTopic();
+                UcTeacherSingleTopic singletopic = new UcTeacherSingleTopic(_context);
                 _topic.topic_name = topic.topic_name;
                 _topic.topic_description = topic.topic_description;
                 singletopic.SetTopic(_topic);
