@@ -32,12 +32,12 @@
             this.btnCreate = new Guna.UI2.WinForms.Guna2Button();
             this.flpAllTasks = new System.Windows.Forms.FlowLayoutPanel();
             this.flpAllGroupView = new System.Windows.Forms.FlowLayoutPanel();
+            this.ucSingleGroup1 = new WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl.UcTeacherSingleGroup();
             this.dtpTo = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.dtpFrom = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.ucTeacherSingleTask1 = new WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl.UcTeacherSingleTask();
-            this.ucSingleGroup1 = new WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl.UcSingleGroup();
             this.lblFrom = new System.Windows.Forms.Label();
             this.lblTo = new System.Windows.Forms.Label();
+            this.ucTeacherSingleTask1 = new WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl.UcTeacherSingleTask();
             this.flpAllTasks.SuspendLayout();
             this.flpAllGroupView.SuspendLayout();
             this.SuspendLayout();
@@ -74,7 +74,7 @@
             this.flpAllTasks.Controls.Add(this.ucTeacherSingleTask1);
             this.flpAllTasks.Location = new System.Drawing.Point(727, 113);
             this.flpAllTasks.Name = "flpAllTasks";
-            this.flpAllTasks.Size = new System.Drawing.Size(811, 786);
+            this.flpAllTasks.Size = new System.Drawing.Size(767, 786);
             this.flpAllTasks.TabIndex = 6;
             // 
             // flpAllGroupView
@@ -86,6 +86,13 @@
             this.flpAllGroupView.Name = "flpAllGroupView";
             this.flpAllGroupView.Size = new System.Drawing.Size(635, 786);
             this.flpAllGroupView.TabIndex = 14;
+            // 
+            // ucSingleGroup1
+            // 
+            this.ucSingleGroup1.Location = new System.Drawing.Point(3, 3);
+            this.ucSingleGroup1.Name = "ucSingleGroup1";
+            this.ucSingleGroup1.Size = new System.Drawing.Size(626, 150);
+            this.ucSingleGroup1.TabIndex = 0;
             // 
             // dtpTo
             // 
@@ -117,24 +124,6 @@
             this.dtpFrom.TabIndex = 16;
             this.dtpFrom.Value = new System.DateTime(2024, 4, 2, 15, 42, 12, 488);
             // 
-            // ucTeacherSingleTask1
-            // 
-            this.ucTeacherSingleTask1.Chat = null;
-            this.ucTeacherSingleTask1.Image = null;
-            this.ucTeacherSingleTask1.Location = new System.Drawing.Point(3, 3);
-            this.ucTeacherSingleTask1.Name = "ucTeacherSingleTask1";
-            this.ucTeacherSingleTask1.NameTeacher = null;
-            this.ucTeacherSingleTask1.Size = new System.Drawing.Size(810, 156);
-            this.ucTeacherSingleTask1.TabIndex = 0;
-            this.ucTeacherSingleTask1.Time = null;
-            // 
-            // ucSingleGroup1
-            // 
-            this.ucSingleGroup1.Location = new System.Drawing.Point(3, 3);
-            this.ucSingleGroup1.Name = "ucSingleGroup1";
-            this.ucSingleGroup1.Size = new System.Drawing.Size(626, 150);
-            this.ucSingleGroup1.TabIndex = 0;
-            // 
             // lblFrom
             // 
             this.lblFrom.AutoSize = true;
@@ -154,6 +143,17 @@
             this.lblTo.Size = new System.Drawing.Size(44, 34);
             this.lblTo.TabIndex = 18;
             this.lblTo.Text = "To";
+            // 
+            // ucTeacherSingleTask1
+            // 
+            this.ucTeacherSingleTask1.Chat = null;
+            this.ucTeacherSingleTask1.Image = null;
+            this.ucTeacherSingleTask1.Location = new System.Drawing.Point(3, 3);
+            this.ucTeacherSingleTask1.Name = "ucTeacherSingleTask1";
+            this.ucTeacherSingleTask1.NameTeacher = null;
+            this.ucTeacherSingleTask1.Size = new System.Drawing.Size(767, 207);
+            this.ucTeacherSingleTask1.TabIndex = 0;
+            this.ucTeacherSingleTask1.Time = null;
             // 
             // UcTeacherAllTask
             // 
@@ -185,9 +185,9 @@
         private System.Windows.Forms.FlowLayoutPanel flpAllGroupView;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpTo;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpFrom;
-        private UcTeacherSingleTask ucTeacherSingleTask1;
-        private UcSingleGroup ucSingleGroup1;
+        private UcTeacherSingleGroup ucSingleGroup1;
         private System.Windows.Forms.Label lblFrom;
         private System.Windows.Forms.Label lblTo;
+        private UcTeacherSingleTask ucTeacherSingleTask1;
     }
 }

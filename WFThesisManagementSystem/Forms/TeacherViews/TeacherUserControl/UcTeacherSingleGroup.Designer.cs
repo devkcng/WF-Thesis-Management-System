@@ -1,6 +1,6 @@
 ﻿namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
 {
-    partial class UcSingleGroup
+    partial class UcTeacherSingleGroup
     {
         /// <summary> 
         /// Required designer variable.
@@ -56,6 +56,7 @@
             this.lblNameGroup.Size = new System.Drawing.Size(88, 28);
             this.lblNameGroup.TabIndex = 6;
             this.lblNameGroup.Text = "Group 1";
+            this.lblNameGroup.Click += new System.EventHandler(this.lblNameGroup_Click);
             // 
             // guna2CirclePictureBox2
             // 
@@ -95,7 +96,7 @@
             this.btnTaskGroup.Size = new System.Drawing.Size(40, 40);
             this.btnTaskGroup.TabIndex = 11;
             // 
-            // UcSingleGroup
+            // UcTeacherSingleGroup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -104,7 +105,7 @@
             this.Controls.Add(this.guna2CirclePictureBox1);
             this.Controls.Add(this.lblIdGroup);
             this.Controls.Add(this.lblNameGroup);
-            this.Name = "UcSingleGroup";
+            this.Name = "UcTeacherSingleGroup";
             this.Size = new System.Drawing.Size(626, 150);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
