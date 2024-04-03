@@ -37,7 +37,7 @@
             this.dtpFrom = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.dtpTo = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.ptbImage = new System.Windows.Forms.PictureBox();
-            this.btnChat = new Guna.UI2.WinForms.Guna2Button();
+            this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
             this.sdpsingletask.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImage)).BeginInit();
             this.SuspendLayout();
@@ -46,10 +46,9 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(72, 8);
-            this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblName.Location = new System.Drawing.Point(108, 12);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(330, 25);
+            this.lblName.Size = new System.Drawing.Size(494, 38);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Make an automatic payment system";
             // 
@@ -63,14 +62,13 @@
             this.sdpsingletask.Controls.Add(this.dtpFrom);
             this.sdpsingletask.Controls.Add(this.dtpTo);
             this.sdpsingletask.Controls.Add(this.ptbImage);
-            this.sdpsingletask.Controls.Add(this.btnChat);
+            this.sdpsingletask.Controls.Add(this.btnEdit);
             this.sdpsingletask.Controls.Add(this.lblName);
             this.sdpsingletask.FillColor = System.Drawing.Color.White;
             this.sdpsingletask.Location = new System.Drawing.Point(0, 0);
-            this.sdpsingletask.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.sdpsingletask.Name = "sdpsingletask";
             this.sdpsingletask.ShadowColor = System.Drawing.Color.Black;
-            this.sdpsingletask.Size = new System.Drawing.Size(509, 135);
+            this.sdpsingletask.Size = new System.Drawing.Size(764, 208);
             this.sdpsingletask.TabIndex = 7;
             // 
             // cbSubmitTask
@@ -81,20 +79,19 @@
             this.cbSubmitTask.ImageOffset = new System.Drawing.Point(0, 0);
             this.cbSubmitTask.ImageRotate = 0F;
             this.cbSubmitTask.ImageSize = new System.Drawing.Size(40, 40);
-            this.cbSubmitTask.Location = new System.Drawing.Point(330, 73);
-            this.cbSubmitTask.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbSubmitTask.Location = new System.Drawing.Point(495, 112);
             this.cbSubmitTask.Name = "cbSubmitTask";
-            this.cbSubmitTask.Size = new System.Drawing.Size(38, 39);
+            this.cbSubmitTask.Size = new System.Drawing.Size(57, 60);
             this.cbSubmitTask.TabIndex = 22;
+            this.cbSubmitTask.CheckedChanged += new System.EventHandler(this.cbSubmitTask_CheckedChanged);
             // 
             // lblSubmitTask
             // 
             this.lblSubmitTask.AutoSize = true;
             this.lblSubmitTask.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubmitTask.Location = new System.Drawing.Point(313, 53);
-            this.lblSubmitTask.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSubmitTask.Location = new System.Drawing.Point(470, 82);
             this.lblSubmitTask.Name = "lblSubmitTask";
-            this.lblSubmitTask.Size = new System.Drawing.Size(85, 19);
+            this.lblSubmitTask.Size = new System.Drawing.Size(122, 28);
             this.lblSubmitTask.TabIndex = 21;
             this.lblSubmitTask.Text = "Submit Task";
             // 
@@ -102,10 +99,9 @@
             // 
             this.lblDueDate.AutoSize = true;
             this.lblDueDate.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDueDate.Location = new System.Drawing.Point(73, 94);
-            this.lblDueDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDueDate.Location = new System.Drawing.Point(110, 145);
             this.lblDueDate.Name = "lblDueDate";
-            this.lblDueDate.Size = new System.Drawing.Size(67, 19);
+            this.lblDueDate.Size = new System.Drawing.Size(97, 28);
             this.lblDueDate.TabIndex = 20;
             this.lblDueDate.Text = "Due Date";
             // 
@@ -113,10 +109,9 @@
             // 
             this.lblOpenDate.AutoSize = true;
             this.lblOpenDate.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOpenDate.Location = new System.Drawing.Point(73, 49);
-            this.lblOpenDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblOpenDate.Location = new System.Drawing.Point(110, 75);
             this.lblOpenDate.Name = "lblOpenDate";
-            this.lblOpenDate.Size = new System.Drawing.Size(71, 19);
+            this.lblOpenDate.Size = new System.Drawing.Size(102, 28);
             this.lblOpenDate.TabIndex = 19;
             this.lblOpenDate.Text = "Open Day";
             // 
@@ -127,12 +122,11 @@
             this.dtpFrom.FillColor = System.Drawing.Color.Green;
             this.dtpFrom.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFrom.Location = new System.Drawing.Point(161, 42);
-            this.dtpFrom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFrom.Location = new System.Drawing.Point(242, 65);
             this.dtpFrom.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpFrom.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpFrom.Name = "dtpFrom";
-            this.dtpFrom.Size = new System.Drawing.Size(113, 39);
+            this.dtpFrom.Size = new System.Drawing.Size(170, 60);
             this.dtpFrom.TabIndex = 18;
             this.dtpFrom.Value = new System.DateTime(2024, 4, 2, 15, 42, 12, 488);
             // 
@@ -143,52 +137,48 @@
             this.dtpTo.FillColor = System.Drawing.Color.Tomato;
             this.dtpTo.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpTo.Location = new System.Drawing.Point(161, 84);
-            this.dtpTo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpTo.Location = new System.Drawing.Point(242, 129);
             this.dtpTo.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpTo.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpTo.Name = "dtpTo";
-            this.dtpTo.Size = new System.Drawing.Size(113, 39);
+            this.dtpTo.Size = new System.Drawing.Size(170, 60);
             this.dtpTo.TabIndex = 17;
             this.dtpTo.Value = new System.DateTime(2024, 4, 2, 15, 42, 12, 488);
             // 
             // ptbImage
             // 
             this.ptbImage.Image = global::WFThesisManagementSystem.Properties.Resources.Idea;
-            this.ptbImage.Location = new System.Drawing.Point(10, 53);
-            this.ptbImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ptbImage.Location = new System.Drawing.Point(15, 82);
             this.ptbImage.Name = "ptbImage";
-            this.ptbImage.Size = new System.Drawing.Size(45, 40);
+            this.ptbImage.Size = new System.Drawing.Size(68, 62);
             this.ptbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbImage.TabIndex = 2;
             this.ptbImage.TabStop = false;
             // 
-            // btnChat
+            // btnEdit
             // 
-            this.btnChat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnChat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnChat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnChat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnChat.FillColor = System.Drawing.Color.Transparent;
-            this.btnChat.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnChat.ForeColor = System.Drawing.Color.White;
-            this.btnChat.Image = global::WFThesisManagementSystem.Properties.Resources.Chat;
-            this.btnChat.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnChat.Location = new System.Drawing.Point(426, 49);
-            this.btnChat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnChat.Name = "btnChat";
-            this.btnChat.Size = new System.Drawing.Size(48, 50);
-            this.btnChat.TabIndex = 6;
-            this.btnChat.Click += new System.EventHandler(this.btnChat_Click);
+            this.btnEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnEdit.FillColor = System.Drawing.Color.Transparent;
+            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnEdit.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.Image = global::WFThesisManagementSystem.Properties.Resources.Chat;
+            this.btnEdit.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnEdit.Location = new System.Drawing.Point(639, 75);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(72, 77);
+            this.btnEdit.TabIndex = 6;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // UcTeacherSingleTask
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.sdpsingletask);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UcTeacherSingleTask";
-            this.Size = new System.Drawing.Size(511, 135);
+            this.Size = new System.Drawing.Size(766, 208);
             this.sdpsingletask.ResumeLayout(false);
             this.sdpsingletask.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImage)).EndInit();
@@ -200,7 +190,7 @@
 
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.PictureBox ptbImage;
-        private Guna.UI2.WinForms.Guna2Button btnChat;
+        private Guna.UI2.WinForms.Guna2Button btnEdit;
         private Guna.UI2.WinForms.Guna2ShadowPanel sdpsingletask;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpFrom;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpTo;

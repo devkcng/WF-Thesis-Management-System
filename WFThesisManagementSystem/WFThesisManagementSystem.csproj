@@ -91,11 +91,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcSingleGroup.cs">
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSingleGroup.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcSingleGroup.Designer.cs">
-      <DependentUpon>UcSingleGroup.cs</DependentUpon>
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSingleGroup.Designer.cs">
+      <DependentUpon>UcTeacherSingleGroup.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\CountNumberOfGroupHelper.cs" />
     <Compile Include="Helper\UserSessionHelper.cs" />
@@ -352,13 +352,14 @@
     <Compile Include="Helper\SearchEngineHelper\FileGenerator.cs" />
     <Compile Include="Helper\SearchEngineHelper\TFIDF.cs" />
     <Compile Include="Services\RegistrationService.cs" />
+    <Compile Include="Services\TaskService.cs" />
     <Compile Include="Services\TopicAcceptService.cs" />
     <Compile Include="Services\TopicService.cs" />
     <EmbeddedResource Include="Forms\FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcSingleGroup.resx">
-      <DependentUpon>UcSingleGroup.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSingleGroup.resx">
+      <DependentUpon>UcTeacherSingleGroup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
