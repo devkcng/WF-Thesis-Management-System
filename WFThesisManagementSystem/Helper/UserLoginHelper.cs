@@ -10,11 +10,18 @@ namespace WFThesisManagementSystem.Helper
     public class UserLoginHelper
     {
         UserSessionHelper _userSessionHelper = UserSessionHelper.Instance;
+        private ThesisManagementContext _context;
+
+        public UserLoginHelper(ThesisManagementContext context)
+        {
+            _context = context;
+        }
+
         public bool Login(string username, string password)
         {
-            ThesisManagementContext context = new ThesisManagementContext();
-            StudentAccountRepository studentAccountRepository = new StudentAccountRepository(context);
-            TeacherAccountRepository teacherAccountRepository = new TeacherAccountRepository(context);
+            
+            StudentAccountRepository studentAccountRepository = new StudentAccountRepository(_context);
+            TeacherAccountRepository teacherAccountRepository = new TeacherAccountRepository(_context);
             var student = studentAccountRepository.GetByUsername(username);
             var teacher = teacherAccountRepository.GetByUsername(username);
             if (student != null)
@@ -24,7 +31,7 @@ namespace WFThesisManagementSystem.Helper
                     _userSessionHelper.UserName = student.student_username;
                     _userSessionHelper.Password = student.student_password;
                     if (student.student_id != null) _userSessionHelper.UserID = (int)student.student_id;
-                    FStudentRegisterTopic studentRegisterTopic = new FStudentRegisterTopic();
+                    FStudentRegisterTopic studentRegisterTopic = new FStudentRegisterTopic(_context);
                     studentRegisterTopic.Show();
                     return true;
                 }
