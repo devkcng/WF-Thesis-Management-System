@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.lblName = new System.Windows.Forms.Label();
-            this.btnChat = new Guna.UI2.WinForms.Guna2Button();
             this.txtProjectDetail = new System.Windows.Forms.TextBox();
             this.lblOpenDate = new System.Windows.Forms.Label();
             this.lblDueDate = new System.Windows.Forms.Label();
@@ -52,25 +51,6 @@
             this.lblName.Size = new System.Drawing.Size(820, 62);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Make an automatic payment system";
-            // 
-            // btnChat
-            // 
-            this.btnChat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnChat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnChat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnChat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnChat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnChat.FillColor = System.Drawing.Color.Transparent;
-            this.btnChat.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnChat.ForeColor = System.Drawing.Color.White;
-            this.btnChat.Image = global::WFThesisManagementSystem.Properties.Resources.Chat;
-            this.btnChat.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnChat.Location = new System.Drawing.Point(1501, 10);
-            this.btnChat.Margin = new System.Windows.Forms.Padding(5);
-            this.btnChat.Name = "btnChat";
-            this.btnChat.Size = new System.Drawing.Size(115, 84);
-            this.btnChat.TabIndex = 6;
-            this.btnChat.Click += new System.EventHandler(this.btnChat_Click);
             // 
             // txtProjectDetail
             // 
@@ -168,7 +148,6 @@
             this.sdpsingletask.Controls.Add(this.lblDueDate);
             this.sdpsingletask.Controls.Add(this.lblOpenDate);
             this.sdpsingletask.Controls.Add(this.txtProjectDetail);
-            this.sdpsingletask.Controls.Add(this.btnChat);
             this.sdpsingletask.Controls.Add(this.lblName);
             this.sdpsingletask.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sdpsingletask.FillColor = System.Drawing.Color.White;
@@ -200,7 +179,6 @@
         #endregion
 
         public System.Windows.Forms.Label lblName;
-        private Guna.UI2.WinForms.Guna2Button btnChat;
         public System.Windows.Forms.TextBox txtProjectDetail;
         private System.Windows.Forms.Label lblOpenDate;
         private System.Windows.Forms.Label lblDueDate;
