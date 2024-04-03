@@ -44,5 +44,11 @@ namespace WFThesisManagementSystem.Repositories
         {
             return _context.StudentGroups.FirstOrDefault(sg => sg.topic_id == topicId);
         }
+
+        //get student group by group name
+        public StudentGroup GetByGroupName(string groupName)
+        {
+            return _context.StudentGroups.FirstOrDefault(sg => sg.group_name == groupName);
+        }
     }
 }
