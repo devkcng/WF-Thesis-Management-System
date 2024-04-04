@@ -103,6 +103,12 @@
     <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentInformation.Designer.cs">
       <DependentUpon>UCStudentInformation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentProject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentProject.Designer.cs">
+      <DependentUpon>UCStudentProject.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentSubTasks.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -259,12 +265,6 @@
     <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentPerformance.Designer.cs">
       <DependentUpon>UCStudentPerformance.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentProject.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentProject.Designer.cs">
-      <DependentUpon>UCStudentProject.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentTask.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -390,6 +390,9 @@
     <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCStudentInformation.resx">
       <DependentUpon>UCStudentInformation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCStudentProject.resx">
+      <DependentUpon>UCStudentProject.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCStudentSubTasks.resx">
       <DependentUpon>UCStudentSubTasks.cs</DependentUpon>
     </EmbeddedResource>
@@ -429,9 +432,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCProject.resx">
       <DependentUpon>UCProject.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCStudentProject.resx">
-      <DependentUpon>UCStudentProject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StudentViews\Views\FStudentRegisterTopic.resx">
       <DependentUpon>FStudentRegisterTopic.cs</DependentUpon>
