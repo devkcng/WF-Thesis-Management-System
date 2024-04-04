@@ -20,7 +20,10 @@ namespace WFThesisManagementSystem.Repositories
         {
            return _context.Tasks;
         }
-
+        public IQueryable<Task> GetAllUncompletedTask(int groupID)
+        {
+            return _context.Tasks.Where(x=>x.submit_day == null);
+        }
         public Task GetById(int id)
         {
             return _context.Tasks.FirstOrDefault(x => x.task_id == id);
@@ -29,6 +32,7 @@ namespace WFThesisManagementSystem.Repositories
         {
             return _context.Tasks.Where(x => x.group_id == groupID);
         }
+        
 
         public void Add(Task entity)
         {
