@@ -26,10 +26,12 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         private void Update(object sender, EventArgs e)
         {
             try
-            {
+            {   
+                _task.task_description = ucTeacherEditTask1.txtTaskDescription.Text;
+                _task.task_name = ucTeacherEditTask1.txtTaskName.Text;
+                _task.due_date = ucTeacherEditTask1.dtpDueDate.Value.Date;
 
                 var taskService = new TaskService(_task, _context);
-
                 taskService.UpdateTask();
                 this.Close();
 

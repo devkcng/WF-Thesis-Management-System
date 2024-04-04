@@ -97,8 +97,8 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             //dtpStartDay is 7 days before today
             ucTeacherAllTask1.dtpStartDay.Value = DateTime.Now.AddDays(-7);
             ucTeacherAllTask1.dtpEndDay.Value = DateTime.Now;
-
             ListGroup();
+            
         }
         #region ucTeacherAllTask1-Components
 
@@ -115,6 +115,16 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
                 ucTeacherAllTask1.flpAllGroupView.Controls.Add(ucTeacherSingleGroup);
             }
         }
+
+        // add button edit event to each task in flpAllTasks
+        private void AddEditButtonToTask()
+        {
+            foreach (UcTeacherSingleTask ucTeacherSingleTask in ucTeacherAllTask1.flpAllTasks.Controls)
+            {
+                ucTeacherSingleTask.EditButtonClicked += ucTeacherSingleTask_EditButton_Click;
+            }
+        }
+
 
         private void DateTimePicker_ValueChanged(object sender, EventArgs e)
         {
