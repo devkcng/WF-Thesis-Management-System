@@ -48,6 +48,7 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.ucStudentProject1 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCStudentProject();
             this.ucStudentWorkLogs1 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCStudentWorkLogs();
             this.ucsTudentSubTasks2 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCSTudentSubTasks();
             this.ucStudentTask1 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCStudentTask();
@@ -152,7 +153,7 @@
             this.menuStrip2.Location = new System.Drawing.Point(0, 7);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip2.Size = new System.Drawing.Size(328, 294);
+            this.menuStrip2.Size = new System.Drawing.Size(328, 342);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -164,7 +165,7 @@
             this.projectToolStripMenuItem.Name = "projectToolStripMenuItem";
             this.projectToolStripMenuItem.Size = new System.Drawing.Size(212, 58);
             this.projectToolStripMenuItem.Text = "Project";
-            this.projectToolStripMenuItem.Click += new System.EventHandler(this.bookToolStripMenuItem_Click);
+            this.projectToolStripMenuItem.Click += new System.EventHandler(this.projectToolStripMenuItem_Click);
             // 
             // task
             // 
@@ -271,6 +272,7 @@
             // 
             // panelContainer
             // 
+            this.panelContainer.Controls.Add(this.ucStudentProject1);
             this.panelContainer.Controls.Add(this.ucStudentWorkLogs1);
             this.panelContainer.Controls.Add(this.ucsTudentSubTasks2);
             this.panelContainer.Controls.Add(this.ucStudentTask1);
@@ -280,6 +282,15 @@
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Size = new System.Drawing.Size(2278, 1240);
             this.panelContainer.TabIndex = 4;
+            // 
+            // ucStudentProject1
+            // 
+            this.ucStudentProject1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucStudentProject1.Location = new System.Drawing.Point(0, 0);
+            this.ucStudentProject1.Name = "ucStudentProject1";
+            this.ucStudentProject1.Size = new System.Drawing.Size(2278, 1240);
+            this.ucStudentProject1.TabIndex = 3;
+            this.ucStudentProject1.Load += new System.EventHandler(this.ucStudentProject1_Load);
             // 
             // ucStudentWorkLogs1
             // 
@@ -360,5 +371,6 @@
         private StudentUserControl.UCStudentTask ucStudentTask1;
         private StudentUserControl.UCStudentWorkLogs ucStudentWorkLogs1;
         private StudentUserControl.UCSTudentSubTasks ucsTudentSubTasks2;
+        private StudentUserControl.UCStudentProject ucStudentProject1;
     }
 }

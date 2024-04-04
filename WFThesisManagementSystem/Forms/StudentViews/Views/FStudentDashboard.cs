@@ -20,6 +20,8 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         TaskRepository _taskRepository;
         SubTaskRepository _subtaskRepository;
         StudentGroupRepository _studentgroupRepository;
+        TopicRepository _topicRepository;
+        TeacherRepository _teacherRepository;
         public FStudentDashboard()
         {
             _context = new ThesisManagementContext();
@@ -27,25 +29,31 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             _taskRepository = new TaskRepository(_context);
             _subtaskRepository = new SubTaskRepository(_context);
             _studentgroupRepository = new StudentGroupRepository(_context);
+            _topicRepository = new TopicRepository(_context);
+            _teacherRepository = new TeacherRepository(_context);
             InitializeComponent();
             ucsTudentSubTasks2.Hide();
             ucStudentTask1.Hide();
             ucStudentWorkLogs1.Hide();
-
+            ucStudentProject1.Hide();
             
-
-            ucStudentTask1.Show();
         }
-        private void bookToolStripMenuItem_Click(object sender, EventArgs e)
+
+
+        private void projectToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ucsTudentSubTasks2.Hide();
+            ucStudentTask1.Hide();
+            ucStudentWorkLogs1.Hide();
+            ucStudentProject1.Show();
         }
-
         private void task_Click(object sender, EventArgs e)
         {
             ucsTudentSubTasks2.Hide();
             ucStudentTask1.Show();
             ucStudentWorkLogs1.Hide();
+            ucStudentProject1.Hide();
+
         }
 
         private void worklogs_Click(object sender, EventArgs e)
@@ -53,9 +61,11 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             ucsTudentSubTasks2.Hide();
             ucStudentTask1.Hide();
             ucStudentWorkLogs1.Show();
+            ucStudentProject1.Hide();
+
         }
 
- 
+
 
         private void logout_Click(object sender, EventArgs e)
         {
@@ -73,6 +83,28 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         {
             ListTasks();
         }
+        private void ucStudentProject1_Load(object sender, EventArgs e)
+        {
+            ListTopics();
+        }
+        #region ucStudentProject1-Components
+        private void ListTopics()
+        {
+            ucStudentProject1.flpAllTopics.Controls.Clear();
+            var student = _studentRepository.GetById(_userSessionHelper.UserID);
+            var studentGroup = _studentgroupRepository.GetById(student.group_id.Value);
+            var topic = _topicRepository.GetById(studentGroup.topic_id.Value);
+
+            UCProject uCProject = new UCProject();
+            uCProject.lblProjectName.Text = topic.topic_name;
+            uCProject.lblTeacherName.Text = _teacherRepository.GetById(topic.teacher_id.Value).teacher_name;
+            uCProject.lblGroupSize.Text = topic.max_members.Value.ToString();
+            uCProject.lblUncompleteTask.Text = _taskRepository.GetAllUncompletedTask(studentGroup.group_id).Count().ToString();
+            uCProject.txtProjectDetail.Text = topic.topic_description;
+            ucStudentProject1.flpAllTopics.Controls.Add(uCProject);
+
+        }
+        #endregion
 
         #region ucStudentTask1-Components
 
@@ -189,9 +221,9 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                 fStudentTaskPopUp.ShowDialog();
             }
         }
+
+
         #endregion
-
-
 
     }
 }
