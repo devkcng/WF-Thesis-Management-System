@@ -93,7 +93,11 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             ucTeacherEditInfor1.Show();
         }
         private void ucTeacherAllTask1_Load(object sender, EventArgs e)
-        {
+        {   
+            //dtpStartDay is 7 days before today
+            ucTeacherAllTask1.dtpStartDay.Value = DateTime.Now.AddDays(-7);
+            ucTeacherAllTask1.dtpEndDay.Value = DateTime.Now;
+
             ListGroup();
         }
         #region ucTeacherAllTask1-Components
@@ -182,7 +186,6 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             var task = _taskRepository.GetTaskByTaskName(taskName);
             FTeacherEditTask fTeacherEditTask = new FTeacherEditTask(task, _context);
             fTeacherEditTask.Show();
-            this.Hide();
         }
         private void ucTeacherSingleTask_SubmitTask_Click(object sender, EventArgs e) 
         {
