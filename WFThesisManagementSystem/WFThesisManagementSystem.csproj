@@ -91,6 +91,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\FNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FNotification.Designer.cs">
+      <DependentUpon>FNotification.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\StudentViews\StudentUserControl\UCInvidualTask.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -126,6 +132,12 @@
     </Compile>
     <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSingleGroup.Designer.cs">
       <DependentUpon>UcTeacherSingleGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UC\UcNotification.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\UC\UcNotification.Designer.cs">
+      <DependentUpon>UcNotification.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\CountNumberOfGroupHelper.cs" />
     <Compile Include="Helper\FilterByDayHelper.cs" />
