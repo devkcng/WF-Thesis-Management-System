@@ -10,10 +10,8 @@ namespace WFThesisManagementSystem.Repositories
     public class SubTaskRepository : IRepository<SubTask>
     {   
         private ThesisManagementContext _context;
-        private TaskRepository _taskRepository;
         public SubTaskRepository(ThesisManagementContext context)
         {
-            _taskRepository = new TaskRepository(context);
             _context = context;
         }
 
@@ -22,24 +20,33 @@ namespace WFThesisManagementSystem.Repositories
             return _context.SubTasks;
         }
 
+        public IQueryable<SubTask> GetAllById(int id)
+        {
+            return _context.SubTasks.Where(x => x.subtask_id == id);
+        }
         public SubTask GetById(int id)
         {
             return _context.SubTasks.FirstOrDefault(x => x.subtask_id == id);
         }
 
+        public IQueryable<SubTask> GetAllByStudentId(int id)
+        {
+            return _context.SubTasks.Where(x => x.student_id == id);
+        }
+        public IQueryable<SubTask> GetAllByTaskId(int id)
+        {
+            return _context.SubTasks.Where(x => x.task_id == id);
+        }
         public void Add(SubTask entity)
         {
             _context.SubTasks.Add(entity);
             _context.SaveChanges();
-            var subtaskList = GetAll().Where(s => s.task_id == entity.task_id);
-            if(IsTaskDone(subtaskList))
-            {
-                _taskRepository.GetById(entity.task_id.Value).submit_day = DateTime.Now;
-            }
+
         }
 
         public void Update(SubTask entity)
         {
+            _context.SubTasks.Attach(entity);
             _context.Entry(entity).State = System.Data.Entity.EntityState.Modified;
             _context.SaveChanges();
         }
@@ -50,16 +57,6 @@ namespace WFThesisManagementSystem.Repositories
             _context.SaveChanges();
         }
 
-        public bool IsTaskDone(IQueryable<SubTask> subTasks)
-        {
-            foreach (var subTask in subTasks)
-            {
-                if (subTask.submit_day == null)
-                {
-                    return false; 
-                }
-            }
-            return true; 
-        }
+
     }
 }

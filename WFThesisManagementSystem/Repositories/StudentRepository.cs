@@ -21,7 +21,10 @@ namespace WFThesisManagementSystem.Repositories
         {
             return _context.Students.FirstOrDefault(s => s.student_id == id);
         }
-
+        public IQueryable<Student> GetAllByGroupId(int id)
+        {
+            return _context.Students.Where(t => t.group_id == id);
+        }
         public void Add(Student student)
         {
             _context.Students.Add(student);

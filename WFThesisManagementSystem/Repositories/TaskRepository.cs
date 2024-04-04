@@ -24,6 +24,10 @@ namespace WFThesisManagementSystem.Repositories
         {
             return _context.Tasks.FirstOrDefault(x => x.task_id == id);
         }
+        public IQueryable<Task> GetByGroupID(int groupID)
+        {
+            return _context.Tasks.Where(x => x.group_id == groupID);
+        }
 
         public void Add(Task entity)
         {
@@ -57,5 +61,7 @@ namespace WFThesisManagementSystem.Repositories
         {
             return _context.Tasks.FirstOrDefault(x => x.task_name == taskName);
         }
+
+
     }
 }
