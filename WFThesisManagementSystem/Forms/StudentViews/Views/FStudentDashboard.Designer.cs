@@ -48,9 +48,10 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.ucStudentProject1 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCStudentProject();
             this.ucStudentWorkLogs1 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCStudentWorkLogs();
+            this.ucsTudentSubTasks2 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCSTudentSubTasks();
             this.ucStudentTask1 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCStudentTask();
-            this.ucsTudentSubTasks1 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCSTudentSubTasks();
             this.menuStrip2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menuStrip3.SuspendLayout();
@@ -152,7 +153,7 @@
             this.menuStrip2.Location = new System.Drawing.Point(0, 7);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip2.Size = new System.Drawing.Size(328, 294);
+            this.menuStrip2.Size = new System.Drawing.Size(328, 342);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -164,7 +165,7 @@
             this.projectToolStripMenuItem.Name = "projectToolStripMenuItem";
             this.projectToolStripMenuItem.Size = new System.Drawing.Size(212, 58);
             this.projectToolStripMenuItem.Text = "Project";
-            this.projectToolStripMenuItem.Click += new System.EventHandler(this.bookToolStripMenuItem_Click);
+            this.projectToolStripMenuItem.Click += new System.EventHandler(this.projectToolStripMenuItem_Click);
             // 
             // task
             // 
@@ -214,7 +215,7 @@
             this.panel1.Controls.Add(this.menuStrip3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.panel1.Margin = new System.Windows.Forms.Padding(7);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(2606, 72);
             this.panel1.TabIndex = 2;
@@ -224,7 +225,7 @@
             this.kryptonLabel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.kryptonLabel1.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitleControl;
             this.kryptonLabel1.Location = new System.Drawing.Point(0, 0);
-            this.kryptonLabel1.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.kryptonLabel1.Margin = new System.Windows.Forms.Padding(7);
             this.kryptonLabel1.Name = "kryptonLabel1";
             this.kryptonLabel1.Size = new System.Drawing.Size(458, 72);
             this.kryptonLabel1.TabIndex = 4;
@@ -256,7 +257,7 @@
             this.toolStripMenuItem1.Size = new System.Drawing.Size(202, 58);
             this.toolStripMenuItem1.Text = "Profile";
             this.toolStripMenuItem1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-
+            // 
             // panel2
             // 
             this.panel2.AutoSize = true;
@@ -264,22 +265,32 @@
             this.panel2.Controls.Add(this.menuStrip2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 72);
-            this.panel2.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.panel2.Margin = new System.Windows.Forms.Padding(7);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(328, 1240);
             this.panel2.TabIndex = 3;
-            this.ucStudentTask1.Load += new System.EventHandler(this.ucStudentTask1_Load);
+            // 
             // panelContainer
             // 
-            this.panelContainer.Controls.Add(this.ucsTudentSubTasks1);
+            this.panelContainer.Controls.Add(this.ucStudentProject1);
             this.panelContainer.Controls.Add(this.ucStudentWorkLogs1);
+            this.panelContainer.Controls.Add(this.ucsTudentSubTasks2);
             this.panelContainer.Controls.Add(this.ucStudentTask1);
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContainer.Location = new System.Drawing.Point(328, 72);
-            this.panelContainer.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panelContainer.Margin = new System.Windows.Forms.Padding(5);
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Size = new System.Drawing.Size(2278, 1240);
             this.panelContainer.TabIndex = 4;
+            // 
+            // ucStudentProject1
+            // 
+            this.ucStudentProject1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucStudentProject1.Location = new System.Drawing.Point(0, 0);
+            this.ucStudentProject1.Name = "ucStudentProject1";
+            this.ucStudentProject1.Size = new System.Drawing.Size(2278, 1240);
+            this.ucStudentProject1.TabIndex = 3;
+            this.ucStudentProject1.Load += new System.EventHandler(this.ucStudentProject1_Load);
             // 
             // ucStudentWorkLogs1
             // 
@@ -288,7 +299,15 @@
             this.ucStudentWorkLogs1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.ucStudentWorkLogs1.Name = "ucStudentWorkLogs1";
             this.ucStudentWorkLogs1.Size = new System.Drawing.Size(2278, 1240);
-            this.ucStudentWorkLogs1.TabIndex = 1;
+            this.ucStudentWorkLogs1.TabIndex = 2;
+            // 
+            // ucsTudentSubTasks2
+            // 
+            this.ucsTudentSubTasks2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucsTudentSubTasks2.Location = new System.Drawing.Point(0, 0);
+            this.ucsTudentSubTasks2.Name = "ucsTudentSubTasks2";
+            this.ucsTudentSubTasks2.Size = new System.Drawing.Size(2278, 1240);
+            this.ucsTudentSubTasks2.TabIndex = 1;
             // 
             // ucStudentTask1
             // 
@@ -298,14 +317,7 @@
             this.ucStudentTask1.Name = "ucStudentTask1";
             this.ucStudentTask1.Size = new System.Drawing.Size(2278, 1240);
             this.ucStudentTask1.TabIndex = 0;
-            // 
-            // ucsTudentSubTasks1
-            // 
-            this.ucsTudentSubTasks1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucsTudentSubTasks1.Location = new System.Drawing.Point(0, 0);
-            this.ucsTudentSubTasks1.Name = "ucsTudentSubTasks1";
-            this.ucsTudentSubTasks1.Size = new System.Drawing.Size(2278, 1240);
-            this.ucsTudentSubTasks1.TabIndex = 2;
+            this.ucStudentTask1.Load += new System.EventHandler(this.ucStudentTask1_Load);
             // 
             // FStudentDashboard
             // 
@@ -315,12 +327,13 @@
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.Margin = new System.Windows.Forms.Padding(7);
             this.Name = "FStudentDashboard";
             this.Palette = this.kryptonPalette1;
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FStudentDashboard";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -355,8 +368,9 @@
         private System.Windows.Forms.MenuStrip menuStrip3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.Panel panelContainer;
-        private StudentUserControl.UCStudentWorkLogs ucStudentWorkLogs1;
         private StudentUserControl.UCStudentTask ucStudentTask1;
-        private StudentUserControl.UCSTudentSubTasks ucsTudentSubTasks1;
+        private StudentUserControl.UCStudentWorkLogs ucStudentWorkLogs1;
+        private StudentUserControl.UCSTudentSubTasks ucsTudentSubTasks2;
+        private StudentUserControl.UCStudentProject ucStudentProject1;
     }
 }

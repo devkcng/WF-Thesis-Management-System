@@ -97,29 +97,17 @@
     <Compile Include="Forms\StudentViews\StudentUserControl\UCInvidualTask.Designer.cs">
       <DependentUpon>UCInvidualTask.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\StudentViews\StudentUserControl\UCInvidualTaskView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\StudentViews\StudentUserControl\UCInvidualTaskView.Designer.cs">
-      <DependentUpon>UCInvidualTaskView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentInfo.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentInfo.Designer.cs">
-      <DependentUpon>UCStudentInfo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentInformation.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentInformation.Designer.cs">
       <DependentUpon>UCStudentInformation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentSubTask.cs">
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentProject.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentSubTask.Designer.cs">
-      <DependentUpon>UCStudentSubTask.cs</DependentUpon>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentProject.Designer.cs">
+      <DependentUpon>UCStudentProject.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentSubTasks.cs">
       <SubType>UserControl</SubType>
@@ -277,12 +265,6 @@
     <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentPerformance.Designer.cs">
       <DependentUpon>UCStudentPerformance.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentProject.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentProject.Designer.cs">
-      <DependentUpon>UCStudentProject.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentTask.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -395,6 +377,7 @@
     <Compile Include="Helper\SearchEngineHelper\FileGenerator.cs" />
     <Compile Include="Helper\SearchEngineHelper\TFIDF.cs" />
     <Compile Include="Services\RegistrationService.cs" />
+    <Compile Include="Services\SubTaskService.cs" />
     <Compile Include="Services\TaskService.cs" />
     <Compile Include="Services\TopicAcceptService.cs" />
     <Compile Include="Services\TopicService.cs" />
@@ -404,17 +387,11 @@
     <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCInvidualTask.resx">
       <DependentUpon>UCInvidualTask.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCInvidualTaskView.resx">
-      <DependentUpon>UCInvidualTaskView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCStudentInfo.resx">
-      <DependentUpon>UCStudentInfo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCStudentInformation.resx">
       <DependentUpon>UCStudentInformation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCStudentSubTask.resx">
-      <DependentUpon>UCStudentSubTask.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCStudentProject.resx">
+      <DependentUpon>UCStudentProject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCStudentSubTasks.resx">
       <DependentUpon>UCStudentSubTasks.cs</DependentUpon>
@@ -455,9 +432,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCProject.resx">
       <DependentUpon>UCProject.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCStudentProject.resx">
-      <DependentUpon>UCStudentProject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StudentViews\Views\FStudentRegisterTopic.resx">
       <DependentUpon>FStudentRegisterTopic.cs</DependentUpon>

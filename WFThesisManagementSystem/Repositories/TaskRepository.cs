@@ -8,6 +8,7 @@ namespace WFThesisManagementSystem.Repositories
 {
     public class TaskRepository : IRepository<Task>
     {   
+        //
         private ThesisManagementContext _context;
 
         public TaskRepository(ThesisManagementContext context)
@@ -19,11 +20,19 @@ namespace WFThesisManagementSystem.Repositories
         {
            return _context.Tasks;
         }
-
+        public IQueryable<Task> GetAllUncompletedTask(int groupID)
+        {
+            return _context.Tasks.Where(x=>x.submit_day == null);
+        }
         public Task GetById(int id)
         {
             return _context.Tasks.FirstOrDefault(x => x.task_id == id);
         }
+        public IQueryable<Task> GetByGroupID(int groupID)
+        {
+            return _context.Tasks.Where(x => x.group_id == groupID);
+        }
+        
 
         public void Add(Task entity)
         {
@@ -57,5 +66,7 @@ namespace WFThesisManagementSystem.Repositories
         {
             return _context.Tasks.FirstOrDefault(x => x.task_name == taskName);
         }
+
+
     }
 }
