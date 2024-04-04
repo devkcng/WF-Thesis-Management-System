@@ -170,7 +170,6 @@
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(72, 77);
             this.btnEdit.TabIndex = 6;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // UcTeacherSingleTask
             // 

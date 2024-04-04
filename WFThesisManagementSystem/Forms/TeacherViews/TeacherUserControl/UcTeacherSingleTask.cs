@@ -12,7 +12,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
         public UcTeacherSingleTask()
         {
             InitializeComponent();
-            //btnEdit.Click += btnEdit_Click;
+            btnEdit.Click += ButtonEdit_Click;
         }
         
         #region Properties
@@ -37,7 +37,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
         }
         #endregion
 
-        private void btnEdit_Click(object sender, EventArgs e)
+        private void ButtonEdit_Click(object sender, EventArgs e)
         {
             OnEditButtonClicked(EventArgs.Empty);
         }
