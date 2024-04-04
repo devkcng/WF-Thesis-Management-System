@@ -17,6 +17,12 @@ namespace WFThesisManagementSystem.Repositories
             return _context.StudentGroups;
         }
 
+        public IQueryable<StudentGroup> GetAllByTopicID(int id)
+        {
+            return _context.StudentGroups.Where(sg => sg.topic_id == id);
+        }
+
+
         public StudentGroup GetById(int id)
         {
             return _context.StudentGroups.FirstOrDefault(sg => sg.group_id == id);
