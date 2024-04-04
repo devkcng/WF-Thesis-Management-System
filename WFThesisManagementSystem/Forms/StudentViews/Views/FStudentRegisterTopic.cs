@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using WFThesisManagementSystem.Helper;
 using WFThesisManagementSystem.Helper.SearchEngineHelper;
 using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.Repositories;
@@ -12,13 +13,14 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         private StudentRepository _studentRepository;
         private StudentGroupRepository _studentGroupRepository;
         private readonly TopicRepository _topicRepository;
-        public FStudentRegisterTopic()
+        private ThesisManagementContext _context;
+        public FStudentRegisterTopic(ThesisManagementContext context)
         {
             InitializeComponent();
-            var context = new ThesisManagementContext();
-            _studentRepository = new StudentRepository(context);
-            _studentGroupRepository = new StudentGroupRepository(context);
-            _topicRepository = new TopicRepository(context);
+            _context = context;
+            _studentRepository = new StudentRepository(_context);
+            _studentGroupRepository = new StudentGroupRepository(_context);
+            _topicRepository = new TopicRepository(_context);
         }
 
         private void dgvTopics_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
@@ -30,7 +32,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                     DataGridViewRow row = this.dgvTopics.Rows[e.RowIndex];
                     var topicId = Convert.ToInt32(row.Cells["topic_id"].Value);
                     var topic = _topicRepository.GetById(topicId);
-                    FRegisterTopic fRegisterTopic = new FRegisterTopic(topic);
+                    FRegisterTopic fRegisterTopic = new FRegisterTopic(topic, _context);
                     fRegisterTopic.Show();
                     this.Close();
                 }

@@ -15,15 +15,15 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         TopicRepository _topicRepository;
         TeacherAccountRepository _teacherAccountRepository;
         TopicService _topicService;
-
+        private ThesisManagementContext _context;
 
 
         //private readonly TopicDAO topicDAO = new TopicDAO();
         //private readonly DBConnect dbConnect = new DBConnect();
-        public FTeacherCreateTopic()
+        public FTeacherCreateTopic(ThesisManagementContext context)
         {
             InitializeComponent();
-            var _context = new ThesisManagementContext();
+            _context = context;
             _topicRepository = new TopicRepository(_context);
             _topicService = new TopicService();
             _topic = new Topic();

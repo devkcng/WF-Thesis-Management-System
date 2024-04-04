@@ -83,5 +83,21 @@ namespace WFThesisManagementSystem.Helper
             }
             return id + 1;
         }
+        // id generator for task
+
+        public int GenerateTaskId()
+        {
+            var taskRepository = new TaskRepository(_context);
+            var tasks = taskRepository.GetAll();
+            int id = 0;
+            foreach (var task in tasks)
+            {
+                if (task.task_id > id)
+                {
+                    id = task.task_id;
+                }
+            }
+            return id + 1;
+        }
     }
 }

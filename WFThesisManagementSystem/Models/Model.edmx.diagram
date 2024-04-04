@@ -20,6 +20,11 @@
         <AssociationConnector Association="ThesisManagementModel.FK__Students__group___2E1BDC42" ManuallyRouted="false" />
         <AssociationConnector Association="ThesisManagementModel.FK__TeacherAc__teach__398D8EEE" ManuallyRouted="false" />
         <AssociationConnector Association="ThesisManagementModel.FK__Topics__teacher___267ABA7A" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ThesisManagementModel.Task" Width="1.5" PointX="7.5" PointY="5" />
+        <AssociationConnector Association="ThesisManagementModel.FK__Tasks__group_id__5CD6CB2B" />
+        <EntityTypeShape EntityType="ThesisManagementModel.SubTask" Width="1.5" PointX="12.75" PointY="6.75" />
+        <AssociationConnector Association="ThesisManagementModel.FK__SubTasks__studen__628FA481" />
+        <AssociationConnector Association="ThesisManagementModel.FK__SubTasks__task_i__6383C8BA" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -30,7 +30,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucTeacherEditTask1 = new UcTeacherEditTask();
+            this.ucTeacherEditTask1 = new WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl.UcTeacherEditTask();
             this.SuspendLayout();
             // 
             // ucTeacherEditTask1
@@ -51,7 +51,9 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             this.ClientSize = new System.Drawing.Size(885, 838);
             this.Controls.Add(this.ucTeacherEditTask1);
             this.Name = "FTeacherEditTask";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FTeacherEditTask";
+            this.Load += new System.EventHandler(this.FTeacherEditTask_Load_1);
             this.ResumeLayout(false);
 
         }

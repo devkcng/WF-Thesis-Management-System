@@ -17,6 +17,12 @@ namespace WFThesisManagementSystem.Repositories
             return _context.StudentGroups;
         }
 
+        public IQueryable<StudentGroup> GetAllByTopicID(int id)
+        {
+            return _context.StudentGroups.Where(sg => sg.topic_id == id);
+        }
+
+
         public StudentGroup GetById(int id)
         {
             return _context.StudentGroups.FirstOrDefault(sg => sg.group_id == id);
@@ -43,6 +49,12 @@ namespace WFThesisManagementSystem.Repositories
         public StudentGroup GetByTopicId(int topicId)
         {
             return _context.StudentGroups.FirstOrDefault(sg => sg.topic_id == topicId);
+        }
+
+        //get student group by group name
+        public StudentGroup GetByGroupName(string groupName)
+        {
+            return _context.StudentGroups.FirstOrDefault(sg => sg.group_name == groupName);
         }
     }
 }

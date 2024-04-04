@@ -48,10 +48,15 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.ucStudentProject1 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCStudentProject();
+            this.ucStudentWorkLogs1 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCStudentWorkLogs();
+            this.ucsTudentSubTasks2 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCSTudentSubTasks();
+            this.ucStudentTask1 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCStudentTask();
             this.menuStrip2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menuStrip3.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panelContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // kryptonPalette1
@@ -145,10 +150,10 @@
             this.performance,
             this.logout});
             this.menuStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
-            this.menuStrip2.Location = new System.Drawing.Point(0, 4);
+            this.menuStrip2.Location = new System.Drawing.Point(0, 7);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuStrip2.Size = new System.Drawing.Size(213, 182);
+            this.menuStrip2.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.menuStrip2.Size = new System.Drawing.Size(328, 342);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -158,9 +163,9 @@
             this.projectToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.projectToolStripMenuItem.Image = global::WFThesisManagementSystem.Properties.Resources.Edit;
             this.projectToolStripMenuItem.Name = "projectToolStripMenuItem";
-            this.projectToolStripMenuItem.Size = new System.Drawing.Size(143, 36);
+            this.projectToolStripMenuItem.Size = new System.Drawing.Size(212, 58);
             this.projectToolStripMenuItem.Text = "Project";
-            this.projectToolStripMenuItem.Click += new System.EventHandler(this.bookToolStripMenuItem_Click);
+            this.projectToolStripMenuItem.Click += new System.EventHandler(this.projectToolStripMenuItem_Click);
             // 
             // task
             // 
@@ -168,7 +173,7 @@
             this.task.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.task.Image = global::WFThesisManagementSystem.Properties.Resources.Ok;
             this.task.Name = "task";
-            this.task.Size = new System.Drawing.Size(111, 36);
+            this.task.Size = new System.Drawing.Size(161, 58);
             this.task.Text = "Task";
             this.task.Click += new System.EventHandler(this.task_Click);
             // 
@@ -178,7 +183,7 @@
             this.worklogs.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.worklogs.Image = global::WFThesisManagementSystem.Properties.Resources.Bookmark;
             this.worklogs.Name = "worklogs";
-            this.worklogs.Size = new System.Drawing.Size(183, 36);
+            this.worklogs.Size = new System.Drawing.Size(278, 58);
             this.worklogs.Text = "Work Logs";
             this.worklogs.Click += new System.EventHandler(this.worklogs_Click);
             // 
@@ -188,7 +193,7 @@
             this.performance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.performance.Image = global::WFThesisManagementSystem.Properties.Resources.Hexagon_Synchronize;
             this.performance.Name = "performance";
-            this.performance.Size = new System.Drawing.Size(209, 36);
+            this.performance.Size = new System.Drawing.Size(321, 58);
             this.performance.Text = "Performance";
             this.performance.Click += new System.EventHandler(this.performance_Click);
             // 
@@ -198,7 +203,7 @@
             this.logout.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.logout.Image = global::WFThesisManagementSystem.Properties.Resources.Single_Sign_On;
             this.logout.Name = "logout";
-            this.logout.Size = new System.Drawing.Size(150, 36);
+            this.logout.Size = new System.Drawing.Size(223, 58);
             this.logout.Text = "Log out";
             this.logout.Click += new System.EventHandler(this.logout_Click);
             // 
@@ -210,9 +215,9 @@
             this.panel1.Controls.Add(this.menuStrip3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(7);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1466, 44);
+            this.panel1.Size = new System.Drawing.Size(2606, 72);
             this.panel1.TabIndex = 2;
             // 
             // kryptonLabel1
@@ -220,9 +225,9 @@
             this.kryptonLabel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.kryptonLabel1.LabelStyle = ComponentFactory.Krypton.Toolkit.LabelStyle.TitleControl;
             this.kryptonLabel1.Location = new System.Drawing.Point(0, 0);
-            this.kryptonLabel1.Margin = new System.Windows.Forms.Padding(4);
+            this.kryptonLabel1.Margin = new System.Windows.Forms.Padding(7);
             this.kryptonLabel1.Name = "kryptonLabel1";
-            this.kryptonLabel1.Size = new System.Drawing.Size(277, 44);
+            this.kryptonLabel1.Size = new System.Drawing.Size(458, 72);
             this.kryptonLabel1.TabIndex = 4;
             this.kryptonLabel1.Values.Text = "Thesis Management";
             // 
@@ -236,10 +241,10 @@
             this.menuStrip3.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1});
-            this.menuStrip3.Location = new System.Drawing.Point(1301, 6);
+            this.menuStrip3.Location = new System.Drawing.Point(2358, 10);
             this.menuStrip3.Name = "menuStrip3";
-            this.menuStrip3.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuStrip3.Size = new System.Drawing.Size(144, 38);
+            this.menuStrip3.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.menuStrip3.Size = new System.Drawing.Size(211, 62);
             this.menuStrip3.TabIndex = 4;
             this.menuStrip3.Text = "menuStrip3";
             // 
@@ -249,10 +254,9 @@
             this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem1.Image = global::WFThesisManagementSystem.Properties.Resources.Female_User;
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(138, 36);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(202, 58);
             this.toolStripMenuItem1.Text = "Profile";
             this.toolStripMenuItem1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // panel2
             // 
@@ -260,34 +264,76 @@
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.menuStrip2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 44);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Location = new System.Drawing.Point(0, 72);
+            this.panel2.Margin = new System.Windows.Forms.Padding(7);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(213, 718);
+            this.panel2.Size = new System.Drawing.Size(328, 1240);
             this.panel2.TabIndex = 3;
             // 
             // panelContainer
             // 
+            this.panelContainer.Controls.Add(this.ucStudentProject1);
+            this.panelContainer.Controls.Add(this.ucStudentWorkLogs1);
+            this.panelContainer.Controls.Add(this.ucsTudentSubTasks2);
+            this.panelContainer.Controls.Add(this.ucStudentTask1);
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(213, 44);
+            this.panelContainer.Location = new System.Drawing.Point(328, 72);
+            this.panelContainer.Margin = new System.Windows.Forms.Padding(5);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1253, 718);
+            this.panelContainer.Size = new System.Drawing.Size(2278, 1240);
             this.panelContainer.TabIndex = 4;
+            // 
+            // ucStudentProject1
+            // 
+            this.ucStudentProject1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucStudentProject1.Location = new System.Drawing.Point(0, 0);
+            this.ucStudentProject1.Name = "ucStudentProject1";
+            this.ucStudentProject1.Size = new System.Drawing.Size(2278, 1240);
+            this.ucStudentProject1.TabIndex = 3;
+            this.ucStudentProject1.Load += new System.EventHandler(this.ucStudentProject1_Load);
+            // 
+            // ucStudentWorkLogs1
+            // 
+            this.ucStudentWorkLogs1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucStudentWorkLogs1.Location = new System.Drawing.Point(0, 0);
+            this.ucStudentWorkLogs1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.ucStudentWorkLogs1.Name = "ucStudentWorkLogs1";
+            this.ucStudentWorkLogs1.Size = new System.Drawing.Size(2278, 1240);
+            this.ucStudentWorkLogs1.TabIndex = 2;
+            // 
+            // ucsTudentSubTasks2
+            // 
+            this.ucsTudentSubTasks2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucsTudentSubTasks2.Location = new System.Drawing.Point(0, 0);
+            this.ucsTudentSubTasks2.Name = "ucsTudentSubTasks2";
+            this.ucsTudentSubTasks2.Size = new System.Drawing.Size(2278, 1240);
+            this.ucsTudentSubTasks2.TabIndex = 1;
+            // 
+            // ucStudentTask1
+            // 
+            this.ucStudentTask1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucStudentTask1.Location = new System.Drawing.Point(0, 0);
+            this.ucStudentTask1.Margin = new System.Windows.Forms.Padding(5);
+            this.ucStudentTask1.Name = "ucStudentTask1";
+            this.ucStudentTask1.Size = new System.Drawing.Size(2278, 1240);
+            this.ucStudentTask1.TabIndex = 0;
+            this.ucStudentTask1.Load += new System.EventHandler(this.ucStudentTask1_Load);
             // 
             // FStudentDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1466, 762);
+            this.ClientSize = new System.Drawing.Size(2606, 1312);
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(7);
             this.Name = "FStudentDashboard";
             this.Palette = this.kryptonPalette1;
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FStudentDashboard";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -296,6 +342,7 @@
             this.menuStrip3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panelContainer.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,5 +368,9 @@
         private System.Windows.Forms.MenuStrip menuStrip3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.Panel panelContainer;
+        private StudentUserControl.UCStudentTask ucStudentTask1;
+        private StudentUserControl.UCStudentWorkLogs ucStudentWorkLogs1;
+        private StudentUserControl.UCSTudentSubTasks ucsTudentSubTasks2;
+        private StudentUserControl.UCStudentProject ucStudentProject1;
     }
 }
