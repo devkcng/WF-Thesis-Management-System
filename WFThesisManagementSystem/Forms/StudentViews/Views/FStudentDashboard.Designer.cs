@@ -51,7 +51,6 @@
             this.ucStudentWorkLogs1 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCStudentWorkLogs();
             this.ucsTudentSubTasks2 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCSTudentSubTasks();
             this.ucStudentTask1 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCStudentTask();
-            this.ucsTudentSubTasks1 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCSTudentSubTasks();
             this.menuStrip2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menuStrip3.SuspendLayout();
@@ -309,14 +308,6 @@
             this.ucStudentTask1.TabIndex = 0;
             this.ucStudentTask1.Load += new System.EventHandler(this.ucStudentTask1_Load);
             // 
-            // ucsTudentSubTasks1
-            // 
-            this.ucsTudentSubTasks1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucsTudentSubTasks1.Location = new System.Drawing.Point(0, 0);
-            this.ucsTudentSubTasks1.Name = "ucsTudentSubTasks1";
-            this.ucsTudentSubTasks1.Size = new System.Drawing.Size(2278, 1240);
-            this.ucsTudentSubTasks1.TabIndex = 2;
-            // 
             // FStudentDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -331,6 +322,7 @@
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FStudentDashboard";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -365,7 +357,6 @@
         private System.Windows.Forms.MenuStrip menuStrip3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.Panel panelContainer;
-        private StudentUserControl.UCSTudentSubTasks ucsTudentSubTasks1;
         private StudentUserControl.UCStudentTask ucStudentTask1;
         private StudentUserControl.UCStudentWorkLogs ucStudentWorkLogs1;
         private StudentUserControl.UCSTudentSubTasks ucsTudentSubTasks2;
