@@ -33,11 +33,9 @@
             this.flpGroupTaskView = new System.Windows.Forms.FlowLayoutPanel();
             this.lblTo = new System.Windows.Forms.Label();
             this.lblFrom = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.dtpFrom = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.dtpTo = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.ucInvidualTask1 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCInvidualTask();
-            this.flpAllInvidualTasksView.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTasks
@@ -54,7 +52,6 @@
             // flpAllInvidualTasksView
             // 
             this.flpAllInvidualTasksView.AutoScroll = true;
-            this.flpAllInvidualTasksView.Controls.Add(this.ucInvidualTask1);
             this.flpAllInvidualTasksView.Location = new System.Drawing.Point(1384, 197);
             this.flpAllInvidualTasksView.Margin = new System.Windows.Forms.Padding(5);
             this.flpAllInvidualTasksView.Name = "flpAllInvidualTasksView";
@@ -74,7 +71,7 @@
             // 
             this.lblTo.AutoSize = true;
             this.lblTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTo.Location = new System.Drawing.Point(2084, 19);
+            this.lblTo.Location = new System.Drawing.Point(2231, 31);
             this.lblTo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblTo.Name = "lblTo";
             this.lblTo.Size = new System.Drawing.Size(78, 54);
@@ -85,44 +82,12 @@
             // 
             this.lblFrom.AutoSize = true;
             this.lblFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFrom.Location = new System.Drawing.Point(1523, 25);
+            this.lblFrom.Location = new System.Drawing.Point(1411, 31);
             this.lblFrom.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblFrom.Name = "lblFrom";
             this.lblFrom.Size = new System.Drawing.Size(133, 54);
             this.lblFrom.TabIndex = 42;
             this.lblFrom.Text = "From";
-            // 
-            // dtpFrom
-            // 
-            this.dtpFrom.BorderRadius = 10;
-            this.dtpFrom.Checked = true;
-            this.dtpFrom.FillColor = System.Drawing.Color.Green;
-            this.dtpFrom.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFrom.Location = new System.Drawing.Point(1738, 10);
-            this.dtpFrom.Margin = new System.Windows.Forms.Padding(5);
-            this.dtpFrom.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpFrom.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpFrom.Name = "dtpFrom";
-            this.dtpFrom.Size = new System.Drawing.Size(249, 70);
-            this.dtpFrom.TabIndex = 41;
-            this.dtpFrom.Value = new System.DateTime(2024, 4, 2, 15, 42, 12, 488);
-            // 
-            // dtpTo
-            // 
-            this.dtpTo.BorderRadius = 10;
-            this.dtpTo.Checked = true;
-            this.dtpTo.FillColor = System.Drawing.Color.Tomato;
-            this.dtpTo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpTo.Location = new System.Drawing.Point(2246, 11);
-            this.dtpTo.Margin = new System.Windows.Forms.Padding(5);
-            this.dtpTo.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpTo.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpTo.Name = "dtpTo";
-            this.dtpTo.Size = new System.Drawing.Size(262, 68);
-            this.dtpTo.TabIndex = 40;
-            this.dtpTo.Value = new System.DateTime(2024, 4, 2, 16, 36, 24, 159);
             // 
             // label1
             // 
@@ -135,29 +100,53 @@
             this.label1.TabIndex = 44;
             this.label1.Text = "Invidual Tasks";
             // 
-            // ucInvidualTask1
+            // dtpFrom
             // 
-            this.ucInvidualTask1.Location = new System.Drawing.Point(3, 3);
-            this.ucInvidualTask1.Name = "ucInvidualTask1";
-            this.ucInvidualTask1.Size = new System.Drawing.Size(1477, 322);
-            this.ucInvidualTask1.TabIndex = 0;
+            this.dtpFrom.BorderRadius = 10;
+            this.dtpFrom.Checked = true;
+            this.dtpFrom.FillColor = System.Drawing.Color.Green;
+            this.dtpFrom.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFrom.Location = new System.Drawing.Point(1593, 25);
+            this.dtpFrom.Margin = new System.Windows.Forms.Padding(5);
+            this.dtpFrom.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpFrom.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpFrom.Name = "dtpFrom";
+            this.dtpFrom.Size = new System.Drawing.Size(277, 70);
+            this.dtpFrom.TabIndex = 45;
+            this.dtpFrom.Value = new System.DateTime(2024, 4, 2, 15, 42, 12, 488);
+            // 
+            // dtpTo
+            // 
+            this.dtpTo.BorderRadius = 10;
+            this.dtpTo.Checked = true;
+            this.dtpTo.FillColor = System.Drawing.Color.Tomato;
+            this.dtpTo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpTo.Location = new System.Drawing.Point(2348, 25);
+            this.dtpTo.Margin = new System.Windows.Forms.Padding(5);
+            this.dtpTo.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpTo.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpTo.Name = "dtpTo";
+            this.dtpTo.Size = new System.Drawing.Size(290, 68);
+            this.dtpTo.TabIndex = 46;
+            this.dtpTo.Value = new System.DateTime(2024, 4, 2, 16, 36, 24, 159);
             // 
             // UCStudentTask
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dtpTo);
+            this.Controls.Add(this.dtpFrom);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTasks);
             this.Controls.Add(this.flpAllInvidualTasksView);
             this.Controls.Add(this.flpGroupTaskView);
             this.Controls.Add(this.lblTo);
             this.Controls.Add(this.lblFrom);
-            this.Controls.Add(this.dtpFrom);
-            this.Controls.Add(this.dtpTo);
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "UCStudentTask";
             this.Size = new System.Drawing.Size(2816, 1516);
-            this.flpAllInvidualTasksView.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,11 +157,10 @@
         public System.Windows.Forms.Label lblTasks;
         private System.Windows.Forms.Label lblTo;
         private System.Windows.Forms.Label lblFrom;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpFrom;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpTo;
         public System.Windows.Forms.FlowLayoutPanel flpAllInvidualTasksView;
         public System.Windows.Forms.FlowLayoutPanel flpGroupTaskView;
         public System.Windows.Forms.Label label1;
-        private UCInvidualTask ucInvidualTask1;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpFrom;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpTo;
     }
 }
