@@ -17,7 +17,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.StudentUserControl
         private int _id;
         private int _groupID;
         private int _studentID;
-        DateTime _submitDate;
+        DateTime? _submitDate;
         public string Name
         {
             set { _name = value; lblName.Text = value; }
@@ -32,7 +32,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.StudentUserControl
             get { return _studentID; }
             set { _studentID = value; }
         }
-        public DateTime SubmitDate
+        public DateTime? SubmitDate
         {
             get { return _submitDate; }
             set { _submitDate = value; }

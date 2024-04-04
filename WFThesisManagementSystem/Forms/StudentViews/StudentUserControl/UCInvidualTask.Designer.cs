@@ -63,7 +63,7 @@
             this.sdpsingletask.Name = "sdpsingletask";
             this.sdpsingletask.Radius = 10;
             this.sdpsingletask.ShadowColor = System.Drawing.Color.Black;
-            this.sdpsingletask.Size = new System.Drawing.Size(1477, 322);
+            this.sdpsingletask.Size = new System.Drawing.Size(1410, 322);
             this.sdpsingletask.TabIndex = 11;
             // 
             // btnSubmit
@@ -79,7 +79,7 @@
             this.btnSubmit.FillColor = System.Drawing.Color.Green;
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(1231, 230);
+            this.btnSubmit.Location = new System.Drawing.Point(1164, 230);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(243, 89);
             this.btnSubmit.TabIndex = 63;
@@ -102,7 +102,7 @@
             this.lblDeadline.AutoSize = true;
             this.lblDeadline.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.lblDeadline.ForeColor = System.Drawing.Color.Red;
-            this.lblDeadline.Location = new System.Drawing.Point(694, 266);
+            this.lblDeadline.Location = new System.Drawing.Point(634, 266);
             this.lblDeadline.Name = "lblDeadline";
             this.lblDeadline.Size = new System.Drawing.Size(164, 46);
             this.lblDeadline.TabIndex = 61;
@@ -113,7 +113,7 @@
             this.ptbStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ptbStatus.Image = global::WFThesisManagementSystem.Properties.Resources.photo_2024_04_02_16_52_38;
             this.ptbStatus.ImageRotate = 0F;
-            this.ptbStatus.Location = new System.Drawing.Point(1102, 269);
+            this.ptbStatus.Location = new System.Drawing.Point(1006, 269);
             this.ptbStatus.Name = "ptbStatus";
             this.ptbStatus.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.ptbStatus.Size = new System.Drawing.Size(50, 43);
@@ -135,7 +135,7 @@
             this.txtProjectDetail.Multiline = true;
             this.txtProjectDetail.Name = "txtProjectDetail";
             this.txtProjectDetail.ReadOnly = true;
-            this.txtProjectDetail.Size = new System.Drawing.Size(1423, 135);
+            this.txtProjectDetail.Size = new System.Drawing.Size(1356, 135);
             this.txtProjectDetail.TabIndex = 58;
             this.txtProjectDetail.Text = "Project Detail: cjavebvveve";
             // 
@@ -144,7 +144,7 @@
             this.lblSubmitTask.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblSubmitTask.AutoSize = true;
             this.lblSubmitTask.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubmitTask.Location = new System.Drawing.Point(979, 266);
+            this.lblSubmitTask.Location = new System.Drawing.Point(883, 266);
             this.lblSubmitTask.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblSubmitTask.Name = "lblSubmitTask";
             this.lblSubmitTask.Size = new System.Drawing.Size(115, 46);
@@ -156,7 +156,7 @@
             this.lblDueDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblDueDate.AutoSize = true;
             this.lblDueDate.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDueDate.Location = new System.Drawing.Point(509, 266);
+            this.lblDueDate.Location = new System.Drawing.Point(449, 266);
             this.lblDueDate.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblDueDate.Name = "lblDueDate";
             this.lblDueDate.Size = new System.Drawing.Size(163, 46);
@@ -187,7 +187,7 @@
             this.btnChat.ForeColor = System.Drawing.Color.White;
             this.btnChat.Image = global::WFThesisManagementSystem.Properties.Resources.Chat;
             this.btnChat.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnChat.Location = new System.Drawing.Point(1316, 0);
+            this.btnChat.Location = new System.Drawing.Point(1249, 0);
             this.btnChat.Margin = new System.Windows.Forms.Padding(5);
             this.btnChat.Name = "btnChat";
             this.btnChat.Size = new System.Drawing.Size(128, 119);
@@ -210,7 +210,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.sdpsingletask);
             this.Name = "UCInvidualTask";
-            this.Size = new System.Drawing.Size(1477, 322);
+            this.Size = new System.Drawing.Size(1410, 322);
             this.sdpsingletask.ResumeLayout(false);
             this.sdpsingletask.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbStatus)).EndInit();
