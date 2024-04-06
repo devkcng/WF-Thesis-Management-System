@@ -182,6 +182,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Notification.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\RegisterQueue.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -210,6 +213,7 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\NotificationRepository.cs" />
     <Compile Include="Repositories\RegisterQueueRepository.cs" />
     <Compile Include="Repositories\StudentAccountRepository.cs" />
     <Compile Include="Repositories\StudentGroupRepository.cs" />
