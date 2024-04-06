@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WFThesisManagementSystem.Forms.UC;
 
 namespace WFThesisManagementSystem.Forms
 {
@@ -15,6 +16,17 @@ namespace WFThesisManagementSystem.Forms
         public FNotification()
         {
             InitializeComponent();
+        }
+
+        private void tsmiCompose_Click(object sender, EventArgs e)
+        {
+            FTeacherCreateNotification fTeacherCreateNotification = new FTeacherCreateNotification();
+            fTeacherCreateNotification.Show();
+        }
+
+        private void tsmiExit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }
