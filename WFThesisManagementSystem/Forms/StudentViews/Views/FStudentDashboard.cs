@@ -36,6 +36,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             ucStudentTask1.Hide();
             ucStudentWorkLogs1.Hide();
             ucStudentProject1.Hide();
+            ucDashBoard1.Show();
             
         }
 
