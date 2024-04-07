@@ -48,10 +48,13 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.ucDashBoard1 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCDashBoard();
             this.ucStudentProject1 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCStudentProject();
             this.ucStudentWorkLogs1 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCStudentWorkLogs();
             this.ucsTudentSubTasks2 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCSTudentSubTasks();
             this.ucStudentTask1 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCStudentTask();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.menuStrip2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menuStrip3.SuspendLayout();
@@ -153,7 +156,7 @@
             this.menuStrip2.Location = new System.Drawing.Point(0, 7);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip2.Size = new System.Drawing.Size(328, 342);
+            this.menuStrip2.Size = new System.Drawing.Size(328, 294);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -211,6 +214,8 @@
             // 
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.guna2Button2);
+            this.panel1.Controls.Add(this.guna2Button1);
             this.panel1.Controls.Add(this.kryptonLabel1);
             this.panel1.Controls.Add(this.menuStrip3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -272,6 +277,8 @@
             // 
             // panelContainer
             // 
+            this.panelContainer.BackColor = System.Drawing.Color.White;
+            this.panelContainer.Controls.Add(this.ucDashBoard1);
             this.panelContainer.Controls.Add(this.ucStudentProject1);
             this.panelContainer.Controls.Add(this.ucStudentWorkLogs1);
             this.panelContainer.Controls.Add(this.ucsTudentSubTasks2);
@@ -282,6 +289,15 @@
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Size = new System.Drawing.Size(2278, 1240);
             this.panelContainer.TabIndex = 4;
+            // 
+            // ucDashBoard1
+            // 
+            this.ucDashBoard1.BackColor = System.Drawing.Color.White;
+            this.ucDashBoard1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucDashBoard1.Location = new System.Drawing.Point(0, 0);
+            this.ucDashBoard1.Name = "ucDashBoard1";
+            this.ucDashBoard1.Size = new System.Drawing.Size(2278, 1240);
+            this.ucDashBoard1.TabIndex = 4;
             // 
             // ucStudentProject1
             // 
@@ -318,6 +334,34 @@
             this.ucStudentTask1.Size = new System.Drawing.Size(2278, 1240);
             this.ucStudentTask1.TabIndex = 0;
             this.ucStudentTask1.Load += new System.EventHandler(this.ucStudentTask1_Load);
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(2053, 10);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(180, 45);
+            this.guna2Button1.TabIndex = 5;
+            this.guna2Button1.Text = "guna2Button1";
+            // 
+            // guna2Button2
+            // 
+            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button2.ForeColor = System.Drawing.Color.White;
+            this.guna2Button2.Location = new System.Drawing.Point(1793, 12);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.Size = new System.Drawing.Size(180, 45);
+            this.guna2Button2.TabIndex = 6;
+            this.guna2Button2.Text = "guna2Button2";
             // 
             // FStudentDashboard
             // 
@@ -372,5 +416,8 @@
         private StudentUserControl.UCStudentWorkLogs ucStudentWorkLogs1;
         private StudentUserControl.UCSTudentSubTasks ucsTudentSubTasks2;
         private StudentUserControl.UCStudentProject ucStudentProject1;
+        private StudentUserControl.UCDashBoard ucDashBoard1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }
