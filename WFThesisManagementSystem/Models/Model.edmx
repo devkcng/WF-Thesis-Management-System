@@ -5,6 +5,20 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="ThesisManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Notifications">
+          <Key>
+            <PropertyRef Name="notification_id" />
+          </Key>
+          <Property Name="notification_id" Type="int" Nullable="false" />
+          <Property Name="notification_title" Type="nvarchar" MaxLength="255" />
+          <Property Name="notification_content" Type="nvarchar(max)" />
+          <Property Name="sender_id" Type="int" />
+          <Property Name="recipient_id" Type="int" />
+          <Property Name="timestamp" Type="datetime" />
+          <Property Name="notification_status" Type="nvarchar" MaxLength="50" />
+          <Property Name="notification_type" Type="nvarchar" MaxLength="50" />
+          <Property Name="related_id" Type="int" />
+        </EntityType>
         <EntityType Name="RegisterQueue">
           <Key>
             <PropertyRef Name="student_id" />
@@ -171,7 +185,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SubTasks__studen__628FA481">
+        <Association Name="FK__SubTasks__studen__4CA06362">
           <End Role="Students" Type="Self.Students" Multiplicity="0..1" />
           <End Role="SubTasks" Type="Self.SubTasks" Multiplicity="*" />
           <ReferentialConstraint>
@@ -183,7 +197,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SubTasks__task_i__6383C8BA">
+        <Association Name="FK__SubTasks__task_i__4D94879B">
           <End Role="Tasks" Type="Self.Tasks" Multiplicity="0..1" />
           <End Role="SubTasks" Type="Self.SubTasks" Multiplicity="*" />
           <ReferentialConstraint>
@@ -195,7 +209,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tasks__group_id__5CD6CB2B">
+        <Association Name="FK__Tasks__group_id__49C3F6B7">
           <End Role="StudentGroup" Type="Self.StudentGroup" Multiplicity="0..1" />
           <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
           <ReferentialConstraint>
@@ -232,6 +246,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="ThesisManagementModelStoreContainer">
+          <EntitySet Name="Notifications" EntityType="Self.Notifications" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RegisterQueue" EntityType="Self.RegisterQueue" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StudentAccount" EntityType="Self.StudentAccount" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StudentGroup" EntityType="Self.StudentGroup" Schema="dbo" store:Type="Tables" />
@@ -265,15 +280,15 @@
             <End Role="StudentGroup" EntitySet="StudentGroup" />
             <End Role="Students" EntitySet="Students" />
           </AssociationSet>
-          <AssociationSet Name="FK__SubTasks__studen__628FA481" Association="Self.FK__SubTasks__studen__628FA481">
+          <AssociationSet Name="FK__SubTasks__studen__4CA06362" Association="Self.FK__SubTasks__studen__4CA06362">
             <End Role="Students" EntitySet="Students" />
             <End Role="SubTasks" EntitySet="SubTasks" />
           </AssociationSet>
-          <AssociationSet Name="FK__SubTasks__task_i__6383C8BA" Association="Self.FK__SubTasks__task_i__6383C8BA">
+          <AssociationSet Name="FK__SubTasks__task_i__4D94879B" Association="Self.FK__SubTasks__task_i__4D94879B">
             <End Role="Tasks" EntitySet="Tasks" />
             <End Role="SubTasks" EntitySet="SubTasks" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tasks__group_id__5CD6CB2B" Association="Self.FK__Tasks__group_id__5CD6CB2B">
+          <AssociationSet Name="FK__Tasks__group_id__49C3F6B7" Association="Self.FK__Tasks__group_id__49C3F6B7">
             <End Role="StudentGroup" EntitySet="StudentGroup" />
             <End Role="Tasks" EntitySet="Tasks" />
           </AssociationSet>
@@ -527,6 +542,7 @@
             <End Role="Task" EntitySet="Tasks" />
             <End Role="SubTask" EntitySet="SubTasks" />
           </AssociationSet>
+          <EntitySet Name="Notifications" EntityType="ThesisManagementModel.Notification" />
         </EntityContainer>
         <EntityType Name="Task">
           <Key>
@@ -593,6 +609,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Notification">
+          <Key>
+            <PropertyRef Name="notification_id" />
+          </Key>
+          <Property Name="notification_id" Type="Int32" Nullable="false" />
+          <Property Name="notification_title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="notification_content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="sender_id" Type="Int32" />
+          <Property Name="recipient_id" Type="Int32" />
+          <Property Name="timestamp" Type="DateTime" Precision="3" />
+          <Property Name="notification_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="notification_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="related_id" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -699,6 +729,21 @@
                 <ScalarProperty Name="subtask_description" ColumnName="subtask_description" />
                 <ScalarProperty Name="subtask_name" ColumnName="subtask_name" />
                 <ScalarProperty Name="subtask_id" ColumnName="subtask_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Notifications">
+            <EntityTypeMapping TypeName="ThesisManagementModel.Notification">
+              <MappingFragment StoreEntitySet="Notifications">
+                <ScalarProperty Name="related_id" ColumnName="related_id" />
+                <ScalarProperty Name="notification_type" ColumnName="notification_type" />
+                <ScalarProperty Name="notification_status" ColumnName="notification_status" />
+                <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+                <ScalarProperty Name="recipient_id" ColumnName="recipient_id" />
+                <ScalarProperty Name="sender_id" ColumnName="sender_id" />
+                <ScalarProperty Name="notification_content" ColumnName="notification_content" />
+                <ScalarProperty Name="notification_title" ColumnName="notification_title" />
+                <ScalarProperty Name="notification_id" ColumnName="notification_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
