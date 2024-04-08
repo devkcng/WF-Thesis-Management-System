@@ -30,6 +30,13 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             ucTeacherAllTopics1.btnCreate.Click += createTopic;
             ucTeacherAllTask1.btnCreate.Click += createTask;
             ucTeacherAllTask1.DateChanged += DateTimePicker_ValueChanged;
+            btnNotification.Click += createNotification;
+        }
+        private void createNotification(object sender, EventArgs e)
+        {
+            FNotification fNotification = new FNotification(_context);
+            fNotification.Show();
+
         }
         private void createTopic(object sender, EventArgs e)
         {
