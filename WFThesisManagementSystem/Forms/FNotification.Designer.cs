@@ -123,6 +123,7 @@
             this.tsmiInbox.Size = new System.Drawing.Size(282, 42);
             this.tsmiInbox.Text = "InBox";
             this.tsmiInbox.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tsmiInbox.Click += new System.EventHandler(this.tsmiInbox_Click);
             // 
             // tsmiRead
             // 
@@ -132,6 +133,7 @@
             this.tsmiRead.Size = new System.Drawing.Size(282, 42);
             this.tsmiRead.Text = "Read";
             this.tsmiRead.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tsmiRead.Click += new System.EventHandler(this.tsmiRead_Click);
             // 
             // tsmiUnread
             // 
@@ -141,6 +143,7 @@
             this.tsmiUnread.Name = "tsmiUnread";
             this.tsmiUnread.Size = new System.Drawing.Size(282, 42);
             this.tsmiUnread.Text = "UnRead";
+            this.tsmiUnread.Click += new System.EventHandler(this.tsmiUnread_Click);
             // 
             // tsmiSend
             // 
@@ -243,8 +246,8 @@
             this.tsmigroupAcceptance.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmigroupAcceptance.ForeColor = System.Drawing.Color.Black;
             this.tsmigroupAcceptance.Name = "tsmigroupAcceptance";
-            this.tsmigroupAcceptance.Size = new System.Drawing.Size(287, 38);
-            this.tsmigroupAcceptance.Text = "GroupAcceptance";
+            this.tsmigroupAcceptance.Size = new System.Drawing.Size(293, 38);
+            this.tsmigroupAcceptance.Text = "Group Acceptance";
             // 
             // tsmionlineMeeting
             // 
