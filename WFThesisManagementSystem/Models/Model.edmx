@@ -15,7 +15,7 @@
           <Property Name="sender_id" Type="int" />
           <Property Name="recipient_id" Type="int" />
           <Property Name="timestamp" Type="datetime" />
-          <Property Name="notification_status" Type="nvarchar" MaxLength="50" />
+          <Property Name="notification_status" Type="bit" />
           <Property Name="notification_type" Type="nvarchar" MaxLength="50" />
           <Property Name="related_id" Type="int" />
         </EntityType>
@@ -619,7 +619,7 @@
           <Property Name="sender_id" Type="Int32" />
           <Property Name="recipient_id" Type="Int32" />
           <Property Name="timestamp" Type="DateTime" Precision="3" />
-          <Property Name="notification_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="notification_status" Type="Boolean" />
           <Property Name="notification_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="related_id" Type="Int32" />
         </EntityType>
