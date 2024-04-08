@@ -133,6 +133,12 @@
     <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSingleGroup.Designer.cs">
       <DependentUpon>UcTeacherSingleGroup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UC\FNotificationSendStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UC\FNotificationSendStudent.Designer.cs">
+      <DependentUpon>FNotificationSendStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UC\FTeacherCreateNotification.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -445,6 +451,9 @@
     <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSingleGroup.resx">
       <DependentUpon>UcTeacherSingleGroup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UC\FNotificationSendStudent.resx">
+      <DependentUpon>FNotificationSendStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\UC\FTeacherCreateNotification.resx">
       <DependentUpon>FTeacherCreateNotification.cs</DependentUpon>
     </EmbeddedResource>
@@ -745,6 +754,7 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\notification1.png" />
     <None Include="Resources\notification.png" />
     <None Include="Resources\laptop.png" />
     <None Include="Resources\book.png" />

@@ -20,7 +20,7 @@ namespace WFThesisManagementSystem.Models
         public Nullable<int> sender_id { get; set; }
         public Nullable<int> recipient_id { get; set; }
         public Nullable<System.DateTime> timestamp { get; set; }
-        public string notification_status { get; set; }
+        public Nullable<bool> notification_status { get; set; }
         public string notification_type { get; set; }
         public Nullable<int> related_id { get; set; }
     }

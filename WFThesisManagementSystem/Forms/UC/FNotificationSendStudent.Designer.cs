@@ -1,6 +1,6 @@
 ﻿namespace WFThesisManagementSystem.Forms.UC
 {
-    partial class FTeacherCreateNotification
+    partial class FNotificationSendStudent
     {
         /// <summary>
         /// Required designer variable.
@@ -28,33 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ucCreateNotification1 = new WFThesisManagementSystem.Forms.UC.UcCreateNotification();
+            this.ucNotificationSendStudentAll1 = new WFThesisManagementSystem.Forms.UC.UcNotificationSendStudentAll();
             this.SuspendLayout();
             // 
-            // ucCreateNotification1
+            // ucNotificationSendStudentAll1
             // 
-            this.ucCreateNotification1.AutoScroll = true;
-            this.ucCreateNotification1.BackColor = System.Drawing.Color.DarkKhaki;
-            this.ucCreateNotification1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucCreateNotification1.Location = new System.Drawing.Point(0, 0);
-            this.ucCreateNotification1.Name = "ucCreateNotification1";
-            this.ucCreateNotification1.Size = new System.Drawing.Size(889, 793);
-            this.ucCreateNotification1.TabIndex = 0;
+            this.ucNotificationSendStudentAll1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucNotificationSendStudentAll1.Location = new System.Drawing.Point(0, 0);
+            this.ucNotificationSendStudentAll1.Name = "ucNotificationSendStudentAll1";
+            this.ucNotificationSendStudentAll1.Size = new System.Drawing.Size(1562, 1009);
+            this.ucNotificationSendStudentAll1.TabIndex = 0;
             // 
-            // FTeacherCreateNotification
+            // FNotificationSendStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(889, 793);
-            this.Controls.Add(this.ucCreateNotification1);
-            this.Name = "FTeacherCreateNotification";
-            this.Text = "FTeacherCreateNotification";
+            this.ClientSize = new System.Drawing.Size(1562, 1009);
+            this.Controls.Add(this.ucNotificationSendStudentAll1);
+            this.Name = "FNotificationSendStudent";
+            this.Text = "FNotificationSendStudent";
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        public UcCreateNotification ucCreateNotification1;
+        private UcNotificationSendStudentAll ucNotificationSendStudentAll1;
     }
 }
