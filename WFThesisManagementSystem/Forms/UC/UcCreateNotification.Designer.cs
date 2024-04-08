@@ -40,7 +40,7 @@
             this.lblNotificationTitle = new System.Windows.Forms.Label();
             this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnClear = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSave = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDone = new Guna.UI2.WinForms.Guna2Button();
             this.btnClose = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -193,7 +193,7 @@
             // guna2Panel5
             // 
             this.guna2Panel5.Controls.Add(this.btnClear);
-            this.guna2Panel5.Controls.Add(this.btnSave);
+            this.guna2Panel5.Controls.Add(this.btnDone);
             this.guna2Panel5.Controls.Add(this.btnClose);
             this.guna2Panel5.Location = new System.Drawing.Point(451, 702);
             this.guna2Panel5.Name = "guna2Panel5";
@@ -216,20 +216,20 @@
             this.btnClear.TabIndex = 9;
             this.btnClear.Text = "Clear";
             // 
-            // btnSave
+            // btnDone
             // 
-            this.btnSave.BorderRadius = 5;
-            this.btnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnSave.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(0, 0);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(104, 55);
-            this.btnSave.TabIndex = 8;
-            this.btnSave.Text = "Save";
+            this.btnDone.BorderRadius = 5;
+            this.btnDone.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDone.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDone.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDone.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDone.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDone.ForeColor = System.Drawing.Color.White;
+            this.btnDone.Location = new System.Drawing.Point(0, 0);
+            this.btnDone.Name = "btnDone";
+            this.btnDone.Size = new System.Drawing.Size(104, 55);
+            this.btnDone.TabIndex = 8;
+            this.btnDone.Text = "Done";
             // 
             // btnClose
             // 
@@ -283,7 +283,7 @@
         public Guna.UI2.WinForms.Guna2TextBox txtNotificationTitle;
         public System.Windows.Forms.Label lblNotificationTitle;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
-        public Guna.UI2.WinForms.Guna2Button btnSave;
+        public Guna.UI2.WinForms.Guna2Button btnDone;
         public Guna.UI2.WinForms.Guna2Button btnClose;
         public Guna.UI2.WinForms.Guna2Button btnClear;
     }
