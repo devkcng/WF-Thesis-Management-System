@@ -20,29 +20,37 @@ namespace WFThesisManagementSystem.Services
     {
         private NotificationRepository _notificationRepository;
         private ThesisManagementContext _context;
-        private Notification notification;
+        private Notification _notification;
         public NotificationService( ThesisManagementContext context)
         {
             _context = context;
             _notificationRepository = new NotificationRepository(_context);
-            
-            
+            _notification = new Notification();
+
         }
-        public void SendToStudent(List<Student> students,NotificationMessage message)
+
+        //this function is used to create a notification
+        public Notification CreateNotification(NotificationMessage message)
+        {   
+            var notification = new Notification();
+            var idGenerator = new IdGeneratorHelper();
+            notification.notification_id = idGenerator.GenerateNotificationId();
+            notification.notification_title = message.Title;
+            notification.notification_status = false;
+            notification.notification_content = message.Message;
+            notification.timestamp = DateTime.Now;
+            notification.notification_type = message.Type;
+            notification.sender_id = UserSessionHelper.Instance.UserID;
+            return notification;
+        }
+
+        public void SendToStudent(List<Student> students, NotificationMessage message)
         {
            // students = new List<Student>();
             foreach (Student student in students) 
-            {
-                IdGeneratorHelper idGeneratorHelper = new IdGeneratorHelper();
-
-                notification = new Notification();
-                notification.sender_id = UserSessionHelper.Instance.UserID;
+            {   
+                var notification = CreateNotification(message);
                 notification.recipient_id = student.student_id;
-                notification.notification_id = idGeneratorHelper.GenerateNotificationId();
-                notification.notification_content = message.Message;
-                notification.notification_title = message.Title;
-                notification.notification_type = message.Type;
-                notification.timestamp = DateTime.Now;
                 _notificationRepository.Add(notification);
             }
             
