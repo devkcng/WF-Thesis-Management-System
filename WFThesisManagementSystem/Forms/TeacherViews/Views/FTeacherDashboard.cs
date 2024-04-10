@@ -16,7 +16,6 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         StudentGroupRepository _studentGroupRepository;
         TaskRepository _taskRepository;
         int GroupIdCreate;
-        UserSessionHelper _userSessionHelper = UserSessionHelper.Instance;
 
         public FTeacherDashboard()
         {
@@ -36,7 +35,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         }
         private void createNotification(object sender, EventArgs e)
         {
-            FNotification fNotification = new FNotification(_context, _userSessionHelper.UserID);
+            FNotification fNotification = new FNotification(_context);
             fNotification.Show();
 
         }
