@@ -314,12 +314,12 @@
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Label lblTasks;
         public Guna.UI2.WinForms.Guna2ShadowPanel sdpCalendar;
-        public UCCalendar ucCalendar1;
         public Guna.UI2.WinForms.Guna2ShadowPanel sdpTask;
         public System.Windows.Forms.ComboBox cbTaskDate;
         public System.Windows.Forms.FlowLayoutPanel flpGroupTask;
         public System.Windows.Forms.DataVisualization.Charting.Chart groupTaskChart;
         public Guna.UI2.WinForms.Guna2ShadowPanel sdpPerformanceChart;
         public Guna.UI2.WinForms.Guna2ShadowPanel sdpTaskChart;
+        public UCCalendar ucCalendar1;
     }
 }
