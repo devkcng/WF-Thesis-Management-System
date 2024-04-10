@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WFThesisManagementSystem.Forms.StudentViews.StudentUserControl;
 using WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl;
+using WFThesisManagementSystem.Forms.UC;
 using WFThesisManagementSystem.Helper;
 using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.Repositories;
@@ -36,9 +37,15 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             ucStudentTask1.Hide();
             ucStudentWorkLogs1.Hide();
             ucStudentProject1.Hide();
-            
-        }
+            btnNotification.Click += createNotification;
 
+        }
+        private void createNotification(object sender, EventArgs e)
+        {
+            FNotification fNotification = new FNotification(_context);
+            fNotification.Show();
+
+        }
 
         private void projectToolStripMenuItem_Click(object sender, EventArgs e)
         {

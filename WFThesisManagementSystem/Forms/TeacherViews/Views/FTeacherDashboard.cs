@@ -16,6 +16,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         StudentGroupRepository _studentGroupRepository;
         TaskRepository _taskRepository;
         int GroupIdCreate;
+
         public FTeacherDashboard()
         {
             _context = new ThesisManagementContext();
