@@ -400,5 +400,14 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
 
         #endregion
 
+        private void ucStudentProject1_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void ucStudentTask1_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
