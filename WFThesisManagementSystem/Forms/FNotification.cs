@@ -18,13 +18,48 @@ namespace WFThesisManagementSystem.Forms
         ThesisManagementContext _context;
         NotificationRepository _notificationRepository;
         TeacherRepository _teacherRepository;
-        public FNotification(ThesisManagementContext context )
+        StudentRepository _studentRepository;
+        int _recipientID;
+        public FNotification(ThesisManagementContext context, int RecipientID )
         {
             _context = context;
             _notificationRepository = new NotificationRepository( _context );
             _teacherRepository = new TeacherRepository( _context );
+            _studentRepository = new StudentRepository(_context);
             InitializeComponent();
             ucAllNotifications1.Hide();
+            _recipientID = RecipientID;
+            if (_studentRepository.GetById(RecipientID) != null)
+            {
+                this.tsmiCompose.Visible = false;
+
+                typesToolStripMenuItem.DropDownItems.Clear();
+
+                var Notification_Read = _notificationRepository.GetAll().Where(x => x.recipient_id == _recipientID);
+
+                foreach (var notification in Notification_Read)
+                {
+                    bool exists = false;
+
+                    // Kiểm tra xem mục đã tồn tại trong DropDownItems chưa
+                    foreach (var item in typesToolStripMenuItem.DropDownItems)
+                    {
+                        if (item is ToolStripItem && ((ToolStripItem)item).Text == notification.notification_type)
+                        {
+                            exists = true;
+                            break;
+                        }
+                    }
+
+                    // Nếu mục không tồn tại, thêm vào DropDownItems
+                    if (!exists)
+                    {
+                        typesToolStripMenuItem.DropDownItems.Add(notification.notification_type);
+                    }
+                }
+
+
+            }
         }
 
         private void tsmiCompose_Click(object sender, EventArgs e)
@@ -41,8 +76,9 @@ namespace WFThesisManagementSystem.Forms
         {
             ucAllNotifications1.Show();
             ucAllNotifications1.flpAllNotifications.Controls.Clear();
-            var Notifications_UnRead = _notificationRepository.GetAll().Where(x=>x.notification_status == false);
-            var Notification_Read = _notificationRepository.GetAll().Where(x=>x.notification_status==true);
+            var Notifications_UnRead = _notificationRepository.GetAll().Where(x=> x.notification_status == false && (x.recipient_id == _recipientID || x.sender_id == _recipientID));
+            var Notification_Read = _notificationRepository.GetAll().Where(x=>x.notification_status==true && (x.recipient_id == _recipientID || x.sender_id == _recipientID));
+
             foreach ( var notification in Notifications_UnRead  ) 
             {
                 UcNotification ucNotification = new UcNotification();
@@ -76,7 +112,7 @@ namespace WFThesisManagementSystem.Forms
         {
             ucAllNotifications1.Show();
             ucAllNotifications1.flpAllNotifications.Controls.Clear();
-            var Notifications = _notificationRepository.GetAll().Where(x=>x.notification_status == true);
+            var Notifications = _notificationRepository.GetAll().Where(x=>x.notification_status == true && (x.recipient_id == _recipientID || x.sender_id == _recipientID));
             foreach (var notification in Notifications)
             {
                 var teacher = _teacherRepository.GetById(notification.sender_id.GetValueOrDefault());
@@ -97,7 +133,7 @@ namespace WFThesisManagementSystem.Forms
         {
             ucAllNotifications1.Show();
             ucAllNotifications1.flpAllNotifications.Controls.Clear();
-            var Notifications = _notificationRepository.GetAll().Where(x => x.notification_status == false) ;
+            var Notifications = _notificationRepository.GetAll().Where(x => x.notification_status == false && (x.recipient_id == _recipientID || x.sender_id == _recipientID)) ;
             foreach (var notification in Notifications)
             {
                 var teacher = _teacherRepository.GetById(notification.sender_id.GetValueOrDefault());
@@ -118,12 +154,11 @@ namespace WFThesisManagementSystem.Forms
             notification.notification_status = true;
             _notificationRepository.Update(notification);
             List_Load_UnRead();
-
         }
         private void List_Load_UnRead()
         {
             ucAllNotifications1.flpAllNotifications.Controls.Clear();
-            var Notifications = _notificationRepository.GetAll().Where(x => x.notification_status == false);
+            var Notifications = _notificationRepository.GetAll().Where(x => x.notification_status == false && (x.recipient_id == _recipientID || x.sender_id == _recipientID));
             foreach (var notification in Notifications)
             {
                 var teacher = _teacherRepository.GetById(notification.sender_id.GetValueOrDefault());
