@@ -124,7 +124,7 @@
 
         private Guna.UI2.WinForms.Guna2ShadowPanel splNotification;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpSendTime;
-        private Guna.UI2.WinForms.Guna2ImageCheckBox icmCheckbox;
+        public Guna.UI2.WinForms.Guna2ImageCheckBox icmCheckbox;
         private System.Windows.Forms.Label lblNotificationContent;
         private System.Windows.Forms.Label lblNotificationName;
         private System.Windows.Forms.Label lblSendBy;

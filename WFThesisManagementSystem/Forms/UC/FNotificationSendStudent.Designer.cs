@@ -47,6 +47,7 @@
             this.Controls.Add(this.ucNotificationSendStudentAll1);
             this.Name = "FNotificationSendStudent";
             this.Text = "FNotificationSendStudent";
+            this.Load += new System.EventHandler(this.FNotificationSendStudent_Load);
             this.ResumeLayout(false);
 
         }

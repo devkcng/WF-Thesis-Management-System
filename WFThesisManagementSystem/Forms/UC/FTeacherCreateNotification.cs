@@ -40,16 +40,18 @@ namespace WFThesisManagementSystem.Forms.UC
         {
             if (ucCreateNotification1.cbxNotificationType.Items.ToString() != "" && ucCreateNotification1.txtNotificationContent.Text != "" && ucCreateNotification1.txtNotificationTitle.Text != "")
             {
+                IdGeneratorHelper idGeneratorHelper = new IdGeneratorHelper();
                 _notification.notification_title = ucCreateNotification1.txtNotificationTitle.Text;
                 _notification.notification_status = false;
                 _notification.notification_content = ucCreateNotification1.txtNotificationContent.Text;
                 _notification.timestamp = DateTime.Now;
-                _notification.notification_type = ucCreateNotification1.cbxNotificationType.Items.ToString();
+                _notification.notification_type = ucCreateNotification1.cbxNotificationType.SelectedItem.ToString();
                 _notification.sender_id = UserSessionHelper.Instance.UserID;
+                _notification.notification_id = idGeneratorHelper.GenerateNotificationId();
                 _notificationRepository.Add(_notification);
                 MessageBox.Show("Add Successly");
                 this.Hide();
-                FNotificationSendStudent fNotificationSendStudent = new FNotificationSendStudent(1,_context);
+                FNotificationSendStudent fNotificationSendStudent = new FNotificationSendStudent(_notification.notification_id,_context);
                 fNotificationSendStudent.Show();
             }
             else MessageBox.Show("Add Failly");

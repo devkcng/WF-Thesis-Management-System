@@ -12,7 +12,7 @@ namespace WFThesisManagementSystem.Forms.UC
 {
     public partial class UcNotification : UserControl
     {
-        private event EventHandler CheckBox;
+        public event EventHandler CheckBox;
         public UcNotification()
         {
             InitializeComponent();
@@ -23,6 +23,7 @@ namespace WFThesisManagementSystem.Forms.UC
         private string content;
         private string sendBy;
         private DateTime sendTime;
+        public int Id {  get; set; }
         public string Name
         {
             set { name  = value; lblNotificationName.Text = value; }

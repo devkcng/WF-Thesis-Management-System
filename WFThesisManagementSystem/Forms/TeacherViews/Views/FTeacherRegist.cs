@@ -44,7 +44,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
                 ucTeacherAcceptRegisterSingle.NameStudent = student.student_name;
                 ucTeacherAcceptRegisterSingle.IdStudent = Convert.ToString(student.student_id);
                 ucTeacherAcceptRegisterSingle.Regist = "Registered";
-
+                ucTeacherAcceptRegisterSingle.cbxRegist.Visible = false;
                 ucTeacherAcceptRegistAll1.flpRegistedView.Controls.Add(ucTeacherAcceptRegisterSingle);
             }
 
@@ -97,7 +97,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
 
 
 
-                    ucTeacherAcceptRegistAll1.flpRegistView.Controls[i].Visible = false;
+                    //ucTeacherAcceptRegistAll1.flpRegistView.Controls[i].Visible = false;
 
 
                     var register = _registerQueueRepository.GetById(id);
@@ -145,7 +145,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
 
                     _registerQueueRepository.Delete(register);
 
-                    ucTeacherAcceptRegistAll1.flpRegistView.Controls[i].Visible = false;
+                    //ucTeacherAcceptRegistAll1.flpRegistView.Controls[i].Visible = false;
                 }
             }
         }

@@ -422,6 +422,7 @@
     <Compile Include="Helper\SearchEngineHelper\Document.cs" />
     <Compile Include="Helper\SearchEngineHelper\FileGenerator.cs" />
     <Compile Include="Helper\SearchEngineHelper\TFIDF.cs" />
+    <Compile Include="Services\NotificationService.cs" />
     <Compile Include="Services\RegistrationService.cs" />
     <Compile Include="Services\SubTaskService.cs" />
     <Compile Include="Services\TaskService.cs" />
