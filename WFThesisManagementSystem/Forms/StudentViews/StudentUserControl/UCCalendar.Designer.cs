@@ -39,11 +39,20 @@
             this.label7 = new System.Windows.Forms.Label();
             this.lblMY = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.ptbPrevious = new System.Windows.Forms.PictureBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.guna2CirclePictureBox3 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.ptbMeeting = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.ptbNext = new System.Windows.Forms.PictureBox();
+            this.ptbPrevious = new System.Windows.Forms.PictureBox();
             this.guna2CustomGradientPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbPrevious)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbMeeting)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbNext)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbPrevious)).BeginInit();
             this.SuspendLayout();
             // 
             // flpDayContainer
@@ -160,7 +169,7 @@
             this.lblMY.AutoSize = true;
             this.lblMY.BackColor = System.Drawing.Color.White;
             this.lblMY.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold);
-            this.lblMY.Location = new System.Drawing.Point(3, 11);
+            this.lblMY.Location = new System.Drawing.Point(36, 24);
             this.lblMY.Name = "lblMY";
             this.lblMY.Size = new System.Drawing.Size(292, 67);
             this.lblMY.TabIndex = 15;
@@ -168,6 +177,12 @@
             // 
             // guna2CustomGradientPanel1
             // 
+            this.guna2CustomGradientPanel1.Controls.Add(this.label10);
+            this.guna2CustomGradientPanel1.Controls.Add(this.label9);
+            this.guna2CustomGradientPanel1.Controls.Add(this.label8);
+            this.guna2CustomGradientPanel1.Controls.Add(this.guna2CirclePictureBox3);
+            this.guna2CustomGradientPanel1.Controls.Add(this.guna2CirclePictureBox2);
+            this.guna2CustomGradientPanel1.Controls.Add(this.ptbMeeting);
             this.guna2CustomGradientPanel1.Controls.Add(this.ptbNext);
             this.guna2CustomGradientPanel1.Controls.Add(this.ptbPrevious);
             this.guna2CustomGradientPanel1.Controls.Add(this.lblMY);
@@ -184,29 +199,102 @@
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1471, 140);
             this.guna2CustomGradientPanel1.TabIndex = 7;
             // 
-            // ptbPrevious
+            // label10
             // 
-            this.ptbPrevious.BackColor = System.Drawing.Color.White;
-            this.ptbPrevious.Image = ((System.Drawing.Image)(resources.GetObject("ptbPrevious.Image")));
-            this.ptbPrevious.Location = new System.Drawing.Point(301, 23);
-            this.ptbPrevious.Name = "ptbPrevious";
-            this.ptbPrevious.Size = new System.Drawing.Size(53, 55);
-            this.ptbPrevious.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbPrevious.TabIndex = 16;
-            this.ptbPrevious.TabStop = false;
-            this.ptbPrevious.Click += new System.EventHandler(this.ptbPrevious_Click);
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.White;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
+            this.label10.Location = new System.Drawing.Point(1153, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(263, 37);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "Subtask Submit Day";
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.White;
+            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
+            this.label9.Location = new System.Drawing.Point(862, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(218, 37);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "Task Submit Day";
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.White;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, System.Drawing.FontStyle.Bold);
+            this.label8.Location = new System.Drawing.Point(613, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(170, 37);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Meeting day";
+            // 
+            // guna2CirclePictureBox3
+            // 
+            this.guna2CirclePictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2CirclePictureBox3.BackColor = System.Drawing.Color.White;
+            this.guna2CirclePictureBox3.FillColor = System.Drawing.Color.Orange;
+            this.guna2CirclePictureBox3.ImageRotate = 0F;
+            this.guna2CirclePictureBox3.Location = new System.Drawing.Point(1117, 0);
+            this.guna2CirclePictureBox3.Name = "guna2CirclePictureBox3";
+            this.guna2CirclePictureBox3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox3.Size = new System.Drawing.Size(30, 24);
+            this.guna2CirclePictureBox3.TabIndex = 21;
+            this.guna2CirclePictureBox3.TabStop = false;
+            // 
+            // guna2CirclePictureBox2
+            // 
+            this.guna2CirclePictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2CirclePictureBox2.BackColor = System.Drawing.Color.White;
+            this.guna2CirclePictureBox2.FillColor = System.Drawing.Color.Red;
+            this.guna2CirclePictureBox2.ImageRotate = 0F;
+            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(820, 0);
+            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
+            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(30, 24);
+            this.guna2CirclePictureBox2.TabIndex = 20;
+            this.guna2CirclePictureBox2.TabStop = false;
+            // 
+            // ptbMeeting
+            // 
+            this.ptbMeeting.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ptbMeeting.BackColor = System.Drawing.Color.White;
+            this.ptbMeeting.FillColor = System.Drawing.Color.Green;
+            this.ptbMeeting.ImageRotate = 0F;
+            this.ptbMeeting.Location = new System.Drawing.Point(577, 0);
+            this.ptbMeeting.Name = "ptbMeeting";
+            this.ptbMeeting.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.ptbMeeting.Size = new System.Drawing.Size(30, 24);
+            this.ptbMeeting.TabIndex = 19;
+            this.ptbMeeting.TabStop = false;
             // 
             // ptbNext
             // 
             this.ptbNext.BackColor = System.Drawing.Color.White;
             this.ptbNext.Image = ((System.Drawing.Image)(resources.GetObject("ptbNext.Image")));
-            this.ptbNext.Location = new System.Drawing.Point(402, 23);
+            this.ptbNext.Location = new System.Drawing.Point(506, 36);
             this.ptbNext.Name = "ptbNext";
             this.ptbNext.Size = new System.Drawing.Size(53, 55);
             this.ptbNext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptbNext.TabIndex = 17;
             this.ptbNext.TabStop = false;
-            this.ptbNext.Click += new System.EventHandler(this.ptbNext_Click);
+            // 
+            // ptbPrevious
+            // 
+            this.ptbPrevious.BackColor = System.Drawing.Color.White;
+            this.ptbPrevious.Image = ((System.Drawing.Image)(resources.GetObject("ptbPrevious.Image")));
+            this.ptbPrevious.Location = new System.Drawing.Point(397, 36);
+            this.ptbPrevious.Name = "ptbPrevious";
+            this.ptbPrevious.Size = new System.Drawing.Size(53, 55);
+            this.ptbPrevious.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbPrevious.TabIndex = 16;
+            this.ptbPrevious.TabStop = false;
             // 
             // UCCalendar
             // 
@@ -218,14 +306,16 @@
             this.Size = new System.Drawing.Size(1471, 798);
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             this.guna2CustomGradientPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbPrevious)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbMeeting)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbNext)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbPrevious)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.FlowLayoutPanel flpDayContainer;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -233,9 +323,16 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lblMY;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
-        private System.Windows.Forms.PictureBox ptbNext;
-        private System.Windows.Forms.PictureBox ptbPrevious;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox3;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox ptbMeeting;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label10;
+        public System.Windows.Forms.Label lblMY;
+        public System.Windows.Forms.PictureBox ptbNext;
+        public System.Windows.Forms.PictureBox ptbPrevious;
+        public System.Windows.Forms.FlowLayoutPanel flpDayContainer;
     }
 }
