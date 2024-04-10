@@ -32,5 +32,24 @@ namespace WFThesisManagementSystem.Helper
             }
             return result;
         }
+        public List<Task> FilterByMonth()
+        {
+            DateTime startDay, endDay;
+            List<Task> result = new List<Task>();
+            DateTime today = DateTime.Today;
+            int diff = (7 + (today.DayOfWeek - DayOfWeek.Monday)) % 7;
+            startDay = today.AddDays(-1 * diff).Date;
+            endDay = startDay.AddDays(6);
+            return FilterByDay(startDay, endDay);
+        }
+        public List<Task> FilterByWeek()
+        {
+            DateTime startDay, endDay;
+            List<Task> result = new List<Task>();
+            DateTime today = DateTime.Today;
+            startDay = new DateTime(today.Year, today.Month, 1); // Ngày đầu tiên của tháng
+            endDay = startDay.AddMonths(1).AddDays(-1); // Ngày cuối cùng của tháng
+            return FilterByDay(startDay, endDay);
+        }
     }
 }
