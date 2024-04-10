@@ -42,7 +42,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         }
         private void createNotification(object sender, EventArgs e)
         {
-            FNotification fNotification = new FNotification(_context, _userSessionHelper.UserID);
+            FNotification fNotification = new FNotification(_context);
             fNotification.Show();
 
         }
