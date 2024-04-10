@@ -12,7 +12,8 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
         {
             InitializeComponent();
             this.Click += UcTeacherAcceptRegisterSingle_Click;
-            this.cbxRegist.Click += Checkregist_Click;
+            //this.cbxRegist.Click += Checkregist_Click;
+            cbxRegist.CheckedChanged += Checkregist_Click;
         }
 
         private void Checkregist_Click(object sender, EventArgs e)

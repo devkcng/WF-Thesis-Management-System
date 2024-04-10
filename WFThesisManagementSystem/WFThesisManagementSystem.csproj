@@ -172,7 +172,7 @@
     <Compile Include="Helper\CountNumberOfGroupHelper.cs" />
     <Compile Include="Helper\FilterByDayHelper.cs" />
     <Compile Include="Helper\UserSessionHelper.cs" />
-    <Compile Include="Helper\ValidationInformation.cs" />
+    <Compile Include="Helper\ValidationInformationHelper.cs" />
     <Compile Include="Models\Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
