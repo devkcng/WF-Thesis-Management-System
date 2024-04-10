@@ -34,8 +34,8 @@
             this.lblTo = new System.Windows.Forms.Label();
             this.lblFrom = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dtpFrom = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.dtpTo = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtpStartDay = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtpEndDay = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.SuspendLayout();
             // 
             // lblTasks
@@ -100,44 +100,44 @@
             this.label1.TabIndex = 44;
             this.label1.Text = "Invidual Tasks";
             // 
-            // dtpFrom
+            // dtpStartDay
             // 
-            this.dtpFrom.BorderRadius = 10;
-            this.dtpFrom.Checked = true;
-            this.dtpFrom.FillColor = System.Drawing.Color.Green;
-            this.dtpFrom.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFrom.Location = new System.Drawing.Point(1593, 25);
-            this.dtpFrom.Margin = new System.Windows.Forms.Padding(5);
-            this.dtpFrom.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpFrom.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpFrom.Name = "dtpFrom";
-            this.dtpFrom.Size = new System.Drawing.Size(277, 70);
-            this.dtpFrom.TabIndex = 45;
-            this.dtpFrom.Value = new System.DateTime(2024, 4, 2, 15, 42, 12, 488);
+            this.dtpStartDay.BorderRadius = 10;
+            this.dtpStartDay.Checked = true;
+            this.dtpStartDay.FillColor = System.Drawing.Color.Green;
+            this.dtpStartDay.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpStartDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpStartDay.Location = new System.Drawing.Point(1593, 25);
+            this.dtpStartDay.Margin = new System.Windows.Forms.Padding(5);
+            this.dtpStartDay.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpStartDay.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpStartDay.Name = "dtpStartDay";
+            this.dtpStartDay.Size = new System.Drawing.Size(277, 70);
+            this.dtpStartDay.TabIndex = 45;
+            this.dtpStartDay.Value = new System.DateTime(2024, 4, 2, 15, 42, 12, 488);
             // 
-            // dtpTo
+            // dtpEndDay
             // 
-            this.dtpTo.BorderRadius = 10;
-            this.dtpTo.Checked = true;
-            this.dtpTo.FillColor = System.Drawing.Color.Tomato;
-            this.dtpTo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpTo.Location = new System.Drawing.Point(2348, 25);
-            this.dtpTo.Margin = new System.Windows.Forms.Padding(5);
-            this.dtpTo.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpTo.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpTo.Name = "dtpTo";
-            this.dtpTo.Size = new System.Drawing.Size(290, 68);
-            this.dtpTo.TabIndex = 46;
-            this.dtpTo.Value = new System.DateTime(2024, 4, 2, 16, 36, 24, 159);
+            this.dtpEndDay.BorderRadius = 10;
+            this.dtpEndDay.Checked = true;
+            this.dtpEndDay.FillColor = System.Drawing.Color.Tomato;
+            this.dtpEndDay.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpEndDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpEndDay.Location = new System.Drawing.Point(2348, 25);
+            this.dtpEndDay.Margin = new System.Windows.Forms.Padding(5);
+            this.dtpEndDay.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpEndDay.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpEndDay.Name = "dtpEndDay";
+            this.dtpEndDay.Size = new System.Drawing.Size(290, 68);
+            this.dtpEndDay.TabIndex = 46;
+            this.dtpEndDay.Value = new System.DateTime(2024, 4, 2, 16, 36, 24, 159);
             // 
             // UCStudentTask
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dtpTo);
-            this.Controls.Add(this.dtpFrom);
+            this.Controls.Add(this.dtpEndDay);
+            this.Controls.Add(this.dtpStartDay);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTasks);
             this.Controls.Add(this.flpAllInvidualTasksView);
@@ -160,7 +160,7 @@
         public System.Windows.Forms.FlowLayoutPanel flpAllInvidualTasksView;
         public System.Windows.Forms.FlowLayoutPanel flpGroupTaskView;
         public System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpFrom;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpTo;
+        public Guna.UI2.WinForms.Guna2DateTimePicker dtpStartDay;
+        public Guna.UI2.WinForms.Guna2DateTimePicker dtpEndDay;
     }
 }

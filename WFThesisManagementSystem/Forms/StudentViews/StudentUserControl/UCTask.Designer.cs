@@ -37,6 +37,7 @@
             this.lblDeadline = new System.Windows.Forms.Label();
             this.lblOpenDay = new System.Windows.Forms.Label();
             this.sdpsingletask = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.ptbStatus)).BeginInit();
             this.sdpsingletask.SuspendLayout();
             this.SuspendLayout();
@@ -145,6 +146,7 @@
             // sdpsingletask
             // 
             this.sdpsingletask.BackColor = System.Drawing.Color.Transparent;
+            this.sdpsingletask.Controls.Add(this.btnEdit);
             this.sdpsingletask.Controls.Add(this.lblOpenDay);
             this.sdpsingletask.Controls.Add(this.lblDeadline);
             this.sdpsingletask.Controls.Add(this.ptbStatus);
@@ -163,6 +165,23 @@
             this.sdpsingletask.Size = new System.Drawing.Size(1335, 318);
             this.sdpsingletask.TabIndex = 8;
             this.sdpsingletask.Paint += new System.Windows.Forms.PaintEventHandler(this.sdpsingletask_Paint);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnEdit.FillColor = System.Drawing.Color.Transparent;
+            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnEdit.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.Image = global::WFThesisManagementSystem.Properties.Resources.Chat;
+            this.btnEdit.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnEdit.Location = new System.Drawing.Point(1153, 10);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(5);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(138, 102);
+            this.btnEdit.TabIndex = 69;
             // 
             // UCTask
             // 
@@ -191,6 +210,7 @@
         public Guna.UI2.WinForms.Guna2CirclePictureBox ptbStatus;
         public System.Windows.Forms.Label lblDeadline;
         public System.Windows.Forms.Label lblOpenDay;
-        private Guna.UI2.WinForms.Guna2ShadowPanel sdpsingletask;
+        public Guna.UI2.WinForms.Guna2ShadowPanel sdpsingletask;
+        public Guna.UI2.WinForms.Guna2Button btnEdit;
     }
 }

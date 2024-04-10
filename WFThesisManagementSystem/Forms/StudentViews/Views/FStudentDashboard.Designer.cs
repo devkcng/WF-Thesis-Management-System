@@ -298,6 +298,7 @@
             this.ucDashBoard1.Name = "ucDashBoard1";
             this.ucDashBoard1.Size = new System.Drawing.Size(2278, 1240);
             this.ucDashBoard1.TabIndex = 4;
+            this.ucDashBoard1.Load += new System.EventHandler(this.ucDashBoard1_Load);
             // 
             // ucStudentProject1
             // 
