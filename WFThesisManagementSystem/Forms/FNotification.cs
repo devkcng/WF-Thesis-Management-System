@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WFThesisManagementSystem.Forms.UC;
+using WFThesisManagementSystem.Helper;
 using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.Repositories;
 
@@ -19,8 +20,9 @@ namespace WFThesisManagementSystem.Forms
         NotificationRepository _notificationRepository;
         TeacherRepository _teacherRepository;
         StudentRepository _studentRepository;
-        int _recipientID;
-        public FNotification(ThesisManagementContext context, int RecipientID )
+        UserSessionHelper _userSessionHelper = UserSessionHelper.Instance;
+
+        public FNotification(ThesisManagementContext context)
         {
             _context = context;
             _notificationRepository = new NotificationRepository( _context );
@@ -28,14 +30,13 @@ namespace WFThesisManagementSystem.Forms
             _studentRepository = new StudentRepository(_context);
             InitializeComponent();
             ucAllNotifications1.Hide();
-            _recipientID = RecipientID;
-            if (_studentRepository.GetById(RecipientID) != null)
+            if (_studentRepository.GetById(_userSessionHelper.UserID) != null)
             {
                 this.tsmiCompose.Visible = false;
 
                 typesToolStripMenuItem.DropDownItems.Clear();
 
-                var Notification_Read = _notificationRepository.GetAll().Where(x => x.recipient_id == _recipientID);
+                var Notification_Read = _notificationRepository.GetAll().Where(x => x.recipient_id == _userSessionHelper.UserID);
 
                 foreach (var notification in Notification_Read)
                 {
@@ -58,6 +59,9 @@ namespace WFThesisManagementSystem.Forms
                     }
                 }
 
+                this.tsmiSend.Visible = false;
+                //contextMenuStrip1.Items["tsmiExit"].Bounds = tsmiSend.Bounds;
+
 
             }
         }
@@ -76,8 +80,8 @@ namespace WFThesisManagementSystem.Forms
         {
             ucAllNotifications1.Show();
             ucAllNotifications1.flpAllNotifications.Controls.Clear();
-            var Notifications_UnRead = _notificationRepository.GetAll().Where(x=> x.notification_status == false && (x.recipient_id == _recipientID || x.sender_id == _recipientID));
-            var Notification_Read = _notificationRepository.GetAll().Where(x=>x.notification_status==true && (x.recipient_id == _recipientID || x.sender_id == _recipientID));
+            var Notifications_UnRead = _notificationRepository.GetAll().Where(x=> x.notification_status == false && (x.recipient_id == _userSessionHelper.UserID || x.sender_id == _userSessionHelper.UserID));
+            var Notification_Read = _notificationRepository.GetAll().Where(x=>x.notification_status==true && (x.recipient_id == _userSessionHelper.UserID || x.sender_id == _userSessionHelper.UserID));
 
             foreach ( var notification in Notifications_UnRead  ) 
             {
@@ -112,7 +116,7 @@ namespace WFThesisManagementSystem.Forms
         {
             ucAllNotifications1.Show();
             ucAllNotifications1.flpAllNotifications.Controls.Clear();
-            var Notifications = _notificationRepository.GetAll().Where(x=>x.notification_status == true && (x.recipient_id == _recipientID || x.sender_id == _recipientID));
+            var Notifications = _notificationRepository.GetAll().Where(x=>x.notification_status == true && (x.recipient_id == _userSessionHelper.UserID || x.sender_id == _userSessionHelper.UserID));
             foreach (var notification in Notifications)
             {
                 var teacher = _teacherRepository.GetById(notification.sender_id.GetValueOrDefault());
@@ -133,7 +137,7 @@ namespace WFThesisManagementSystem.Forms
         {
             ucAllNotifications1.Show();
             ucAllNotifications1.flpAllNotifications.Controls.Clear();
-            var Notifications = _notificationRepository.GetAll().Where(x => x.notification_status == false && (x.recipient_id == _recipientID || x.sender_id == _recipientID)) ;
+            var Notifications = _notificationRepository.GetAll().Where(x => x.notification_status == false && (x.recipient_id == _userSessionHelper.UserID || x.sender_id == _userSessionHelper.UserID)) ;
             foreach (var notification in Notifications)
             {
                 var teacher = _teacherRepository.GetById(notification.sender_id.GetValueOrDefault());
@@ -158,7 +162,7 @@ namespace WFThesisManagementSystem.Forms
         private void List_Load_UnRead()
         {
             ucAllNotifications1.flpAllNotifications.Controls.Clear();
-            var Notifications = _notificationRepository.GetAll().Where(x => x.notification_status == false && (x.recipient_id == _recipientID || x.sender_id == _recipientID));
+            var Notifications = _notificationRepository.GetAll().Where(x => x.notification_status == false && (x.recipient_id == _userSessionHelper.UserID || x.sender_id == _userSessionHelper.UserID));
             foreach (var notification in Notifications)
             {
                 var teacher = _teacherRepository.GetById(notification.sender_id.GetValueOrDefault());
