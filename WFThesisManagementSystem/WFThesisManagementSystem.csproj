@@ -116,6 +116,12 @@
     <Compile Include="Forms\StudentViews\StudentUserControl\UCDay.Designer.cs">
       <DependentUpon>UCDay.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FNotification.Designer.cs">
+      <DependentUpon>FNotification.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\StudentViews\StudentUserControl\UCInvidualTask.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -152,10 +158,46 @@
     <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSingleGroup.Designer.cs">
       <DependentUpon>UcTeacherSingleGroup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UC\FNotificationSendStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UC\FNotificationSendStudent.Designer.cs">
+      <DependentUpon>FNotificationSendStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UC\FTeacherCreateNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UC\FTeacherCreateNotification.Designer.cs">
+      <DependentUpon>FTeacherCreateNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UC\UcAllNotifications.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\UC\UcAllNotifications.Designer.cs">
+      <DependentUpon>UcAllNotifications.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UC\UcCreateNotification.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\UC\UcCreateNotification.Designer.cs">
+      <DependentUpon>UcCreateNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UC\UcNotification.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\UC\UcNotification.Designer.cs">
+      <DependentUpon>UcNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UC\UcNotificationSendStudentAll.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\UC\UcNotificationSendStudentAll.Designer.cs">
+      <DependentUpon>UcNotificationSendStudentAll.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper\CountNumberOfGroupHelper.cs" />
     <Compile Include="Helper\FilterByDayHelper.cs" />
     <Compile Include="Helper\UserSessionHelper.cs" />
-    <Compile Include="Helper\ValidationInformation.cs" />
+    <Compile Include="Helper\ValidationInformationHelper.cs" />
     <Compile Include="Models\Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -170,6 +212,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Notification.cs">
+      <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RegisterQueue.cs">
       <DependentUpon>Model.tt</DependentUpon>
@@ -199,6 +244,7 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\NotificationRepository.cs" />
     <Compile Include="Repositories\RegisterQueueRepository.cs" />
     <Compile Include="Repositories\StudentAccountRepository.cs" />
     <Compile Include="Repositories\StudentGroupRepository.cs" />
@@ -401,6 +447,7 @@
     <Compile Include="Helper\SearchEngineHelper\Document.cs" />
     <Compile Include="Helper\SearchEngineHelper\FileGenerator.cs" />
     <Compile Include="Helper\SearchEngineHelper\TFIDF.cs" />
+    <Compile Include="Services\NotificationService.cs" />
     <Compile Include="Services\RegistrationService.cs" />
     <Compile Include="Services\SubTaskService.cs" />
     <Compile Include="Services\TaskService.cs" />
@@ -421,6 +468,9 @@
     <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCDay.resx">
       <DependentUpon>UCDay.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FNotification.resx">
+      <DependentUpon>FNotification.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCInvidualTask.resx">
       <DependentUpon>UCInvidualTask.cs</DependentUpon>
     </EmbeddedResource>
@@ -438,6 +488,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSingleGroup.resx">
       <DependentUpon>UcTeacherSingleGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UC\FNotificationSendStudent.resx">
+      <DependentUpon>FNotificationSendStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UC\FTeacherCreateNotification.resx">
+      <DependentUpon>FTeacherCreateNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UC\UcAllNotifications.resx">
+      <DependentUpon>UcAllNotifications.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UC\UcCreateNotification.resx">
+      <DependentUpon>UcCreateNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UC\UcNotification.resx">
+      <DependentUpon>UcNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UC\UcNotificationSendStudentAll.resx">
+      <DependentUpon>UcNotificationSendStudentAll.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -724,6 +792,16 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\notification1.png" />
+    <None Include="Resources\notification.png" />
+    <None Include="Resources\laptop.png" />
+    <None Include="Resources\book.png" />
+    <None Include="Resources\mail.png" />
+    <None Include="Resources\exit.png" />
+    <None Include="Resources\inbox.png" />
+    <None Include="Resources\email1.png" />
+    <None Include="Resources\open-book.png" />
+    <None Include="Resources\writing.png" />
     <None Include="Resources\photo_2024-04-02_16-52-38 %282%291.jpg" />
     <None Include="Resources\photo_2024-04-02_16-52-38.jpg" />
     <None Include="Resources\photo_2024-04-02_16-52-38 %282%29.jpg" />

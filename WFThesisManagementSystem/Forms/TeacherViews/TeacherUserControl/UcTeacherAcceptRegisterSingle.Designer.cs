@@ -123,7 +123,7 @@
 
         private System.Windows.Forms.Label lblNameStudent;
         private System.Windows.Forms.Label lblIdStudent;
-        private System.Windows.Forms.CheckBox cbxRegist;
+        public  System.Windows.Forms.CheckBox cbxRegist;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
         private System.Windows.Forms.Label lblRegist;

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Windows.Forms;
 using WFThesisManagementSystem.Forms.StudentViews.StudentUserControl;
 using WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl;
+using WFThesisManagementSystem.Forms.UC;
 using WFThesisManagementSystem.Helper;
 using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.Repositories;
@@ -35,7 +36,20 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             _topicRepository = new TopicRepository(_context);
             _teacherRepository = new TeacherRepository(_context);
             InitializeComponent();
+            ucsTudentSubTasks2.Hide();
+            ucStudentTask1.Hide();
+            ucStudentWorkLogs1.Hide();
+            ucStudentProject1.Hide();
+            btnNotification.Click += createNotification;
+
         }
+
+        private void createNotification(object sender, EventArgs e)
+        {
+            FNotification fNotification = new FNotification(_context);
+            fNotification.Show();
+        }
+
         private void CbTaskDate_ValueChanged(object sender, EventArgs e)
         {
             UCDashBoard uCDashBoard = sender as UCDashBoard;

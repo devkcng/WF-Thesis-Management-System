@@ -1,6 +1,6 @@
 ﻿namespace WFThesisManagementSystem.Helper
 {
-    public class ValidationInformation
+    public class ValidationInformationHelper
     {
         //check if the string is a number
         public bool CheckTopicId(string topicId)
@@ -19,6 +19,17 @@
         public bool CheckEmail(string email)
         {
             return System.Text.RegularExpressions.Regex.IsMatch(email, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+        }
+
+        //check if all information of notification is filled
+
+        public bool CheckNotification(string title, string content, string type)
+        {
+            if (title != "" && content != "" && type != "")
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

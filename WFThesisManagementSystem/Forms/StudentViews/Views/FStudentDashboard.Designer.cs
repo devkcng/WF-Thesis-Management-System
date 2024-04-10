@@ -48,6 +48,11 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.btnNotification = new Guna.UI2.WinForms.Guna2Button();
+            this.ucStudentProject1 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCStudentProject();
+            this.ucStudentWorkLogs1 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCStudentWorkLogs();
+            this.ucsTudentSubTasks2 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCSTudentSubTasks();
+            this.ucStudentTask1 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCStudentTask();
             this.menuStrip2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menuStrip3.SuspendLayout();
@@ -206,13 +211,14 @@
             // 
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.btnNotification);
             this.panel1.Controls.Add(this.kryptonLabel1);
             this.panel1.Controls.Add(this.menuStrip3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(7);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(2606, 72);
+            this.panel1.Size = new System.Drawing.Size(2606, 91);
             this.panel1.TabIndex = 2;
             // 
             // kryptonLabel1
@@ -222,7 +228,7 @@
             this.kryptonLabel1.Location = new System.Drawing.Point(0, 0);
             this.kryptonLabel1.Margin = new System.Windows.Forms.Padding(7);
             this.kryptonLabel1.Name = "kryptonLabel1";
-            this.kryptonLabel1.Size = new System.Drawing.Size(458, 72);
+            this.kryptonLabel1.Size = new System.Drawing.Size(458, 91);
             this.kryptonLabel1.TabIndex = 4;
             this.kryptonLabel1.Values.Text = "Thesis Management";
             // 
@@ -259,21 +265,76 @@
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.menuStrip2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 72);
+            this.panel2.Location = new System.Drawing.Point(0, 91);
             this.panel2.Margin = new System.Windows.Forms.Padding(7);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(328, 1240);
+            this.panel2.Size = new System.Drawing.Size(328, 1221);
             this.panel2.TabIndex = 3;
             // 
             // panelContainer
             // 
             this.panelContainer.BackColor = System.Drawing.Color.White;
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContainer.Location = new System.Drawing.Point(328, 72);
+            this.panelContainer.Location = new System.Drawing.Point(328, 91);
             this.panelContainer.Margin = new System.Windows.Forms.Padding(5);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(2278, 1240);
+            this.panelContainer.Size = new System.Drawing.Size(2278, 1221);
             this.panelContainer.TabIndex = 4;
+            // 
+            // btnNotification
+            // 
+            this.btnNotification.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNotification.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnNotification.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnNotification.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnNotification.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnNotification.FillColor = System.Drawing.Color.Transparent;
+            this.btnNotification.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNotification.ForeColor = System.Drawing.Color.Black;
+            this.btnNotification.Image = global::WFThesisManagementSystem.Properties.Resources.notification1;
+            this.btnNotification.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnNotification.Location = new System.Drawing.Point(1841, 5);
+            this.btnNotification.Margin = new System.Windows.Forms.Padding(5);
+            this.btnNotification.Name = "btnNotification";
+            this.btnNotification.Size = new System.Drawing.Size(393, 81);
+            this.btnNotification.TabIndex = 7;
+            this.btnNotification.Text = "   Notification";
+            // 
+            // ucStudentProject1
+            // 
+            this.ucStudentProject1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucStudentProject1.Location = new System.Drawing.Point(0, 0);
+            this.ucStudentProject1.Name = "ucStudentProject1";
+            this.ucStudentProject1.Size = new System.Drawing.Size(2278, 1221);
+            this.ucStudentProject1.TabIndex = 3;
+            this.ucStudentProject1.Load += new System.EventHandler(this.ucStudentProject1_Load);
+            // 
+            // ucStudentWorkLogs1
+            // 
+            this.ucStudentWorkLogs1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucStudentWorkLogs1.Location = new System.Drawing.Point(0, 0);
+            this.ucStudentWorkLogs1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.ucStudentWorkLogs1.Name = "ucStudentWorkLogs1";
+            this.ucStudentWorkLogs1.Size = new System.Drawing.Size(2278, 1221);
+            this.ucStudentWorkLogs1.TabIndex = 2;
+            // 
+            // ucsTudentSubTasks2
+            // 
+            this.ucsTudentSubTasks2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucsTudentSubTasks2.Location = new System.Drawing.Point(0, 0);
+            this.ucsTudentSubTasks2.Name = "ucsTudentSubTasks2";
+            this.ucsTudentSubTasks2.Size = new System.Drawing.Size(2278, 1221);
+            this.ucsTudentSubTasks2.TabIndex = 1;
+            // 
+            // ucStudentTask1
+            // 
+            this.ucStudentTask1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucStudentTask1.Location = new System.Drawing.Point(0, 0);
+            this.ucStudentTask1.Margin = new System.Windows.Forms.Padding(5);
+            this.ucStudentTask1.Name = "ucStudentTask1";
+            this.ucStudentTask1.Size = new System.Drawing.Size(2278, 1221);
+            this.ucStudentTask1.TabIndex = 0;
+            this.ucStudentTask1.Load += new System.EventHandler(this.ucStudentTask1_Load);
             // 
             // FStudentDashboard
             // 
@@ -323,5 +384,10 @@
         private System.Windows.Forms.MenuStrip menuStrip3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.Panel panelContainer;
+        private StudentUserControl.UCStudentTask ucStudentTask1;
+        private StudentUserControl.UCStudentWorkLogs ucStudentWorkLogs1;
+        private StudentUserControl.UCSTudentSubTasks ucsTudentSubTasks2;
+        private StudentUserControl.UCStudentProject ucStudentProject1;
+        private Guna.UI2.WinForms.Guna2Button btnNotification;
     }
 }
