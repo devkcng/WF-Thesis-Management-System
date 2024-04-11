@@ -33,9 +33,10 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         }
         private void Save(object sender, EventArgs e)
         {
-            if (_topicService.CheckTopicId(ucTeacherCreateTopic1.txtTopicId.Text) && _topicService.CheckMaxMember(ucTeacherCreateTopic1.cbxNumber.SelectedItem.ToString()))
+            if (  _topicService.CheckMaxMember(ucTeacherCreateTopic1.cbxNumber.SelectedItem.ToString()))
             {
-                _topic.topic_id = int.Parse(ucTeacherCreateTopic1.txtTopicId.Text);
+                var id = new IdGeneratorHelper();
+                _topic.topic_id = id.GenerateTopicId();
                 _topic.topic_name = ucTeacherCreateTopic1.txtTopicName.Text;
                 _topic.topic_requirement = ucTeacherCreateTopic1.txtTopicRequirement.Text;
                 _topic.topic_category = ucTeacherCreateTopic1.cbxTopicCategory.SelectedItem.ToString();
@@ -104,7 +105,9 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             ucTeacherCreateTopic1.txtTopicRequirement.Clear();
             ucTeacherCreateTopic1.txtTopicDescription.Clear();
             ucTeacherCreateTopic1.txtTopicName.Clear();
-            ucTeacherCreateTopic1.txtTopicId.Clear();
+            ucTeacherCreateTopic1.cbxNumber.Items.Clear();
+            ucTeacherCreateTopic1.cbxTopicCategory.Items.Clear();
+            ucTeacherCreateTopic1.cbxTopicTechnology.Items.Clear();
             //ucTeacherCreateTopic1.cbxNumber.
 
         }
