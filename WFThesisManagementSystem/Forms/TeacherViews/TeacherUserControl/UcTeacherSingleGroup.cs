@@ -28,16 +28,17 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
             Clicked?.Invoke(this, e);
         }
         #region Properties
-        private string name;
-        private int id;
-        public string Name
+        private string namegroup;
+        private string nametopic;
+        public int Id {  get; set; }
+        public string NameGroup
         {
-            set { name = value; lblNameGroup.Text = value; }
+            set { namegroup = value; lblNameGroup.Text = value; }
         }
-        public int Id
+        public string NameTopic
         {
-            get { return id; }
-            set { id = value; lblIdGroup.Text = Convert.ToString(value); }
+            get { return nametopic; }
+            set { nametopic = value; lblNameTopic.Text = value; }
         }
 
         #endregion
