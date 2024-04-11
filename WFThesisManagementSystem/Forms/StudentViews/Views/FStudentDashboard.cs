@@ -36,12 +36,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             _topicRepository = new TopicRepository(_context);
             _teacherRepository = new TeacherRepository(_context);
             InitializeComponent();
-            ucsTudentSubTasks2.Hide();
-            ucStudentTask1.Hide();
-            ucStudentWorkLogs1.Hide();
-            ucStudentProject1.Hide();
             btnNotification.Click += createNotification;
-
         }
 
         private void createNotification(object sender, EventArgs e)
@@ -55,8 +50,8 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             UCDashBoard uCDashBoard = sender as UCDashBoard;
             uCDashBoard.flpGroupTask.Controls.Clear();
             var groupID = _studentRepository.GetById(_userSessionHelper.UserID).group_id;
-            var groupTaskList = _taskRepository.GetByGroupID(groupID.Value).ToList();
-            var filterHelper = new FilterByDayHelper(groupTaskList, _context);
+            var groupTaskList = _taskRepository.GetByGroupID(groupID.Value);
+            var filterHelper = new FilterByDayHelper(groupTaskList, _context);  
             var taskListFiltered = groupTaskList;
             if (uCDashBoard.cbTaskDate.SelectedItem == "This week")
             {
@@ -66,16 +61,18 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             {
                 taskListFiltered=filterHelper.FilterByMonth();
             }
+            taskListFiltered = filterHelper.GetSortedTasks();
             LoadTask(taskListFiltered, uCDashBoard.flpGroupTask, new Size(465, 140), groupID.Value);
         }
         private void DateTimePicker_ValueChanged(object sender, EventArgs e)
         {
-            UCStudentTask uCStudentTask = new UCStudentTask();
+            UCStudentTask uCStudentTask = sender as UCStudentTask;
             uCStudentTask.flpGroupTaskView.Controls.Clear();
             var groupID = _studentRepository.GetById(_userSessionHelper.UserID).group_id;
-            var groupTaskList = _taskRepository.GetByGroupID(groupID.Value).ToList();
+            var groupTaskList = _taskRepository.GetByGroupID(groupID.Value);
             var filterHelper = new FilterByDayHelper(groupTaskList, _context);
             var taskListFiltered = filterHelper.FilterByDay(uCStudentTask.dtpStartDay.Value, uCStudentTask.dtpEndDay.Value);
+            taskListFiltered = filterHelper.GetSortedTasks();
             foreach (var groupTask in taskListFiltered)
             {
                 UCTask uCTask = new UCTask();
@@ -99,6 +96,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             panelContainer.Controls.Clear();
             UCDashBoard ucDashBoard = new UCDashBoard();
             ucDashBoard.Dock = DockStyle.Fill;
+            ucDashBoard.sdpPerformanceChart.Visible = false;
             UCDashBoard_Load(ucDashBoard);
             ucDashBoard.cbTaskDateChange += CbTaskDate_ValueChanged;
             panelContainer.Controls.Add(ucDashBoard);
@@ -108,9 +106,12 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             panelContainer.Controls.Clear();
             UCStudentTask uCStudentTask = new UCStudentTask();
             uCStudentTask.Dock = DockStyle.Fill;
+            uCStudentTask.dtpStartDay.Value = _taskRepository.GetFirstTask().open_day.Value;
+            uCStudentTask.dtpEndDay.Value = DateTime.Now; 
             UCStudentTask_Load(uCStudentTask);
             uCStudentTask.DateChanged += DateTimePicker_ValueChanged;
             panelContainer.Controls.Add(uCStudentTask);
+
         }
 
         private void worklogs_Click(object sender, EventArgs e)
@@ -162,7 +163,9 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             ucDashBoard.flpGroupTask.Controls.Clear();
             var groupID = _studentRepository.GetById(_userSessionHelper.UserID).group_id;
             var groupTaskList = _taskRepository.GetByGroupID(groupID.Value);
-            LoadTask(groupTaskList.ToList(), ucDashBoard.flpGroupTask, new Size(465, 140), groupID.Value);
+            var filterHelper = new FilterByDayHelper(groupTaskList, _context);
+            groupTaskList = filterHelper.GetSortedTasks();
+            LoadTask(groupTaskList, ucDashBoard.flpGroupTask, new Size(465, 140), groupID.Value);
 
 
             //load chart
@@ -181,7 +184,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         {
             var groupID = _studentRepository.GetById(_userSessionHelper.UserID).group_id;
             var groupTaskList = _taskRepository.GetByGroupID(groupID.Value);
-            var submitDates = groupTaskList.Select(groupTask => groupTask.due_date).ToList();
+            var submitDates = groupTaskList.Select(groupTask => groupTask.due_date);
 
 
             ucDashBoard.ucCalendar1.flpDayContainer.Visible = false;
@@ -235,6 +238,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                 else { uCTask.ptbStatus.Image = Properties.Resources.photo_2024_04_02_16_52_38; }
                 flp.Controls.Add(uCTask);
             }
+
             flp.Visible = true;
         }
 
@@ -283,6 +287,8 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             uCStudentTask.flpGroupTaskView.Controls.Clear();
             var groupID = _studentRepository.GetById(_userSessionHelper.UserID).group_id;
             var groupTaskList = _taskRepository.GetByGroupID(groupID.Value);
+            var filterHelper = new FilterByDayHelper(groupTaskList, _context);
+            groupTaskList = filterHelper.GetSortedTasks();
             foreach (var groupTask in groupTaskList)
             {
 
@@ -300,11 +306,15 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                 uCTask.Clicked += ucTask_Clicked;
                 uCTask.Size = new Size(490, 150);
                 uCStudentTask.flpGroupTaskView.Controls.Add(uCTask);
+                
             }
+
+
 
             var subTaskList = _subtaskRepository.GetAllByStudentId(_userSessionHelper.UserID);
 
             //add data to subtask flow layout panel
+            uCStudentTask.flpAllInvidualTasksView.Hide();
             uCStudentTask.flpAllInvidualTasksView.Controls.Clear();
             foreach (var subTask in subTaskList)
             {
