@@ -49,10 +49,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelContainer = new System.Windows.Forms.Panel();
             this.btnNotification = new Guna.UI2.WinForms.Guna2Button();
-            this.ucStudentProject1 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCStudentProject();
-            this.ucStudentWorkLogs1 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCStudentWorkLogs();
-            this.ucsTudentSubTasks2 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCSTudentSubTasks();
-            this.ucStudentTask1 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCStudentTask();
             this.menuStrip2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menuStrip3.SuspendLayout();
@@ -300,42 +296,7 @@
             this.btnNotification.TabIndex = 7;
             this.btnNotification.Text = "   Notification";
             // 
-            // ucStudentProject1
-            // 
-            this.ucStudentProject1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucStudentProject1.Location = new System.Drawing.Point(0, 0);
-            this.ucStudentProject1.Name = "ucStudentProject1";
-            this.ucStudentProject1.Size = new System.Drawing.Size(2278, 1221);
-            this.ucStudentProject1.TabIndex = 3;
-            this.ucStudentProject1.Load += new System.EventHandler(this.ucStudentProject1_Load);
-            // 
-            // ucStudentWorkLogs1
-            // 
-            this.ucStudentWorkLogs1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucStudentWorkLogs1.Location = new System.Drawing.Point(0, 0);
-            this.ucStudentWorkLogs1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.ucStudentWorkLogs1.Name = "ucStudentWorkLogs1";
-            this.ucStudentWorkLogs1.Size = new System.Drawing.Size(2278, 1221);
-            this.ucStudentWorkLogs1.TabIndex = 2;
-            // 
-            // ucsTudentSubTasks2
-            // 
-            this.ucsTudentSubTasks2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucsTudentSubTasks2.Location = new System.Drawing.Point(0, 0);
-            this.ucsTudentSubTasks2.Name = "ucsTudentSubTasks2";
-            this.ucsTudentSubTasks2.Size = new System.Drawing.Size(2278, 1221);
-            this.ucsTudentSubTasks2.TabIndex = 1;
-            // 
-            // ucStudentTask1
-            // 
-            this.ucStudentTask1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucStudentTask1.Location = new System.Drawing.Point(0, 0);
-            this.ucStudentTask1.Margin = new System.Windows.Forms.Padding(5);
-            this.ucStudentTask1.Name = "ucStudentTask1";
-            this.ucStudentTask1.Size = new System.Drawing.Size(2278, 1221);
-            this.ucStudentTask1.TabIndex = 0;
-            this.ucStudentTask1.Load += new System.EventHandler(this.ucStudentTask1_Load);
-            // 
+            
             // FStudentDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -384,10 +345,6 @@
         private System.Windows.Forms.MenuStrip menuStrip3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.Panel panelContainer;
-        private StudentUserControl.UCStudentTask ucStudentTask1;
-        private StudentUserControl.UCStudentWorkLogs ucStudentWorkLogs1;
-        private StudentUserControl.UCSTudentSubTasks ucsTudentSubTasks2;
-        private StudentUserControl.UCStudentProject ucStudentProject1;
         private Guna.UI2.WinForms.Guna2Button btnNotification;
     }
 }

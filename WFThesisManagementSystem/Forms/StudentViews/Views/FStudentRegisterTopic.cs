@@ -5,6 +5,7 @@ using WFThesisManagementSystem.Helper;
 using WFThesisManagementSystem.Helper.SearchEngineHelper;
 using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.Repositories;
+using System.Drawing; // Thêm dòng này để sử dụng Size
 
 namespace WFThesisManagementSystem.Forms.StudentViews.Views
 {
@@ -16,7 +17,10 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         private ThesisManagementContext _context;
         public FStudentRegisterTopic(ThesisManagementContext context)
         {
+
             InitializeComponent();
+            this.Size = new Size(750,500);
+
             _context = context;
             _studentRepository = new StudentRepository(_context);
             _studentGroupRepository = new StudentGroupRepository(_context);
@@ -32,7 +36,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                     DataGridViewRow row = this.dgvTopics.Rows[e.RowIndex];
                     var topicId = Convert.ToInt32(row.Cells["topic_id"].Value);
                     var topic = _topicRepository.GetById(topicId);
-                    FRegisterTopic fRegisterTopic = new FRegisterTopic(topic, _context);
+                    FShowTopic fRegisterTopic = new FShowTopic(topic, _context);
                     fRegisterTopic.Show();
                     this.Close();
                 }

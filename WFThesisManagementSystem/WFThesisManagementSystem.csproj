@@ -152,6 +152,12 @@
     <Compile Include="Forms\StudentViews\StudentUserControl\UCSubTasks.Designer.cs">
       <DependentUpon>UCSubTasks.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\StudentViews\Views\FTopicRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StudentViews\Views\FTopicRegister.Designer.cs">
+      <DependentUpon>FTopicRegister.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSingleGroup.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -312,11 +318,11 @@
     <Compile Include="Forms\StudentViews\StudentUserControl\UCWorkLog.Designer.cs">
       <DependentUpon>UCWorkLog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\StudentViews\Views\FRegisterTopic.cs">
+    <Compile Include="Forms\StudentViews\Views\FShowTopic.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\StudentViews\Views\FRegisterTopic.Designer.cs">
-      <DependentUpon>FRegisterTopic.cs</DependentUpon>
+    <Compile Include="Forms\StudentViews\Views\FShowTopic.Designer.cs">
+      <DependentUpon>FShowTopic.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\StudentViews\Views\FStudentDashboard.cs">
       <SubType>Form</SubType>
@@ -486,6 +492,9 @@
     <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCSubTasks.resx">
       <DependentUpon>UCSubTasks.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StudentViews\Views\FTopicRegister.resx">
+      <DependentUpon>FTopicRegister.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSingleGroup.resx">
       <DependentUpon>UcTeacherSingleGroup.cs</DependentUpon>
     </EmbeddedResource>
@@ -529,8 +538,8 @@
     <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCWorkLog.resx">
       <DependentUpon>UCWorkLog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StudentViews\Views\FRegisterTopic.resx">
-      <DependentUpon>FRegisterTopic.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\StudentViews\Views\FShowTopic.resx">
+      <DependentUpon>FShowTopic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StudentViews\Views\FStudentDashboard.resx">
       <DependentUpon>FStudentDashboard.cs</DependentUpon>

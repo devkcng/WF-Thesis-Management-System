@@ -20,17 +20,17 @@ namespace WFThesisManagementSystem.Repositories
         {
            return _context.Tasks;
         }
-        public IQueryable<Task> GetAllUncompletedTask(int groupID)
+        public List<Task> GetAllUncompletedTask(int groupID)
         {
-            return _context.Tasks.Where(x=>x.submit_day == null);
+            return _context.Tasks.Where(x=>x.submit_day == null).ToList();
         }
         public Task GetById(int id)
         {
             return _context.Tasks.FirstOrDefault(x => x.task_id == id);
         }
-        public IQueryable<Task> GetByGroupID(int groupID)
+        public List<Task> GetByGroupID(int groupID)
         {
-            return _context.Tasks.Where(x => x.group_id == groupID);
+            return _context.Tasks.Where(x => x.group_id == groupID).ToList();
         }
         
 
@@ -55,9 +55,9 @@ namespace WFThesisManagementSystem.Repositories
         }
         //get task by group id
 
-        public IQueryable<Task> GetTaskByGroupId(int groupId)
+        public List<Task> GetTaskByGroupId(int groupId)
         {
-            return _context.Tasks.Where(x => x.group_id == groupId);
+            return _context.Tasks.Where(x => x.group_id == groupId).ToList();
         }
 
         //get task by task name
@@ -67,6 +67,9 @@ namespace WFThesisManagementSystem.Repositories
             return _context.Tasks.FirstOrDefault(x => x.task_name == taskName);
         }
 
-
+        public Task GetFirstTask()
+        {
+            return _context.Tasks.OrderBy(x=>x.open_day).FirstOrDefault();
+        }
     }
 }

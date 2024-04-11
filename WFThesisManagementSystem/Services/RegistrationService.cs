@@ -12,6 +12,7 @@ namespace WFThesisManagementSystem.Services
         Topic _topic;
         RegisterQueueRepository _registerQueueRepository;
         StudentGroupRepository _studentGroupRepository;
+        private ThesisManagementContext _context;
         string _groupName;
         public RegistrationService(Student student, Topic topic, string groupName)
         {
@@ -21,6 +22,14 @@ namespace WFThesisManagementSystem.Services
             var context = new ThesisManagementContext();
             _registerQueueRepository = new RegisterQueueRepository(context);
             _studentGroupRepository = new StudentGroupRepository(context);
+        }
+
+        public RegistrationService(Student student, ThesisManagementContext context)
+        {
+            _student = student;
+             _context = context;
+            _registerQueueRepository = new RegisterQueueRepository(_context);
+            _studentGroupRepository = new StudentGroupRepository(_context);
         }
 
         public bool Register()
