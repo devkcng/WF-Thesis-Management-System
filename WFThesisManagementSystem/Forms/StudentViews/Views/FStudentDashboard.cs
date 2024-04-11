@@ -13,6 +13,7 @@ using WFThesisManagementSystem.Repositories;
 using System.Collections.Generic;
 
 using UserControl = System.Windows.Forms.UserControl;
+using WFThesisManagementSystem.Services;
 
 namespace WFThesisManagementSystem.Forms.StudentViews.Views
 {
@@ -40,13 +41,21 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         }
 
         private void createNotification(object sender, EventArgs e)
-        {
+        {   
+            if(TopicRegisterReminder())
+            {
+                return;
+            }
             FNotification fNotification = new FNotification(_context);
             fNotification.Show();
         }
 
         private void CbTaskDate_ValueChanged(object sender, EventArgs e)
         {
+            if(TopicRegisterReminder())
+            {
+                return;
+            }
             UCDashBoard uCDashBoard = sender as UCDashBoard;
             uCDashBoard.flpGroupTask.Controls.Clear();
             var groupID = _studentRepository.GetById(_userSessionHelper.UserID).group_id;
@@ -66,6 +75,10 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         }
         private void DateTimePicker_ValueChanged(object sender, EventArgs e)
         {
+            if(TopicRegisterReminder())
+            {
+                return;
+            }
             UCStudentTask uCStudentTask = sender as UCStudentTask;
             uCStudentTask.flpGroupTaskView.Controls.Clear();
             var groupID = _studentRepository.GetById(_userSessionHelper.UserID).group_id;
@@ -92,7 +105,11 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         }
 
         private void projectToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        {   
+            if(TopicRegisterReminder())
+            {
+                return;
+            }
             panelContainer.Controls.Clear();
             UCDashBoard ucDashBoard = new UCDashBoard();
             ucDashBoard.Dock = DockStyle.Fill;
@@ -102,7 +119,11 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             panelContainer.Controls.Add(ucDashBoard);
         }
         private void task_Click(object sender, EventArgs e)
-        {
+        {   
+            if(TopicRegisterReminder())
+            {
+                return;
+            }
             panelContainer.Controls.Clear();
             UCStudentTask uCStudentTask = new UCStudentTask();
             uCStudentTask.Dock = DockStyle.Fill;
@@ -115,7 +136,11 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         }
 
         private void worklogs_Click(object sender, EventArgs e)
-        {
+        {   
+            if(TopicRegisterReminder())
+            {
+                return;
+            }
             panelContainer.Controls.Clear();
             UCStudentWorkLogs uCStudentWorkLogs = new UCStudentWorkLogs();
             uCStudentWorkLogs.Dock = DockStyle.Fill;
@@ -133,7 +158,10 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
 
         private void performance_Click(object sender, EventArgs e)
         {
-
+            if(TopicRegisterReminder())
+            {
+                return;
+            }
         }
 
         private void UCStudentTask_Load(UCStudentTask uCStudentTask)
@@ -418,6 +446,31 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         private void ucStudentTask1_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private bool TopicRegisterReminder()
+        {   
+            var student = _studentRepository.GetById(_userSessionHelper.UserID);
+            var registrationService = new RegistrationService(student,_context);
+            if (registrationService.AlreadyRegistered())
+            {
+                return false;
+            }
+
+            string message = "You have not registered topic. Do you want to register one?";
+            string title = "Topic Reminder";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons);
+            if (result == DialogResult.Yes) {
+                this.Close();
+                FStudentRegisterTopic fStudentRegisterTopic = new FStudentRegisterTopic(_context);
+                fStudentRegisterTopic.Show();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
