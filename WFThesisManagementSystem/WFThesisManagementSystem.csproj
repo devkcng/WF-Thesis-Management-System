@@ -152,6 +152,12 @@
     <Compile Include="Forms\StudentViews\StudentUserControl\UCSubTasks.Designer.cs">
       <DependentUpon>UCSubTasks.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCTopic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCTopic.Designer.cs">
+      <DependentUpon>UCTopic.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\StudentViews\Views\FTopicRegister.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -491,6 +497,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCSubTasks.resx">
       <DependentUpon>UCSubTasks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCTopic.resx">
+      <DependentUpon>UCTopic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StudentViews\Views\FTopicRegister.resx">
       <DependentUpon>FTopicRegister.cs</DependentUpon>
