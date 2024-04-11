@@ -403,6 +403,16 @@ namespace WFThesisManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap multiple_users_silhouette {
+            get {
+                object obj = ResourceManager.GetObject("multiple-users-silhouette", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Name {
             get {
                 object obj = ResourceManager.GetObject("Name", resourceCulture);
@@ -453,9 +463,49 @@ namespace WFThesisManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap open_book__1_ {
+            get {
+                object obj = ResourceManager.GetObject("open-book (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap open_book__2_ {
+            get {
+                object obj = ResourceManager.GetObject("open-book (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap open_book__3_ {
+            get {
+                object obj = ResourceManager.GetObject("open-book (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pencil {
             get {
                 object obj = ResourceManager.GetObject("pencil", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pencil1 {
+            get {
+                object obj = ResourceManager.GetObject("pencil1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
