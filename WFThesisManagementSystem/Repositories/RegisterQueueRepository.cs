@@ -50,6 +50,10 @@ namespace WFThesisManagementSystem.Repositories
         {
             return _context.RegisterQueues.FirstOrDefault(x => x.topic_id == id);
         }
+        //public List<RegisterQueue> GetAllByTopicId(int id)
+        //{
+        //    return _context.RegisterQueues.Where(x => x.topic_id == id).ToList();
+        //}
 
     }
 
