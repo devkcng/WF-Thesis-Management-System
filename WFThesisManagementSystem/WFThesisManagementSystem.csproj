@@ -792,6 +792,11 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\pencil1.png" />
+    <None Include="Resources\multiple-users-silhouette.png" />
+    <None Include="Resources\open-book %283%29.png" />
+    <None Include="Resources\open-book %282%29.png" />
+    <None Include="Resources\open-book %281%29.png" />
     <None Include="Resources\notification1.png" />
     <None Include="Resources\notification.png" />
     <None Include="Resources\laptop.png" />
