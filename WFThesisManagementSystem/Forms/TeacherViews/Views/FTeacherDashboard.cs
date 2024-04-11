@@ -15,6 +15,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         ThesisManagementContext _context;
         StudentGroupRepository _studentGroupRepository;
         TaskRepository _taskRepository;
+        TopicRepository _topicRepository;
         int GroupIdCreate;
 
         public FTeacherDashboard()
@@ -22,6 +23,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             _context = new ThesisManagementContext();
             _studentGroupRepository = new StudentGroupRepository(_context);
             _taskRepository = new TaskRepository(_context);
+            _topicRepository = new TopicRepository(_context);
             InitializeComponent();
             ucTeacherAllTopics1.Hide();
             ucTeacherAllTask1.Hide();
@@ -117,7 +119,9 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             foreach (var studentGroup in studentGroupList)
             {
                 UcTeacherSingleGroup ucTeacherSingleGroup = new UcTeacherSingleGroup();
-                ucTeacherSingleGroup.Name = studentGroup.group_name;
+                ucTeacherSingleGroup.NameGroup = studentGroup.group_name;
+                var topic = _topicRepository.GetById((int)studentGroup.topic_id);
+                ucTeacherSingleGroup.NameTopic = topic.topic_name;
                 ucTeacherSingleGroup.Id = studentGroup.group_id;
                 ucTeacherSingleGroup.Clicked += ucTeacherSingleGroup_Clicked;
                 ucTeacherAllTask1.flpAllGroupView.Controls.Add(ucTeacherSingleGroup);
@@ -146,6 +150,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
                 ucTeacherSingleTask.Name = task.task_name;
                 ucTeacherSingleTask.TimeOpen = task.open_day.Value;
                 ucTeacherSingleTask.TimeEnd = task.due_date.Value;
+                ucTeacherSingleTask.Content = task.task_description;
                 ucTeacherSingleTask.EditButtonClicked += ucTeacherSingleTask_EditButton_Click;
                 ucTeacherSingleTask.SubmitButtonClicked += ucTeacherSingleTask_SubmitTask_Click;
                 ucTeacherAllTask1.flpAllTasks.Controls.Add(ucTeacherSingleTask);
@@ -185,6 +190,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
                         ucTeacherSingleTask.Name = task.task_name;
                         ucTeacherSingleTask.TimeOpen = task.open_day.Value;
                         ucTeacherSingleTask.TimeEnd = task.due_date.Value;
+                        ucTeacherSingleTask.Content = task.task_description;
                         ucTeacherSingleTask.EditButtonClicked += ucTeacherSingleTask_EditButton_Click;
                         ucTeacherSingleTask.SubmitButtonClicked += ucTeacherSingleTask_SubmitTask_Click;
                         ucTeacherAllTask1.flpAllTasks.Controls.Add(ucTeacherSingleTask);
