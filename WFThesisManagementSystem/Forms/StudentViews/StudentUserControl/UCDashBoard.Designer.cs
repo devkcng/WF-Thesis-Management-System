@@ -31,10 +31,6 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.sdpTOP = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.sdpTask = new Guna.UI2.WinForms.Guna2ShadowPanel();
@@ -47,7 +43,6 @@
             this.tooltip = new Guna.UI2.WinForms.Guna2HtmlToolTip();
             this.sdpBottom = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.sdpPerformanceChart = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.chart4 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.sdpTaskChart = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.groupTaskChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -58,8 +53,6 @@
             this.panel1.SuspendLayout();
             this.sdpCalendar.SuspendLayout();
             this.sdpBottom.SuspendLayout();
-            this.sdpPerformanceChart.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart4)).BeginInit();
             this.sdpTaskChart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupTaskChart)).BeginInit();
             this.SuspendLayout();
@@ -184,45 +177,21 @@
             // sdpPerformanceChart
             // 
             this.sdpPerformanceChart.BackColor = System.Drawing.Color.Transparent;
-            this.sdpPerformanceChart.Controls.Add(this.chart4);
             this.sdpPerformanceChart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sdpPerformanceChart.FillColor = System.Drawing.Color.White;
-            this.sdpPerformanceChart.Location = new System.Drawing.Point(1409, 20);
+            this.sdpPerformanceChart.Location = new System.Drawing.Point(1464, 20);
             this.sdpPerformanceChart.Name = "sdpPerformanceChart";
-            this.sdpPerformanceChart.Radius = 10;
             this.sdpPerformanceChart.ShadowColor = System.Drawing.Color.Black;
-            this.sdpPerformanceChart.Size = new System.Drawing.Size(799, 359);
+            this.sdpPerformanceChart.ShadowDepth = 0;
+            this.sdpPerformanceChart.ShadowShift = 0;
+            this.sdpPerformanceChart.Size = new System.Drawing.Size(744, 359);
             this.sdpPerformanceChart.TabIndex = 2;
-            // 
-            // chart4
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chart4.ChartAreas.Add(chartArea1);
-            this.chart4.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chart4.Legends.Add(legend1);
-            this.chart4.Location = new System.Drawing.Point(0, 0);
-            this.chart4.Name = "chart4";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Legend = "Legend1";
-            series1.Name = "s1";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series2.Legend = "Legend1";
-            series2.Name = "s2";
-            this.chart4.Series.Add(series1);
-            this.chart4.Series.Add(series2);
-            this.chart4.Size = new System.Drawing.Size(799, 359);
-            this.chart4.TabIndex = 0;
-            this.chart4.Text = "chart4";
-            this.chart4.Visible = false;
             // 
             // guna2CustomGradientPanel1
             // 
             this.guna2CustomGradientPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2CustomGradientPanel1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(1392, 20);
+            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(1447, 20);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(17, 359);
             this.guna2CustomGradientPanel1.TabIndex = 1;
@@ -236,30 +205,30 @@
             this.sdpTaskChart.Location = new System.Drawing.Point(20, 20);
             this.sdpTaskChart.Name = "sdpTaskChart";
             this.sdpTaskChart.ShadowColor = System.Drawing.Color.Black;
-            this.sdpTaskChart.Size = new System.Drawing.Size(1372, 359);
+            this.sdpTaskChart.Size = new System.Drawing.Size(1427, 359);
             this.sdpTaskChart.TabIndex = 0;
             // 
             // groupTaskChart
             // 
             this.groupTaskChart.BorderSkin.BorderWidth = 5;
             this.groupTaskChart.BorderSkin.PageColor = System.Drawing.Color.WhiteSmoke;
-            chartArea2.Name = "ChartArea1";
-            this.groupTaskChart.ChartAreas.Add(chartArea2);
+            chartArea1.Name = "ChartArea1";
+            this.groupTaskChart.ChartAreas.Add(chartArea1);
             this.groupTaskChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Name = "Legend1";
-            this.groupTaskChart.Legends.Add(legend2);
+            legend1.Name = "Legend1";
+            this.groupTaskChart.Legends.Add(legend1);
             this.groupTaskChart.Location = new System.Drawing.Point(0, 0);
             this.groupTaskChart.Name = "groupTaskChart";
-            series3.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.DiagonalRight;
-            series3.BackSecondaryColor = System.Drawing.Color.White;
-            series3.BorderWidth = 8;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series3.Legend = "Legend1";
-            series3.Name = "s1";
-            this.groupTaskChart.Series.Add(series3);
-            this.groupTaskChart.Size = new System.Drawing.Size(1372, 359);
+            series1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.DiagonalRight;
+            series1.BackSecondaryColor = System.Drawing.Color.White;
+            series1.BorderWidth = 8;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series1.Legend = "Legend1";
+            series1.Name = "s1";
+            this.groupTaskChart.Series.Add(series1);
+            this.groupTaskChart.Size = new System.Drawing.Size(1427, 359);
             this.groupTaskChart.TabIndex = 1;
             this.groupTaskChart.Text = "Task Chart";
             title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -295,8 +264,6 @@
             this.panel1.PerformLayout();
             this.sdpCalendar.ResumeLayout(false);
             this.sdpBottom.ResumeLayout(false);
-            this.sdpPerformanceChart.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart4)).EndInit();
             this.sdpTaskChart.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupTaskChart)).EndInit();
             this.ResumeLayout(false);
@@ -310,7 +277,6 @@
         private Guna.UI2.WinForms.Guna2ShadowPanel sdpBottom;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
         private Guna.UI2.WinForms.Guna2HtmlToolTip guna2HtmlToolTip1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart4;
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Label lblTasks;
         public Guna.UI2.WinForms.Guna2ShadowPanel sdpCalendar;
