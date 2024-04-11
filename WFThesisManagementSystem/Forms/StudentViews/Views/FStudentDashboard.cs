@@ -42,7 +42,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
 
         private void createNotification(object sender, EventArgs e)
         {   
-            if(TopicRegisterReminder())
+            if(!TopicRegisterReminder())
             {
                 return;
             }
@@ -52,7 +52,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
 
         private void CbTaskDate_ValueChanged(object sender, EventArgs e)
         {
-            if(TopicRegisterReminder())
+            if(!TopicRegisterReminder())
             {
                 return;
             }
@@ -75,7 +75,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         }
         private void DateTimePicker_ValueChanged(object sender, EventArgs e)
         {
-            if(TopicRegisterReminder())
+            if(!TopicRegisterReminder())
             {
                 return;
             }
@@ -106,7 +106,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
 
         private void projectToolStripMenuItem_Click(object sender, EventArgs e)
         {   
-            if(TopicRegisterReminder())
+            if(!TopicRegisterReminder())
             {
                 return;
             }
@@ -120,7 +120,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         }
         private void task_Click(object sender, EventArgs e)
         {   
-            if(TopicRegisterReminder())
+            if(!TopicRegisterReminder())
             {
                 return;
             }
@@ -137,7 +137,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
 
         private void worklogs_Click(object sender, EventArgs e)
         {   
-            if(TopicRegisterReminder())
+            if(!TopicRegisterReminder())
             {
                 return;
             }
@@ -158,7 +158,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
 
         private void performance_Click(object sender, EventArgs e)
         {
-            if(TopicRegisterReminder())
+            if(!TopicRegisterReminder())
             {
                 return;
             }
@@ -454,7 +454,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             var registrationService = new RegistrationService(student,_context);
             if (registrationService.AlreadyRegistered())
             {
-                return false;
+                return true;
             }
 
             string message = "You have not registered topic. Do you want to register one?";
@@ -462,10 +462,10 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result = MessageBox.Show(message, title, buttons);
             if (result == DialogResult.Yes) {
-                this.Close();
                 FStudentRegisterTopic fStudentRegisterTopic = new FStudentRegisterTopic(_context);
                 fStudentRegisterTopic.Show();
-                return true;
+                this.Close();
+                return false;
             }
             else
             {
