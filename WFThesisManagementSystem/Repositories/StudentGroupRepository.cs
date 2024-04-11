@@ -56,5 +56,6 @@ namespace WFThesisManagementSystem.Repositories
         {
             return _context.StudentGroups.FirstOrDefault(sg => sg.group_name == groupName);
         }
+
     }
 }
