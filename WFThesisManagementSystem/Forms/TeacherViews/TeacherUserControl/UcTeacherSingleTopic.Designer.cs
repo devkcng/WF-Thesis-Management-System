@@ -30,44 +30,29 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UcTeacherSingleTopic));
             this.lblDescription = new System.Windows.Forms.Label();
-            this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
             this.lblLine = new System.Windows.Forms.Label();
             this.plName = new System.Windows.Forms.Panel();
             this.lblName = new System.Windows.Forms.Label();
+            this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.plName.SuspendLayout();
+            this.guna2ShadowPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
             this.lblDescription.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescription.Location = new System.Drawing.Point(45, 149);
+            this.lblDescription.Location = new System.Drawing.Point(24, 157);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(147, 30);
             this.lblDescription.TabIndex = 3;
             this.lblDescription.Text = "Description";
             // 
-            // btnEdit
-            // 
-            this.btnEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEdit.FillColor = System.Drawing.Color.Transparent;
-            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Image = global::WFThesisManagementSystem.Properties.Resources.Create;
-            this.btnEdit.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnEdit.Location = new System.Drawing.Point(1087, 39);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(53, 48);
-            this.btnEdit.TabIndex = 1;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
             // lblLine
             // 
             this.lblLine.AutoSize = true;
-            this.lblLine.Location = new System.Drawing.Point(46, 104);
+            this.lblLine.Location = new System.Drawing.Point(25, 117);
             this.lblLine.Name = "lblLine";
             this.lblLine.Size = new System.Drawing.Size(1094, 20);
             this.lblLine.TabIndex = 5;
@@ -77,7 +62,7 @@
             // 
             this.plName.BackColor = System.Drawing.Color.LightBlue;
             this.plName.Controls.Add(this.lblName);
-            this.plName.Location = new System.Drawing.Point(50, 21);
+            this.plName.Location = new System.Drawing.Point(29, 24);
             this.plName.Name = "plName";
             this.plName.Size = new System.Drawing.Size(982, 73);
             this.plName.TabIndex = 6;
@@ -93,22 +78,52 @@
             this.lblName.Text = "Name";
             this.lblName.Click += new System.EventHandler(this.lblName_Click);
             // 
+            // btnEdit
+            // 
+            this.btnEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnEdit.FillColor = System.Drawing.Color.Transparent;
+            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnEdit.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.Image = global::WFThesisManagementSystem.Properties.Resources.Create;
+            this.btnEdit.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnEdit.Location = new System.Drawing.Point(1066, 42);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(53, 48);
+            this.btnEdit.TabIndex = 1;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // guna2ShadowPanel1
+            // 
+            this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.guna2ShadowPanel1.Controls.Add(this.lblDescription);
+            this.guna2ShadowPanel1.Controls.Add(this.btnEdit);
+            this.guna2ShadowPanel1.Controls.Add(this.plName);
+            this.guna2ShadowPanel1.Controls.Add(this.lblLine);
+            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
+            this.guna2ShadowPanel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
+            this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(1178, 229);
+            this.guna2ShadowPanel1.TabIndex = 7;
+            // 
             // UcTeacherSingleTopic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.lblDescription);
-            this.Controls.Add(this.plName);
-            this.Controls.Add(this.lblLine);
-            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.guna2ShadowPanel1);
             this.Name = "UcTeacherSingleTopic";
             this.Size = new System.Drawing.Size(1178, 229);
             this.Load += new System.EventHandler(this.UcTeacherSingleTopic_Load);
             this.plName.ResumeLayout(false);
             this.plName.PerformLayout();
+            this.guna2ShadowPanel1.ResumeLayout(false);
+            this.guna2ShadowPanel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -118,5 +133,6 @@
         public System.Windows.Forms.Label lblLine;
         private System.Windows.Forms.Panel plName;
         public System.Windows.Forms.Label lblName;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
     }
 }
