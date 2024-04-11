@@ -415,6 +415,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FTeacherDashboard";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.MSListFolder.ResumeLayout(false);
             this.MSListFolder.PerformLayout();
             this.panel1.ResumeLayout(false);

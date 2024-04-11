@@ -42,10 +42,9 @@
             // 
             this.lblTasks.AutoSize = true;
             this.lblTasks.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTasks.Location = new System.Drawing.Point(31, 23);
-            this.lblTasks.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTasks.Location = new System.Drawing.Point(46, 35);
             this.lblTasks.Name = "lblTasks";
-            this.lblTasks.Size = new System.Drawing.Size(69, 26);
+            this.lblTasks.Size = new System.Drawing.Size(98, 38);
             this.lblTasks.TabIndex = 12;
             this.lblTasks.Text = "Tasks";
             // 
@@ -58,10 +57,9 @@
             this.btnCreate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnCreate.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreate.ForeColor = System.Drawing.Color.White;
-            this.btnCreate.Location = new System.Drawing.Point(916, 23);
-            this.btnCreate.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCreate.Location = new System.Drawing.Point(1374, 35);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(77, 29);
+            this.btnCreate.Size = new System.Drawing.Size(116, 45);
             this.btnCreate.TabIndex = 13;
             this.btnCreate.Text = "Create";
             // 
@@ -69,20 +67,18 @@
             // 
             this.flpAllTasks.AutoScroll = true;
             this.flpAllTasks.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flpAllTasks.Location = new System.Drawing.Point(495, 73);
-            this.flpAllTasks.Margin = new System.Windows.Forms.Padding(2);
+            this.flpAllTasks.Location = new System.Drawing.Point(742, 112);
             this.flpAllTasks.Name = "flpAllTasks";
-            this.flpAllTasks.Size = new System.Drawing.Size(511, 512);
+            this.flpAllTasks.Size = new System.Drawing.Size(748, 787);
             this.flpAllTasks.TabIndex = 6;
             // 
             // flpAllGroupView
             // 
             this.flpAllGroupView.AutoScroll = true;
             this.flpAllGroupView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.flpAllGroupView.Location = new System.Drawing.Point(35, 73);
-            this.flpAllGroupView.Margin = new System.Windows.Forms.Padding(2);
+            this.flpAllGroupView.Location = new System.Drawing.Point(52, 112);
             this.flpAllGroupView.Name = "flpAllGroupView";
-            this.flpAllGroupView.Size = new System.Drawing.Size(424, 512);
+            this.flpAllGroupView.Size = new System.Drawing.Size(635, 787);
             this.flpAllGroupView.TabIndex = 14;
             // 
             // dtpEndDay
@@ -92,15 +88,13 @@
             this.dtpEndDay.FillColor = System.Drawing.Color.Tomato;
             this.dtpEndDay.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpEndDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEndDay.Location = new System.Drawing.Point(752, 24);
-            this.dtpEndDay.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpEndDay.Location = new System.Drawing.Point(1128, 37);
             this.dtpEndDay.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpEndDay.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpEndDay.Name = "dtpEndDay";
-            this.dtpEndDay.Size = new System.Drawing.Size(109, 29);
+            this.dtpEndDay.Size = new System.Drawing.Size(164, 45);
             this.dtpEndDay.TabIndex = 15;
             this.dtpEndDay.Value = new System.DateTime(2024, 4, 2, 16, 36, 24, 159);
-            
             // 
             // dtpStartDay
             // 
@@ -109,24 +103,21 @@
             this.dtpStartDay.FillColor = System.Drawing.Color.Green;
             this.dtpStartDay.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpStartDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpStartDay.Location = new System.Drawing.Point(561, 23);
-            this.dtpStartDay.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpStartDay.Location = new System.Drawing.Point(842, 35);
             this.dtpStartDay.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpStartDay.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpStartDay.Name = "dtpStartDay";
-            this.dtpStartDay.Size = new System.Drawing.Size(104, 29);
+            this.dtpStartDay.Size = new System.Drawing.Size(156, 45);
             this.dtpStartDay.TabIndex = 16;
             this.dtpStartDay.Value = new System.DateTime(2024, 4, 2, 15, 42, 12, 488);
-            
             // 
             // lblFrom
             // 
             this.lblFrom.AutoSize = true;
             this.lblFrom.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFrom.Location = new System.Drawing.Point(481, 26);
-            this.lblFrom.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFrom.Location = new System.Drawing.Point(722, 40);
             this.lblFrom.Name = "lblFrom";
-            this.lblFrom.Size = new System.Drawing.Size(55, 22);
+            this.lblFrom.Size = new System.Drawing.Size(81, 34);
             this.lblFrom.TabIndex = 17;
             this.lblFrom.Text = "From";
             // 
@@ -134,16 +125,15 @@
             // 
             this.lblTo.AutoSize = true;
             this.lblTo.Font = new System.Drawing.Font("Century Gothic", 14F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTo.Location = new System.Drawing.Point(695, 26);
-            this.lblTo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTo.Location = new System.Drawing.Point(1042, 40);
             this.lblTo.Name = "lblTo";
-            this.lblTo.Size = new System.Drawing.Size(28, 22);
+            this.lblTo.Size = new System.Drawing.Size(44, 34);
             this.lblTo.TabIndex = 18;
             this.lblTo.Text = "To";
             // 
             // UcTeacherAllTask
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.Controls.Add(this.lblTo);
@@ -154,9 +144,8 @@
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.lblTasks);
             this.Controls.Add(this.flpAllTasks);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UcTeacherAllTask";
-            this.Size = new System.Drawing.Size(1056, 636);
+            this.Size = new System.Drawing.Size(1540, 978);
             this.Load += new System.EventHandler(this.UcTeacherAllTask_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
