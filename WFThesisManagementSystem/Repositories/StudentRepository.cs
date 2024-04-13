@@ -52,5 +52,7 @@ namespace WFThesisManagementSystem.Repositories
             //_context.Entry(student_group).State = System.Data.Entity.EntityState.Modified;
             //_context.SaveChanges();
         }
+
+
     }
 }
