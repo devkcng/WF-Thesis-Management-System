@@ -14,6 +14,7 @@ using System.Collections.Generic;
 
 using UserControl = System.Windows.Forms.UserControl;
 using WFThesisManagementSystem.Services;
+using System.Web.UI.WebControls;
 
 namespace WFThesisManagementSystem.Forms.StudentViews.Views
 {
@@ -71,7 +72,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                 taskListFiltered=filterHelper.FilterByMonth();
             }
             taskListFiltered = filterHelper.GetSortedTasks();
-            LoadTask(taskListFiltered, uCDashBoard.flpGroupTask, new Size(465, 140), groupID.Value);
+            //LoadTask(taskListFiltered, uCDashBoard.flpGroupTask, new Size(465, 140), groupID.Value);
         }
         private void DateTimePicker_ValueChanged(object sender, EventArgs e)
         {
@@ -111,12 +112,10 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                 return;
             }
             panelContainer.Controls.Clear();
-            UCDashBoard ucDashBoard = new UCDashBoard();
-            ucDashBoard.Dock = DockStyle.Fill;
-            ucDashBoard.sdpPerformanceChart.Visible = false;
-            UCDashBoard_Load(ucDashBoard);
-            ucDashBoard.cbTaskDateChange += CbTaskDate_ValueChanged;
-            panelContainer.Controls.Add(ucDashBoard);
+            UCStudentProject uCStudentProject = new UCStudentProject();
+            uCStudentProject.Dock = DockStyle.Fill;
+            panelContainer.Controls.Add(uCStudentProject);
+            ListUCStudentProjectComponent(uCStudentProject);
         }
         private void task_Click(object sender, EventArgs e)
         {   
@@ -142,9 +141,13 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                 return;
             }
             panelContainer.Controls.Clear();
-            UCStudentWorkLogs uCStudentWorkLogs = new UCStudentWorkLogs();
-            uCStudentWorkLogs.Dock = DockStyle.Fill;
-            panelContainer.Controls.Add(uCStudentWorkLogs);
+            //UCStudentWorkLogs uCStudentWorkLogs = new UCStudentWorkLogs();
+            //uCStudentWorkLogs.Dock = DockStyle.Fill;
+            //panelContainer.Controls.Add(uCStudentWorkLogs);
+            UCStudentCalendar uCStudentCalendar = new UCStudentCalendar();
+            uCStudentCalendar.Dock = DockStyle.Fill;
+            panelContainer.Controls.Add(uCStudentCalendar);
+            ListCalendarComponent(uCStudentCalendar);
         }
 
 
@@ -170,80 +173,47 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         }
         private void UCDashBoard_Load(UCDashBoard ucDashBoard)
         {
-            ListDashboardComponent(ucDashBoard);
+            //ListDashboardComponent(ucDashBoard);
         }
 
-        #region ucDashBoard1-Components
-        private void ListDashboardComponent(UCDashBoard ucDashBoard)
+        #region UCStudentProject-Components
+        private void ListUCStudentProjectComponent(UCStudentProject uCStudentProject)
         {
-            ucDashBoard.sdpCalendar.Visible = false;
-            ucDashBoard.sdpTask.Visible = false;
-            ucDashBoard.sdpTaskChart.Visible = false;
-            ucDashBoard.sdpPerformanceChart.Visible = false;
+            var student = _studentRepository.GetById(_userSessionHelper.UserID);
+            var studentGroup = _studentgroupRepository.GetById(student.group_id.Value);
+            var studentTopic = _topicRepository.GetById(studentGroup.topic_id.Value);
+            var memberGroupList = _studentRepository.GetAllByGroupId(studentGroup.group_id);
+            var taskLisk = _taskRepository.GetByGroupID(studentGroup.group_id);
+            //Loadtopic
+            LoadTopic(uCStudentProject, studentTopic);
 
-            //load calendar
-            ucDashBoard.ucCalendar1.previousPtbClicked += PreviousPtb_Clicked;
-            ucDashBoard.ucCalendar1.nextPtbClicked += NextPtb_Clicked;
-            LoadCalendar(ucDashBoard);
+            //Load Group member
+            LoadGroupMember(uCStudentProject, memberGroupList.ToList());
 
-            //load task 
-            ucDashBoard.flpGroupTask.Hide();
-            ucDashBoard.flpGroupTask.Controls.Clear();
-            var groupID = _studentRepository.GetById(_userSessionHelper.UserID).group_id;
-            var groupTaskList = _taskRepository.GetByGroupID(groupID.Value);
-            var filterHelper = new FilterByDayHelper(groupTaskList, _context);
-            groupTaskList = filterHelper.GetSortedTasks();
-            LoadTask(groupTaskList, ucDashBoard.flpGroupTask, new Size(465, 140), groupID.Value);
-
-
-            //load chart
-            var unCompleteTask = _taskRepository.GetAllUncompletedTask(groupID.Value);
-            ucDashBoard.groupTaskChart.Series["s1"].Points.AddXY("Uncomplete Task", unCompleteTask.Count().ToString());
-            ucDashBoard.groupTaskChart.Series["s1"].Points.AddXY("Task", (groupTaskList.Count() - unCompleteTask.Count()).ToString());
-
-
-            ucDashBoard.sdpCalendar.Visible = true;
-            ucDashBoard.sdpTask.Visible = true;
-            ucDashBoard.sdpTaskChart.Visible = true;
-            ucDashBoard.sdpPerformanceChart.Visible = true;
+            //Load task
+            LoadTask(taskLisk, uCStudentProject.flpTask, new Size(400, 150), studentGroup.group_id);
+        }
+        private void LoadTopic(UCStudentProject uCStudentProject, Topic topic)
+        {
+            uCStudentProject.ucTopicDetail1.lblTopicName.Text = topic.topic_name;
+            uCStudentProject.ucTopicDetail1.lblMaxMembers.Text = topic.max_members.ToString();
+            uCStudentProject.ucTopicDetail1.txtTeacherName.Text = _teacherRepository.GetById(topic.teacher_id.Value).teacher_name;
+            uCStudentProject.ucTopicDetail1.txtTechnology.Text = topic.topic_technology;
+            uCStudentProject.ucTopicDetail1.txtCategory.Text = topic.topic_category;
+            uCStudentProject.ucTopicDetail1.txtDescription.Text = topic.topic_description;
+            uCStudentProject.ucTopicDetail1.txtRequirement.Text = topic.topic_requirement;
         }
 
-        private void LoadCalendar(UCDashBoard ucDashBoard)
+        private void LoadGroupMember (UCStudentProject uCStudentProject, List<Student> memberGroup)
         {
-            var groupID = _studentRepository.GetById(_userSessionHelper.UserID).group_id;
-            var groupTaskList = _taskRepository.GetByGroupID(groupID.Value);
-            var submitDates = groupTaskList.Select(groupTask => groupTask.due_date);
-
-
-            ucDashBoard.ucCalendar1.flpDayContainer.Visible = false;
-            ucDashBoard.ucCalendar1.flpDayContainer.Controls.Clear();
-
-            DateTime startOfTheMonth = new DateTime(ucDashBoard.ucCalendar1.year, ucDashBoard.ucCalendar1.month, 1);
-            int days = DateTime.DaysInMonth(ucDashBoard.ucCalendar1.year, ucDashBoard.ucCalendar1.month);
-
-
-            ucDashBoard.ucCalendar1.lblMY.Text = DateTimeFormatInfo.CurrentInfo.GetMonthName(ucDashBoard.ucCalendar1.month) + " " + ucDashBoard.ucCalendar1.year;
-            int dayoftheweek = Convert.ToInt32(startOfTheMonth.DayOfWeek.ToString("d")) + 1;
-
-            for (int i = 2; i < dayoftheweek; i++)
+            uCStudentProject.flpMember.Controls.Clear();
+            foreach (var member in memberGroup)
             {
-                UCBlank uCBlank = new UCBlank();
-                ucDashBoard.ucCalendar1.flpDayContainer.Controls.Add(uCBlank);
+                UCStudentInformation uCStudentInformation = new UCStudentInformation();
+                uCStudentInformation.lblName.Text = member.student_name;
+                uCStudentProject.flpMember.Controls.Add(uCStudentInformation);
             }
-            for (int i = 1; i <= days; i++)
-            {
-                UCDay uCDay = new UCDay();
-                uCDay.days(i);
 
-                DateTime currentDate = new DateTime(ucDashBoard.ucCalendar1.year, ucDashBoard.ucCalendar1.month, i);
-                if (submitDates.Contains(currentDate))
-                {
-                    uCDay.ptb1.FillColor = Color.Red;
-                    uCDay.ptb1.Visible = true;
-                }
-                ucDashBoard.ucCalendar1.flpDayContainer.Controls.Add(uCDay);
-            }
-            ucDashBoard.ucCalendar1.flpDayContainer.Visible = true;
         }
         private void LoadTask(List<Task> Tasks, FlowLayoutPanel flp, Size size, int groupID)
         {
@@ -269,15 +239,92 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
 
             flp.Visible = true;
         }
-
-
         #endregion
 
-        #region ucDashBoard1-Events
+        #region UCStudentCalendar-Components
+        private void ListCalendarComponent(UCStudentCalendar ucStudentCalendar)
+        {
+
+
+            //load calendar
+            ucStudentCalendar.ucCalendar1.previousPtbClicked += PreviousPtb_Clicked;
+            //ucStudentCalendar.ucCalendar1.nextPtbClicked += NextPtb_Clicked;
+            LoadCalendar(ucStudentCalendar);
+            LoadUpcomingEvents(ucStudentCalendar);
+            ////load task 
+            //ucDashBoard.flpGroupTask.Hide();
+            //ucDashBoard.flpGroupTask.Controls.Clear();
+            //var groupID = _studentRepository.GetById(_userSessionHelper.UserID).group_id;
+            //var groupTaskList = _taskRepository.GetByGroupID(groupID.Value);
+            //var filterHelper = new FilterByDayHelper(groupTaskList, _context);
+            //groupTaskList = filterHelper.GetSortedTasks();
+            //LoadTask(groupTaskList, ucDashBoard.flpGroupTask, new Size(465, 140), groupID.Value);
+
+
+        }
+        private void LoadUpcomingEvents(UCStudentCalendar ucStudentCalendar)
+        {
+            DateTime currentDate = DateTime.Today;
+            var groupID = _studentRepository.GetById(_userSessionHelper.UserID).group_id;
+            var groupTaskList = _taskRepository.GetByGroupID(groupID.Value);
+            var filteredDates = groupTaskList.Where(grouptask => (grouptask.due_date - currentDate).Value.Days <= 7 && grouptask.due_date> currentDate);
+            foreach (var submitdates in filteredDates)
+            {
+
+
+                UCSingleEvent uCSingleEvent = new UCSingleEvent();
+                uCSingleEvent.lbEventName.Text = submitdates.task_name;
+                uCSingleEvent.lblDay.Text = (submitdates.due_date - currentDate).Value.Days + " days left";
+                uCSingleEvent.Margin = new Padding(0, 0, 0, 20); // Adjust the last parameter to control vertical spacing
+
+                ucStudentCalendar.flpSingleEvent.Controls.Add(uCSingleEvent);
+            }
+        }
+
+        private void LoadCalendar(UCStudentCalendar ucStudentCalendar)
+        {
+            var groupID = _studentRepository.GetById(_userSessionHelper.UserID).group_id;
+            var groupTaskList = _taskRepository.GetByGroupID(groupID.Value);
+            var submitDates = groupTaskList.Select(groupTask => groupTask.due_date);
+
+            ucStudentCalendar.ucCalendar1.flpDayContainer.Visible = false;
+            ucStudentCalendar.ucCalendar1.flpDayContainer.Controls.Clear();
+
+            DateTime startOfTheMonth = new DateTime(ucStudentCalendar.ucCalendar1.year, ucStudentCalendar.ucCalendar1.month, 1);
+            int days = DateTime.DaysInMonth(ucStudentCalendar.ucCalendar1.year, ucStudentCalendar.ucCalendar1.month);
+
+
+            ucStudentCalendar.ucCalendar1.lblMY.Text = DateTimeFormatInfo.CurrentInfo.GetMonthName(ucStudentCalendar.ucCalendar1.month) + " " + ucStudentCalendar.ucCalendar1.year;
+            int dayoftheweek = Convert.ToInt32(startOfTheMonth.DayOfWeek.ToString("d")) + 1;
+
+            for (int i = 2; i < dayoftheweek; i++)
+            {
+                UCBlank uCBlank = new UCBlank();
+                ucStudentCalendar.ucCalendar1.flpDayContainer.Controls.Add(uCBlank);
+            }
+            for (int i = 1; i <= days; i++)
+            {
+                UCDay uCDay = new UCDay();
+                uCDay.days(i);
+
+                DateTime currentDate = new DateTime(ucStudentCalendar.ucCalendar1.year, ucStudentCalendar.ucCalendar1.month, i);
+                if (submitDates.Contains(currentDate))
+                {
+                    uCDay.ptb1.FillColor = Color.Red;
+                    uCDay.ptb1.Visible = true;
+                }
+                ucStudentCalendar.ucCalendar1.flpDayContainer.Controls.Add(uCDay);
+            }
+            ucStudentCalendar.ucCalendar1.flpDayContainer.Visible = true;
+        }
+        #endregion
+
+        #region ucStudentCalendar-Events
         private void PreviousPtb_Clicked(object sender, EventArgs e)
         {
             UCCalendar uCCalendar = sender as UCCalendar;
-            UCDashBoard ucDashBoard = (UCDashBoard)uCCalendar.Parent.Parent.Parent; // Tìm UCDashBoard từ UCCalendar
+            //MessageBox.Show(uCCalendar.Parent.Parent.ToString());
+            UCStudentCalendar  ucStudentCalendar  = (UCStudentCalendar)uCCalendar.Parent.Parent; // Tìm UCDashBoard từ UCCalendar
 
             if (uCCalendar.month == 1)
             {
@@ -288,12 +335,12 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             {
                 uCCalendar.month--;
             }
-            LoadCalendar(ucDashBoard);
+            LoadCalendar(ucStudentCalendar);
         }
         private void NextPtb_Clicked(object sender, EventArgs e)
         {
             UCCalendar uCCalendar = sender as UCCalendar;
-            UCDashBoard ucDashBoard = (UCDashBoard)uCCalendar.Parent.Parent.Parent; // Tìm UCDashBoard từ UCCalendar
+            UCStudentCalendar ucStudentCalendar = (UCStudentCalendar)uCCalendar.Parent.Parent; // Tìm UCDashBoard từ UCCalendar
             if (uCCalendar.month == 12)
             {
                 uCCalendar.year++;
@@ -303,7 +350,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             {
                 uCCalendar.month++;
             }
-            LoadCalendar(ucDashBoard);
+            LoadCalendar(ucStudentCalendar);
         }
         #endregion
 

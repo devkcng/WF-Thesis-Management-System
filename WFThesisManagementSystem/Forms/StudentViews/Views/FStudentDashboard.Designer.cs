@@ -43,12 +43,13 @@
             this.performance = new System.Windows.Forms.ToolStripMenuItem();
             this.logout = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnNotification = new Guna.UI2.WinForms.Guna2Button();
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.menuStrip3 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelContainer = new System.Windows.Forms.Panel();
-            this.btnNotification = new Guna.UI2.WinForms.Guna2Button();
+            this.cggToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menuStrip3.SuspendLayout();
@@ -144,12 +145,13 @@
             this.task,
             this.worklogs,
             this.performance,
+            this.cggToolStripMenuItem,
             this.logout});
             this.menuStrip2.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
             this.menuStrip2.Location = new System.Drawing.Point(0, 7);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip2.Size = new System.Drawing.Size(328, 294);
+            this.menuStrip2.Size = new System.Drawing.Size(328, 339);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -217,6 +219,25 @@
             this.panel1.Size = new System.Drawing.Size(2606, 91);
             this.panel1.TabIndex = 2;
             // 
+            // btnNotification
+            // 
+            this.btnNotification.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNotification.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnNotification.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnNotification.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnNotification.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnNotification.FillColor = System.Drawing.Color.Transparent;
+            this.btnNotification.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNotification.ForeColor = System.Drawing.Color.Black;
+            this.btnNotification.Image = global::WFThesisManagementSystem.Properties.Resources.notification1;
+            this.btnNotification.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnNotification.Location = new System.Drawing.Point(1841, 5);
+            this.btnNotification.Margin = new System.Windows.Forms.Padding(5);
+            this.btnNotification.Name = "btnNotification";
+            this.btnNotification.Size = new System.Drawing.Size(393, 81);
+            this.btnNotification.TabIndex = 7;
+            this.btnNotification.Text = "   Notification";
+            // 
             // kryptonLabel1
             // 
             this.kryptonLabel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -277,26 +298,12 @@
             this.panelContainer.Size = new System.Drawing.Size(2278, 1221);
             this.panelContainer.TabIndex = 4;
             // 
-            // btnNotification
+            // cggToolStripMenuItem
             // 
-            this.btnNotification.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNotification.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnNotification.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnNotification.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnNotification.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnNotification.FillColor = System.Drawing.Color.Transparent;
-            this.btnNotification.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNotification.ForeColor = System.Drawing.Color.Black;
-            this.btnNotification.Image = global::WFThesisManagementSystem.Properties.Resources.notification1;
-            this.btnNotification.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnNotification.Location = new System.Drawing.Point(1841, 5);
-            this.btnNotification.Margin = new System.Windows.Forms.Padding(5);
-            this.btnNotification.Name = "btnNotification";
-            this.btnNotification.Size = new System.Drawing.Size(393, 81);
-            this.btnNotification.TabIndex = 7;
-            this.btnNotification.Text = "   Notification";
+            this.cggToolStripMenuItem.Name = "cggToolStripMenuItem";
+            this.cggToolStripMenuItem.Size = new System.Drawing.Size(92, 45);
+            this.cggToolStripMenuItem.Text = "cgg";
             // 
-            
             // FStudentDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -346,5 +353,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.Panel panelContainer;
         private Guna.UI2.WinForms.Guna2Button btnNotification;
+        private System.Windows.Forms.ToolStripMenuItem cggToolStripMenuItem;
     }
 }
