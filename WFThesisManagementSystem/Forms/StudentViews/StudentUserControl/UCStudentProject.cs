@@ -16,5 +16,6 @@ namespace WFThesisManagementSystem.Forms.StudentViews.StudentUserControl
         {
             InitializeComponent();
         }
+
     }
 }
