@@ -83,7 +83,6 @@ namespace WFThesisManagementSystem.Services
             }
             return false;
         }
-
         public bool Unregistered()
         {
             //check if student is unregistered from a topic
