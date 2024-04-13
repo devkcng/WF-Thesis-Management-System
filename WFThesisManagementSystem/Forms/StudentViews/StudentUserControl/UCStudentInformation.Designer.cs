@@ -46,7 +46,7 @@
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.Radius = 10;
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(925, 163);
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(850, 163);
             this.guna2ShadowPanel1.TabIndex = 0;
             // 
             // lblName
@@ -56,7 +56,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(336, 56);
+            this.lblName.Location = new System.Drawing.Point(302, 55);
             this.lblName.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(385, 62);
@@ -80,8 +80,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.guna2ShadowPanel1);
+            this.Margin = new System.Windows.Forms.Padding(10);
             this.Name = "UCStudentInformation";
-            this.Size = new System.Drawing.Size(925, 163);
+            this.Size = new System.Drawing.Size(850, 163);
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).EndInit();
