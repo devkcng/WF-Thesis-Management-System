@@ -6,7 +6,8 @@ using WFThesisManagementSystem.Helper.SearchEngineHelper;
 using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.Repositories;
 using System.Drawing;
-using WFThesisManagementSystem.Forms.StudentViews.StudentUserControl; // Thêm dòng này để sử dụng Size
+using WFThesisManagementSystem.Forms.StudentViews.StudentUserControl;
+using WFThesisManagementSystem.Services; // Thêm dòng này để sử dụng Size
 
 namespace WFThesisManagementSystem.Forms.StudentViews.Views
 {
@@ -16,6 +17,10 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         private StudentGroupRepository _studentGroupRepository;
         private TeacherRepository _teacherRepository;
         private readonly TopicRepository _topicRepository;
+        private RegistrationService _registrationService;
+        private RegisterQueueRepository _registerQueueRepository;
+        UserSessionHelper _userSessionHelper = UserSessionHelper.Instance;
+
         private ThesisManagementContext _context;
         public FStudentRegisterTopic(ThesisManagementContext context)
         {
@@ -28,9 +33,12 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             _studentGroupRepository = new StudentGroupRepository(_context);
             _teacherRepository= new TeacherRepository(_context);
             _topicRepository = new TopicRepository(_context);
+            _registerQueueRepository = new RegisterQueueRepository(_context);
+            _registrationService = new RegistrationService(_studentRepository.GetById(_userSessionHelper.UserID), _context);
+
         }
 
-        
+
 
 
         //private void btnSearch_Click(object sender, EventArgs e)
@@ -94,6 +102,33 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                 uCTopic.TeacherName = _teacherRepository.GetById(topic.teacher_id.Value).teacher_name;
                 uCTopic.TeacherId = topic.teacher_id.Value;
                 uCTopic.Clicked += UCTopic_Clicked;
+
+                uCTopic.Margin = new Padding(0, 0, 0, 20); // Adjust the last parameter to control vertical spacing
+               
+                if(!_registrationService.Unregistered())
+                {
+
+                    if (_registrationService.AlreadyRegistered())
+                    {
+                        var studentGroup = _studentGroupRepository.GetById(_studentRepository.GetById(_userSessionHelper.UserID).group_id.Value);
+                        if (studentGroup.topic_id == uCTopic.Id)
+                        {
+                            uCTopic.ptbStatus.Image = Properties.Resources.accepted_picture;
+                            uCTopic.lblStatus.Visible = true;
+                            uCTopic.ptbStatus.Visible = true;
+                        }
+                    }
+                    else if (_registrationService.InQueue() && _registerQueueRepository.GetById(_userSessionHelper.UserID).topic_id == uCTopic.Id)
+                    {
+                        uCTopic.ptbStatus.Image = Properties.Resources.pending_picture;
+                        uCTopic.lblStatus.Visible = true;
+                        uCTopic.ptbStatus.Visible = true;
+                    }
+                }
+                else
+                {
+
+                }
                 flpAllTopics.Controls.Add(uCTopic);
             }
         }
