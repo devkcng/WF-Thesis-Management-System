@@ -36,13 +36,14 @@
             // 
             // guna2GradientPanel1
             // 
-            this.guna2GradientPanel1.BorderColor = System.Drawing.Color.Black;
+            this.guna2GradientPanel1.BorderColor = System.Drawing.Color.Silver;
             this.guna2GradientPanel1.BorderThickness = 5;
             this.guna2GradientPanel1.Controls.Add(this.lblDay);
             this.guna2GradientPanel1.Controls.Add(this.lbEventName);
             this.guna2GradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
+            this.guna2GradientPanel1.ShadowDecoration.Color = System.Drawing.Color.Silver;
             this.guna2GradientPanel1.Size = new System.Drawing.Size(800, 196);
             this.guna2GradientPanel1.TabIndex = 0;
             // 
