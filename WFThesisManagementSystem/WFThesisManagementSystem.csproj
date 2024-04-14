@@ -837,6 +837,7 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\icons8-calendar-48.png" />
     <None Include="Resources\icons8-chevron-right-64.png" />
     <None Include="Resources\icons8-chevron-left-64.png" />
     <None Include="Resources\pending_picture.png" />
