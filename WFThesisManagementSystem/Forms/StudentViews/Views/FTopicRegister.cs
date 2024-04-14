@@ -119,7 +119,8 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             }
         }
 
-        private void btnRegister_Click_1(object sender, EventArgs e)
+
+        private void btnRegister_Click(object sender, EventArgs e)
         {
             var student = _studentRepository.GetById(_userSessionHelper.UserID);
             var studentGroup = _studentGroupRepository.GetByTopicId(_topic.topic_id);
@@ -190,7 +191,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            FShowTopic fShowTopic = new FShowTopic(_topic,_context);
+            FShowTopic fShowTopic = new FShowTopic(_topic, _context);
             this.Close();
             fShowTopic.Show();
         }
