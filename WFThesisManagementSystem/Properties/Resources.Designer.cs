@@ -343,6 +343,16 @@ namespace WFThesisManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_calendar_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-calendar-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_chevron_left_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-chevron-left-64", resourceCulture);
