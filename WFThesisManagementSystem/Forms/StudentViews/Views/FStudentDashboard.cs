@@ -134,20 +134,24 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
 
         }
 
-        private void worklogs_Click(object sender, EventArgs e)
-        {   
-            if(!TopicRegisterReminder())
+        private void Calendar_Click(object sender, EventArgs e)
+        {
+            if (!TopicRegisterReminder())
             {
                 return;
             }
             panelContainer.Controls.Clear();
-            //UCStudentWorkLogs uCStudentWorkLogs = new UCStudentWorkLogs();
-            //uCStudentWorkLogs.Dock = DockStyle.Fill;
-            //panelContainer.Controls.Add(uCStudentWorkLogs);
+
             UCStudentCalendar uCStudentCalendar = new UCStudentCalendar();
             uCStudentCalendar.Dock = DockStyle.Fill;
             panelContainer.Controls.Add(uCStudentCalendar);
             ListCalendarComponent(uCStudentCalendar);
+        }
+        private void worklogs_Click(object sender, EventArgs e)
+        {
+            UCStudentWorkLogs uCStudentWorkLogs = new UCStudentWorkLogs();
+            uCStudentWorkLogs.Dock = DockStyle.Fill;
+            panelContainer.Controls.Add(uCStudentWorkLogs);
         }
 
 
@@ -519,5 +523,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                 return false;
             }
         }
+
+
     }
 }
