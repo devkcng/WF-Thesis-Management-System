@@ -62,6 +62,8 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             var student = _studentRepository.GetById(_userSessionHelper.UserID);
             var studentGroupList = _studentGroupRepository.GetAllByTopicID(_topic.topic_id);
             List<Student> studentList = new List<Student>();
+            RegistrationService registrationService = new
+        RegistrationService(student, _topic, txtGroupName.Text);
 
             //load member group onto dgv and group name
             foreach (var studentgroup in studentGroupList)
@@ -71,6 +73,14 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                 {
                     txtGroupName.Text = studentgroup.group_name;
                     txtGroupName.ReadOnly = true;
+
+
+                    // if nothing changes in the datagridview
+                    if (CountDataRows(dgvrRegisterMember) == studentList.Count())
+                    {
+                        btnRegister.Enabled = false;
+                        return;
+                    }
                     break;
                 }
             }
@@ -78,7 +88,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             foreach(var member in studentList)
             {
                 DataGridViewRow row = new DataGridViewRow();
-                row.CreateCells(dgvrRegisterMember); // dataGridView1 là tên của DataGridView
+                row.CreateCells(dgvrRegisterMember); 
 
                 // Gán giá trị id và name vào các ô của row
                 row.Cells[1].Value = member.student_id;
@@ -109,7 +119,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                 btnRegister.Enabled = false;
             }
             //add data of user onto datagridview, if they already register that topic, it will not add
-            else if(!studentList.Contains(_studentRepository.GetById(_userSessionHelper.UserID)))
+            else if(registrationService.Unregistered())
             {
                 DataGridViewRow newRow = new DataGridViewRow();
                 newRow.CreateCells(dgvrRegisterMember);
@@ -117,11 +127,15 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                 newRow.Cells[0].Value = _studentRepository.GetById(_userSessionHelper.UserID).student_name;
                 dgvrRegisterMember.Rows.Add(newRow);
             }
+
+            //
+
         }
 
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            //
             var student = _studentRepository.GetById(_userSessionHelper.UserID);
             var studentGroup = _studentGroupRepository.GetByTopicId(_topic.topic_id);
             if (txtGroupName.Text == "")
@@ -139,24 +153,33 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                 MessageBox.Show("Please enter the your group member info in the table");
                 return;
             }
-            // if nothing changes in the datagridview
-            if (CountDataRows(dgvrRegisterMember) == _studentRepository.GetAllByGroupId(studentGroup.group_id).Count())
-            {
-                MessageBox.Show("Nothing changes");
-                return;
-            }
 
+
+            //
+            List<Student> memberGroup = new List<Student>();
             foreach (DataGridViewRow row in dgvrRegisterMember.Rows)
             {
                 int studentId = Convert.ToInt32(row.Cells["student_id"].Value);
-
+                var member = _studentRepository.GetById(studentId);
+                RegistrationService registrationService = new
+        RegistrationService(member, _topic, txtGroupName.Text);
 
                 // Kiểm tra nếu hàng không phải là hàng header và có dữ liệu
                 if (!row.IsNewRow && row.Cells["student_id"].Value != null)
                 {
-                    if (_studentRepository.GetById(studentId) == null)
+                    if (member  == null)
                     {
                         MessageBox.Show("Student have the ID: " + studentId + " does not exist");
+                        return;
+                    }
+                    else if(registrationService.AlreadyRegistered())
+                    {
+                        MessageBox.Show("Student have the ID: " + studentId + " already have a group");
+                        return;
+                    }
+                    else if (registrationService.InQueue())
+                    {
+                        MessageBox.Show("Student have the ID: " + studentId + " already in queue");
                         return;
                     }
 
@@ -173,15 +196,16 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
 
                     if (!rowIsReadOnly)
                     {
-                        // Lấy giá trị của cột "student_id" từ hàng hiện tại
-                        RegistrationService registrationService = new
-        RegistrationService(student, _topic, txtGroupName.Text);
-                        if (!registrationService.Register())
-                        {
-                            return;
-                        }
+                        memberGroup.Add(member);
                     }
                 }
+            }
+
+            foreach(var member in memberGroup)
+            {
+                RegistrationService registrationService = new
+        RegistrationService(member, _topic, txtGroupName.Text);
+                registrationService.Register();
             }
             MessageBox.Show("Register successfully");
             this.Close();
