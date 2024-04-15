@@ -37,18 +37,19 @@
             this.kryptonContextMenuRadioButton1 = new ComponentFactory.Krypton.Toolkit.KryptonContextMenuRadioButton();
             this.kryptonContextMenuCheckButton1 = new ComponentFactory.Krypton.Toolkit.KryptonContextMenuCheckButton();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this.projectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.task = new System.Windows.Forms.ToolStripMenuItem();
-            this.worklogs = new System.Windows.Forms.ToolStripMenuItem();
-            this.performance = new System.Windows.Forms.ToolStripMenuItem();
-            this.logout = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.kryptonLabel1 = new ComponentFactory.Krypton.Toolkit.KryptonLabel();
             this.menuStrip3 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.projectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.task = new System.Windows.Forms.ToolStripMenuItem();
+            this.Calendar = new System.Windows.Forms.ToolStripMenuItem();
+            this.worklogs = new System.Windows.Forms.ToolStripMenuItem();
+            this.performance = new System.Windows.Forms.ToolStripMenuItem();
+            this.logout = new System.Windows.Forms.ToolStripMenuItem();
             this.btnNotification = new Guna.UI2.WinForms.Guna2Button();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.menuStrip3.SuspendLayout();
@@ -142,6 +143,7 @@
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.projectToolStripMenuItem,
             this.task,
+            this.Calendar,
             this.worklogs,
             this.performance,
             this.logout});
@@ -149,59 +151,9 @@
             this.menuStrip2.Location = new System.Drawing.Point(0, 7);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
-            this.menuStrip2.Size = new System.Drawing.Size(328, 294);
+            this.menuStrip2.Size = new System.Drawing.Size(328, 400);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
-            // 
-            // projectToolStripMenuItem
-            // 
-            this.projectToolStripMenuItem.BackColor = System.Drawing.Color.Wheat;
-            this.projectToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.projectToolStripMenuItem.Image = global::WFThesisManagementSystem.Properties.Resources.Edit;
-            this.projectToolStripMenuItem.Name = "projectToolStripMenuItem";
-            this.projectToolStripMenuItem.Size = new System.Drawing.Size(212, 58);
-            this.projectToolStripMenuItem.Text = "Project";
-            this.projectToolStripMenuItem.Click += new System.EventHandler(this.projectToolStripMenuItem_Click);
-            // 
-            // task
-            // 
-            this.task.BackColor = System.Drawing.Color.OldLace;
-            this.task.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.task.Image = global::WFThesisManagementSystem.Properties.Resources.Ok;
-            this.task.Name = "task";
-            this.task.Size = new System.Drawing.Size(161, 58);
-            this.task.Text = "Task";
-            this.task.Click += new System.EventHandler(this.task_Click);
-            // 
-            // worklogs
-            // 
-            this.worklogs.BackColor = System.Drawing.Color.Wheat;
-            this.worklogs.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.worklogs.Image = global::WFThesisManagementSystem.Properties.Resources.Bookmark;
-            this.worklogs.Name = "worklogs";
-            this.worklogs.Size = new System.Drawing.Size(278, 58);
-            this.worklogs.Text = "Work Logs";
-            this.worklogs.Click += new System.EventHandler(this.worklogs_Click);
-            // 
-            // performance
-            // 
-            this.performance.BackColor = System.Drawing.Color.OldLace;
-            this.performance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.performance.Image = global::WFThesisManagementSystem.Properties.Resources.Hexagon_Synchronize;
-            this.performance.Name = "performance";
-            this.performance.Size = new System.Drawing.Size(321, 58);
-            this.performance.Text = "Performance";
-            this.performance.Click += new System.EventHandler(this.performance_Click);
-            // 
-            // logout
-            // 
-            this.logout.BackColor = System.Drawing.Color.Wheat;
-            this.logout.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logout.Image = global::WFThesisManagementSystem.Properties.Resources.Single_Sign_On;
-            this.logout.Name = "logout";
-            this.logout.Size = new System.Drawing.Size(223, 58);
-            this.logout.Text = "Log out";
-            this.logout.Click += new System.EventHandler(this.logout_Click);
             // 
             // panel1
             // 
@@ -245,16 +197,6 @@
             this.menuStrip3.TabIndex = 4;
             this.menuStrip3.Text = "menuStrip3";
             // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.BackColor = System.Drawing.Color.Wheat;
-            this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripMenuItem1.Image = global::WFThesisManagementSystem.Properties.Resources.Female_User;
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(202, 58);
-            this.toolStripMenuItem1.Text = "Profile";
-            this.toolStripMenuItem1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            // 
             // panel2
             // 
             this.panel2.AutoSize = true;
@@ -277,6 +219,66 @@
             this.panelContainer.Size = new System.Drawing.Size(2278, 1221);
             this.panelContainer.TabIndex = 4;
             // 
+            // projectToolStripMenuItem
+            // 
+            this.projectToolStripMenuItem.BackColor = System.Drawing.Color.Wheat;
+            this.projectToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.projectToolStripMenuItem.Image = global::WFThesisManagementSystem.Properties.Resources.Edit;
+            this.projectToolStripMenuItem.Name = "projectToolStripMenuItem";
+            this.projectToolStripMenuItem.Size = new System.Drawing.Size(212, 58);
+            this.projectToolStripMenuItem.Text = "Project";
+            this.projectToolStripMenuItem.Click += new System.EventHandler(this.projectToolStripMenuItem_Click);
+            // 
+            // task
+            // 
+            this.task.BackColor = System.Drawing.Color.OldLace;
+            this.task.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.task.Image = global::WFThesisManagementSystem.Properties.Resources.Ok;
+            this.task.Name = "task";
+            this.task.Size = new System.Drawing.Size(161, 58);
+            this.task.Text = "Task";
+            this.task.Click += new System.EventHandler(this.task_Click);
+            // 
+            // Calendar
+            // 
+            this.Calendar.BackColor = System.Drawing.Color.OldLace;
+            this.Calendar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Calendar.Image = global::WFThesisManagementSystem.Properties.Resources.icons8_calendar_48;
+            this.Calendar.Name = "Calendar";
+            this.Calendar.Size = new System.Drawing.Size(246, 58);
+            this.Calendar.Text = "Calendar";
+            this.Calendar.Click += new System.EventHandler(this.Calendar_Click);
+            // 
+            // worklogs
+            // 
+            this.worklogs.BackColor = System.Drawing.Color.Wheat;
+            this.worklogs.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.worklogs.Image = global::WFThesisManagementSystem.Properties.Resources.Bookmark;
+            this.worklogs.Name = "worklogs";
+            this.worklogs.Size = new System.Drawing.Size(278, 58);
+            this.worklogs.Text = "Work Logs";
+            this.worklogs.Click += new System.EventHandler(this.worklogs_Click);
+            // 
+            // performance
+            // 
+            this.performance.BackColor = System.Drawing.Color.OldLace;
+            this.performance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.performance.Image = global::WFThesisManagementSystem.Properties.Resources.Hexagon_Synchronize;
+            this.performance.Name = "performance";
+            this.performance.Size = new System.Drawing.Size(321, 58);
+            this.performance.Text = "Performance";
+            this.performance.Click += new System.EventHandler(this.performance_Click);
+            // 
+            // logout
+            // 
+            this.logout.BackColor = System.Drawing.Color.Wheat;
+            this.logout.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logout.Image = global::WFThesisManagementSystem.Properties.Resources.Single_Sign_On;
+            this.logout.Name = "logout";
+            this.logout.Size = new System.Drawing.Size(223, 58);
+            this.logout.Text = "Log out";
+            this.logout.Click += new System.EventHandler(this.logout_Click);
+            // 
             // btnNotification
             // 
             this.btnNotification.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -296,7 +298,16 @@
             this.btnNotification.TabIndex = 7;
             this.btnNotification.Text = "   Notification";
             // 
-            
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.BackColor = System.Drawing.Color.Wheat;
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem1.Image = global::WFThesisManagementSystem.Properties.Resources.Female_User;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(202, 58);
+            this.toolStripMenuItem1.Text = "Profile";
+            this.toolStripMenuItem1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            // 
             // FStudentDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -346,5 +357,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.Panel panelContainer;
         private Guna.UI2.WinForms.Guna2Button btnNotification;
+        private System.Windows.Forms.ToolStripMenuItem Calendar;
     }
 }

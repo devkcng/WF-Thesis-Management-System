@@ -37,7 +37,7 @@
             this.guna2CustomGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(196, 126);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(260, 203);
             this.guna2CustomGradientPanel1.TabIndex = 0;
             // 
             // UCBlank
@@ -46,7 +46,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Name = "UCBlank";
-            this.Size = new System.Drawing.Size(196, 126);
+            this.Size = new System.Drawing.Size(260, 203);
             this.ResumeLayout(false);
 
         }

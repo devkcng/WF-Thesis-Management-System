@@ -36,6 +36,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.StudentUserControl
         {
             OnnextPtbClicked(EventArgs.Empty);
         }
+
         protected virtual void OnnextPtbClicked(EventArgs e)
         {
             nextPtbClicked?.Invoke(this, e);

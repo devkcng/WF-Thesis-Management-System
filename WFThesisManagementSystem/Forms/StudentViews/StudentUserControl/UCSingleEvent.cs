@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace WFThesisManagementSystem.Forms.StudentViews.StudentUserControl
 {
-    public partial class UCStudentProject : UserControl
+    public partial class UCSingleEvent : UserControl
     {
-        public UCStudentProject()
+        public UCSingleEvent()
         {
             InitializeComponent();
         }
-
     }
 }

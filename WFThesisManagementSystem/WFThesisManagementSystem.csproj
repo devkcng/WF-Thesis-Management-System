@@ -128,6 +128,18 @@
     <Compile Include="Forms\StudentViews\StudentUserControl\UCInvidualTask.Designer.cs">
       <DependentUpon>UCInvidualTask.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCSingleEvent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCSingleEvent.Designer.cs">
+      <DependentUpon>UCSingleEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentCalendar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentCalendar.Designer.cs">
+      <DependentUpon>UCStudentCalendar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentInformation.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -157,6 +169,12 @@
     </Compile>
     <Compile Include="Forms\StudentViews\StudentUserControl\UCTopic.Designer.cs">
       <DependentUpon>UCTopic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCTopicDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCTopicDetail.Designer.cs">
+      <DependentUpon>UCTopicDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\StudentViews\Views\FTopicRegister.cs">
       <SubType>Form</SubType>
@@ -486,6 +504,12 @@
     <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCInvidualTask.resx">
       <DependentUpon>UCInvidualTask.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCSingleEvent.resx">
+      <DependentUpon>UCSingleEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCStudentCalendar.resx">
+      <DependentUpon>UCStudentCalendar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCStudentInformation.resx">
       <DependentUpon>UCStudentInformation.cs</DependentUpon>
     </EmbeddedResource>
@@ -500,6 +524,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCTopic.resx">
       <DependentUpon>UCTopic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCTopicDetail.resx">
+      <DependentUpon>UCTopicDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StudentViews\Views\FTopicRegister.resx">
       <DependentUpon>FTopicRegister.cs</DependentUpon>
@@ -810,6 +837,19 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\icons8-calendar-48.png" />
+    <None Include="Resources\icons8-chevron-right-64.png" />
+    <None Include="Resources\icons8-chevron-left-64.png" />
+    <None Include="Resources\pending_picture.png" />
+    <None Include="Resources\accepted_picture.png" />
+    <None Include="Resources\group_picture.png" />
+    <None Include="Resources\technology_picture.png" />
+    <None Include="Resources\category_picture.png" />
+    <None Include="Resources\teacher_picture.png" />
+    <None Include="Resources\project_picture.png" />
+    <None Include="Resources\LookUp_picture.png" />
+    <None Include="Resources\load_white_2.png" />
+    <None Include="Resources\load_picture.png" />
     <None Include="Resources\pencil1.png" />
     <None Include="Resources\multiple-users-silhouette.png" />
     <None Include="Resources\open-book %283%29.png" />
