@@ -199,6 +199,8 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         }
         private void LoadTopic(UCStudentProject uCStudentProject, Topic topic)
         {
+            uCStudentProject.ucTopicDetail1.SetColors("#000000", "#FFFFFF");
+            //uCStudentProject.ucTopicDetail1.BackColor = Color.White;
             uCStudentProject.ucTopicDetail1.lblTopicName.Text = topic.topic_name;
             uCStudentProject.ucTopicDetail1.lblMaxMembers.Text = topic.max_members.ToString();
             uCStudentProject.ucTopicDetail1.txtTeacherName.Text = _teacherRepository.GetById(topic.teacher_id.Value).teacher_name;
@@ -252,7 +254,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
 
             //load calendar
             ucStudentCalendar.ucCalendar1.previousPtbClicked += PreviousPtb_Clicked;
-            //ucStudentCalendar.ucCalendar1.nextPtbClicked += NextPtb_Clicked;
+            ucStudentCalendar.ucCalendar1.nextPtbClicked += NextPtb_Clicked;
             LoadCalendar(ucStudentCalendar);
             LoadUpcomingEvents(ucStudentCalendar);
             ////load task 
@@ -293,11 +295,12 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
 
             ucStudentCalendar.ucCalendar1.flpDayContainer.Visible = false;
             ucStudentCalendar.ucCalendar1.flpDayContainer.Controls.Clear();
-
+            ucStudentCalendar.ucCalendar1.panelBottom.Visible = false;
             DateTime startOfTheMonth = new DateTime(ucStudentCalendar.ucCalendar1.year, ucStudentCalendar.ucCalendar1.month, 1);
             int days = DateTime.DaysInMonth(ucStudentCalendar.ucCalendar1.year, ucStudentCalendar.ucCalendar1.month);
 
-
+            if (ucStudentCalendar.ucCalendar1.month == 9)
+                ucStudentCalendar.ucCalendar1.lblMY.Font = new Font(ucStudentCalendar.ucCalendar1.lblMY.Font.FontFamily, 45, ucStudentCalendar.ucCalendar1.lblMY.Font.Style);
             ucStudentCalendar.ucCalendar1.lblMY.Text = DateTimeFormatInfo.CurrentInfo.GetMonthName(ucStudentCalendar.ucCalendar1.month) + " " + ucStudentCalendar.ucCalendar1.year;
             int dayoftheweek = Convert.ToInt32(startOfTheMonth.DayOfWeek.ToString("d")) + 1;
 
@@ -320,6 +323,8 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                 ucStudentCalendar.ucCalendar1.flpDayContainer.Controls.Add(uCDay);
             }
             ucStudentCalendar.ucCalendar1.flpDayContainer.Visible = true;
+            ucStudentCalendar.ucCalendar1.panelBottom.Visible = true;
+
         }
         #endregion
 
