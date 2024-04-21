@@ -30,7 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCTopicDetail));
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.panelContainer = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.lblMaxMembers = new System.Windows.Forms.Label();
+            this.lblMaxMember = new System.Windows.Forms.Label();
             this.txtTechnology = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtTeacherName = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtRequirement = new Guna.UI2.WinForms.Guna2TextBox();
@@ -41,17 +43,15 @@
             this.txtDescription = new Guna.UI2.WinForms.Guna2TextBox();
             this.lblTechnology = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.lblMaxMember = new System.Windows.Forms.Label();
             this.lblCategory = new System.Windows.Forms.Label();
-            this.lblMaxMembers = new System.Windows.Forms.Label();
             this.guna2GradientPanel1.SuspendLayout();
-            this.guna2GradientPanel2.SuspendLayout();
+            this.panelContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2GradientPanel1
             // 
             this.guna2GradientPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(208)))), ((int)(((byte)(166)))));
-            this.guna2GradientPanel1.Controls.Add(this.guna2GradientPanel2);
+            this.guna2GradientPanel1.Controls.Add(this.panelContainer);
             this.guna2GradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2GradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(208)))), ((int)(((byte)(166)))));
             this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(208)))), ((int)(((byte)(166)))));
@@ -61,27 +61,49 @@
             this.guna2GradientPanel1.Size = new System.Drawing.Size(1752, 894);
             this.guna2GradientPanel1.TabIndex = 1;
             // 
-            // guna2GradientPanel2
+            // panelContainer
             // 
-            this.guna2GradientPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(208)))), ((int)(((byte)(166)))));
-            this.guna2GradientPanel2.Controls.Add(this.lblMaxMembers);
-            this.guna2GradientPanel2.Controls.Add(this.txtTechnology);
-            this.guna2GradientPanel2.Controls.Add(this.txtTeacherName);
-            this.guna2GradientPanel2.Controls.Add(this.txtRequirement);
-            this.guna2GradientPanel2.Controls.Add(this.lblTopicName);
-            this.guna2GradientPanel2.Controls.Add(this.txtCategory);
-            this.guna2GradientPanel2.Controls.Add(this.lblTeacherName);
-            this.guna2GradientPanel2.Controls.Add(this.lblRequirement);
-            this.guna2GradientPanel2.Controls.Add(this.txtDescription);
-            this.guna2GradientPanel2.Controls.Add(this.lblTechnology);
-            this.guna2GradientPanel2.Controls.Add(this.label5);
-            this.guna2GradientPanel2.Controls.Add(this.lblMaxMember);
-            this.guna2GradientPanel2.Controls.Add(this.lblCategory);
-            this.guna2GradientPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2GradientPanel2.Location = new System.Drawing.Point(0, 0);
-            this.guna2GradientPanel2.Name = "guna2GradientPanel2";
-            this.guna2GradientPanel2.Size = new System.Drawing.Size(1752, 894);
-            this.guna2GradientPanel2.TabIndex = 49;
+            this.panelContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(208)))), ((int)(((byte)(166)))));
+            this.panelContainer.Controls.Add(this.lblMaxMembers);
+            this.panelContainer.Controls.Add(this.lblMaxMember);
+            this.panelContainer.Controls.Add(this.txtTechnology);
+            this.panelContainer.Controls.Add(this.txtTeacherName);
+            this.panelContainer.Controls.Add(this.txtRequirement);
+            this.panelContainer.Controls.Add(this.lblTopicName);
+            this.panelContainer.Controls.Add(this.txtCategory);
+            this.panelContainer.Controls.Add(this.lblTeacherName);
+            this.panelContainer.Controls.Add(this.lblRequirement);
+            this.panelContainer.Controls.Add(this.txtDescription);
+            this.panelContainer.Controls.Add(this.lblTechnology);
+            this.panelContainer.Controls.Add(this.label5);
+            this.panelContainer.Controls.Add(this.lblCategory);
+            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContainer.Location = new System.Drawing.Point(0, 0);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(1752, 894);
+            this.panelContainer.TabIndex = 49;
+            // 
+            // lblMaxMembers
+            // 
+            this.lblMaxMembers.AutoSize = true;
+            this.lblMaxMembers.Font = new System.Drawing.Font("Cambria", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaxMembers.Location = new System.Drawing.Point(248, 512);
+            this.lblMaxMembers.Name = "lblMaxMembers";
+            this.lblMaxMembers.Size = new System.Drawing.Size(113, 40);
+            this.lblMaxMembers.TabIndex = 70;
+            this.lblMaxMembers.Text = "label1";
+            // 
+            // lblMaxMember
+            // 
+            this.lblMaxMember.AutoSize = true;
+            this.lblMaxMember.Font = new System.Drawing.Font("Cambria", 9.900001F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaxMember.ForeColor = System.Drawing.Color.White;
+            this.lblMaxMember.Location = new System.Drawing.Point(21, 512);
+            this.lblMaxMember.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMaxMember.Name = "lblMaxMember";
+            this.lblMaxMember.Size = new System.Drawing.Size(211, 40);
+            this.lblMaxMember.TabIndex = 69;
+            this.lblMaxMember.Text = "Max Member:";
             // 
             // txtTechnology
             // 
@@ -95,12 +117,13 @@
             this.txtTechnology.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTechnology.Font = new System.Drawing.Font("Segoe UI Semibold", 9.900001F, System.Drawing.FontStyle.Bold);
             this.txtTechnology.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTechnology.Location = new System.Drawing.Point(960, 458);
+            this.txtTechnology.Location = new System.Drawing.Point(961, 396);
             this.txtTechnology.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.txtTechnology.Multiline = true;
             this.txtTechnology.Name = "txtTechnology";
             this.txtTechnology.PasswordChar = '\0';
             this.txtTechnology.PlaceholderText = "Type here";
+            this.txtTechnology.ReadOnly = true;
             this.txtTechnology.SelectedText = "";
             this.txtTechnology.Size = new System.Drawing.Size(737, 83);
             this.txtTechnology.TabIndex = 67;
@@ -117,12 +140,13 @@
             this.txtTeacherName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTeacherName.Font = new System.Drawing.Font("Segoe UI Semibold", 9.900001F, System.Drawing.FontStyle.Bold);
             this.txtTeacherName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTeacherName.Location = new System.Drawing.Point(17, 228);
+            this.txtTeacherName.Location = new System.Drawing.Point(17, 199);
             this.txtTeacherName.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.txtTeacherName.Multiline = true;
             this.txtTeacherName.Name = "txtTeacherName";
             this.txtTeacherName.PasswordChar = '\0';
             this.txtTeacherName.PlaceholderText = "Type here";
+            this.txtTeacherName.ReadOnly = true;
             this.txtTeacherName.SelectedText = "";
             this.txtTeacherName.Size = new System.Drawing.Size(737, 83);
             this.txtTeacherName.TabIndex = 64;
@@ -139,12 +163,13 @@
             this.txtRequirement.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtRequirement.Font = new System.Drawing.Font("Segoe UI Semibold", 9.900001F, System.Drawing.FontStyle.Bold);
             this.txtRequirement.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtRequirement.Location = new System.Drawing.Point(17, 458);
+            this.txtRequirement.Location = new System.Drawing.Point(17, 396);
             this.txtRequirement.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.txtRequirement.Multiline = true;
             this.txtRequirement.Name = "txtRequirement";
             this.txtRequirement.PasswordChar = '\0';
             this.txtRequirement.PlaceholderText = "Type here";
+            this.txtRequirement.ReadOnly = true;
             this.txtRequirement.SelectedText = "";
             this.txtRequirement.Size = new System.Drawing.Size(738, 83);
             this.txtRequirement.TabIndex = 66;
@@ -173,12 +198,13 @@
             this.txtCategory.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCategory.Font = new System.Drawing.Font("Segoe UI Semibold", 9.900001F, System.Drawing.FontStyle.Bold);
             this.txtCategory.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCategory.Location = new System.Drawing.Point(960, 235);
+            this.txtCategory.Location = new System.Drawing.Point(960, 199);
             this.txtCategory.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.txtCategory.Multiline = true;
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.PasswordChar = '\0';
             this.txtCategory.PlaceholderText = "Type here";
+            this.txtCategory.ReadOnly = true;
             this.txtCategory.SelectedText = "";
             this.txtCategory.Size = new System.Drawing.Size(737, 83);
             this.txtCategory.TabIndex = 65;
@@ -200,7 +226,7 @@
             this.lblRequirement.AutoSize = true;
             this.lblRequirement.Font = new System.Drawing.Font("Cambria", 9.900001F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRequirement.ForeColor = System.Drawing.Color.White;
-            this.lblRequirement.Location = new System.Drawing.Point(19, 382);
+            this.lblRequirement.Location = new System.Drawing.Point(20, 347);
             this.lblRequirement.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRequirement.Name = "lblRequirement";
             this.lblRequirement.Size = new System.Drawing.Size(209, 40);
@@ -225,6 +251,7 @@
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.PasswordChar = '\0';
             this.txtDescription.PlaceholderText = "Type here";
+            this.txtDescription.ReadOnly = true;
             this.txtDescription.SelectedText = "";
             this.txtDescription.Size = new System.Drawing.Size(1682, 106);
             this.txtDescription.TabIndex = 63;
@@ -234,7 +261,7 @@
             this.lblTechnology.AutoSize = true;
             this.lblTechnology.Font = new System.Drawing.Font("Cambria", 9.900001F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTechnology.ForeColor = System.Drawing.Color.White;
-            this.lblTechnology.Location = new System.Drawing.Point(964, 382);
+            this.lblTechnology.Location = new System.Drawing.Point(965, 347);
             this.lblTechnology.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTechnology.Name = "lblTechnology";
             this.lblTechnology.Size = new System.Drawing.Size(188, 40);
@@ -253,18 +280,6 @@
             this.label5.TabIndex = 62;
             this.label5.Text = "Description:";
             // 
-            // lblMaxMember
-            // 
-            this.lblMaxMember.AutoSize = true;
-            this.lblMaxMember.Font = new System.Drawing.Font("Cambria", 9.900001F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaxMember.ForeColor = System.Drawing.Color.White;
-            this.lblMaxMember.Location = new System.Drawing.Point(964, 33);
-            this.lblMaxMember.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblMaxMember.Name = "lblMaxMember";
-            this.lblMaxMember.Size = new System.Drawing.Size(211, 40);
-            this.lblMaxMember.TabIndex = 60;
-            this.lblMaxMember.Text = "Max Member:";
-            // 
             // lblCategory
             // 
             this.lblCategory.AutoSize = true;
@@ -277,16 +292,6 @@
             this.lblCategory.TabIndex = 61;
             this.lblCategory.Text = "Category:";
             // 
-            // lblMaxMembers
-            // 
-            this.lblMaxMembers.AutoSize = true;
-            this.lblMaxMembers.Font = new System.Drawing.Font("Cambria", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaxMembers.Location = new System.Drawing.Point(1191, 33);
-            this.lblMaxMembers.Name = "lblMaxMembers";
-            this.lblMaxMembers.Size = new System.Drawing.Size(113, 40);
-            this.lblMaxMembers.TabIndex = 68;
-            this.lblMaxMembers.Text = "label1";
-            // 
             // UCTopicDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -295,8 +300,8 @@
             this.Name = "UCTopicDetail";
             this.Size = new System.Drawing.Size(1752, 894);
             this.guna2GradientPanel1.ResumeLayout(false);
-            this.guna2GradientPanel2.ResumeLayout(false);
-            this.guna2GradientPanel2.PerformLayout();
+            this.panelContainer.ResumeLayout(false);
+            this.panelContainer.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -304,7 +309,6 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
-        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
         public Guna.UI2.WinForms.Guna2TextBox txtTechnology;
         public Guna.UI2.WinForms.Guna2TextBox txtTeacherName;
         public Guna.UI2.WinForms.Guna2TextBox txtRequirement;
@@ -314,9 +318,10 @@
         public Guna.UI2.WinForms.Guna2TextBox txtDescription;
         private System.Windows.Forms.Label lblTechnology;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblMaxMember;
         private System.Windows.Forms.Label lblCategory;
         public System.Windows.Forms.Label lblTopicName;
         public System.Windows.Forms.Label lblMaxMembers;
+        private System.Windows.Forms.Label lblMaxMember;
+        public Guna.UI2.WinForms.Guna2GradientPanel panelContainer;
     }
 }
