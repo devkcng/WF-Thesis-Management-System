@@ -28,242 +28,190 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelLeft = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.panelTopicnContributors = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.panelTopic = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.guna2GradientPanel4 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.panelGroupTask = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.flpTask = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panelContributors = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.panelGroupTask = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.panelGroupMember = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.flpMember = new System.Windows.Forms.FlowLayoutPanel();
-            this.guna2GradientPanel7 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.lblTopicName = new System.Windows.Forms.Label();
+            this.guna2CustomGradientPanel4 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.guna2CustomGradientPanel3 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.panelTopic = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.ucTopicDetail1 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCTopicDetail();
-            this.panelLeft.SuspendLayout();
-            this.panelTopicnContributors.SuspendLayout();
-            this.panelTopic.SuspendLayout();
-            this.guna2GradientPanel4.SuspendLayout();
+            this.guna2CustomGradientPanel2.SuspendLayout();
             this.panelGroupTask.SuspendLayout();
-            this.guna2GradientPanel3.SuspendLayout();
-            this.panelContributors.SuspendLayout();
-            this.guna2GradientPanel7.SuspendLayout();
+            this.panelGroupMember.SuspendLayout();
+            this.guna2CustomGradientPanel4.SuspendLayout();
+            this.panelTopic.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panelLeft
+            // guna2CustomGradientPanel2
             // 
-            this.panelLeft.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.panelLeft.Controls.Add(this.panelTopicnContributors);
-            this.panelLeft.Controls.Add(this.guna2GradientPanel4);
-            this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelLeft.Location = new System.Drawing.Point(0, 0);
-            this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(1752, 1608);
-            this.panelLeft.TabIndex = 0;
-            // 
-            // panelTopicnContributors
-            // 
-            this.panelTopicnContributors.BorderRadius = 5;
-            this.panelTopicnContributors.BorderThickness = 5;
-            this.panelTopicnContributors.Controls.Add(this.panelContributors);
-            this.panelTopicnContributors.Controls.Add(this.panel2);
-            this.panelTopicnContributors.Controls.Add(this.panelTopic);
-            this.panelTopicnContributors.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelTopicnContributors.Location = new System.Drawing.Point(0, 185);
-            this.panelTopicnContributors.Name = "panelTopicnContributors";
-            this.panelTopicnContributors.Size = new System.Drawing.Size(1752, 1423);
-            this.panelTopicnContributors.TabIndex = 3;
-            // 
-            // panelTopic
-            // 
-            this.panelTopic.BackColor = System.Drawing.Color.White;
-            this.panelTopic.BorderRadius = 10;
-            this.panelTopic.BorderThickness = 10;
-            this.panelTopic.Controls.Add(this.ucTopicDetail1);
-            this.panelTopic.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTopic.Location = new System.Drawing.Point(0, 0);
-            this.panelTopic.Name = "panelTopic";
-            this.panelTopic.Size = new System.Drawing.Size(1752, 828);
-            this.panelTopic.TabIndex = 0;
-            // 
-            // guna2GradientPanel4
-            // 
-            this.guna2GradientPanel4.BackColor = System.Drawing.Color.White;
-            this.guna2GradientPanel4.Controls.Add(this.label2);
-            this.guna2GradientPanel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2GradientPanel4.Location = new System.Drawing.Point(0, 0);
-            this.guna2GradientPanel4.Name = "guna2GradientPanel4";
-            this.guna2GradientPanel4.Size = new System.Drawing.Size(1752, 185);
-            this.guna2GradientPanel4.TabIndex = 2;
+            this.guna2CustomGradientPanel2.Controls.Add(this.label2);
+            this.guna2CustomGradientPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(20, 20);
+            this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
+            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(1070, 127);
+            this.guna2CustomGradientPanel2.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Cambria", 15.9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(17, 59);
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label2.Location = new System.Drawing.Point(14, 28);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(326, 62);
-            this.label2.TabIndex = 40;
-            this.label2.Text = "Your Project";
-            // 
-            // panelGroupTask
-            // 
-            this.panelGroupTask.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panelGroupTask.Controls.Add(this.flpTask);
-            this.panelGroupTask.Controls.Add(this.panel1);
-            this.panelGroupTask.Controls.Add(this.guna2GradientPanel3);
-            this.panelGroupTask.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelGroupTask.Location = new System.Drawing.Point(1752, 0);
-            this.panelGroupTask.Name = "panelGroupTask";
-            this.panelGroupTask.Size = new System.Drawing.Size(526, 1608);
-            this.panelGroupTask.TabIndex = 1;
-            // 
-            // guna2GradientPanel3
-            // 
-            this.guna2GradientPanel3.BackColor = System.Drawing.Color.White;
-            this.guna2GradientPanel3.Controls.Add(this.label1);
-            this.guna2GradientPanel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2GradientPanel3.Location = new System.Drawing.Point(0, 0);
-            this.guna2GradientPanel3.Name = "guna2GradientPanel3";
-            this.guna2GradientPanel3.Size = new System.Drawing.Size(526, 185);
-            this.guna2GradientPanel3.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Cambria", 15.9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(17, 59);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(303, 62);
-            this.label1.TabIndex = 40;
-            this.label1.Text = "Group Task";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Gray;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 185);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(10, 1423);
-            this.panel1.TabIndex = 1;
+            this.label2.Size = new System.Drawing.Size(310, 63);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Group Task";
             // 
             // flpTask
             // 
             this.flpTask.BackColor = System.Drawing.Color.White;
             this.flpTask.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpTask.Location = new System.Drawing.Point(10, 185);
+            this.flpTask.Location = new System.Drawing.Point(20, 147);
             this.flpTask.Name = "flpTask";
-            this.flpTask.Size = new System.Drawing.Size(516, 1423);
-            this.flpTask.TabIndex = 2;
+            this.flpTask.Size = new System.Drawing.Size(1070, 1391);
+            this.flpTask.TabIndex = 3;
             // 
-            // panel2
+            // panelGroupTask
             // 
-            this.panel2.BackColor = System.Drawing.Color.Gray;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 828);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1752, 10);
-            this.panel2.TabIndex = 1;
+            this.panelGroupTask.BorderRadius = 10;
+            this.panelGroupTask.Controls.Add(this.flpTask);
+            this.panelGroupTask.Controls.Add(this.guna2CustomGradientPanel2);
+            this.panelGroupTask.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelGroupTask.Location = new System.Drawing.Point(1661, 30);
+            this.panelGroupTask.Name = "panelGroupTask";
+            this.panelGroupTask.Padding = new System.Windows.Forms.Padding(20);
+            this.panelGroupTask.Size = new System.Drawing.Size(1110, 1558);
+            this.panelGroupTask.TabIndex = 0;
             // 
-            // panelContributors
+            // guna2CustomGradientPanel1
             // 
-            this.panelContributors.BorderRadius = 10;
-            this.panelContributors.BorderThickness = 5;
-            this.panelContributors.Controls.Add(this.flpMember);
-            this.panelContributors.Controls.Add(this.guna2GradientPanel7);
-            this.panelContributors.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContributors.Location = new System.Drawing.Point(0, 838);
-            this.panelContributors.Name = "panelContributors";
-            this.panelContributors.Size = new System.Drawing.Size(1752, 585);
-            this.panelContributors.TabIndex = 2;
+            this.guna2CustomGradientPanel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.guna2CustomGradientPanel1.FillColor = System.Drawing.SystemColors.InactiveBorder;
+            this.guna2CustomGradientPanel1.FillColor2 = System.Drawing.SystemColors.InactiveBorder;
+            this.guna2CustomGradientPanel1.FillColor3 = System.Drawing.SystemColors.InactiveBorder;
+            this.guna2CustomGradientPanel1.FillColor4 = System.Drawing.SystemColors.InactiveBorder;
+            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(1618, 30);
+            this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(43, 1558);
+            this.guna2CustomGradientPanel1.TabIndex = 1;
+            // 
+            // panelGroupMember
+            // 
+            this.panelGroupMember.BorderRadius = 10;
+            this.panelGroupMember.Controls.Add(this.flpMember);
+            this.panelGroupMember.Controls.Add(this.guna2CustomGradientPanel4);
+            this.panelGroupMember.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelGroupMember.Location = new System.Drawing.Point(30, 1071);
+            this.panelGroupMember.Name = "panelGroupMember";
+            this.panelGroupMember.Padding = new System.Windows.Forms.Padding(15);
+            this.panelGroupMember.Size = new System.Drawing.Size(1588, 517);
+            this.panelGroupMember.TabIndex = 6;
             // 
             // flpMember
             // 
-            this.flpMember.AutoScroll = true;
-            this.flpMember.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.flpMember.BackColor = System.Drawing.Color.White;
             this.flpMember.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpMember.Location = new System.Drawing.Point(0, 100);
+            this.flpMember.Location = new System.Drawing.Point(15, 142);
             this.flpMember.Name = "flpMember";
-            this.flpMember.Size = new System.Drawing.Size(1752, 485);
-            this.flpMember.TabIndex = 59;
+            this.flpMember.Size = new System.Drawing.Size(1558, 360);
+            this.flpMember.TabIndex = 2;
             // 
-            // guna2GradientPanel7
+            // guna2CustomGradientPanel4
             // 
-            this.guna2GradientPanel7.BackColor = System.Drawing.Color.White;
-            this.guna2GradientPanel7.Controls.Add(this.lblTopicName);
-            this.guna2GradientPanel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2GradientPanel7.Location = new System.Drawing.Point(0, 0);
-            this.guna2GradientPanel7.Name = "guna2GradientPanel7";
-            this.guna2GradientPanel7.Size = new System.Drawing.Size(1752, 100);
-            this.guna2GradientPanel7.TabIndex = 58;
+            this.guna2CustomGradientPanel4.Controls.Add(this.label3);
+            this.guna2CustomGradientPanel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2CustomGradientPanel4.Location = new System.Drawing.Point(15, 15);
+            this.guna2CustomGradientPanel4.Name = "guna2CustomGradientPanel4";
+            this.guna2CustomGradientPanel4.Size = new System.Drawing.Size(1558, 127);
+            this.guna2CustomGradientPanel4.TabIndex = 1;
             // 
-            // lblTopicName
+            // label3
             // 
-            this.lblTopicName.AutoSize = true;
-            this.lblTopicName.BackColor = System.Drawing.Color.White;
-            this.lblTopicName.Font = new System.Drawing.Font("Segoe UI Black", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTopicName.ForeColor = System.Drawing.Color.Black;
-            this.lblTopicName.Location = new System.Drawing.Point(663, 17);
-            this.lblTopicName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTopicName.Name = "lblTopicName";
-            this.lblTopicName.Size = new System.Drawing.Size(427, 67);
-            this.lblTopicName.TabIndex = 58;
-            this.lblTopicName.Text = "CONTRIBUTORS";
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Cambria", 15.9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(14, 28);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(402, 63);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Group Member";
+            // 
+            // guna2CustomGradientPanel3
+            // 
+            this.guna2CustomGradientPanel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2CustomGradientPanel3.FillColor = System.Drawing.SystemColors.InactiveBorder;
+            this.guna2CustomGradientPanel3.FillColor2 = System.Drawing.SystemColors.InactiveBorder;
+            this.guna2CustomGradientPanel3.FillColor3 = System.Drawing.SystemColors.InactiveBorder;
+            this.guna2CustomGradientPanel3.FillColor4 = System.Drawing.SystemColors.InactiveBorder;
+            this.guna2CustomGradientPanel3.Location = new System.Drawing.Point(30, 1010);
+            this.guna2CustomGradientPanel3.Name = "guna2CustomGradientPanel3";
+            this.guna2CustomGradientPanel3.Size = new System.Drawing.Size(1588, 61);
+            this.guna2CustomGradientPanel3.TabIndex = 5;
+            // 
+            // panelTopic
+            // 
+            this.panelTopic.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.panelTopic.BorderRadius = 10;
+            this.panelTopic.BorderThickness = 5;
+            this.panelTopic.Controls.Add(this.ucTopicDetail1);
+            this.panelTopic.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTopic.Location = new System.Drawing.Point(30, 30);
+            this.panelTopic.Margin = new System.Windows.Forms.Padding(10);
+            this.panelTopic.Name = "panelTopic";
+            this.panelTopic.Padding = new System.Windows.Forms.Padding(30);
+            this.panelTopic.Size = new System.Drawing.Size(1588, 980);
+            this.panelTopic.TabIndex = 4;
             // 
             // ucTopicDetail1
             // 
             this.ucTopicDetail1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucTopicDetail1.Location = new System.Drawing.Point(0, 0);
+            this.ucTopicDetail1.Location = new System.Drawing.Point(30, 30);
             this.ucTopicDetail1.Name = "ucTopicDetail1";
-            this.ucTopicDetail1.Size = new System.Drawing.Size(1752, 828);
-            this.ucTopicDetail1.TabIndex = 0;
+            this.ucTopicDetail1.Size = new System.Drawing.Size(1528, 920);
+            this.ucTopicDetail1.TabIndex = 7;
             // 
             // UCStudentProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.Controls.Add(this.panelGroupMember);
+            this.Controls.Add(this.guna2CustomGradientPanel3);
+            this.Controls.Add(this.panelTopic);
+            this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Controls.Add(this.panelGroupTask);
-            this.Controls.Add(this.panelLeft);
             this.Name = "UCStudentProject";
-            this.Size = new System.Drawing.Size(2278, 1608);
-            this.panelLeft.ResumeLayout(false);
-            this.panelTopicnContributors.ResumeLayout(false);
-            this.panelTopic.ResumeLayout(false);
-            this.guna2GradientPanel4.ResumeLayout(false);
-            this.guna2GradientPanel4.PerformLayout();
+            this.Padding = new System.Windows.Forms.Padding(30, 30, 30, 20);
+            this.Size = new System.Drawing.Size(2801, 1608);
+            this.guna2CustomGradientPanel2.ResumeLayout(false);
+            this.guna2CustomGradientPanel2.PerformLayout();
             this.panelGroupTask.ResumeLayout(false);
-            this.guna2GradientPanel3.ResumeLayout(false);
-            this.guna2GradientPanel3.PerformLayout();
-            this.panelContributors.ResumeLayout(false);
-            this.guna2GradientPanel7.ResumeLayout(false);
-            this.guna2GradientPanel7.PerformLayout();
+            this.panelGroupMember.ResumeLayout(false);
+            this.guna2CustomGradientPanel4.ResumeLayout(false);
+            this.guna2CustomGradientPanel4.PerformLayout();
+            this.panelTopic.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2GradientPanel panelLeft;
-        private Guna.UI2.WinForms.Guna2GradientPanel panelGroupTask;
-        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel3;
-        public System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel4;
-        public System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2GradientPanel panelTopicnContributors;
-        private Guna.UI2.WinForms.Guna2GradientPanel panelTopic;
-        public UCTopicDetail ucTopicDetail1;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel panelContributors;
-        public System.Windows.Forms.FlowLayoutPanel flpMember;
-        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel7;
-        private System.Windows.Forms.Label lblTopicName;
-        private System.Windows.Forms.Panel panel2;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel2;
+        private System.Windows.Forms.Label label2;
         public System.Windows.Forms.FlowLayoutPanel flpTask;
-        private System.Windows.Forms.Panel panel1;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel panelGroupTask;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel panelGroupMember;
+        public System.Windows.Forms.FlowLayoutPanel flpMember;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel4;
+        private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel3;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel panelTopic;
+        public UCTopicDetail ucTopicDetail1;
     }
 }
