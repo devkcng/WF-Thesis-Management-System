@@ -21,7 +21,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         public FShowTopic(Topic topic, ThesisManagementContext context)
         {
             InitializeComponent();
-            this.Size = new Size(700, 450);
+            this.Size = new Size(600, 500);
 
             _context = context;
             _studentRepository = new StudentRepository(_context);

@@ -41,7 +41,7 @@
             this.guna2GradientPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(1720, 894);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(1529, 938);
             this.guna2GradientPanel1.TabIndex = 0;
             // 
             // ucTopicDetail1
@@ -49,7 +49,7 @@
             this.ucTopicDetail1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucTopicDetail1.Location = new System.Drawing.Point(0, 0);
             this.ucTopicDetail1.Name = "ucTopicDetail1";
-            this.ucTopicDetail1.Size = new System.Drawing.Size(1720, 894);
+            this.ucTopicDetail1.Size = new System.Drawing.Size(1529, 938);
             this.ucTopicDetail1.TabIndex = 0;
             // 
             // btnClose
@@ -64,7 +64,7 @@
             this.btnClose.FillColor2 = System.Drawing.Color.White;
             this.btnClose.Font = new System.Drawing.Font("Cambria", 14.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(208)))), ((int)(((byte)(166)))));
-            this.btnClose.Location = new System.Drawing.Point(1188, 900);
+            this.btnClose.Location = new System.Drawing.Point(1003, 944);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(239, 74);
             this.btnClose.TabIndex = 1;
@@ -83,7 +83,7 @@
             this.btnRegister.FillColor2 = System.Drawing.Color.White;
             this.btnRegister.Font = new System.Drawing.Font("Cambria", 14.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(208)))), ((int)(((byte)(166)))));
-            this.btnRegister.Location = new System.Drawing.Point(1458, 900);
+            this.btnRegister.Location = new System.Drawing.Point(1273, 944);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(239, 74);
             this.btnRegister.TabIndex = 2;
@@ -95,7 +95,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(208)))), ((int)(((byte)(166)))));
-            this.ClientSize = new System.Drawing.Size(1720, 986);
+            this.ClientSize = new System.Drawing.Size(1529, 1046);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.guna2GradientPanel1);
