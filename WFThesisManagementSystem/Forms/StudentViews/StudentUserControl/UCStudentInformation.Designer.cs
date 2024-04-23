@@ -28,26 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.lblName = new System.Windows.Forms.Label();
             this.ptbAvatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.guna2ShadowPanel1.SuspendLayout();
+            this.guna2CustomGradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).BeginInit();
             this.SuspendLayout();
             // 
-            // guna2ShadowPanel1
+            // guna2CustomGradientPanel1
             // 
-            this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel1.Controls.Add(this.lblName);
-            this.guna2ShadowPanel1.Controls.Add(this.ptbAvatar);
-            this.guna2ShadowPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
-            this.guna2ShadowPanel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
-            this.guna2ShadowPanel1.Radius = 10;
-            this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(850, 163);
-            this.guna2ShadowPanel1.TabIndex = 0;
+            this.guna2CustomGradientPanel1.BackColor = System.Drawing.Color.White;
+            this.guna2CustomGradientPanel1.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.guna2CustomGradientPanel1.BorderRadius = 10;
+            this.guna2CustomGradientPanel1.BorderThickness = 2;
+            this.guna2CustomGradientPanel1.Controls.Add(this.lblName);
+            this.guna2CustomGradientPanel1.Controls.Add(this.ptbAvatar);
+            this.guna2CustomGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
+            this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(715, 158);
+            this.guna2CustomGradientPanel1.TabIndex = 0;
             // 
             // lblName
             // 
@@ -55,36 +56,38 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblName.AutoSize = true;
+            this.lblName.BackColor = System.Drawing.Color.White;
             this.lblName.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(302, 55);
+            this.lblName.Location = new System.Drawing.Point(188, 52);
             this.lblName.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(385, 62);
-            this.lblName.TabIndex = 66;
+            this.lblName.TabIndex = 68;
             this.lblName.Text = "Nguyen Gia Huy";
             // 
             // ptbAvatar
             // 
+            this.ptbAvatar.BackColor = System.Drawing.Color.White;
             this.ptbAvatar.Image = global::WFThesisManagementSystem.Properties.Resources.kien;
             this.ptbAvatar.ImageRotate = 0F;
-            this.ptbAvatar.Location = new System.Drawing.Point(34, 14);
+            this.ptbAvatar.Location = new System.Drawing.Point(16, 17);
             this.ptbAvatar.Name = "ptbAvatar";
             this.ptbAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.ptbAvatar.Size = new System.Drawing.Size(160, 135);
+            this.ptbAvatar.Size = new System.Drawing.Size(122, 121);
             this.ptbAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbAvatar.TabIndex = 65;
+            this.ptbAvatar.TabIndex = 67;
             this.ptbAvatar.TabStop = false;
             // 
             // UCStudentInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.guna2ShadowPanel1);
+            this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Margin = new System.Windows.Forms.Padding(10);
             this.Name = "UCStudentInformation";
-            this.Size = new System.Drawing.Size(850, 163);
-            this.guna2ShadowPanel1.ResumeLayout(false);
-            this.guna2ShadowPanel1.PerformLayout();
+            this.Size = new System.Drawing.Size(715, 158);
+            this.guna2CustomGradientPanel1.ResumeLayout(false);
+            this.guna2CustomGradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).EndInit();
             this.ResumeLayout(false);
 
@@ -92,7 +95,7 @@
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
         public System.Windows.Forms.Label lblName;
         public Guna.UI2.WinForms.Guna2CirclePictureBox ptbAvatar;
     }
