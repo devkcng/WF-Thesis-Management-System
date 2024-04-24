@@ -58,22 +58,24 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             {
                 return;
             }
-            UCDashBoard uCDashBoard = sender as UCDashBoard;
-            uCDashBoard.flpGroupTask.Controls.Clear();
+            UCStudentProject uCStudentProject = sender as UCStudentProject;
+            uCStudentProject.flpTask.Controls.Clear();
             var groupID = _studentRepository.GetById(_userSessionHelper.UserID).group_id;
             var groupTaskList = _taskRepository.GetByGroupID(groupID.Value);
             var filterHelper = new FilterByDayHelper(groupTaskList, _context);  
-            var taskListFiltered = groupTaskList;
-            if (uCDashBoard.cbTaskDate.SelectedItem == "This week")
+            if (uCStudentProject.CbTaskDate.SelectedItem == "This week")
             {
-                taskListFiltered=filterHelper.FilterByWeek();
+                groupTaskList = filterHelper.FilterByWeek();
             }
-            else if (uCDashBoard.cbTaskDate.SelectedItem == "This month")
+            else if (uCStudentProject.CbTaskDate.SelectedItem == "This month")
             {
-                taskListFiltered=filterHelper.FilterByMonth();
+                groupTaskList = filterHelper.FilterByMonth();
             }
-            taskListFiltered = filterHelper.GetSortedTasks();
-            //LoadTask(taskListFiltered, uCDashBoard.flpGroupTask, new Size(465, 140), groupID.Value);
+            else if (uCStudentProject.CbTaskDate.SelectedItem == "All")
+            {
+                groupTaskList = filterHelper.GetSortedTasks();
+            }
+            LoadTask(groupTaskList, uCStudentProject.flpTask, new Size(400, 150), groupID.Value);
         }
         private void DateTimePicker_ValueChanged(object sender, EventArgs e)
         {
@@ -87,7 +89,6 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             var groupTaskList = _taskRepository.GetByGroupID(groupID.Value);
             var filterHelper = new FilterByDayHelper(groupTaskList, _context);
             var taskListFiltered = filterHelper.FilterByDay(uCStudentTask.dtpStartDay.Value, uCStudentTask.dtpEndDay.Value);
-            taskListFiltered = filterHelper.GetSortedTasks();
             foreach (var groupTask in taskListFiltered)
             {
                 UCTask uCTask = new UCTask();
@@ -115,6 +116,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             panelContainer.Controls.Clear();
             UCStudentProject uCStudentProject = new UCStudentProject();
             uCStudentProject.Dock = DockStyle.Fill;
+            uCStudentProject._cbDateChanged += CbTaskDate_ValueChanged;
             panelContainer.Controls.Add(uCStudentProject);
             ListUCStudentProjectComponent(uCStudentProject);
         }
@@ -189,6 +191,9 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             var studentTopic = _topicRepository.GetById(studentGroup.topic_id.Value);
             var memberGroupList = _studentRepository.GetAllByGroupId(studentGroup.group_id);
             var taskLisk = _taskRepository.GetByGroupID(studentGroup.group_id);
+            FilterByDayHelper filterByDayHelper = new FilterByDayHelper(taskLisk,_context);
+
+
             //Loadtopic
             LoadTopic(uCStudentProject, studentTopic);
 
@@ -196,12 +201,11 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             LoadGroupMember(uCStudentProject, memberGroupList.ToList());
 
             //Load task
-            LoadTask(taskLisk, uCStudentProject.flpTask, new Size(400, 150), studentGroup.group_id);
+            LoadTask(filterByDayHelper.GetSortedTasks(), uCStudentProject.flpTask, new Size(400, 150), studentGroup.group_id);
         }
         private void LoadTopic(UCStudentProject uCStudentProject, Topic topic)
         {
             uCStudentProject.ucTopicDetail1.SetColors("#000000", "#FFFFFF");
-            //uCStudentProject.ucTopicDetail1.BackColor = Color.White;
             uCStudentProject.ucTopicDetail1.lblTopicName.Text = topic.topic_name;
             uCStudentProject.ucTopicDetail1.lblMaxMembers.Text = topic.max_members.ToString();
             uCStudentProject.ucTopicDetail1.txtTeacherName.Text = _teacherRepository.GetById(topic.teacher_id.Value).teacher_name;
