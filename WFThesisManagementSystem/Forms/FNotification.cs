@@ -11,6 +11,7 @@ using WFThesisManagementSystem.Forms.UC;
 using WFThesisManagementSystem.Helper;
 using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.Repositories;
+using WFThesisManagementSystem.Services;
 
 namespace WFThesisManagementSystem.Forms
 {
@@ -20,6 +21,7 @@ namespace WFThesisManagementSystem.Forms
         NotificationRepository _notificationRepository;
         TeacherRepository _teacherRepository;
         StudentRepository _studentRepository;
+        NotificationService _notificationService;
         UserSessionHelper _userSessionHelper = UserSessionHelper.Instance;
 
         public FNotification(ThesisManagementContext context)
@@ -28,6 +30,7 @@ namespace WFThesisManagementSystem.Forms
             _notificationRepository = new NotificationRepository( _context );
             _teacherRepository = new TeacherRepository( _context );
             _studentRepository = new StudentRepository(_context);
+            _notificationService = new NotificationService( _context );
             InitializeComponent();
             ucAllNotifications1.Hide();
             if (_studentRepository.GetById(_userSessionHelper.UserID) != null)
@@ -173,6 +176,90 @@ namespace WFThesisManagementSystem.Forms
                 ucNotification.SendTime = notification.timestamp.Value;
                 ucAllNotifications1.flpAllNotifications.Controls.Add(ucNotification);
             }
+        }
+
+        private void tsmitaskAssignment_Click(object sender, EventArgs e)
+        {
+            ucAllNotifications1.flpAllNotifications.Controls.Clear();
+            var Notifications = _notificationService.GetTypes("Task Assignment", _userSessionHelper.UserID);
+            foreach (var notification in Notifications)
+            {
+                var teacher = _teacherRepository.GetById(notification.sender_id.GetValueOrDefault());
+                UcNotification ucNotification = new UcNotification();
+                ucNotification.Name = notification.notification_title;
+                ucNotification.Content = notification.notification_content;
+                ucNotification.SendBy = teacher.teacher_name;
+                ucNotification.SendTime = notification.timestamp.Value;
+                if (notification.notification_status == true)
+                {
+                    ucNotification.icmCheckbox.Checked = true;
+                }
+                ucAllNotifications1.flpAllNotifications.Controls.Add(ucNotification);
+            }
+            ucAllNotifications1.Show();
+        }
+
+        private void tsmigroupAcceptance_Click(object sender, EventArgs e)
+        {
+            ucAllNotifications1.flpAllNotifications.Controls.Clear();
+            var Notifications = _notificationService.GetTypes("Group Acceptance",_userSessionHelper.UserID);
+            foreach (var notification in Notifications)
+            {
+                var teacher = _teacherRepository.GetById(notification.sender_id.GetValueOrDefault());
+                UcNotification ucNotification = new UcNotification();
+                ucNotification.Name = notification.notification_title;
+                ucNotification.Content = notification.notification_content;
+                ucNotification.SendBy = teacher.teacher_name;
+                ucNotification.SendTime = notification.timestamp.Value;
+                if (notification.notification_status == true)
+                {
+                    ucNotification.icmCheckbox.Checked = true;
+                }
+                ucAllNotifications1.flpAllNotifications.Controls.Add(ucNotification);
+            }
+            ucAllNotifications1.Show();
+        }
+
+        private void tsmionlineMeeting_Click(object sender, EventArgs e)
+        {
+            ucAllNotifications1.flpAllNotifications.Controls.Clear();
+            var Notifications = _notificationService.GetTypes("Online Meeting", _userSessionHelper.UserID);
+            foreach (var notification in Notifications)
+            {
+                var teacher = _teacherRepository.GetById(notification.sender_id.GetValueOrDefault());
+                UcNotification ucNotification = new UcNotification();
+                ucNotification.Name = notification.notification_title;
+                ucNotification.Content = notification.notification_content;
+                ucNotification.SendBy = teacher.teacher_name;
+                ucNotification.SendTime = notification.timestamp.Value;
+                if(notification.notification_status == true)
+                {
+                    ucNotification.icmCheckbox.Checked = true;
+                }    
+                ucAllNotifications1.flpAllNotifications.Controls.Add(ucNotification);
+            }
+            ucAllNotifications1.Show();
+        }
+
+        private void tsmiSend_Click(object sender, EventArgs e)
+        {
+            ucAllNotifications1.flpAllNotifications.Controls.Clear();
+            var Notifications = _notificationService.GetSend(_userSessionHelper.UserID);
+            foreach (var notification in Notifications)
+            {
+                var teacher = _teacherRepository.GetById(notification.sender_id.GetValueOrDefault());
+                UcNotification ucNotification = new UcNotification();
+                ucNotification.Name = notification.notification_title;
+                ucNotification.Content = notification.notification_content;
+                ucNotification.SendBy = teacher.teacher_name;
+                ucNotification.SendTime = notification.timestamp.Value;
+                if (notification.notification_status == true)
+                {
+                    ucNotification.icmCheckbox.Checked = true;
+                }
+                ucAllNotifications1.flpAllNotifications.Controls.Add(ucNotification);
+            }
+            ucAllNotifications1.Show();
         }
     }
 }
