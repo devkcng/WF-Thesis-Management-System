@@ -16,7 +16,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
         public UcTeacherSingleGroup()
         {
             InitializeComponent();
-            this.Click += UcTeacherSingleGroup_Click;
+            panelContainer.Click += UcTeacherSingleGroup_Click;
         }
         private void UcTeacherSingleGroup_Click(object sender, EventArgs e)
         {
