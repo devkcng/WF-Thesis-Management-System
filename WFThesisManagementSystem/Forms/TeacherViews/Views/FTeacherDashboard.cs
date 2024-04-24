@@ -3,6 +3,7 @@ using System;
 using System.Linq;
 using System.Runtime.Remoting.Channels;
 using System.Windows.Forms;
+using WFThesisManagementSystem.Forms.StudentViews.StudentUserControl;
 using WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl;
 using WFThesisManagementSystem.Helper;
 using WFThesisManagementSystem.Models;
@@ -25,14 +26,6 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             _taskRepository = new TaskRepository(_context);
             _topicRepository = new TopicRepository(_context);
             InitializeComponent();
-            ucTeacherAllTopics1.Hide();
-            ucTeacherAllTask1.Hide();
-            ucTeacherInfor1.Hide();
-            ucTeacherEditInfor1.Hide();
-
-            ucTeacherAllTopics1.btnCreate.Click += createTopic;
-            ucTeacherAllTask1.btnCreate.Click += createTask;
-            ucTeacherAllTask1.DateChanged += DateTimePicker_ValueChanged;
             btnNotification.Click += createNotification;
         }
         private void createNotification(object sender, EventArgs e)
@@ -43,14 +36,12 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         }
         private void createTopic(object sender, EventArgs e)
         {
-            ucTeacherAllTopics1.Hide();
             FTeacherCreateTopic fTeacherCreateTopic = new FTeacherCreateTopic(_context);
             fTeacherCreateTopic.Show();
 
         }
         private void createTask(object sender, EventArgs e)
         {
-            ucTeacherAllTask1.Hide();
             FTeacherCreateTask fTeacherCreateTask = new FTeacherCreateTask(GroupIdCreate, _context);
             fTeacherCreateTask.Show();
         }
@@ -62,13 +53,14 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
 
         private void task_Click(object sender, EventArgs e)
         {
-            
-            ucTeacherAllTopics1.Hide();
-            ucTeacherAllTask1.Show();
-            ucTeacherEditInfor1.Hide();
-            ucTeacherInfor1.Hide();
-            ucTeacherAllTask1_Load(sender, e);
 
+            panelContainer.Controls.Clear();
+            UcTeacherAllTask ucTeacherAllTask = new UcTeacherAllTask();
+            ucTeacherAllTask.Dock = DockStyle.Fill;
+            ucTeacherAllTask.btnCreate.Click += createTask;
+            ucTeacherAllTask.DateChanged += DateTimePicker_ValueChanged;
+            panelContainer.Controls.Add(ucTeacherAllTask);
+            ucTeacherAllTask1_Load(ucTeacherAllTask);
         }
 
         private void logout_Click(object sender, EventArgs e)
@@ -80,41 +72,30 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
 
         private void Project_Click(object sender, EventArgs e)
         {
-            ucTeacherAllTopics1.UcTeacherAllTopics_Load(sender, e);
-            ucTeacherAllTopics1.Show();
-            ucTeacherAllTask1.Hide();
-            ucTeacherEditInfor1.Hide();
-            ucTeacherInfor1.Hide();
+            panelContainer.Controls.Clear();
+            UcTeacherAllTopics ucTeacherAllTopics = new UcTeacherAllTopics();
+            ucTeacherAllTopics.Dock = DockStyle.Fill;
+            ucTeacherAllTopics.btnCreate.Click += createTopic;
+            ucTeacherAllTopics_Load(ucTeacherAllTopics);
+            panelContainer.Controls.Add(ucTeacherAllTopics);
         }
-
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        private void ucTeacherAllTopics_Load(UcTeacherAllTopics ucTeacherAllTopics)
         {
-            ucTeacherAllTopics1.Hide();
-            ucTeacherAllTask1.Hide();
-            ucTeacherInfor1.Show();
-            ucTeacherEditInfor1.Hide();
+            ListTopic(ucTeacherAllTopics);
         }
-
-        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ucTeacherAllTask1_Load(UcTeacherAllTask ucTeacherAllTask)
         {
-            ucTeacherAllTopics1.Hide();
-            ucTeacherAllTask1.Hide();
-            ucTeacherInfor1.Show();
-            ucTeacherEditInfor1.Show();
-        }
-        private void ucTeacherAllTask1_Load(object sender, EventArgs e)
-        {   
             //dtpStartDay is 7 days before today
-            ucTeacherAllTask1.dtpStartDay.Value = DateTime.Now.AddDays(-7);
-            ucTeacherAllTask1.dtpEndDay.Value = DateTime.Now;
-            ListGroup();
+            ucTeacherAllTask.dtpStartDay.Value = DateTime.Now.AddDays(-7);
+            ucTeacherAllTask.dtpEndDay.Value = DateTime.Now;
+            ListGroup(ucTeacherAllTask);
             
         }
         #region ucTeacherAllTask1-Components
 
-        private void ListGroup()
+        private void ListGroup(UcTeacherAllTask ucTeacherAllTask)
         {
-            ucTeacherAllTask1.flpAllGroupView.Controls.Clear();
+            ucTeacherAllTask.flpAllGroupView.Controls.Clear();
             var studentGroupList = _studentGroupRepository.GetAll();
             foreach (var studentGroup in studentGroupList)
             {
@@ -124,14 +105,14 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
                 ucTeacherSingleGroup.NameTopic = topic.topic_name;
                 ucTeacherSingleGroup.Id = studentGroup.group_id;
                 ucTeacherSingleGroup.Clicked += ucTeacherSingleGroup_Clicked;
-                ucTeacherAllTask1.flpAllGroupView.Controls.Add(ucTeacherSingleGroup);
+                ucTeacherAllTask.flpAllGroupView.Controls.Add(ucTeacherSingleGroup);
             }
         }
 
         // add button edit event to each task in flpAllTasks
-        private void AddEditButtonToTask()
+        private void AddEditButtonToTask(UcTeacherAllTask ucTeacherAllTask)
         {
-            foreach (UcTeacherSingleTask ucTeacherSingleTask in ucTeacherAllTask1.flpAllTasks.Controls)
+            foreach (UcTeacherSingleTask ucTeacherSingleTask in ucTeacherAllTask.flpAllTasks.Controls)
             {
                 ucTeacherSingleTask.EditButtonClicked += ucTeacherSingleTask_EditButton_Click;
             }
@@ -140,10 +121,11 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
 
         private void DateTimePicker_ValueChanged(object sender, EventArgs e)
         {
-            ucTeacherAllTask1.flpAllTasks.Controls.Clear();
+            UcTeacherAllTask ucTeacherAllTask = sender as UcTeacherAllTask;
+            ucTeacherAllTask.flpAllTasks.Controls.Clear();
             var taskList = _taskRepository.GetAll().ToList();
             var filterHelper = new FilterByDayHelper(taskList, _context);
-            var taskListFiltered = filterHelper.FilterByDay(ucTeacherAllTask1.dtpStartDay.Value, ucTeacherAllTask1.dtpEndDay.Value);
+            var taskListFiltered = filterHelper.FilterByDay(ucTeacherAllTask.dtpStartDay.Value, ucTeacherAllTask.dtpEndDay.Value);
             foreach (var task in taskListFiltered)
             {
                 UcTeacherSingleTask ucTeacherSingleTask = new UcTeacherSingleTask();
@@ -153,7 +135,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
                 ucTeacherSingleTask.Content = task.task_description;
                 ucTeacherSingleTask.EditButtonClicked += ucTeacherSingleTask_EditButton_Click;
                 ucTeacherSingleTask.SubmitButtonClicked += ucTeacherSingleTask_SubmitTask_Click;
-                ucTeacherAllTask1.flpAllTasks.Controls.Add(ucTeacherSingleTask);
+                ucTeacherAllTask.flpAllTasks.Controls.Add(ucTeacherSingleTask);
             }
         }
 
@@ -166,17 +148,18 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         private void ucTeacherSingleGroup_Clicked(object sender, EventArgs e)
         {
             UcTeacherSingleGroup ucTeacherSingleGroup = sender as UcTeacherSingleGroup;
+            UcTeacherAllTask ucTeacherAllTask =  (UcTeacherAllTask)ucTeacherSingleGroup.Parent.Parent.Parent;
             int groupId = GroupIdCreate = ucTeacherSingleGroup.Id;
             var taskList = _taskRepository.GetTaskByGroupId(groupId);
-            ucTeacherAllTask1.flpAllTasks.Controls.Clear();
+            ucTeacherAllTask.flpAllTasks.Controls.Clear();
 
             var filterHelper = new FilterByDayHelper(taskList.ToList(), _context);
-            var taskListFiltered = filterHelper.FilterByDay(ucTeacherAllTask1.dtpStartDay.Value, ucTeacherAllTask1.dtpEndDay.Value);
+            var taskListFiltered = filterHelper.FilterByDay(ucTeacherAllTask.dtpStartDay.Value, ucTeacherAllTask.dtpEndDay.Value);
 
             if (taskListFiltered.Count == 0)
             {
-                ucTeacherAllTask1.flpAllTasks.Controls.Clear();
-                MessageBox.Show($"No task created between {ucTeacherAllTask1.dtpStartDay.Value} and {ucTeacherAllTask1.dtpEndDay.Value} ", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ucTeacherAllTask.flpAllTasks.Controls.Clear();
+                MessageBox.Show($"No task created between {ucTeacherAllTask.dtpStartDay.Value} and {ucTeacherAllTask.dtpEndDay.Value} ", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -193,10 +176,11 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
                         ucTeacherSingleTask.Content = task.task_description;
                         ucTeacherSingleTask.EditButtonClicked += ucTeacherSingleTask_EditButton_Click;
                         ucTeacherSingleTask.SubmitButtonClicked += ucTeacherSingleTask_SubmitTask_Click;
-                        ucTeacherAllTask1.flpAllTasks.Controls.Add(ucTeacherSingleTask);
+                        ucTeacherAllTask.flpAllTasks.Controls.Add(ucTeacherSingleTask);
                     }
                 }
             }
+            MessageBox.Show(taskList.Count().ToString());
         }
 
         #endregion
@@ -220,6 +204,23 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         }
 
         #endregion
-       
+
+        #region ucTeacherAllTopics-Components
+        private void ListTopic(UcTeacherAllTopics ucTeacherAllTopics)
+        {
+            var Table = _topicRepository.GetAll();
+            ucTeacherAllTopics.flpTopicView.Controls.Clear();
+            foreach (var topic in Table)
+            {
+                Topic topic1 = new Topic();
+                UcTeacherSingleTopic singletopic = new UcTeacherSingleTopic(_context);
+                topic1.topic_name = topic.topic_name;
+                topic1.topic_description = topic.topic_description;
+                singletopic.SetTopic(topic1);
+                ucTeacherAllTopics.flpTopicView.Controls.Add(singletopic);
+            }
+        }
+        #endregion
+
     }
 }
