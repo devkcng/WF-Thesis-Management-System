@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using UserControl = System.Windows.Forms.UserControl;
 using WFThesisManagementSystem.Services;
 using System.Web.UI.WebControls;
+using System.Reflection.Emit;
 
 namespace WFThesisManagementSystem.Forms.StudentViews.Views
 {
@@ -199,6 +200,8 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         }
         private void LoadTopic(UCStudentProject uCStudentProject, Topic topic)
         {
+            uCStudentProject.ucTopicDetail1.SetColors("#000000", "#FFFFFF");
+            //uCStudentProject.ucTopicDetail1.BackColor = Color.White;
             uCStudentProject.ucTopicDetail1.lblTopicName.Text = topic.topic_name;
             uCStudentProject.ucTopicDetail1.lblMaxMembers.Text = topic.max_members.ToString();
             uCStudentProject.ucTopicDetail1.txtTeacherName.Text = _teacherRepository.GetById(topic.teacher_id.Value).teacher_name;
@@ -231,11 +234,20 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                 uCTask.Name = groupTask.task_name;
                 uCTask.Id = groupTask.task_id;
                 uCTask.txtProjectDetail.Text = groupTask.task_description;
+                uCTask.txtProjectDetail.MaximumSize = new Size(350, 130);
                 uCTask.GroupID = groupID;
                 var openDay = groupTask.open_day.Value;
                 var deadline = groupTask.due_date.Value;
                 uCTask.lblOpenDay.Text = openDay.ToString("dd/MM/yyyy");
                 uCTask.lblDeadline.Text = deadline.ToString("dd/MM/yyyy");
+                int newSize = 8; // Kích thước font mới
+                uCTask.lblOpenDay.Font = new Font(uCTask.lblOpenDay.Font.FontFamily, newSize);
+                uCTask.lblOpenDate.Font = new Font(uCTask.lblOpenDate.Font.FontFamily, newSize);
+                uCTask.lblDueDate.Font = new Font(uCTask.lblDueDate.Font.FontFamily, newSize);
+                uCTask.lblDeadline.Font = new Font(uCTask.lblDeadline.Font.FontFamily, newSize);
+                uCTask.lblStatus.Font = new Font(uCTask.lblDeadline.Font.FontFamily, newSize);
+
+
                 if (groupTask.submit_day != null) { uCTask.ptbStatus.Image = Properties.Resources.photo_2024_04_02_16_52_38__2_1; }
                 else { uCTask.ptbStatus.Image = Properties.Resources.photo_2024_04_02_16_52_38; }
                 flp.Controls.Add(uCTask);
@@ -252,7 +264,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
 
             //load calendar
             ucStudentCalendar.ucCalendar1.previousPtbClicked += PreviousPtb_Clicked;
-            //ucStudentCalendar.ucCalendar1.nextPtbClicked += NextPtb_Clicked;
+            ucStudentCalendar.ucCalendar1.nextPtbClicked += NextPtb_Clicked;
             LoadCalendar(ucStudentCalendar);
             LoadUpcomingEvents(ucStudentCalendar);
             ////load task 
@@ -293,11 +305,12 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
 
             ucStudentCalendar.ucCalendar1.flpDayContainer.Visible = false;
             ucStudentCalendar.ucCalendar1.flpDayContainer.Controls.Clear();
-
+            ucStudentCalendar.ucCalendar1.panelBottom.Visible = false;
             DateTime startOfTheMonth = new DateTime(ucStudentCalendar.ucCalendar1.year, ucStudentCalendar.ucCalendar1.month, 1);
             int days = DateTime.DaysInMonth(ucStudentCalendar.ucCalendar1.year, ucStudentCalendar.ucCalendar1.month);
 
-
+            if (ucStudentCalendar.ucCalendar1.month == 9)
+                ucStudentCalendar.ucCalendar1.lblMY.Font = new Font(ucStudentCalendar.ucCalendar1.lblMY.Font.FontFamily, 45, ucStudentCalendar.ucCalendar1.lblMY.Font.Style);
             ucStudentCalendar.ucCalendar1.lblMY.Text = DateTimeFormatInfo.CurrentInfo.GetMonthName(ucStudentCalendar.ucCalendar1.month) + " " + ucStudentCalendar.ucCalendar1.year;
             int dayoftheweek = Convert.ToInt32(startOfTheMonth.DayOfWeek.ToString("d")) + 1;
 
@@ -320,6 +333,8 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                 ucStudentCalendar.ucCalendar1.flpDayContainer.Controls.Add(uCDay);
             }
             ucStudentCalendar.ucCalendar1.flpDayContainer.Visible = true;
+            ucStudentCalendar.ucCalendar1.panelBottom.Visible = true;
+
         }
         #endregion
 

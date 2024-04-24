@@ -26,7 +26,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.StudentUserControl
         public UCTask()
         {
             InitializeComponent();
-            sdpsingletask.Click += UCTask_CLick;
+            panelTask.Click += UCTask_CLick;
         }
         public void UCTask_CLick(object sender, EventArgs e)
         {

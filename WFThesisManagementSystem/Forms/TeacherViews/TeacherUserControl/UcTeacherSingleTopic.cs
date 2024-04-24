@@ -63,6 +63,8 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
 
         //}
 
+
+
         private void btnEdit_Click(object sender, EventArgs e)
         {
             //DBConnect dBConnect = new DBConnect();
@@ -101,7 +103,6 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
             //    }
 
             //}    
-
         }
 
         private void lblName_Click(object sender, EventArgs e)
