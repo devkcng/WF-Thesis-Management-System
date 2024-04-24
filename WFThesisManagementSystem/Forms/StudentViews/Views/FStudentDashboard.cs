@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using UserControl = System.Windows.Forms.UserControl;
 using WFThesisManagementSystem.Services;
 using System.Web.UI.WebControls;
+using System.Reflection.Emit;
 
 namespace WFThesisManagementSystem.Forms.StudentViews.Views
 {
@@ -233,11 +234,20 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                 uCTask.Name = groupTask.task_name;
                 uCTask.Id = groupTask.task_id;
                 uCTask.txtProjectDetail.Text = groupTask.task_description;
+                uCTask.txtProjectDetail.MaximumSize = new Size(350, 130);
                 uCTask.GroupID = groupID;
                 var openDay = groupTask.open_day.Value;
                 var deadline = groupTask.due_date.Value;
                 uCTask.lblOpenDay.Text = openDay.ToString("dd/MM/yyyy");
                 uCTask.lblDeadline.Text = deadline.ToString("dd/MM/yyyy");
+                int newSize = 8; // Kích thước font mới
+                uCTask.lblOpenDay.Font = new Font(uCTask.lblOpenDay.Font.FontFamily, newSize);
+                uCTask.lblOpenDate.Font = new Font(uCTask.lblOpenDate.Font.FontFamily, newSize);
+                uCTask.lblDueDate.Font = new Font(uCTask.lblDueDate.Font.FontFamily, newSize);
+                uCTask.lblDeadline.Font = new Font(uCTask.lblDeadline.Font.FontFamily, newSize);
+                uCTask.lblStatus.Font = new Font(uCTask.lblDeadline.Font.FontFamily, newSize);
+
+
                 if (groupTask.submit_day != null) { uCTask.ptbStatus.Image = Properties.Resources.photo_2024_04_02_16_52_38__2_1; }
                 else { uCTask.ptbStatus.Image = Properties.Resources.photo_2024_04_02_16_52_38; }
                 flp.Controls.Add(uCTask);
