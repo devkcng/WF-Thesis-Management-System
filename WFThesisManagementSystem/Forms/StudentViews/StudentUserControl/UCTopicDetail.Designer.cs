@@ -82,7 +82,6 @@
             this.panelContainer.Name = "panelContainer";
             this.panelContainer.Size = new System.Drawing.Size(1550, 942);
             this.panelContainer.TabIndex = 49;
-            this.panelContainer.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContainer_Paint);
             // 
             // lblMaxMembers
             // 
@@ -131,7 +130,6 @@
             this.txtTechnology.SelectedText = "";
             this.txtTechnology.Size = new System.Drawing.Size(1501, 104);
             this.txtTechnology.TabIndex = 67;
-            this.txtTechnology.TextChanged += new System.EventHandler(this.txtTechnology_TextChanged);
             // 
             // txtTeacherName
             // 
@@ -240,7 +238,6 @@
             this.lblTechnology.Size = new System.Drawing.Size(188, 40);
             this.lblTechnology.TabIndex = 59;
             this.lblTechnology.Text = "Technology:";
-            this.lblTechnology.Click += new System.EventHandler(this.lblTechnology_Click);
             // 
             // label5
             // 
