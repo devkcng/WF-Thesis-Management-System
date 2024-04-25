@@ -71,7 +71,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         private void logout_Click(object sender, EventArgs e)
         {
             FLogin fLogin = new FLogin();
-            this.Close();
+            this.Hide();
             fLogin.Show();
         }
 
@@ -258,5 +258,20 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         }
         #endregion
 
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+
+            // Check if the reason for closing is the user clicking the close button
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.No)
+                {
+                    e.Cancel = true; // Cancel the form closing event
+                }
+                Application.Exit();
+            }
+        }
     }
 }

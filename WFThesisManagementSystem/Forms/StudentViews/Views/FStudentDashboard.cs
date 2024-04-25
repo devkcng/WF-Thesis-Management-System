@@ -163,7 +163,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         {
             FLogin fLogin = new FLogin();
             fLogin.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void performance_Click(object sender, EventArgs e)
@@ -534,7 +534,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             if (result == DialogResult.Yes) {
                 FStudentRegisterTopic fStudentRegisterTopic = new FStudentRegisterTopic(_context);
                 fStudentRegisterTopic.Show();
-                this.Close();
+                this.Hide();
                 return false;
             }
             else
@@ -543,6 +543,20 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             }
         }
 
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
 
+            // Check if the reason for closing is the user clicking the close button
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.No)
+                {
+                    e.Cancel = true; // Cancel the form closing event
+                }
+                Application.Exit();
+            }
+        }
     }
 }

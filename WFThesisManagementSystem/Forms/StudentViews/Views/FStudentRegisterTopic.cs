@@ -82,7 +82,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         {
             FStudentDashboard fStudentDashboard = new FStudentDashboard();
             fStudentDashboard.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void FStudentRegisterTopic_Load(object sender, EventArgs e)
@@ -140,7 +140,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         private void UCTopic_Clicked(object sender, EventArgs e)
         { 
             UCTopic uCTopic = sender as UCTopic;
-            this.Close();
+            this.Hide();
             Topic topic =new Topic();
             FShowTopic fShowTopic = new FShowTopic(_topicRepository.GetById(uCTopic.Id), _context);
             fShowTopic.Show();
@@ -148,6 +148,20 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
 
         #endregion
 
-        
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+
+            // Check if the reason for closing is the user clicking the close button
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.No)
+                {
+                    e.Cancel = true; // Cancel the form closing event
+                }
+                Application.Exit();
+            }
+        }
     }
 }
