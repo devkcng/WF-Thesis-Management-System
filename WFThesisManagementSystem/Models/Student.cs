@@ -19,6 +19,7 @@ namespace WFThesisManagementSystem.Models
         {
             this.StudentAccounts = new HashSet<StudentAccount>();
             this.SubTasks = new HashSet<SubTask>();
+            this.PointSheetRecords = new HashSet<PointSheetRecord>();
         }
     
         public int student_id { get; set; }
@@ -34,5 +35,7 @@ namespace WFThesisManagementSystem.Models
         public virtual StudentGroup StudentGroup { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SubTask> SubTasks { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PointSheetRecord> PointSheetRecords { get; set; }
     }
 }
