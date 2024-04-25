@@ -246,6 +246,9 @@
     <Compile Include="Models\Notification.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\PointSheetRecord.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\RegisterQueue.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -275,6 +278,7 @@
     </Compile>
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\NotificationRepository.cs" />
+    <Compile Include="Repositories\PointSheetRecordRepository.cs" />
     <Compile Include="Repositories\RegisterQueueRepository.cs" />
     <Compile Include="Repositories\StudentAccountRepository.cs" />
     <Compile Include="Repositories\StudentGroupRepository.cs" />
@@ -481,6 +485,7 @@
     <Compile Include="Services\RegistrationService.cs" />
     <Compile Include="Services\SubTaskService.cs" />
     <Compile Include="Services\TaskService.cs" />
+    <Compile Include="Services\TeacherService.cs" />
     <Compile Include="Services\TopicAcceptService.cs" />
     <Compile Include="Services\TopicService.cs" />
     <EmbeddedResource Include="Forms\FLogin.resx">
