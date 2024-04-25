@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using WFThesisManagementSystem.Helper;
@@ -19,7 +20,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         public FTeacherEditTopic()
         {
             InitializeComponent();
-
+            this.Size = new Size(600, 700);
             var _context = new ThesisManagementContext();
             _topicRepository = new TopicRepository(_context);
             _topicService = new TopicService();
