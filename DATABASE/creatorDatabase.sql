@@ -108,10 +108,19 @@ CREATE TABLE TeacherAccount (
 );
 
 CREATE TABLE PointSheetRecord (
-    id PRIMARY KEY,
+    id INT PRIMARY KEY,
     student_id INT,
     topic_id INT,
     point FLOAT,
+    FOREIGN KEY (student_id) REFERENCES Students(student_id),
+    FOREIGN KEY (topic_id) REFERENCES Topics(topic_id)
+);
+
+CREATE TABLE RejectList (
+    list_id INT PRIMARY KEY,
+    student_id INT,
+    topic_id INT,
+    reason TEXT,
     FOREIGN KEY (student_id) REFERENCES Students(student_id),
     FOREIGN KEY (topic_id) REFERENCES Topics(topic_id)
 );

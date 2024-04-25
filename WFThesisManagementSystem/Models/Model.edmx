@@ -37,6 +37,15 @@
           <Property Name="topic_id" Type="int" />
           <Property Name="accepted" Type="bit" />
         </EntityType>
+        <EntityType Name="RejectList">
+          <Key>
+            <PropertyRef Name="list_id" />
+          </Key>
+          <Property Name="list_id" Type="int" Nullable="false" />
+          <Property Name="student_id" Type="int" />
+          <Property Name="topic_id" Type="int" />
+          <Property Name="reason" Type="text" />
+        </EntityType>
         <EntityType Name="StudentAccount">
           <Key>
             <PropertyRef Name="student_username" />
@@ -122,7 +131,7 @@
           <Property Name="max_members" Type="int" />
           <Property Name="teacher_id" Type="int" />
         </EntityType>
-        <Association Name="FK__PointShee__stude__72C60C4A">
+        <Association Name="FK__PointShee__stude__29221CFB">
           <End Role="Students" Type="Self.Students" Multiplicity="0..1" />
           <End Role="PointSheetRecord" Type="Self.PointSheetRecord" Multiplicity="*" />
           <ReferentialConstraint>
@@ -134,7 +143,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__PointShee__topic__73BA3083">
+        <Association Name="FK__PointShee__topic__2A164134">
           <End Role="Topics" Type="Self.Topics" Multiplicity="0..1" />
           <End Role="PointSheetRecord" Type="Self.PointSheetRecord" Multiplicity="*" />
           <ReferentialConstraint>
@@ -182,7 +191,31 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__StudentAc__stude__36B12243">
+        <Association Name="FK__RejectLis__stude__160F4887">
+          <End Role="Students" Type="Self.Students" Multiplicity="0..1" />
+          <End Role="RejectList" Type="Self.RejectList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="student_id" />
+            </Principal>
+            <Dependent Role="RejectList">
+              <PropertyRef Name="student_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RejectLis__topic__17036CC0">
+          <End Role="Topics" Type="Self.Topics" Multiplicity="0..1" />
+          <End Role="RejectList" Type="Self.RejectList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Topics">
+              <PropertyRef Name="topic_id" />
+            </Principal>
+            <Dependent Role="RejectList">
+              <PropertyRef Name="topic_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__StudentAc__stude__3D5E1FD2">
           <End Role="Students" Type="Self.Students" Multiplicity="0..1" />
           <End Role="StudentAccount" Type="Self.StudentAccount" Multiplicity="*" />
           <ReferentialConstraint>
@@ -218,7 +251,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SubTasks__studen__4CA06362">
+        <Association Name="FK__SubTasks__studen__398D8EEE">
           <End Role="Students" Type="Self.Students" Multiplicity="0..1" />
           <End Role="SubTasks" Type="Self.SubTasks" Multiplicity="*" />
           <ReferentialConstraint>
@@ -230,7 +263,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SubTasks__task_i__4D94879B">
+        <Association Name="FK__SubTasks__task_i__3A81B327">
           <End Role="Tasks" Type="Self.Tasks" Multiplicity="0..1" />
           <End Role="SubTasks" Type="Self.SubTasks" Multiplicity="*" />
           <ReferentialConstraint>
@@ -242,7 +275,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Tasks__group_id__49C3F6B7">
+        <Association Name="FK__Tasks__group_id__36B12243">
           <End Role="StudentGroup" Type="Self.StudentGroup" Multiplicity="0..1" />
           <End Role="Tasks" Type="Self.Tasks" Multiplicity="*" />
           <ReferentialConstraint>
@@ -254,7 +287,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__TeacherAc__teach__398D8EEE">
+        <Association Name="FK__TeacherAc__teach__403A8C7D">
           <End Role="Teachers" Type="Self.Teachers" Multiplicity="0..1" />
           <End Role="TeacherAccount" Type="Self.TeacherAccount" Multiplicity="*" />
           <ReferentialConstraint>
@@ -282,6 +315,7 @@
           <EntitySet Name="Notifications" EntityType="Self.Notifications" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PointSheetRecord" EntityType="Self.PointSheetRecord" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RegisterQueue" EntityType="Self.RegisterQueue" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RejectList" EntityType="Self.RejectList" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StudentAccount" EntityType="Self.StudentAccount" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StudentGroup" EntityType="Self.StudentGroup" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
@@ -290,11 +324,11 @@
           <EntitySet Name="TeacherAccount" EntityType="Self.TeacherAccount" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Teachers" EntityType="Self.Teachers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Topics" EntityType="Self.Topics" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__PointShee__stude__72C60C4A" Association="Self.FK__PointShee__stude__72C60C4A">
+          <AssociationSet Name="FK__PointShee__stude__29221CFB" Association="Self.FK__PointShee__stude__29221CFB">
             <End Role="Students" EntitySet="Students" />
             <End Role="PointSheetRecord" EntitySet="PointSheetRecord" />
           </AssociationSet>
-          <AssociationSet Name="FK__PointShee__topic__73BA3083" Association="Self.FK__PointShee__topic__73BA3083">
+          <AssociationSet Name="FK__PointShee__topic__2A164134" Association="Self.FK__PointShee__topic__2A164134">
             <End Role="Topics" EntitySet="Topics" />
             <End Role="PointSheetRecord" EntitySet="PointSheetRecord" />
           </AssociationSet>
@@ -310,7 +344,15 @@
             <End Role="Topics" EntitySet="Topics" />
             <End Role="RegisterQueue" EntitySet="RegisterQueue" />
           </AssociationSet>
-          <AssociationSet Name="FK__StudentAc__stude__36B12243" Association="Self.FK__StudentAc__stude__36B12243">
+          <AssociationSet Name="FK__RejectLis__stude__160F4887" Association="Self.FK__RejectLis__stude__160F4887">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="RejectList" EntitySet="RejectList" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RejectLis__topic__17036CC0" Association="Self.FK__RejectLis__topic__17036CC0">
+            <End Role="Topics" EntitySet="Topics" />
+            <End Role="RejectList" EntitySet="RejectList" />
+          </AssociationSet>
+          <AssociationSet Name="FK__StudentAc__stude__3D5E1FD2" Association="Self.FK__StudentAc__stude__3D5E1FD2">
             <End Role="Students" EntitySet="Students" />
             <End Role="StudentAccount" EntitySet="StudentAccount" />
           </AssociationSet>
@@ -322,19 +364,19 @@
             <End Role="StudentGroup" EntitySet="StudentGroup" />
             <End Role="Students" EntitySet="Students" />
           </AssociationSet>
-          <AssociationSet Name="FK__SubTasks__studen__4CA06362" Association="Self.FK__SubTasks__studen__4CA06362">
+          <AssociationSet Name="FK__SubTasks__studen__398D8EEE" Association="Self.FK__SubTasks__studen__398D8EEE">
             <End Role="Students" EntitySet="Students" />
             <End Role="SubTasks" EntitySet="SubTasks" />
           </AssociationSet>
-          <AssociationSet Name="FK__SubTasks__task_i__4D94879B" Association="Self.FK__SubTasks__task_i__4D94879B">
+          <AssociationSet Name="FK__SubTasks__task_i__3A81B327" Association="Self.FK__SubTasks__task_i__3A81B327">
             <End Role="Tasks" EntitySet="Tasks" />
             <End Role="SubTasks" EntitySet="SubTasks" />
           </AssociationSet>
-          <AssociationSet Name="FK__Tasks__group_id__49C3F6B7" Association="Self.FK__Tasks__group_id__49C3F6B7">
+          <AssociationSet Name="FK__Tasks__group_id__36B12243" Association="Self.FK__Tasks__group_id__36B12243">
             <End Role="StudentGroup" EntitySet="StudentGroup" />
             <End Role="Tasks" EntitySet="Tasks" />
           </AssociationSet>
-          <AssociationSet Name="FK__TeacherAc__teach__398D8EEE" Association="Self.FK__TeacherAc__teach__398D8EEE">
+          <AssociationSet Name="FK__TeacherAc__teach__403A8C7D" Association="Self.FK__TeacherAc__teach__403A8C7D">
             <End Role="Teachers" EntitySet="Teachers" />
             <End Role="TeacherAccount" EntitySet="TeacherAccount" />
           </AssociationSet>
@@ -397,6 +439,7 @@
           <NavigationProperty Name="StudentGroup" Relationship="Self.FK__Students__group___2E1BDC42" FromRole="Students" ToRole="StudentGroup" />
           <NavigationProperty Name="SubTasks" Relationship="ThesisManagementModel.FK__SubTasks__studen__628FA481" FromRole="Student" ToRole="SubTask" />
           <NavigationProperty Name="PointSheetRecords" Relationship="ThesisManagementModel.FK__PointShee__stude__72C60C4A" FromRole="Student" ToRole="PointSheetRecord" />
+          <NavigationProperty Name="RejectLists" Relationship="ThesisManagementModel.FK__RejectLis__stude__160F4887" FromRole="Student" ToRole="RejectList" />
         </EntityType>
         <EntityType Name="TeacherAccount">
           <Key>
@@ -435,6 +478,7 @@
           <NavigationProperty Name="StudentGroups" Relationship="Self.FK__StudentGr__topic__2B3F6F97" FromRole="Topics" ToRole="StudentGroup" />
           <NavigationProperty Name="Teacher" Relationship="Self.FK__Topics__teacher___267ABA7A" FromRole="Topics" ToRole="Teachers" />
           <NavigationProperty Name="PointSheetRecords" Relationship="ThesisManagementModel.FK__PointShee__topic__73BA3083" FromRole="Topic" ToRole="PointSheetRecord" />
+          <NavigationProperty Name="RejectLists" Relationship="ThesisManagementModel.FK__RejectLis__topic__17036CC0" FromRole="Topic" ToRole="RejectList" />
         </EntityType>
         <Association Name="FK__RegisterQ__group__32E0915F">
           <End Role="StudentGroup" Type="Self.StudentGroup" Multiplicity="0..1" />
@@ -596,6 +640,15 @@
             <End Role="Topic" EntitySet="Topics" />
             <End Role="PointSheetRecord" EntitySet="PointSheetRecords" />
           </AssociationSet>
+          <EntitySet Name="RejectLists" EntityType="ThesisManagementModel.RejectList" />
+          <AssociationSet Name="FK__RejectLis__stude__160F4887" Association="ThesisManagementModel.FK__RejectLis__stude__160F4887">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="RejectList" EntitySet="RejectLists" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RejectLis__topic__17036CC0" Association="ThesisManagementModel.FK__RejectLis__topic__17036CC0">
+            <End Role="Topic" EntitySet="Topics" />
+            <End Role="RejectList" EntitySet="RejectLists" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Task">
           <Key>
@@ -707,6 +760,41 @@
               <PropertyRef Name="topic_id" />
             </Principal>
             <Dependent Role="PointSheetRecord">
+              <PropertyRef Name="topic_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="RejectList">
+          <Key>
+            <PropertyRef Name="list_id" />
+          </Key>
+          <Property Name="list_id" Type="Int32" Nullable="false" />
+          <Property Name="student_id" Type="Int32" />
+          <Property Name="topic_id" Type="Int32" />
+          <Property Name="reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Student" Relationship="ThesisManagementModel.FK__RejectLis__stude__160F4887" FromRole="RejectList" ToRole="Student" />
+          <NavigationProperty Name="Topic" Relationship="ThesisManagementModel.FK__RejectLis__topic__17036CC0" FromRole="RejectList" ToRole="Topic" />
+        </EntityType>
+        <Association Name="FK__RejectLis__stude__160F4887">
+          <End Type="ThesisManagementModel.Student" Role="Student" Multiplicity="0..1" />
+          <End Type="ThesisManagementModel.RejectList" Role="RejectList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="student_id" />
+            </Principal>
+            <Dependent Role="RejectList">
+              <PropertyRef Name="student_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RejectLis__topic__17036CC0">
+          <End Type="ThesisManagementModel.Topic" Role="Topic" Multiplicity="0..1" />
+          <End Type="ThesisManagementModel.RejectList" Role="RejectList" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Topic">
+              <PropertyRef Name="topic_id" />
+            </Principal>
+            <Dependent Role="RejectList">
               <PropertyRef Name="topic_id" />
             </Dependent>
           </ReferentialConstraint>
@@ -842,6 +930,16 @@
                 <ScalarProperty Name="topic_id" ColumnName="topic_id" />
                 <ScalarProperty Name="student_id" ColumnName="student_id" />
                 <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RejectLists">
+            <EntityTypeMapping TypeName="ThesisManagementModel.RejectList">
+              <MappingFragment StoreEntitySet="RejectList">
+                <ScalarProperty Name="reason" ColumnName="reason" />
+                <ScalarProperty Name="topic_id" ColumnName="topic_id" />
+                <ScalarProperty Name="student_id" ColumnName="student_id" />
+                <ScalarProperty Name="list_id" ColumnName="list_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

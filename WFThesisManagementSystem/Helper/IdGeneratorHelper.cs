@@ -113,5 +113,20 @@ namespace WFThesisManagementSystem.Helper
             }
             return id + 1;
         }
+
+        public int GenerateRejectListId()
+        {
+            var rejectListRepository = new RejectListRepository(_context);
+            var rejectLists = rejectListRepository.GetAll();
+            int id = 0;
+            foreach (var rejectList in rejectLists)
+            {
+                if (rejectList.list_id > id)
+                {
+                    id = rejectList.list_id;
+                }
+            }
+            return id + 1;
+        }
     }
 }
