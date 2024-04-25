@@ -26,6 +26,9 @@
         <AssociationConnector Association="ThesisManagementModel.FK__SubTasks__studen__628FA481" />
         <AssociationConnector Association="ThesisManagementModel.FK__SubTasks__task_i__6383C8BA" />
         <EntityTypeShape EntityType="ThesisManagementModel.Notification" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="ThesisManagementModel.PointSheetRecord" Width="1.5" PointX="12.75" PointY="11.25" />
+        <AssociationConnector Association="ThesisManagementModel.FK__PointShee__stude__72C60C4A" />
+        <AssociationConnector Association="ThesisManagementModel.FK__PointShee__topic__73BA3083" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
