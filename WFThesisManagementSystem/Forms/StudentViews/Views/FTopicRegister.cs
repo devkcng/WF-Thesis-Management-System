@@ -159,6 +159,11 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                         MessageBox.Show("Student have the ID: " + studentId + " does not exist");
                         return;
                     }
+                    else if (!registrationService.CanRegist())
+                    {
+                        MessageBox.Show("Student have the ID: " + studentId + " don't have permission to regist");
+                        return;
+                    }
                     else if(registrationService.AlreadyRegistered())
                     {
                         MessageBox.Show("Student have the ID: " + studentId + " already have a group");
