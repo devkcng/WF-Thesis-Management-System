@@ -73,14 +73,6 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                 {
                     txtGroupName.Text = studentgroup.group_name;
                     txtGroupName.ReadOnly = true;
-
-
-                    // if nothing changes in the datagridview
-                    if (CountDataRows(dgvrRegisterMember) == studentList.Count())
-                    {
-                        btnRegister.Enabled = false;
-                        return;
-                    }
                     break;
                 }
             }
@@ -104,17 +96,8 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
 
 
             //check if member is full => cannot register
-            int rowCountWithData = 0;
-            foreach (DataGridViewRow row in dgvrRegisterMember.Rows)
-            {
-                // Kiểm tra nếu hàng không rỗng
-                if (!row.IsNewRow && row.Cells.Cast<DataGridViewCell>().Any(c => c.Value != null && c.Value.ToString() != ""))
-                {
-                    rowCountWithData++;
-                }
-            }
 
-            if (rowCountWithData >= _topic.max_members)
+            if (CountDataRows(dgvrRegisterMember) >= _topic.max_members)
             {
                 btnRegister.Enabled = false;
             }
@@ -126,6 +109,10 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                 newRow.Cells[1].Value = _userSessionHelper.UserID;
                 newRow.Cells[0].Value = _studentRepository.GetById(_userSessionHelper.UserID).student_name;
                 dgvrRegisterMember.Rows.Add(newRow);
+            }
+            else if (!registrationService.Unregistered())
+            {
+                btnRegister.Enabled = false;
             }
 
             //
@@ -165,7 +152,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         RegistrationService(member, _topic, txtGroupName.Text);
 
                 // Kiểm tra nếu hàng không phải là hàng header và có dữ liệu
-                if (!row.IsNewRow && row.Cells["student_id"].Value != null)
+                if (!row.IsNewRow && row.Cells["student_id"].Value != null && row.Cells["student_id"].ReadOnly == false)
                 {
                     if (member  == null)
                     {

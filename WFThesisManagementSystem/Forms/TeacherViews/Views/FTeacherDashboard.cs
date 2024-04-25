@@ -1,5 +1,6 @@
 ﻿using ComponentFactory.Krypton.Toolkit;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Remoting.Channels;
 using System.Windows.Forms;
@@ -17,6 +18,8 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         StudentGroupRepository _studentGroupRepository;
         TaskRepository _taskRepository;
         TopicRepository _topicRepository;
+        RegisterQueueRepository _registerQueue;
+        StudentRepository _studentRepository;
         int GroupIdCreate;
 
         public FTeacherDashboard()
@@ -25,6 +28,8 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             _studentGroupRepository = new StudentGroupRepository(_context);
             _taskRepository = new TaskRepository(_context);
             _topicRepository = new TopicRepository(_context);
+            _registerQueue = new RegisterQueueRepository(_context);
+            _studentRepository = new StudentRepository(_context);
             InitializeComponent();
             btnNotification.Click += createNotification;
         }
@@ -76,12 +81,13 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             UcTeacherAllTopics ucTeacherAllTopics = new UcTeacherAllTopics();
             ucTeacherAllTopics.Dock = DockStyle.Fill;
             ucTeacherAllTopics.btnCreate.Click += createTopic;
+            ucTeacherAllTopics._cbTopicTypeChanged += CbTopicType_ValueChanged;
             ucTeacherAllTopics_Load(ucTeacherAllTopics);
             panelContainer.Controls.Add(ucTeacherAllTopics);
         }
         private void ucTeacherAllTopics_Load(UcTeacherAllTopics ucTeacherAllTopics)
         {
-            ListTopic(ucTeacherAllTopics);
+            ListTopic(ucTeacherAllTopics, _topicRepository.GetAll().ToList());
         }
         private void ucTeacherAllTask1_Load(UcTeacherAllTask ucTeacherAllTask)
         {
@@ -180,7 +186,6 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
                     }
                 }
             }
-            MessageBox.Show(taskList.Count().ToString());
         }
 
         #endregion
@@ -206,19 +211,50 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         #endregion
 
         #region ucTeacherAllTopics-Components
-        private void ListTopic(UcTeacherAllTopics ucTeacherAllTopics)
+        private void ListTopic(UcTeacherAllTopics ucTeacherAllTopics, List<Topic> topicList)
         {
-            var Table = _topicRepository.GetAll();
             ucTeacherAllTopics.flpTopicView.Controls.Clear();
-            foreach (var topic in Table)
+            foreach (var topic in topicList)
             {
                 Topic topic1 = new Topic();
                 UcTeacherSingleTopic singletopic = new UcTeacherSingleTopic(_context);
+                int numberStudentInqueue = _registerQueue.GetNumberUnacceptedStudentInqueue(topic.topic_id);
+                if (numberStudentInqueue > 0)
+                {
+                    singletopic.lblStudentInqueue.Visible = true;
+                    singletopic.lblStudentInqueue.Text = "There are " + numberStudentInqueue + " students in queue";
+                }
                 topic1.topic_name = topic.topic_name;
                 topic1.topic_description = topic.topic_description;
                 singletopic.SetTopic(topic1);
                 ucTeacherAllTopics.flpTopicView.Controls.Add(singletopic);
             }
+        }
+
+        private void CbTopicType_ValueChanged(object sender, EventArgs e)
+        {
+            UcTeacherAllTopics ucTeacherAllTopics = sender as UcTeacherAllTopics;
+            ucTeacherAllTopics.flpTopicView.Controls.Clear();
+            var topicList = _topicRepository.GetAll().ToList();
+            if (ucTeacherAllTopics.CbTopicType.SelectedItem == "Inqueue Topic")
+            {
+                var inqueueTopics = _registerQueue.GetAllInqueueTopic();
+                topicList = _topicRepository.GetByListOfTopic(inqueueTopics);
+            }
+            else if (ucTeacherAllTopics.CbTopicType.SelectedItem == "Accepted Topic")
+            {
+                var groupIDList = _studentRepository.GetAllGroupID();
+                var topicIDList = _studentGroupRepository.GetListOfTopic(groupIDList);
+                topicList = _topicRepository.GetByListOfTopic(topicIDList);
+            }
+            else if (ucTeacherAllTopics.CbTopicType.SelectedItem == "Unaccepted Topic")
+            {
+                var groupIDList = _studentRepository.GetAllGroupID();
+                var topicIDList = _studentGroupRepository.GetListOfTopic(groupIDList);
+                var unregisterTopicIDList = _topicRepository.GetAllTopicID().Except(topicIDList).ToList();
+                topicList = _topicRepository.GetByListOfTopic(unregisterTopicIDList);
+            }
+            ListTopic(ucTeacherAllTopics, topicList);
         }
         #endregion
 

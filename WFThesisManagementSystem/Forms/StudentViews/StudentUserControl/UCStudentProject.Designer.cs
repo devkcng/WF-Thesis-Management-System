@@ -39,6 +39,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel3 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.panelTopic = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.CbTaskDate = new Guna.UI2.WinForms.Guna2ComboBox();
             this.ucTopicDetail1 = new WFThesisManagementSystem.Forms.StudentViews.StudentUserControl.UCTopicDetail();
             this.guna2CustomGradientPanel2.SuspendLayout();
             this.panelGroupTask.SuspendLayout();
@@ -63,12 +64,13 @@
             this.label2.Font = new System.Drawing.Font("Cambria", 15.9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(14, 28);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(310, 63);
+            this.label2.Size = new System.Drawing.Size(303, 62);
             this.label2.TabIndex = 0;
             this.label2.Text = "Group Task";
             // 
             // flpTask
             // 
+            this.flpTask.AutoScroll = true;
             this.flpTask.BackColor = System.Drawing.Color.White;
             this.flpTask.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpTask.Location = new System.Drawing.Point(20, 147);
@@ -114,6 +116,7 @@
             // 
             // flpMember
             // 
+            this.flpMember.AutoScroll = true;
             this.flpMember.BackColor = System.Drawing.Color.White;
             this.flpMember.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpMember.Location = new System.Drawing.Point(15, 142);
@@ -137,7 +140,7 @@
             this.label3.Font = new System.Drawing.Font("Cambria", 15.9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(14, 28);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(402, 63);
+            this.label3.Size = new System.Drawing.Size(393, 62);
             this.label3.TabIndex = 0;
             this.label3.Text = "Group Member";
             // 
@@ -167,6 +170,30 @@
             this.panelTopic.Size = new System.Drawing.Size(1588, 980);
             this.panelTopic.TabIndex = 4;
             // 
+            // CbTaskDate
+            // 
+            this.CbTaskDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CbTaskDate.BackColor = System.Drawing.Color.Transparent;
+            this.CbTaskDate.BorderColor = System.Drawing.Color.Black;
+            this.CbTaskDate.BorderRadius = 10;
+            this.CbTaskDate.BorderThickness = 2;
+            this.CbTaskDate.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CbTaskDate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbTaskDate.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CbTaskDate.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.CbTaskDate.Font = new System.Drawing.Font("Cambria", 10F);
+            this.CbTaskDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.CbTaskDate.ItemHeight = 30;
+            this.CbTaskDate.Items.AddRange(new object[] {
+            "This week",
+            "This month",
+            "All"});
+            this.CbTaskDate.Location = new System.Drawing.Point(2360, 74);
+            this.CbTaskDate.Name = "CbTaskDate";
+            this.CbTaskDate.Size = new System.Drawing.Size(320, 36);
+            this.CbTaskDate.TabIndex = 1;
+            this.CbTaskDate.SelectedIndexChanged += new System.EventHandler(this.CbTaskDate_SelectedIndexChanged);
+            // 
             // ucTopicDetail1
             // 
             this.ucTopicDetail1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -180,6 +207,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.Controls.Add(this.CbTaskDate);
             this.Controls.Add(this.panelGroupMember);
             this.Controls.Add(this.guna2CustomGradientPanel3);
             this.Controls.Add(this.panelTopic);
@@ -213,5 +241,6 @@
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel3;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel panelTopic;
         public UCTopicDetail ucTopicDetail1;
+        public Guna.UI2.WinForms.Guna2ComboBox CbTaskDate;
     }
 }

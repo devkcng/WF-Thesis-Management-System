@@ -30,7 +30,8 @@ namespace WFThesisManagementSystem.Helper
                     result.Add(task);
                 }
             }
-            return result;
+            
+            return GetSortedTasks(result);
         }
         public List<Task> FilterByMonth()
         {
@@ -52,12 +53,17 @@ namespace WFThesisManagementSystem.Helper
             return FilterByDay(startDay, endDay);
         }
 
-        public List<Task> GetSortedTasks()
+        public List<Task> GetSortedTasks(List<Task> listTasks)
         {
-                return _listTasks.OrderBy(x => x.submit_day.HasValue ? 1 : 0)  
+                return listTasks.OrderBy(x => x.submit_day.HasValue ? 1 : 0)  
                 .ThenBy(x => x.due_date)                       // Sắp xếp các task theo thứ tự tăng dần của due_date
                 .ToList();
         }
-
+        public List<Task> GetSortedTasks()
+        {
+            return _listTasks.OrderBy(x => x.submit_day.HasValue ? 1 : 0)
+            .ThenBy(x => x.due_date)                       // Sắp xếp các task theo thứ tự tăng dần của due_date
+            .ToList();
+        }
     }
 }

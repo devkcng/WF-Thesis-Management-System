@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -22,6 +23,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         public FTeacherRegist(StudentGroup studentGroup)
         {
             InitializeComponent();
+            this.Size = new Size(1100, 700);
             ucTeacherAcceptRegistAll1.btnClose.Click += Close;
             ucTeacherAcceptRegistAll1.btnAccept.Click += Accept;
             ucTeacherAcceptRegistAll1.btnDelete.Click += Delete;

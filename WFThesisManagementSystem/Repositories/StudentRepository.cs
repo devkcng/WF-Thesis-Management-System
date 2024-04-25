@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using WFThesisManagementSystem.Models;
 
@@ -52,7 +53,10 @@ namespace WFThesisManagementSystem.Repositories
             //_context.Entry(student_group).State = System.Data.Entity.EntityState.Modified;
             //_context.SaveChanges();
         }
-
+        public List<int> GetAllGroupID()
+        {
+            return GetAll().Where(s => s.group_id != null).Select(s => s.group_id.Value).ToList();
+        }
 
     }
 }
