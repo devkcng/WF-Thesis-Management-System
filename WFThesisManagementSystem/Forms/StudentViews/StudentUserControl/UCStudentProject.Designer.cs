@@ -116,6 +116,7 @@
             // 
             // flpMember
             // 
+            this.flpMember.AutoScroll = true;
             this.flpMember.BackColor = System.Drawing.Color.White;
             this.flpMember.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpMember.Location = new System.Drawing.Point(15, 142);
@@ -187,9 +188,9 @@
             "This week",
             "This month",
             "All"});
-            this.CbTaskDate.Location = new System.Drawing.Point(2428, 74);
+            this.CbTaskDate.Location = new System.Drawing.Point(2360, 74);
             this.CbTaskDate.Name = "CbTaskDate";
-            this.CbTaskDate.Size = new System.Drawing.Size(252, 36);
+            this.CbTaskDate.Size = new System.Drawing.Size(320, 36);
             this.CbTaskDate.TabIndex = 1;
             this.CbTaskDate.SelectedIndexChanged += new System.EventHandler(this.CbTaskDate_SelectedIndexChanged);
             // 
