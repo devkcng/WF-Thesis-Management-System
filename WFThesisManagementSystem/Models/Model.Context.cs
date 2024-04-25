@@ -36,5 +36,6 @@ namespace WFThesisManagementSystem.Models
         public virtual DbSet<SubTask> SubTasks { get; set; }
         public virtual DbSet<Notification> Notifications { get; set; }
         public virtual DbSet<PointSheetRecord> PointSheetRecords { get; set; }
+        public virtual DbSet<RejectList> RejectLists { get; set; }
     }
 }
