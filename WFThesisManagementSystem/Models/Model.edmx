@@ -19,6 +19,15 @@
           <Property Name="notification_type" Type="nvarchar" MaxLength="50" />
           <Property Name="related_id" Type="int" />
         </EntityType>
+        <EntityType Name="PointSheetRecord">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="student_id" Type="int" />
+          <Property Name="topic_id" Type="int" />
+          <Property Name="point" Type="float" />
+        </EntityType>
         <EntityType Name="RegisterQueue">
           <Key>
             <PropertyRef Name="student_id" />
@@ -113,6 +122,30 @@
           <Property Name="max_members" Type="int" />
           <Property Name="teacher_id" Type="int" />
         </EntityType>
+        <Association Name="FK__PointShee__stude__72C60C4A">
+          <End Role="Students" Type="Self.Students" Multiplicity="0..1" />
+          <End Role="PointSheetRecord" Type="Self.PointSheetRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="student_id" />
+            </Principal>
+            <Dependent Role="PointSheetRecord">
+              <PropertyRef Name="student_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PointShee__topic__73BA3083">
+          <End Role="Topics" Type="Self.Topics" Multiplicity="0..1" />
+          <End Role="PointSheetRecord" Type="Self.PointSheetRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Topics">
+              <PropertyRef Name="topic_id" />
+            </Principal>
+            <Dependent Role="PointSheetRecord">
+              <PropertyRef Name="topic_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__RegisterQ__group__32E0915F">
           <End Role="StudentGroup" Type="Self.StudentGroup" Multiplicity="0..1" />
           <End Role="RegisterQueue" Type="Self.RegisterQueue" Multiplicity="*" />
@@ -247,6 +280,7 @@
         </Association>
         <EntityContainer Name="ThesisManagementModelStoreContainer">
           <EntitySet Name="Notifications" EntityType="Self.Notifications" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PointSheetRecord" EntityType="Self.PointSheetRecord" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RegisterQueue" EntityType="Self.RegisterQueue" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StudentAccount" EntityType="Self.StudentAccount" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StudentGroup" EntityType="Self.StudentGroup" Schema="dbo" store:Type="Tables" />
@@ -256,6 +290,14 @@
           <EntitySet Name="TeacherAccount" EntityType="Self.TeacherAccount" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Teachers" EntityType="Self.Teachers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Topics" EntityType="Self.Topics" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__PointShee__stude__72C60C4A" Association="Self.FK__PointShee__stude__72C60C4A">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="PointSheetRecord" EntitySet="PointSheetRecord" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PointShee__topic__73BA3083" Association="Self.FK__PointShee__topic__73BA3083">
+            <End Role="Topics" EntitySet="Topics" />
+            <End Role="PointSheetRecord" EntitySet="PointSheetRecord" />
+          </AssociationSet>
           <AssociationSet Name="FK__RegisterQ__group__32E0915F" Association="Self.FK__RegisterQ__group__32E0915F">
             <End Role="StudentGroup" EntitySet="StudentGroup" />
             <End Role="RegisterQueue" EntitySet="RegisterQueue" />
@@ -354,6 +396,7 @@
           <NavigationProperty Name="StudentAccounts" Relationship="Self.FK__StudentAc__stude__36B12243" FromRole="Students" ToRole="StudentAccount" />
           <NavigationProperty Name="StudentGroup" Relationship="Self.FK__Students__group___2E1BDC42" FromRole="Students" ToRole="StudentGroup" />
           <NavigationProperty Name="SubTasks" Relationship="ThesisManagementModel.FK__SubTasks__studen__628FA481" FromRole="Student" ToRole="SubTask" />
+          <NavigationProperty Name="PointSheetRecords" Relationship="ThesisManagementModel.FK__PointShee__stude__72C60C4A" FromRole="Student" ToRole="PointSheetRecord" />
         </EntityType>
         <EntityType Name="TeacherAccount">
           <Key>
@@ -391,6 +434,7 @@
           <NavigationProperty Name="RegisterQueues" Relationship="Self.FK__RegisterQ__topic__33D4B598" FromRole="Topics" ToRole="RegisterQueue" />
           <NavigationProperty Name="StudentGroups" Relationship="Self.FK__StudentGr__topic__2B3F6F97" FromRole="Topics" ToRole="StudentGroup" />
           <NavigationProperty Name="Teacher" Relationship="Self.FK__Topics__teacher___267ABA7A" FromRole="Topics" ToRole="Teachers" />
+          <NavigationProperty Name="PointSheetRecords" Relationship="ThesisManagementModel.FK__PointShee__topic__73BA3083" FromRole="Topic" ToRole="PointSheetRecord" />
         </EntityType>
         <Association Name="FK__RegisterQ__group__32E0915F">
           <End Role="StudentGroup" Type="Self.StudentGroup" Multiplicity="0..1" />
@@ -543,6 +587,15 @@
             <End Role="SubTask" EntitySet="SubTasks" />
           </AssociationSet>
           <EntitySet Name="Notifications" EntityType="ThesisManagementModel.Notification" />
+          <EntitySet Name="PointSheetRecords" EntityType="ThesisManagementModel.PointSheetRecord" />
+          <AssociationSet Name="FK__PointShee__stude__72C60C4A" Association="ThesisManagementModel.FK__PointShee__stude__72C60C4A">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="PointSheetRecord" EntitySet="PointSheetRecords" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PointShee__topic__73BA3083" Association="ThesisManagementModel.FK__PointShee__topic__73BA3083">
+            <End Role="Topic" EntitySet="Topics" />
+            <End Role="PointSheetRecord" EntitySet="PointSheetRecords" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Task">
           <Key>
@@ -623,6 +676,41 @@
           <Property Name="notification_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="related_id" Type="Int32" />
         </EntityType>
+        <EntityType Name="PointSheetRecord">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="student_id" Type="Int32" />
+          <Property Name="topic_id" Type="Int32" />
+          <Property Name="point" Type="Double" />
+          <NavigationProperty Name="Student" Relationship="ThesisManagementModel.FK__PointShee__stude__72C60C4A" FromRole="PointSheetRecord" ToRole="Student" />
+          <NavigationProperty Name="Topic" Relationship="ThesisManagementModel.FK__PointShee__topic__73BA3083" FromRole="PointSheetRecord" ToRole="Topic" />
+        </EntityType>
+        <Association Name="FK__PointShee__stude__72C60C4A">
+          <End Type="ThesisManagementModel.Student" Role="Student" Multiplicity="0..1" />
+          <End Type="ThesisManagementModel.PointSheetRecord" Role="PointSheetRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="student_id" />
+            </Principal>
+            <Dependent Role="PointSheetRecord">
+              <PropertyRef Name="student_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PointShee__topic__73BA3083">
+          <End Type="ThesisManagementModel.Topic" Role="Topic" Multiplicity="0..1" />
+          <End Type="ThesisManagementModel.PointSheetRecord" Role="PointSheetRecord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Topic">
+              <PropertyRef Name="topic_id" />
+            </Principal>
+            <Dependent Role="PointSheetRecord">
+              <PropertyRef Name="topic_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -744,6 +832,16 @@
                 <ScalarProperty Name="notification_content" ColumnName="notification_content" />
                 <ScalarProperty Name="notification_title" ColumnName="notification_title" />
                 <ScalarProperty Name="notification_id" ColumnName="notification_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PointSheetRecords">
+            <EntityTypeMapping TypeName="ThesisManagementModel.PointSheetRecord">
+              <MappingFragment StoreEntitySet="PointSheetRecord">
+                <ScalarProperty Name="point" ColumnName="point" />
+                <ScalarProperty Name="topic_id" ColumnName="topic_id" />
+                <ScalarProperty Name="student_id" ColumnName="student_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

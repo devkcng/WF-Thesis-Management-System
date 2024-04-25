@@ -107,6 +107,14 @@ CREATE TABLE TeacherAccount (
     FOREIGN KEY (teacher_id) REFERENCES Teachers(teacher_id)
 );
 
+CREATE TABLE PointSheetRecord (
+    id PRIMARY KEY,
+    student_id INT,
+    topic_id INT,
+    point FLOAT,
+    FOREIGN KEY (student_id) REFERENCES Students(student_id),
+    FOREIGN KEY (topic_id) REFERENCES Topics(topic_id)
+);
 
 -- Inserting data into Teachers table
 INSERT INTO Teachers (teacher_id, teacher_name, teacher_age, teacher_email, subject_taught) VALUES

@@ -9,6 +9,7 @@ using WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl;
 using WFThesisManagementSystem.Helper;
 using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.Repositories;
+using WFThesisManagementSystem.Services;
 
 namespace WFThesisManagementSystem.Forms.TeacherViews.Views
 {
@@ -20,6 +21,9 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         TopicRepository _topicRepository;
         RegisterQueueRepository _registerQueue;
         StudentRepository _studentRepository;
+        TeacherService _teacherService;
+        UserSessionHelper _userSessionHelper = UserSessionHelper.Instance;
+
         int GroupIdCreate;
 
         public FTeacherDashboard()
@@ -30,6 +34,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             _topicRepository = new TopicRepository(_context);
             _registerQueue = new RegisterQueueRepository(_context);
             _studentRepository = new StudentRepository(_context);
+            _teacherService = new TeacherService(_userSessionHelper.UserID);
             InitializeComponent();
             btnNotification.Click += createNotification;
         }
