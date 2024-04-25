@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using WFThesisManagementSystem.Models;
 
 namespace WFThesisManagementSystem.Repositories
@@ -38,6 +39,15 @@ namespace WFThesisManagementSystem.Repositories
         {
             _context.Topics.Remove(topic);
             _context.SaveChanges();
+        }
+
+        public List<Topic> GetByListOfTopic(List<int> topicIds)
+        {
+            return GetAll().Where(t => topicIds.Contains(t.topic_id)).ToList();
+        }
+        public List<int> GetAllTopicID()
+        {
+            return GetAll().Select(t=>t.topic_id).ToList();
         }
     }
 }
