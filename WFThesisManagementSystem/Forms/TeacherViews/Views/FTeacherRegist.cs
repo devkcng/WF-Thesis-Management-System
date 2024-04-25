@@ -6,6 +6,7 @@ using System.Linq;
 using System.Windows.Forms;
 
 using WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl;
+using WFThesisManagementSystem.Helper;
 using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.Repositories;
 using Control = System.Windows.Forms.Control;
@@ -16,9 +17,10 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
     {
 
         List<KeyValuePair<int, string>> students = new List<KeyValuePair<int, string>>();
-
+        ThesisManagementContext _context;
         StudentRepository _studentRepository;
         RegisterQueueRepository _registerQueueRepository;
+        RejectListRepository _rejectListRepository;
         public int GroupId { get; set; }
         public FTeacherRegist(StudentGroup studentGroup)
         {
@@ -28,9 +30,10 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             ucTeacherAcceptRegistAll1.btnAccept.Click += Accept;
             ucTeacherAcceptRegistAll1.btnDelete.Click += Delete;
             GroupId = studentGroup.group_id;
-            var _context = new ThesisManagementContext();
+            _context = new ThesisManagementContext();
             _studentRepository = new StudentRepository(_context);
             _registerQueueRepository = new RegisterQueueRepository(_context);
+            _rejectListRepository = new RejectListRepository(_context);
         }
         private void Close(object sender, EventArgs e)
         {
@@ -142,14 +145,30 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
                 {
 
                     // delete row in RegisterQueue
-
+                    var idGeneratorHelper = new IdGeneratorHelper();
                     var register = _registerQueueRepository.GetById(id);
+                    var reject = new RejectList();
+                    reject.list_id = idGeneratorHelper.GenerateRejectListId();
+                    reject.student_id = register.student_id;
+                    reject.topic_id = register.topic_id;
+                    var countGroupNumber = new CountNumberOfGroupHelper(_context);
+                    var groupNumber = countGroupNumber.CountNumberOfGroup((int)(register.group_id));
+                    if (groupNumber > register.StudentGroup.number_of_students)
+                    {
+                        reject.reason = "Group is full";
+                    }
+                    else
+                    {
+                        reject.reason = "Teacher rejected";
+                    }
 
+                    _rejectListRepository.Add(reject);
                     _registerQueueRepository.Delete(register);
 
                     //ucTeacherAcceptRegistAll1.flpRegistView.Controls[i].Visible = false;
                 }
             }
+
         }
 
         private void FTeacherRegist_Load(object sender, EventArgs e)
@@ -158,5 +177,21 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             List_Load_Registed();
         }
 
+        private void btnRejectedList_Click(object sender, EventArgs e)
+        {
+            var rejectListRepository = new RejectListRepository(_context);
+            var rejectList = rejectListRepository.GetAll().ToList();
+            //create new dynamic form with a data grid view to show all rejected students
+            Form form = new Form();
+            form.Size = new Size(500, 500);
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.Text = "Rejected List";
+            DataGridView dataGridView = new DataGridView();
+            dataGridView.Size = new Size(400, 400);
+            dataGridView.Location = new Point(50, 50);
+            dataGridView.DataSource = rejectList;
+            form.Controls.Add(dataGridView);
+            form.ShowDialog();
+        }
     }
 }
