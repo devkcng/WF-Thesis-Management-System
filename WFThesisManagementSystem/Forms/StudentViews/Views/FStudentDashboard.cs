@@ -75,7 +75,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             {
                 groupTaskList = filterHelper.GetSortedTasks();
             }
-            LoadTask(groupTaskList, uCStudentProject.flpTask, new Size(400, 150), groupID.Value);
+            LoadTask(groupTaskList, uCStudentProject.flpTask, new Size(380, 150), groupID.Value);
         }
         private void DateTimePicker_ValueChanged(object sender, EventArgs e)
         {
@@ -201,7 +201,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             LoadGroupMember(uCStudentProject, memberGroupList.ToList());
 
             //Load task
-            LoadTask(filterByDayHelper.GetSortedTasks(), uCStudentProject.flpTask, new Size(400, 150), studentGroup.group_id);
+            LoadTask(filterByDayHelper.GetSortedTasks(), uCStudentProject.flpTask, new Size(380, 150), studentGroup.group_id);
         }
         private void LoadTopic(UCStudentProject uCStudentProject, Topic topic)
         {
