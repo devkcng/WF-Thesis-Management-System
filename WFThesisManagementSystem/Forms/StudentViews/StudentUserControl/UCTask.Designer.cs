@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panelTask = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.txtProjectDetail = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnChat = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.lblOpenDay = new System.Windows.Forms.Label();
             this.lblDeadline = new System.Windows.Forms.Label();
             this.ptbStatus = new Guna.UI2.WinForms.Guna2CirclePictureBox();
@@ -36,11 +38,9 @@
             this.lblDueDate = new System.Windows.Forms.Label();
             this.lblOpenDate = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.btnChat = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.txtProjectDetail = new Guna.UI2.WinForms.Guna2TextBox();
             this.panelTask.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnChat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbStatus)).BeginInit();
             this.SuspendLayout();
             // 
             // panelTask
@@ -65,6 +65,45 @@
             this.panelTask.Size = new System.Drawing.Size(1319, 310);
             this.panelTask.TabIndex = 0;
             // 
+            // txtProjectDetail
+            // 
+            this.txtProjectDetail.BorderThickness = 0;
+            this.txtProjectDetail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtProjectDetail.DefaultText = "";
+            this.txtProjectDetail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtProjectDetail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtProjectDetail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtProjectDetail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtProjectDetail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtProjectDetail.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtProjectDetail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtProjectDetail.Location = new System.Drawing.Point(44, 84);
+            this.txtProjectDetail.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtProjectDetail.MaximumSize = new System.Drawing.Size(1200, 150);
+            this.txtProjectDetail.Multiline = true;
+            this.txtProjectDetail.Name = "txtProjectDetail";
+            this.txtProjectDetail.PasswordChar = '\0';
+            this.txtProjectDetail.PlaceholderText = "";
+            this.txtProjectDetail.ReadOnly = true;
+            this.txtProjectDetail.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtProjectDetail.SelectedText = "";
+            this.txtProjectDetail.Size = new System.Drawing.Size(1200, 147);
+            this.txtProjectDetail.TabIndex = 81;
+            // 
+            // btnChat
+            // 
+            this.btnChat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnChat.BackColor = System.Drawing.Color.White;
+            this.btnChat.Image = global::WFThesisManagementSystem.Properties.Resources.Chat1;
+            this.btnChat.ImageRotate = 0F;
+            this.btnChat.Location = new System.Drawing.Point(1236, 19);
+            this.btnChat.Name = "btnChat";
+            this.btnChat.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnChat.Size = new System.Drawing.Size(50, 55);
+            this.btnChat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnChat.TabIndex = 80;
+            this.btnChat.TabStop = false;
+            // 
             // lblOpenDay
             // 
             this.lblOpenDay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -84,7 +123,7 @@
             this.lblDeadline.BackColor = System.Drawing.Color.White;
             this.lblDeadline.Font = new System.Drawing.Font("Cambria", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDeadline.ForeColor = System.Drawing.Color.Red;
-            this.lblDeadline.Location = new System.Drawing.Point(642, 252);
+            this.lblDeadline.Location = new System.Drawing.Point(614, 252);
             this.lblDeadline.Name = "lblDeadline";
             this.lblDeadline.Size = new System.Drawing.Size(171, 40);
             this.lblDeadline.TabIndex = 76;
@@ -123,7 +162,7 @@
             this.lblDueDate.AutoSize = true;
             this.lblDueDate.BackColor = System.Drawing.Color.White;
             this.lblDueDate.Font = new System.Drawing.Font("Cambria", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDueDate.Location = new System.Drawing.Point(471, 252);
+            this.lblDueDate.Location = new System.Drawing.Point(443, 252);
             this.lblDueDate.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblDueDate.Name = "lblDueDate";
             this.lblDueDate.Size = new System.Drawing.Size(158, 40);
@@ -155,45 +194,6 @@
             this.lblName.TabIndex = 70;
             this.lblName.Text = "Make an automatic payment system";
             // 
-            // btnChat
-            // 
-            this.btnChat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnChat.BackColor = System.Drawing.Color.White;
-            this.btnChat.Image = global::WFThesisManagementSystem.Properties.Resources.Chat1;
-            this.btnChat.ImageRotate = 0F;
-            this.btnChat.Location = new System.Drawing.Point(1236, 19);
-            this.btnChat.Name = "btnChat";
-            this.btnChat.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnChat.Size = new System.Drawing.Size(50, 55);
-            this.btnChat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnChat.TabIndex = 80;
-            this.btnChat.TabStop = false;
-            // 
-            // txtProjectDetail
-            // 
-            this.txtProjectDetail.BorderThickness = 0;
-            this.txtProjectDetail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtProjectDetail.DefaultText = "";
-            this.txtProjectDetail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtProjectDetail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtProjectDetail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtProjectDetail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtProjectDetail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtProjectDetail.Font = new System.Drawing.Font("Cambria", 10F);
-            this.txtProjectDetail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtProjectDetail.Location = new System.Drawing.Point(44, 84);
-            this.txtProjectDetail.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
-            this.txtProjectDetail.MaximumSize = new System.Drawing.Size(1200, 150);
-            this.txtProjectDetail.Multiline = true;
-            this.txtProjectDetail.Name = "txtProjectDetail";
-            this.txtProjectDetail.PasswordChar = '\0';
-            this.txtProjectDetail.PlaceholderText = "";
-            this.txtProjectDetail.ReadOnly = true;
-            this.txtProjectDetail.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtProjectDetail.SelectedText = "";
-            this.txtProjectDetail.Size = new System.Drawing.Size(1200, 147);
-            this.txtProjectDetail.TabIndex = 81;
-            // 
             // UCTask
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -206,8 +206,8 @@
             this.Click += new System.EventHandler(this.UCTask_CLick);
             this.panelTask.ResumeLayout(false);
             this.panelTask.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnChat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbStatus)).EndInit();
             this.ResumeLayout(false);
 
         }
