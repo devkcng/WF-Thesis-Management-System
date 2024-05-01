@@ -66,5 +66,17 @@ namespace WFThesisManagementSystem.Services
             }
             return true;
         }
+        public List<Notification> GetTypes(string type, int id)
+        {
+            List<Notification> result = new List<Notification>();
+            result = _notificationRepository.GetAll().Where(x => x.notification_type == type && x.sender_id == id).ToList();
+            return result;
+        }
+        public List<Notification> GetSend(int id)
+        {
+            List<Notification> result = new List<Notification>();
+            result = _notificationRepository.GetAll().Where(x => x.sender_id == id).ToList();
+            return result;
+        }
     }
 }
