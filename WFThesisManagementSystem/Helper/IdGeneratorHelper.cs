@@ -99,6 +99,21 @@ namespace WFThesisManagementSystem.Helper
             }
             return id + 1;
         }
+
+        public int GenerateSubTaskId()
+        {
+            var subTaskRepository = new SubTaskRepository(_context);
+            var subTasks = subTaskRepository.GetAll();
+            int id = 0;
+            foreach (var subTask in subTasks)
+            {
+                if (subTask.subtask_id > id)
+                {
+                    id = subTask.subtask_id;
+                }
+            }
+            return id + 1;
+        }
         public int GenerateNotificationId()
         {
             var notificationRepository = new NotificationRepository(_context);
