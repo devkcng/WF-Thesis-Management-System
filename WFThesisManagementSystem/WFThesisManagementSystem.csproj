@@ -182,11 +182,23 @@
     <Compile Include="Forms\StudentViews\Views\FTopicRegister.Designer.cs">
       <DependentUpon>FTopicRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherAllMark.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherAllMark.Designer.cs">
+      <DependentUpon>UcTeacherAllMark.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSingleGroup.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSingleGroup.Designer.cs">
       <DependentUpon>UcTeacherSingleGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TeacherViews\Views\FTeacherMark.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TeacherViews\Views\FTeacherMark.Designer.cs">
+      <DependentUpon>FTeacherMark.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\UC\FNotificationSendStudent.cs">
       <SubType>Form</SubType>
@@ -540,8 +552,14 @@
     <EmbeddedResource Include="Forms\StudentViews\Views\FTopicRegister.resx">
       <DependentUpon>FTopicRegister.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcTeacherAllMark.resx">
+      <DependentUpon>UcTeacherAllMark.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSingleGroup.resx">
       <DependentUpon>UcTeacherSingleGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TeacherViews\Views\FTeacherMark.resx">
+      <DependentUpon>FTeacherMark.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UC\FNotificationSendStudent.resx">
       <DependentUpon>FNotificationSendStudent.cs</DependentUpon>
@@ -846,6 +864,7 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\icons8-mark-64.png" />
     <None Include="Resources\icons8-calendar-48.png" />
     <None Include="Resources\icons8-chevron-right-64.png" />
     <None Include="Resources\icons8-chevron-left-64.png" />
