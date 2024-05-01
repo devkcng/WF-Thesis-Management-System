@@ -58,5 +58,12 @@ namespace WFThesisManagementSystem.Repositories
             return GetAll().Where(s => s.group_id != null).Select(s => s.group_id.Value).ToList();
         }
 
+        //get studentID by student name
+        public Student GetByStudentName(string studentName)
+        {
+            return _context.Students.FirstOrDefault(sg => sg.student_name == studentName);
+        }
+
+
     }
 }
