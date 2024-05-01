@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using WFThesisManagementSystem.Helper;
 using WFThesisManagementSystem.Models;
@@ -11,11 +12,17 @@ namespace WFThesisManagementSystem.Services
         TaskRepository _taskRepository;
         public Task _task;
         ThesisManagementContext _context;
+        Dictionary<int, int> _numberTask = new Dictionary<int, int>();
         public TaskService(Task task, ThesisManagementContext context)
         {
             _context = context;
             _taskRepository = new TaskRepository(_context);
             _task = task;
+        }
+        public TaskService(ThesisManagementContext context) 
+        { 
+            _context = context;
+            _taskRepository = new TaskRepository(_context);
         }
 
         public void CreateTask()
@@ -59,6 +66,18 @@ namespace WFThesisManagementSystem.Services
             // update task status to submitted
             _task.submit_day = System.DateTime.Now;
             _taskRepository.Update(_task);
+        }
+        public int NumberTask(int groupid)
+        {
+            foreach (var task in _taskRepository.GetAll())
+            {
+                _numberTask[task.group_id.Value] = 0;
+            }
+            foreach (var task in _taskRepository.GetAll())
+            {
+                _numberTask[task.group_id.Value]++;
+            }
+            return _numberTask[groupid];
         }
     }
 }
