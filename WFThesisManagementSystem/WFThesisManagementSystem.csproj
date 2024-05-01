@@ -176,6 +176,12 @@
     <Compile Include="Forms\StudentViews\StudentUserControl\UCTopicDetail.Designer.cs">
       <DependentUpon>UCTopicDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\StudentViews\Views\FStudentCreateSubTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StudentViews\Views\FStudentCreateSubTask.Designer.cs">
+      <DependentUpon>FStudentCreateSubTask.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\StudentViews\Views\FTopicRegister.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -537,6 +543,9 @@
     <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCTopicDetail.resx">
       <DependentUpon>UCTopicDetail.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StudentViews\Views\FStudentCreateSubTask.resx">
+      <DependentUpon>FStudentCreateSubTask.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\StudentViews\Views\FTopicRegister.resx">
       <DependentUpon>FTopicRegister.cs</DependentUpon>
     </EmbeddedResource>
@@ -846,6 +855,7 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\icons8-back-24.png" />
     <None Include="Resources\icons8-calendar-48.png" />
     <None Include="Resources\icons8-chevron-right-64.png" />
     <None Include="Resources\icons8-chevron-left-64.png" />
