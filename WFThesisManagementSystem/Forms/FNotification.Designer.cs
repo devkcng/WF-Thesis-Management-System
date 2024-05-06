@@ -44,6 +44,7 @@
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2CustomGradientPanel5 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.guna2CustomGradientPanel7 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.ucAllNotifications1 = new WFThesisManagementSystem.Forms.UC.UcAllNotifications();
             this.guna2CustomGradientPanel6 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.ms = new System.Windows.Forms.MenuStrip();
             this.generalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,7 +52,6 @@
             this.tsmitaskAssignment = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmigroupAcceptance = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmionlineMeeting = new System.Windows.Forms.ToolStripMenuItem();
-            this.ucAllNotifications1 = new WFThesisManagementSystem.Forms.UC.UcAllNotifications();
             this.guna2Panel1.SuspendLayout();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.guna2CustomGradientPanel3.SuspendLayout();
@@ -69,9 +69,8 @@
             this.guna2Panel1.Controls.Add(this.guna2CustomGradientPanel1);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(5);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(514, 1171);
+            this.guna2Panel1.Size = new System.Drawing.Size(289, 645);
             this.guna2Panel1.TabIndex = 1;
             // 
             // guna2CustomGradientPanel1
@@ -80,8 +79,9 @@
             this.guna2CustomGradientPanel1.Controls.Add(this.guna2CustomGradientPanel2);
             this.guna2CustomGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(514, 1171);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(289, 645);
             this.guna2CustomGradientPanel1.TabIndex = 5;
             // 
             // guna2CustomGradientPanel3
@@ -92,9 +92,10 @@
             this.guna2CustomGradientPanel3.FillColor2 = System.Drawing.SystemColors.InactiveBorder;
             this.guna2CustomGradientPanel3.FillColor3 = System.Drawing.SystemColors.InactiveBorder;
             this.guna2CustomGradientPanel3.FillColor4 = System.Drawing.SystemColors.InactiveBorder;
-            this.guna2CustomGradientPanel3.Location = new System.Drawing.Point(0, 200);
+            this.guna2CustomGradientPanel3.Location = new System.Drawing.Point(0, 129);
+            this.guna2CustomGradientPanel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2CustomGradientPanel3.Name = "guna2CustomGradientPanel3";
-            this.guna2CustomGradientPanel3.Size = new System.Drawing.Size(514, 971);
+            this.guna2CustomGradientPanel3.Size = new System.Drawing.Size(289, 516);
             this.guna2CustomGradientPanel3.TabIndex = 5;
             // 
             // msMenuNotification
@@ -113,8 +114,8 @@
             this.msMenuNotification.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.msMenuNotification.Location = new System.Drawing.Point(0, 0);
             this.msMenuNotification.Name = "msMenuNotification";
-            this.msMenuNotification.Padding = new System.Windows.Forms.Padding(11, 3, 0, 3);
-            this.msMenuNotification.Size = new System.Drawing.Size(514, 404);
+            this.msMenuNotification.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
+            this.msMenuNotification.Size = new System.Drawing.Size(289, 260);
             this.msMenuNotification.TabIndex = 4;
             this.msMenuNotification.Text = "menuStrip1";
             // 
@@ -124,7 +125,7 @@
             this.tsmiCompose.Image = global::WFThesisManagementSystem.Properties.Resources.book;
             this.tsmiCompose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsmiCompose.Name = "tsmiCompose";
-            this.tsmiCompose.Size = new System.Drawing.Size(502, 66);
+            this.tsmiCompose.Size = new System.Drawing.Size(282, 44);
             this.tsmiCompose.Text = "Compose";
             this.tsmiCompose.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.tsmiCompose.Click += new System.EventHandler(this.tsmiCompose_Click);
@@ -135,7 +136,7 @@
             this.tsmiInbox.Image = global::WFThesisManagementSystem.Properties.Resources.inbox;
             this.tsmiInbox.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsmiInbox.Name = "tsmiInbox";
-            this.tsmiInbox.Size = new System.Drawing.Size(502, 66);
+            this.tsmiInbox.Size = new System.Drawing.Size(282, 42);
             this.tsmiInbox.Text = "InBox";
             this.tsmiInbox.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.tsmiInbox.Click += new System.EventHandler(this.tsmiInbox_Click);
@@ -146,7 +147,7 @@
             this.tsmiRead.Image = global::WFThesisManagementSystem.Properties.Resources.open_book;
             this.tsmiRead.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsmiRead.Name = "tsmiRead";
-            this.tsmiRead.Size = new System.Drawing.Size(502, 66);
+            this.tsmiRead.Size = new System.Drawing.Size(282, 42);
             this.tsmiRead.Text = "Read";
             this.tsmiRead.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.tsmiRead.Click += new System.EventHandler(this.tsmiRead_Click);
@@ -157,7 +158,7 @@
             this.tsmiUnread.Image = global::WFThesisManagementSystem.Properties.Resources.email1;
             this.tsmiUnread.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsmiUnread.Name = "tsmiUnread";
-            this.tsmiUnread.Size = new System.Drawing.Size(502, 66);
+            this.tsmiUnread.Size = new System.Drawing.Size(282, 42);
             this.tsmiUnread.Text = "UnRead";
             this.tsmiUnread.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.tsmiUnread.Click += new System.EventHandler(this.tsmiUnread_Click);
@@ -168,9 +169,10 @@
             this.tsmiSend.Image = global::WFThesisManagementSystem.Properties.Resources.mail;
             this.tsmiSend.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsmiSend.Name = "tsmiSend";
-            this.tsmiSend.Size = new System.Drawing.Size(502, 66);
+            this.tsmiSend.Size = new System.Drawing.Size(282, 42);
             this.tsmiSend.Text = "Send";
             this.tsmiSend.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.tsmiSend.Click += new System.EventHandler(this.tsmiSend_Click);
             // 
             // tsmiExit
             // 
@@ -178,7 +180,7 @@
             this.tsmiExit.Image = global::WFThesisManagementSystem.Properties.Resources.exit;
             this.tsmiExit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.tsmiExit.Name = "tsmiExit";
-            this.tsmiExit.Size = new System.Drawing.Size(502, 66);
+            this.tsmiExit.Size = new System.Drawing.Size(282, 42);
             this.tsmiExit.Text = "Exit";
             this.tsmiExit.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.tsmiExit.Click += new System.EventHandler(this.tsmiExit_Click);
@@ -192,18 +194,18 @@
             this.guna2CustomGradientPanel2.FillColor3 = System.Drawing.SystemColors.InactiveBorder;
             this.guna2CustomGradientPanel2.FillColor4 = System.Drawing.SystemColors.InactiveBorder;
             this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(0, 0);
+            this.guna2CustomGradientPanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
-            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(514, 200);
+            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(289, 129);
             this.guna2CustomGradientPanel2.TabIndex = 1;
             // 
             // lblNotifications
             // 
             this.lblNotifications.AutoSize = true;
             this.lblNotifications.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNotifications.Location = new System.Drawing.Point(5, 68);
-            this.lblNotifications.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblNotifications.Location = new System.Drawing.Point(3, 44);
             this.lblNotifications.Name = "lblNotifications";
-            this.lblNotifications.Size = new System.Drawing.Size(337, 63);
+            this.lblNotifications.Size = new System.Drawing.Size(206, 37);
             this.lblNotifications.TabIndex = 3;
             this.lblNotifications.Text = "Notifications";
             // 
@@ -211,10 +213,9 @@
             // 
             this.guna2Panel2.Controls.Add(this.txtSearch);
             this.guna2Panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel2.Location = new System.Drawing.Point(514, 0);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(5);
+            this.guna2Panel2.Location = new System.Drawing.Point(289, 0);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(2410, 200);
+            this.guna2Panel2.Size = new System.Drawing.Size(771, 129);
             this.guna2Panel2.TabIndex = 2;
             // 
             // txtSearch
@@ -233,13 +234,13 @@
             this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSearch.Location = new System.Drawing.Point(10, 50);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
+            this.txtSearch.Location = new System.Drawing.Point(6, 32);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
             this.txtSearch.PlaceholderText = "";
             this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(2400, 115);
+            this.txtSearch.Size = new System.Drawing.Size(765, 74);
             this.txtSearch.TabIndex = 1;
             // 
             // guna2CustomGradientPanel5
@@ -250,28 +251,39 @@
             this.guna2CustomGradientPanel5.Controls.Add(this.guna2CustomGradientPanel7);
             this.guna2CustomGradientPanel5.Controls.Add(this.guna2CustomGradientPanel6);
             this.guna2CustomGradientPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2CustomGradientPanel5.Location = new System.Drawing.Point(514, 200);
+            this.guna2CustomGradientPanel5.Location = new System.Drawing.Point(289, 129);
+            this.guna2CustomGradientPanel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2CustomGradientPanel5.Name = "guna2CustomGradientPanel5";
-            this.guna2CustomGradientPanel5.Padding = new System.Windows.Forms.Padding(30, 10, 30, 30);
-            this.guna2CustomGradientPanel5.Size = new System.Drawing.Size(2410, 971);
+            this.guna2CustomGradientPanel5.Padding = new System.Windows.Forms.Padding(17, 6, 17, 19);
+            this.guna2CustomGradientPanel5.Size = new System.Drawing.Size(771, 516);
             this.guna2CustomGradientPanel5.TabIndex = 4;
             // 
             // guna2CustomGradientPanel7
             // 
             this.guna2CustomGradientPanel7.Controls.Add(this.ucAllNotifications1);
             this.guna2CustomGradientPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2CustomGradientPanel7.Location = new System.Drawing.Point(30, 111);
+            this.guna2CustomGradientPanel7.Location = new System.Drawing.Point(17, 71);
+            this.guna2CustomGradientPanel7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2CustomGradientPanel7.Name = "guna2CustomGradientPanel7";
-            this.guna2CustomGradientPanel7.Size = new System.Drawing.Size(2350, 830);
+            this.guna2CustomGradientPanel7.Size = new System.Drawing.Size(737, 426);
             this.guna2CustomGradientPanel7.TabIndex = 1;
+            // 
+            // ucAllNotifications1
+            // 
+            this.ucAllNotifications1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucAllNotifications1.Location = new System.Drawing.Point(0, 0);
+            this.ucAllNotifications1.Name = "ucAllNotifications1";
+            this.ucAllNotifications1.Size = new System.Drawing.Size(737, 426);
+            this.ucAllNotifications1.TabIndex = 0;
             // 
             // guna2CustomGradientPanel6
             // 
             this.guna2CustomGradientPanel6.Controls.Add(this.ms);
             this.guna2CustomGradientPanel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2CustomGradientPanel6.Location = new System.Drawing.Point(30, 10);
+            this.guna2CustomGradientPanel6.Location = new System.Drawing.Point(17, 6);
+            this.guna2CustomGradientPanel6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2CustomGradientPanel6.Name = "guna2CustomGradientPanel6";
-            this.guna2CustomGradientPanel6.Size = new System.Drawing.Size(2350, 101);
+            this.guna2CustomGradientPanel6.Size = new System.Drawing.Size(737, 65);
             this.guna2CustomGradientPanel6.TabIndex = 0;
             // 
             // ms
@@ -285,8 +297,8 @@
             this.typesToolStripMenuItem});
             this.ms.Location = new System.Drawing.Point(0, 0);
             this.ms.Name = "ms";
-            this.ms.Padding = new System.Windows.Forms.Padding(11, 3, 0, 3);
-            this.ms.Size = new System.Drawing.Size(2350, 72);
+            this.ms.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
+            this.ms.Size = new System.Drawing.Size(737, 46);
             this.ms.TabIndex = 14;
             this.ms.Text = "menuStrip1";
             // 
@@ -295,7 +307,7 @@
             this.generalToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.generalToolStripMenuItem.Image = global::WFThesisManagementSystem.Properties.Resources.book;
             this.generalToolStripMenuItem.Name = "generalToolStripMenuItem";
-            this.generalToolStripMenuItem.Size = new System.Drawing.Size(243, 66);
+            this.generalToolStripMenuItem.Size = new System.Drawing.Size(158, 42);
             this.generalToolStripMenuItem.Text = "General";
             // 
             // typesToolStripMenuItem
@@ -307,7 +319,7 @@
             this.typesToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.typesToolStripMenuItem.Image = global::WFThesisManagementSystem.Properties.Resources.laptop;
             this.typesToolStripMenuItem.Name = "typesToolStripMenuItem";
-            this.typesToolStripMenuItem.Size = new System.Drawing.Size(201, 66);
+            this.typesToolStripMenuItem.Size = new System.Drawing.Size(131, 42);
             this.typesToolStripMenuItem.Text = "Types";
             // 
             // tsmitaskAssignment
@@ -315,46 +327,39 @@
             this.tsmitaskAssignment.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmitaskAssignment.ForeColor = System.Drawing.Color.Black;
             this.tsmitaskAssignment.Name = "tsmitaskAssignment";
-            this.tsmitaskAssignment.Size = new System.Drawing.Size(498, 58);
+            this.tsmitaskAssignment.Size = new System.Drawing.Size(293, 38);
             this.tsmitaskAssignment.Text = "Task Assignment";
+            this.tsmitaskAssignment.Click += new System.EventHandler(this.tsmitaskAssignment_Click);
             // 
             // tsmigroupAcceptance
             // 
             this.tsmigroupAcceptance.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmigroupAcceptance.ForeColor = System.Drawing.Color.Black;
             this.tsmigroupAcceptance.Name = "tsmigroupAcceptance";
-            this.tsmigroupAcceptance.Size = new System.Drawing.Size(498, 58);
+            this.tsmigroupAcceptance.Size = new System.Drawing.Size(293, 38);
             this.tsmigroupAcceptance.Text = "Group Acceptance";
+            this.tsmigroupAcceptance.Click += new System.EventHandler(this.tsmigroupAcceptance_Click);
             // 
             // tsmionlineMeeting
             // 
             this.tsmionlineMeeting.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tsmionlineMeeting.ForeColor = System.Drawing.Color.Black;
             this.tsmionlineMeeting.Name = "tsmionlineMeeting";
-            this.tsmionlineMeeting.Size = new System.Drawing.Size(498, 58);
+            this.tsmionlineMeeting.Size = new System.Drawing.Size(293, 38);
             this.tsmionlineMeeting.Text = "Online Meeting";
-            // 
-            // ucAllNotifications1
-            // 
-            this.ucAllNotifications1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucAllNotifications1.Location = new System.Drawing.Point(0, 0);
-            this.ucAllNotifications1.Margin = new System.Windows.Forms.Padding(5);
-            this.ucAllNotifications1.Name = "ucAllNotifications1";
-            this.ucAllNotifications1.Size = new System.Drawing.Size(2350, 830);
-            this.ucAllNotifications1.TabIndex = 0;
+            this.tsmionlineMeeting.Click += new System.EventHandler(this.tsmionlineMeeting_Click);
             // 
             // FNotification
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.ClientSize = new System.Drawing.Size(2964, 1221);
+            this.ClientSize = new System.Drawing.Size(1082, 677);
             this.Controls.Add(this.guna2CustomGradientPanel5);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
-            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FNotification";
-            this.Padding = new System.Windows.Forms.Padding(0, 0, 40, 50);
+            this.Padding = new System.Windows.Forms.Padding(0, 0, 22, 32);
             this.Text = "FNotification";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.guna2Panel1.ResumeLayout(false);

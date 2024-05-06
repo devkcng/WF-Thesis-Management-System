@@ -278,5 +278,11 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
                 Application.Exit();
             }
         }
+
+        private void Mark_Click(object sender, EventArgs e)
+        {
+            FTeacherMark fTeacherMark = new FTeacherMark(_context);
+            fTeacherMark.Show();
+        }
     }
 }
