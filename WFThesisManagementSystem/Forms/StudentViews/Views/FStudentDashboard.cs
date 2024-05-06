@@ -16,6 +16,8 @@ using UserControl = System.Windows.Forms.UserControl;
 using WFThesisManagementSystem.Services;
 using System.Web.UI.WebControls;
 using System.Reflection.Emit;
+using WFThesisManagementSystem.Forms.TeacherViews.Views;
+using System.Security.Cryptography;
 
 namespace WFThesisManagementSystem.Forms.StudentViews.Views
 {
@@ -228,6 +230,8 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         }
         private void LoadTask(List<Task> Tasks, FlowLayoutPanel flp, Size size, int groupID)
         {
+            var filterHelper = new FilterByDayHelper(Tasks, _context);
+            
             flp.Visible = false;
             flp.Controls.Clear();
             foreach (var groupTask in Tasks)
@@ -412,22 +416,18 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             var subTaskList = _subtaskRepository.GetAllByStudentId(_userSessionHelper.UserID);
 
             //add data to subtask flow layout panel
-            uCStudentTask.flpAllInvidualTasksView.Hide();
             uCStudentTask.flpAllInvidualTasksView.Controls.Clear();
             foreach (var subTask in subTaskList)
             {
 
                 UCInvidualTask uCInvidualTask = new UCInvidualTask();
+                uCInvidualTask.Size = new Size(450, 150);
                 uCInvidualTask.lblName.Text = subTask.subtask_name;
-                uCInvidualTask.Id = subTask.subtask_id;
-                uCInvidualTask.SubmitDate = subTask.submit_day;
-                uCInvidualTask._StudentID = subTask.student_id.Value;
+                uCInvidualTask._id = subTask.subtask_id;
                 uCInvidualTask.txtProjectDetail.Text = subTask.subtask_description;
-                var openDay = subTask.open_day.Value;
                 var deadline = subTask.due_date.Value;
-                uCInvidualTask.lblOpenDay.Text = openDay.ToString("dd/MM/yyyy");
                 uCInvidualTask.lblDeadline.Text = deadline.ToString("dd/MM/yyyy");
-                if (uCInvidualTask.SubmitDate != null) { uCInvidualTask.ptbStatus.Image = Properties.Resources.photo_2024_04_02_16_52_38__2_; }
+                if (subTask.submit_day != null) { uCInvidualTask.ptbStatus.Image = Properties.Resources.photo_2024_04_02_16_52_38__2_; }
                 else { uCInvidualTask.ptbStatus.Image = Properties.Resources.photo_2024_04_02_16_52_38; }
                 uCInvidualTask.Clicked += ucInvidual_Clicked;
                 uCStudentTask.flpAllInvidualTasksView.Controls.Add(uCInvidualTask);
@@ -450,7 +450,10 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             uCTask.Parent.Parent.Hide();
 
             UCSTudentSubTasks ucsTudentSubTasks2 = new UCSTudentSubTasks();
+            ucsTudentSubTasks2._taskID = uCTask.Id;
             var subTaskList = _subtaskRepository.GetAllByTaskId(taskID);
+            ucsTudentSubTasks2.previousPtbClicked += task_Click;
+            ucsTudentSubTasks2.AssignTaskBtnClicked += AssignTaskBtn_Clicked;
             //add data to subtask flow layout panel
             ucsTudentSubTasks2.flpAllTasks.Controls.Clear();
             foreach (var subTask in subTaskList)
@@ -474,14 +477,49 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             foreach (var member in memberList)
             {
                 UCStudentInformation uCStudentInformation = new UCStudentInformation();
+                uCStudentInformation._id = member.student_id;
+                uCStudentInformation.Clicked += ucStudentInformation_Clicked;
                 uCStudentInformation.lblName.Text = member.student_name;
                 ucsTudentSubTasks2.flpAllMemberView.Controls.Add(uCStudentInformation);
             }
             panelContainer.Controls.Clear();
+            ucsTudentSubTasks2.Dock = DockStyle.Fill;
             panelContainer.Controls.Add(ucsTudentSubTasks2);
         }
 
 
+        #endregion
+
+        #region ucStudentSubTask-Events
+        private void AssignTaskBtn_Clicked(object sender, int id)
+        {
+            FStudentCreateSubTask fStudentCreateSubTask = new FStudentCreateSubTask(id, _context);
+            fStudentCreateSubTask.Show();
+        }
+        #endregion
+
+        #region ucStudentInformation-Events
+        private void ucStudentInformation_Clicked(object sender, EventArgs e)
+        {
+            UCStudentInformation uCStudentInformation = sender as UCStudentInformation;
+            UCSTudentSubTasks uCSTudentSubTasks = (UCSTudentSubTasks)uCStudentInformation.Parent.Parent.Parent;
+            uCSTudentSubTasks.flpAllTasks.Controls.Clear();
+            var taskList = _subtaskRepository.GetAllByStudentIdAndTaskId(uCStudentInformation._id, uCSTudentSubTasks._taskID);
+            foreach(var subTask in taskList)
+            {
+                UCSubTasks uCSubTask = new UCSubTasks();
+                uCSubTask.lblName.Text = subTask.subtask_name;
+                uCSubTask.txtProjectDetail.Text = subTask.subtask_description;
+                var openDay = subTask.open_day.Value;
+                var deadline = subTask.due_date.Value;
+                uCSubTask.lblOpenDay.Text = openDay.ToString("dd/MM/yyyy");
+                uCSubTask.lblDeadline.Text = deadline.ToString("dd/MM/yyyy");
+                uCSubTask.lblMember.Text = _studentRepository.GetById(subTask.student_id.Value).student_name;
+                if (subTask.submit_day != null) { uCSubTask.ptbStatus.Image = Properties.Resources.photo_2024_04_02_16_52_38__2_1; }
+                else { uCSubTask.ptbStatus.Image = Properties.Resources.photo_2024_04_02_16_52_38; }
+                uCSTudentSubTasks.flpAllTasks.Controls.Add(uCSubTask);
+            }
+        }
         #endregion
 
         #region uCInvidualTask-Events
@@ -490,16 +528,17 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         {
 
             UCInvidualTask uCInvidualTask = sender as UCInvidualTask;
-
-            if (uCInvidualTask.SubmitDate != null)
+            var subTask = _subtaskRepository.GetById(uCInvidualTask._id);
+            if (subTask.submit_day != null)
             {
                 MessageBox.Show("This task has been submitted");
             }
             else
             {
-                FStudentTaskPopUp fStudentTaskPopUp = new FStudentTaskPopUp(uCInvidualTask.Id);
+
+                FStudentTaskPopUp fStudentTaskPopUp = new FStudentTaskPopUp(subTask,_context);
                 fStudentTaskPopUp.lblSubTaskName.Text = uCInvidualTask.lblName.Text;
-                fStudentTaskPopUp.lblStudentname.Text = _studentRepository.GetById(uCInvidualTask._StudentID).student_name;
+                fStudentTaskPopUp.lblStudentname.Text = _studentRepository.GetById(subTask.student_id.Value).student_name;
                 fStudentTaskPopUp.lblSubmitDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
                 fStudentTaskPopUp.ShowDialog();
             }

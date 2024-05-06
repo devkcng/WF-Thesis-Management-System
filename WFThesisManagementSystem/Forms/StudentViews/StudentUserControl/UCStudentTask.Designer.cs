@@ -34,18 +34,18 @@
             this.lblTo = new System.Windows.Forms.Label();
             this.lblFrom = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.guna2CustomGradientPanel3 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.guna2CustomGradientPanel4 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.flpGroupTaskView = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2CustomGradientPanel5 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.label2 = new System.Windows.Forms.Label();
+            this.guna2CustomGradientPanel3 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.guna2CustomGradientPanel4 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.flpAllInvidualTasksView = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2CustomGradientPanel6 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.flpGroupTaskView = new System.Windows.Forms.FlowLayoutPanel();
-            this.flpAllInvidualTasksView = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.guna2CustomGradientPanel2.SuspendLayout();
-            this.guna2CustomGradientPanel4.SuspendLayout();
             this.guna2CustomGradientPanel5.SuspendLayout();
+            this.guna2CustomGradientPanel4.SuspendLayout();
             this.guna2CustomGradientPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -134,6 +134,36 @@
             this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(1431, 1364);
             this.guna2CustomGradientPanel2.TabIndex = 1;
             // 
+            // flpGroupTaskView
+            // 
+            this.flpGroupTaskView.AutoScroll = true;
+            this.flpGroupTaskView.BackColor = System.Drawing.Color.White;
+            this.flpGroupTaskView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpGroupTaskView.Location = new System.Drawing.Point(20, 144);
+            this.flpGroupTaskView.Name = "flpGroupTaskView";
+            this.flpGroupTaskView.Size = new System.Drawing.Size(1391, 1200);
+            this.flpGroupTaskView.TabIndex = 1;
+            // 
+            // guna2CustomGradientPanel5
+            // 
+            this.guna2CustomGradientPanel5.Controls.Add(this.label2);
+            this.guna2CustomGradientPanel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2CustomGradientPanel5.Location = new System.Drawing.Point(20, 20);
+            this.guna2CustomGradientPanel5.Name = "guna2CustomGradientPanel5";
+            this.guna2CustomGradientPanel5.Size = new System.Drawing.Size(1391, 124);
+            this.guna2CustomGradientPanel5.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Cambria", 15.9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(13, 21);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(303, 62);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Group Task";
+            // 
             // guna2CustomGradientPanel3
             // 
             this.guna2CustomGradientPanel3.BackColor = System.Drawing.SystemColors.InactiveBorder;
@@ -161,25 +191,15 @@
             this.guna2CustomGradientPanel4.Size = new System.Drawing.Size(1283, 1364);
             this.guna2CustomGradientPanel4.TabIndex = 3;
             // 
-            // guna2CustomGradientPanel5
+            // flpAllInvidualTasksView
             // 
-            this.guna2CustomGradientPanel5.Controls.Add(this.label2);
-            this.guna2CustomGradientPanel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2CustomGradientPanel5.Location = new System.Drawing.Point(20, 20);
-            this.guna2CustomGradientPanel5.Name = "guna2CustomGradientPanel5";
-            this.guna2CustomGradientPanel5.Size = new System.Drawing.Size(1391, 124);
-            this.guna2CustomGradientPanel5.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Cambria", 15.9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 21);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(303, 62);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Group Task";
+            this.flpAllInvidualTasksView.AutoScroll = true;
+            this.flpAllInvidualTasksView.BackColor = System.Drawing.Color.White;
+            this.flpAllInvidualTasksView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flpAllInvidualTasksView.Location = new System.Drawing.Point(20, 144);
+            this.flpAllInvidualTasksView.Name = "flpAllInvidualTasksView";
+            this.flpAllInvidualTasksView.Size = new System.Drawing.Size(1243, 1200);
+            this.flpAllInvidualTasksView.TabIndex = 2;
             // 
             // guna2CustomGradientPanel6
             // 
@@ -197,29 +217,9 @@
             this.label1.Font = new System.Drawing.Font("Cambria", 15.9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(13, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(354, 62);
+            this.label1.Size = new System.Drawing.Size(265, 62);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Invidual Task";
-            // 
-            // flpGroupTaskView
-            // 
-            this.flpGroupTaskView.AutoScroll = true;
-            this.flpGroupTaskView.BackColor = System.Drawing.Color.White;
-            this.flpGroupTaskView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpGroupTaskView.Location = new System.Drawing.Point(20, 144);
-            this.flpGroupTaskView.Name = "flpGroupTaskView";
-            this.flpGroupTaskView.Size = new System.Drawing.Size(1391, 1200);
-            this.flpGroupTaskView.TabIndex = 1;
-            // 
-            // flpAllInvidualTasksView
-            // 
-            this.flpAllInvidualTasksView.AutoScroll = true;
-            this.flpAllInvidualTasksView.BackColor = System.Drawing.Color.White;
-            this.flpAllInvidualTasksView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flpAllInvidualTasksView.Location = new System.Drawing.Point(20, 144);
-            this.flpAllInvidualTasksView.Name = "flpAllInvidualTasksView";
-            this.flpAllInvidualTasksView.Size = new System.Drawing.Size(1243, 1200);
-            this.flpAllInvidualTasksView.TabIndex = 2;
+            this.label1.Text = "Your Task";
             // 
             // UCStudentTask
             // 
@@ -237,9 +237,9 @@
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             this.guna2CustomGradientPanel1.PerformLayout();
             this.guna2CustomGradientPanel2.ResumeLayout(false);
-            this.guna2CustomGradientPanel4.ResumeLayout(false);
             this.guna2CustomGradientPanel5.ResumeLayout(false);
             this.guna2CustomGradientPanel5.PerformLayout();
+            this.guna2CustomGradientPanel4.ResumeLayout(false);
             this.guna2CustomGradientPanel6.ResumeLayout(false);
             this.guna2CustomGradientPanel6.PerformLayout();
             this.ResumeLayout(false);

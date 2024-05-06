@@ -28,27 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.panelContainer = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.lblName = new System.Windows.Forms.Label();
             this.ptbAvatar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.guna2CustomGradientPanel1.SuspendLayout();
+            this.panelContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).BeginInit();
             this.SuspendLayout();
             // 
-            // guna2CustomGradientPanel1
+            // panelContainer
             // 
-            this.guna2CustomGradientPanel1.BackColor = System.Drawing.Color.White;
-            this.guna2CustomGradientPanel1.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.guna2CustomGradientPanel1.BorderRadius = 10;
-            this.guna2CustomGradientPanel1.BorderThickness = 2;
-            this.guna2CustomGradientPanel1.Controls.Add(this.lblName);
-            this.guna2CustomGradientPanel1.Controls.Add(this.ptbAvatar);
-            this.guna2CustomGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
-            this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(715, 158);
-            this.guna2CustomGradientPanel1.TabIndex = 0;
+            this.panelContainer.BackColor = System.Drawing.Color.White;
+            this.panelContainer.BorderColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panelContainer.BorderRadius = 10;
+            this.panelContainer.BorderThickness = 2;
+            this.panelContainer.Controls.Add(this.lblName);
+            this.panelContainer.Controls.Add(this.ptbAvatar);
+            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContainer.Location = new System.Drawing.Point(0, 0);
+            this.panelContainer.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(715, 158);
+            this.panelContainer.TabIndex = 0;
             // 
             // lblName
             // 
@@ -82,12 +82,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.guna2CustomGradientPanel1);
+            this.Controls.Add(this.panelContainer);
             this.Margin = new System.Windows.Forms.Padding(10);
             this.Name = "UCStudentInformation";
             this.Size = new System.Drawing.Size(715, 158);
-            this.guna2CustomGradientPanel1.ResumeLayout(false);
-            this.guna2CustomGradientPanel1.PerformLayout();
+            this.panelContainer.ResumeLayout(false);
+            this.panelContainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbAvatar)).EndInit();
             this.ResumeLayout(false);
 
@@ -95,7 +95,7 @@
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel panelContainer;
         public System.Windows.Forms.Label lblName;
         public Guna.UI2.WinForms.Guna2CirclePictureBox ptbAvatar;
     }

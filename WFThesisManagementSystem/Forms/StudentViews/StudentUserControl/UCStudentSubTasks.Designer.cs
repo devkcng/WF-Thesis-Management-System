@@ -29,29 +29,33 @@
         private void InitializeComponent()
         {
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.btnPrevious = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.dtpEndDay = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.dtpStartDay = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.lblTo = new System.Windows.Forms.Label();
             this.lblFrom = new System.Windows.Forms.Label();
-            this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.panelMember = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.flpAllMemberView = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2CustomGradientPanel5 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel3 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.guna2CustomGradientPanel4 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.panelSubTasks = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.flpAllTasks = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2CustomGradientPanel6 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.btnAssignTask = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel1.SuspendLayout();
-            this.guna2CustomGradientPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPrevious)).BeginInit();
+            this.panelMember.SuspendLayout();
             this.guna2CustomGradientPanel5.SuspendLayout();
-            this.guna2CustomGradientPanel4.SuspendLayout();
+            this.panelSubTasks.SuspendLayout();
             this.guna2CustomGradientPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2CustomGradientPanel1
             // 
             this.guna2CustomGradientPanel1.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.guna2CustomGradientPanel1.Controls.Add(this.btnPrevious);
             this.guna2CustomGradientPanel1.Controls.Add(this.dtpEndDay);
             this.guna2CustomGradientPanel1.Controls.Add(this.dtpStartDay);
             this.guna2CustomGradientPanel1.Controls.Add(this.lblTo);
@@ -65,6 +69,19 @@
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(2676, 102);
             this.guna2CustomGradientPanel1.TabIndex = 1;
+            // 
+            // btnPrevious
+            // 
+            this.btnPrevious.Image = global::WFThesisManagementSystem.Properties.Resources.icons8_back_24;
+            this.btnPrevious.ImageRotate = 0F;
+            this.btnPrevious.Location = new System.Drawing.Point(20, 5);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnPrevious.Size = new System.Drawing.Size(73, 81);
+            this.btnPrevious.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnPrevious.TabIndex = 51;
+            this.btnPrevious.TabStop = false;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // dtpEndDay
             // 
@@ -120,19 +137,19 @@
             this.lblFrom.TabIndex = 47;
             this.lblFrom.Text = "From";
             // 
-            // guna2CustomGradientPanel2
+            // panelMember
             // 
-            this.guna2CustomGradientPanel2.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.guna2CustomGradientPanel2.BorderRadius = 10;
-            this.guna2CustomGradientPanel2.BorderThickness = 2;
-            this.guna2CustomGradientPanel2.Controls.Add(this.flpAllMemberView);
-            this.guna2CustomGradientPanel2.Controls.Add(this.guna2CustomGradientPanel5);
-            this.guna2CustomGradientPanel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(70, 132);
-            this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
-            this.guna2CustomGradientPanel2.Padding = new System.Windows.Forms.Padding(20);
-            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(824, 1364);
-            this.guna2CustomGradientPanel2.TabIndex = 2;
+            this.panelMember.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.panelMember.BorderRadius = 10;
+            this.panelMember.BorderThickness = 2;
+            this.panelMember.Controls.Add(this.flpAllMemberView);
+            this.panelMember.Controls.Add(this.guna2CustomGradientPanel5);
+            this.panelMember.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelMember.Location = new System.Drawing.Point(70, 132);
+            this.panelMember.Name = "panelMember";
+            this.panelMember.Padding = new System.Windows.Forms.Padding(20);
+            this.panelMember.Size = new System.Drawing.Size(824, 1364);
+            this.panelMember.TabIndex = 2;
             // 
             // flpAllMemberView
             // 
@@ -177,19 +194,19 @@
             this.guna2CustomGradientPanel3.Size = new System.Drawing.Size(83, 1364);
             this.guna2CustomGradientPanel3.TabIndex = 3;
             // 
-            // guna2CustomGradientPanel4
+            // panelSubTasks
             // 
-            this.guna2CustomGradientPanel4.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.guna2CustomGradientPanel4.BorderRadius = 10;
-            this.guna2CustomGradientPanel4.BorderThickness = 2;
-            this.guna2CustomGradientPanel4.Controls.Add(this.flpAllTasks);
-            this.guna2CustomGradientPanel4.Controls.Add(this.guna2CustomGradientPanel6);
-            this.guna2CustomGradientPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2CustomGradientPanel4.Location = new System.Drawing.Point(977, 132);
-            this.guna2CustomGradientPanel4.Name = "guna2CustomGradientPanel4";
-            this.guna2CustomGradientPanel4.Padding = new System.Windows.Forms.Padding(20);
-            this.guna2CustomGradientPanel4.Size = new System.Drawing.Size(1769, 1364);
-            this.guna2CustomGradientPanel4.TabIndex = 4;
+            this.panelSubTasks.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.panelSubTasks.BorderRadius = 10;
+            this.panelSubTasks.BorderThickness = 2;
+            this.panelSubTasks.Controls.Add(this.flpAllTasks);
+            this.panelSubTasks.Controls.Add(this.guna2CustomGradientPanel6);
+            this.panelSubTasks.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelSubTasks.Location = new System.Drawing.Point(977, 132);
+            this.panelSubTasks.Name = "panelSubTasks";
+            this.panelSubTasks.Padding = new System.Windows.Forms.Padding(20);
+            this.panelSubTasks.Size = new System.Drawing.Size(1769, 1364);
+            this.panelSubTasks.TabIndex = 4;
             // 
             // flpAllTasks
             // 
@@ -203,12 +220,33 @@
             // 
             // guna2CustomGradientPanel6
             // 
+            this.guna2CustomGradientPanel6.Controls.Add(this.btnAssignTask);
             this.guna2CustomGradientPanel6.Controls.Add(this.label1);
             this.guna2CustomGradientPanel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2CustomGradientPanel6.Location = new System.Drawing.Point(20, 20);
             this.guna2CustomGradientPanel6.Name = "guna2CustomGradientPanel6";
             this.guna2CustomGradientPanel6.Size = new System.Drawing.Size(1729, 124);
             this.guna2CustomGradientPanel6.TabIndex = 1;
+            // 
+            // btnAssignTask
+            // 
+            this.btnAssignTask.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAssignTask.BorderColor = System.Drawing.Color.White;
+            this.btnAssignTask.BorderRadius = 10;
+            this.btnAssignTask.BorderThickness = 3;
+            this.btnAssignTask.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAssignTask.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAssignTask.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAssignTask.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAssignTask.FillColor = System.Drawing.Color.Green;
+            this.btnAssignTask.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.btnAssignTask.ForeColor = System.Drawing.Color.White;
+            this.btnAssignTask.Location = new System.Drawing.Point(1338, 21);
+            this.btnAssignTask.Name = "btnAssignTask";
+            this.btnAssignTask.Size = new System.Drawing.Size(367, 89);
+            this.btnAssignTask.TabIndex = 85;
+            this.btnAssignTask.Text = "ASSIGN TASK";
+            this.btnAssignTask.Click += new System.EventHandler(this.btnAssignTask_Click);
             // 
             // label1
             // 
@@ -226,19 +264,20 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.Controls.Add(this.guna2CustomGradientPanel4);
+            this.Controls.Add(this.panelSubTasks);
             this.Controls.Add(this.guna2CustomGradientPanel3);
-            this.Controls.Add(this.guna2CustomGradientPanel2);
+            this.Controls.Add(this.panelMember);
             this.Controls.Add(this.guna2CustomGradientPanel1);
             this.Name = "UCSTudentSubTasks";
             this.Padding = new System.Windows.Forms.Padding(70, 30, 70, 20);
             this.Size = new System.Drawing.Size(2816, 1516);
             this.guna2CustomGradientPanel1.ResumeLayout(false);
             this.guna2CustomGradientPanel1.PerformLayout();
-            this.guna2CustomGradientPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnPrevious)).EndInit();
+            this.panelMember.ResumeLayout(false);
             this.guna2CustomGradientPanel5.ResumeLayout(false);
             this.guna2CustomGradientPanel5.PerformLayout();
-            this.guna2CustomGradientPanel4.ResumeLayout(false);
+            this.panelSubTasks.ResumeLayout(false);
             this.guna2CustomGradientPanel6.ResumeLayout(false);
             this.guna2CustomGradientPanel6.PerformLayout();
             this.ResumeLayout(false);
@@ -252,14 +291,16 @@
         public Guna.UI2.WinForms.Guna2DateTimePicker dtpStartDay;
         private System.Windows.Forms.Label lblTo;
         private System.Windows.Forms.Label lblFrom;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel2;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel panelMember;
         public System.Windows.Forms.FlowLayoutPanel flpAllMemberView;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel5;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel3;
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel4;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel panelSubTasks;
         public System.Windows.Forms.FlowLayoutPanel flpAllTasks;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel6;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox btnPrevious;
+        public Guna.UI2.WinForms.Guna2Button btnAssignTask;
     }
 }

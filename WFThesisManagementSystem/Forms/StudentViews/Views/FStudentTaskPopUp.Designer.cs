@@ -32,7 +32,6 @@
             this.panelContainer = new System.Windows.Forms.Panel();
             this.ptbStatus1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.lblStudentname = new System.Windows.Forms.Label();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btnSubmit = new Guna.UI2.WinForms.Guna2Button();
             this.lblSubmitDate = new System.Windows.Forms.Label();
             this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
@@ -51,6 +50,7 @@
             this.lblSubTaskName = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panelContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbStatus1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -342,6 +342,7 @@
             this.Controls.Add(this.panelContainer);
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FStudentTaskPopUp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FStudentTaskPopUp";
             this.panelContainer.ResumeLayout(false);
             this.panelContainer.PerformLayout();
