@@ -10,14 +10,17 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
     {
         public event EventHandler EditButtonClicked;
         public event EventHandler SubmitButtonClicked;
+        public event EventHandler PointButtonClicked;
         public UcTeacherSingleTask()
         {
             InitializeComponent();
             btnEdit.Click += ButtonEdit_Click;
+            //btnPoint.Click += Point_Click;
         }
 
         #region Properties
         private string name;
+        private int task_id;
         private string content;
         private DateTime timeOpen;
         private DateTime timeEnd;
@@ -42,6 +45,11 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
             get { return content; }
             set { content = value; lblContentTask.Text = value; }
         } 
+        public int TaskId
+        {
+            get { return task_id; }
+            set {  task_id = value; }
+        }
         #endregion
 
         private void ButtonEdit_Click(object sender, EventArgs e)
@@ -60,6 +68,15 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
         protected virtual void OnSubmitButtonClicked(EventArgs e)
         {
             SubmitButtonClicked?.Invoke(this, e);
+        }
+
+        private void Point_Click(object sender, EventArgs e)
+        {
+            OnPointButtonClicked(EventArgs.Empty);
+        }
+        protected virtual void OnPointButtonClicked(EventArgs e)
+        {
+            PointButtonClicked?.Invoke(this, e);
         }
     }
 }

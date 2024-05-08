@@ -44,8 +44,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             this.worklogs = new System.Windows.Forms.ToolStripMenuItem();
             this.performance = new System.Windows.Forms.ToolStripMenuItem();
             this.logout = new System.Windows.Forms.ToolStripMenuItem();
-            this.Regist = new System.Windows.Forms.ToolStripMenuItem();
-            this.Mark = new System.Windows.Forms.ToolStripMenuItem();
+            this.analytics = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnNotification = new Guna.UI2.WinForms.Guna2Button();
             this.mspProfile = new System.Windows.Forms.MenuStrip();
@@ -153,13 +152,12 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             this.worklogs,
             this.performance,
             this.logout,
-            this.Regist,
-            this.Mark});
+            this.analytics});
             this.MSListFolder.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Table;
             this.MSListFolder.Location = new System.Drawing.Point(0, 8);
             this.MSListFolder.Name = "MSListFolder";
-            this.MSListFolder.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
-            this.MSListFolder.Size = new System.Drawing.Size(328, 460);
+            this.MSListFolder.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.MSListFolder.Size = new System.Drawing.Size(213, 220);
             this.MSListFolder.TabIndex = 1;
             this.MSListFolder.Text = "menuStrip2";
             // 
@@ -212,23 +210,14 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             this.logout.Text = "Log out";
             this.logout.Click += new System.EventHandler(this.logout_Click);
             // 
-            // Regist
+            // analytics
             // 
-            this.Regist.BackColor = System.Drawing.Color.OldLace;
-            this.Regist.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Regist.Image = global::WFThesisManagementSystem.Properties.Resources.Edit_Property;
-            this.Regist.Name = "Regist";
-            this.Regist.Size = new System.Drawing.Size(196, 58);
-            this.Regist.Text = "Regist";
-            // 
-            // Mark
-            // 
-            this.Mark.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Mark.Image = global::WFThesisManagementSystem.Properties.Resources.icons8_mark_64;
-            this.Mark.Name = "Mark";
-            this.Mark.Size = new System.Drawing.Size(177, 58);
-            this.Mark.Text = "Mark";
-            this.Mark.Click += new System.EventHandler(this.Mark_Click);
+            this.analytics.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.analytics.Image = global::WFThesisManagementSystem.Properties.Resources.icons8_analytic_50;
+            this.analytics.Name = "analytics";
+            this.analytics.Size = new System.Drawing.Size(166, 36);
+            this.analytics.Text = "Analytics";
+            this.analytics.Click += new System.EventHandler(this.analytics_Click);
             // 
             // panel1
             // 
@@ -410,9 +399,8 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         private System.Windows.Forms.MenuStrip mspProfile;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem Regist;
         private Guna.UI2.WinForms.Guna2Button btnNotification;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel panelContainer;
-        private System.Windows.Forms.ToolStripMenuItem Mark;
+        private System.Windows.Forms.ToolStripMenuItem analytics;
     }
 }

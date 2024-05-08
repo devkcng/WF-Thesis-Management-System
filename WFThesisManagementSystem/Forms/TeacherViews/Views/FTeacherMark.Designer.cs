@@ -28,26 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.ucTeacherAllMark1 = new WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl.UcTeacherAllMark();
-            this.guna2CustomGradientPanel1.SuspendLayout();
+            this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // guna2CustomGradientPanel1
+            // guna2Panel1
             // 
-            this.guna2CustomGradientPanel1.Controls.Add(this.ucTeacherAllMark1);
-            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(12, 12);
-            this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
-            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1900, 1026);
-            this.guna2CustomGradientPanel1.TabIndex = 0;
+            this.guna2Panel1.Controls.Add(this.ucTeacherAllMark1);
+            this.guna2Panel1.Location = new System.Drawing.Point(326, 58);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(1349, 896);
+            this.guna2Panel1.TabIndex = 0;
             // 
             // ucTeacherAllMark1
             // 
-            this.ucTeacherAllMark1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ucTeacherAllMark1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucTeacherAllMark1.Location = new System.Drawing.Point(0, 0);
+            this.ucTeacherAllMark1.BackColor = System.Drawing.SystemColors.Control;
+            this.ucTeacherAllMark1.Location = new System.Drawing.Point(0, 3);
             this.ucTeacherAllMark1.Name = "ucTeacherAllMark1";
-            this.ucTeacherAllMark1.Size = new System.Drawing.Size(1900, 1026);
+            this.ucTeacherAllMark1.Size = new System.Drawing.Size(1349, 896);
             this.ucTeacherAllMark1.TabIndex = 0;
             // 
             // FTeacherMark
@@ -55,19 +54,19 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 1050);
-            this.Controls.Add(this.guna2CustomGradientPanel1);
+            this.Controls.Add(this.guna2Panel1);
             this.Name = "FTeacherMark";
             this.Text = "FTeacherMark";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FTeacherMark_Load);
-            this.guna2CustomGradientPanel1.ResumeLayout(false);
+            this.guna2Panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
-        public TeacherUserControl.UcTeacherAllMark ucTeacherAllMark1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private TeacherUserControl.UcTeacherAllMark ucTeacherAllMark1;
     }
 }
