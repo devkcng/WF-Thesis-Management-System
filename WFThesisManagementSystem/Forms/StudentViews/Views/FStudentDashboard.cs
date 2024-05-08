@@ -601,51 +601,58 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
 
         private void LoadSubTaskProgressChart(Chart subTaskChart, List<SubTask> subTaskList)
         {
-            var completedSubTasks = _subtaskRepository.GetNumberOfCompletedSubTaskOfStudents(_userSessionHelper.UserID);
-            var uncompletedSubTasks = _subtaskRepository.GetNumberOfUncompletedSubTaskOfStudents(_userSessionHelper.UserID);
-            var lateSubmittedSubTasks = _subtaskRepository.GetNumberOfLateSubmittedSubTasksOfStudents(_userSessionHelper.UserID);
+            SubTask subTask = subTaskList.FirstOrDefault(subtask => subtask != null);
+            if (subTask != null)
+            {
+                var completedSubTasks = _subtaskRepository.GetNumberOfCompletedSubTaskOfStudents(subTask.subtask_id);
+                var uncompletedSubTasks = _subtaskRepository.GetNumberOfUncompletedSubTaskOfStudents(subTask.subtask_id);
+                var lateSubmittedSubTasks = _subtaskRepository.GetNumberOfLateSubmittedSubTasksOfStudents(subTask.subtask_id);
 
-            int n = 0;
-            if (completedSubTasks > 0)
-            {
-                subTaskChart.Series["s1"].Points.AddXY(completedSubTasks.ToString(), completedSubTasks);
-                subTaskChart.Series["s1"].Points[n++].LegendText = "Submitted SubTask";
+                int n = 0;
+                if (completedSubTasks > 0)
+                {
+                    subTaskChart.Series["s1"].Points.AddXY(completedSubTasks.ToString(), completedSubTasks);
+                    subTaskChart.Series["s1"].Points[n++].LegendText = "Submitted SubTask";
+                }
+                if (uncompletedSubTasks > 0)
+                {
+                    subTaskChart.Series["s1"].Points.AddXY(uncompletedSubTasks.ToString(), uncompletedSubTasks);
+                    subTaskChart.Series["s1"].Points[n++].LegendText = "Unsubmitted SubTask";
+                }
+                if (lateSubmittedSubTasks > 0)
+                {
+                    subTaskChart.Series["s1"].Points.AddXY(lateSubmittedSubTasks.ToString(), lateSubmittedSubTasks);
+                    subTaskChart.Series["s1"].Points[n++].LegendText = "Late Submitted SubTask";
+                }
             }
-            if (uncompletedSubTasks > 0)
-            {
-                subTaskChart.Series["s1"].Points.AddXY(uncompletedSubTasks.ToString(), uncompletedSubTasks);
-                subTaskChart.Series["s1"].Points[n++].LegendText = "Unsubmitted SubTask";
-            }
-            if (lateSubmittedSubTasks > 0)
-            {
-                subTaskChart.Series["s1"].Points.AddXY(lateSubmittedSubTasks.ToString(), lateSubmittedSubTasks);
-                subTaskChart.Series["s1"].Points[n++].LegendText = "Late Submitted SubTask";
-            }
-
 
         }
         private void LoadGroupTaskProgressChart(Chart groupTaskChart, List<Task> groupTaskList)
         {
-            var student = _studentRepository.GetById(_userSessionHelper.UserID);
-            var completedTasks = _taskRepository.GetNumberOfCompletedTaskOfGroup(student.group_id.Value);
-            var uncompletedTasks = _taskRepository.GetNumberOfUncompletedTaskOfGroup(student.group_id.Value);
-            var lateSubmittedTasks = _taskRepository.GetNumberOfLateSubmittedTasksOfGroup(student.group_id.Value);
+            Task groupTask = groupTaskList.FirstOrDefault(task => task != null);
+            if (groupTask != null)
+            {
+                var student = _studentRepository.GetById(_userSessionHelper.UserID);
+                var completedTasks = _taskRepository.GetNumberOfCompletedTaskOfGroup(groupTask.group_id.Value);
+                var uncompletedTasks = _taskRepository.GetNumberOfUncompletedTaskOfGroup(groupTask.group_id.Value);
+                var lateSubmittedTasks = _taskRepository.GetNumberOfLateSubmittedTasksOfGroup(groupTask.group_id.Value);
 
-            int n = 0;
-            if (completedTasks > 0)
-            {
-                groupTaskChart.Series["s1"].Points.AddXY(completedTasks.ToString(), completedTasks);
-                groupTaskChart.Series["s1"].Points[n++].LegendText = "Submitted Task";
-            }
-            if (uncompletedTasks > 0)
-            {
-                groupTaskChart.Series["s1"].Points.AddXY(uncompletedTasks.ToString(), uncompletedTasks);
-                groupTaskChart.Series["s1"].Points[n++].LegendText = "Unsubmitted Task";
-            }
-            if (lateSubmittedTasks > 0)
-            {
-                groupTaskChart.Series["s1"].Points.AddXY(lateSubmittedTasks.ToString(), lateSubmittedTasks);
-                groupTaskChart.Series["s1"].Points[n++].LegendText = "Late Submitted Task";
+                int n = 0;
+                if (completedTasks > 0)
+                {
+                    groupTaskChart.Series["s1"].Points.AddXY(completedTasks.ToString(), completedTasks);
+                    groupTaskChart.Series["s1"].Points[n++].LegendText = "Submitted Task";
+                }
+                if (uncompletedTasks > 0)
+                {
+                    groupTaskChart.Series["s1"].Points.AddXY(uncompletedTasks.ToString(), uncompletedTasks);
+                    groupTaskChart.Series["s1"].Points[n++].LegendText = "Unsubmitted Task";
+                }
+                if (lateSubmittedTasks > 0)
+                {
+                    groupTaskChart.Series["s1"].Points.AddXY(lateSubmittedTasks.ToString(), lateSubmittedTasks);
+                    groupTaskChart.Series["s1"].Points[n++].LegendText = "Late Submitted Task";
+                }
             }
         }
 
