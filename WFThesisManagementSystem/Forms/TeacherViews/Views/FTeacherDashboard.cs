@@ -1,15 +1,18 @@
 ﻿using ComponentFactory.Krypton.Toolkit;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Runtime.Remoting.Channels;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using WFThesisManagementSystem.Forms.StudentViews.StudentUserControl;
 using WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl;
 using WFThesisManagementSystem.Helper;
 using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.Repositories;
 using WFThesisManagementSystem.Services;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WFThesisManagementSystem.Forms.TeacherViews.Views
 {
@@ -22,6 +25,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         RegisterQueueRepository _registerQueue;
         StudentRepository _studentRepository;
         TeacherService _teacherService;
+        SubTaskRepository _subtaskRepository;
         UserSessionHelper _userSessionHelper = UserSessionHelper.Instance;
 
         int GroupIdCreate;
@@ -34,6 +38,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             _topicRepository = new TopicRepository(_context);
             _registerQueue = new RegisterQueueRepository(_context);
             _studentRepository = new StudentRepository(_context);
+            _subtaskRepository = new SubTaskRepository(_context);
             _teacherService = new TeacherService(_userSessionHelper.UserID);
             InitializeComponent();
             btnNotification.Click += createNotification;
@@ -90,6 +95,16 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             ucTeacherAllTopics_Load(ucTeacherAllTopics);
             panelContainer.Controls.Add(ucTeacherAllTopics);
         }
+        private void worklogs_Click(object sender, EventArgs e)
+        {
+            panelContainer.Controls.Clear();
+            UCProgress uCProgress = new UCProgress();
+            uCProgress.Dock = DockStyle.Fill;
+            uCProgress._cbGroupCategoryChanged += CbGroupCategory_ValueChanged;
+            uCProgress._cbMemberCategoryChanged += CbMemberCategory_ValueChanged;
+            ListUCProgressComponents(uCProgress);
+            panelContainer.Controls.Add(uCProgress);
+        }
         private void ucTeacherAllTopics_Load(UcTeacherAllTopics ucTeacherAllTopics)
         {
             ListTopic(ucTeacherAllTopics, _topicRepository.GetAll().ToList());
@@ -136,7 +151,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             ucTeacherAllTask.flpAllTasks.Controls.Clear();
             var taskList = _taskRepository.GetAll().ToList();
             var filterHelper = new FilterByDayHelper(taskList, _context);
-            var taskListFiltered = filterHelper.FilterByDay(ucTeacherAllTask.dtpStartDay.Value, ucTeacherAllTask.dtpEndDay.Value);
+            var taskListFiltered = filterHelper.FilterTasksByDay(ucTeacherAllTask.dtpStartDay.Value, ucTeacherAllTask.dtpEndDay.Value);
             foreach (var task in taskListFiltered)
             {
                 UcTeacherSingleTask ucTeacherSingleTask = new UcTeacherSingleTask();
@@ -165,7 +180,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             ucTeacherAllTask.flpAllTasks.Controls.Clear();
 
             var filterHelper = new FilterByDayHelper(taskList.ToList(), _context);
-            var taskListFiltered = filterHelper.FilterByDay(ucTeacherAllTask.dtpStartDay.Value, ucTeacherAllTask.dtpEndDay.Value);
+            var taskListFiltered = filterHelper.FilterTasksByDay(ucTeacherAllTask.dtpStartDay.Value, ucTeacherAllTask.dtpEndDay.Value);
 
             if (taskListFiltered.Count == 0)
             {
@@ -263,6 +278,203 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         }
         #endregion
 
+        #region uCProgress-Events
+        private void ListUCProgressComponents(UCProgress uCProgress)
+        {
+            //load data to cbxGroupCategory
+            // Tạo một danh sách dữ liệu mẫu
+            List<dynamic> dataList = new List<dynamic>();
+            var studentGroupList = _studentGroupRepository.GetAll();
+            foreach(var studentGroup in  studentGroupList)
+            {
+                dataList.Add(studentGroup.group_name);
+            }
+
+
+            // Xóa các mục đã tồn tại trong ComboBox (nếu có)
+            uCProgress.cbxGroupCategory.Items.Clear();
+
+            // Thêm dữ liệu vào ComboBox
+            foreach (var item in dataList)
+            {
+                uCProgress.cbxGroupCategory.Items.Add(item);
+            }
+
+
+        }
+        private void CbGroupCategory_ValueChanged(object sender, EventArgs e)
+        {
+            UCProgress uCProgress = sender as UCProgress;
+            if (uCProgress.cbxGroupCategory.SelectedItem != null)
+            {
+                uCProgress.SubTaskProgessChart.Series["s1"].Points.Clear();
+                uCProgress.GroupTaskProgessChart.Series["s1"].Points.Clear();
+                dynamic selectedValue = uCProgress.cbxGroupCategory.SelectedItem;
+                // Gán giá trị được chọn vào biến
+                var groupName = selectedValue;
+                var studentGroup = (StudentGroup)_studentGroupRepository.GetByGroupName(groupName);
+                var taskGroupList = _taskRepository.GetByGroupID(studentGroup.group_id);
+                List<SubTask> subTaskList = new List<SubTask>();
+                foreach (var task in taskGroupList) 
+                {
+                    var subTasks = _subtaskRepository.GetAllByTaskId(task.task_id);
+                    subTaskList.AddRange(subTasks);
+                }
+                LoadPointDataGridView(uCProgress.dgvPoint, subTaskList);
+
+                //load data to cbxMemberCategory
+                // Tạo một danh sách dữ liệu mẫu
+                List<dynamic> dataList = new List<dynamic>();
+                var studentList = _studentRepository.GetAllByGroupId(studentGroup.group_id);
+                foreach (var student in studentList)
+                {
+                    dataList.Add(student.student_name);
+                }
+
+
+                // Xóa các mục đã tồn tại trong ComboBox (nếu có)
+                uCProgress.cbxMemberCategory.Items.Clear();
+
+                // Thêm dữ liệu vào ComboBox
+                foreach (var item in dataList)
+                {
+                    uCProgress.cbxMemberCategory.Items.Add(item);
+                }
+
+
+                LoadGroupTaskProgressChart(uCProgress.GroupTaskProgessChart, taskGroupList);
+
+            }
+        }
+        private void CbMemberCategory_ValueChanged(object sender, EventArgs e)
+        {
+            UCProgress uCProgress = sender as UCProgress;
+
+            if (uCProgress.cbxMemberCategory.SelectedItem != null)
+            {
+                dynamic selectedValue = uCProgress.cbxMemberCategory.SelectedItem;
+                // Gán giá trị được chọn vào biến
+                var student = (Student)_studentRepository.GetByStudentName(selectedValue);
+                var subTaskList = _subtaskRepository.GetAllByStudentId(student.student_id);
+                LoadSubTaskProgressChart(uCProgress.SubTaskProgessChart, subTaskList.ToList());
+            }
+        }
+        //private void CbDateTimeCategory_ValueChanged(object sender, EventArgs e)
+        //{
+        //    UCProgress uCProgress = sender as UCProgress;
+        //    uCProgress.dgvPoint.Controls.Clear();
+        //    dynamic selectedValue = uCProgress.cbxGroupCategory.SelectedItem;
+        //    var groupName = (string)selectedValue;
+        //    var studentGroup= _studentGroupRepository.GetByGroupName(groupName);
+        //    var groupTaskList = _taskRepository.GetByGroupID(studentGroup.group_id);
+        //    List<SubTask> subTaskList = new List<SubTask>();
+        //    foreach (var task in groupTaskList)
+        //    {
+        //        var subTasks = _subtaskRepository.GetAllByTaskId(task.task_id);
+        //        subTaskList.AddRange(subTasks);
+        //    }
+
+
+        //    var filterHelper = new FilterByDayHelper(subTaskList, _context);
+        //    if (uCProgress.cbxDateTime.SelectedItem == "This week")
+        //    {
+        //        groupTaskList = filterHelper.FilterByWeek();
+        //    }
+        //    else if (uCStudentProject.CbTaskDate.SelectedItem == "This month")
+        //    {
+        //        groupTaskList = filterHelper.FilterByMonth();
+        //    }
+        //    else if (uCStudentProject.CbTaskDate.SelectedItem == "All")
+        //    {
+        //        groupTaskList = filterHelper.GetSortedTasks();
+        //    }
+        //}
+        private void LoadPointDataGridView(DataGridView pointDataGridView, List<SubTask> subTaskList)
+        {
+            // Xóa các cột hiện tại của DataGridView
+            pointDataGridView.Columns.Clear();
+
+            // Tạo một DataTable mới
+            DataTable dataTable = new DataTable();
+
+            // Thêm các cột vào DataTable
+            dataTable.Columns.Add("SubTaskName", typeof(string));
+            dataTable.Columns.Add("StudentName", typeof(string));
+            dataTable.Columns.Add("GroupName", typeof(string));
+            dataTable.Columns.Add("SubTaskPoint", typeof(float));
+
+            // Thêm dữ liệu vào DataTable
+            foreach (var subTask in subTaskList)
+            {
+                var student = _studentRepository.GetById(subTask.student_id.Value);
+                var studentGroup = _studentGroupRepository.GetById(student.group_id.Value);
+
+                dataTable.Rows.Add(subTask.subtask_name, student.student_name, studentGroup.group_name, 10);
+            }
+
+            // Gán DataTable cho DataGridView
+            pointDataGridView.DataSource = dataTable;
+        }
+
+        private void LoadSubTaskProgressChart(Chart subTaskChart, List<SubTask> subTaskList)
+        {
+            SubTask subTask = subTaskList.FirstOrDefault(subtask => subtask != null);
+            if (subTask != null)
+            {
+                subTaskChart.Series["s1"].Points.Clear();
+
+
+                var completedSubTasks = _subtaskRepository.GetNumberOfCompletedSubTaskOfStudents(subTask.student_id.Value);
+                var uncompletedSubTasks = _subtaskRepository.GetNumberOfUncompletedSubTaskOfStudents(subTask.student_id.Value);
+                var lateSubmittedSubTasks = _subtaskRepository.GetNumberOfLateSubmittedSubTasksOfStudents(subTask.student_id.Value);
+
+                int n = 0;
+                if (completedSubTasks > 0)
+                {
+                    subTaskChart.Series["s1"].Points.AddXY(completedSubTasks.ToString(), completedSubTasks);
+                    subTaskChart.Series["s1"].Points[n++].LegendText = "Submitted SubTask";
+                }
+                if (uncompletedSubTasks > 0)
+                {
+                    subTaskChart.Series["s1"].Points.AddXY(uncompletedSubTasks.ToString(), uncompletedSubTasks);
+                    subTaskChart.Series["s1"].Points[n++].LegendText = "Unsubmitted SubTask";
+                }
+                if (lateSubmittedSubTasks > 0)
+                {
+                    subTaskChart.Series["s1"].Points.AddXY(lateSubmittedSubTasks.ToString(), lateSubmittedSubTasks);
+                    subTaskChart.Series["s1"].Points[n++].LegendText = "Late Submitted SubTask";
+                }
+            }
+            else MessageBox.Show("This student has no subtask");
+        }
+        private void LoadGroupTaskProgressChart(Chart groupTaskChart, List<Task> groupTaskList)
+        {
+            Task groupTask = groupTaskList.FirstOrDefault(task => task != null);
+
+            var student = _studentRepository.GetById(_userSessionHelper.UserID);
+            var completedTasks = _taskRepository.GetNumberOfCompletedTaskOfGroup(groupTask.group_id.Value);
+            var uncompletedTasks = _taskRepository.GetNumberOfUncompletedTaskOfGroup(groupTask.group_id.Value);
+            var lateSubmittedTasks = _taskRepository.GetNumberOfLateSubmittedTasksOfGroup(groupTask.group_id.Value);
+
+            int n = 0;
+            if (completedTasks > 0)
+            {
+                groupTaskChart.Series["s1"].Points.AddXY(completedTasks.ToString(), completedTasks);
+                groupTaskChart.Series["s1"].Points[n++].LegendText = "Submitted Task";
+            }
+            if (uncompletedTasks > 0)
+            {
+                groupTaskChart.Series["s1"].Points.AddXY(uncompletedTasks.ToString(), uncompletedTasks);
+                groupTaskChart.Series["s1"].Points[n++].LegendText = "Unsubmitted Task";
+            }
+            if (lateSubmittedTasks > 0)
+            {
+                groupTaskChart.Series["s1"].Points.AddXY(lateSubmittedTasks.ToString(), lateSubmittedTasks);
+                groupTaskChart.Series["s1"].Points[n++].LegendText = "Late Submitted Task";
+            }
+        }
+
+        #endregion
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
@@ -284,5 +496,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             FTeacherMark fTeacherMark = new FTeacherMark(_context);
             fTeacherMark.Show();
         }
+
+
     }
 }

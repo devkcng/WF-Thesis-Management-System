@@ -71,5 +71,18 @@ namespace WFThesisManagementSystem.Repositories
         {
             return _context.Tasks.OrderBy(x=>x.open_day).FirstOrDefault();
         }
+
+        public int GetNumberOfCompletedTaskOfGroup(int groupID)
+        {
+            return _context.Tasks.Count(x => x.submit_day != null && x.group_id == groupID);
+        }
+        public int GetNumberOfUncompletedTaskOfGroup(int groupID)
+        {
+            return _context.Tasks.Count(subTask => subTask.submit_day == null && subTask.group_id == groupID);
+        }
+        public int GetNumberOfLateSubmittedTasksOfGroup(int groupID)
+        {
+            return _context.Tasks.Count(subTask => subTask.submit_day > subTask.due_date && subTask.group_id == groupID);
+        }
     }
 }
