@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -21,100 +22,154 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         TaskRepository _taskRepository;
         StudentGroupRepository _studentGroupRepository;
         ValidationInformationHelper _validationInformationHelper;
+        SubTaskRepository _subTaskRepository;
         TaskService _taskService;
+        StudentRepository _studentRepository;
         Dictionary<int, double> mark = new Dictionary<int, double>();
+        int TaskId;
+        string link;
 
-        public FTeacherMark(ThesisManagementContext context)
+        public FTeacherMark(ThesisManagementContext context,int task_id)
         {
             _context = context;
             _taskRepository = new TaskRepository(_context);
             _studentGroupRepository = new StudentGroupRepository(_context);
             _validationInformationHelper = new ValidationInformationHelper();
             _taskService = new TaskService(_context);
+            _subTaskRepository = new SubTaskRepository(_context);
+            _studentRepository = new StudentRepository(_context);
+            TaskId = task_id;
             InitializeComponent();
-            ucTeacherAllMark1.btnClose.Click += Close;
-            ucTeacherAllMark1.btnSave.Click += Save;
+            //ucTeacherAllMark1.btnClose.Click += Close;
+            //ucTeacherAllMark1.btnSave.Click += Save;
         }
         private void Close(object sender, EventArgs e)
         {
             this.Hide();
         }
+        private void ShowGroup()
+        {
+            var task = _taskRepository.GetAll().FirstOrDefault(x => x.task_id == TaskId);
+            var students = _studentRepository.GetAll().Where(x=> x.group_id == task.group_id);
+            ucTeacherAllMark1.lblTaskName.Text = task.task_name;
+            foreach (var student in students)
+            {
+                ucTeacherAllMark1.cbxStudent.Items.Add(student.student_name);
+            }    
+            ucTeacherAllMark1.btnClose.Click += Close;
+            ucTeacherAllMark1.btnSave.Click += Save;
+            ucTeacherAllMark1.ucTeacherSubTaskSmall2.ClickLink += UcTeacherSubTaskSmall2_ClickLink;
+            ucTeacherAllMark1.cbxStudent.SelectedIndexChanged += Value_change;
+           
+
+        }
+
+        private void UcTeacherSubTaskSmall2_ClickLink(object sender, EventArgs e)
+        {
+            //LinkLabel lblLinkDocument = (LinkLabel)sender;
+            //UcTeacherSubTaskSmall ucTeacherSubTaskSmall = (UcTeacherSubTaskSmall)sender;
+            //ucTeacherSubTaskSmall.
+            Process.Start("https://www.facebook.com/");
+        }
+
+        private void Value_change(object sender, EventArgs e)
+        {
+            try
+            {
+                ComboBox comboBox = (ComboBox)sender;
+                var student = _studentRepository.GetAll().FirstOrDefault(x => x.student_name == comboBox.SelectedItem.ToString());
+                var subtask = _subTaskRepository.GetAll().FirstOrDefault(x => x.student_id == student.student_id);
+
+                ucTeacherAllMark1.ucTeacherSubTaskSmall2.lblSubTaskName.Text = subtask.subtask_name;
+                if (subtask.submit_day != null)
+                {
+                    ucTeacherAllMark1.ucTeacherSubTaskSmall2.icmCheckbox.Checked = true;
+                }
+                ucTeacherAllMark1.ucTeacherSubTaskSmall2.txtDescription.Text = subtask.subtask_description;
+            }
+            catch (Exception ex)
+            {
+                DialogResult result = MessageBox.Show("There is no subtask for this student","Notification",MessageBoxButtons.OKCancel);
+                if(result == DialogResult.OK) this.Hide();
+
+            }
+        }
+
         private void TaskLoad()
         {
-            ucTeacherAllMark1.flpAllStudentMark.Controls.Clear();
-            foreach (var task in _taskRepository.GetAll())
-            {
-                UcTeacherSingleMark ucTeacherSingleMark = new UcTeacherSingleMark();
-                ucTeacherSingleMark.NameTask = task.task_name;
-                ucTeacherSingleMark.DescriptionTask = task.task_description;
-                ucTeacherSingleMark.NameStudent = _studentGroupRepository.GetById(task.group_id.Value).group_name.ToString();
-                ucTeacherSingleMark.lblCheck.ForeColor = Color.Black;
-                ucTeacherSingleMark.lblCheck.Text = "UnCompletely";
-                ucTeacherAllMark1.flpAllStudentMark.Controls.Add(ucTeacherSingleMark);
-            }
-            ucTeacherAllMark1.flpAllStudentMark.Show();
+            
+            
+            //ucTeacherAllMark1.flpAllStudentMark.Controls.Clear();
+            //foreach (var task in _taskRepository.GetAll())
+            //{
+            //    UcTeacherSingleMark ucTeacherSingleMark = new UcTeacherSingleMark();
+            //    ucTeacherSingleMark.NameTask = task.task_name;
+            //    ucTeacherSingleMark.DescriptionTask = task.task_description;
+            //    ucTeacherSingleMark.NameStudent = _studentGroupRepository.GetById(task.group_id.Value).group_name.ToString();
+            //    ucTeacherSingleMark.lblCheck.ForeColor = Color.Black;
+            //    ucTeacherSingleMark.lblCheck.Text = "UnCompletely";
+            //    ucTeacherAllMark1.flpAllStudentMark.Controls.Add(ucTeacherSingleMark);
+            //}
+            //ucTeacherAllMark1.flpAllStudentMark.Show();
         }
         private void LoadSave()
         {
-            foreach (var studentGroup in _studentGroupRepository.GetAll())
-            {
-                mark[studentGroup.group_id] = 0;
-            }
-            bool check = false;
-            foreach (var item in ucTeacherAllMark1.flpAllStudentMark.Controls)
-            {
-                if (item is UserControl)
-                {
-                    UcTeacherSingleMark ucTeacherSingleMark = (UcTeacherSingleMark)item;
-                    ucTeacherSingleMark.lblCheck.ForeColor = Color.Red;
-                    ucTeacherSingleMark.lblCheck.Text = "Completely";
-                    ucTeacherSingleMark.EditButton += EventEditButton;
-                    var task = _taskRepository.GetTaskByTaskName(ucTeacherSingleMark.NameTask);
+            //foreach (var studentGroup in _studentGroupRepository.GetAll())
+            //{
+            //    mark[studentGroup.group_id] = 0;
+            //}
+            //bool check = false;
+            //foreach (var item in ucTeacherAllMark1.flpAllStudentMark.Controls)
+            //{
+            //    if (item is UserControl)
+            //    {
+            //        UcTeacherSingleMark ucTeacherSingleMark = (UcTeacherSingleMark)item;
+            //        ucTeacherSingleMark.lblCheck.ForeColor = Color.Red;
+            //        ucTeacherSingleMark.lblCheck.Text = "Completely";
+            //        ucTeacherSingleMark.EditButton += EventEditButton;
+            //        var task = _taskRepository.GetTaskByTaskName(ucTeacherSingleMark.NameTask);
 
-                    if (!string.IsNullOrEmpty(ucTeacherSingleMark.txtMark.Text))
-                    {
-                        if (_validationInformationHelper.CheckMarkValid(ucTeacherSingleMark.txtMark.Text) == 1)
-                        {
-                            mark[task.group_id.Value] += int.Parse(ucTeacherSingleMark.txtMark.Text);
-                            check = true;
-                        }
-                        else if (_validationInformationHelper.CheckMarkValid(ucTeacherSingleMark.txtMark.Text) == 2)
-                        {
-                            mark[task.group_id.Value] += double.Parse(ucTeacherSingleMark.txtMark.Text);
-                            check = true;
+            //        if (!string.IsNullOrEmpty(ucTeacherSingleMark.txtpoint.Text))
+            //        {
+            //            if (_validationInformationHelper.CheckMarkValid(ucTeacherSingleMark.txtpoint.Text) == 1)
+            //            {
+            //                mark[task.group_id.Value] += int.Parse(ucTeacherSingleMark.txtpoint.Text);
+            //                check = true;
+            //            }
+            //            else if (_validationInformationHelper.CheckMarkValid(ucTeacherSingleMark.txtpoint.Text) == 2)
+            //            {
+            //                mark[task.group_id.Value] += double.Parse(ucTeacherSingleMark.txtpoint.Text);
+            //                check = true;
                             
-                        }
+            //            }
 
-                    }
-                    ucTeacherSingleMark.txtMark.Enabled = false;
-                }
+            //        }
+            //        ucTeacherSingleMark.txtpoint.Enabled = false;
+            //    }
 
-            }
-            if (check) { MessageBox.Show("Save Mark Completely"); }
-            else MessageBox.Show("Mark Error", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            foreach (var key in mark.Keys)
-            {
-                var studentgroup = _studentGroupRepository.GetById(key);
-                studentgroup.group_points = mark[key] / _taskService.NumberTask(key);
-                _studentGroupRepository.Update(studentgroup);
-            }
+            //}
+            //if (check) { MessageBox.Show("Save Mark Completely"); }
+            //else MessageBox.Show("Mark Error", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //foreach (var key in mark.Keys)
+            //{
+            //    var studentgroup = _studentGroupRepository.GetById(key);
+            //    studentgroup.group_points = mark[key] / _taskService.NumberTask(key);
+            //    _studentGroupRepository.Update(studentgroup);
+            //}
         }
         private void EventEditButton(object sender, EventArgs e)
         {
             UcTeacherSingleMark ucTeacherSingleMark = sender as UcTeacherSingleMark;
-            ucTeacherSingleMark.txtMark.Enabled = true;
+            ucTeacherSingleMark.txtPoint.Enabled = true;
         }
         private void Save(object sender, EventArgs e)
         {
-            LoadSave();
+            //LoadSave();
         }
         private void FTeacherMark_Load(object sender, EventArgs e)
         {
-            TaskLoad();
-            foreach (var studentGroup in _studentGroupRepository.GetAll())
-            {
-                mark[studentGroup.group_id] = 0;
-            }
+            ShowGroup();
+            
         }
     }
 }
