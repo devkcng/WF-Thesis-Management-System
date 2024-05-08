@@ -194,11 +194,23 @@
     <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherAllMark.Designer.cs">
       <DependentUpon>UcTeacherAllMark.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherAnalytic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherAnalytic.Designer.cs">
+      <DependentUpon>UcTeacherAnalytic.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSingleGroup.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSingleGroup.Designer.cs">
       <DependentUpon>UcTeacherSingleGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSubTaskSmall.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSubTaskSmall.Designer.cs">
+      <DependentUpon>UcTeacherSubTaskSmall.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\TeacherViews\Views\FTeacherMark.cs">
       <SubType>Form</SubType>
@@ -505,6 +517,7 @@
     <Compile Include="Helper\SearchEngineHelper\TFIDF.cs" />
     <Compile Include="Services\NotificationService.cs" />
     <Compile Include="Services\RegistrationService.cs" />
+    <Compile Include="Services\StatisticsService.cs" />
     <Compile Include="Services\SubTaskService.cs" />
     <Compile Include="Services\TaskService.cs" />
     <Compile Include="Services\TeacherService.cs" />
@@ -564,8 +577,14 @@
     <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcTeacherAllMark.resx">
       <DependentUpon>UcTeacherAllMark.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcTeacherAnalytic.resx">
+      <DependentUpon>UcTeacherAnalytic.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSingleGroup.resx">
       <DependentUpon>UcTeacherSingleGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSubTaskSmall.resx">
+      <DependentUpon>UcTeacherSubTaskSmall.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TeacherViews\Views\FTeacherMark.resx">
       <DependentUpon>FTeacherMark.cs</DependentUpon>
@@ -873,6 +892,8 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\icons8-analytic-50.png" />
+    <None Include="Resources\icons8-mark-641.png" />
     <None Include="Resources\icons8-mark-64.png" />
     <None Include="Resources\icons8-back-24.png" />
     <None Include="Resources\icons8-calendar-48.png" />
