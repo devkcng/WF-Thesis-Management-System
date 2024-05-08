@@ -30,8 +30,6 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             this._topic = topic;
         }
 
-
-
         private void FRegisterTopic_Load(object sender, EventArgs e)
         {
             //Topic information load
@@ -48,14 +46,30 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         {
             FTopicRegister fTopicRegister = new FTopicRegister(_topic, _context);
             fTopicRegister.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             FStudentRegisterTopic fStudentRegisterTopic = new FStudentRegisterTopic(_context);
             fStudentRegisterTopic.Show();
+        }
+       protected override void OnFormClosing(FormClosingEventArgs e)
+        {   
+            base.OnFormClosing(e);
+
+            // Check if the reason for closing is the user clicking the close button
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.No)
+                {
+                    e.Cancel = true; // Cancel the form closing event
+                    return;
+                }
+                Application.Exit();
+            }
         }
     }
 }

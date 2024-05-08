@@ -208,8 +208,25 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         private void btnClose_Click(object sender, EventArgs e)
         {
             FShowTopic fShowTopic = new FShowTopic(_topic, _context);
-            this.Close();
+            this.Hide();
             fShowTopic.Show();
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+
+            // Check if the reason for closing is the user clicking the close button
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.No)
+                {
+                    e.Cancel = true; // Cancel the form closing event
+                    return;
+                }
+                Application.Exit();
+            }
         }
     }
 }

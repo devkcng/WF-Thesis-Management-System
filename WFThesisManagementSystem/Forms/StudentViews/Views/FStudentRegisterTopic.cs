@@ -159,6 +159,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                 if (result == DialogResult.No)
                 {
                     e.Cancel = true; // Cancel the form closing event
+                    return;
                 }
                 Application.Exit();
             }
