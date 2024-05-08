@@ -69,11 +69,11 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             var filterHelper = new FilterByDayHelper(groupTaskList, _context);  
             if (uCStudentProject.CbTaskDate.SelectedItem == "This week")
             {
-                groupTaskList = filterHelper.FilterByWeek();
+                groupTaskList = filterHelper.FilterTaskByWeek();
             }
             else if (uCStudentProject.CbTaskDate.SelectedItem == "This month")
             {
-                groupTaskList = filterHelper.FilterByMonth();
+                groupTaskList = filterHelper.FilterTaskByMonth();
             }
             else if (uCStudentProject.CbTaskDate.SelectedItem == "All")
             {
@@ -92,7 +92,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             var groupID = _studentRepository.GetById(_userSessionHelper.UserID).group_id;
             var groupTaskList = _taskRepository.GetByGroupID(groupID.Value);
             var filterHelper = new FilterByDayHelper(groupTaskList, _context);
-            var taskListFiltered = filterHelper.FilterByDay(uCStudentTask.dtpStartDay.Value, uCStudentTask.dtpEndDay.Value);
+            var taskListFiltered = filterHelper.FilterTasksByDay(uCStudentTask.dtpStartDay.Value, uCStudentTask.dtpEndDay.Value);
             foreach (var groupTask in taskListFiltered)
             {
                 UCTask uCTask = new UCTask();
