@@ -18,6 +18,8 @@ using System.Web.UI.WebControls;
 using System.Reflection.Emit;
 using WFThesisManagementSystem.Forms.TeacherViews.Views;
 using System.Security.Cryptography;
+using System.Data;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace WFThesisManagementSystem.Forms.StudentViews.Views
 {
@@ -154,9 +156,15 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         }
         private void worklogs_Click(object sender, EventArgs e)
         {
-            UCStudentWorkLogs uCStudentWorkLogs = new UCStudentWorkLogs();
-            uCStudentWorkLogs.Dock = DockStyle.Fill;
-            panelContainer.Controls.Add(uCStudentWorkLogs);
+            if (!TopicRegisterReminder())
+            {
+                return;
+            }
+            panelContainer.Controls.Clear();
+            UCProgress uCProgress = new UCProgress();
+            uCProgress.Dock = DockStyle.Fill;
+            panelContainer.Controls.Add(uCProgress);
+            ListUCProgressComponents(uCProgress);
         }
 
 
@@ -547,16 +555,101 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
 
         #endregion
 
-        private void ucStudentProject1_Load(object sender, EventArgs e)
+        #region uCProgress-Events
+        private void ListUCProgressComponents( UCProgress uCProgress)
         {
-            
+            uCProgress.cbxGroupCategory.Visible = false;
+            uCProgress.cbxMemberCategory.Visible = false;
+            uCProgress.lblgroup.Visible = false;
+
+            //load data to datagridview
+            var subTaskList = _subtaskRepository.GetAllByStudentId(_userSessionHelper.UserID);
+            LoadPointDataGridView(uCProgress.dgvPoint, subTaskList.ToList());
+
+            //load data to subtask chart
+            LoadSubTaskProgressChart(uCProgress.SubTaskProgessChart, subTaskList.ToList());
+
+            //
+            var student = _studentRepository.GetById(_userSessionHelper.UserID);
+            var groupTaskList = _taskRepository.GetByGroupID(student.group_id.Value);
+            LoadGroupTaskProgressChart(uCProgress.GroupTaskProgessChart, groupTaskList.ToList());
         }
 
-        private void ucStudentTask1_Load(object sender, EventArgs e)
+        private void LoadPointDataGridView(DataGridView pointDataGridView, List<SubTask> subTaskList)
         {
-            
+            // Xóa các cột hiện tại của DataGridView
+            pointDataGridView.Columns.Clear();
+
+            // Tạo một DataTable mới
+            DataTable dataTable = new DataTable();
+
+            // Thêm các cột vào DataTable
+            dataTable.Columns.Add("SubTaskName", typeof(string));
+            //dataTable.Columns.Add("StudentName", typeof(string));
+            //dataTable.Columns.Add("GroupName", typeof(string));
+            dataTable.Columns.Add("SubTaskPoint", typeof(float));
+
+            // Thêm dữ liệu vào DataTable
+            foreach (var subTask in subTaskList)
+            {
+                dataTable.Rows.Add(subTask.subtask_name,10);
+            }
+
+            // Gán DataTable cho DataGridView
+            pointDataGridView.DataSource = dataTable;
         }
 
+        private void LoadSubTaskProgressChart(Chart subTaskChart, List<SubTask> subTaskList)
+        {
+            var completedSubTasks = _subtaskRepository.GetNumberOfCompletedSubTaskOfStudents(_userSessionHelper.UserID);
+            var uncompletedSubTasks = _subtaskRepository.GetNumberOfUncompletedSubTaskOfStudents(_userSessionHelper.UserID);
+            var lateSubmittedSubTasks = _subtaskRepository.GetNumberOfLateSubmittedSubTasksOfStudents(_userSessionHelper.UserID);
+
+            int n = 0;
+            if (completedSubTasks > 0)
+            {
+                subTaskChart.Series["s1"].Points.AddXY(completedSubTasks.ToString(), completedSubTasks);
+                subTaskChart.Series["s1"].Points[n++].LegendText = "Submitted SubTask";
+            }
+            if (uncompletedSubTasks > 0)
+            {
+                subTaskChart.Series["s1"].Points.AddXY(uncompletedSubTasks.ToString(), uncompletedSubTasks);
+                subTaskChart.Series["s1"].Points[n++].LegendText = "Unsubmitted SubTask";
+            }
+            if (lateSubmittedSubTasks > 0)
+            {
+                subTaskChart.Series["s1"].Points.AddXY(lateSubmittedSubTasks.ToString(), lateSubmittedSubTasks);
+                subTaskChart.Series["s1"].Points[n++].LegendText = "Late Submitted SubTask";
+            }
+
+
+        }
+        private void LoadGroupTaskProgressChart(Chart groupTaskChart, List<Task> groupTaskList)
+        {
+            var student = _studentRepository.GetById(_userSessionHelper.UserID);
+            var completedTasks = _taskRepository.GetNumberOfCompletedTaskOfGroup(student.group_id.Value);
+            var uncompletedTasks = _taskRepository.GetNumberOfUncompletedTaskOfGroup(student.group_id.Value);
+            var lateSubmittedTasks = _taskRepository.GetNumberOfLateSubmittedTasksOfGroup(student.group_id.Value);
+
+            int n = 0;
+            if (completedTasks > 0)
+            {
+                groupTaskChart.Series["s1"].Points.AddXY(completedTasks.ToString(), completedTasks);
+                groupTaskChart.Series["s1"].Points[n++].LegendText = "Submitted Task";
+            }
+            if (uncompletedTasks > 0)
+            {
+                groupTaskChart.Series["s1"].Points.AddXY(uncompletedTasks.ToString(), uncompletedTasks);
+                groupTaskChart.Series["s1"].Points[n++].LegendText = "Unsubmitted Task";
+            }
+            if (lateSubmittedTasks > 0)
+            {
+                groupTaskChart.Series["s1"].Points.AddXY(lateSubmittedTasks.ToString(), lateSubmittedTasks);
+                groupTaskChart.Series["s1"].Points[n++].LegendText = "Late Submitted Task";
+            }
+        }
+
+        #endregion
         private bool TopicRegisterReminder()
         {   
             var student = _studentRepository.GetById(_userSessionHelper.UserID);
