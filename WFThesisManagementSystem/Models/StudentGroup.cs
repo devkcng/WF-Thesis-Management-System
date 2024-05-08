@@ -26,7 +26,6 @@ namespace WFThesisManagementSystem.Models
         public string group_name { get; set; }
         public Nullable<int> topic_id { get; set; }
         public Nullable<int> number_of_students { get; set; }
-        public Nullable<double> group_points { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RegisterQueue> RegisterQueues { get; set; }

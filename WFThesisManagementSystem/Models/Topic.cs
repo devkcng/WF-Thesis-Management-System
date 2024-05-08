@@ -18,9 +18,9 @@ namespace WFThesisManagementSystem.Models
         public Topic()
         {
             this.RegisterQueues = new HashSet<RegisterQueue>();
-            this.StudentGroups = new HashSet<StudentGroup>();
             this.PointSheetRecords = new HashSet<PointSheetRecord>();
             this.RejectLists = new HashSet<RejectList>();
+            this.StudentGroups = new HashSet<StudentGroup>();
         }
     
         public int topic_id { get; set; }
@@ -34,12 +34,12 @@ namespace WFThesisManagementSystem.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RegisterQueue> RegisterQueues { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<StudentGroup> StudentGroups { get; set; }
         public virtual Teacher Teacher { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PointSheetRecord> PointSheetRecords { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RejectList> RejectLists { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<StudentGroup> StudentGroups { get; set; }
     }
 }

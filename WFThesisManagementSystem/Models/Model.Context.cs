@@ -27,15 +27,17 @@ namespace WFThesisManagementSystem.Models
     
         public virtual DbSet<RegisterQueue> RegisterQueues { get; set; }
         public virtual DbSet<StudentAccount> StudentAccounts { get; set; }
-        public virtual DbSet<StudentGroup> StudentGroups { get; set; }
         public virtual DbSet<Student> Students { get; set; }
         public virtual DbSet<TeacherAccount> TeacherAccounts { get; set; }
         public virtual DbSet<Teacher> Teachers { get; set; }
         public virtual DbSet<Topic> Topics { get; set; }
         public virtual DbSet<Task> Tasks { get; set; }
         public virtual DbSet<SubTask> SubTasks { get; set; }
-        public virtual DbSet<Notification> Notifications { get; set; }
         public virtual DbSet<PointSheetRecord> PointSheetRecords { get; set; }
         public virtual DbSet<RejectList> RejectLists { get; set; }
+        public virtual DbSet<Notification> Notifications { get; set; }
+        public virtual DbSet<StudentGroup> StudentGroups { get; set; }
+        public virtual DbSet<StudentPoint> StudentPoints { get; set; }
+        public virtual DbSet<SubtaskPoint> SubtaskPoints { get; set; }
     }
 }
