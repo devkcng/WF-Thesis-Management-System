@@ -37,6 +37,8 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             _teacherService = new TeacherService(_userSessionHelper.UserID);
             InitializeComponent();
             btnNotification.Click += createNotification;
+           
+            
         }
         private void createNotification(object sender, EventArgs e)
         {
@@ -144,10 +146,19 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
                 ucTeacherSingleTask.TimeOpen = task.open_day.Value;
                 ucTeacherSingleTask.TimeEnd = task.due_date.Value;
                 ucTeacherSingleTask.Content = task.task_description;
+                ucTeacherSingleTask.TaskId = task.task_id;
                 ucTeacherSingleTask.EditButtonClicked += ucTeacherSingleTask_EditButton_Click;
                 ucTeacherSingleTask.SubmitButtonClicked += ucTeacherSingleTask_SubmitTask_Click;
+                ucTeacherSingleTask.PointButtonClicked += UcTeacherSingleTask_PointButtonClicked;
                 ucTeacherAllTask.flpAllTasks.Controls.Add(ucTeacherSingleTask);
             }
+        }
+
+        private void UcTeacherSingleTask_PointButtonClicked(object sender, EventArgs e)
+        {
+            UcTeacherSingleTask ucTeacherSingleTask = sender as UcTeacherSingleTask;
+            FTeacherMark fTeacherMark = new FTeacherMark(_context,ucTeacherSingleTask.TaskId);
+            fTeacherMark.Show();
         }
 
         #endregion
@@ -185,8 +196,10 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
                         ucTeacherSingleTask.TimeOpen = task.open_day.Value;
                         ucTeacherSingleTask.TimeEnd = task.due_date.Value;
                         ucTeacherSingleTask.Content = task.task_description;
+                        ucTeacherSingleTask.TaskId = task.task_id;
                         ucTeacherSingleTask.EditButtonClicked += ucTeacherSingleTask_EditButton_Click;
                         ucTeacherSingleTask.SubmitButtonClicked += ucTeacherSingleTask_SubmitTask_Click;
+                        ucTeacherSingleTask.PointButtonClicked += UcTeacherSingleTask_PointButtonClicked;
                         ucTeacherAllTask.flpAllTasks.Controls.Add(ucTeacherSingleTask);
                     }
                 }
@@ -279,10 +292,12 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             }
         }
 
-        private void Mark_Click(object sender, EventArgs e)
+        private void analytics_Click(object sender, EventArgs e)
         {
-            FTeacherMark fTeacherMark = new FTeacherMark(_context);
-            fTeacherMark.Show();
+            panelContainer.Controls.Clear();
+            UcTeacherAnalytic ucTeacherAnalytic = new UcTeacherAnalytic();
+            ucTeacherAnalytic.Dock = DockStyle.Fill;
+            panelContainer.Controls.Add(ucTeacherAnalytic);
         }
     }
 }
