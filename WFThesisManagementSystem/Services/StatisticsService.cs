@@ -26,27 +26,27 @@ namespace WFThesisManagementSystem.Services
             _taskRepository = new TaskRepository(_context);
             _subTaskRepository = new SubTaskRepository(_context);
         }
-        public int CountStudentsAveragePoint(int teacher_id,int condition)
-        {
-            var topics = _topicRepository.GetAll().Where(x => x.teacher_id == teacher_id);
-            List<StudentGroup> result = new List<StudentGroup>();
-            int countAverage = 0;
-            int countGood = 0;
-            int countExcellent = 0;
-            foreach (var topic in topics)
-            {
-                if (_studentGroupRepository.GetAll().FirstOrDefault(x => x.topic_id == topic.topic_id) != null)
-                {
-                    var studentGroups = _studentGroupRepository.GetAll().FirstOrDefault(x => x.topic_id == topic.topic_id);
-                    if (studentGroups.group_points < 5) countAverage++;
-                    else if (studentGroups.group_points >= 5 && studentGroups.group_points < 8) countGood++;
-                    else if (studentGroups.group_points >= 8 && studentGroups.group_points <= 10) countExcellent++;
-                }
-            }
-            if(condition == 0) return countAverage;
-            else if(condition == 1) return countGood;
-            return countExcellent;
-        }
+        //public int CountStudentsAveragePoint(int teacher_id,int condition)
+        //{
+        //    var topics = _topicRepository.GetAll().Where(x => x.teacher_id == teacher_id);
+        //    List<StudentGroup> result = new List<StudentGroup>();
+        //    int countAverage = 0;
+        //    int countGood = 0;
+        //    int countExcellent = 0;
+        //    foreach (var topic in topics)
+        //    {
+        //        if (_studentGroupRepository.GetAll().FirstOrDefault(x => x.topic_id == topic.topic_id) != null)
+        //        {
+        //            var studentGroups = _studentGroupRepository.GetAll().FirstOrDefault(x => x.topic_id == topic.topic_id);
+        //            if (studentGroups.group_points < 5) countAverage++;
+        //            else if (studentGroups.group_points >= 5 && studentGroups.group_points < 8) countGood++;
+        //            else if (studentGroups.group_points >= 8 && studentGroups.group_points <= 10) countExcellent++;
+        //        }
+        //    }
+        //    if(condition == 0) return countAverage;
+        //    else if(condition == 1) return countGood;
+        //    return countExcellent;
+        //}
         public int CountStudentComplete(int teacherId,int condition)
         {
             int countComplete = 0;
