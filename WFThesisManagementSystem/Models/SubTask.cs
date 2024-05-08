@@ -31,8 +31,8 @@ namespace WFThesisManagementSystem.Models
         public string document_link { get; set; }
     
         public virtual Student Student { get; set; }
-        public virtual Task Task { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SubtaskPoint> SubtaskPoints { get; set; }
+        public virtual Task Task { get; set; }
     }
 }

@@ -28,8 +28,8 @@ namespace WFThesisManagementSystem.Models
         public Nullable<System.DateTime> submit_day { get; set; }
         public Nullable<int> group_id { get; set; }
     
+        public virtual StudentGroup StudentGroup { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SubTask> SubTasks { get; set; }
-        public virtual StudentGroup StudentGroup { get; set; }
     }
 }

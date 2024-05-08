@@ -17,9 +17,6 @@
         <AssociationConnector Association="ThesisManagementModel.FK__TeacherAc__teach__398D8EEE" ManuallyRouted="false" />
         <AssociationConnector Association="ThesisManagementModel.FK__Topics__teacher___267ABA7A" ManuallyRouted="false" />
         <EntityTypeShape EntityType="ThesisManagementModel.Task" Width="1.5" PointX="7.5" PointY="5" />
-        <EntityTypeShape EntityType="ThesisManagementModel.SubTask" Width="1.5" PointX="12.75" PointY="6.75" />
-        <AssociationConnector Association="ThesisManagementModel.FK__SubTasks__studen__628FA481" />
-        <AssociationConnector Association="ThesisManagementModel.FK__SubTasks__task_i__6383C8BA" />
         <EntityTypeShape EntityType="ThesisManagementModel.PointSheetRecord" Width="1.5" PointX="12.75" PointY="11.25" />
         <AssociationConnector Association="ThesisManagementModel.FK__PointShee__stude__72C60C4A" />
         <AssociationConnector Association="ThesisManagementModel.FK__PointShee__topic__73BA3083" />
@@ -36,7 +33,10 @@
         <AssociationConnector Association="ThesisManagementModel.FK__Tasks__group_id__35BCFE0A" />
         <AssociationConnector Association="ThesisManagementModel.FK__StudentPo__stude__4F7CD00D" />
         <AssociationConnector Association="ThesisManagementModel.FK__SubtaskPo__stude__4AB81AF0" />
+        <EntityTypeShape EntityType="ThesisManagementModel.SubTask" Width="1.5" PointX="12.75" PointY="7" />
+        <AssociationConnector Association="ThesisManagementModel.FK__SubTasks__studen__38996AB5" />
         <AssociationConnector Association="ThesisManagementModel.FK__SubtaskPo__subta__4BAC3F29" />
+        <AssociationConnector Association="ThesisManagementModel.FK__SubTasks__task_i__398D8EEE" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
