@@ -343,6 +343,16 @@ namespace WFThesisManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_analytic_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-analytic-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_back_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-back-24", resourceCulture);
@@ -386,6 +396,16 @@ namespace WFThesisManagementSystem.Properties {
         internal static System.Drawing.Bitmap icons8_mark_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-mark-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_mark_641 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-mark-641", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
