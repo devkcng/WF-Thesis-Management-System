@@ -1,10 +1,13 @@
-﻿-- Creating Database
-IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = N'ThesisManagement')
+﻿USE master;
+IF EXISTS (SELECT * FROM sys.databases WHERE name = N'ThesisManagement')
 BEGIN
-    CREATE DATABASE ThesisManagement;
+    DROP DATABASE ThesisManagement;
 END
 GO
 
+CREATE DATABASE ThesisManagement;
+
+GO
 -- Using the newly created database
 USE ThesisManagement;
 GO
@@ -39,7 +42,6 @@ CREATE TABLE StudentGroup (
     group_name VARCHAR(50),
     topic_id INT,
     number_of_students INT,
-    group_points FLOAT DEFAULT 0,
     FOREIGN KEY (topic_id) REFERENCES Topics(topic_id),
     UNIQUE(group_name, topic_id)
 );
@@ -87,6 +89,7 @@ CREATE TABLE SubTasks (
     submit_day DATE,
     student_id INT,
     task_id INT,
+    document_link VARCHAR(255),
     FOREIGN KEY (student_id) REFERENCES Students(student_id),
     FOREIGN KEY (task_id) REFERENCES Tasks(task_id)
 );
@@ -124,6 +127,24 @@ CREATE TABLE RejectList (
     FOREIGN KEY (student_id) REFERENCES Students(student_id),
     FOREIGN KEY (topic_id) REFERENCES Topics(topic_id)
 );
+
+
+CREATE TABLE SubtaskPoint (
+    subtaskpoint_id INT PRIMARY KEY,
+    student_id INT,
+    subtask_id INT,
+    subtask_point FLOAT DEFAULT 0,
+    FOREIGN KEY (student_id) REFERENCES Students(student_id),
+    FOREIGN KEY (subtask_id) REFERENCES SubTasks(subtask_id)
+);
+
+CREATE TABLE StudentPoint(
+    studentpoint_id INT PRIMARY KEY,
+    student_id INT,
+    student_point FLOAT DEFAULT 0,
+    FOREIGN KEY (student_id) REFERENCES Students(student_id)
+);
+
 
 -- Inserting data into Teachers table
 INSERT INTO Teachers (teacher_id, teacher_name, teacher_age, teacher_email, subject_taught) VALUES
