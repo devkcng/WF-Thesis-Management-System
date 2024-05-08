@@ -140,7 +140,6 @@ namespace WFThesisManagementSystem.Services
             studentGroup.group_name = _groupName;
             studentGroup.number_of_students = 0;
             studentGroup.topic_id = _topic.topic_id;
-            studentGroup.group_points = 0;
             return studentGroup;
         }
     }
