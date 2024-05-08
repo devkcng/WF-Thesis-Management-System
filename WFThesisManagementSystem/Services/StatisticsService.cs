@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.Repositories;
 using Task = WFThesisManagementSystem.Models.Task;
@@ -13,6 +15,8 @@ namespace WFThesisManagementSystem.Services
         StudentGroupRepository _studentGroupRepository;
         TaskRepository _taskRepository;
         SubTaskRepository _subTaskRepository;
+        StudentPointRepository _studentPointRepository;
+        StudentRepository _studentRepository;
         public StatisticsService(ThesisManagementContext context)
         {
             _context = context;
@@ -21,28 +25,52 @@ namespace WFThesisManagementSystem.Services
             _studentGroupRepository = new StudentGroupRepository(_context);
             _taskRepository = new TaskRepository(_context);
             _subTaskRepository = new SubTaskRepository(_context);
+            _studentPointRepository = new StudentPointRepository(_context);
+            _studentRepository = new StudentRepository(_context);
+            
         }
-        //public int CountStudentsAveragePoint(int teacher_id,int condition)
-        //{
-        //    var topics = _topicRepository.GetAll().Where(x => x.teacher_id == teacher_id);
-        //    List<StudentGroup> result = new List<StudentGroup>();
-        //    int countAverage = 0;
-        //    int countGood = 0;
-        //    int countExcellent = 0;
-        //    foreach (var topic in topics)
-        //    {
-        //        if (_studentGroupRepository.GetAll().FirstOrDefault(x => x.topic_id == topic.topic_id) != null)
-        //        {
-        //            var studentGroups = _studentGroupRepository.GetAll().FirstOrDefault(x => x.topic_id == topic.topic_id);
-        //            if (studentGroups.group_points < 5) countAverage++;
-        //            else if (studentGroups.group_points >= 5 && studentGroups.group_points < 8) countGood++;
-        //            else if (studentGroups.group_points >= 8 && studentGroups.group_points <= 10) countExcellent++;
-        //        }
-        //    }
-        //    if(condition == 0) return countAverage;
-        //    else if(condition == 1) return countGood;
-        //    return countExcellent;
-        //}
+        public int CountStudentsAveragePoint(int teacher_id, int condition)
+        {
+            try
+            {
+                var topics = _topicRepository.GetAll().Where(x => x.teacher_id == teacher_id);
+                List<StudentGroup> result = new List<StudentGroup>();
+                int countAverage = 0;
+                int countGood = 0;
+                int countExcellent = 0;
+                foreach (var topic in topics)
+                {
+                    if (_studentGroupRepository.GetAll().Where(x => x.topic_id == topic.topic_id) != null)
+                    {
+                        var studentGroups = _studentGroupRepository.GetAll().Where(x => x.topic_id == topic.topic_id);
+                        foreach (var studentGroup in studentGroups)
+                        {
+                            foreach (var student in _studentRepository.GetAll())
+                            {
+                                if (student.group_id == studentGroup.group_id)
+                                {
+                                    var studentpoint = _studentPointRepository.GetAll().FirstOrDefault(x=>x.student_id ==student.student_id);
+                                    if (studentpoint != null)
+                                    {
+                                        if (studentpoint.student_point < 5) countAverage++;
+                                        else if (studentpoint.student_point >= 5 && studentpoint.student_point < 8) countGood++;
+                                        else if (studentpoint.student_point >= 8 && studentpoint.student_point <= 10) countExcellent++;
+                                    }
+
+                                }
+                            }
+
+                        }
+                    }
+                }
+                if (condition == 0) return countAverage;
+                else if (condition == 1) return countGood;
+                return countExcellent;
+            }catch(Exception e)
+            {
+                return 0;
+            }
+        }
         public int CountStudentComplete(int teacherId, int condition)
         {
             int countComplete = 0;
