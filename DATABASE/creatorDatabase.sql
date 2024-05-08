@@ -1,6 +1,9 @@
 ﻿USE master;
+GO
+
 IF EXISTS (SELECT * FROM sys.databases WHERE name = N'ThesisManagement')
 BEGIN
+    ALTER DATABASE ThesisManagement SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
     DROP DATABASE ThesisManagement;
 END
 GO
@@ -143,6 +146,19 @@ CREATE TABLE StudentPoint(
     student_id INT,
     student_point FLOAT DEFAULT 0,
     FOREIGN KEY (student_id) REFERENCES Students(student_id)
+);
+
+
+CREATE TABLE Notifications (
+    notification_id INT PRIMARY KEY,
+    notification_title NVARCHAR(255),
+    notification_content NVARCHAR(MAX),
+    sender_id INT,
+    recipient_id INT,
+    timestamp DATETIME,
+    notification_status BIT,
+    notification_type NVARCHAR(50),
+    related_id INT
 );
 
 
