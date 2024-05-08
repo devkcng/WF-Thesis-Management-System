@@ -1,5 +1,5 @@
 ﻿using System.Windows.Forms;
-
+using WFThesisManagementSystem.Forms.ChatApp;
 using WFThesisManagementSystem.Forms.StudentViews.Views;
 using WFThesisManagementSystem.Forms.TeacherViews.Views;
 using WFThesisManagementSystem.Models;
@@ -30,6 +30,13 @@ namespace WFThesisManagementSystem.Helper
                 {
                     _userSessionHelper.UserName = student.student_username;
                     _userSessionHelper.Password = student.student_password;
+                    
+                    var studentRepository = new StudentRepository(_context);
+                    
+                    var studentInfo = studentRepository.GetById((int)student.student_id);
+
+                    _userSessionHelper.Name = studentInfo.student_name;
+
                     if (student.student_id != null) _userSessionHelper.UserID = (int)student.student_id;
                     FStudentRegisterTopic studentRegisterTopic = new FStudentRegisterTopic(_context);
                     studentRegisterTopic.Show();
@@ -47,6 +54,13 @@ namespace WFThesisManagementSystem.Helper
                 {
                     _userSessionHelper.UserName = teacher.teacher_username;
                     _userSessionHelper.Password = teacher.teacher_password;
+
+                    var teacherRepository = new TeacherRepository(_context);
+
+                    var teacherInfo = teacherRepository.GetById((int)teacher.teacher_id);
+
+                    _userSessionHelper.Name = teacherInfo.teacher_name;
+
                     if (teacher.teacher_id != null) _userSessionHelper.UserID = (int)teacher.teacher_id;
                     FTeacherDashboard teacherDashboard = new FTeacherDashboard();
                     teacherDashboard.Show();
