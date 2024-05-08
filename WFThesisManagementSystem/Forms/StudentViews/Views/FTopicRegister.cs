@@ -1,15 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using WFThesisManagementSystem.Forms.StudentViews.StudentUserControl;
 using WFThesisManagementSystem.Helper;
 using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.Repositories;
@@ -77,10 +71,10 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                 }
             }
 
-            foreach(var member in studentList)
+            foreach (var member in studentList)
             {
                 DataGridViewRow row = new DataGridViewRow();
-                row.CreateCells(dgvrRegisterMember); 
+                row.CreateCells(dgvrRegisterMember);
 
                 // Gán giá trị id và name vào các ô của row
                 row.Cells[1].Value = member.student_id;
@@ -102,7 +96,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                 btnRegister.Enabled = false;
             }
             //add data of user onto datagridview, if they already register that topic, it will not add
-            else if(registrationService.Unregistered())
+            else if (registrationService.Unregistered())
             {
                 DataGridViewRow newRow = new DataGridViewRow();
                 newRow.CreateCells(dgvrRegisterMember);
@@ -154,7 +148,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                 // Kiểm tra nếu hàng không phải là hàng header và có dữ liệu
                 if (!row.IsNewRow && row.Cells["student_id"].Value != null && row.Cells["student_id"].ReadOnly == false)
                 {
-                    if (member  == null)
+                    if (member == null)
                     {
                         MessageBox.Show("Student have the ID: " + studentId + " does not exist");
                         return;
@@ -164,7 +158,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                         MessageBox.Show("Student have the ID: " + studentId + " don't have permission to regist");
                         return;
                     }
-                    else if(registrationService.AlreadyRegistered())
+                    else if (registrationService.AlreadyRegistered())
                     {
                         MessageBox.Show("Student have the ID: " + studentId + " already have a group");
                         return;
@@ -193,7 +187,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                 }
             }
 
-            foreach(var member in memberGroup)
+            foreach (var member in memberGroup)
             {
                 RegistrationService registrationService = new
         RegistrationService(member, _topic, txtGroupName.Text);

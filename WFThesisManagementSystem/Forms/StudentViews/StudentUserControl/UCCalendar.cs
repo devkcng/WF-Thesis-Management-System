@@ -1,19 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WFThesisManagementSystem.Forms.StudentViews.StudentUserControl
 {
     public partial class UCCalendar : UserControl
     {
-        public int month= DateTime.Now.Month, year = DateTime.Now.Year;
+        public int month = DateTime.Now.Month, year = DateTime.Now.Year;
         public event EventHandler previousPtbClicked;
         public event EventHandler nextPtbClicked;
         public UCCalendar()

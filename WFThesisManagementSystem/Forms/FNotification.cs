@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WFThesisManagementSystem.Forms.UC;
 using WFThesisManagementSystem.Helper;
@@ -27,10 +22,10 @@ namespace WFThesisManagementSystem.Forms
         public FNotification(ThesisManagementContext context)
         {
             _context = context;
-            _notificationRepository = new NotificationRepository( _context );
-            _teacherRepository = new TeacherRepository( _context );
+            _notificationRepository = new NotificationRepository(_context);
+            _teacherRepository = new TeacherRepository(_context);
             _studentRepository = new StudentRepository(_context);
-            _notificationService  = new NotificationService( _context );
+            _notificationService = new NotificationService(_context);
             InitializeComponent();
             ucAllNotifications1.Hide();
             if (_studentRepository.GetById(_userSessionHelper.UserID) != null)
@@ -104,7 +99,7 @@ namespace WFThesisManagementSystem.Forms
                     ucNotification.SendBy = teacher.teacher_name;
                     ucNotification.SendTime = notification.timestamp.Value;
                     ucNotification.icmCheckbox.Checked = true;
-                    ucNotification.Width = ucAllNotifications1.flpAllNotifications.Width-5;
+                    ucNotification.Width = ucAllNotifications1.flpAllNotifications.Width - 5;
                     ucAllNotifications1.flpAllNotifications.Controls.Add(ucNotification);
 
                 }

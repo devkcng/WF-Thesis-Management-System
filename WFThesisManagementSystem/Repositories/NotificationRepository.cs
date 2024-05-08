@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using WFThesisManagementSystem.Models;
 
 namespace WFThesisManagementSystem.Repositories
@@ -10,10 +6,10 @@ namespace WFThesisManagementSystem.Repositories
     internal class NotificationRepository : IRepository<Notification>
     {
         private ThesisManagementContext _context;
-        public NotificationRepository(ThesisManagementContext context) 
+        public NotificationRepository(ThesisManagementContext context)
         {
             _context = context;
-        
+
         }
         public void Add(Notification entity)
         {
@@ -34,11 +30,11 @@ namespace WFThesisManagementSystem.Repositories
 
         public Notification GetById(int id)
         {
-            return _context.Notifications.FirstOrDefault(x=>x.notification_id == id);
+            return _context.Notifications.FirstOrDefault(x => x.notification_id == id);
         }
         public Notification GetByIdRecipient(int id)
         {
-            return _context.Notifications.FirstOrDefault(x=> x.recipient_id == id);
+            return _context.Notifications.FirstOrDefault(x => x.recipient_id == id);
         }
         public void Update(Notification entity)
         {

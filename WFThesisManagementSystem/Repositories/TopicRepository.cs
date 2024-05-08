@@ -47,7 +47,7 @@ namespace WFThesisManagementSystem.Repositories
         }
         public List<int> GetAllTopicID()
         {
-            return GetAll().Select(t=>t.topic_id).ToList();
+            return GetAll().Select(t => t.topic_id).ToList();
         }
         public List<Topic> GetAllByTeacherID(int teacherID)
         {

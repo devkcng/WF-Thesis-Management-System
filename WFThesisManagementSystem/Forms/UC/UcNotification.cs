@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WFThesisManagementSystem.Forms.UC
@@ -23,11 +16,11 @@ namespace WFThesisManagementSystem.Forms.UC
         private string content;
         private string sendBy;
         private DateTime sendTime;
-        public int Id {  get; set; }
+        public int Id { get; set; }
         public string Name
         {
-            set { name  = value; lblNotificationName.Text = value; }
-            get { return  name; }
+            set { name = value; lblNotificationName.Text = value; }
+            get { return name; }
         }
         public string Content
         {

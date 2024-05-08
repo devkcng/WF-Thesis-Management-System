@@ -35,7 +35,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         }
         private void Save(object sender, EventArgs e)
         {
-            if (  _topicService.CheckMaxMember(ucTeacherCreateTopic1.cbxNumber.SelectedItem.ToString()))
+            if (_topicService.CheckMaxMember(ucTeacherCreateTopic1.cbxNumber.SelectedItem.ToString()))
             {
                 var id = new IdGeneratorHelper();
                 _topic.topic_id = id.GenerateTopicId();

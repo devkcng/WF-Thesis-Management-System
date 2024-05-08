@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl;
 using WFThesisManagementSystem.Helper;
@@ -29,7 +25,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         int TaskId;
         string link;
 
-        public FTeacherMark(ThesisManagementContext context,int task_id)
+        public FTeacherMark(ThesisManagementContext context, int task_id)
         {
             _context = context;
             _taskRepository = new TaskRepository(_context);
@@ -50,17 +46,17 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         private void ShowGroup()
         {
             var task = _taskRepository.GetAll().FirstOrDefault(x => x.task_id == TaskId);
-            var students = _studentRepository.GetAll().Where(x=> x.group_id == task.group_id);
+            var students = _studentRepository.GetAll().Where(x => x.group_id == task.group_id);
             ucTeacherAllMark1.lblTaskName.Text = task.task_name;
             foreach (var student in students)
             {
                 ucTeacherAllMark1.cbxStudent.Items.Add(student.student_name);
-            }    
+            }
             ucTeacherAllMark1.btnClose.Click += Close;
             ucTeacherAllMark1.btnSave.Click += Save;
             ucTeacherAllMark1.ucTeacherSubTaskSmall2.ClickLink += UcTeacherSubTaskSmall2_ClickLink;
             ucTeacherAllMark1.cbxStudent.SelectedIndexChanged += Value_change;
-           
+
 
         }
 
@@ -89,16 +85,16 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             }
             catch (Exception ex)
             {
-                DialogResult result = MessageBox.Show("There is no subtask for this student","Notification",MessageBoxButtons.OKCancel);
-                if(result == DialogResult.OK) this.Hide();
+                DialogResult result = MessageBox.Show("There is no subtask for this student", "Notification", MessageBoxButtons.OKCancel);
+                if (result == DialogResult.OK) this.Hide();
 
             }
         }
 
         private void TaskLoad()
         {
-            
-            
+
+
             //ucTeacherAllMark1.flpAllStudentMark.Controls.Clear();
             //foreach (var task in _taskRepository.GetAll())
             //{
@@ -140,7 +136,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             //            {
             //                mark[task.group_id.Value] += double.Parse(ucTeacherSingleMark.txtpoint.Text);
             //                check = true;
-                            
+
             //            }
 
             //        }
@@ -169,7 +165,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         private void FTeacherMark_Load(object sender, EventArgs e)
         {
             ShowGroup();
-            
+
         }
     }
 }

@@ -35,13 +35,13 @@
         {
             int count = 0;
             if (mark[0] == '.') return 0;
-            for(int i=0; i < mark.Length; i++)
+            for (int i = 0; i < mark.Length; i++)
             {
                 if (mark[i] == '.') count++;
                 else if (mark[i] < '0' || mark[i] > '9') return 0;
             }
             if (count == 0) return 1;
-            if (count  == 1) return 2;
+            if (count == 1) return 2;
             return 0;
         }
     }

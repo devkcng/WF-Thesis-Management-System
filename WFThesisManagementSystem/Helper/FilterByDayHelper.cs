@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.Repositories;
 
@@ -37,7 +36,7 @@ namespace WFThesisManagementSystem.Helper
                     result.Add(task);
                 }
             }
-            
+
             return GetSortedTasks(result);
         }
         public List<SubTask> FilterSubTasksByDay(DateTime openDay, DateTime closeDay)
@@ -72,7 +71,7 @@ namespace WFThesisManagementSystem.Helper
             return FilterSubTasksByDay(startDay, endDay);
         }
         public List<Task> FilterTaskByWeek()
-        { 
+        {
             DateTime startDay, endDay;
             List<Task> result = new List<Task>();
             DateTime today = DateTime.Today;
@@ -93,9 +92,9 @@ namespace WFThesisManagementSystem.Helper
         }
         public List<Task> GetSortedTasks(List<Task> listTasks)
         {
-                return listTasks.OrderBy(x => x.submit_day.HasValue ? 1 : 0)  
-                .ThenBy(x => x.due_date)                       // Sắp xếp các task theo thứ tự tăng dần của due_date
-                .ToList();
+            return listTasks.OrderBy(x => x.submit_day.HasValue ? 1 : 0)
+            .ThenBy(x => x.due_date)                       // Sắp xếp các task theo thứ tự tăng dần của due_date
+            .ToList();
         }
         public List<Task> GetSortedTasks()
         {

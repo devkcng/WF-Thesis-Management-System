@@ -52,14 +52,14 @@ namespace WFThesisManagementSystem.Repositories
         {
             return _context.RegisterQueues.FirstOrDefault(x => x.topic_id == id);
         }
-        
-        public int GetNumberUnacceptedStudentInqueue (int topicID)
+
+        public int GetNumberUnacceptedStudentInqueue(int topicID)
         {
-            return _context.RegisterQueues.Where(t => t.topic_id  == topicID && t.accepted == false).Count();
+            return _context.RegisterQueues.Where(t => t.topic_id == topicID && t.accepted == false).Count();
         }
         public List<int> GetAllInqueueTopic()
         {
-            return GetAll().Where(r=>r.accepted == false).Select(r => r.topic_id.Value).ToList();
+            return GetAll().Where(r => r.accepted == false).Select(r => r.topic_id.Value).ToList();
         }
 
 

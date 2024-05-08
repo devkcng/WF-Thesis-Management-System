@@ -119,9 +119,9 @@ namespace WFThesisManagementSystem.Helper
             var notificationRepository = new NotificationRepository(_context);
             var notificationIds = notificationRepository.GetAll();
             int id = 0;
-            foreach(var notification in notificationIds)
+            foreach (var notification in notificationIds)
             {
-                if(notification.notification_id > id)
+                if (notification.notification_id > id)
                 {
                     id = notification.notification_id;
                 }

@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl;
 using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.Repositories;
 using WFThesisManagementSystem.Services;
@@ -21,14 +14,14 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         SubTaskService _subTaskService;
         private ThesisManagementContext _context;
         StudentRepository _studentRepository;
-        public FStudentCreateSubTask(int taskID,ThesisManagementContext context)
+        public FStudentCreateSubTask(int taskID, ThesisManagementContext context)
         {
             InitializeComponent();
             this.Size = new Size(600, 500);
             _context = context;
-            _taskID=taskID;
+            _taskID = taskID;
             _studentRepository = new StudentRepository(_context);
-            _taskRepository= new TaskRepository(_context);
+            _taskRepository = new TaskRepository(_context);
             ucTeacherCreateTask1.btnClose.Click += Close;
             ucTeacherCreateTask1.btnSave.Click += Save;
             ucTeacherCreateTask1.Load += ucTeacherCreateTask1_Load;

@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using WFThesisManagementSystem.Models;
 
 namespace WFThesisManagementSystem.Repositories
 {
     public class TaskRepository : IRepository<Task>
-    {   
+    {
         //
         private ThesisManagementContext _context;
 
@@ -18,11 +16,11 @@ namespace WFThesisManagementSystem.Repositories
 
         public IQueryable<Task> GetAll()
         {
-           return _context.Tasks;
+            return _context.Tasks;
         }
         public List<Task> GetAllUncompletedTask(int groupID)
         {
-            return _context.Tasks.Where(x=>x.submit_day == null).ToList();
+            return _context.Tasks.Where(x => x.submit_day == null).ToList();
         }
         public Task GetById(int id)
         {
@@ -32,7 +30,7 @@ namespace WFThesisManagementSystem.Repositories
         {
             return _context.Tasks.Where(x => x.group_id == groupID).ToList();
         }
-        
+
 
         public void Add(Task entity)
         {
@@ -47,7 +45,7 @@ namespace WFThesisManagementSystem.Repositories
         }
 
         public void Delete(Task entity)
-        { 
+        {
             //delete task by _context
             _context.Tasks.Attach(entity);
             _context.Tasks.Remove(entity);
@@ -69,7 +67,7 @@ namespace WFThesisManagementSystem.Repositories
 
         public Task GetFirstTask()
         {
-            return _context.Tasks.OrderBy(x=>x.open_day).FirstOrDefault();
+            return _context.Tasks.OrderBy(x => x.open_day).FirstOrDefault();
         }
 
         public int GetNumberOfCompletedTaskOfGroup(int groupID)

@@ -60,7 +60,7 @@ namespace WFThesisManagementSystem.Repositories
 
         public List<int> GetListOfTopic(List<int> studentGroupID)
         {
-            return GetAll().Where(s => studentGroupID.Contains(s.group_id)).Select(s=>s.topic_id.Value).ToList();
+            return GetAll().Where(s => studentGroupID.Contains(s.group_id)).Select(s => s.topic_id.Value).ToList();
         }
         public List<int> GetListOfUnacceptedTopic(List<int> studentGroupID)
         {

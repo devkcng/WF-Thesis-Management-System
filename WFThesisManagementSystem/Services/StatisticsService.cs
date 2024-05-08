@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.Repositories;
 using Task = WFThesisManagementSystem.Models.Task;
 
 namespace WFThesisManagementSystem.Services
 {
-    public  class StatisticsService
+    public class StatisticsService
     {
         ThesisManagementContext _context;
         TeacherRepository _teacherRepository;
@@ -17,7 +13,7 @@ namespace WFThesisManagementSystem.Services
         StudentGroupRepository _studentGroupRepository;
         TaskRepository _taskRepository;
         SubTaskRepository _subTaskRepository;
-        public StatisticsService(ThesisManagementContext context) 
+        public StatisticsService(ThesisManagementContext context)
         {
             _context = context;
             _teacherRepository = new TeacherRepository(_context);
@@ -47,38 +43,38 @@ namespace WFThesisManagementSystem.Services
         //    else if(condition == 1) return countGood;
         //    return countExcellent;
         //}
-        public int CountStudentComplete(int teacherId,int condition)
+        public int CountStudentComplete(int teacherId, int condition)
         {
             int countComplete = 0;
             int countNotComplete = 0;
             var topics = _topicRepository.GetAllByTeacherID(teacherId);
             var studentGroups = new List<StudentGroup>();
-            var tasks = new List<Task>(); 
+            var tasks = new List<Task>();
             foreach (var topic in topics)
             {
                 foreach (var studentGroup in _studentGroupRepository.GetAll())
                 {
-                    if(topic.topic_id == studentGroup.topic_id)
+                    if (topic.topic_id == studentGroup.topic_id)
                     {
                         studentGroups.Add(studentGroup);
-                    }    
-                }      
+                    }
+                }
             }
-            foreach(var studentGroup in studentGroups)
+            foreach (var studentGroup in studentGroups)
             {
                 foreach (var task in _taskRepository.GetAll())
                 {
-                    if(studentGroup.group_id == task.group_id)
+                    if (studentGroup.group_id == task.group_id)
                     {
                         tasks.Add(task);
-                    }  
+                    }
                 }
             }
             foreach (var task in tasks)
             {
                 foreach (var subTask in _subTaskRepository.GetAll())
                 {
-                    if(task.task_id == subTask.task_id && subTask.submit_day!= null)
+                    if (task.task_id == subTask.task_id && subTask.submit_day != null)
                     {
                         countComplete++;
                     }
@@ -92,6 +88,6 @@ namespace WFThesisManagementSystem.Services
             if (condition == 0) return countNotComplete;
             return countComplete;
         }
-        
+
     }
 }

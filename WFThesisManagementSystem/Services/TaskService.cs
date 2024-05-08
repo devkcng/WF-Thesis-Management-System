@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Windows.Forms;
 using WFThesisManagementSystem.Helper;
 using WFThesisManagementSystem.Models;
@@ -19,8 +18,8 @@ namespace WFThesisManagementSystem.Services
             _taskRepository = new TaskRepository(_context);
             _task = task;
         }
-        public TaskService(ThesisManagementContext context) 
-        { 
+        public TaskService(ThesisManagementContext context)
+        {
             _context = context;
             _taskRepository = new TaskRepository(_context);
         }
@@ -48,7 +47,7 @@ namespace WFThesisManagementSystem.Services
         }
         // handle logic of updating a task by teacher
         public void UpdateTask()
-        {   
+        {
             _taskRepository.Update(_task);
             MessageBox.Show("Updated");
         }

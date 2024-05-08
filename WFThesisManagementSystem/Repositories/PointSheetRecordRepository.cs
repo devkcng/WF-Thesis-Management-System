@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WFThesisManagementSystem.Models;
 
 namespace WFThesisManagementSystem.Repositories
@@ -45,7 +42,7 @@ namespace WFThesisManagementSystem.Repositories
         }
         public List<PointSheetRecord> GetAllByStudentID(int studentID)
         {
-            return _context.PointSheetRecords.Where(p=> p.student_id == studentID).ToList();
+            return _context.PointSheetRecords.Where(p => p.student_id == studentID).ToList();
         }
     }
 }

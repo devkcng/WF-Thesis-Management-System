@@ -29,7 +29,7 @@ namespace WFThesisManagementSystem.Services
         public RegistrationService(Student student, ThesisManagementContext context)
         {
             _student = student;
-             _context = context;
+            _context = context;
             _registerQueueRepository = new RegisterQueueRepository(_context);
             _studentGroupRepository = new StudentGroupRepository(_context);
             _pointSheetRecordRepository = new PointSheetRecordRepository(context);
@@ -123,7 +123,7 @@ namespace WFThesisManagementSystem.Services
         {
             int count = 0;
             var pointSheetRecordList = _pointSheetRecordRepository.GetAllByStudentID(_student.student_id);
-            foreach(var pointSheetRecord in pointSheetRecordList)
+            foreach (var pointSheetRecord in pointSheetRecordList)
             {
                 if (pointSheetRecord.point < 3)
                     count++;

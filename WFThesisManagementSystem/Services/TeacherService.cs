@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using WFThesisManagementSystem.Helper;
 using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.Repositories;
 
@@ -29,9 +24,9 @@ namespace WFThesisManagementSystem.Services
         }
         public int GetNumberStudentRegisterOfTeacher()
         {
-            int count=0;
+            int count = 0;
             var topicList = _topicRepository.GetAllByTeacherID(_teacher.teacher_id);
-            foreach(var topic in topicList)
+            foreach (var topic in topicList)
             {
                 var studentGroupList = _studentGroupRepository.GetAllByTopicID(topic.topic_id);
                 foreach (var studentGroup in studentGroupList)
@@ -62,11 +57,11 @@ namespace WFThesisManagementSystem.Services
             return count;
         }
 
-        public List<Teacher> GetTeachersHasMostStudentRegist() 
+        public List<Teacher> GetTeachersHasMostStudentRegist()
         {
             var teacherList = _teacherRepository.GetAll();
             List<(int teacher_id, int numberStudentRegist)> teacherOrderingList = new List<(int, int)>();
-            foreach(var teacher in teacherList)
+            foreach (var teacher in teacherList)
             {
                 teacherOrderingList.Add((teacher.teacher_id, GetNumberStudentRegisterOfTeacher(teacher.teacher_id)));
             }

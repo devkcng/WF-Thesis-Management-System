@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
-using WFThesisManagementSystem.Forms.StudentViews.StudentUserControl;
 using WFThesisManagementSystem.Models;
-using WFThesisManagementSystem.Repositories;
 using WFThesisManagementSystem.Services;
 
 namespace WFThesisManagementSystem.Forms.StudentViews.Views
@@ -17,7 +14,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         {
             InitializeComponent();
             this.Size = new Size(500, 600);
-            _context=context;
+            _context = context;
             _subTaskService = new SubTaskService(subTask, _context);
         }
 

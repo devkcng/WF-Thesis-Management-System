@@ -4,7 +4,7 @@ using System.Windows.Forms;
 namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
 {
     public partial class UcTeacherEditTask : UserControl
-    {   
+    {
         //create manual event handler for these buttons: Delete, Update, Close
         public event EventHandler DeleteButtonClicked;
         public event EventHandler UpdateButtonClicked;
@@ -15,9 +15,9 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
             btnClose.Click += CloseButton_Click;
             btnUpdate.Click += UpdateButton_Click;
             btnDelete.Click += DeleteButton_Click;
-        
+
         }
-        
+
         public void CloseButton_Click(object sender, EventArgs e)
         {
             btnCloseOnClicked(EventArgs.Empty);

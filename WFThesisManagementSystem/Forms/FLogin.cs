@@ -8,7 +8,7 @@ using WFThesisManagementSystem.Models;
 namespace WFThesisManagementSystem.Forms
 {
     public partial class FLogin : KryptonForm
-    {   
+    {
         private ThesisManagementContext _context;
         public FLogin()
         {

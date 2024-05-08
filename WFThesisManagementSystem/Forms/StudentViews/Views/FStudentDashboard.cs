@@ -1,25 +1,17 @@
 ﻿using ComponentFactory.Krypton.Toolkit;
 using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using WFThesisManagementSystem.Forms.StudentViews.StudentUserControl;
-using WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl;
-using WFThesisManagementSystem.Forms.UC;
 using WFThesisManagementSystem.Helper;
 using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.Repositories;
-using System.Collections.Generic;
-
-using UserControl = System.Windows.Forms.UserControl;
 using WFThesisManagementSystem.Services;
-using System.Web.UI.WebControls;
-using System.Reflection.Emit;
-using WFThesisManagementSystem.Forms.TeacherViews.Views;
-using System.Security.Cryptography;
-using System.Data;
-using System.Windows.Forms.DataVisualization.Charting;
 
 namespace WFThesisManagementSystem.Forms.StudentViews.Views
 {
@@ -47,8 +39,8 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         }
 
         private void createNotification(object sender, EventArgs e)
-        {   
-            if(!TopicRegisterReminder())
+        {
+            if (!TopicRegisterReminder())
             {
                 return;
             }
@@ -58,7 +50,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
 
         private void CbTaskDate_ValueChanged(object sender, EventArgs e)
         {
-            if(!TopicRegisterReminder())
+            if (!TopicRegisterReminder())
             {
                 return;
             }
@@ -66,7 +58,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             uCStudentProject.flpTask.Controls.Clear();
             var groupID = _studentRepository.GetById(_userSessionHelper.UserID).group_id;
             var groupTaskList = _taskRepository.GetByGroupID(groupID.Value);
-            var filterHelper = new FilterByDayHelper(groupTaskList, _context);  
+            var filterHelper = new FilterByDayHelper(groupTaskList, _context);
             if (uCStudentProject.CbTaskDate.SelectedItem == "This week")
             {
                 groupTaskList = filterHelper.FilterTaskByWeek();
@@ -83,7 +75,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         }
         private void DateTimePicker_ValueChanged(object sender, EventArgs e)
         {
-            if(!TopicRegisterReminder())
+            if (!TopicRegisterReminder())
             {
                 return;
             }
@@ -112,8 +104,8 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         }
 
         private void projectToolStripMenuItem_Click(object sender, EventArgs e)
-        {   
-            if(!TopicRegisterReminder())
+        {
+            if (!TopicRegisterReminder())
             {
                 return;
             }
@@ -125,8 +117,8 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             ListUCStudentProjectComponent(uCStudentProject);
         }
         private void task_Click(object sender, EventArgs e)
-        {   
-            if(!TopicRegisterReminder())
+        {
+            if (!TopicRegisterReminder())
             {
                 return;
             }
@@ -134,7 +126,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             UCStudentTask uCStudentTask = new UCStudentTask();
             uCStudentTask.Dock = DockStyle.Fill;
             uCStudentTask.dtpStartDay.Value = _taskRepository.GetFirstTask().open_day.Value;
-            uCStudentTask.dtpEndDay.Value = DateTime.Now; 
+            uCStudentTask.dtpEndDay.Value = DateTime.Now;
             UCStudentTask_Load(uCStudentTask);
             uCStudentTask.DateChanged += DateTimePicker_ValueChanged;
             panelContainer.Controls.Add(uCStudentTask);
@@ -178,7 +170,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
 
         private void performance_Click(object sender, EventArgs e)
         {
-            if(!TopicRegisterReminder())
+            if (!TopicRegisterReminder())
             {
                 return;
             }
@@ -201,7 +193,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             var studentTopic = _topicRepository.GetById(studentGroup.topic_id.Value);
             var memberGroupList = _studentRepository.GetAllByGroupId(studentGroup.group_id);
             var taskLisk = _taskRepository.GetByGroupID(studentGroup.group_id);
-            FilterByDayHelper filterByDayHelper = new FilterByDayHelper(taskLisk,_context);
+            FilterByDayHelper filterByDayHelper = new FilterByDayHelper(taskLisk, _context);
 
 
             //Loadtopic
@@ -225,7 +217,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             uCStudentProject.ucTopicDetail1.txtRequirement.Text = topic.topic_requirement;
         }
 
-        private void LoadGroupMember (UCStudentProject uCStudentProject, List<Student> memberGroup)
+        private void LoadGroupMember(UCStudentProject uCStudentProject, List<Student> memberGroup)
         {
             uCStudentProject.flpMember.Controls.Clear();
             foreach (var member in memberGroup)
@@ -239,7 +231,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         private void LoadTask(List<Task> Tasks, FlowLayoutPanel flp, Size size, int groupID)
         {
             var filterHelper = new FilterByDayHelper(Tasks, _context);
-            
+
             flp.Visible = false;
             flp.Controls.Clear();
             foreach (var groupTask in Tasks)
@@ -299,7 +291,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             DateTime currentDate = DateTime.Today;
             var groupID = _studentRepository.GetById(_userSessionHelper.UserID).group_id;
             var groupTaskList = _taskRepository.GetByGroupID(groupID.Value);
-            var filteredDates = groupTaskList.Where(grouptask => (grouptask.due_date - currentDate).Value.Days <= 7 && grouptask.due_date> currentDate);
+            var filteredDates = groupTaskList.Where(grouptask => (grouptask.due_date - currentDate).Value.Days <= 7 && grouptask.due_date > currentDate);
             foreach (var submitdates in filteredDates)
             {
 
@@ -359,7 +351,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         {
             UCCalendar uCCalendar = sender as UCCalendar;
             //MessageBox.Show(uCCalendar.Parent.Parent.ToString());
-            UCStudentCalendar  ucStudentCalendar  = (UCStudentCalendar)uCCalendar.Parent.Parent; // Tìm UCDashBoard từ UCCalendar
+            UCStudentCalendar ucStudentCalendar = (UCStudentCalendar)uCCalendar.Parent.Parent; // Tìm UCDashBoard từ UCCalendar
 
             if (uCCalendar.month == 1)
             {
@@ -416,7 +408,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                 uCTask.Clicked += ucTask_Clicked;
                 uCTask.Size = new Size(490, 150);
                 uCStudentTask.flpGroupTaskView.Controls.Add(uCTask);
-                
+
             }
 
 
@@ -442,7 +434,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             }
         }
 
-        
+
         #endregion
 
         #region ucTask-Events
@@ -513,7 +505,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             UCSTudentSubTasks uCSTudentSubTasks = (UCSTudentSubTasks)uCStudentInformation.Parent.Parent.Parent;
             uCSTudentSubTasks.flpAllTasks.Controls.Clear();
             var taskList = _subtaskRepository.GetAllByStudentIdAndTaskId(uCStudentInformation._id, uCSTudentSubTasks._taskID);
-            foreach(var subTask in taskList)
+            foreach (var subTask in taskList)
             {
                 UCSubTasks uCSubTask = new UCSubTasks();
                 uCSubTask.lblName.Text = subTask.subtask_name;
@@ -544,7 +536,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             else
             {
 
-                FStudentTaskPopUp fStudentTaskPopUp = new FStudentTaskPopUp(subTask,_context);
+                FStudentTaskPopUp fStudentTaskPopUp = new FStudentTaskPopUp(subTask, _context);
                 fStudentTaskPopUp.lblSubTaskName.Text = uCInvidualTask.lblName.Text;
                 fStudentTaskPopUp.lblStudentname.Text = _studentRepository.GetById(subTask.student_id.Value).student_name;
                 fStudentTaskPopUp.lblSubmitDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
@@ -556,7 +548,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         #endregion
 
         #region uCProgress-Events
-        private void ListUCProgressComponents( UCProgress uCProgress)
+        private void ListUCProgressComponents(UCProgress uCProgress)
         {
             uCProgress.cbxGroupCategory.Visible = false;
             uCProgress.cbxMemberCategory.Visible = false;
@@ -592,7 +584,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             // Thêm dữ liệu vào DataTable
             foreach (var subTask in subTaskList)
             {
-                dataTable.Rows.Add(subTask.subtask_name,10);
+                dataTable.Rows.Add(subTask.subtask_name, 10);
             }
 
             // Gán DataTable cho DataGridView
@@ -658,9 +650,9 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
 
         #endregion
         private bool TopicRegisterReminder()
-        {   
+        {
             var student = _studentRepository.GetById(_userSessionHelper.UserID);
-            var registrationService = new RegistrationService(student,_context);
+            var registrationService = new RegistrationService(student, _context);
             if (registrationService.AlreadyRegistered())
             {
                 return true;
@@ -670,7 +662,8 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             string title = "Topic Reminder";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
             DialogResult result = MessageBox.Show(message, title, buttons);
-            if (result == DialogResult.Yes) {
+            if (result == DialogResult.Yes)
+            {
                 FStudentRegisterTopic fStudentRegisterTopic = new FStudentRegisterTopic(_context);
                 fStudentRegisterTopic.Show();
                 this.Hide();

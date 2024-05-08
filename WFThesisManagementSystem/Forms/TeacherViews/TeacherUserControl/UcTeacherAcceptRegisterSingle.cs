@@ -37,7 +37,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
         private string idstudent;
         private string regist;
         private CheckBox checkregist;
-        public  int Id { get; set; }
+        public int Id { get; set; }
         public string NameStudent
         {
             get { return namestudent; }

@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using WFThesisManagementSystem.Models;
-using WFThesisManagementSystem.Repositories;
 
 namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
 {

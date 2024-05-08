@@ -1,8 +1,6 @@
-﻿using Guna.UI2.WinForms;
-using System;
+﻿using System;
 using System.Globalization;
 using System.Windows.Forms;
-using WFThesisManagementSystem.Forms.TeacherViews.Views;
 
 namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
 {
@@ -44,11 +42,11 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
         {
             get { return content; }
             set { content = value; lblContentTask.Text = value; }
-        } 
+        }
         public int TaskId
         {
             get { return task_id; }
-            set {  task_id = value; }
+            set { task_id = value; }
         }
         #endregion
 

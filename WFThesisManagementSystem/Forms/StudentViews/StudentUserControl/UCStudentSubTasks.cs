@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WFThesisManagementSystem.Forms.StudentViews.StudentUserControl
@@ -32,10 +25,10 @@ namespace WFThesisManagementSystem.Forms.StudentViews.StudentUserControl
 
         private void btnAssignTask_Click(object sender, EventArgs e)
         {
-                if (AssignTaskBtnClicked != null)
-                {
-                    AssignTaskBtnClicked(this, _taskID);
-                }
+            if (AssignTaskBtnClicked != null)
+            {
+                AssignTaskBtnClicked(this, _taskID);
+            }
         }
     }
 }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
-using System.Xml.Linq;
-using WFThesisManagementSystem.Models;
+﻿using System.Windows.Forms;
 
 namespace WFThesisManagementSystem.Forms.StudentViews.StudentUserControl
 {

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WFThesisManagementSystem.Helper;
 using WFThesisManagementSystem.Models;
@@ -37,7 +30,7 @@ namespace WFThesisManagementSystem.Forms.UC
             ucCreateNotification1.txtNotificationTitle.Clear();
             ucCreateNotification1.cbxNotificationType.Items.Clear();
         }
-        private void Save(object sender, EventArgs e) 
+        private void Save(object sender, EventArgs e)
         {
             //if (ucCreateNotification1.cbxNotificationType.Items.ToString() != "" && ucCreateNotification1.txtNotificationContent.Text != "" && ucCreateNotification1.txtNotificationTitle.Text != "")
             //{
@@ -81,7 +74,7 @@ namespace WFThesisManagementSystem.Forms.UC
 
 
         }
-        private void Close(object sender, EventArgs e) 
+        private void Close(object sender, EventArgs e)
         {
             this.Hide();
         }

@@ -26,7 +26,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         private void Update(object sender, EventArgs e)
         {
             try
-            {   
+            {
                 _task.task_description = ucTeacherEditTask1.txtTaskDescription.Text;
                 _task.task_name = ucTeacherEditTask1.txtTaskName.Text;
                 _task.due_date = ucTeacherEditTask1.dtpDueDate.Value.Date;
@@ -49,7 +49,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         }
 
         private void FTeacherEditTask_Load_1(object sender, EventArgs e)
-        {   
+        {
             ucTeacherEditTask1.txtTaskDescription.Text = _task.task_description;
             ucTeacherEditTask1.txtTaskName.Text = _task.task_name;
             ucTeacherEditTask1.dtpDueDate.Value = _task.due_date.Value;

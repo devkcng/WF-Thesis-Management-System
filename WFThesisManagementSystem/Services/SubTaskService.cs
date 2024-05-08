@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WFThesisManagementSystem.Helper;
 using WFThesisManagementSystem.Models;
@@ -37,10 +34,10 @@ namespace WFThesisManagementSystem.Services
             var subtaskList = _subTaskRepository.GetAllByTaskId(subtask.task_id.Value);
             if (IsTaskDone(subtaskList))
             {
-                var task =_taskRepository.GetById(subtask.task_id.Value);
+                var task = _taskRepository.GetById(subtask.task_id.Value);
                 task.submit_day = DateTime.Now;
                 _taskRepository.Update(task);
-                MessageBox.Show("Task "+ task.task_name+ " has been done");
+                MessageBox.Show("Task " + task.task_name + " has been done");
 
             }
         }

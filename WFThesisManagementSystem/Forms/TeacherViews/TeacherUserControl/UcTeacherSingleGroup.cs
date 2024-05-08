@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
@@ -30,7 +23,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
         #region Properties
         private string namegroup;
         private string nametopic;
-        public int Id {  get; set; }
+        public int Id { get; set; }
         public string NameGroup
         {
             set { namegroup = value; lblNameGroup.Text = value; }

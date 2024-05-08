@@ -4,7 +4,7 @@ using System.Windows.Forms;
 namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
 {
     public partial class UcTeacherAllTask : UserControl
-    {   
+    {
 
         public event EventHandler DateChanged;
 
@@ -14,11 +14,11 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
             dtpStartDay.ValueChanged += DtpStartDay_ValueChanged;
             dtpEndDay.ValueChanged += DtpEndDay_ValueChanged;
         }
-        
+
 
         private void UcTeacherAllTask_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void DtpEndDay_ValueChanged(object sender, EventArgs e)
@@ -30,6 +30,6 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
         {
             DateChanged?.Invoke(this, e);
         }
-        
+
     }
 }

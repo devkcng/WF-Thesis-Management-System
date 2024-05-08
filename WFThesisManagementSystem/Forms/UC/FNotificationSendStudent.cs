@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl;
 using WFThesisManagementSystem.Models;
@@ -17,16 +11,16 @@ namespace WFThesisManagementSystem.Forms.UC
     public partial class FNotificationSendStudent : Form
     {
         private ThesisManagementContext _context;
-        
+
         private NotificationRepository _notificationRepository;
         private StudentRepository _studentRepository;
         private StudentGroupRepository _studentGroupRepository;
         private TopicRepository _topicRepository;
         private List<Student> _students;
-        private NotificationService _notificationService ;
+        private NotificationService _notificationService;
         private NotificationMessage _notificationMessage;
 
-        public FNotificationSendStudent(NotificationMessage message , ThesisManagementContext context)
+        public FNotificationSendStudent(NotificationMessage message, ThesisManagementContext context)
         {
             InitializeComponent();
             _notificationMessage = message;
@@ -74,12 +68,12 @@ namespace WFThesisManagementSystem.Forms.UC
 
         private void OnClicked_UcGroup(object sender, EventArgs e)
         {
-            
+
             List_Load_Student(sender, e);
         }
 
         private void List_Load_Student(object sender, EventArgs e)
-        {   
+        {
             ucNotificationSendStudentAll1.flpNotificationStudent.Controls.Clear();
             UcTeacherAcceptRegisterSingle ucTeacherAcceptRegisterSingle1 = sender as UcTeacherAcceptRegisterSingle;
             var students = _studentRepository.GetAllByGroupId(ucTeacherAcceptRegisterSingle1.Id);
@@ -113,16 +107,16 @@ namespace WFThesisManagementSystem.Forms.UC
 
         #region CheckboxGroupEventHandler
         private void Choose_Student(object sender, EventArgs e)
-        {   
+        {
             Load_Student(sender);
             PickStudentByGroupCheckbox(sender);
         }
         private void Load_Student(object sender)
-        {   
+        {
             UcTeacherAcceptRegisterSingle ucTeacherAcceptRegisterSingle = sender as UcTeacherAcceptRegisterSingle;
-            foreach(Control uc in ucNotificationSendStudentAll1.flpNotificationStudent.Controls)
+            foreach (Control uc in ucNotificationSendStudentAll1.flpNotificationStudent.Controls)
             {
-                if(uc is UserControl)
+                if (uc is UserControl)
                 {
                     try
                     {
@@ -142,7 +136,7 @@ namespace WFThesisManagementSystem.Forms.UC
                     {
                         MessageBox.Show(ex.Message);
                     }
-                }    
+                }
             }
         }
 
@@ -203,10 +197,10 @@ namespace WFThesisManagementSystem.Forms.UC
         }
         private void Send(object sender, EventArgs e)
         {
-            
+
             _notificationService.SendToStudent(_students, _notificationMessage);
 
-            if(_notificationService.CheckSendNotification(_students))
+            if (_notificationService.CheckSendNotification(_students))
             {
                 MessageBox.Show("Send To Student Success");
             }

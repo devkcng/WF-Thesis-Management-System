@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using WFThesisManagementSystem.Models;
 
 namespace WFThesisManagementSystem.Forms.StudentViews.StudentUserControl
 {
@@ -22,10 +14,10 @@ namespace WFThesisManagementSystem.Forms.StudentViews.StudentUserControl
         private string _category;
         private string _requirement;
         private int _maxMember;
-        private int  _teacherID;
+        private int _teacherID;
 
         private string _teacherName;
-        
+
 
         public string Name
         {
@@ -35,7 +27,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.StudentUserControl
         }
         public string Description
         {
-            set { _description = value;}
+            set { _description = value; }
             get { return _description; }
 
         }
@@ -53,7 +45,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.StudentUserControl
         }
         public string Requirement
         {
-            set { _requirement = value;}
+            set { _requirement = value; }
             get { return _requirement; }
 
         }
@@ -69,7 +61,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.StudentUserControl
         }
         public int MaxMember
         {
-            get { return _maxMember;  }
+            get { return _maxMember; }
             set { _maxMember = value; lblMaxmember.Text = _maxMember.ToString(); }
 
         }

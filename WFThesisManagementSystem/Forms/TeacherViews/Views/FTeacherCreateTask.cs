@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.Repositories;
@@ -31,14 +29,14 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         }
         private void Save(object sender, EventArgs e)
         {
-                Task task = new Task();
-                task.task_name = ucTeacherCreateTask1.txtTaskName.Text;
-                task.task_description = ucTeacherCreateTask1.txtTaskDescription.Text;
-                task.due_date = ucTeacherCreateTask1.dtpEndDate.Value.Date;
-                task.group_id = _studentGroupRepository.GetByGroupName(ucTeacherCreateTask1.cboGroupList.Text).group_id;
-                _taskService = new TaskService(task, _context);
-                _taskService.CreateTask();
-                this.Close();
+            Task task = new Task();
+            task.task_name = ucTeacherCreateTask1.txtTaskName.Text;
+            task.task_description = ucTeacherCreateTask1.txtTaskDescription.Text;
+            task.due_date = ucTeacherCreateTask1.dtpEndDate.Value.Date;
+            task.group_id = _studentGroupRepository.GetByGroupName(ucTeacherCreateTask1.cboGroupList.Text).group_id;
+            _taskService = new TaskService(task, _context);
+            _taskService.CreateTask();
+            this.Close();
         }
 
         private void ucTeacherCreateTask1_Load(object sender, EventArgs e)

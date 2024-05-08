@@ -1,12 +1,9 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
-
 using WFThesisManagementSystem.Helper;
 using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.Repositories;
-using WFThesisManagementSystem.Services;
-using System.Drawing;
-using System.Linq; // Thêm dòng này để sử dụng Size
 
 namespace WFThesisManagementSystem.Forms.StudentViews.Views
 {
@@ -55,8 +52,8 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             FStudentRegisterTopic fStudentRegisterTopic = new FStudentRegisterTopic(_context);
             fStudentRegisterTopic.Show();
         }
-       protected override void OnFormClosing(FormClosingEventArgs e)
-        {   
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
             base.OnFormClosing(e);
 
             // Check if the reason for closing is the user clicking the close button

@@ -19,7 +19,7 @@ namespace WFThesisManagementSystem.Helper
 
         public bool Login(string username, string password)
         {
-            
+
             StudentAccountRepository studentAccountRepository = new StudentAccountRepository(_context);
             TeacherAccountRepository teacherAccountRepository = new TeacherAccountRepository(_context);
             var student = studentAccountRepository.GetByUsername(username);

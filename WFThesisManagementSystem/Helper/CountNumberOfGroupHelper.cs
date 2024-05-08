@@ -5,7 +5,7 @@ using WFThesisManagementSystem.Repositories;
 namespace WFThesisManagementSystem.Helper
 {
     public class CountNumberOfGroupHelper
-    {   
+    {
         ThesisManagementContext _context;
 
         public CountNumberOfGroupHelper(ThesisManagementContext context)

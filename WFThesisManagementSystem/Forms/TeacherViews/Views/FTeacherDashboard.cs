@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Runtime.Remoting.Channels;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using WFThesisManagementSystem.Forms.StudentViews.StudentUserControl;
@@ -12,7 +11,6 @@ using WFThesisManagementSystem.Helper;
 using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.Repositories;
 using WFThesisManagementSystem.Services;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WFThesisManagementSystem.Forms.TeacherViews.Views
 {
@@ -42,8 +40,8 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             _teacherService = new TeacherService(_userSessionHelper.UserID);
             InitializeComponent();
             btnNotification.Click += createNotification;
-           
-            
+
+
         }
         private void createNotification(object sender, EventArgs e)
         {
@@ -117,7 +115,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             ucTeacherAllTask.dtpStartDay.Value = DateTime.Now.AddDays(-7);
             ucTeacherAllTask.dtpEndDay.Value = DateTime.Now;
             ListGroup(ucTeacherAllTask);
-            
+
         }
         #region ucTeacherAllTask1-Components
 
@@ -172,7 +170,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         private void UcTeacherSingleTask_PointButtonClicked(object sender, EventArgs e)
         {
             UcTeacherSingleTask ucTeacherSingleTask = sender as UcTeacherSingleTask;
-            FTeacherMark fTeacherMark = new FTeacherMark(_context,ucTeacherSingleTask.TaskId);
+            FTeacherMark fTeacherMark = new FTeacherMark(_context, ucTeacherSingleTask.TaskId);
             fTeacherMark.Show();
         }
 
@@ -185,7 +183,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         private void ucTeacherSingleGroup_Clicked(object sender, EventArgs e)
         {
             UcTeacherSingleGroup ucTeacherSingleGroup = sender as UcTeacherSingleGroup;
-            UcTeacherAllTask ucTeacherAllTask =  (UcTeacherAllTask)ucTeacherSingleGroup.Parent.Parent.Parent;
+            UcTeacherAllTask ucTeacherAllTask = (UcTeacherAllTask)ucTeacherSingleGroup.Parent.Parent.Parent;
             int groupId = GroupIdCreate = ucTeacherSingleGroup.Id;
             var taskList = _taskRepository.GetTaskByGroupId(groupId);
             ucTeacherAllTask.flpAllTasks.Controls.Clear();
@@ -233,7 +231,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             FTeacherEditTask fTeacherEditTask = new FTeacherEditTask(task, _context);
             fTeacherEditTask.Show();
         }
-        private void ucTeacherSingleTask_SubmitTask_Click(object sender, EventArgs e) 
+        private void ucTeacherSingleTask_SubmitTask_Click(object sender, EventArgs e)
         {
             UcTeacherSingleTask ucTeacherSingleTask = sender as UcTeacherSingleTask;
             var taskName = ucTeacherSingleTask.Name;
@@ -298,7 +296,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             // Tạo một danh sách dữ liệu mẫu
             List<dynamic> dataList = new List<dynamic>();
             var studentGroupList = _studentGroupRepository.GetAll();
-            foreach(var studentGroup in  studentGroupList)
+            foreach (var studentGroup in studentGroupList)
             {
                 dataList.Add(studentGroup.group_name);
             }
@@ -328,7 +326,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
                 var studentGroup = (StudentGroup)_studentGroupRepository.GetByGroupName(groupName);
                 var taskGroupList = _taskRepository.GetByGroupID(studentGroup.group_id);
                 List<SubTask> subTaskList = new List<SubTask>();
-                foreach (var task in taskGroupList) 
+                foreach (var task in taskGroupList)
                 {
                     var subTasks = _subtaskRepository.GetAllByTaskId(task.task_id);
                     subTaskList.AddRange(subTasks);

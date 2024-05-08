@@ -1,9 +1,6 @@
 ﻿using System;
-using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WFThesisManagementSystem.Helper;
 using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.Repositories;
@@ -21,7 +18,7 @@ namespace WFThesisManagementSystem.Services
         private NotificationRepository _notificationRepository;
         private ThesisManagementContext _context;
         private Notification _notification;
-        public NotificationService( ThesisManagementContext context)
+        public NotificationService(ThesisManagementContext context)
         {
             _context = context;
             _notificationRepository = new NotificationRepository(_context);
@@ -31,7 +28,7 @@ namespace WFThesisManagementSystem.Services
 
         //this function is used to create a notification
         public Notification CreateNotification(NotificationMessage message)
-        {   
+        {
             var notification = new Notification();
             var idGenerator = new IdGeneratorHelper();
             notification.notification_id = idGenerator.GenerateNotificationId();
@@ -46,22 +43,22 @@ namespace WFThesisManagementSystem.Services
 
         public void SendToStudent(List<Student> students, NotificationMessage message)
         {
-           // students = new List<Student>();
-            foreach (Student student in students) 
-            {   
+            // students = new List<Student>();
+            foreach (Student student in students)
+            {
                 var notification = CreateNotification(message);
                 notification.recipient_id = student.student_id;
                 _notificationRepository.Add(notification);
             }
-            
+
         }
         public bool CheckSendNotification(List<Student> students)
         {
             //students = new List<Student>();
-            foreach (Student student in students) 
+            foreach (Student student in students)
             {
                 var notification = _notificationRepository.GetByIdRecipient(student.student_id);
-                if(notification == null)
+                if (notification == null)
                     return false;
             }
             return true;

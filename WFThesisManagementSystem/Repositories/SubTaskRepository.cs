@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using WFThesisManagementSystem.Models;
 
 namespace WFThesisManagementSystem.Repositories
 {
     //
     public class SubTaskRepository : IRepository<SubTask>
-    {   
+    {
         private ThesisManagementContext _context;
         public SubTaskRepository(ThesisManagementContext context)
         {
@@ -62,8 +58,8 @@ namespace WFThesisManagementSystem.Repositories
             _context.SaveChanges();
         }
 
-        public int GetNumberOfCompletedSubTaskOfStudents(int studentID) 
-        { 
+        public int GetNumberOfCompletedSubTaskOfStudents(int studentID)
+        {
             return _context.SubTasks.Count(subTask => subTask.submit_day != null && subTask.student_id == studentID);
         }
         public int GetNumberOfUncompletedSubTaskOfStudents(int studentID)
@@ -72,7 +68,7 @@ namespace WFThesisManagementSystem.Repositories
         }
         public int GetNumberOfLateSubmittedSubTasksOfStudents(int studentID)
         {
-            return _context.SubTasks.Count(subTask => subTask.submit_day>subTask.due_date && subTask.student_id == studentID);
+            return _context.SubTasks.Count(subTask => subTask.submit_day > subTask.due_date && subTask.student_id == studentID);
         }
 
     }
