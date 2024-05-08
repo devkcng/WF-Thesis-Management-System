@@ -143,5 +143,33 @@ namespace WFThesisManagementSystem.Helper
             }
             return id + 1;
         }
+        public int GenerateSubtaskPointId()
+        {
+            var subtaskpointRepository = new SubtaskPointRepository(_context);
+            var subtaskpoints = subtaskpointRepository.GetAll();
+            int id = 0;
+            foreach (var subtaskpoint in subtaskpoints)
+            {
+                if (subtaskpoint.subtaskpoint_id > id)
+                {
+                    id = subtaskpoint.subtaskpoint_id;
+                }
+            }
+            return id + 1;
+        }
+        public int GenerateStudentPointId()
+        {
+            var studentpointRepository = new StudentPointRepository(_context);
+            var studentpoints = studentpointRepository.GetAll();
+            int id = 0;
+            foreach (var studentpoint in studentpoints)
+            {
+                if (studentpoint.studentpoint_id > id)
+                {
+                    id = studentpoint.studentpoint_id;
+                }
+            }
+            return id + 1;
+        }
     }
 }
