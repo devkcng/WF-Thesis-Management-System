@@ -328,7 +328,9 @@
     <Compile Include="Repositories\RejectListRepository.cs" />
     <Compile Include="Repositories\StudentAccountRepository.cs" />
     <Compile Include="Repositories\StudentGroupRepository.cs" />
+    <Compile Include="Repositories\StudentPointRepository.cs" />
     <Compile Include="Repositories\StudentRepository.cs" />
+    <Compile Include="Repositories\SubtaskPointRepository.cs" />
     <Compile Include="Repositories\SubTaskRepository.cs" />
     <Compile Include="Repositories\TaskRepository.cs" />
     <Compile Include="Repositories\TeacherAccountRepository.cs" />
