@@ -7,6 +7,7 @@ using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using WFThesisManagementSystem.Forms.ChatApp;
 using WFThesisManagementSystem.Forms.StudentViews.StudentUserControl;
 using WFThesisManagementSystem.Helper;
 using WFThesisManagementSystem.Models;
@@ -99,6 +100,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                 if (groupTask.submit_day != null) { uCTask.ptbStatus.Image = Properties.Resources.photo_2024_04_02_16_52_38__2_1; }
                 else { uCTask.ptbStatus.Image = Properties.Resources.photo_2024_04_02_16_52_38; }
                 uCTask.Clicked += ucTask_Clicked;
+                uCTask.ChatButtonClicked += btnChat_Clicked;
                 uCStudentTask.flpGroupTaskView.Controls.Add(uCTask);
             }
         }
@@ -406,6 +408,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                 if (groupTask.submit_day != null) { uCTask.ptbStatus.Image = Properties.Resources.photo_2024_04_02_16_52_38__2_1; }
                 else { uCTask.ptbStatus.Image = Properties.Resources.photo_2024_04_02_16_52_38; }
                 uCTask.Clicked += ucTask_Clicked;
+                uCTask.ChatButtonClicked += btnChat_Clicked;
                 uCTask.Size = new Size(490, 150);
                 uCStudentTask.flpGroupTaskView.Controls.Add(uCTask);
 
@@ -487,6 +490,13 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             panelContainer.Controls.Add(ucsTudentSubTasks2);
         }
 
+        private void btnChat_Clicked(object sender, EventArgs e)
+        {
+            UCTask uCTask = sender as UCTask;
+            var task = _taskRepository.GetById(uCTask.Id);
+            FChat fChat = new FChat(task);
+            fChat.Show();
+        }
 
         #endregion
 
