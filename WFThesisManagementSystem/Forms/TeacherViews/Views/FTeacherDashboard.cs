@@ -151,7 +151,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             ucTeacherAllTask.flpAllTasks.Controls.Clear();
             var taskList = _taskRepository.GetAll().ToList();
             var filterHelper = new FilterByDayHelper(taskList, _context);
-            var taskListFiltered = filterHelper.FilterByDay(ucTeacherAllTask.dtpStartDay.Value, ucTeacherAllTask.dtpEndDay.Value);
+            var taskListFiltered = filterHelper.FilterTasksByDay(ucTeacherAllTask.dtpStartDay.Value, ucTeacherAllTask.dtpEndDay.Value);
             foreach (var task in taskListFiltered)
             {
                 UcTeacherSingleTask ucTeacherSingleTask = new UcTeacherSingleTask();
@@ -180,7 +180,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             ucTeacherAllTask.flpAllTasks.Controls.Clear();
 
             var filterHelper = new FilterByDayHelper(taskList.ToList(), _context);
-            var taskListFiltered = filterHelper.FilterByDay(ucTeacherAllTask.dtpStartDay.Value, ucTeacherAllTask.dtpEndDay.Value);
+            var taskListFiltered = filterHelper.FilterTasksByDay(ucTeacherAllTask.dtpStartDay.Value, ucTeacherAllTask.dtpEndDay.Value);
 
             if (taskListFiltered.Count == 0)
             {
