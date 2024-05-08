@@ -128,6 +128,12 @@
     <Compile Include="Forms\StudentViews\StudentUserControl\UCInvidualTask.Designer.cs">
       <DependentUpon>UCInvidualTask.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCProgress.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCProgress.Designer.cs">
+      <DependentUpon>UCProgress.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\StudentViews\StudentUserControl\UCSingleEvent.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -530,6 +536,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCInvidualTask.resx">
       <DependentUpon>UCInvidualTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCProgress.resx">
+      <DependentUpon>UCProgress.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCSingleEvent.resx">
       <DependentUpon>UCSingleEvent.cs</DependentUpon>
