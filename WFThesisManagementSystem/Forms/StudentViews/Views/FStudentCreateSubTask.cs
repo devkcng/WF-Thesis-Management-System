@@ -3,6 +3,7 @@ using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl;
 using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.Repositories;
 using WFThesisManagementSystem.Services;
@@ -65,9 +66,12 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         }
         private void ucTeacherCreateTask1_Load(object sender, EventArgs e)
         {
-            ucTeacherCreateTask1.dtpEndDate.Value = DateTime.Now;
-            ucTeacherCreateTask1.lblGroup.Text = "Member";
             var task = _taskRepository.GetById(_taskID);
+            ucTeacherCreateTask1.dtpEndDate.Value = DateTime.Now;
+            ucTeacherCreateTask1.dtpEndDate.MaxDate = task.due_date.Value;
+            ucTeacherCreateTask1.dtpEndDate.MinDate = task.open_day.Value;
+
+            ucTeacherCreateTask1.lblGroup.Text = "Member";
             var students = _studentRepository.GetAllByGroupId(task.group_id.Value);
             foreach (var student in students)
             {
