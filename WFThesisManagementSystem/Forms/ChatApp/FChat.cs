@@ -28,8 +28,42 @@ namespace WFThesisManagementSystem.Forms.ChatApp
             _chatService = new ChatService(task);
             lblTaskName.Text = task.task_name;
 
+            CheckInternetConnection();
+
             // Load existing messages
             LoadExistingMessages();
+
+            // Listen for new messages
+            _chatService.NewMessageReceived += ChatService_NewMessageReceived;
+            _chatService.ListenForNewMessages();
+
+        }
+
+        private async void ChatService_NewMessageReceived(Message message)
+        {
+            if (!IsDisposed && !Disposing)
+            {
+                if (InvokeRequired)
+                {
+                    Invoke((MethodInvoker)delegate
+                    {
+                        DisplayMessage(_chatService.CreateMessageControl(message));
+                    });
+                }
+                else
+                {
+                    DisplayMessage(_chatService.CreateMessageControl(message));
+                }
+            }
+        }
+        private void CheckInternetConnection()
+        {
+            if (_chatService.CheckInternetConnection())
+            {
+                return;
+            }
+            btnSend.Enabled = false;
+            MessageBox.Show("No internet connection available.");
         }
 
         private async void LoadExistingMessages()
@@ -44,7 +78,31 @@ namespace WFThesisManagementSystem.Forms.ChatApp
         }
 
         private void DisplayMessage(UserControl messageControl)
-        {
+        {   
+            if (messageControl == null) return;
+            foreach (var uc in flpMessages.Controls)
+            {
+                if (uc is UcIncomingMessage)
+                {
+                    var incomingMessage = uc as UcIncomingMessage;
+                    if (incomingMessage.MessageText == (messageControl as UcIncomingMessage)?.MessageText 
+                        && incomingMessage.Timestamp ==(messageControl as UcIncomingMessage)?.Timestamp)
+                    {
+                        return;
+                    }
+                }
+
+                if (uc is UcOutgoingMessage)
+                {
+                    var outgoingMessage = uc as UcOutgoingMessage;
+                    if (outgoingMessage.MessageText == (messageControl as UcOutgoingMessage)?.MessageText 
+                        && outgoingMessage.Timestamp == (messageControl as UcOutgoingMessage)?.Timestamp)
+                    {
+                        return;
+                    }
+                }
+            }
+
             flpMessages.Controls.Add(messageControl);
             flpMessages.ScrollControlIntoView(messageControl);
         }
@@ -53,6 +111,20 @@ namespace WFThesisManagementSystem.Forms.ChatApp
         {
             flpMessages.Controls.Add(messageControl);
             flpMessages.ScrollControlIntoView(messageControl);
+        }
+
+        protected override void Dispose(bool disposing)
+        {   
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            if (disposing)
+            {
+                _chatService.NewMessageReceived -= ChatService_NewMessageReceived;
+                _chatService.Dispose();
+            }
+            base.Dispose(disposing);
         }
     }
 }

@@ -28,6 +28,9 @@ namespace WFThesisManagementSystem.Services
         private FirebaseClient _firebaseClient;
         private TaskOfGroup _task;
 
+        public delegate void NewMessageReceivedEventHandler(Message message);
+        public event NewMessageReceivedEventHandler NewMessageReceived;
+
         public ChatService(TaskOfGroup task)
         {
             _task = task;
@@ -50,6 +53,44 @@ namespace WFThesisManagementSystem.Services
                 var messageControl = CreateMessageControl(message);
                 displayMessage(messageControl);
             }
+        }
+
+        //create a method to listen for new messages
+
+        public void ListenForNewMessages()
+        {
+            var messagesRef = _firebaseClient.Child("Conversations").Child(_task.task_id.ToString);
+
+            messagesRef.AsObservable<Message>().Subscribe(firebaseEvent =>
+            {
+                if (firebaseEvent.EventType == Firebase.Database.Streaming.FirebaseEventType.InsertOrUpdate)
+                {
+
+                    if (firebaseEvent.Object == null)
+                    {
+                        return;
+                    }
+
+                    if (firebaseEvent.Object.UserId == UserSessionHelper.Instance.UserID.ToString())
+                    {
+                        return;
+                    }
+
+                    NewMessageReceived?.Invoke(firebaseEvent.Object);
+                }
+            });
+        }
+
+
+        //create a method to check internet connection
+
+        public bool CheckInternetConnection()
+        {
+            if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
+            {
+                return true;
+            }
+            return false;
         }
 
         public async Task SendMessage(string text, Action<UserControl> displaySentMessage)
@@ -78,7 +119,7 @@ namespace WFThesisManagementSystem.Services
             displaySentMessage(messageControl);
         }
 
-        private UserControl CreateMessageControl(Message message)
+        public UserControl CreateMessageControl(Message message)
         {
             UserControl messageControl;
 
@@ -100,6 +141,10 @@ namespace WFThesisManagementSystem.Services
             }
 
             return messageControl;
+        }
+        public void Dispose()
+        {
+            _firebaseClient.Dispose();
         }
     }
 }
