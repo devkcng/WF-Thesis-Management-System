@@ -30,20 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FStudentTaskPopUp));
             this.panelContainer = new System.Windows.Forms.Panel();
+            this.saveBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.editBtn = new Guna.UI2.WinForms.Guna2Button();
             this.ptbStatus = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.lblStudentname = new System.Windows.Forms.Label();
             this.btnSubmit = new Guna.UI2.WinForms.Guna2Button();
             this.lblSubmitDate = new System.Windows.Forms.Label();
             this.txtDocumentLink = new Guna.UI2.WinForms.Guna2TextBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -51,11 +49,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.editBtn = new Guna.UI2.WinForms.Guna2Button();
-            this.saveBtn = new Guna.UI2.WinForms.Guna2Button();
             this.panelContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbStatus)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -71,15 +66,11 @@
             this.panelContainer.Controls.Add(this.btnSubmit);
             this.panelContainer.Controls.Add(this.lblSubmitDate);
             this.panelContainer.Controls.Add(this.txtDocumentLink);
-            this.panelContainer.Controls.Add(this.pictureBox7);
             this.panelContainer.Controls.Add(this.pictureBox6);
             this.panelContainer.Controls.Add(this.pictureBox5);
             this.panelContainer.Controls.Add(this.pictureBox3);
             this.panelContainer.Controls.Add(this.pictureBox2);
-            this.panelContainer.Controls.Add(this.label13);
             this.panelContainer.Controls.Add(this.label15);
-            this.panelContainer.Controls.Add(this.label11);
-            this.panelContainer.Controls.Add(this.label10);
             this.panelContainer.Controls.Add(this.label9);
             this.panelContainer.Controls.Add(this.label7);
             this.panelContainer.Controls.Add(this.label8);
@@ -89,8 +80,47 @@
             this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContainer.Location = new System.Drawing.Point(0, 0);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(1198, 1326);
+            this.panelContainer.Size = new System.Drawing.Size(1198, 923);
             this.panelContainer.TabIndex = 0;
+            // 
+            // saveBtn
+            // 
+            this.saveBtn.BorderColor = System.Drawing.Color.White;
+            this.saveBtn.BorderRadius = 10;
+            this.saveBtn.BorderThickness = 3;
+            this.saveBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.saveBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.saveBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.saveBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.saveBtn.FillColor = System.Drawing.Color.Green;
+            this.saveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.saveBtn.ForeColor = System.Drawing.Color.White;
+            this.saveBtn.Location = new System.Drawing.Point(825, 799);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(243, 89);
+            this.saveBtn.TabIndex = 87;
+            this.saveBtn.Text = "SAVE";
+            this.saveBtn.Visible = false;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            // 
+            // editBtn
+            // 
+            this.editBtn.BorderRadius = 10;
+            this.editBtn.BorderThickness = 3;
+            this.editBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.editBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.editBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.editBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.editBtn.FillColor = System.Drawing.Color.White;
+            this.editBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.editBtn.ForeColor = System.Drawing.Color.Black;
+            this.editBtn.Location = new System.Drawing.Point(528, 799);
+            this.editBtn.Name = "editBtn";
+            this.editBtn.Size = new System.Drawing.Size(243, 89);
+            this.editBtn.TabIndex = 86;
+            this.editBtn.Text = "EDIT";
+            this.editBtn.Visible = false;
+            this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
             // 
             // ptbStatus
             // 
@@ -127,7 +157,7 @@
             this.btnSubmit.FillColor = System.Drawing.Color.Green;
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(919, 1038);
+            this.btnSubmit.Location = new System.Drawing.Point(825, 799);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(243, 89);
             this.btnSubmit.TabIndex = 84;
@@ -158,30 +188,19 @@
             this.txtDocumentLink.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDocumentLink.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtDocumentLink.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDocumentLink.Location = new System.Drawing.Point(33, 896);
+            this.txtDocumentLink.Location = new System.Drawing.Point(434, 656);
             this.txtDocumentLink.Margin = new System.Windows.Forms.Padding(7, 9, 7, 9);
             this.txtDocumentLink.Name = "txtDocumentLink";
             this.txtDocumentLink.PasswordChar = '\0';
             this.txtDocumentLink.PlaceholderText = "";
             this.txtDocumentLink.SelectedText = "";
-            this.txtDocumentLink.Size = new System.Drawing.Size(1129, 95);
+            this.txtDocumentLink.Size = new System.Drawing.Size(633, 52);
             this.txtDocumentLink.TabIndex = 81;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(67, 746);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(5);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(55, 36);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 80;
-            this.pictureBox7.TabStop = false;
             // 
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(67, 655);
+            this.pictureBox6.Location = new System.Drawing.Point(41, 656);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(5);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(55, 36);
@@ -222,17 +241,6 @@
             this.pictureBox2.TabIndex = 76;
             this.pictureBox2.TabStop = false;
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(46, 800);
-            this.label13.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(1130, 32);
-            this.label13.TabIndex = 75;
-            this.label13.Text = "---------------------------------------------------------------------------------" +
-    "-------------------------------------------";
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -244,35 +252,12 @@
             this.label15.Text = "---------------------------------------------------------------------------------" +
     "-------------------------------------------";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(23, 831);
-            this.label11.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(300, 46);
-            this.label11.TabIndex = 73;
-            this.label11.Text = "Document Link";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label10.Location = new System.Drawing.Point(147, 736);
-            this.label10.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(268, 39);
-            this.label10.TabIndex = 72;
-            this.label10.Text = "Add attachment";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label9.Location = new System.Drawing.Point(147, 645);
+            this.label9.Location = new System.Drawing.Point(106, 656);
             this.label9.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(257, 39);
@@ -337,51 +322,12 @@
             this.label4.TabIndex = 67;
             this.label4.Text = "Status";
             // 
-            // editBtn
-            // 
-            this.editBtn.BorderRadius = 10;
-            this.editBtn.BorderThickness = 3;
-            this.editBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.editBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.editBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.editBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.editBtn.FillColor = System.Drawing.Color.White;
-            this.editBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.editBtn.ForeColor = System.Drawing.Color.Black;
-            this.editBtn.Location = new System.Drawing.Point(622, 1038);
-            this.editBtn.Name = "editBtn";
-            this.editBtn.Size = new System.Drawing.Size(243, 89);
-            this.editBtn.TabIndex = 86;
-            this.editBtn.Text = "EDIT";
-            this.editBtn.Visible = false;
-            this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
-            // 
-            // saveBtn
-            // 
-            this.saveBtn.BorderColor = System.Drawing.Color.White;
-            this.saveBtn.BorderRadius = 10;
-            this.saveBtn.BorderThickness = 3;
-            this.saveBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.saveBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.saveBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.saveBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.saveBtn.FillColor = System.Drawing.Color.Green;
-            this.saveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.saveBtn.ForeColor = System.Drawing.Color.White;
-            this.saveBtn.Location = new System.Drawing.Point(919, 1038);
-            this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(243, 89);
-            this.saveBtn.TabIndex = 87;
-            this.saveBtn.Text = "SAVE";
-            this.saveBtn.Visible = false;
-            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
-            // 
             // FStudentTaskPopUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1198, 1326);
+            this.ClientSize = new System.Drawing.Size(1198, 923);
             this.Controls.Add(this.panelContainer);
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FStudentTaskPopUp";
@@ -391,7 +337,6 @@
             this.panelContainer.ResumeLayout(false);
             this.panelContainer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbStatus)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -405,15 +350,11 @@
         public System.Windows.Forms.Label lblStudentname;
         private Guna.UI2.WinForms.Guna2Button btnSubmit;
         public System.Windows.Forms.Label lblSubmitDate;
-        private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;

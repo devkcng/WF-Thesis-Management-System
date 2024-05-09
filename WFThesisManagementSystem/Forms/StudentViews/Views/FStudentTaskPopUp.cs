@@ -17,7 +17,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         public FStudentTaskPopUp(SubTask subTask, ThesisManagementContext context)
         {
             InitializeComponent();
-            this.Size = new Size(500, 600);
+            this.Size = new Size(470, 450);
             _context = context;
             _studentRepository = new StudentRepository(_context);
             _subTask = subTask;
@@ -38,10 +38,15 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            _subTask.document_link = txtDocumentLink.Text;
-            _subTaskService = new SubTaskService(_subTask, _context);
-            _subTaskService.UpdateSubTask();
-            this.Close();
+            if (txtDocumentLink.Text == "")
+                MessageBox.Show("The document link textbox is blank, please fill it");
+            else
+            {
+                _subTask.document_link = txtDocumentLink.Text;
+                _subTaskService = new SubTaskService(_subTask, _context);
+                _subTaskService.UpdateSubTask();
+                this.Close();
+            }
         }
 
         private void editBtn_Click(object sender, EventArgs e)
@@ -57,8 +62,9 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             lblSubmitDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
             if (_subTask.submit_day != null)
             {
-                ptbStatus.Image = Properties.Resources.photo_2024_04_02_16_52_38;
+                ptbStatus.Image = Properties.Resources.photo_2024_04_02_16_52_38__2_1;
                 txtDocumentLink.Enabled = false;
+                txtDocumentLink.PlaceholderText = _subTask.document_link;
                 btnSubmit.Hide();
                 editBtn.Show();
                 saveBtn.Show();
