@@ -134,7 +134,7 @@ namespace WFThesisManagementSystem.Forms.UC
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message);
+                        MessageBox.Show(ex.Message, "Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -202,9 +202,9 @@ namespace WFThesisManagementSystem.Forms.UC
 
             if (_notificationService.CheckSendNotification(_students))
             {
-                MessageBox.Show("Send To Student Success");
+                MessageBox.Show("Send To Student Success","Notification",MessageBoxButtons.OKCancel,MessageBoxIcon.Information);
             }
-            else MessageBox.Show("Send To Student Failture");
+            else MessageBox.Show("Send To Student Failture", "Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
 
         }
     }
