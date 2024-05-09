@@ -153,7 +153,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
                 }
                 else
                 {
-                    DialogResult result = MessageBox.Show("This subtask has been graded", "Notification", MessageBoxButtons.OKCancel);
+                    DialogResult result = MessageBox.Show("This subtask has been graded", "Notification", MessageBoxButtons.OKCancel,MessageBoxIcon.Information);
                     if (result == DialogResult.OK) { this.Hide(); }
                 }
                 if (_studentPointRepository.GetAll().FirstOrDefault(x => x.student_id == student.student_id) == null)
@@ -167,7 +167,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
                         var SubTaskPoint = _subtaskPointRepository.GetAll().FirstOrDefault(x => x.subtask_id == Subtask.subtask_id);
                         if (SubTaskPoint == null)
                         {
-                            DialogResult result = MessageBox.Show("The subtask is not finished yet so the score can be updated", "Notification", MessageBoxButtons.OKCancel);
+                            DialogResult result = MessageBox.Show("The subtask is not finished yet so the score can be updated", "Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                             if (result == DialogResult.OK) { this.Hide(); }
                             checkSubtaskPoint = false;
                         }
@@ -185,13 +185,13 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
                         studentPoint.studentpoint_id = IdGeneratorHelper.GenerateStudentPointId();
                         studentPoint.student_point = Point / CountSubtask;
                         _studentPointRepository.Add(studentPoint);
-                        DialogResult result = MessageBox.Show("Students have been graded", "Notification", MessageBoxButtons.OKCancel);
+                        DialogResult result = MessageBox.Show("Students have been graded", "Notification", MessageBoxButtons.OKCancel,MessageBoxIcon.Information);
                         if (result == DialogResult.OK) { this.Hide(); }
                     }
                 }
                 else
                 {
-                    DialogResult result = MessageBox.Show("Students have been graded", "Notification", MessageBoxButtons.OKCancel);
+                    DialogResult result = MessageBox.Show("Students have been graded", "Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                     if (result == DialogResult.OK) { this.Hide(); }
                 }
             }
