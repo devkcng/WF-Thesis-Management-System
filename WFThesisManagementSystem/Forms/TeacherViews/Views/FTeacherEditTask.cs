@@ -38,7 +38,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.ToString(),"Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
         }
         private void Delete(object sender, EventArgs e)
