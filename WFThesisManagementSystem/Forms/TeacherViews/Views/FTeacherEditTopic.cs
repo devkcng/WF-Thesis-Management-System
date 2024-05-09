@@ -48,11 +48,12 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             if (_topicService.CheckTopicId(ucTeacherEditTopic1.txtTopicId.Text))
             {
                 var topic = _topicRepository.GetById(int.Parse(ucTeacherEditTopic1.txtTopicId.Text));
-                _topicRepository.Delete(topic);
-                MessageBox.Show("Delete Success");
+               
+                DialogResult result = MessageBox.Show("Delete Success", "Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if(result == DialogResult.OK) _topicRepository.Delete(topic);
                 this.Hide();
             }
-            else MessageBox.Show("Error!!!");
+            else MessageBox.Show("Error!!!", "Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             //Topic topic = new Topic(int.Parse(ucTeacherEditTopic1.txtTopicId.Text), ucTeacherEditTopic1.txtTopicName.Text, ucTeacherEditTopic1.txtTopicDescription.Text, ucTeacherEditTopic1.cbxTopicCategory.SelectedItem.ToString(), ucTeacherEditTopic1.cbxTopicTechnology.SelectedItem.ToString(), ucTeacherEditTopic1.txtTopicRequirement.Text, int.Parse(ucTeacherEditTopic1.cbxNumber.SelectedItem.ToString()));
             ////TopicDAO topicDAO = new TopicDAO();
 
@@ -89,12 +90,12 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
                 if (_topicService.AlreadyCreateTopic())
                 {
                     _topicRepository.Update(_topic);
-                    MessageBox.Show("Update Success");
+                    MessageBox.Show("Update Success", "Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                     this.Hide();
                 }
-                else MessageBox.Show("Error!!!");
+                else MessageBox.Show("Error!!!", "Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
-            else MessageBox.Show("Error!!!");
+            else MessageBox.Show("Error!!!", "Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             //if (ucTeacherEditTopic1.txtTopicId.Text != "" && ucTeacherEditTopic1.txtTopicId.Text != "" && ucTeacherEditTopic1.txtTopicName.Text != "" && ucTeacherEditTopic1.txtTopicDescription.Text != "" && ucTeacherEditTopic1.cbxTopicCategory.SelectedItem.ToString() != "" && ucTeacherEditTopic1.cbxTopicTechnology.SelectedItem.ToString() != "" && ucTeacherEditTopic1.txtTopicRequirement.Text != "" && ucTeacherEditTopic1.cbxNumber.SelectedItem.ToString() != "")
             //{
             //    for (int i = 0; i <= ucTeacherEditTopic1.txtTopicId.Text.Length - 1; i++)
