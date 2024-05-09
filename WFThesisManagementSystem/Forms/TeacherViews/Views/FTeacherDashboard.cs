@@ -25,6 +25,8 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         TeacherService _teacherService;
         SubTaskRepository _subtaskRepository;
         UserSessionHelper _userSessionHelper = UserSessionHelper.Instance;
+        TeacherRepository _teacherRepository;
+        StatisticsService _statisticsService;
 
         int GroupIdCreate;
 
@@ -38,6 +40,8 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             _studentRepository = new StudentRepository(_context);
             _subtaskRepository = new SubTaskRepository(_context);
             _teacherService = new TeacherService(_userSessionHelper.UserID);
+            _teacherRepository = new TeacherRepository(_context);
+            _statisticsService = new StatisticsService(_context);
             InitializeComponent();
             btnNotification.Click += createNotification;
 
@@ -507,6 +511,18 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             panelContainer.Controls.Clear();
             UcTeacherAnalytic ucTeacherAnalytic = new UcTeacherAnalytic();
             ucTeacherAnalytic.Dock = DockStyle.Fill;
+            foreach (var teacher in _teacherRepository.GetAll())
+            {
+                string Comment;
+
+                double Point = 10 - 0.5 * _statisticsService.CountStudentComplete(teacher.teacher_id, 0)- 0.25*_statisticsService.CountStudentsAveragePoint(teacher.teacher_id,0);
+                if (Point >= 9 && Point <= 10) Comment = "Excellent";
+                else if (Point >= 7.5 && Point < 9) Comment = "Very good";
+                else if (Point >= 6.5 && Point < 7.5) Comment = "Good";
+                else Comment = "Average";
+                ucTeacherAnalytic.dgvTeacherRanking.Rows.Add($"{teacher.teacher_name}", $"{teacher.subject_taught}", $"{_statisticsService.CountStudentsAveragePoint(teacher.teacher_id, 0)}",$"{_statisticsService.CountStudentsAveragePoint(teacher.teacher_id, 1)}", $"{_statisticsService.CountStudentsAveragePoint(teacher.teacher_id, 2)}", $"{_statisticsService.CountStudentComplete(teacher.teacher_id,1)}",Comment);
+            }
+            //ucTeacherAnalytic.dgvTeacherRanking.DataSource
             panelContainer.Controls.Add(ucTeacherAnalytic);
         }
 
