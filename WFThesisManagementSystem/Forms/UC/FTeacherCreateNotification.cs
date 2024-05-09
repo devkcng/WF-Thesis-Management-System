@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using WFThesisManagementSystem.Helper;
 using WFThesisManagementSystem.Models;
@@ -16,6 +17,7 @@ namespace WFThesisManagementSystem.Forms.UC
         public FTeacherCreateNotification(ThesisManagementContext context)
         {
             InitializeComponent();
+            this.Size = new Size(600, 600);
             ucCreateNotification1.btnClear.Click += Clear;
             ucCreateNotification1.btnDone.Click += Save;
             ucCreateNotification1.btnClose.Click += Close;
