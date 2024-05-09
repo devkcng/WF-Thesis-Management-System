@@ -43,7 +43,8 @@ namespace WFThesisManagementSystem.Services
 
             _taskRepository.Add(task);
 
-            MessageBox.Show("Created");
+
+            MessageBox.Show("Task Created");
         }
         // handle logic of updating a task by teacher
         public void UpdateTask()
