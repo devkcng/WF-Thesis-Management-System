@@ -638,9 +638,16 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             dataTable.Columns.Add("SubTaskPoint", typeof(float));
             // Thêm dữ liệu vào DataTable
             foreach (var subTask in subTaskList)
-            {
-                var subTaskPoint = _subtaskPointRepository.GetBySubtaskId(subTask.subtask_id).subtask_point;
-                dataTable.Rows.Add(subTask.subtask_name, subTaskPoint);
+            {   
+               if (subTask.submit_day != null)
+{
+    var subTaskPoint = _subtaskPointRepository.GetBySubtaskId(subTask.subtask_id).subtask_point;
+
+    if (subTaskPoint != null)
+    {
+        dataTable.Rows.Add(subTask.subtask_name, subTaskPoint);
+    }
+}
             }
 
             // Gán DataTable cho DataGridView
