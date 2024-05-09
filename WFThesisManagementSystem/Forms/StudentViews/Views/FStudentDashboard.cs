@@ -313,7 +313,12 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         {
             var groupID = _studentRepository.GetById(_userSessionHelper.UserID).group_id;
             var groupTaskList = _taskRepository.GetByGroupID(groupID.Value);
-            var submitDates = groupTaskList.Select(groupTask => groupTask.due_date);
+            var taskSubmitDates = groupTaskList.Select(groupTask => groupTask.due_date);
+            var subTaskList = _subtaskRepository.GetAllByStudentId(_userSessionHelper.UserID);
+            var subTaskSubmitDates = subTaskList.Select(subtask => subtask.due_date);
+            NotificationService notificationService = new NotificationService(_context);
+            var onlineMeetings = notificationService.GetTypesStudents("Online Meeting", _userSessionHelper.UserID);
+            var onlineMeetingDates = onlineMeetings.Select(onlineMeeting => onlineMeeting.timestamp);
 
             ucStudentCalendar.ucCalendar1.flpDayContainer.Visible = false;
             ucStudentCalendar.ucCalendar1.flpDayContainer.Controls.Clear();
@@ -337,10 +342,20 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                 uCDay.days(i);
 
                 DateTime currentDate = new DateTime(ucStudentCalendar.ucCalendar1.year, ucStudentCalendar.ucCalendar1.month, i);
-                if (submitDates.Contains(currentDate))
+                if (taskSubmitDates.Contains(currentDate))
                 {
                     uCDay.ptb1.FillColor = Color.Red;
                     uCDay.ptb1.Visible = true;
+                }
+                if(subTaskSubmitDates.Contains(currentDate))
+                {
+                    uCDay.ptb2.FillColor = Color.Yellow;
+                    uCDay.ptb2.Visible = true;
+                }
+                if (onlineMeetingDates.Contains(currentDate))
+                {
+                    uCDay.ptb3.FillColor = Color.Green;
+                    uCDay.ptb3.Visible = true;
                 }
                 ucStudentCalendar.ucCalendar1.flpDayContainer.Controls.Add(uCDay);
             }
