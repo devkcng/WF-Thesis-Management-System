@@ -43,20 +43,21 @@ namespace WFThesisManagementSystem.Services
 
             _taskRepository.Add(task);
 
-            MessageBox.Show("Created");
+            MessageBox.Show("Created", "Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
         }
         // handle logic of updating a task by teacher
         public void UpdateTask()
         {
             _taskRepository.Update(_task);
-            MessageBox.Show("Updated");
+            MessageBox.Show("Updated", "Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
         }
 
         // handle logic of deleting a task by teacher
         public void DeleteTask()
         {
-            _taskRepository.Delete(_task);
-            MessageBox.Show("Deleted");
+           
+           DialogResult result = MessageBox.Show("Deleted", "Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if(result == DialogResult.OK) _taskRepository.Delete(_task);
         }
 
         // handle logic of submiiing a task by student
