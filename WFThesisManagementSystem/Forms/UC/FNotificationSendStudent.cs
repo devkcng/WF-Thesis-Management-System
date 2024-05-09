@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 using WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl;
 using WFThesisManagementSystem.Models;
@@ -23,6 +24,7 @@ namespace WFThesisManagementSystem.Forms.UC
         public FNotificationSendStudent(NotificationMessage message, ThesisManagementContext context)
         {
             InitializeComponent();
+            this.Size = new Size(1100,700);
             _notificationMessage = message;
             _context = context;
             _notificationRepository = new NotificationRepository(_context);
@@ -198,7 +200,7 @@ namespace WFThesisManagementSystem.Forms.UC
         private void Send(object sender, EventArgs e)
         {
 
-            _notificationService.SendToStudent(_students, _notificationMessage);
+            _notificationService.SendToStudents(_students, _notificationMessage);
 
             if (_notificationService.CheckSendNotification(_students))
             {
