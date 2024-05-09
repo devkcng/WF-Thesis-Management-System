@@ -25,7 +25,8 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         TeacherService _teacherService;
         SubTaskRepository _subtaskRepository;
         UserSessionHelper _userSessionHelper = UserSessionHelper.Instance;
-
+        StudentPointRepository _studentPointRepository;
+        SubtaskPointRepository _subtaskPointRepository;
         int GroupIdCreate;
 
         public FTeacherDashboard()
@@ -37,6 +38,8 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             _registerQueue = new RegisterQueueRepository(_context);
             _studentRepository = new StudentRepository(_context);
             _subtaskRepository = new SubTaskRepository(_context);
+            _studentPointRepository = new StudentPointRepository(_context);
+            _subtaskPointRepository = new SubtaskPointRepository(_context);
             _teacherService = new TeacherService(_userSessionHelper.UserID);
             InitializeComponent();
             btnNotification.Click += createNotification;
@@ -102,6 +105,8 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             uCProgress.Dock = DockStyle.Fill;
             uCProgress._cbGroupCategoryChanged += CbGroupCategory_ValueChanged;
             uCProgress._cbMemberCategoryChanged += CbMemberCategory_ValueChanged;
+            uCProgress._cbDateTimeChanged += CbDateTime_ValueChanged;
+
             ListUCProgressComponents(uCProgress);
             panelContainer.Controls.Add(uCProgress);
         }
@@ -370,6 +375,57 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
                 LoadSubTaskProgressChart(uCProgress.SubTaskProgessChart, subTaskList.ToList());
             }
         }
+        private void CbDateTime_ValueChanged(object sender, EventArgs e)
+        {
+            UCProgress uCProgress = sender as UCProgress;
+            string selectedValue = uCProgress.cbxDateTime.SelectedItem.ToString();
+            dynamic groupName = uCProgress.cbxGroupCategory.SelectedItem;
+            var studentGroup = (StudentGroup)_studentGroupRepository.GetByGroupName((string)groupName);
+            var taskGroupList = _taskRepository.GetByGroupID(studentGroup.group_id);
+            List<SubTask> subTaskList = new List<SubTask>();
+            foreach (var task in taskGroupList)
+            {
+                var subTasks = _subtaskRepository.GetAllByTaskId(task.task_id);
+                subTaskList.AddRange(subTasks);
+            }
+            var filterHelper = new FilterByDayHelper(subTaskList, _context);
+
+            if (selectedValue == "Final Point")
+            {
+                var students = _studentRepository.GetAllByGroupId(studentGroup.group_id);
+                List<StudentPoint> studentPointList = new List<StudentPoint>();
+
+                foreach (var student in students)
+                {
+                    var studentPoints = _studentPointRepository.GetByStudentId(_userSessionHelper.UserID);
+                    studentPointList.Add(studentPoints);
+                }
+                if (studentPointList.Count>0)
+                {
+                    LoadFinalPointDataGridView(uCProgress.dgvPoint, studentPointList);
+                }
+            }
+            else
+            {
+                if (selectedValue == "This Week")
+                {
+                    subTaskList = filterHelper.FilterSubTaskByWeek();
+                }
+                else if (selectedValue == "This Month")
+                {
+                    subTaskList = filterHelper.FilterSubTaskByMonth();
+                }
+                else if (selectedValue == "Last Month")
+                {
+                    subTaskList = filterHelper.FilterSubTaskByLastMonth();
+                }
+                else if (selectedValue == "All")
+                {
+
+                }
+                LoadPointDataGridView(uCProgress.dgvPoint, subTaskList);
+            }
+        }
         //private void CbDateTimeCategory_ValueChanged(object sender, EventArgs e)
         //{
         //    UCProgress uCProgress = sender as UCProgress;
@@ -419,14 +475,35 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             {
                 var student = _studentRepository.GetById(subTask.student_id.Value);
                 var studentGroup = _studentGroupRepository.GetById(student.group_id.Value);
+                var subTaskPoint = _subtaskPointRepository.GetBySubtaskId(subTask.subtask_id);
 
-                dataTable.Rows.Add(subTask.subtask_name, student.student_name, studentGroup.group_name, 10);
+                dataTable.Rows.Add(subTask.subtask_name, student.student_name, studentGroup.group_name, subTaskPoint);
             }
 
             // Gán DataTable cho DataGridView
             pointDataGridView.DataSource = dataTable;
         }
+        private void LoadFinalPointDataGridView(DataGridView pointDataGridView, List<StudentPoint> studentPointList)
+        {
+            // Xóa các cột hiện tại của DataGridView
+            pointDataGridView.Columns.Clear();
 
+            // Tạo một DataTable mới
+            DataTable dataTable = new DataTable();
+
+            // Thêm các cột vào DataTable
+            dataTable.Columns.Add("Student Name", typeof(string));
+            dataTable.Columns.Add("Student Point", typeof(float));
+            // Thêm dữ liệu vào DataTable
+            foreach (var studentPoint in studentPointList)
+            {
+                var student = _studentRepository.GetById(_userSessionHelper.UserID);
+                dataTable.Rows.Add(student.student_name, studentPoint.student_point);
+            }
+
+            // Gán DataTable cho DataGridView
+            pointDataGridView.DataSource = dataTable;
+        }
         private void LoadSubTaskProgressChart(Chart subTaskChart, List<SubTask> subTaskList)
         {
             SubTask subTask = subTaskList.FirstOrDefault(subtask => subtask != null);
