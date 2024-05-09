@@ -330,7 +330,6 @@
             this.cbxDateTime.ItemHeight = 30;
             this.cbxDateTime.Items.AddRange(new object[] {
             "This Week",
-            "Last Week",
             "This Month",
             "Last Month",
             "All",
