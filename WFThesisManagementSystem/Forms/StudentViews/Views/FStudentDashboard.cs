@@ -105,7 +105,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                 if (groupTask.submit_day != null) { uCTask.ptbStatus.Image = Properties.Resources.photo_2024_04_02_16_52_38__2_1; }
                 else { uCTask.ptbStatus.Image = Properties.Resources.photo_2024_04_02_16_52_38; }
                 uCTask.Clicked += ucTask_Clicked;
-                uCTask.ChatButtonClicked += btnChat_Clicked;
+                uCTask.ChatButtonClicked += btnChatOnClicked;
                 uCStudentTask.flpGroupTaskView.Controls.Add(uCTask);
             }
         }
@@ -440,35 +440,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                 if (groupTask.submit_day != null) { uCTask.ptbStatus.Image = Properties.Resources.photo_2024_04_02_16_52_38__2_1; }
                 else { uCTask.ptbStatus.Image = Properties.Resources.photo_2024_04_02_16_52_38; }
                 uCTask.Clicked += ucTask_Clicked;
-                uCTask.ChatButtonClicked += btnChat_Clicked;
-                uCTask.Size = new Size(490, 150);
-                uCStudentTask.flpGroupTaskView.Controls.Add(uCTask);
-
-            }
-
-
-
-            var subTaskList = _subtaskRepository.GetAllByStudentId(_userSessionHelper.UserID);
-
-            //add data to subtask flow layout panel
-            uCStudentTask.flpAllInvidualTasksView.Controls.Clear();
-            foreach (var subTask in subTaskList)
-            {
-
-                UCInvidualTask uCInvidualTask = new UCInvidualTask();
-                uCInvidualTask.Size = new Size(450, 150);
-                uCInvidualTask.lblName.Text = subTask.subtask_name;
-                uCInvidualTask._id = subTask.subtask_id;
-                uCInvidualTask.txtProjectDetail.Text = subTask.subtask_description;
-                var deadline = subTask.due_date.Value;
-                uCInvidualTask.lblDeadline.Text = deadline.ToString("dd/MM/yyyy");
-                if (subTask.submit_day != null) { uCInvidualTask.ptbStatus.Image = Properties.Resources.photo_2024_04_02_16_52_38__2_; }
-                else { uCInvidualTask.ptbStatus.Image = Properties.Resources.photo_2024_04_02_16_52_38; }
-                uCInvidualTask.Clicked += ucInvidual_Clicked;
-                uCStudentTask.flpAllInvidualTasksView.Controls.Add(uCInvidualTask);
-            }
-        }
-
+                uCTask.ChatButtonClicked += btnChatOnClicked;
                 flp.Controls.Add(uCTask);
             }
 
@@ -553,12 +525,13 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             panelContainer.Controls.Add(ucsTudentSubTasks2);
         }
 
-        private void btnChat_Clicked(object sender, EventArgs e)
+        private void btnChatOnClicked(object sender, EventArgs e)
         {
-            UCTask uCTask = sender as UCTask;
-            var task = _taskRepository.GetById(uCTask.Id);
-            FChat fChat = new FChat(task);
-            fChat.Show();
+           UCTask uCTask = sender as UCTask;
+           var task = _taskRepository.GetById(uCTask.Id);
+
+           FChat fChat = new FChat(task);
+           fChat.Show();
         }
 
         #endregion
