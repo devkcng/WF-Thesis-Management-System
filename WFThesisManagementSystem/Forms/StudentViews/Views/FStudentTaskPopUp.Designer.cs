@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FStudentTaskPopUp));
             this.panelContainer = new System.Windows.Forms.Panel();
-            this.ptbStatus1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.ptbStatus = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.lblStudentname = new System.Windows.Forms.Label();
             this.btnSubmit = new Guna.UI2.WinForms.Guna2Button();
             this.lblSubmitDate = new System.Windows.Forms.Label();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtDocumentLink = new Guna.UI2.WinForms.Guna2TextBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -51,8 +51,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.editBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.saveBtn = new Guna.UI2.WinForms.Guna2Button();
             this.panelContainer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbStatus1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -62,11 +64,13 @@
             // 
             // panelContainer
             // 
-            this.panelContainer.Controls.Add(this.ptbStatus1);
+            this.panelContainer.Controls.Add(this.saveBtn);
+            this.panelContainer.Controls.Add(this.editBtn);
+            this.panelContainer.Controls.Add(this.ptbStatus);
             this.panelContainer.Controls.Add(this.lblStudentname);
             this.panelContainer.Controls.Add(this.btnSubmit);
             this.panelContainer.Controls.Add(this.lblSubmitDate);
-            this.panelContainer.Controls.Add(this.guna2TextBox1);
+            this.panelContainer.Controls.Add(this.txtDocumentLink);
             this.panelContainer.Controls.Add(this.pictureBox7);
             this.panelContainer.Controls.Add(this.pictureBox6);
             this.panelContainer.Controls.Add(this.pictureBox5);
@@ -88,17 +92,17 @@
             this.panelContainer.Size = new System.Drawing.Size(1198, 1326);
             this.panelContainer.TabIndex = 0;
             // 
-            // ptbStatus1
+            // ptbStatus
             // 
-            this.ptbStatus1.Image = global::WFThesisManagementSystem.Properties.Resources.photo_2024_04_02_16_52_38;
-            this.ptbStatus1.ImageRotate = 0F;
-            this.ptbStatus1.Location = new System.Drawing.Point(375, 193);
-            this.ptbStatus1.Name = "ptbStatus1";
-            this.ptbStatus1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.ptbStatus1.Size = new System.Drawing.Size(50, 43);
-            this.ptbStatus1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbStatus1.TabIndex = 85;
-            this.ptbStatus1.TabStop = false;
+            this.ptbStatus.Image = global::WFThesisManagementSystem.Properties.Resources.photo_2024_04_02_16_52_38;
+            this.ptbStatus.ImageRotate = 0F;
+            this.ptbStatus.Location = new System.Drawing.Point(375, 193);
+            this.ptbStatus.Name = "ptbStatus";
+            this.ptbStatus.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.ptbStatus.Size = new System.Drawing.Size(50, 43);
+            this.ptbStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbStatus.TabIndex = 85;
+            this.ptbStatus.TabStop = false;
             // 
             // lblStudentname
             // 
@@ -123,7 +127,7 @@
             this.btnSubmit.FillColor = System.Drawing.Color.Green;
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(919, 1100);
+            this.btnSubmit.Location = new System.Drawing.Point(919, 1038);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(243, 89);
             this.btnSubmit.TabIndex = 84;
@@ -142,26 +146,26 @@
             this.lblSubmitDate.TabIndex = 82;
             this.lblSubmitDate.Text = "14/3/2024";
             // 
-            // guna2TextBox1
+            // txtDocumentLink
             // 
-            this.guna2TextBox1.BorderRadius = 10;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(33, 896);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(7, 9, 7, 9);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(1129, 160);
-            this.guna2TextBox1.TabIndex = 81;
+            this.txtDocumentLink.BorderRadius = 10;
+            this.txtDocumentLink.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDocumentLink.DefaultText = "";
+            this.txtDocumentLink.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDocumentLink.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDocumentLink.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDocumentLink.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDocumentLink.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDocumentLink.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtDocumentLink.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDocumentLink.Location = new System.Drawing.Point(33, 896);
+            this.txtDocumentLink.Margin = new System.Windows.Forms.Padding(7, 9, 7, 9);
+            this.txtDocumentLink.Name = "txtDocumentLink";
+            this.txtDocumentLink.PasswordChar = '\0';
+            this.txtDocumentLink.PlaceholderText = "";
+            this.txtDocumentLink.SelectedText = "";
+            this.txtDocumentLink.Size = new System.Drawing.Size(1129, 95);
+            this.txtDocumentLink.TabIndex = 81;
             // 
             // pictureBox7
             // 
@@ -247,9 +251,9 @@
             this.label11.Location = new System.Drawing.Point(23, 831);
             this.label11.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(232, 46);
+            this.label11.Size = new System.Drawing.Size(300, 46);
             this.label11.TabIndex = 73;
-            this.label11.Text = "Description";
+            this.label11.Text = "Document Link";
             // 
             // label10
             // 
@@ -333,6 +337,45 @@
             this.label4.TabIndex = 67;
             this.label4.Text = "Status";
             // 
+            // editBtn
+            // 
+            this.editBtn.BorderRadius = 10;
+            this.editBtn.BorderThickness = 3;
+            this.editBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.editBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.editBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.editBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.editBtn.FillColor = System.Drawing.Color.White;
+            this.editBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.editBtn.ForeColor = System.Drawing.Color.Black;
+            this.editBtn.Location = new System.Drawing.Point(622, 1038);
+            this.editBtn.Name = "editBtn";
+            this.editBtn.Size = new System.Drawing.Size(243, 89);
+            this.editBtn.TabIndex = 86;
+            this.editBtn.Text = "EDIT";
+            this.editBtn.Visible = false;
+            this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
+            // 
+            // saveBtn
+            // 
+            this.saveBtn.BorderColor = System.Drawing.Color.White;
+            this.saveBtn.BorderRadius = 10;
+            this.saveBtn.BorderThickness = 3;
+            this.saveBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.saveBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.saveBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.saveBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.saveBtn.FillColor = System.Drawing.Color.Green;
+            this.saveBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.saveBtn.ForeColor = System.Drawing.Color.White;
+            this.saveBtn.Location = new System.Drawing.Point(919, 1038);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(243, 89);
+            this.saveBtn.TabIndex = 87;
+            this.saveBtn.Text = "SAVE";
+            this.saveBtn.Visible = false;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            // 
             // FStudentTaskPopUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
@@ -344,9 +387,10 @@
             this.Name = "FStudentTaskPopUp";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FStudentTaskPopUp";
+            this.Load += new System.EventHandler(this.FStudentTaskPopUp_Load);
             this.panelContainer.ResumeLayout(false);
             this.panelContainer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbStatus1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -357,11 +401,10 @@
         }
 
         #endregion
-        public Guna.UI2.WinForms.Guna2CirclePictureBox ptbStatus1;
+        public Guna.UI2.WinForms.Guna2CirclePictureBox ptbStatus;
         public System.Windows.Forms.Label lblStudentname;
         private Guna.UI2.WinForms.Guna2Button btnSubmit;
         public System.Windows.Forms.Label lblSubmitDate;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox5;
@@ -379,5 +422,8 @@
         private System.Windows.Forms.Label label4;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         public System.Windows.Forms.Panel panelContainer;
+        public Guna.UI2.WinForms.Guna2TextBox txtDocumentLink;
+        private Guna.UI2.WinForms.Guna2Button saveBtn;
+        private Guna.UI2.WinForms.Guna2Button editBtn;
     }
 }

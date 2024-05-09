@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.dtpEndDay = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.dtpStartDay = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.lblTo = new System.Windows.Forms.Label();
+            this.lblFrom = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel4 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.flpAllTasks = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2CustomGradientPanel6 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
@@ -39,10 +43,6 @@
             this.flpAllGroupView = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2CustomGradientPanel5 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.dtpEndDay = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.dtpStartDay = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.lblTo = new System.Windows.Forms.Label();
-            this.lblFrom = new System.Windows.Forms.Label();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.guna2CustomGradientPanel4.SuspendLayout();
             this.guna2CustomGradientPanel6.SuspendLayout();
@@ -66,6 +66,60 @@
             this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(2756, 102);
             this.guna2CustomGradientPanel1.TabIndex = 15;
+            // 
+            // dtpEndDay
+            // 
+            this.dtpEndDay.BorderRadius = 10;
+            this.dtpEndDay.Checked = true;
+            this.dtpEndDay.FillColor = System.Drawing.Color.Tomato;
+            this.dtpEndDay.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpEndDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpEndDay.Location = new System.Drawing.Point(2423, 14);
+            this.dtpEndDay.Margin = new System.Windows.Forms.Padding(5);
+            this.dtpEndDay.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpEndDay.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpEndDay.Name = "dtpEndDay";
+            this.dtpEndDay.Size = new System.Drawing.Size(290, 68);
+            this.dtpEndDay.TabIndex = 54;
+            this.dtpEndDay.Value = new System.DateTime(2024, 4, 2, 16, 36, 24, 159);
+            // 
+            // dtpStartDay
+            // 
+            this.dtpStartDay.BorderRadius = 10;
+            this.dtpStartDay.Checked = true;
+            this.dtpStartDay.FillColor = System.Drawing.Color.Green;
+            this.dtpStartDay.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpStartDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpStartDay.Location = new System.Drawing.Point(1913, 14);
+            this.dtpStartDay.Margin = new System.Windows.Forms.Padding(5);
+            this.dtpStartDay.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpStartDay.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpStartDay.Name = "dtpStartDay";
+            this.dtpStartDay.Size = new System.Drawing.Size(285, 70);
+            this.dtpStartDay.TabIndex = 53;
+            this.dtpStartDay.Value = new System.DateTime(2024, 4, 2, 15, 42, 12, 488);
+            // 
+            // lblTo
+            // 
+            this.lblTo.AutoSize = true;
+            this.lblTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTo.Location = new System.Drawing.Point(2306, 20);
+            this.lblTo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblTo.Name = "lblTo";
+            this.lblTo.Size = new System.Drawing.Size(78, 54);
+            this.lblTo.TabIndex = 52;
+            this.lblTo.Text = "To";
+            // 
+            // lblFrom
+            // 
+            this.lblFrom.AutoSize = true;
+            this.lblFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFrom.Location = new System.Drawing.Point(1731, 20);
+            this.lblFrom.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblFrom.Name = "lblFrom";
+            this.lblFrom.Size = new System.Drawing.Size(133, 54);
+            this.lblFrom.TabIndex = 51;
+            this.lblFrom.Text = "From";
             // 
             // guna2CustomGradientPanel4
             // 
@@ -112,7 +166,7 @@
             this.btnCreate.FillColor = System.Drawing.Color.White;
             this.btnCreate.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreate.ForeColor = System.Drawing.Color.Black;
-            this.btnCreate.Location = new System.Drawing.Point(1277, 21);
+            this.btnCreate.Location = new System.Drawing.Point(1209, 21);
             this.btnCreate.Margin = new System.Windows.Forms.Padding(5);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(206, 70);
@@ -186,60 +240,6 @@
             this.label2.Size = new System.Drawing.Size(303, 62);
             this.label2.TabIndex = 1;
             this.label2.Text = "Group Task";
-            // 
-            // dtpEndDay
-            // 
-            this.dtpEndDay.BorderRadius = 10;
-            this.dtpEndDay.Checked = true;
-            this.dtpEndDay.FillColor = System.Drawing.Color.Tomato;
-            this.dtpEndDay.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpEndDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEndDay.Location = new System.Drawing.Point(2423, 14);
-            this.dtpEndDay.Margin = new System.Windows.Forms.Padding(5);
-            this.dtpEndDay.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpEndDay.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpEndDay.Name = "dtpEndDay";
-            this.dtpEndDay.Size = new System.Drawing.Size(290, 68);
-            this.dtpEndDay.TabIndex = 54;
-            this.dtpEndDay.Value = new System.DateTime(2024, 4, 2, 16, 36, 24, 159);
-            // 
-            // dtpStartDay
-            // 
-            this.dtpStartDay.BorderRadius = 10;
-            this.dtpStartDay.Checked = true;
-            this.dtpStartDay.FillColor = System.Drawing.Color.Green;
-            this.dtpStartDay.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpStartDay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpStartDay.Location = new System.Drawing.Point(1913, 14);
-            this.dtpStartDay.Margin = new System.Windows.Forms.Padding(5);
-            this.dtpStartDay.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpStartDay.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpStartDay.Name = "dtpStartDay";
-            this.dtpStartDay.Size = new System.Drawing.Size(285, 70);
-            this.dtpStartDay.TabIndex = 53;
-            this.dtpStartDay.Value = new System.DateTime(2024, 4, 2, 15, 42, 12, 488);
-            // 
-            // lblTo
-            // 
-            this.lblTo.AutoSize = true;
-            this.lblTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTo.Location = new System.Drawing.Point(2306, 20);
-            this.lblTo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblTo.Name = "lblTo";
-            this.lblTo.Size = new System.Drawing.Size(78, 54);
-            this.lblTo.TabIndex = 52;
-            this.lblTo.Text = "To";
-            // 
-            // lblFrom
-            // 
-            this.lblFrom.AutoSize = true;
-            this.lblFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFrom.Location = new System.Drawing.Point(1731, 20);
-            this.lblFrom.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblFrom.Name = "lblFrom";
-            this.lblFrom.Size = new System.Drawing.Size(133, 54);
-            this.lblFrom.TabIndex = 51;
-            this.lblFrom.Text = "From";
             // 
             // UcTeacherAllTask
             // 

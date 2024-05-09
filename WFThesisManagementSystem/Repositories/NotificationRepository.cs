@@ -32,14 +32,18 @@ namespace WFThesisManagementSystem.Repositories
         {
             return _context.Notifications.FirstOrDefault(x => x.notification_id == id);
         }
-        public Notification GetByIdRecipient(int id)
-        {
-            return _context.Notifications.FirstOrDefault(x => x.recipient_id == id);
-        }
+
         public void Update(Notification entity)
         {
             _context.Entry(entity).State = System.Data.Entity.EntityState.Modified;
             _context.SaveChanges();
         }
+
+        public Notification GetByIdRecipient(int id)
+        {
+            return _context.Notifications.FirstOrDefault(x => x.recipient_id == id);
+        }
+
+
     }
 }

@@ -154,12 +154,6 @@
     <Compile Include="Forms\FNotification.Designer.cs">
       <DependentUpon>FNotification.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\StudentViews\StudentUserControl\UCInvidualTask.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\StudentViews\StudentUserControl\UCInvidualTask.Designer.cs">
-      <DependentUpon>UCInvidualTask.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\StudentViews\StudentUserControl\UCProgress.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -596,9 +590,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FNotification.resx">
       <DependentUpon>FNotification.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCInvidualTask.resx">
-      <DependentUpon>UCInvidualTask.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCProgress.resx">
       <DependentUpon>UCProgress.cs</DependentUpon>

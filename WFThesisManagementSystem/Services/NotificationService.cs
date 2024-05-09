@@ -41,7 +41,7 @@ namespace WFThesisManagementSystem.Services
             return notification;
         }
 
-        public void SendToStudent(List<Student> students, NotificationMessage message)
+        public void SendToStudents(List<Student> students, NotificationMessage message)
         {
             // students = new List<Student>();
             foreach (Student student in students)
@@ -51,6 +51,12 @@ namespace WFThesisManagementSystem.Services
                 _notificationRepository.Add(notification);
             }
 
+        }
+        public void SendToStudent(Student student, NotificationMessage message)
+        { 
+            var notification = CreateNotification(message);
+            notification.recipient_id = student.student_id;
+            _notificationRepository.Add(notification);
         }
         public bool CheckSendNotification(List<Student> students)
         {
@@ -69,6 +75,14 @@ namespace WFThesisManagementSystem.Services
             result = _notificationRepository.GetAll().Where(x => x.notification_type == type && x.sender_id == id).ToList();
             return result;
         }
+
+        public List<Notification> GetTypesStudents(string type, int id)
+        {
+            List<Notification> result = new List<Notification>();
+            result = _notificationRepository.GetAll().Where(x => x.notification_type == type && x.recipient_id == id).ToList();
+            return result;
+        }
+
         public List<Notification> GetSend(int id)
         {
             List<Notification> result = new List<Notification>();

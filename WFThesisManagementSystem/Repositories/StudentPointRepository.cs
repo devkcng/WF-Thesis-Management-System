@@ -38,5 +38,10 @@ namespace WFThesisManagementSystem.Repositories
             _context.Entry(entity).State = System.Data.Entity.EntityState.Modified;
             _context.SaveChanges();
         }
+        public StudentPoint GetByStudentId(int studentID)
+        {
+            return _context.StudentPoints.FirstOrDefault(x => x.student_id == studentID);
+        }
+
     }
 }

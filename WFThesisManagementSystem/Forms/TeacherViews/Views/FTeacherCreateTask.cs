@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
+using WFThesisManagementSystem.Forms.UC;
 using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.Repositories;
 using WFThesisManagementSystem.Services;
@@ -11,14 +13,18 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
     {
         int GroupId;
         TaskService _taskService;
+        NotificationService _notificationService;
         private ThesisManagementContext _context;
         StudentGroupRepository _studentGroupRepository;
+        StudentRepository _studentRepository;
         public FTeacherCreateTask(int Id, ThesisManagementContext context)
         {
             InitializeComponent();
             GroupId = Id;
             _context = context;
             _studentGroupRepository = new StudentGroupRepository(_context);
+            _notificationService = new NotificationService(_context);
+            _studentRepository = new StudentRepository(_context);
             ucTeacherCreateTask1.btnClose.Click += Close;
             ucTeacherCreateTask1.btnSave.Click += Save;
             ucTeacherCreateTask1.Load += ucTeacherCreateTask1_Load;
@@ -36,6 +42,18 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             task.group_id = _studentGroupRepository.GetByGroupName(ucTeacherCreateTask1.cboGroupList.Text).group_id;
             _taskService = new TaskService(task, _context);
             _taskService.CreateTask();
+
+            //Create Notification when create task
+            var message = new NotificationMessage
+            {
+                Title = task.task_name,
+                Message = task.task_description,
+                Type = "Task Assignment"
+            };
+
+            var memberList = _studentRepository.GetAllByGroupId(task.group_id.Value);
+            _notificationService.SendToStudents(memberList.ToList(), message);
+
             this.Close();
         }
 

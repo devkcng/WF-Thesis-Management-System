@@ -34,9 +34,9 @@ namespace WFThesisManagementSystem.Repositories
         {
             return _context.SubTasks.Where(x => x.task_id == id);
         }
-        public IQueryable<SubTask> GetAllByStudentIdAndTaskId(int studentID, int taskID)
+        public SubTask GetByStudentIdAndTaskId(int studentID, int taskID)
         {
-            return _context.SubTasks.Where(x => x.task_id == taskID && x.student_id == studentID);
+            return _context.SubTasks.Where(x => x.task_id == taskID && x.student_id == studentID).FirstOrDefault();
         }
         public void Add(SubTask entity)
         {

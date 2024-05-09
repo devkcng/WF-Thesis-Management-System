@@ -61,12 +61,12 @@
             this.cbxNotificationType.ForeColor = System.Drawing.Color.Black;
             this.cbxNotificationType.ItemHeight = 30;
             this.cbxNotificationType.Items.AddRange(new object[] {
-            "Mobile App Development",
-            "Web Development",
-            "Database Management"});
-            this.cbxNotificationType.Location = new System.Drawing.Point(174, 320);
+            "Online meeting ",
+            "Other"});
+            this.cbxNotificationType.Location = new System.Drawing.Point(309, 496);
+            this.cbxNotificationType.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.cbxNotificationType.Name = "cbxNotificationType";
-            this.cbxNotificationType.Size = new System.Drawing.Size(537, 36);
+            this.cbxNotificationType.Size = new System.Drawing.Size(952, 36);
             this.cbxNotificationType.TabIndex = 55;
             // 
             // lblNote
@@ -74,31 +74,34 @@
             this.lblNote.AutoSize = true;
             this.lblNote.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNote.ForeColor = System.Drawing.Color.White;
-            this.lblNote.Location = new System.Drawing.Point(108, 86);
+            this.lblNote.Location = new System.Drawing.Point(192, 133);
+            this.lblNote.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblNote.Name = "lblNote";
-            this.lblNote.Size = new System.Drawing.Size(695, 32);
+            this.lblNote.Size = new System.Drawing.Size(1149, 54);
             this.lblNote.TabIndex = 63;
             this.lblNote.Text = "This form is for teachers only. Students are not allowed to use it";
             // 
             // lblNotificationType
             // 
             this.lblNotificationType.AutoSize = true;
-            this.lblNotificationType.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNotificationType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNotificationType.ForeColor = System.Drawing.Color.White;
-            this.lblNotificationType.Location = new System.Drawing.Point(169, 270);
+            this.lblNotificationType.Location = new System.Drawing.Point(300, 418);
+            this.lblNotificationType.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblNotificationType.Name = "lblNotificationType";
-            this.lblNotificationType.Size = new System.Drawing.Size(224, 28);
+            this.lblNotificationType.Size = new System.Drawing.Size(364, 46);
             this.lblNotificationType.TabIndex = 57;
             this.lblNotificationType.Text = "Notification Type *";
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(260, 58);
+            this.lblTitle.Location = new System.Drawing.Point(462, 90);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(424, 28);
+            this.lblTitle.Size = new System.Drawing.Size(792, 46);
             this.lblTitle.TabIndex = 62;
             this.lblTitle.Text = "CREATE A NOTIFICATION FOR THESIS";
             // 
@@ -106,9 +109,10 @@
             // 
             this.guna2Panel4.Controls.Add(this.txtNotificationContent);
             this.guna2Panel4.Controls.Add(this.lblNotificationContent);
-            this.guna2Panel4.Location = new System.Drawing.Point(174, 390);
+            this.guna2Panel4.Location = new System.Drawing.Point(309, 604);
+            this.guna2Panel4.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(559, 280);
+            this.guna2Panel4.Size = new System.Drawing.Size(994, 434);
             this.guna2Panel4.TabIndex = 60;
             // 
             // txtNotificationContent
@@ -126,23 +130,24 @@
             this.txtNotificationContent.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNotificationContent.ForeColor = System.Drawing.Color.Black;
             this.txtNotificationContent.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNotificationContent.Location = new System.Drawing.Point(8, 41);
-            this.txtNotificationContent.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtNotificationContent.Location = new System.Drawing.Point(14, 64);
+            this.txtNotificationContent.Margin = new System.Windows.Forms.Padding(7, 8, 7, 8);
             this.txtNotificationContent.Name = "txtNotificationContent";
             this.txtNotificationContent.PasswordChar = '\0';
             this.txtNotificationContent.PlaceholderText = "";
             this.txtNotificationContent.SelectedText = "";
-            this.txtNotificationContent.Size = new System.Drawing.Size(537, 234);
+            this.txtNotificationContent.Size = new System.Drawing.Size(955, 363);
             this.txtNotificationContent.TabIndex = 7;
             // 
             // lblNotificationContent
             // 
             this.lblNotificationContent.AutoSize = true;
-            this.lblNotificationContent.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNotificationContent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNotificationContent.ForeColor = System.Drawing.Color.White;
-            this.lblNotificationContent.Location = new System.Drawing.Point(3, 8);
+            this.lblNotificationContent.Location = new System.Drawing.Point(5, 12);
+            this.lblNotificationContent.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblNotificationContent.Name = "lblNotificationContent";
-            this.lblNotificationContent.Size = new System.Drawing.Size(260, 28);
+            this.lblNotificationContent.Size = new System.Drawing.Size(419, 46);
             this.lblNotificationContent.TabIndex = 6;
             this.lblNotificationContent.Text = "Notification Content *";
             // 
@@ -150,9 +155,10 @@
             // 
             this.guna2Panel1.Controls.Add(this.txtNotificationTitle);
             this.guna2Panel1.Controls.Add(this.lblNotificationTitle);
-            this.guna2Panel1.Location = new System.Drawing.Point(174, 153);
+            this.guna2Panel1.Location = new System.Drawing.Point(309, 237);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(559, 84);
+            this.guna2Panel1.Size = new System.Drawing.Size(994, 130);
             this.guna2Panel1.TabIndex = 58;
             // 
             // txtNotificationTitle
@@ -170,23 +176,24 @@
             this.txtNotificationTitle.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNotificationTitle.ForeColor = System.Drawing.Color.Black;
             this.txtNotificationTitle.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNotificationTitle.Location = new System.Drawing.Point(7, 39);
-            this.txtNotificationTitle.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtNotificationTitle.Location = new System.Drawing.Point(12, 60);
+            this.txtNotificationTitle.Margin = new System.Windows.Forms.Padding(9, 9, 9, 9);
             this.txtNotificationTitle.Name = "txtNotificationTitle";
             this.txtNotificationTitle.PasswordChar = '\0';
             this.txtNotificationTitle.PlaceholderText = "";
             this.txtNotificationTitle.SelectedText = "";
-            this.txtNotificationTitle.Size = new System.Drawing.Size(537, 39);
+            this.txtNotificationTitle.Size = new System.Drawing.Size(955, 60);
             this.txtNotificationTitle.TabIndex = 1;
             // 
             // lblNotificationTitle
             // 
             this.lblNotificationTitle.AutoSize = true;
-            this.lblNotificationTitle.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNotificationTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNotificationTitle.ForeColor = System.Drawing.Color.White;
-            this.lblNotificationTitle.Location = new System.Drawing.Point(3, 5);
+            this.lblNotificationTitle.Location = new System.Drawing.Point(5, 8);
+            this.lblNotificationTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblNotificationTitle.Name = "lblNotificationTitle";
-            this.lblNotificationTitle.Size = new System.Drawing.Size(213, 28);
+            this.lblNotificationTitle.Size = new System.Drawing.Size(352, 46);
             this.lblNotificationTitle.TabIndex = 0;
             this.lblNotificationTitle.Text = "Notification Title *";
             // 
@@ -195,9 +202,10 @@
             this.guna2Panel5.Controls.Add(this.btnClear);
             this.guna2Panel5.Controls.Add(this.btnDone);
             this.guna2Panel5.Controls.Add(this.btnClose);
-            this.guna2Panel5.Location = new System.Drawing.Point(451, 702);
+            this.guna2Panel5.Location = new System.Drawing.Point(802, 1088);
+            this.guna2Panel5.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(362, 55);
+            this.guna2Panel5.Size = new System.Drawing.Size(644, 85);
             this.guna2Panel5.TabIndex = 64;
             // 
             // btnClear
@@ -210,9 +218,10 @@
             this.btnClear.FillColor = System.Drawing.Color.WhiteSmoke;
             this.btnClear.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnClear.Location = new System.Drawing.Point(111, 0);
+            this.btnClear.Location = new System.Drawing.Point(197, 0);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(122, 55);
+            this.btnClear.Size = new System.Drawing.Size(217, 85);
             this.btnClear.TabIndex = 9;
             this.btnClear.Text = "Clear";
             // 
@@ -226,8 +235,9 @@
             this.btnDone.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDone.ForeColor = System.Drawing.Color.White;
             this.btnDone.Location = new System.Drawing.Point(0, 0);
+            this.btnDone.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnDone.Name = "btnDone";
-            this.btnDone.Size = new System.Drawing.Size(104, 55);
+            this.btnDone.Size = new System.Drawing.Size(185, 85);
             this.btnDone.TabIndex = 8;
             this.btnDone.Text = "Done";
             // 
@@ -241,15 +251,16 @@
             this.btnClose.FillColor = System.Drawing.Color.WhiteSmoke;
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnClose.Location = new System.Drawing.Point(240, 0);
+            this.btnClose.Location = new System.Drawing.Point(427, 0);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(122, 55);
+            this.btnClose.Size = new System.Drawing.Size(217, 85);
             this.btnClose.TabIndex = 7;
             this.btnClose.Text = "Close";
             // 
             // UcCreateNotification
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkKhaki;
             this.Controls.Add(this.guna2Panel5);
@@ -259,8 +270,9 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.guna2Panel4);
             this.Controls.Add(this.guna2Panel1);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "UcCreateNotification";
-            this.Size = new System.Drawing.Size(911, 791);
+            this.Size = new System.Drawing.Size(1620, 1226);
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel4.PerformLayout();
             this.guna2Panel1.ResumeLayout(false);

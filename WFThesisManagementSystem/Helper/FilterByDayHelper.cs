@@ -70,6 +70,25 @@ namespace WFThesisManagementSystem.Helper
             endDay = startDay.AddMonths(1).AddDays(-1); // Ngày cuối cùng của tháng
             return FilterSubTasksByDay(startDay, endDay);
         }
+
+        public List<SubTask> FilterSubTaskByLastMonth()
+        {
+            DateTime startDay, endDay;
+            DateTime today = DateTime.Today;
+            int lastMonth = today.Month - 1;
+            int lastYear = today.Year;
+
+            // Nếu tháng là tháng 1, thì năm trước đó sẽ là năm trước
+            if (lastMonth == 0)
+            {
+                lastMonth = 12;
+                lastYear--;
+            }
+
+            startDay = new DateTime(lastYear, lastMonth, 1); // Ngày đầu tiên của tháng trước
+            endDay = startDay.AddMonths(1).AddDays(-1); // Ngày cuối cùng của tháng trước
+            return FilterSubTasksByDay(startDay, endDay);
+        }
         public List<Task> FilterTaskByWeek()
         {
             DateTime startDay, endDay;
@@ -90,6 +109,7 @@ namespace WFThesisManagementSystem.Helper
             endDay = startDay.AddDays(6);
             return FilterSubTasksByDay(startDay, endDay);
         }
+
         public List<Task> GetSortedTasks(List<Task> listTasks)
         {
             return listTasks.OrderBy(x => x.submit_day.HasValue ? 1 : 0)

@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl;
 using WFThesisManagementSystem.Helper;
 using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.Repositories;
+using WFThesisManagementSystem.Services;
 using Control = System.Windows.Forms.Control;
 
 namespace WFThesisManagementSystem.Forms.TeacherViews.Views
@@ -21,6 +23,8 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
         StudentRepository _studentRepository;
         RegisterQueueRepository _registerQueueRepository;
         RejectListRepository _rejectListRepository;
+        NotificationService _notificationService;
+
         public int GroupId { get; set; }
         public FTeacherRegist(StudentGroup studentGroup)
         {
@@ -34,6 +38,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             _studentRepository = new StudentRepository(_context);
             _registerQueueRepository = new RegisterQueueRepository(_context);
             _rejectListRepository = new RejectListRepository(_context);
+            _notificationService = new NotificationService(_context);
         }
         private void Close(object sender, EventArgs e)
         {
@@ -118,6 +123,15 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
                 }
 
             }
+            //Create Notification when accept topic
+            var message = new NotificationMessage
+            {
+                Title = "Topic Registration Accepted",
+                Message = "Your topic registration have been accepted",
+                Type = "Topic Registration Accepted"
+            };
+            var memberList = _studentRepository.GetAllByGroupId(GroupId);
+            _notificationService.SendToStudents(memberList.ToList(), message);
 
             FTeacherRegist_Load(sender, e);
         }
@@ -165,7 +179,15 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
                     _rejectListRepository.Add(reject);
                     _registerQueueRepository.Delete(register);
 
-                    //ucTeacherAcceptRegistAll1.flpRegistView.Controls[i].Visible = false;
+                    //Create Notification when create task
+                    var message = new NotificationMessage
+                    {
+                        Title = "Your Topic Registration have been rejected",
+                        Message = "Your Topic Registration have been rejected, let regist a new topic",
+                        Type = "Other"
+                    };
+                    var student = _studentRepository.GetById(register.student_id);
+                    _notificationService.SendToStudent(student, message);
                 }
             }
 

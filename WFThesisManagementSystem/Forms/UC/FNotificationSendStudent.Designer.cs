@@ -35,17 +35,20 @@
             // 
             this.ucNotificationSendStudentAll1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucNotificationSendStudentAll1.Location = new System.Drawing.Point(0, 0);
+            this.ucNotificationSendStudentAll1.Margin = new System.Windows.Forms.Padding(9, 8, 9, 8);
             this.ucNotificationSendStudentAll1.Name = "ucNotificationSendStudentAll1";
-            this.ucNotificationSendStudentAll1.Size = new System.Drawing.Size(1562, 1009);
+            this.ucNotificationSendStudentAll1.Size = new System.Drawing.Size(2777, 1564);
             this.ucNotificationSendStudentAll1.TabIndex = 0;
             // 
             // FNotificationSendStudent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1562, 1009);
+            this.ClientSize = new System.Drawing.Size(2777, 1564);
             this.Controls.Add(this.ucNotificationSendStudentAll1);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "FNotificationSendStudent";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FNotificationSendStudent";
             this.Load += new System.EventHandler(this.FNotificationSendStudent_Load);
             this.ResumeLayout(false);
