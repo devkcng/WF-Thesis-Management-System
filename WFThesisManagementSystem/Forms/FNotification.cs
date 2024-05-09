@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using WFThesisManagementSystem.Forms.UC;
 using WFThesisManagementSystem.Helper;
@@ -41,7 +43,7 @@ namespace WFThesisManagementSystem.Forms
                     bool exists = false;
 
                     // Kiểm tra xem mục đã tồn tại trong DropDownItems chưa
-                    foreach (var item in typesToolStripMenuItem.DropDownItems)
+                    foreach (ToolStripMenuItem item in typesToolStripMenuItem.DropDownItems)
                     {
                         if (item is ToolStripItem && ((ToolStripItem)item).Text == notification.notification_type)
                         {
@@ -55,6 +57,10 @@ namespace WFThesisManagementSystem.Forms
                     {
                         typesToolStripMenuItem.DropDownItems.Add(notification.notification_type);
                     }
+                }
+                foreach (ToolStripMenuItem item in typesToolStripMenuItem.DropDownItems)
+                {
+                    item.Click += typesToolStripMenuItem_DropDownItemClicked;
                 }
 
                 this.tsmiSend.Visible = false;
@@ -73,36 +79,15 @@ namespace WFThesisManagementSystem.Forms
             ucAllNotifications1.flpAllNotifications.Controls.Clear();
             var Notifications_UnRead = _notificationRepository.GetAll().Where(x => x.notification_status == false && (x.recipient_id == _userSessionHelper.UserID || x.sender_id == _userSessionHelper.UserID));
             var Notification_Read = _notificationRepository.GetAll().Where(x => x.notification_status == true && (x.recipient_id == _userSessionHelper.UserID || x.sender_id == _userSessionHelper.UserID));
-
-            foreach (var notification in Notifications_UnRead)
+            if (Notifications_UnRead.Count() > 0)
             {
-                UcNotification ucNotification = new UcNotification();
-                if (notification.sender_id != null)
-                {
-                    var teacher = _teacherRepository.GetById(notification.sender_id.GetValueOrDefault());
-                    ucNotification.Name = notification.notification_title;
-                    ucNotification.Content = notification.notification_content;
-                    ucNotification.SendBy = teacher.teacher_name;
-                    ucNotification.SendTime = notification.timestamp.Value;
-                    ucNotification.Width = ucAllNotifications1.flpAllNotifications.Width - 5;
-                    ucAllNotifications1.flpAllNotifications.Controls.Add(ucNotification);
-                }
+                LoadNotification(Notifications_UnRead.ToList());
+
             }
-            foreach (var notification in Notification_Read)
-            {
-                UcNotification ucNotification = new UcNotification();
-                if (notification.sender_id != null)
-                {
-                    var teacher = _teacherRepository.GetById(notification.sender_id.GetValueOrDefault());
-                    ucNotification.Name = notification.notification_title;
-                    ucNotification.Content = notification.notification_content;
-                    ucNotification.SendBy = teacher.teacher_name;
-                    ucNotification.SendTime = notification.timestamp.Value;
-                    ucNotification.icmCheckbox.Checked = true;
-                    ucNotification.Width = ucAllNotifications1.flpAllNotifications.Width - 5;
-                    ucAllNotifications1.flpAllNotifications.Controls.Add(ucNotification);
 
-                }
+            if (Notification_Read.Count() > 0)
+            {
+                LoadNotification(Notification_Read.ToList());
             }
         }
 
@@ -111,19 +96,7 @@ namespace WFThesisManagementSystem.Forms
             ucAllNotifications1.Show();
             ucAllNotifications1.flpAllNotifications.Controls.Clear();
             var Notifications = _notificationRepository.GetAll().Where(x => x.notification_status == true && (x.recipient_id == _userSessionHelper.UserID || x.sender_id == _userSessionHelper.UserID));
-            foreach (var notification in Notifications)
-            {
-                var teacher = _teacherRepository.GetById(notification.sender_id.GetValueOrDefault());
-                UcNotification ucNotification = new UcNotification();
-                ucNotification.Name = notification.notification_title;
-                ucNotification.Content = notification.notification_content;
-                ucNotification.SendBy = teacher.teacher_name;
-                ucNotification.SendTime = notification.timestamp.Value;
-                ucNotification.icmCheckbox.Checked = true;
-                ucNotification.Width = ucAllNotifications1.flpAllNotifications.Width - 5;
-
-                ucAllNotifications1.flpAllNotifications.Controls.Add(ucNotification);
-            }
+            LoadNotification(Notifications.ToList());
         }
 
 
@@ -133,19 +106,7 @@ namespace WFThesisManagementSystem.Forms
             ucAllNotifications1.Show();
             ucAllNotifications1.flpAllNotifications.Controls.Clear();
             var Notifications = _notificationRepository.GetAll().Where(x => x.notification_status == false && (x.recipient_id == _userSessionHelper.UserID || x.sender_id == _userSessionHelper.UserID));
-            foreach (var notification in Notifications)
-            {
-                var teacher = _teacherRepository.GetById(notification.sender_id.GetValueOrDefault());
-                UcNotification ucNotification = new UcNotification();
-                ucNotification.Name = notification.notification_title;
-                ucNotification.Content = notification.notification_content;
-                ucNotification.SendBy = teacher.teacher_name;
-                ucNotification.SendTime = notification.timestamp.Value;
-                ucNotification.Id = notification.notification_id;
-                ucNotification.CheckBox += UcNotification_CheckBox;
-                ucNotification.Width = ucAllNotifications1.flpAllNotifications.Width - 5;
-                ucAllNotifications1.flpAllNotifications.Controls.Add(ucNotification);
-            }
+            LoadNotification(Notifications.ToList());
         }
         private void UcNotification_CheckBox(object sender, EventArgs e)
         {
@@ -159,16 +120,7 @@ namespace WFThesisManagementSystem.Forms
         {
             ucAllNotifications1.flpAllNotifications.Controls.Clear();
             var Notifications = _notificationRepository.GetAll().Where(x => x.notification_status == false && (x.recipient_id == _userSessionHelper.UserID || x.sender_id == _userSessionHelper.UserID));
-            foreach (var notification in Notifications)
-            {
-                var teacher = _teacherRepository.GetById(notification.sender_id.GetValueOrDefault());
-                UcNotification ucNotification = new UcNotification();
-                ucNotification.Name = notification.notification_title;
-                ucNotification.Content = notification.notification_content;
-                ucNotification.SendBy = teacher.teacher_name;
-                ucNotification.SendTime = notification.timestamp.Value;
-                ucAllNotifications1.flpAllNotifications.Controls.Add(ucNotification);
-            }
+            LoadNotification(Notifications.ToList());
         }
 
         private void tsmiCompose_Click(object sender, EventArgs e)
@@ -181,84 +133,66 @@ namespace WFThesisManagementSystem.Forms
         {
             ucAllNotifications1.flpAllNotifications.Controls.Clear();
             var Notifications = _notificationService.GetSend(_userSessionHelper.UserID);
-            foreach (var notification in Notifications)
-            {
-                var teacher = _teacherRepository.GetById(notification.sender_id.GetValueOrDefault());
-                UcNotification ucNotification = new UcNotification();
-                ucNotification.Name = notification.notification_title;
-                ucNotification.Content = notification.notification_content;
-                ucNotification.SendBy = teacher.teacher_name;
-                ucNotification.SendTime = notification.timestamp.Value;
-                if (notification.notification_status == true)
-                {
-                    ucNotification.icmCheckbox.Checked = true;
-                }
-                ucAllNotifications1.flpAllNotifications.Controls.Add(ucNotification);
-            }
-            ucAllNotifications1.Show();
+            LoadNotification(Notifications);
         }
 
         private void tsmitaskAssignment_Click(object sender, EventArgs e)
         {
             ucAllNotifications1.flpAllNotifications.Controls.Clear();
             var Notifications = _notificationService.GetTypes("Task Assignment", _userSessionHelper.UserID);
-            foreach (var notification in Notifications)
-            {
-                var teacher = _teacherRepository.GetById(notification.sender_id.GetValueOrDefault());
-                UcNotification ucNotification = new UcNotification();
-                ucNotification.Name = notification.notification_title;
-                ucNotification.Content = notification.notification_content;
-                ucNotification.SendBy = teacher.teacher_name;
-                ucNotification.SendTime = notification.timestamp.Value;
-                if (notification.notification_status == true)
-                {
-                    ucNotification.icmCheckbox.Checked = true;
-                }
-                ucAllNotifications1.flpAllNotifications.Controls.Add(ucNotification);
-            }
-            ucAllNotifications1.Show();
+            LoadNotification(Notifications);
         }
 
         private void tsmigroupAcceptance_Click(object sender, EventArgs e)
         {
             ucAllNotifications1.flpAllNotifications.Controls.Clear();
             var Notifications = _notificationService.GetTypes("Group Acceptance", _userSessionHelper.UserID);
-            foreach (var notification in Notifications)
-            {
-                var teacher = _teacherRepository.GetById(notification.sender_id.GetValueOrDefault());
-                UcNotification ucNotification = new UcNotification();
-                ucNotification.Name = notification.notification_title;
-                ucNotification.Content = notification.notification_content;
-                ucNotification.SendBy = teacher.teacher_name;
-                ucNotification.SendTime = notification.timestamp.Value;
-                if (notification.notification_status == true)
-                {
-                    ucNotification.icmCheckbox.Checked = true;
-                }
-                ucAllNotifications1.flpAllNotifications.Controls.Add(ucNotification);
-            }
-            ucAllNotifications1.Show();
+            LoadNotification(Notifications);
         }
 
         private void tsmionlineMeeting_Click(object sender, EventArgs e)
         {
-            ucAllNotifications1.flpAllNotifications.Controls.Clear();
             var Notifications = _notificationService.GetTypes("Online Meeting", _userSessionHelper.UserID);
-            foreach (var notification in Notifications)
+            LoadNotification(Notifications);
+        }
+        private void LoadNotification(List<Notification> notificationList)
+        {
+            ucAllNotifications1.flpAllNotifications.Controls.Clear();
+            foreach (var notification in notificationList)
             {
                 var teacher = _teacherRepository.GetById(notification.sender_id.GetValueOrDefault());
                 UcNotification ucNotification = new UcNotification();
                 ucNotification.Name = notification.notification_title;
                 ucNotification.Content = notification.notification_content;
-                ucNotification.SendBy = teacher.teacher_name;
+                if (teacher != null)
+                {
+                    ucNotification.SendBy = teacher.teacher_name;
+                }
+                else
+                {
+                    var student = _studentRepository.GetById(notification.sender_id.GetValueOrDefault());
+                    ucNotification.SendBy = student.student_name;
+
+                }
                 ucNotification.SendTime = notification.timestamp.Value;
                 if (notification.notification_status == true)
                 {
                     ucNotification.icmCheckbox.Checked = true;
                 }
+                ucNotification.Width = 945;
                 ucAllNotifications1.flpAllNotifications.Controls.Add(ucNotification);
             }
             ucAllNotifications1.Show();
+        }
+        private void typesToolStripMenuItem_DropDownItemClicked(object sender, EventArgs e)
+        {
+            ToolStripMenuItem selectedItem = (ToolStripMenuItem)sender;
+            string notificationType = selectedItem.Text;
+            var Notifications = _notificationService.GetTypesStudents(notificationType, _userSessionHelper.UserID);
+            //MessageBox.Show(Notifications.Count().ToString());
+            //MessageBox.Show(notificationType);
+
+            LoadNotification(Notifications);
         }
     }
 }
