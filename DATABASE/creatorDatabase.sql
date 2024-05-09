@@ -137,6 +137,7 @@ CREATE TABLE SubtaskPoint (
     student_id INT,
     subtask_id INT,
     subtask_point FLOAT DEFAULT 0,
+    subtask_review TEXT,
     FOREIGN KEY (student_id) REFERENCES Students(student_id),
     FOREIGN KEY (subtask_id) REFERENCES SubTasks(subtask_id)
 );
