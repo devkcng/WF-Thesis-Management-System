@@ -122,7 +122,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
                 var student = _studentRepository.GetAll().FirstOrDefault(x => x.student_name == studentName);
                 var subtask = _subTaskRepository.GetAll().FirstOrDefault(x => x.student_id == student.student_id && x.task_id == TaskId);
                 var Subtaskpoint = _subtaskPointRepository.GetAll().FirstOrDefault(x => x.subtask_id == subtask.subtask_id);
-                if (Subtaskpoint.subtask_point == null)
+                if (Subtaskpoint == null)
                 {
                     if (!string.IsNullOrEmpty(ucTeacherAllMark1.ucTeacherSingleMark1.txtPoint.Text))
                     {
@@ -165,7 +165,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
                     foreach (var Subtask in SubTaskAllStudent)
                     {
                         var SubTaskPoint = _subtaskPointRepository.GetAll().FirstOrDefault(x => x.subtask_id == Subtask.subtask_id);
-                        if (SubTaskPoint.subtask_point == null)
+                        if (SubTaskPoint == null)
                         {
                             DialogResult result = MessageBox.Show("The subtask is not finished yet so the score can be updated", "Notification", MessageBoxButtons.OKCancel);
                             if (result == DialogResult.OK) { this.Hide(); }
