@@ -55,7 +55,7 @@ namespace WFThesisManagementSystem.Forms.UC
                     ucCreateNotification1.txtNotificationContent.Text
                     , ucCreateNotification1.cbxNotificationType.Items.ToString()))
             {
-                MessageBox.Show("Please fill all information");
+                MessageBox.Show("Please fill all information", "Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 return;
             }
             else
