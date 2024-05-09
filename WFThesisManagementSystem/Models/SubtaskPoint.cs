@@ -18,6 +18,7 @@ namespace WFThesisManagementSystem.Models
         public Nullable<int> student_id { get; set; }
         public Nullable<int> subtask_id { get; set; }
         public Nullable<double> subtask_point { get; set; }
+        public string subtask_review { get; set; }
     
         public virtual Student Student { get; set; }
         public virtual SubTask SubTask { get; set; }

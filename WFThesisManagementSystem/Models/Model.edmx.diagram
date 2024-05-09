@@ -26,17 +26,17 @@
         <EntityTypeShape EntityType="ThesisManagementModel.Notification" Width="1.5" PointX="7.375" PointY="0.75" />
         <EntityTypeShape EntityType="ThesisManagementModel.StudentGroup" Width="1.5" PointX="5.25" PointY="1.625" />
         <EntityTypeShape EntityType="ThesisManagementModel.StudentPoint" Width="1.5" PointX="9.75" PointY="14.5" />
-        <EntityTypeShape EntityType="ThesisManagementModel.SubtaskPoint" Width="1.5" PointX="15" PointY="8.375" />
         <AssociationConnector Association="ThesisManagementModel.FK__RegisterQ__group__31EC6D26" />
         <AssociationConnector Association="ThesisManagementModel.FK__StudentGr__topic__2A4B4B5E" />
         <AssociationConnector Association="ThesisManagementModel.FK__Students__group___2D27B809" />
         <AssociationConnector Association="ThesisManagementModel.FK__Tasks__group_id__35BCFE0A" />
         <AssociationConnector Association="ThesisManagementModel.FK__StudentPo__stude__4F7CD00D" />
-        <AssociationConnector Association="ThesisManagementModel.FK__SubtaskPo__stude__4AB81AF0" />
         <EntityTypeShape EntityType="ThesisManagementModel.SubTask" Width="1.5" PointX="12.75" PointY="7" />
         <AssociationConnector Association="ThesisManagementModel.FK__SubTasks__studen__38996AB5" />
-        <AssociationConnector Association="ThesisManagementModel.FK__SubtaskPo__subta__4BAC3F29" />
         <AssociationConnector Association="ThesisManagementModel.FK__SubTasks__task_i__398D8EEE" />
+        <EntityTypeShape EntityType="ThesisManagementModel.SubtaskPoint" Width="1.5" PointX="15" PointY="8.375" />
+        <AssociationConnector Association="ThesisManagementModel.FK__SubtaskPo__stude__4AB81AF0" />
+        <AssociationConnector Association="ThesisManagementModel.FK__SubtaskPo__subta__4BAC3F29" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

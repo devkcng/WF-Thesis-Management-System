@@ -21,8 +21,8 @@ namespace WFThesisManagementSystem.Models
             this.PointSheetRecords = new HashSet<PointSheetRecord>();
             this.RejectLists = new HashSet<RejectList>();
             this.StudentPoints = new HashSet<StudentPoint>();
-            this.SubtaskPoints = new HashSet<SubtaskPoint>();
             this.SubTasks = new HashSet<SubTask>();
+            this.SubtaskPoints = new HashSet<SubtaskPoint>();
         }
     
         public int student_id { get; set; }
@@ -43,8 +43,8 @@ namespace WFThesisManagementSystem.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<StudentPoint> StudentPoints { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SubtaskPoint> SubtaskPoints { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SubTask> SubTasks { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SubtaskPoint> SubtaskPoints { get; set; }
     }
 }

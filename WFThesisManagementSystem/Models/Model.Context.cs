@@ -37,7 +37,7 @@ namespace WFThesisManagementSystem.Models
         public virtual DbSet<Notification> Notifications { get; set; }
         public virtual DbSet<StudentGroup> StudentGroups { get; set; }
         public virtual DbSet<StudentPoint> StudentPoints { get; set; }
-        public virtual DbSet<SubtaskPoint> SubtaskPoints { get; set; }
         public virtual DbSet<SubTask> SubTasks { get; set; }
+        public virtual DbSet<SubtaskPoint> SubtaskPoints { get; set; }
     }
 }

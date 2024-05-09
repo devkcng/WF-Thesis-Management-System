@@ -90,6 +90,7 @@
           <Property Name="student_id" Type="int" />
           <Property Name="subtask_id" Type="int" />
           <Property Name="subtask_point" Type="float" />
+          <Property Name="subtask_review" Type="text" />
         </EntityType>
         <EntityType Name="SubTasks">
           <Key>
@@ -493,8 +494,8 @@
           <NavigationProperty Name="RejectLists" Relationship="ThesisManagementModel.FK__RejectLis__stude__160F4887" FromRole="Student" ToRole="RejectList" />
           <NavigationProperty Name="StudentGroup" Relationship="ThesisManagementModel.FK__Students__group___2D27B809" FromRole="Student" ToRole="StudentGroup" />
           <NavigationProperty Name="StudentPoints" Relationship="ThesisManagementModel.FK__StudentPo__stude__4F7CD00D" FromRole="Student" ToRole="StudentPoint" />
-          <NavigationProperty Name="SubtaskPoints" Relationship="ThesisManagementModel.FK__SubtaskPo__stude__4AB81AF0" FromRole="Student" ToRole="SubtaskPoint" />
           <NavigationProperty Name="SubTasks" Relationship="ThesisManagementModel.FK__SubTasks__studen__38996AB5" FromRole="Student" ToRole="SubTask" />
+          <NavigationProperty Name="SubtaskPoints" Relationship="ThesisManagementModel.FK__SubtaskPo__stude__4AB81AF0" FromRole="Student" ToRole="SubtaskPoint" />
         </EntityType>
         <EntityType Name="TeacherAccount">
           <Key>
@@ -644,7 +645,6 @@
           <EntitySet Name="Notifications" EntityType="ThesisManagementModel.Notification" />
           <EntitySet Name="StudentGroups" EntityType="ThesisManagementModel.StudentGroup" />
           <EntitySet Name="StudentPoints" EntityType="ThesisManagementModel.StudentPoint" />
-          <EntitySet Name="SubtaskPoints" EntityType="ThesisManagementModel.SubtaskPoint" />
           <AssociationSet Name="FK__RegisterQ__group__31EC6D26" Association="ThesisManagementModel.FK__RegisterQ__group__31EC6D26">
             <End Role="StudentGroup" EntitySet="StudentGroups" />
             <End Role="RegisterQueue" EntitySet="RegisterQueues" />
@@ -665,22 +665,23 @@
             <End Role="Student" EntitySet="Students" />
             <End Role="StudentPoint" EntitySet="StudentPoints" />
           </AssociationSet>
-          <AssociationSet Name="FK__SubtaskPo__stude__4AB81AF0" Association="ThesisManagementModel.FK__SubtaskPo__stude__4AB81AF0">
-            <End Role="Student" EntitySet="Students" />
-            <End Role="SubtaskPoint" EntitySet="SubtaskPoints" />
-          </AssociationSet>
           <EntitySet Name="SubTasks" EntityType="ThesisManagementModel.SubTask" />
           <AssociationSet Name="FK__SubTasks__studen__38996AB5" Association="ThesisManagementModel.FK__SubTasks__studen__38996AB5">
             <End Role="Student" EntitySet="Students" />
             <End Role="SubTask" EntitySet="SubTasks" />
           </AssociationSet>
-          <AssociationSet Name="FK__SubtaskPo__subta__4BAC3F29" Association="ThesisManagementModel.FK__SubtaskPo__subta__4BAC3F29">
-            <End Role="SubTask" EntitySet="SubTasks" />
-            <End Role="SubtaskPoint" EntitySet="SubtaskPoints" />
-          </AssociationSet>
           <AssociationSet Name="FK__SubTasks__task_i__398D8EEE" Association="ThesisManagementModel.FK__SubTasks__task_i__398D8EEE">
             <End Role="Task" EntitySet="Tasks" />
             <End Role="SubTask" EntitySet="SubTasks" />
+          </AssociationSet>
+          <EntitySet Name="SubtaskPoints" EntityType="ThesisManagementModel.SubtaskPoint" />
+          <AssociationSet Name="FK__SubtaskPo__stude__4AB81AF0" Association="ThesisManagementModel.FK__SubtaskPo__stude__4AB81AF0">
+            <End Role="Student" EntitySet="Students" />
+            <End Role="SubtaskPoint" EntitySet="SubtaskPoints" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SubtaskPo__subta__4BAC3F29" Association="ThesisManagementModel.FK__SubtaskPo__subta__4BAC3F29">
+            <End Role="SubTask" EntitySet="SubTasks" />
+            <End Role="SubtaskPoint" EntitySet="SubtaskPoints" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Task">
@@ -803,17 +804,6 @@
           <Property Name="student_point" Type="Double" />
           <NavigationProperty Name="Student" Relationship="ThesisManagementModel.FK__StudentPo__stude__4F7CD00D" FromRole="StudentPoint" ToRole="Student" />
         </EntityType>
-        <EntityType Name="SubtaskPoint">
-          <Key>
-            <PropertyRef Name="subtaskpoint_id" />
-          </Key>
-          <Property Name="subtaskpoint_id" Type="Int32" Nullable="false" />
-          <Property Name="student_id" Type="Int32" />
-          <Property Name="subtask_id" Type="Int32" />
-          <Property Name="subtask_point" Type="Double" />
-          <NavigationProperty Name="Student" Relationship="ThesisManagementModel.FK__SubtaskPo__stude__4AB81AF0" FromRole="SubtaskPoint" ToRole="Student" />
-          <NavigationProperty Name="SubTask" Relationship="ThesisManagementModel.FK__SubtaskPo__subta__4BAC3F29" FromRole="SubtaskPoint" ToRole="SubTask" />
-        </EntityType>
         <Association Name="FK__RegisterQ__group__31EC6D26">
           <End Type="ThesisManagementModel.StudentGroup" Role="StudentGroup" Multiplicity="0..1" />
           <End Type="ThesisManagementModel.RegisterQueue" Role="RegisterQueue" Multiplicity="*" />
@@ -874,18 +864,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SubtaskPo__stude__4AB81AF0">
-          <End Type="ThesisManagementModel.Student" Role="Student" Multiplicity="0..1" />
-          <End Type="ThesisManagementModel.SubtaskPoint" Role="SubtaskPoint" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Student">
-              <PropertyRef Name="student_id" />
-            </Principal>
-            <Dependent Role="SubtaskPoint">
-              <PropertyRef Name="student_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="SubTask">
           <Key>
             <PropertyRef Name="subtask_id" />
@@ -900,8 +878,8 @@
           <Property Name="task_id" Type="Int32" />
           <Property Name="document_link" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Student" Relationship="ThesisManagementModel.FK__SubTasks__studen__38996AB5" FromRole="SubTask" ToRole="Student" />
-          <NavigationProperty Name="SubtaskPoints" Relationship="ThesisManagementModel.FK__SubtaskPo__subta__4BAC3F29" FromRole="SubTask" ToRole="SubtaskPoint" />
           <NavigationProperty Name="Task" Relationship="ThesisManagementModel.FK__SubTasks__task_i__398D8EEE" FromRole="SubTask" ToRole="Task" />
+          <NavigationProperty Name="SubtaskPoints" Relationship="ThesisManagementModel.FK__SubtaskPo__subta__4BAC3F29" FromRole="SubTask" ToRole="SubtaskPoint" />
         </EntityType>
         <Association Name="FK__SubTasks__studen__38996AB5">
           <End Type="ThesisManagementModel.Student" Role="Student" Multiplicity="0..1" />
@@ -915,18 +893,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__SubtaskPo__subta__4BAC3F29">
-          <End Type="ThesisManagementModel.SubTask" Role="SubTask" Multiplicity="0..1" />
-          <End Type="ThesisManagementModel.SubtaskPoint" Role="SubtaskPoint" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SubTask">
-              <PropertyRef Name="subtask_id" />
-            </Principal>
-            <Dependent Role="SubtaskPoint">
-              <PropertyRef Name="subtask_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__SubTasks__task_i__398D8EEE">
           <End Type="ThesisManagementModel.Task" Role="Task" Multiplicity="0..1" />
           <End Type="ThesisManagementModel.SubTask" Role="SubTask" Multiplicity="*" />
@@ -936,6 +902,42 @@
             </Principal>
             <Dependent Role="SubTask">
               <PropertyRef Name="task_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="SubtaskPoint">
+          <Key>
+            <PropertyRef Name="subtaskpoint_id" />
+          </Key>
+          <Property Name="subtaskpoint_id" Type="Int32" Nullable="false" />
+          <Property Name="student_id" Type="Int32" />
+          <Property Name="subtask_id" Type="Int32" />
+          <Property Name="subtask_point" Type="Double" />
+          <Property Name="subtask_review" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Student" Relationship="ThesisManagementModel.FK__SubtaskPo__stude__4AB81AF0" FromRole="SubtaskPoint" ToRole="Student" />
+          <NavigationProperty Name="SubTask" Relationship="ThesisManagementModel.FK__SubtaskPo__subta__4BAC3F29" FromRole="SubtaskPoint" ToRole="SubTask" />
+        </EntityType>
+        <Association Name="FK__SubtaskPo__stude__4AB81AF0">
+          <End Type="ThesisManagementModel.Student" Role="Student" Multiplicity="0..1" />
+          <End Type="ThesisManagementModel.SubtaskPoint" Role="SubtaskPoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Student">
+              <PropertyRef Name="student_id" />
+            </Principal>
+            <Dependent Role="SubtaskPoint">
+              <PropertyRef Name="student_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SubtaskPo__subta__4BAC3F29">
+          <End Type="ThesisManagementModel.SubTask" Role="SubTask" Multiplicity="0..1" />
+          <End Type="ThesisManagementModel.SubtaskPoint" Role="SubtaskPoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubTask">
+              <PropertyRef Name="subtask_id" />
+            </Principal>
+            <Dependent Role="SubtaskPoint">
+              <PropertyRef Name="subtask_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1077,16 +1079,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="SubtaskPoints">
-            <EntityTypeMapping TypeName="ThesisManagementModel.SubtaskPoint">
-              <MappingFragment StoreEntitySet="SubtaskPoint">
-                <ScalarProperty Name="subtask_point" ColumnName="subtask_point" />
-                <ScalarProperty Name="subtask_id" ColumnName="subtask_id" />
-                <ScalarProperty Name="student_id" ColumnName="student_id" />
-                <ScalarProperty Name="subtaskpoint_id" ColumnName="subtaskpoint_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="SubTasks">
             <EntityTypeMapping TypeName="ThesisManagementModel.SubTask">
               <MappingFragment StoreEntitySet="SubTasks">
@@ -1099,6 +1091,17 @@
                 <ScalarProperty Name="subtask_description" ColumnName="subtask_description" />
                 <ScalarProperty Name="subtask_name" ColumnName="subtask_name" />
                 <ScalarProperty Name="subtask_id" ColumnName="subtask_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubtaskPoints">
+            <EntityTypeMapping TypeName="ThesisManagementModel.SubtaskPoint">
+              <MappingFragment StoreEntitySet="SubtaskPoint">
+                <ScalarProperty Name="subtask_review" ColumnName="subtask_review" />
+                <ScalarProperty Name="subtask_point" ColumnName="subtask_point" />
+                <ScalarProperty Name="subtask_id" ColumnName="subtask_id" />
+                <ScalarProperty Name="student_id" ColumnName="student_id" />
+                <ScalarProperty Name="subtaskpoint_id" ColumnName="subtaskpoint_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
