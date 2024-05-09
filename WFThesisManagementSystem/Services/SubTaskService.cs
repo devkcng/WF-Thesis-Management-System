@@ -75,14 +75,14 @@ namespace WFThesisManagementSystem.Services
         public void UpdateSubTask()
         {
             _subTaskRepository.Update(_subTask);
-            MessageBox.Show("Updated");
+            MessageBox.Show("Updated Subtask Successfully");
         }
 
         // handle logic of deleting a task by teacher
         public void DeleteSubTask()
         {
             _subTaskRepository.Delete(_subTask);
-            MessageBox.Show("Deleted");
+            MessageBox.Show("Deleted Subtask Successfully");
         }
 
     }
