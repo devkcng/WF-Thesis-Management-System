@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using WFThesisManagementSystem.Models;
 using WFThesisManagementSystem.Repositories;
@@ -11,9 +13,11 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
     {
         int _taskID;
         TaskRepository _taskRepository;
+        SubTaskRepository _subTaskRepository;
         SubTaskService _subTaskService;
         private ThesisManagementContext _context;
         StudentRepository _studentRepository;
+        NotificationService _notificationService;
         public FStudentCreateSubTask(int taskID, ThesisManagementContext context)
         {
             InitializeComponent();
@@ -22,6 +26,8 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             _taskID = taskID;
             _studentRepository = new StudentRepository(_context);
             _taskRepository = new TaskRepository(_context);
+            _subTaskRepository = new SubTaskRepository(_context);
+            _notificationService = new NotificationService(_context);
             ucTeacherCreateTask1.btnClose.Click += Close;
             ucTeacherCreateTask1.btnSave.Click += Save;
             ucTeacherCreateTask1.Load += ucTeacherCreateTask1_Load;
@@ -32,16 +38,30 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             this.Close();
         }
         private void Save(object sender, EventArgs e)
-        {
-            SubTask subTask = new SubTask();
-            subTask.subtask_name = ucTeacherCreateTask1.txtTaskName.Text;
-            subTask.subtask_description = ucTeacherCreateTask1.txtTaskDescription.Text;
-            subTask.due_date = ucTeacherCreateTask1.dtpEndDate.Value.Date;
-            subTask.student_id = _studentRepository.GetByStudentName(ucTeacherCreateTask1.cboGroupList.Text).student_id;
-            subTask.task_id = _taskID;
-            _subTaskService = new SubTaskService(subTask, _context);
-            _subTaskService.CreateSubTask();
-            this.Close();
+        {       
+            var student= _studentRepository.GetByStudentName(ucTeacherCreateTask1.cboGroupList.Text);
+            if (_subTaskRepository.GetByStudentIdAndTaskId(student.student_id, _taskID) == null)
+            {
+                SubTask subTask = new SubTask();
+                subTask.subtask_name = ucTeacherCreateTask1.txtTaskName.Text;
+                subTask.subtask_description = ucTeacherCreateTask1.txtTaskDescription.Text;
+                subTask.due_date = ucTeacherCreateTask1.dtpEndDate.Value.Date;
+                subTask.student_id = student.student_id;
+                subTask.task_id = _taskID;
+                _subTaskService = new SubTaskService(subTask, _context);
+                _subTaskService.CreateSubTask();
+
+                //Create Notification when create subtask
+                var message = new NotificationMessage
+                {
+                    Title = subTask.subtask_name,
+                    Message = subTask.subtask_description,
+                    Type = "Subtask Assignment"
+                };
+                _notificationService.SendToStudent(student, message);
+                this.Close(); 
+            }
+            else MessageBox.Show("Each student can by assigned only 1 subtask of each task");
         }
         private void ucTeacherCreateTask1_Load(object sender, EventArgs e)
         {
