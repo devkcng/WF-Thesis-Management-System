@@ -77,8 +77,8 @@ namespace WFThesisManagementSystem.Forms
         {
             ucAllNotifications1.Show();
             ucAllNotifications1.flpAllNotifications.Controls.Clear();
-            var Notifications_UnRead = _notificationRepository.GetAll().Where(x => x.notification_status == false && (x.recipient_id == _userSessionHelper.UserID || x.sender_id == _userSessionHelper.UserID));
-            var Notification_Read = _notificationRepository.GetAll().Where(x => x.notification_status == true && (x.recipient_id == _userSessionHelper.UserID || x.sender_id == _userSessionHelper.UserID));
+            var Notifications_UnRead = _notificationRepository.GetAll().Where(x => x.notification_status == false && (x.recipient_id == _userSessionHelper.UserID));
+            var Notification_Read = _notificationRepository.GetAll().Where(x => x.notification_status == true && (x.recipient_id == _userSessionHelper.UserID ));
             if (Notifications_UnRead.Count() > 0)
             {
                 LoadNotification(Notifications_UnRead.ToList());

@@ -56,7 +56,7 @@
             this.guna2Panel3.Controls.Add(this.lblEndDate);
             this.guna2Panel3.Controls.Add(this.dtpEndDate);
             this.guna2Panel3.Location = new System.Drawing.Point(267, 534);
-            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(5);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(1131, 143);
             this.guna2Panel3.TabIndex = 14;
@@ -84,7 +84,7 @@
             this.dtpEndDate.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpEndDate.Location = new System.Drawing.Point(43, 64);
-            this.dtpEndDate.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.dtpEndDate.Margin = new System.Windows.Forms.Padding(5);
             this.dtpEndDate.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpEndDate.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpEndDate.Name = "dtpEndDate";
@@ -97,7 +97,7 @@
             this.guna2Panel1.Controls.Add(this.txtTaskName);
             this.guna2Panel1.Controls.Add(this.lblTaskName);
             this.guna2Panel1.Location = new System.Drawing.Point(267, 317);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(5);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1128, 143);
             this.guna2Panel1.TabIndex = 13;
@@ -117,13 +117,13 @@
             this.txtTaskName.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtTaskName.ForeColor = System.Drawing.Color.Black;
             this.txtTaskName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTaskName.Location = new System.Drawing.Point(37, 74);
+            this.txtTaskName.Location = new System.Drawing.Point(37, 63);
             this.txtTaskName.Margin = new System.Windows.Forms.Padding(8, 10, 8, 10);
             this.txtTaskName.Name = "txtTaskName";
             this.txtTaskName.PasswordChar = '\0';
             this.txtTaskName.PlaceholderText = "";
             this.txtTaskName.SelectedText = "";
-            this.txtTaskName.Size = new System.Drawing.Size(1048, 60);
+            this.txtTaskName.Size = new System.Drawing.Size(1048, 71);
             this.txtTaskName.TabIndex = 1;
             // 
             // lblTaskName
@@ -143,7 +143,7 @@
             this.guna2Panel5.Controls.Add(this.btnSave);
             this.guna2Panel5.Controls.Add(this.btnClose);
             this.guna2Panel5.Location = new System.Drawing.Point(1096, 999);
-            this.guna2Panel5.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.guna2Panel5.Margin = new System.Windows.Forms.Padding(5);
             this.guna2Panel5.Name = "guna2Panel5";
             this.guna2Panel5.Size = new System.Drawing.Size(451, 86);
             this.guna2Panel5.TabIndex = 16;
@@ -158,7 +158,7 @@
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.Location = new System.Drawing.Point(0, 0);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(5);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(184, 86);
             this.btnSave.TabIndex = 8;
@@ -175,7 +175,7 @@
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.SystemColors.Highlight;
             this.btnClose.Location = new System.Drawing.Point(235, 0);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(5);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(216, 86);
             this.btnClose.TabIndex = 7;
@@ -198,7 +198,7 @@
             this.guna2Panel4.Controls.Add(this.txtTaskDescription);
             this.guna2Panel4.Controls.Add(this.lblTaskDescription);
             this.guna2Panel4.Location = new System.Drawing.Point(269, 742);
-            this.guna2Panel4.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.guna2Panel4.Margin = new System.Windows.Forms.Padding(5);
             this.guna2Panel4.Name = "guna2Panel4";
             this.guna2Panel4.Size = new System.Drawing.Size(1128, 231);
             this.guna2Panel4.TabIndex = 56;
@@ -244,7 +244,7 @@
             this.guna2Panel2.Controls.Add(this.cboGroupList);
             this.guna2Panel2.Controls.Add(this.lblGroup);
             this.guna2Panel2.Location = new System.Drawing.Point(269, 119);
-            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(5);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(1128, 143);
             this.guna2Panel2.TabIndex = 14;
@@ -290,7 +290,7 @@
             this.Controls.Add(this.guna2Panel5);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.guna2Panel1);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "UcTeacherCreateTask";
             this.Size = new System.Drawing.Size(1613, 1137);
             this.guna2Panel3.ResumeLayout(false);
