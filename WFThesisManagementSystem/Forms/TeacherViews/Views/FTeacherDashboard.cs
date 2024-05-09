@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using WFThesisManagementSystem.Forms.ChatApp;
 using WFThesisManagementSystem.Forms.StudentViews.StudentUserControl;
 using WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl;
 using WFThesisManagementSystem.Helper;
@@ -167,6 +168,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
                 ucTeacherSingleTask.EditButtonClicked += ucTeacherSingleTask_EditButton_Click;
                 ucTeacherSingleTask.SubmitButtonClicked += ucTeacherSingleTask_SubmitTask_Click;
                 ucTeacherSingleTask.PointButtonClicked += UcTeacherSingleTask_PointButtonClicked;
+                ucTeacherSingleTask.ChatButtonClicked += ucTeacherSingleTask_ChatButton_Click;
                 ucTeacherAllTask.flpAllTasks.Controls.Add(ucTeacherSingleTask);
             }
         }
@@ -217,6 +219,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
                         ucTeacherSingleTask.EditButtonClicked += ucTeacherSingleTask_EditButton_Click;
                         ucTeacherSingleTask.SubmitButtonClicked += ucTeacherSingleTask_SubmitTask_Click;
                         ucTeacherSingleTask.PointButtonClicked += UcTeacherSingleTask_PointButtonClicked;
+                        ucTeacherSingleTask.ChatButtonClicked += ucTeacherSingleTask_ChatButton_Click;
                         ucTeacherAllTask.flpAllTasks.Controls.Add(ucTeacherSingleTask);
                     }
                 }
@@ -241,6 +244,16 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             var taskName = ucTeacherSingleTask.Name;
             var task = _taskRepository.GetTaskByTaskName(taskName);
             //task. = 
+        }
+
+        private void ucTeacherSingleTask_ChatButton_Click(object sender, EventArgs e)
+        {
+            UcTeacherSingleTask ucTeacherSingleTask = sender as UcTeacherSingleTask;
+            var taskId = ucTeacherSingleTask.TaskId;
+            var task = _taskRepository.GetById(taskId);
+
+            FChat fChat = new FChat(task);
+            fChat.Show();
         }
 
         #endregion

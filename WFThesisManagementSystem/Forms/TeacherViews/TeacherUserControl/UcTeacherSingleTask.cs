@@ -9,12 +9,17 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
         public event EventHandler EditButtonClicked;
         public event EventHandler SubmitButtonClicked;
         public event EventHandler PointButtonClicked;
+        public event EventHandler ChatButtonClicked;
         public UcTeacherSingleTask()
         {
             InitializeComponent();
             btnEdit.Click += ButtonEdit_Click;
             //btnPoint.Click += Point_Click;
+            btnChat.Click += Chat_Click;
         }
+
+        
+
 
         #region Properties
         private string name;
@@ -50,6 +55,15 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
         }
         #endregion
 
+        private void Chat_Click(object sender, EventArgs e)
+        {
+            OnChatButtonClicked(EventArgs.Empty);
+        }
+
+        private void OnChatButtonClicked(EventArgs empty)
+        {
+            ChatButtonClicked?.Invoke(this, empty);
+        }
         private void ButtonEdit_Click(object sender, EventArgs e)
         {
             OnEditButtonClicked(EventArgs.Empty);

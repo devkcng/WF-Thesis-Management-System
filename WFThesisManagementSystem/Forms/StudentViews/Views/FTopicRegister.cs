@@ -194,7 +194,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                 registrationService.Register();
             }
             MessageBox.Show("Register successfully");
-            this.Close();
+            this.Hide();
             FStudentRegisterTopic fStudentRegisterTopic = new FStudentRegisterTopic(_context);
             fStudentRegisterTopic.Show();
         }

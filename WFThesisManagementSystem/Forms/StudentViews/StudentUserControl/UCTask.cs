@@ -6,6 +6,8 @@ namespace WFThesisManagementSystem.Forms.StudentViews.StudentUserControl
     public partial class UCTask : UserControl
     {
         public event EventHandler Clicked;
+        public event EventHandler ChatButtonClicked;
+
         private string _name;
         private int _id;
         private int _groupID;
@@ -27,6 +29,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.StudentUserControl
         {
             InitializeComponent();
             panelTask.Click += UCTask_CLick;
+            btnChat.Click += BtnChat_Click;
         }
         public void UCTask_CLick(object sender, EventArgs e)
         {
@@ -38,9 +41,14 @@ namespace WFThesisManagementSystem.Forms.StudentViews.StudentUserControl
             Clicked?.Invoke(this, e);
         }
 
-        private void sdpsingletask_Paint(object sender, PaintEventArgs e)
+        public void BtnChat_Click(object sender, EventArgs e)
         {
+            OnChatButtonClicked(EventArgs.Empty);
+        }
 
+        private void OnChatButtonClicked(EventArgs empty)
+        {
+            ChatButtonClicked?.Invoke(this, empty);
         }
     }
 }
