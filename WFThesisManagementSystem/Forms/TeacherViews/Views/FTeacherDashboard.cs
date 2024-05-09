@@ -414,8 +414,11 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
 
                 foreach (var student in students)
                 {
-                    var studentPoints = _studentPointRepository.GetByStudentId(_userSessionHelper.UserID);
-                    studentPointList.Add(studentPoints);
+                    var studentPoints = _studentPointRepository.GetByStudentId(student.student_id);
+                    if (studentPoints != null)
+                    {
+                        studentPointList.Add(studentPoints);
+                    }
                 }
                 if (studentPointList.Count>0)
                 {
@@ -510,12 +513,15 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
 
             // Thêm các cột vào DataTable
             dataTable.Columns.Add("Student Name", typeof(string));
-            dataTable.Columns.Add("Student Point", typeof(float));
+            dataTable.Columns.Add("Student Point", typeof(double));
             // Thêm dữ liệu vào DataTable
             foreach (var studentPoint in studentPointList)
             {
-                var student = _studentRepository.GetById(_userSessionHelper.UserID);
-                dataTable.Rows.Add(student.student_name, studentPoint.student_point);
+                var student = _studentRepository.GetById(studentPoint.student_id.Value);
+                if (student != null)
+                {
+                    dataTable.Rows.Add(student.student_name, studentPoint.student_point);
+                }
             }
 
             // Gán DataTable cho DataGridView
