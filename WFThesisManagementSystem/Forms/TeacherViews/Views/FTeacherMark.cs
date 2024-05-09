@@ -92,7 +92,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             }
             catch (Exception ex)
             {
-                DialogResult result = MessageBox.Show("There is no subtask for this student", "Notification", MessageBoxButtons.OKCancel);
+                DialogResult result = MessageBox.Show("There is no subtask for this student", "Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 if (result == DialogResult.OK) this.Hide();
 
             }
@@ -197,7 +197,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             }
             catch(Exception e)
             {
-                MessageBox.Show("Students have not been selected yet", "Notification", MessageBoxButtons.OKCancel);
+                MessageBox.Show("Students have not been selected yet", "Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             }
                 
 
