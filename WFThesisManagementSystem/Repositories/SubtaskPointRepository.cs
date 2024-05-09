@@ -39,5 +39,10 @@ namespace WFThesisManagementSystem.Repositories
             _context.Entry(entity).State = System.Data.Entity.EntityState.Modified;
             _context.SaveChanges();
         }
+
+        public SubtaskPoint GetBySubtaskId(int subTaskId)
+        {
+            return _context.SubtaskPoints.FirstOrDefault(x => x.subtask_id == subTaskId);
+        }
     }
 }
