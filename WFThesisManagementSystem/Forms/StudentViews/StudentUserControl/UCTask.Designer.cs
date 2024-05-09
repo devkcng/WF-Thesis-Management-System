@@ -72,11 +72,11 @@
             this.btnChat.BackColor = System.Drawing.Color.White;
             this.btnChat.Image = global::WFThesisManagementSystem.Properties.Resources.Chat1;
             this.btnChat.ImageRotate = 0F;
-            this.btnChat.Location = new System.Drawing.Point(658, 12);
+            this.btnChat.Location = new System.Drawing.Point(653, 12);
             this.btnChat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnChat.Name = "btnChat";
             this.btnChat.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnChat.Size = new System.Drawing.Size(51, 48);
+            this.btnChat.Size = new System.Drawing.Size(56, 54);
             this.btnChat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnChat.TabIndex = 80;
             this.btnChat.TabStop = false;

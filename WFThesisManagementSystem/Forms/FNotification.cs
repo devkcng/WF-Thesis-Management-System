@@ -30,6 +30,7 @@ namespace WFThesisManagementSystem.Forms
             _notificationService = new NotificationService(_context);
             InitializeComponent();
             ucAllNotifications1.Hide();
+            tsmiInbox.Visible = false;
             if (_studentRepository.GetById(_userSessionHelper.UserID) != null)
             {
                 this.tsmiCompose.Visible = false;
@@ -146,7 +147,7 @@ namespace WFThesisManagementSystem.Forms
         private void tsmigroupAcceptance_Click(object sender, EventArgs e)
         {
             ucAllNotifications1.flpAllNotifications.Controls.Clear();
-            var Notifications = _notificationService.GetTypes("Group Acceptance", _userSessionHelper.UserID);
+            var Notifications = _notificationService.GetTypes("Topic Registration Accepted", _userSessionHelper.UserID);
             LoadNotification(Notifications);
         }
 
@@ -164,6 +165,8 @@ namespace WFThesisManagementSystem.Forms
                 UcNotification ucNotification = new UcNotification();
                 ucNotification.Name = notification.notification_title;
                 ucNotification.Content = notification.notification_content;
+                ucNotification.Id = notification.notification_id;
+                ucNotification.CheckBox += UcNotification_CheckBox;
                 if (teacher != null)
                 {
                     ucNotification.SendBy = teacher.teacher_name;
@@ -193,6 +196,27 @@ namespace WFThesisManagementSystem.Forms
             //MessageBox.Show(notificationType);
 
             LoadNotification(Notifications);
+        }
+
+        private void generalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var notifications = _notificationRepository.GetAll().ToList();
+            LoadNotification(notifications);
+
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadNotification(SearchNotification(txtSearch.Text));
+        }
+
+        public List<Notification> SearchNotification(string searchValue)
+        {
+            var notifications = _notificationRepository.GetAll().Where(
+                x => x.notification_title.Contains(searchValue)
+                     || x.notification_content.Contains(searchValue)).ToList();
+                
+            return notifications;
         }
     }
 }
