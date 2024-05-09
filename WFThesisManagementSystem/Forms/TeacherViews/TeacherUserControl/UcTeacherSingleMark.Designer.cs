@@ -28,131 +28,108 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblName = new System.Windows.Forms.Label();
-            this.lblTurnIn = new System.Windows.Forms.Label();
-            this.txtMark = new Guna.UI2.WinForms.Guna2TextBox();
-            this.cbxCheckTurnIn = new System.Windows.Forms.CheckBox();
-            this.btnChat = new Guna.UI2.WinForms.Guna2Button();
-            this.cpxStudent = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.cxbCheckStudent = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.cpxStudent)).BeginInit();
+            this.txtPoint = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblReview = new System.Windows.Forms.Label();
+            this.txtReview = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblPoint = new System.Windows.Forms.Label();
+            this.panelContainer = new System.Windows.Forms.Panel();
+            this.panelContainer.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblName
+            // txtPoint
             // 
-            this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(216, 42);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(128, 28);
-            this.lblName.TabIndex = 0;
-            this.lblName.Text = "Mai Đức Kiên";
+            this.txtPoint.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPoint.DefaultText = "";
+            this.txtPoint.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtPoint.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtPoint.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPoint.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPoint.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPoint.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtPoint.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPoint.Location = new System.Drawing.Point(138, 82);
+            this.txtPoint.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtPoint.Name = "txtPoint";
+            this.txtPoint.PasswordChar = '\0';
+            this.txtPoint.PlaceholderText = "";
+            this.txtPoint.SelectedText = "";
+            this.txtPoint.Size = new System.Drawing.Size(120, 52);
+            this.txtPoint.TabIndex = 10;
             // 
-            // lblTurnIn
+            // lblReview
             // 
-            this.lblTurnIn.AutoSize = true;
-            this.lblTurnIn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTurnIn.Location = new System.Drawing.Point(429, 42);
-            this.lblTurnIn.Name = "lblTurnIn";
-            this.lblTurnIn.Size = new System.Drawing.Size(72, 28);
-            this.lblTurnIn.TabIndex = 1;
-            this.lblTurnIn.Text = "Turn in";
+            this.lblReview.AutoSize = true;
+            this.lblReview.BackColor = System.Drawing.Color.Transparent;
+            this.lblReview.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReview.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblReview.Location = new System.Drawing.Point(53, 261);
+            this.lblReview.Name = "lblReview";
+            this.lblReview.Size = new System.Drawing.Size(89, 28);
+            this.lblReview.TabIndex = 9;
+            this.lblReview.Text = "Review";
             // 
-            // txtMark
+            // txtReview
             // 
-            this.txtMark.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMark.DefaultText = "";
-            this.txtMark.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtMark.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtMark.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMark.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtMark.FillColor = System.Drawing.Color.DarkGray;
-            this.txtMark.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMark.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtMark.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMark.Location = new System.Drawing.Point(839, 32);
-            this.txtMark.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtMark.Name = "txtMark";
-            this.txtMark.PasswordChar = '\0';
-            this.txtMark.PlaceholderText = "";
-            this.txtMark.SelectedText = "";
-            this.txtMark.Size = new System.Drawing.Size(49, 45);
-            this.txtMark.TabIndex = 4;
+            this.txtReview.BorderRadius = 10;
+            this.txtReview.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtReview.DefaultText = "";
+            this.txtReview.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtReview.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtReview.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtReview.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtReview.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtReview.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtReview.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtReview.Location = new System.Drawing.Point(48, 346);
+            this.txtReview.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtReview.Name = "txtReview";
+            this.txtReview.PasswordChar = '\0';
+            this.txtReview.PlaceholderText = "";
+            this.txtReview.SelectedText = "";
+            this.txtReview.Size = new System.Drawing.Size(461, 210);
+            this.txtReview.TabIndex = 14;
             // 
-            // cbxCheckTurnIn
+            // lblPoint
             // 
-            this.cbxCheckTurnIn.AutoSize = true;
-            this.cbxCheckTurnIn.Location = new System.Drawing.Point(385, 43);
-            this.cbxCheckTurnIn.Name = "cbxCheckTurnIn";
-            this.cbxCheckTurnIn.Size = new System.Drawing.Size(22, 21);
-            this.cbxCheckTurnIn.TabIndex = 6;
-            this.cbxCheckTurnIn.UseVisualStyleBackColor = true;
+            this.lblPoint.AutoSize = true;
+            this.lblPoint.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPoint.Location = new System.Drawing.Point(43, 91);
+            this.lblPoint.Name = "lblPoint";
+            this.lblPoint.Size = new System.Drawing.Size(67, 28);
+            this.lblPoint.TabIndex = 15;
+            this.lblPoint.Text = "Point";
             // 
-            // btnChat
+            // panelContainer
             // 
-            this.btnChat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnChat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnChat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnChat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnChat.FillColor = System.Drawing.Color.Transparent;
-            this.btnChat.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnChat.ForeColor = System.Drawing.Color.White;
-            this.btnChat.Image = global::WFThesisManagementSystem.Properties.Resources.Chat1;
-            this.btnChat.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnChat.Location = new System.Drawing.Point(696, 32);
-            this.btnChat.Name = "btnChat";
-            this.btnChat.Size = new System.Drawing.Size(40, 40);
-            this.btnChat.TabIndex = 3;
-            this.btnChat.Click += new System.EventHandler(this.btnChat_Click);
-            // 
-            // cpxStudent
-            // 
-            this.cpxStudent.Image = global::WFThesisManagementSystem.Properties.Resources.Student_Male;
-            this.cpxStudent.ImageRotate = 0F;
-            this.cpxStudent.Location = new System.Drawing.Point(129, 25);
-            this.cpxStudent.Name = "cpxStudent";
-            this.cpxStudent.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.cpxStudent.Size = new System.Drawing.Size(51, 52);
-            this.cpxStudent.TabIndex = 2;
-            this.cpxStudent.TabStop = false;
-            // 
-            // cxbCheckStudent
-            // 
-            this.cxbCheckStudent.AutoSize = true;
-            this.cxbCheckStudent.Location = new System.Drawing.Point(49, 43);
-            this.cxbCheckStudent.Name = "cxbCheckStudent";
-            this.cxbCheckStudent.Size = new System.Drawing.Size(22, 21);
-            this.cxbCheckStudent.TabIndex = 7;
-            this.cxbCheckStudent.UseVisualStyleBackColor = true;
+            this.panelContainer.Controls.Add(this.txtReview);
+            this.panelContainer.Controls.Add(this.lblPoint);
+            this.panelContainer.Controls.Add(this.lblReview);
+            this.panelContainer.Controls.Add(this.txtPoint);
+            this.panelContainer.Location = new System.Drawing.Point(2, 2);
+            this.panelContainer.Margin = new System.Windows.Forms.Padding(2);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(562, 616);
+            this.panelContainer.TabIndex = 16;
             // 
             // UcTeacherSingleMark
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.Controls.Add(this.cxbCheckStudent);
-            this.Controls.Add(this.cbxCheckTurnIn);
-            this.Controls.Add(this.txtMark);
-            this.Controls.Add(this.btnChat);
-            this.Controls.Add(this.cpxStudent);
-            this.Controls.Add(this.lblTurnIn);
-            this.Controls.Add(this.lblName);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.Controls.Add(this.panelContainer);
             this.Name = "UcTeacherSingleMark";
-            this.Size = new System.Drawing.Size(939, 108);
-            ((System.ComponentModel.ISupportInitialize)(this.cpxStudent)).EndInit();
+            this.Size = new System.Drawing.Size(566, 614);
+            this.panelContainer.ResumeLayout(false);
+            this.panelContainer.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Label lblTurnIn;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox cpxStudent;
-        private Guna.UI2.WinForms.Guna2Button btnChat;
-        private Guna.UI2.WinForms.Guna2TextBox txtMark;
-        private System.Windows.Forms.CheckBox cbxCheckTurnIn;
-        private System.Windows.Forms.CheckBox cxbCheckStudent;
+        public System.Windows.Forms.Label lblReview;
+        public Guna.UI2.WinForms.Guna2TextBox txtPoint;
+        public Guna.UI2.WinForms.Guna2TextBox txtReview;
+        public System.Windows.Forms.Label lblPoint;
+        public System.Windows.Forms.Panel panelContainer;
     }
 }

@@ -1,19 +1,43 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
 {
     public partial class UcTeacherAcceptRegisterSingle : UserControl
     {
+        public event EventHandler Clicked;
+        public event EventHandler CheckClicked;
         public UcTeacherAcceptRegisterSingle()
         {
             InitializeComponent();
+            this.Click += UcTeacherAcceptRegisterSingle_Click;
+            //this.cbxRegist.Click += Checkregist_Click;
+            cbxRegist.CheckedChanged += Checkregist_Click;
+        }
+
+        private void Checkregist_Click(object sender, EventArgs e)
+        {
+            OnClickCheck(EventArgs.Empty);
+        }
+        protected virtual void OnClickCheck(EventArgs e)
+        {
+            CheckClicked?.Invoke(this, e);
+        }
+        private void UcTeacherAcceptRegisterSingle_Click(object sender, EventArgs e)
+        {
+            OnClick(EventArgs.Empty);
+        }
+        protected virtual void OnClick(EventArgs e)
+        {
+            Clicked?.Invoke(this, e);
         }
         #region Properties
         private string namestudent;
         private string idstudent;
         private string regist;
         private CheckBox checkregist;
+        public int Id { get; set; }
         public string NameStudent
         {
             get { return namestudent; }

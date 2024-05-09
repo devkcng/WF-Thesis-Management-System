@@ -28,110 +28,201 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.guna2ShadowPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelTask = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.btnChat = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.txtProjectDetail = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblOpenDay = new System.Windows.Forms.Label();
+            this.lblDeadline = new System.Windows.Forms.Label();
+            this.ptbStatus = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.lblDueDate = new System.Windows.Forms.Label();
+            this.lblOpenDate = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.panelTask.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnChat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbStatus)).BeginInit();
             this.SuspendLayout();
             // 
-            // guna2ShadowPanel1
+            // panelTask
             // 
-            this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel1.Controls.Add(this.guna2Button1);
-            this.guna2ShadowPanel1.Controls.Add(this.label4);
-            this.guna2ShadowPanel1.Controls.Add(this.pictureBox1);
-            this.guna2ShadowPanel1.Controls.Add(this.label2);
-            this.guna2ShadowPanel1.Controls.Add(this.label1);
-            this.guna2ShadowPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
-            this.guna2ShadowPanel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
-            this.guna2ShadowPanel1.Radius = 10;
-            this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(897, 119);
-            this.guna2ShadowPanel1.TabIndex = 0;
+            this.panelTask.BorderColor = System.Drawing.Color.Black;
+            this.panelTask.BorderRadius = 10;
+            this.panelTask.BorderThickness = 2;
+            this.panelTask.Controls.Add(this.btnChat);
+            this.panelTask.Controls.Add(this.txtProjectDetail);
+            this.panelTask.Controls.Add(this.lblOpenDay);
+            this.panelTask.Controls.Add(this.lblDeadline);
+            this.panelTask.Controls.Add(this.ptbStatus);
+            this.panelTask.Controls.Add(this.lblStatus);
+            this.panelTask.Controls.Add(this.lblDueDate);
+            this.panelTask.Controls.Add(this.lblOpenDate);
+            this.panelTask.Controls.Add(this.lblName);
+            this.panelTask.CustomBorderColor = System.Drawing.Color.Black;
+            this.panelTask.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelTask.Font = new System.Drawing.Font("Cambria", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelTask.Location = new System.Drawing.Point(6, 12);
+            this.panelTask.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panelTask.Name = "panelTask";
+            this.panelTask.Size = new System.Drawing.Size(741, 202);
+            this.panelTask.TabIndex = 0;
             // 
-            // guna2Button1
+            // btnChat
             // 
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Image = global::WFThesisManagementSystem.Properties.Resources.Chat;
-            this.guna2Button1.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2Button1.Location = new System.Drawing.Point(768, 22);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(70, 69);
-            this.guna2Button1.TabIndex = 16;
+            this.btnChat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnChat.BackColor = System.Drawing.Color.White;
+            this.btnChat.Image = global::WFThesisManagementSystem.Properties.Resources.Chat1;
+            this.btnChat.ImageRotate = 0F;
+            this.btnChat.Location = new System.Drawing.Point(653, 12);
+            this.btnChat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnChat.Name = "btnChat";
+            this.btnChat.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnChat.Size = new System.Drawing.Size(56, 54);
+            this.btnChat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnChat.TabIndex = 80;
+            this.btnChat.TabStop = false;
             // 
-            // label4
+            // txtProjectDetail
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(460, 67);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(139, 28);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Mai Duc Kien";
+            this.txtProjectDetail.BorderThickness = 0;
+            this.txtProjectDetail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtProjectDetail.DefaultText = "";
+            this.txtProjectDetail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtProjectDetail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtProjectDetail.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtProjectDetail.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtProjectDetail.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtProjectDetail.Font = new System.Drawing.Font("Cambria", 10F);
+            this.txtProjectDetail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtProjectDetail.Location = new System.Drawing.Point(24, 54);
+            this.txtProjectDetail.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.txtProjectDetail.MaximumSize = new System.Drawing.Size(675, 97);
+            this.txtProjectDetail.Multiline = true;
+            this.txtProjectDetail.Name = "txtProjectDetail";
+            this.txtProjectDetail.PasswordChar = '\0';
+            this.txtProjectDetail.PlaceholderText = "";
+            this.txtProjectDetail.ReadOnly = true;
+            this.txtProjectDetail.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtProjectDetail.SelectedText = "";
+            this.txtProjectDetail.Size = new System.Drawing.Size(675, 95);
+            this.txtProjectDetail.TabIndex = 81;
             // 
-            // pictureBox1
+            // lblOpenDay
             // 
-            this.pictureBox1.Image = global::WFThesisManagementSystem.Properties.Resources.Idea;
-            this.pictureBox1.Location = new System.Drawing.Point(56, 33);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(56, 45);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
+            this.lblOpenDay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblOpenDay.AutoSize = true;
+            this.lblOpenDay.BackColor = System.Drawing.Color.White;
+            this.lblOpenDay.Font = new System.Drawing.Font("Cambria", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOpenDay.Location = new System.Drawing.Point(122, 165);
+            this.lblOpenDay.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblOpenDay.Name = "lblOpenDay";
+            this.lblOpenDay.Size = new System.Drawing.Size(102, 23);
+            this.lblOpenDay.TabIndex = 77;
+            this.lblOpenDay.Text = "3/4/2024";
             // 
-            // label2
+            // lblDeadline
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(168, 67);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(286, 28);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "#402235 Opens 10 day ago by ";
+            this.lblDeadline.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblDeadline.AutoSize = true;
+            this.lblDeadline.BackColor = System.Drawing.Color.White;
+            this.lblDeadline.Font = new System.Drawing.Font("Cambria", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeadline.ForeColor = System.Drawing.Color.Red;
+            this.lblDeadline.Location = new System.Drawing.Point(345, 165);
+            this.lblDeadline.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDeadline.Name = "lblDeadline";
+            this.lblDeadline.Size = new System.Drawing.Size(102, 23);
+            this.lblDeadline.TabIndex = 76;
+            this.lblDeadline.Text = "5/4/2024";
             // 
-            // label1
+            // ptbStatus
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(167, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(426, 32);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Make an automatic payment system";
+            this.ptbStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ptbStatus.BackColor = System.Drawing.Color.White;
+            this.ptbStatus.Image = global::WFThesisManagementSystem.Properties.Resources.photo_2024_04_02_16_52_38;
+            this.ptbStatus.ImageRotate = 0F;
+            this.ptbStatus.Location = new System.Drawing.Point(688, 165);
+            this.ptbStatus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ptbStatus.Name = "ptbStatus";
+            this.ptbStatus.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.ptbStatus.Size = new System.Drawing.Size(21, 22);
+            this.ptbStatus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbStatus.TabIndex = 75;
+            this.ptbStatus.TabStop = false;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.BackColor = System.Drawing.Color.White;
+            this.lblStatus.Font = new System.Drawing.Font("Cambria", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.Location = new System.Drawing.Point(624, 165);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(66, 23);
+            this.lblStatus.TabIndex = 74;
+            this.lblStatus.Text = "Status";
+            // 
+            // lblDueDate
+            // 
+            this.lblDueDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblDueDate.AutoSize = true;
+            this.lblDueDate.BackColor = System.Drawing.Color.White;
+            this.lblDueDate.Font = new System.Drawing.Font("Cambria", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDueDate.Location = new System.Drawing.Point(249, 165);
+            this.lblDueDate.Name = "lblDueDate";
+            this.lblDueDate.Size = new System.Drawing.Size(94, 23);
+            this.lblDueDate.TabIndex = 73;
+            this.lblDueDate.Text = "Due Date";
+            // 
+            // lblOpenDate
+            // 
+            this.lblOpenDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblOpenDate.AutoSize = true;
+            this.lblOpenDate.BackColor = System.Drawing.Color.White;
+            this.lblOpenDate.Font = new System.Drawing.Font("Cambria", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOpenDate.Location = new System.Drawing.Point(21, 165);
+            this.lblOpenDate.Name = "lblOpenDate";
+            this.lblOpenDate.Size = new System.Drawing.Size(98, 23);
+            this.lblOpenDate.TabIndex = 72;
+            this.lblOpenDate.Text = "Open Day";
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.BackColor = System.Drawing.Color.White;
+            this.lblName.Font = new System.Drawing.Font("Cambria", 14.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(18, 12);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(493, 34);
+            this.lblName.TabIndex = 70;
+            this.lblName.Text = "Make an automatic payment system";
             // 
             // UCTask
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.guna2ShadowPanel1);
+            this.Controls.Add(this.panelTask);
             this.Name = "UCTask";
-            this.Size = new System.Drawing.Size(897, 119);
-            this.guna2ShadowPanel1.ResumeLayout(false);
-            this.guna2ShadowPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Padding = new System.Windows.Forms.Padding(6, 12, 6, 12);
+            this.Size = new System.Drawing.Size(753, 226);
+            this.Click += new System.EventHandler(this.UCTask_CLick);
+            this.panelTask.ResumeLayout(false);
+            this.panelTask.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnChat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ptbStatus)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel panelTask;
+        public System.Windows.Forms.Label lblOpenDay;
+        public System.Windows.Forms.Label lblDeadline;
+        public Guna.UI2.WinForms.Guna2CirclePictureBox ptbStatus;
+        public System.Windows.Forms.Label lblName;
+        public Guna.UI2.WinForms.Guna2CirclePictureBox btnChat;
+        public System.Windows.Forms.Label lblDueDate;
+        public System.Windows.Forms.Label lblOpenDate;
+        public System.Windows.Forms.Label lblStatus;
+        public Guna.UI2.WinForms.Guna2TextBox txtProjectDetail;
     }
 }

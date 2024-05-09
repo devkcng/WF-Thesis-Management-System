@@ -11,7 +11,9 @@ namespace WFThesisManagementSystem.Services
         Student _student;
         Topic _topic;
         RegisterQueueRepository _registerQueueRepository;
+        PointSheetRecordRepository _pointSheetRecordRepository;
         StudentGroupRepository _studentGroupRepository;
+        private ThesisManagementContext _context;
         string _groupName;
         public RegistrationService(Student student, Topic topic, string groupName)
         {
@@ -21,6 +23,16 @@ namespace WFThesisManagementSystem.Services
             var context = new ThesisManagementContext();
             _registerQueueRepository = new RegisterQueueRepository(context);
             _studentGroupRepository = new StudentGroupRepository(context);
+            _pointSheetRecordRepository = new PointSheetRecordRepository(context);
+        }
+
+        public RegistrationService(Student student, ThesisManagementContext context)
+        {
+            _student = student;
+            _context = context;
+            _registerQueueRepository = new RegisterQueueRepository(_context);
+            _studentGroupRepository = new StudentGroupRepository(_context);
+            _pointSheetRecordRepository = new PointSheetRecordRepository(context);
         }
 
         public bool Register()
@@ -74,7 +86,6 @@ namespace WFThesisManagementSystem.Services
             }
             return false;
         }
-
         public bool Unregistered()
         {
             //check if student is unregistered from a topic
@@ -108,7 +119,19 @@ namespace WFThesisManagementSystem.Services
             }
             return false;
         }
-
+        public bool CanRegist()
+        {
+            int count = 0;
+            var pointSheetRecordList = _pointSheetRecordRepository.GetAllByStudentID(_student.student_id);
+            foreach (var pointSheetRecord in pointSheetRecordList)
+            {
+                if (pointSheetRecord.point < 3)
+                    count++;
+            }
+            if (count >= 3)
+                return false;
+            return true;
+        }
         public StudentGroup CreateGroup()
         {
             StudentGroup studentGroup = new StudentGroup();
@@ -117,7 +140,6 @@ namespace WFThesisManagementSystem.Services
             studentGroup.group_name = _groupName;
             studentGroup.number_of_students = 0;
             studentGroup.topic_id = _topic.topic_id;
-            studentGroup.group_points = 0;
             return studentGroup;
         }
     }

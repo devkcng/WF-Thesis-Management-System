@@ -83,5 +83,93 @@ namespace WFThesisManagementSystem.Helper
             }
             return id + 1;
         }
+        // id generator for task
+
+        public int GenerateTaskId()
+        {
+            var taskRepository = new TaskRepository(_context);
+            var tasks = taskRepository.GetAll();
+            int id = 0;
+            foreach (var task in tasks)
+            {
+                if (task.task_id > id)
+                {
+                    id = task.task_id;
+                }
+            }
+            return id + 1;
+        }
+
+        public int GenerateSubTaskId()
+        {
+            var subTaskRepository = new SubTaskRepository(_context);
+            var subTasks = subTaskRepository.GetAll();
+            int id = 0;
+            foreach (var subTask in subTasks)
+            {
+                if (subTask.subtask_id > id)
+                {
+                    id = subTask.subtask_id;
+                }
+            }
+            return id + 1;
+        }
+        public int GenerateNotificationId()
+        {
+            var notificationRepository = new NotificationRepository(_context);
+            var notificationIds = notificationRepository.GetAll();
+            int id = 0;
+            foreach (var notification in notificationIds)
+            {
+                if (notification.notification_id > id)
+                {
+                    id = notification.notification_id;
+                }
+            }
+            return id + 1;
+        }
+
+        public int GenerateRejectListId()
+        {
+            var rejectListRepository = new RejectListRepository(_context);
+            var rejectLists = rejectListRepository.GetAll();
+            int id = 0;
+            foreach (var rejectList in rejectLists)
+            {
+                if (rejectList.list_id > id)
+                {
+                    id = rejectList.list_id;
+                }
+            }
+            return id + 1;
+        }
+        public int GenerateSubtaskPointId()
+        {
+            var subtaskpointRepository = new SubtaskPointRepository(_context);
+            var subtaskpoints = subtaskpointRepository.GetAll();
+            int id = 0;
+            foreach (var subtaskpoint in subtaskpoints)
+            {
+                if (subtaskpoint.subtaskpoint_id > id)
+                {
+                    id = subtaskpoint.subtaskpoint_id;
+                }
+            }
+            return id + 1;
+        }
+        public int GenerateStudentPointId()
+        {
+            var studentpointRepository = new StudentPointRepository(_context);
+            var studentpoints = studentpointRepository.GetAll();
+            int id = 0;
+            foreach (var studentpoint in studentpoints)
+            {
+                if (studentpoint.studentpoint_id > id)
+                {
+                    id = studentpoint.studentpoint_id;
+                }
+            }
+            return id + 1;
+        }
     }
 }

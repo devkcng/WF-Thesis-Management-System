@@ -13,10 +13,11 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
     {
         TopicRepository _topicRepository;
         StudentGroupRepository _studentGroupRepository;
-        public UcTeacherSingleTopic()
+        ThesisManagementContext _context;
+        public UcTeacherSingleTopic(ThesisManagementContext context)
         {
             InitializeComponent();
-            var _context = new ThesisManagementContext();
+            _context = context;
             _topicRepository = new TopicRepository(_context);
             _studentGroupRepository = new StudentGroupRepository(_context);
         }
@@ -32,10 +33,9 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
         public void SetTopic(Topic topic)
         {
             lblName.Text = topic.topic_name;
-            lblDescription.Text = topic.topic_description;
+            txtDescription.Text = topic.topic_description;
             Name = topic.topic_name;
             Description = topic.topic_description;
-
         }
         [Category("custom props")]
         public string Name
@@ -48,7 +48,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
         public string Description
         {
             get { return description; }
-            set { description = value; lblDescription.Text = value; }
+            set { description = value; txtDescription.Text = value; }
         }
         [Category("custom props")]
         public Guna2Button Button
@@ -56,11 +56,11 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
             get { return button; }
             set { button = value; btnEdit = value; }
         }
-        #endregion
-        //private void editTopic(object sender, EventArgs e)
-        //{
 
-        //}
+
+
+
+        #endregion
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
@@ -100,7 +100,6 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.TeacherUserControl
             //    }
 
             //}    
-
         }
 
         private void lblName_Click(object sender, EventArgs e)

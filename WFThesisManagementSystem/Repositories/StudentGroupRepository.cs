@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using WFThesisManagementSystem.Models;
 
 namespace WFThesisManagementSystem.Repositories
@@ -16,6 +17,12 @@ namespace WFThesisManagementSystem.Repositories
         {
             return _context.StudentGroups;
         }
+
+        public IQueryable<StudentGroup> GetAllByTopicID(int id)
+        {
+            return _context.StudentGroups.Where(sg => sg.topic_id == id);
+        }
+
 
         public StudentGroup GetById(int id)
         {
@@ -43,6 +50,21 @@ namespace WFThesisManagementSystem.Repositories
         public StudentGroup GetByTopicId(int topicId)
         {
             return _context.StudentGroups.FirstOrDefault(sg => sg.topic_id == topicId);
+        }
+
+        //get student group by group name
+        public StudentGroup GetByGroupName(string groupName)
+        {
+            return _context.StudentGroups.FirstOrDefault(sg => sg.group_name == groupName);
+        }
+
+        public List<int> GetListOfTopic(List<int> studentGroupID)
+        {
+            return GetAll().Where(s => studentGroupID.Contains(s.group_id)).Select(s => s.topic_id.Value).ToList();
+        }
+        public List<int> GetListOfUnacceptedTopic(List<int> studentGroupID)
+        {
+            return GetAll().Where(s => studentGroupID.Contains(s.group_id)).Select(s => s.topic_id.Value).ToList();
         }
     }
 }

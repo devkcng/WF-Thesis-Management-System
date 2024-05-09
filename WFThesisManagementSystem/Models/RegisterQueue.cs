@@ -19,8 +19,8 @@ namespace WFThesisManagementSystem.Models
         public Nullable<int> topic_id { get; set; }
         public Nullable<bool> accepted { get; set; }
     
-        public virtual StudentGroup StudentGroup { get; set; }
         public virtual Student Student { get; set; }
         public virtual Topic Topic { get; set; }
+        public virtual StudentGroup StudentGroup { get; set; }
     }
 }

@@ -28,109 +28,230 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblName = new System.Windows.Forms.Label();
-            this.lblTimeAndOrdinalNumber = new System.Windows.Forms.Label();
-            this.lblNameTeacher = new System.Windows.Forms.Label();
-            this.sdpsingletask = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.dtpFrom = new System.Windows.Forms.Label();
+            this.dtpTo = new System.Windows.Forms.Label();
+            this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.btnPoint = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblContentTask = new System.Windows.Forms.Label();
+            this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.btnChat = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.btnEdit = new Guna.UI2.WinForms.Guna2PictureBox();
             this.ptbImage = new System.Windows.Forms.PictureBox();
-            this.btnChat = new Guna.UI2.WinForms.Guna2Button();
-            this.sdpsingletask.SuspendLayout();
+            this.lblName = new System.Windows.Forms.Label();
+            this.guna2CustomGradientPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPoint)).BeginInit();
+            this.guna2CustomGradientPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnChat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImage)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dtpFrom
+            // 
+            this.dtpFrom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.dtpFrom.AutoSize = true;
+            this.dtpFrom.BackColor = System.Drawing.Color.White;
+            this.dtpFrom.Font = new System.Drawing.Font("Cambria", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFrom.Location = new System.Drawing.Point(203, 299);
+            this.dtpFrom.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.dtpFrom.Name = "dtpFrom";
+            this.dtpFrom.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dtpFrom.Size = new System.Drawing.Size(113, 40);
+            this.dtpFrom.TabIndex = 31;
+            this.dtpFrom.Text = "label1";
+            // 
+            // dtpTo
+            // 
+            this.dtpTo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.dtpTo.AutoSize = true;
+            this.dtpTo.BackColor = System.Drawing.Color.White;
+            this.dtpTo.Font = new System.Drawing.Font("Cambria", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpTo.ForeColor = System.Drawing.Color.Red;
+            this.dtpTo.Location = new System.Drawing.Point(661, 299);
+            this.dtpTo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.dtpTo.Name = "dtpTo";
+            this.dtpTo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dtpTo.Size = new System.Drawing.Size(113, 40);
+            this.dtpTo.TabIndex = 32;
+            this.dtpTo.Text = "label2";
+            // 
+            // guna2CustomGradientPanel1
+            // 
+            this.guna2CustomGradientPanel1.BorderColor = System.Drawing.Color.Black;
+            this.guna2CustomGradientPanel1.BorderThickness = 2;
+            this.guna2CustomGradientPanel1.Controls.Add(this.label2);
+            this.guna2CustomGradientPanel1.Controls.Add(this.label1);
+            this.guna2CustomGradientPanel1.Controls.Add(this.lblContentTask);
+            this.guna2CustomGradientPanel1.Controls.Add(this.guna2CustomGradientPanel2);
+            this.guna2CustomGradientPanel1.Controls.Add(this.dtpTo);
+            this.guna2CustomGradientPanel1.Controls.Add(this.dtpFrom);
+            this.guna2CustomGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2CustomGradientPanel1.Location = new System.Drawing.Point(0, 20);
+            this.guna2CustomGradientPanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.guna2CustomGradientPanel1.Name = "guna2CustomGradientPanel1";
+            this.guna2CustomGradientPanel1.Padding = new System.Windows.Forms.Padding(11, 9, 11, 9);
+            this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1404, 349);
+            this.guna2CustomGradientPanel1.TabIndex = 0;
+            // 
+            // btnPoint
+            // 
+            this.btnPoint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPoint.Image = global::WFThesisManagementSystem.Properties.Resources.icons8_mark_641;
+            this.btnPoint.ImageRotate = 0F;
+            this.btnPoint.Location = new System.Drawing.Point(1087, 14);
+            this.btnPoint.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnPoint.Name = "btnPoint";
+            this.btnPoint.Size = new System.Drawing.Size(77, 68);
+            this.btnPoint.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnPoint.TabIndex = 39;
+            this.btnPoint.TabStop = false;
+            this.btnPoint.Click += new System.EventHandler(this.Point_Click);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Cambria", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(507, 299);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label2.Name = "label2";
+            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label2.Size = new System.Drawing.Size(145, 40);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "Due Day";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Cambria", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(27, 299);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Name = "label1";
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label1.Size = new System.Drawing.Size(166, 40);
+            this.label1.TabIndex = 37;
+            this.label1.Text = "Open Day";
+            // 
+            // lblContentTask
+            // 
+            this.lblContentTask.AutoEllipsis = true;
+            this.lblContentTask.AutoSize = true;
+            this.lblContentTask.BackColor = System.Drawing.Color.White;
+            this.lblContentTask.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContentTask.Location = new System.Drawing.Point(27, 130);
+            this.lblContentTask.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblContentTask.MaximumSize = new System.Drawing.Size(1200, 101);
+            this.lblContentTask.Name = "lblContentTask";
+            this.lblContentTask.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblContentTask.Size = new System.Drawing.Size(259, 47);
+            this.lblContentTask.TabIndex = 36;
+            this.lblContentTask.Text = "Content Task";
+            // 
+            // guna2CustomGradientPanel2
+            // 
+            this.guna2CustomGradientPanel2.Controls.Add(this.btnPoint);
+            this.guna2CustomGradientPanel2.Controls.Add(this.btnChat);
+            this.guna2CustomGradientPanel2.Controls.Add(this.btnEdit);
+            this.guna2CustomGradientPanel2.Controls.Add(this.ptbImage);
+            this.guna2CustomGradientPanel2.Controls.Add(this.lblName);
+            this.guna2CustomGradientPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2CustomGradientPanel2.Location = new System.Drawing.Point(11, 9);
+            this.guna2CustomGradientPanel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.guna2CustomGradientPanel2.Name = "guna2CustomGradientPanel2";
+            this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(1382, 87);
+            this.guna2CustomGradientPanel2.TabIndex = 34;
+            // 
+            // btnChat
+            // 
+            this.btnChat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnChat.BackColor = System.Drawing.Color.White;
+            this.btnChat.Image = global::WFThesisManagementSystem.Properties.Resources.Chat1;
+            this.btnChat.ImageRotate = 0F;
+            this.btnChat.Location = new System.Drawing.Point(1284, 19);
+            this.btnChat.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnChat.Name = "btnChat";
+            this.btnChat.Size = new System.Drawing.Size(62, 54);
+            this.btnChat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnChat.TabIndex = 35;
+            this.btnChat.TabStop = false;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEdit.BackColor = System.Drawing.Color.White;
+            this.btnEdit.Image = global::WFThesisManagementSystem.Properties.Resources.pencil1;
+            this.btnEdit.ImageRotate = 0F;
+            this.btnEdit.Location = new System.Drawing.Point(1183, 19);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(62, 54);
+            this.btnEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnEdit.TabIndex = 34;
+            this.btnEdit.TabStop = false;
+            // 
+            // ptbImage
+            // 
+            this.ptbImage.BackColor = System.Drawing.Color.White;
+            this.ptbImage.Image = global::WFThesisManagementSystem.Properties.Resources.Idea;
+            this.ptbImage.Location = new System.Drawing.Point(18, 19);
+            this.ptbImage.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.ptbImage.Name = "ptbImage";
+            this.ptbImage.Size = new System.Drawing.Size(62, 54);
+            this.ptbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbImage.TabIndex = 28;
+            this.ptbImage.TabStop = false;
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(233, 66);
+            this.lblName.BackColor = System.Drawing.Color.White;
+            this.lblName.Font = new System.Drawing.Font("Cambria", 14.1F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(89, 19);
+            this.lblName.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(559, 45);
-            this.lblName.TabIndex = 0;
+            this.lblName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblName.Size = new System.Drawing.Size(791, 55);
+            this.lblName.TabIndex = 27;
             this.lblName.Text = "Make an automatic payment system";
-            // 
-            // lblTimeAndOrdinalNumber
-            // 
-            this.lblTimeAndOrdinalNumber.AutoSize = true;
-            this.lblTimeAndOrdinalNumber.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTimeAndOrdinalNumber.Location = new System.Drawing.Point(234, 134);
-            this.lblTimeAndOrdinalNumber.Name = "lblTimeAndOrdinalNumber";
-            this.lblTimeAndOrdinalNumber.Size = new System.Drawing.Size(402, 38);
-            this.lblTimeAndOrdinalNumber.TabIndex = 1;
-            this.lblTimeAndOrdinalNumber.Text = "#402235 Opens 10 day ago by ";
-            // 
-            // lblNameTeacher
-            // 
-            this.lblNameTeacher.AutoSize = true;
-            this.lblNameTeacher.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNameTeacher.Location = new System.Drawing.Point(704, 134);
-            this.lblNameTeacher.Name = "lblNameTeacher";
-            this.lblNameTeacher.Size = new System.Drawing.Size(192, 38);
-            this.lblNameTeacher.TabIndex = 4;
-            this.lblNameTeacher.Text = "Mai Duc Kien";
-            // 
-            // sdpsingletask
-            // 
-            this.sdpsingletask.BackColor = System.Drawing.Color.Transparent;
-            this.sdpsingletask.Controls.Add(this.ptbImage);
-            this.sdpsingletask.Controls.Add(this.btnChat);
-            this.sdpsingletask.Controls.Add(this.lblName);
-            this.sdpsingletask.Controls.Add(this.lblNameTeacher);
-            this.sdpsingletask.Controls.Add(this.lblTimeAndOrdinalNumber);
-            this.sdpsingletask.FillColor = System.Drawing.Color.White;
-            this.sdpsingletask.Location = new System.Drawing.Point(0, 0);
-            this.sdpsingletask.Name = "sdpsingletask";
-            this.sdpsingletask.ShadowColor = System.Drawing.Color.Black;
-            this.sdpsingletask.Size = new System.Drawing.Size(1175, 229);
-            this.sdpsingletask.TabIndex = 7;
-            // 
-            // ptbImage
-            // 
-            this.ptbImage.Image = global::WFThesisManagementSystem.Properties.Resources.Idea;
-            this.ptbImage.Location = new System.Drawing.Point(67, 66);
-            this.ptbImage.Name = "ptbImage";
-            this.ptbImage.Size = new System.Drawing.Size(99, 106);
-            this.ptbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbImage.TabIndex = 2;
-            this.ptbImage.TabStop = false;
-            // 
-            // btnChat
-            // 
-            this.btnChat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnChat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnChat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnChat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnChat.FillColor = System.Drawing.Color.Transparent;
-            this.btnChat.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnChat.ForeColor = System.Drawing.Color.White;
-            this.btnChat.Image = global::WFThesisManagementSystem.Properties.Resources.Chat;
-            this.btnChat.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnChat.Location = new System.Drawing.Point(1016, 66);
-            this.btnChat.Name = "btnChat";
-            this.btnChat.Size = new System.Drawing.Size(72, 77);
-            this.btnChat.TabIndex = 6;
-            this.btnChat.Click += new System.EventHandler(this.btnChat_Click);
             // 
             // UcTeacherSingleTask
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.sdpsingletask);
+            this.Controls.Add(this.guna2CustomGradientPanel1);
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "UcTeacherSingleTask";
-            this.Size = new System.Drawing.Size(1178, 229);
-            this.sdpsingletask.ResumeLayout(false);
-            this.sdpsingletask.PerformLayout();
+            this.Padding = new System.Windows.Forms.Padding(0, 20, 0, 20);
+            this.Size = new System.Drawing.Size(1404, 389);
+            this.guna2CustomGradientPanel1.ResumeLayout(false);
+            this.guna2CustomGradientPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnPoint)).EndInit();
+            this.guna2CustomGradientPanel2.ResumeLayout(false);
+            this.guna2CustomGradientPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnChat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbImage)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Label lblTimeAndOrdinalNumber;
+        private System.Windows.Forms.Label dtpFrom;
+        private System.Windows.Forms.Label dtpTo;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel1;
+        private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel2;
+        private Guna.UI2.WinForms.Guna2PictureBox btnChat;
+        private Guna.UI2.WinForms.Guna2PictureBox btnEdit;
         private System.Windows.Forms.PictureBox ptbImage;
-        private System.Windows.Forms.Label lblNameTeacher;
-        private Guna.UI2.WinForms.Guna2Button btnChat;
-        private Guna.UI2.WinForms.Guna2ShadowPanel sdpsingletask;
+        private System.Windows.Forms.Label lblName;
+        public System.Windows.Forms.Label lblContentTask;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2PictureBox btnPoint;
     }
 }

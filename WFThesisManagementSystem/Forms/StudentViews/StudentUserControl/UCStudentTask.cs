@@ -5,33 +5,25 @@ namespace WFThesisManagementSystem.Forms.StudentViews.StudentUserControl
 {
     public partial class UCStudentTask : UserControl
     {
+        public event EventHandler DateChanged;
+
         public UCStudentTask()
         {
             InitializeComponent();
-            addUserControl();
-            this.SizeChanged += UCStudentTask_SizeChanged;
+            dtpStartDay.ValueChanged += DtpStartDay_ValueChanged;
+            dtpEndDay.ValueChanged += DtpEndDay_ValueChanged;
 
         }
-
-        private void UCStudentTask_SizeChanged(object sender, EventArgs e)
+        private void DtpEndDay_ValueChanged(object sender, EventArgs e)
         {
-            int marginX = flowLayoutPanelContainer.Width / 5;
-            foreach (UserControl uc in flowLayoutPanelContainer.Controls)
-            {
-                // Gán giá trị Margin cho UserControl
-                uc.Margin = new Padding(marginX, 10, marginX, 10);
-            }
+            DateChanged?.Invoke(this, e);
         }
 
-        private void addUserControl()
+        private void DtpStartDay_ValueChanged(object sender, EventArgs e)
         {
-            for (int i = 0; i < 10; i++)
-            {
-                UCTask uc = new UCTask();
-                flowLayoutPanelContainer.Controls.Add(uc);
-            }
+            DateChanged?.Invoke(this, e);
         }
+
+
     }
-
-
 }

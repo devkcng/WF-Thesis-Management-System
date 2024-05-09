@@ -49,19 +49,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ComponentFactory.Krypton.Docking">
-      <HintPath>..\..\kryton\Krypton\Bin\ComponentFactory.Krypton.Docking.dll</HintPath>
+      <HintPath>..\..\Krypton\Bin\ComponentFactory.Krypton.Docking.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Navigator">
-      <HintPath>..\..\kryton\Krypton\Bin\ComponentFactory.Krypton.Navigator.dll</HintPath>
+      <HintPath>..\..\Krypton\Bin\ComponentFactory.Krypton.Navigator.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Ribbon">
-      <HintPath>..\..\kryton\Krypton\Bin\ComponentFactory.Krypton.Ribbon.dll</HintPath>
+      <HintPath>..\..\Krypton\Bin\ComponentFactory.Krypton.Ribbon.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Toolkit">
-      <HintPath>..\..\kryton\Krypton\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+      <HintPath>..\..\Krypton\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="ComponentFactory.Krypton.Workspace">
-      <HintPath>..\..\kryton\Krypton\Bin\ComponentFactory.Krypton.Workspace.dll</HintPath>
+      <HintPath>..\..\Krypton\Bin\ComponentFactory.Krypton.Workspace.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -69,17 +69,31 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Firebase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FirebaseDatabase.net.4.2.0\lib\netstandard2.0\Firebase.dll</HintPath>
+    </Reference>
     <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
       <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net48\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="LiteDB, Version=4.1.4.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiteDB.4.1.4\lib\net40\LiteDB.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Reactive, Version=4.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reactive.4.0.0\lib\net46\System.Reactive.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -89,11 +103,193 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\ChatApp\FChat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ChatApp\FChat.Designer.cs">
+      <DependentUpon>FChat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChatApp\UcIncomingMessage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ChatApp\UcIncomingMessage.Designer.cs">
+      <DependentUpon>UcIncomingMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ChatApp\UcOutgoingMessage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\ChatApp\UcOutgoingMessage.Designer.cs">
+      <DependentUpon>UcOutgoingMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCCalendar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCCalendar.Designer.cs">
+      <DependentUpon>UCCalendar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCDashBoard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCDashBoard.Designer.cs">
+      <DependentUpon>UCDashBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCBlank.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCBlank.Designer.cs">
+      <DependentUpon>UCBlank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCDay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCDay.Designer.cs">
+      <DependentUpon>UCDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FNotification.Designer.cs">
+      <DependentUpon>FNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCProgress.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCProgress.Designer.cs">
+      <DependentUpon>UCProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCSingleEvent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCSingleEvent.Designer.cs">
+      <DependentUpon>UCSingleEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentCalendar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentCalendar.Designer.cs">
+      <DependentUpon>UCStudentCalendar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentInformation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentInformation.Designer.cs">
+      <DependentUpon>UCStudentInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentProject.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentProject.Designer.cs">
+      <DependentUpon>UCStudentProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentSubTasks.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentSubTasks.Designer.cs">
+      <DependentUpon>UCStudentSubTasks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCSubTasks.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCSubTasks.Designer.cs">
+      <DependentUpon>UCSubTasks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCTopic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCTopic.Designer.cs">
+      <DependentUpon>UCTopic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCTopicDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\StudentViews\StudentUserControl\UCTopicDetail.Designer.cs">
+      <DependentUpon>UCTopicDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StudentViews\Views\FStudentCreateSubTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StudentViews\Views\FStudentCreateSubTask.Designer.cs">
+      <DependentUpon>FStudentCreateSubTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\StudentViews\Views\FTopicRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StudentViews\Views\FTopicRegister.Designer.cs">
+      <DependentUpon>FTopicRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherAllMark.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherAllMark.Designer.cs">
+      <DependentUpon>UcTeacherAllMark.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherAnalytic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherAnalytic.Designer.cs">
+      <DependentUpon>UcTeacherAnalytic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSingleGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSingleGroup.Designer.cs">
+      <DependentUpon>UcTeacherSingleGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSubTaskSmall.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSubTaskSmall.Designer.cs">
+      <DependentUpon>UcTeacherSubTaskSmall.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TeacherViews\Views\FTeacherMark.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TeacherViews\Views\FTeacherMark.Designer.cs">
+      <DependentUpon>FTeacherMark.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UC\FNotificationSendStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UC\FNotificationSendStudent.Designer.cs">
+      <DependentUpon>FNotificationSendStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UC\FTeacherCreateNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UC\FTeacherCreateNotification.Designer.cs">
+      <DependentUpon>FTeacherCreateNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UcAllNotifications.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\UcAllNotifications.Designer.cs">
+      <DependentUpon>UcAllNotifications.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UC\UcCreateNotification.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\UC\UcCreateNotification.Designer.cs">
+      <DependentUpon>UcCreateNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UC\UcNotification.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\UC\UcNotification.Designer.cs">
+      <DependentUpon>UcNotification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UC\UcNotificationSendStudentAll.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\UC\UcNotificationSendStudentAll.Designer.cs">
+      <DependentUpon>UcNotificationSendStudentAll.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helper\CountNumberOfGroupHelper.cs" />
+    <Compile Include="Helper\FilterByDayHelper.cs" />
     <Compile Include="Helper\UserSessionHelper.cs" />
-    <Compile Include="Helper\ValidationInformation.cs" />
+    <Compile Include="Helper\ValidationInformationHelper.cs" />
     <Compile Include="Models\Model.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -109,7 +305,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Notification.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PointSheetRecord.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\RegisterQueue.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RejectList.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Student.cs">
@@ -119,6 +324,18 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\StudentGroup.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StudentPoint.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SubTask.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SubtaskPoint.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Task.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Teacher.cs">
@@ -131,10 +348,17 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\NotificationRepository.cs" />
+    <Compile Include="Repositories\PointSheetRecordRepository.cs" />
     <Compile Include="Repositories\RegisterQueueRepository.cs" />
+    <Compile Include="Repositories\RejectListRepository.cs" />
     <Compile Include="Repositories\StudentAccountRepository.cs" />
     <Compile Include="Repositories\StudentGroupRepository.cs" />
+    <Compile Include="Repositories\StudentPointRepository.cs" />
     <Compile Include="Repositories\StudentRepository.cs" />
+    <Compile Include="Repositories\SubtaskPointRepository.cs" />
+    <Compile Include="Repositories\SubTaskRepository.cs" />
+    <Compile Include="Repositories\TaskRepository.cs" />
     <Compile Include="Repositories\TeacherAccountRepository.cs" />
     <Compile Include="Repositories\TeacherRepository.cs" />
     <Compile Include="Repositories\TopicRepository.cs" />
@@ -196,11 +420,11 @@
     <Compile Include="Forms\StudentViews\StudentUserControl\UCWorkLog.Designer.cs">
       <DependentUpon>UCWorkLog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\StudentViews\Views\FRegisterTopic.cs">
+    <Compile Include="Forms\StudentViews\Views\FShowTopic.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\StudentViews\Views\FRegisterTopic.Designer.cs">
-      <DependentUpon>FRegisterTopic.cs</DependentUpon>
+    <Compile Include="Forms\StudentViews\Views\FShowTopic.Designer.cs">
+      <DependentUpon>FShowTopic.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\StudentViews\Views\FStudentDashboard.cs">
       <SubType>Form</SubType>
@@ -219,12 +443,6 @@
     </Compile>
     <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentPerformance.Designer.cs">
       <DependentUpon>UCStudentPerformance.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentProject.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentProject.Designer.cs">
-      <DependentUpon>UCStudentProject.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\StudentViews\StudentUserControl\UCStudentTask.cs">
       <SubType>UserControl</SubType>
@@ -337,11 +555,107 @@
     <Compile Include="Helper\SearchEngineHelper\Document.cs" />
     <Compile Include="Helper\SearchEngineHelper\FileGenerator.cs" />
     <Compile Include="Helper\SearchEngineHelper\TFIDF.cs" />
+    <Compile Include="Services\ChatService.cs" />
+    <Compile Include="Services\NotificationService.cs" />
     <Compile Include="Services\RegistrationService.cs" />
+    <Compile Include="Services\StatisticsService.cs" />
+    <Compile Include="Services\SubTaskService.cs" />
+    <Compile Include="Services\TaskService.cs" />
+    <Compile Include="Services\TeacherService.cs" />
     <Compile Include="Services\TopicAcceptService.cs" />
     <Compile Include="Services\TopicService.cs" />
+    <EmbeddedResource Include="Forms\ChatApp\FChat.resx">
+      <DependentUpon>FChat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChatApp\UcIncomingMessage.resx">
+      <DependentUpon>UcIncomingMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ChatApp\UcOutgoingMessage.resx">
+      <DependentUpon>UcOutgoingMessage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCCalendar.resx">
+      <DependentUpon>UCCalendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCDashBoard.resx">
+      <DependentUpon>UCDashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCBlank.resx">
+      <DependentUpon>UCBlank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCDay.resx">
+      <DependentUpon>UCDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FNotification.resx">
+      <DependentUpon>FNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCProgress.resx">
+      <DependentUpon>UCProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCSingleEvent.resx">
+      <DependentUpon>UCSingleEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCStudentCalendar.resx">
+      <DependentUpon>UCStudentCalendar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCStudentInformation.resx">
+      <DependentUpon>UCStudentInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCStudentProject.resx">
+      <DependentUpon>UCStudentProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCStudentSubTasks.resx">
+      <DependentUpon>UCStudentSubTasks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCSubTasks.resx">
+      <DependentUpon>UCSubTasks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCTopic.resx">
+      <DependentUpon>UCTopic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCTopicDetail.resx">
+      <DependentUpon>UCTopicDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StudentViews\Views\FStudentCreateSubTask.resx">
+      <DependentUpon>FStudentCreateSubTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StudentViews\Views\FTopicRegister.resx">
+      <DependentUpon>FTopicRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcTeacherAllMark.resx">
+      <DependentUpon>UcTeacherAllMark.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcTeacherAnalytic.resx">
+      <DependentUpon>UcTeacherAnalytic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSingleGroup.resx">
+      <DependentUpon>UcTeacherSingleGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TeacherViews\TeacherUserControl\UcTeacherSubTaskSmall.resx">
+      <DependentUpon>UcTeacherSubTaskSmall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TeacherViews\Views\FTeacherMark.resx">
+      <DependentUpon>FTeacherMark.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UC\FNotificationSendStudent.resx">
+      <DependentUpon>FNotificationSendStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UC\FTeacherCreateNotification.resx">
+      <DependentUpon>FTeacherCreateNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UcAllNotifications.resx">
+      <DependentUpon>UcAllNotifications.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UC\UcCreateNotification.resx">
+      <DependentUpon>UcCreateNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UC\UcNotification.resx">
+      <DependentUpon>UcNotification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UC\UcNotificationSendStudentAll.resx">
+      <DependentUpon>UcNotificationSendStudentAll.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -365,17 +679,14 @@
     <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCWorkLog.resx">
       <DependentUpon>UCWorkLog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StudentViews\Views\FRegisterTopic.resx">
-      <DependentUpon>FRegisterTopic.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\StudentViews\Views\FShowTopic.resx">
+      <DependentUpon>FShowTopic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StudentViews\Views\FStudentDashboard.resx">
       <DependentUpon>FStudentDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCProject.resx">
       <DependentUpon>UCProject.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StudentViews\StudentUserControl\UCStudentProject.resx">
-      <DependentUpon>UCStudentProject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StudentViews\Views\FStudentRegisterTopic.resx">
       <DependentUpon>FStudentRegisterTopic.cs</DependentUpon>
@@ -631,6 +942,42 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\icons8-send-50.png" />
+    <None Include="Resources\icons8-analytic-50.png" />
+    <None Include="Resources\icons8-mark-641.png" />
+    <None Include="Resources\icons8-mark-64.png" />
+    <None Include="Resources\icons8-back-24.png" />
+    <None Include="Resources\icons8-calendar-48.png" />
+    <None Include="Resources\icons8-chevron-right-64.png" />
+    <None Include="Resources\icons8-chevron-left-64.png" />
+    <None Include="Resources\pending_picture.png" />
+    <None Include="Resources\accepted_picture.png" />
+    <None Include="Resources\group_picture.png" />
+    <None Include="Resources\technology_picture.png" />
+    <None Include="Resources\category_picture.png" />
+    <None Include="Resources\teacher_picture.png" />
+    <None Include="Resources\project_picture.png" />
+    <None Include="Resources\LookUp_picture.png" />
+    <None Include="Resources\load_white_2.png" />
+    <None Include="Resources\load_picture.png" />
+    <None Include="Resources\pencil1.png" />
+    <None Include="Resources\multiple-users-silhouette.png" />
+    <None Include="Resources\open-book %283%29.png" />
+    <None Include="Resources\open-book %282%29.png" />
+    <None Include="Resources\open-book %281%29.png" />
+    <None Include="Resources\notification1.png" />
+    <None Include="Resources\notification.png" />
+    <None Include="Resources\laptop.png" />
+    <None Include="Resources\book.png" />
+    <None Include="Resources\mail.png" />
+    <None Include="Resources\exit.png" />
+    <None Include="Resources\inbox.png" />
+    <None Include="Resources\email1.png" />
+    <None Include="Resources\open-book.png" />
+    <None Include="Resources\writing.png" />
+    <None Include="Resources\photo_2024-04-02_16-52-38 %282%291.jpg" />
+    <None Include="Resources\photo_2024-04-02_16-52-38.jpg" />
+    <None Include="Resources\photo_2024-04-02_16-52-38 %282%29.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

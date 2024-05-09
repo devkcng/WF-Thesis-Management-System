@@ -38,11 +38,10 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             this.ucTeacherAcceptRegistAll1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ucTeacherAcceptRegistAll1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucTeacherAcceptRegistAll1.Location = new System.Drawing.Point(0, 0);
-            this.ucTeacherAcceptRegistAll1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ucTeacherAcceptRegistAll1.Margin = new System.Windows.Forms.Padding(2);
             this.ucTeacherAcceptRegistAll1.Name = "ucTeacherAcceptRegistAll1";
             this.ucTeacherAcceptRegistAll1.Size = new System.Drawing.Size(1608, 1009);
             this.ucTeacherAcceptRegistAll1.TabIndex = 0;
-            
             // 
             // FTeacherRegist
             // 

@@ -1,10 +1,16 @@
-﻿-- Creating Database
-IF NOT EXISTS (SELECT * FROM sys.databases WHERE name = N'ThesisManagement')
+﻿USE master;
+GO
+
+IF EXISTS (SELECT * FROM sys.databases WHERE name = N'ThesisManagement')
 BEGIN
-    CREATE DATABASE ThesisManagement;
+    ALTER DATABASE ThesisManagement SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+    DROP DATABASE ThesisManagement;
 END
 GO
 
+CREATE DATABASE ThesisManagement;
+
+GO
 -- Using the newly created database
 USE ThesisManagement;
 GO
@@ -39,7 +45,6 @@ CREATE TABLE StudentGroup (
     group_name VARCHAR(50),
     topic_id INT,
     number_of_students INT,
-    group_points FLOAT DEFAULT 0,
     FOREIGN KEY (topic_id) REFERENCES Topics(topic_id),
     UNIQUE(group_name, topic_id)
 );
@@ -65,6 +70,33 @@ CREATE TABLE RegisterQueue (
     FOREIGN KEY (topic_id) REFERENCES Topics(topic_id)
 );
 
+-- Creating Task table
+CREATE TABLE Tasks (
+    task_id INT PRIMARY KEY,
+    task_name VARCHAR(100),
+    task_description TEXT,
+    open_day DATE,
+    due_date DATE,
+    submit_day DATE,
+    group_id INT,
+    FOREIGN KEY (group_id) REFERENCES StudentGroup(group_id)
+);
+
+-- Creating SubTask table
+CREATE TABLE SubTasks (
+    subtask_id INT PRIMARY KEY,
+    subtask_name VARCHAR(100),
+    subtask_description TEXT,
+    open_day DATE,
+    due_date DATE,
+    submit_day DATE,
+    student_id INT,
+    task_id INT,
+    document_link VARCHAR(255),
+    FOREIGN KEY (student_id) REFERENCES Students(student_id),
+    FOREIGN KEY (task_id) REFERENCES Tasks(task_id)
+);
+
 -- Creating the StudentAccount table
 CREATE TABLE StudentAccount (
     student_username VARCHAR(50) PRIMARY KEY,
@@ -79,6 +111,55 @@ CREATE TABLE TeacherAccount (
     teacher_password VARCHAR(50),
     teacher_id INT,
     FOREIGN KEY (teacher_id) REFERENCES Teachers(teacher_id)
+);
+
+CREATE TABLE PointSheetRecord (
+    id INT PRIMARY KEY,
+    student_id INT,
+    topic_id INT,
+    point FLOAT,
+    FOREIGN KEY (student_id) REFERENCES Students(student_id),
+    FOREIGN KEY (topic_id) REFERENCES Topics(topic_id)
+);
+
+CREATE TABLE RejectList (
+    list_id INT PRIMARY KEY,
+    student_id INT,
+    topic_id INT,
+    reason TEXT,
+    FOREIGN KEY (student_id) REFERENCES Students(student_id),
+    FOREIGN KEY (topic_id) REFERENCES Topics(topic_id)
+);
+
+
+CREATE TABLE SubtaskPoint (
+    subtaskpoint_id INT PRIMARY KEY,
+    student_id INT,
+    subtask_id INT,
+    subtask_point FLOAT DEFAULT 0,
+    subtask_review TEXT,
+    FOREIGN KEY (student_id) REFERENCES Students(student_id),
+    FOREIGN KEY (subtask_id) REFERENCES SubTasks(subtask_id)
+);
+
+CREATE TABLE StudentPoint(
+    studentpoint_id INT PRIMARY KEY,
+    student_id INT,
+    student_point FLOAT DEFAULT 0,
+    FOREIGN KEY (student_id) REFERENCES Students(student_id)
+);
+
+
+CREATE TABLE Notifications (
+    notification_id INT PRIMARY KEY,
+    notification_title NVARCHAR(255),
+    notification_content NVARCHAR(MAX),
+    sender_id INT,
+    recipient_id INT,
+    timestamp DATETIME,
+    notification_status BIT,
+    notification_type NVARCHAR(50),
+    related_id INT
 );
 
 

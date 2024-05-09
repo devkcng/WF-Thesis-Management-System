@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using WFThesisManagementSystem.Models;
 
@@ -22,6 +23,10 @@ namespace WFThesisManagementSystem.Repositories
             return _context.Students.FirstOrDefault(s => s.student_id == id);
         }
 
+        public IQueryable<Student> GetAllByGroupId(int id)
+        {
+            return _context.Students.Where(t => t.group_id == id);
+        }
         public void Add(Student student)
         {
             _context.Students.Add(student);
@@ -48,5 +53,17 @@ namespace WFThesisManagementSystem.Repositories
             //_context.Entry(student_group).State = System.Data.Entity.EntityState.Modified;
             //_context.SaveChanges();
         }
+        public List<int> GetAllGroupID()
+        {
+            return GetAll().Where(s => s.group_id != null).Select(s => s.group_id.Value).ToList();
+        }
+
+        //get studentID by student name
+        public Student GetByStudentName(string studentName)
+        {
+            return _context.Students.FirstOrDefault(sg => sg.student_name == studentName);
+        }
+
+
     }
 }
