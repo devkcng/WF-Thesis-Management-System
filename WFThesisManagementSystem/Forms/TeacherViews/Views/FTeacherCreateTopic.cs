@@ -51,12 +51,12 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
                 if (_topicService.AlreadyCreateTopic())
                 {
                     _topicRepository.Add(_topic);
-                    MessageBox.Show("Add Success");
+                    MessageBox.Show("Add Success", "Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                     this.Hide();
                 }
-                else MessageBox.Show("Error!!!");
+                else MessageBox.Show("Error!!!", "Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
-            else MessageBox.Show("Error!!!");
+            else MessageBox.Show("Error!!!", "Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
 
 
             //if (ucTeacherCreateTopic1.txtTopicId.Text!="" && ucTeacherCreateTopic1.txtTopicId.Text!=""&& ucTeacherCreateTopic1.txtTopicName.Text!=""&& ucTeacherCreateTopic1.txtTopicDescription.Text!=""&& ucTeacherCreateTopic1.cbxTopicCategory.SelectedItem.ToString()!=""&& ucTeacherCreateTopic1.cbxTopicTechnology.SelectedItem.ToString()!=""&&ucTeacherCreateTopic1.txtTopicRequirement.Text!=""&& ucTeacherCreateTopic1.cbxNumber.SelectedItem.ToString()!="")
