@@ -351,13 +351,8 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                 }
                 if(subTaskSubmitDates.Contains(currentDate))
                 {
-                    uCDay.ptb2.FillColor = Color.Yellow;
+                    uCDay.ptb2.FillColor = Color.Orange;
                     uCDay.ptb2.Visible = true;
-                }
-                if (onlineMeetingDates.Contains(currentDate))
-                {
-                    uCDay.ptb3.FillColor = Color.Green;
-                    uCDay.ptb3.Visible = true;
                 }
                 ucStudentCalendar.ucCalendar1.flpDayContainer.Controls.Add(uCDay);
             }
@@ -650,6 +645,8 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
 
             // Gán DataTable cho DataGridView
             pointDataGridView.DataSource = dataTable;
+            pointDataGridView.ColumnHeadersHeight = 40;
+
         }
 
         private void LoadFinalPointDataGridView(DataGridView pointDataGridView, List<StudentPoint> studentPointList)
@@ -672,6 +669,8 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
 
             // Gán DataTable cho DataGridView
             pointDataGridView.DataSource = dataTable;
+            pointDataGridView.ColumnHeadersHeight = 40;
+
         }
 
         private void LoadSubTaskProgressChart(Chart subTaskChart, List<SubTask> subTaskList)

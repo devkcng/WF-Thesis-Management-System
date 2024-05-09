@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using WFThesisManagementSystem.Forms.StudentViews.StudentUserControl;
@@ -103,6 +104,8 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
 
                 uCTopic.Margin = new Padding(0, 0, 0, 20); // Adjust the last parameter to control vertical spacing
 
+                uCTopic.lblStatus.Text = ShowIfGroupIsFull(topic);
+
                 if (!_registrationService.Unregistered())
                 {
 
@@ -129,6 +132,21 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                 }
                 flpAllTopics.Controls.Add(uCTopic);
             }
+        }
+
+        private string ShowIfGroupIsFull(Topic topic)
+        {   
+            var studentGroup = _studentGroupRepository.GetByTopicId(topic.topic_id);
+            if (studentGroup != null)
+            {
+                var countHelper = new CountNumberOfGroupHelper(_context);
+                var count = countHelper.CountNumberOfGroup(studentGroup.group_id);
+                if (count >= topic.max_members)
+                {
+                    return "This group is Full";
+                }
+            }
+            return "Status";
         }
 
         #region ucTask-Events
@@ -162,5 +180,78 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                 Application.Exit();
             }
         }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            LoadTopic(SearchTopic(guna2TextBox1.Text));
+        }
+
+        private List<Topic> SearchTopic(string query)
+        {
+            var topics = _topicRepository.GetAll();
+            List<Topic> searchResults = new List<Topic>();
+            foreach (var topic in topics)
+            {
+                if (topic.topic_name.ToLower().Contains(query.ToLower()) ||
+                    topic.topic_description.ToLower().Contains(query.ToLower()) ||
+                    topic.topic_technology.ToLower().Contains(query.ToLower()) ||
+                    topic.topic_requirement.ToLower().Contains(query.ToLower()) ||
+                    topic.topic_category.ToLower().Contains(query.ToLower()))
+                {
+                    searchResults.Add(topic);
+                }
+            }
+            return searchResults;
+        }
+
+        private void LoadTopic(List<Topic> topics)
+        {
+                        flpAllTopics.Controls.Clear();
+                        foreach (var topic in topics)
+                        {
+                UCTopic uCTopic = new UCTopic();
+                uCTopic.Name = topic.topic_name;
+                uCTopic.Id = topic.topic_id;
+                uCTopic.Description = topic.topic_description;
+                uCTopic.Technology = topic.topic_technology;
+                uCTopic.Requirement = topic.topic_requirement;
+                uCTopic.Category = topic.topic_category;
+                uCTopic.MaxMember = topic.max_members.Value;
+                uCTopic.TeacherName = _teacherRepository.GetById(topic.teacher_id.Value).teacher_name;
+                uCTopic.TeacherId = topic.teacher_id.Value;
+                uCTopic.Clicked += UCTopic_Clicked;
+
+                uCTopic.lblStatus.Text = ShowIfGroupIsFull(topic);
+
+                uCTopic.Margin = new Padding(0, 0, 0, 20); // Adjust the last parameter to control vertical spacing
+
+                if (!_registrationService.Unregistered())
+                {
+
+                    if (_registrationService.AlreadyRegistered())
+                    {
+                        var studentGroup = _studentGroupRepository.GetById(_studentRepository.GetById(_userSessionHelper.UserID).group_id.Value);
+                        if (studentGroup.topic_id == uCTopic.Id)
+                        {
+                            uCTopic.ptbStatus.Image = Properties.Resources.accepted_picture;
+                            uCTopic.lblStatus.Visible = true;
+                            uCTopic.ptbStatus.Visible = true;
+                        }
+                    }
+                    else if (_registrationService.InQueue() &&
+                             _registerQueueRepository.GetById(_userSessionHelper.UserID).topic_id == uCTopic.Id)
+                    {
+                        uCTopic.ptbStatus.Image = Properties.Resources.pending_picture;
+                        uCTopic.lblStatus.Visible = true;
+                        uCTopic.ptbStatus.Visible = true;
+                    }
+                }
+                else
+                {
+
+                }
+                flpAllTopics.Controls.Add(uCTopic); }
+        }
+        }
     }
-}
+
