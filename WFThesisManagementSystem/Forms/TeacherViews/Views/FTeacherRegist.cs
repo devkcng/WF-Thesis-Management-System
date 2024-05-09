@@ -120,18 +120,20 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
                     _studentRepository.Update(student);
 
                     students.Add(single_student);
+
+                    //Create Notification when accept topic
+                    var message = new NotificationMessage
+                    {
+                        Title = "Topic Registration Accepted",
+                        Message = "Your topic registration have been accepted",
+                        Type = "Topic Registration Accepted"
+                    };
+                    _notificationService.SendToStudent(student, message);
                 }
+                
 
             }
-            //Create Notification when accept topic
-            var message = new NotificationMessage
-            {
-                Title = "Topic Registration Accepted",
-                Message = "Your topic registration have been accepted",
-                Type = "Topic Registration Accepted"
-            };
-            var memberList = _studentRepository.GetAllByGroupId(GroupId);
-            _notificationService.SendToStudents(memberList.ToList(), message);
+
 
             FTeacherRegist_Load(sender, e);
         }
