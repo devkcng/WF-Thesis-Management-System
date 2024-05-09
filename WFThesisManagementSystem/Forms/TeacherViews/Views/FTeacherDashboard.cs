@@ -492,7 +492,7 @@ namespace WFThesisManagementSystem.Forms.TeacherViews.Views
             {
                 var student = _studentRepository.GetById(subTask.student_id.Value);
                 var studentGroup = _studentGroupRepository.GetById(student.group_id.Value);
-                var subTaskPoint = _subtaskPointRepository.GetBySubtaskId(subTask.subtask_id);
+                var subTaskPoint = _subtaskPointRepository.GetBySubtaskId(subTask.subtask_id).subtask_point;
 
                 dataTable.Rows.Add(subTask.subtask_name, student.student_name, studentGroup.group_name, subTaskPoint);
             }
