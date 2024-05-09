@@ -121,17 +121,17 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             var studentGroup = _studentGroupRepository.GetByTopicId(_topic.topic_id);
             if (txtGroupName.Text == "")
             {
-                MessageBox.Show("Please enter group name");
+                MessageBox.Show("Please enter group name", "Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 return;
             }
             if (CountDataRows(dgvrRegisterMember) > _topic.max_members)
             {
-                MessageBox.Show("Your group can only have " + _topic.max_members + " members");
+                MessageBox.Show("Your group can only have " + _topic.max_members + " members", "Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 return;
             }
             if (CountDataRows(dgvrRegisterMember) == 0)
             {
-                MessageBox.Show("Please enter the your group member info in the table");
+                MessageBox.Show("Please enter the your group member info in the table", "Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                 return;
             }
 
@@ -150,22 +150,22 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
                 {
                     if (member == null)
                     {
-                        MessageBox.Show("Student have the ID: " + studentId + " does not exist");
+                        MessageBox.Show("Student have the ID: " + studentId + " does not exist","Notification",MessageBoxButtons.OKCancel,MessageBoxIcon.Error);
                         return;
                     }
                     else if (!registrationService.CanRegist())
                     {
-                        MessageBox.Show("Student have the ID: " + studentId + " don't have permission to regist");
+                        MessageBox.Show("Student have the ID: " + studentId + " don't have permission to regist", "Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
                         return;
                     }
                     else if (registrationService.AlreadyRegistered())
                     {
-                        MessageBox.Show("Student have the ID: " + studentId + " already have a group");
+                        MessageBox.Show("Student have the ID: " + studentId + " already have a group", "Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                         return;
                     }
                     else if (registrationService.InQueue())
                     {
-                        MessageBox.Show("Student have the ID: " + studentId + " already in queue");
+                        MessageBox.Show("Student have the ID: " + studentId + " already in queue", "Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
                         return;
                     }
 
@@ -193,7 +193,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
         RegistrationService(member, _topic, txtGroupName.Text);
                 registrationService.Register();
             }
-            MessageBox.Show("Register successfully");
+            MessageBox.Show("Register successfully", "Notification", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             this.Close();
             FStudentRegisterTopic fStudentRegisterTopic = new FStudentRegisterTopic(_context);
             fStudentRegisterTopic.Show();
