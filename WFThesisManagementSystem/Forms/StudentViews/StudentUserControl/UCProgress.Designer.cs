@@ -211,9 +211,9 @@
             this.label1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(13, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(336, 47);
+            this.label1.Size = new System.Drawing.Size(353, 47);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Sub Task Progess";
+            this.label1.Text = "Sub Task Progress";
             // 
             // guna2CustomGradientPanel3
             // 
@@ -420,9 +420,9 @@
             this.label4.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(13, 21);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(390, 47);
+            this.label4.Size = new System.Drawing.Size(407, 47);
             this.label4.TabIndex = 1;
-            this.label4.Text = "Group Task Progess \r\n";
+            this.label4.Text = "Group Task Progress \r\n";
             // 
             // UCProgress
             // 

@@ -30,6 +30,8 @@
         {
             this.tablePanelCalendar = new System.Windows.Forms.TableLayoutPanel();
             this.splitPanelTitle = new System.Windows.Forms.SplitContainer();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblMY = new System.Windows.Forms.Label();
             this.tablePanelDay = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,30 +45,25 @@
             this.ptbNext = new System.Windows.Forms.PictureBox();
             this.ptbPrevious = new System.Windows.Forms.PictureBox();
             this.flpDayContainer = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lblMY = new System.Windows.Forms.Label();
-            this.ptbMeeting = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.guna2CirclePictureBox3 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.guna2CirclePictureBox3 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.tablePanelCalendar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitPanelTitle)).BeginInit();
             this.splitPanelTitle.Panel1.SuspendLayout();
             this.splitPanelTitle.Panel2.SuspendLayout();
             this.splitPanelTitle.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.tablePanelDay.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
             this.panelBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptbNext)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPrevious)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbMeeting)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
+            this.guna2Panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tablePanelCalendar
@@ -119,6 +116,27 @@
             this.splitPanelTitle.Size = new System.Drawing.Size(1804, 416);
             this.splitPanelTitle.SplitterDistance = 292;
             this.splitPanelTitle.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lblMY);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1328, 292);
+            this.panel1.TabIndex = 0;
+            // 
+            // lblMY
+            // 
+            this.lblMY.AutoSize = true;
+            this.lblMY.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(208)))), ((int)(((byte)(166)))));
+            this.lblMY.Font = new System.Drawing.Font("Cambria", 50F, System.Drawing.FontStyle.Bold);
+            this.lblMY.ForeColor = System.Drawing.Color.White;
+            this.lblMY.Location = new System.Drawing.Point(0, 55);
+            this.lblMY.Name = "lblMY";
+            this.lblMY.Size = new System.Drawing.Size(958, 196);
+            this.lblMY.TabIndex = 88;
+            this.lblMY.Text = "Month Year";
             // 
             // tablePanelDay
             // 
@@ -308,76 +326,17 @@
             this.flpDayContainer.Size = new System.Drawing.Size(1804, 1033);
             this.flpDayContainer.TabIndex = 3;
             // 
-            // panel1
+            // label10
             // 
-            this.panel1.Controls.Add(this.lblMY);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1328, 292);
-            this.panel1.TabIndex = 0;
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.Controls.Add(this.ptbMeeting);
-            this.guna2Panel1.Controls.Add(this.guna2CirclePictureBox2);
-            this.guna2Panel1.Controls.Add(this.guna2CirclePictureBox3);
-            this.guna2Panel1.Controls.Add(this.label9);
-            this.guna2Panel1.Controls.Add(this.label8);
-            this.guna2Panel1.Controls.Add(this.label10);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel1.Location = new System.Drawing.Point(1328, 0);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(476, 292);
-            this.guna2Panel1.TabIndex = 1;
-            // 
-            // lblMY
-            // 
-            this.lblMY.AutoSize = true;
-            this.lblMY.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(208)))), ((int)(((byte)(166)))));
-            this.lblMY.Font = new System.Drawing.Font("Cambria", 50F, System.Drawing.FontStyle.Bold);
-            this.lblMY.ForeColor = System.Drawing.Color.White;
-            this.lblMY.Location = new System.Drawing.Point(0, 55);
-            this.lblMY.Name = "lblMY";
-            this.lblMY.Size = new System.Drawing.Size(958, 196);
-            this.lblMY.TabIndex = 88;
-            this.lblMY.Text = "Month Year";
-            // 
-            // ptbMeeting
-            // 
-            this.ptbMeeting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(208)))), ((int)(((byte)(166)))));
-            this.ptbMeeting.FillColor = System.Drawing.Color.Green;
-            this.ptbMeeting.ImageRotate = 0F;
-            this.ptbMeeting.Location = new System.Drawing.Point(19, 55);
-            this.ptbMeeting.Name = "ptbMeeting";
-            this.ptbMeeting.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.ptbMeeting.Size = new System.Drawing.Size(43, 43);
-            this.ptbMeeting.TabIndex = 108;
-            this.ptbMeeting.TabStop = false;
-            // 
-            // guna2CirclePictureBox2
-            // 
-            this.guna2CirclePictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(208)))), ((int)(((byte)(166)))));
-            this.guna2CirclePictureBox2.FillColor = System.Drawing.Color.Red;
-            this.guna2CirclePictureBox2.ImageRotate = 0F;
-            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(19, 125);
-            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
-            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(43, 43);
-            this.guna2CirclePictureBox2.TabIndex = 109;
-            this.guna2CirclePictureBox2.TabStop = false;
-            // 
-            // guna2CirclePictureBox3
-            // 
-            this.guna2CirclePictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(208)))), ((int)(((byte)(166)))));
-            this.guna2CirclePictureBox3.FillColor = System.Drawing.Color.Orange;
-            this.guna2CirclePictureBox3.ImageRotate = 0F;
-            this.guna2CirclePictureBox3.Location = new System.Drawing.Point(19, 194);
-            this.guna2CirclePictureBox3.Name = "guna2CirclePictureBox3";
-            this.guna2CirclePictureBox3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox3.Size = new System.Drawing.Size(43, 43);
-            this.guna2CirclePictureBox3.TabIndex = 110;
-            this.guna2CirclePictureBox3.TabStop = false;
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(208)))), ((int)(((byte)(166)))));
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(83, 97);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(403, 54);
+            this.label10.TabIndex = 113;
+            this.label10.Text = "Subtask Submit Day";
             // 
             // label9
             // 
@@ -385,35 +344,47 @@
             this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(208)))), ((int)(((byte)(166)))));
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(81, 114);
+            this.label9.Location = new System.Drawing.Point(83, 17);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(336, 54);
             this.label9.TabIndex = 112;
             this.label9.Text = "Task Submit Day";
             // 
-            // label8
+            // guna2CirclePictureBox3
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(208)))), ((int)(((byte)(166)))));
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(81, 44);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(261, 54);
-            this.label8.TabIndex = 111;
-            this.label8.Text = "Meeting day";
+            this.guna2CirclePictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(208)))), ((int)(((byte)(166)))));
+            this.guna2CirclePictureBox3.FillColor = System.Drawing.Color.Orange;
+            this.guna2CirclePictureBox3.ImageRotate = 0F;
+            this.guna2CirclePictureBox3.Location = new System.Drawing.Point(21, 97);
+            this.guna2CirclePictureBox3.Name = "guna2CirclePictureBox3";
+            this.guna2CirclePictureBox3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox3.Size = new System.Drawing.Size(43, 43);
+            this.guna2CirclePictureBox3.TabIndex = 110;
+            this.guna2CirclePictureBox3.TabStop = false;
             // 
-            // label10
+            // guna2CirclePictureBox2
             // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(208)))), ((int)(((byte)(166)))));
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(81, 194);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(403, 54);
-            this.label10.TabIndex = 113;
-            this.label10.Text = "Subtask Submit Day";
+            this.guna2CirclePictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(173)))), ((int)(((byte)(208)))), ((int)(((byte)(166)))));
+            this.guna2CirclePictureBox2.FillColor = System.Drawing.Color.Red;
+            this.guna2CirclePictureBox2.ImageRotate = 0F;
+            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(21, 28);
+            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
+            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(43, 43);
+            this.guna2CirclePictureBox2.TabIndex = 109;
+            this.guna2CirclePictureBox2.TabStop = false;
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.Controls.Add(this.guna2CirclePictureBox2);
+            this.guna2Panel1.Controls.Add(this.guna2CirclePictureBox3);
+            this.guna2Panel1.Controls.Add(this.label9);
+            this.guna2Panel1.Controls.Add(this.label10);
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel1.Location = new System.Drawing.Point(1328, 0);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(476, 292);
+            this.guna2Panel1.TabIndex = 1;
             // 
             // UCCalendar
             // 
@@ -427,19 +398,18 @@
             this.splitPanelTitle.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitPanelTitle)).EndInit();
             this.splitPanelTitle.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.tablePanelDay.ResumeLayout(false);
             this.tablePanelDay.PerformLayout();
             this.guna2GradientPanel1.ResumeLayout(false);
             this.panelBottom.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptbNext)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbPrevious)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.guna2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ptbMeeting)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -461,14 +431,12 @@
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         public System.Windows.Forms.FlowLayoutPanel flpDayContainer;
         public Guna.UI2.WinForms.Guna2GradientPanel panelBottom;
+        private System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Label lblMY;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox ptbMeeting;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox3;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Panel panel1;
-        public System.Windows.Forms.Label lblMY;
     }
 }
