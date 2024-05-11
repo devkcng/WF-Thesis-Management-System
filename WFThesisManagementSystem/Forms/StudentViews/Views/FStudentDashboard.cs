@@ -596,13 +596,15 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             var filterHelper = new FilterByDayHelper(subTaskList, _context);
             if (selectedValue == "Final Point")
             {
-                var studentPoint = _studentPointRepository.GetByStudentId(_userSessionHelper.UserID);
-                if (studentPoint != null)
+                List <StudentPoint> studentPoints = new List <StudentPoint>();
+                var student = _studentRepository.GetById(_userSessionHelper.UserID);
+                var studentGroup = _studentRepository.GetAllByGroupId(student.group_id.Value);
+                foreach (var member in studentGroup)
                 {
-                    List<StudentPoint> studentPointList = new List<StudentPoint>();
-                    studentPointList.Add(studentPoint);
-                    LoadFinalPointDataGridView(uCProgress.dgvPoint, studentPointList);
+                    var studentPoint = _studentPointRepository.GetByStudentId(member.student_id);
+                    if(studentPoint != null) studentPoints.Add(studentPoint);
                 }
+                LoadFinalPointDataGridView(uCProgress.dgvPoint, studentPoints);
             }
             else
             {
@@ -638,16 +640,14 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             dataTable.Columns.Add("SubTaskPoint", typeof(float));
             // Thêm dữ liệu vào DataTable
             foreach (var subTask in subTaskList)
-            {   
-               if (subTask.submit_day != null)
-{
-    var subTaskPoint = _subtaskPointRepository.GetBySubtaskId(subTask.subtask_id).subtask_point;
+            {
+                var subTaskPoint = _subtaskPointRepository.GetBySubtaskId(subTask.subtask_id);
+                if (subTaskPoint != null)
+                {
+                    dataTable.Rows.Add(subTask.subtask_name, subTaskPoint.subtask_point);
+                }
+                else dataTable.Rows.Add(subTask.subtask_name, null);
 
-    if (subTaskPoint != null)
-    {
-        dataTable.Rows.Add(subTask.subtask_name, subTaskPoint);
-    }
-}
             }
 
             // Gán DataTable cho DataGridView
@@ -670,7 +670,7 @@ namespace WFThesisManagementSystem.Forms.StudentViews.Views
             // Thêm dữ liệu vào DataTable
             foreach (var studentPoint in studentPointList)
             {
-                var student = _studentRepository.GetById(_userSessionHelper.UserID);
+                var student = _studentRepository.GetById(studentPoint.student_id.Value);
                 dataTable.Rows.Add(student.student_name, studentPoint.student_point);
             }
 

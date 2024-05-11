@@ -36,8 +36,8 @@
             // 
             // guna2GradientPanel1
             // 
-            this.guna2GradientPanel1.BorderColor = System.Drawing.Color.Silver;
-            this.guna2GradientPanel1.BorderThickness = 5;
+            this.guna2GradientPanel1.BorderColor = System.Drawing.Color.Black;
+            this.guna2GradientPanel1.BorderThickness = 1;
             this.guna2GradientPanel1.Controls.Add(this.lblDay);
             this.guna2GradientPanel1.Controls.Add(this.lbEventName);
             this.guna2GradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
